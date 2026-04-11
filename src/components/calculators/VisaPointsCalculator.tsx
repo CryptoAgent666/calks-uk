@@ -1,22 +1,19 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// UK Skilled Worker Visa points system
+// UK Skilled Worker Visa points system (rules from 22 July 2025)
 const MANDATORY_POINTS = [
   { id: 'job', label: 'Job offer from approved sponsor', points: 20, required: true },
-  { id: 'skill', label: 'Job at appropriate skill level (RQF 3+)', points: 20, required: true },
+  { id: 'skill', label: 'Job at appropriate skill level (RQF 6+ from July 2025, or on ISL/TSL)', points: 20, required: true },
   { id: 'english', label: 'English language at required level (B1+)', points: 10, required: true },
 ]
 
 const TRADEABLE_POINTS = [
-  { id: 'salary_min', label: 'Salary: £23,200 – £25,479', points: 0 },
-  { id: 'salary_low', label: 'Salary: £25,480 – £29,999', points: 10 },
-  { id: 'salary_med', label: 'Salary: £30,000 – £38,699', points: 20 },
-  { id: 'salary_high', label: 'Salary: £38,700+', points: 20 },
-  { id: 'phd', label: 'PhD in subject relevant to job', points: 10 },
-  { id: 'phd_stem', label: 'PhD in STEM subject relevant to job', points: 20 },
-  { id: 'shortage', label: 'Job on Immigration Salary List', points: 20 },
-  { id: 'new_entrant', label: 'New entrant (under 26, student switching, etc.)', points: 0 },
+  { id: 'salary_standard', label: 'Salary ≥ £41,700/yr (standard going rate minimum)', points: 20 },
+  { id: 'salary_reduced', label: 'Salary ≥ £33,400/yr (ISL / new entrant / PhD route)', points: 20 },
+  { id: 'shortage', label: 'Job on Immigration Salary List — enables £33,400 threshold', points: 0 },
+  { id: 'new_entrant', label: 'New entrant (under 26, recent grad, postdoc) — enables £33,400 threshold', points: 0 },
+  { id: 'phd', label: 'PhD relevant to job — enables reduced salary threshold (70–90% going rate)', points: 0 },
 ]
 
 const REQUIRED_TOTAL = 70
