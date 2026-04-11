@@ -1,0 +1,100 @@
+---
+import { CATEGORIES } from '@/data/categories'
+import type { CategoryId } from '@/data/types'
+
+const currentYear = new Date().getFullYear()
+const FOOTER_CATEGORIES: CategoryId[] = ['tax', 'pay', 'pension', 'mortgage', 'loans', 'business', 'investment', 'benefits', 'auto', 'health', 'building', 'energy', 'education', 'tools']
+---
+
+<footer class="border-t border-border bg-muted/30">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- About -->
+      <div class="space-y-4">
+        <a href="/" class="flex items-center gap-2.5">
+          <div class="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-blue-700 to-blue-900 shadow-lg shadow-blue-600/20">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+          </div>
+          <span class="text-lg font-bold">
+            <span class="text-gradient-uk">Calks</span>
+            <span class="text-muted-foreground">.uk</span>
+          </span>
+        </a>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          Free online calculators for the United Kingdom. Tax, salary, mortgage, pension, VAT and more — updated for the 2025/26 tax year.
+        </p>
+        <a
+          href="mailto:info@calks.uk"
+          class="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          info@calks.uk
+        </a>
+      </div>
+
+      <!-- Categories -->
+      <div class="space-y-4">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">
+          Calculators
+        </h3>
+        <ul class="space-y-2.5">
+          {FOOTER_CATEGORIES.map((catId) => (
+            <li>
+              <a
+                href={`/category/${catId}/`}
+                class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {CATEGORIES[catId].name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Popular -->
+      <div class="space-y-4">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">
+          Popular
+        </h3>
+        <ul class="space-y-2.5">
+          <li><a href="/calculator/income-tax-calculator/" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Income Tax Calculator</a></li>
+          <li><a href="/calculator/take-home-pay-calculator/" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Take-Home Pay Calculator</a></li>
+          <li><a href="/calculator/vat-calculator/" class="text-sm text-muted-foreground hover:text-foreground transition-colors">VAT Calculator</a></li>
+          <li><a href="/calculator/stamp-duty-calculator/" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Stamp Duty Calculator</a></li>
+          <li><a href="/calculator/mortgage-repayment-calculator/" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Mortgage Calculator</a></li>
+          <li><a href="/calculator/national-insurance-calculator/" class="text-sm text-muted-foreground hover:text-foreground transition-colors">National Insurance Calculator</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="space-y-4">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">
+          Information
+        </h3>
+        <ul class="space-y-2.5">
+          <li><a href="/about/" class="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a></li>
+          <li><a href="/privacy/" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms/" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Terms of Use</a></li>
+          <li><a href="/methodology/" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Methodology</a></li>
+          <li><a href="/contact/" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a></li>
+          <li><a href="/updates/" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Updates</a></li>
+        </ul>
+        <p class="text-xs text-muted-foreground/70 leading-relaxed pt-2">
+          All calculations are performed in your browser. No personal data is collected or sent to our servers. Results are for guidance only — always verify with HMRC or a qualified professional.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-border py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-muted-foreground">
+        &copy; {currentYear} Calks.uk. All rights reserved.
+      </p>
+      <div class="flex items-center gap-2 text-xs text-muted-foreground/60">
+        <p>Data sourced from HMRC &amp; GOV.UK</p>
+        <span class="hidden sm:inline">|</span>
+        <p>Made for the United Kingdom</p>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,119 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { CATEGORIES, CATEGORY_IDS } from '@/data/categories'
+import { getCalculatorsByCategory } from '@/data/calculators'
+import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
+import type { GetStaticPaths } from 'astro'
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return CATEGORY_IDS.map((id) => ({ params: { id } }))
+}
+
+const { id } = Astro.params
+const category = CATEGORIES[id as keyof typeof CATEGORIES]
+const calculators = getCalculatorsByCategory(id as string)
+
+const catDescriptions: Record<string, string> = {
+  tax: 'Free UK tax calculators for income tax, NI, VAT, stamp duty, capital gains and inheritance tax. Updated with HMRC rates for 2025/26.',
+  pay: 'Free UK salary and pay calculators. Calculate take-home pay, employer costs, bonus tax, maternity pay, holiday entitlement and minimum wage for 2025/26.',
+  pension: 'Free UK pension calculators. Project your pension pot, calculate drawdown income, check State Pension age and estimate tax relief for 2025/26.',
+  mortgage: 'Free UK mortgage and property calculators. Calculate repayments, affordability, stamp duty, rental yield, equity release and the true cost of buying a home.',
+  loans: 'Free UK loan and debt calculators. Calculate personal loan repayments, credit card payoff timelines, debt consolidation savings and debt-to-income ratios.',
+  business: 'Free UK business calculators. Calculate corporation tax, VAT returns, sole trader tax, dividend vs salary splits, CIS deductions and employer costs for 2025/26.',
+  investment: 'Free UK savings and investment calculators. Project ISA growth, compound interest, Premium Bond returns, savings goals and inflation-adjusted real returns.',
+  benefits: 'Free UK benefits calculators. Estimate Universal Credit, Child Benefit, housing benefit, council tax reduction and childcare entitlements for 2025/26.',
+  auto: 'Free UK motoring calculators. Calculate car tax (VED), fuel costs, EV charging costs, commute expenses, congestion charges and ULEZ compliance.',
+  health: 'Free health and fitness calculators. Calculate BMI, daily calories, macros, ideal weight, heart rate zones, pregnancy due dates and sleep cycles.',
+  building: 'Free UK construction and DIY calculators. Calculate materials needed for concrete, bricks, tiles, paint, flooring, roofing and extension costs.',
+  energy: 'Free UK energy calculators. Estimate energy bills, solar panel savings, heat pump costs, EPC ratings and LED bulb payback periods.',
+  education: 'Free UK education calculators. Calculate student loan repayments, UCAS points, university costs, GPA conversions and exam grade predictions.',
+  farming: 'Free UK agriculture calculators. Estimate crop yields, fertiliser rates, farm operating costs, ELM scheme payments and agricultural worker wages.',
+  immigration: 'Free UK immigration calculators. Calculate visa fees, Skilled Worker visa points, ILR eligibility timelines and total settlement costs.',
+  insurance: 'Free UK insurance calculators. Estimate life insurance needs, home insurance costs, income protection, critical illness cover and pet insurance.',
+  legal: 'Free UK legal calculators. Calculate court fees, probate costs, solicitor fees, divorce settlements and employment tribunal compensation.',
+  tools: 'Free everyday calculators and unit converters. Percentages, dates, tips, bill splitting, currency conversion, cooking measurements and clothing sizes.',
+  math: 'Free maths calculators. Fractions, percentages, standard deviation, probability, trigonometry, logarithms and number conversions.',
+  gardening: 'Free UK gardening calculators. Calculate lawn seed, mulch, topsoil, fertiliser, fencing materials, raised bed soil and greenhouse sizing.',
+}
+
+const metaDesc = catDescriptions[id as string] || `Free ${category.name.toLowerCase()} calculators for the UK. Updated for the 2025/26 tax year.`
+
+const schemas = [
+  getWebPageSchema(
+    `${category.name} Calculators`,
+    metaDesc,
+    `/category/${id}/`
+  ),
+  getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: category.name, url: `/category/${id}/` },
+  ]),
+]
+---
+
+<Layout
+  title={`${category.name} Calculators — UK | Calks.uk`}
+  description={metaDesc}
+  schemas={schemas}
+>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-foreground transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-foreground font-medium">{category.name}</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="flex items-center gap-4">
+        <div class={`flex h-14 w-14 items-center justify-center rounded-2xl ${category.color} ${category.darkColor}`}>
+          <span class={`text-2xl font-bold ${category.iconColor} ${category.darkIconColor}`}>{category.name.charAt(0)}</span>
+        </div>
+        <div>
+          <h1 class="text-3xl font-bold tracking-tight">{category.name} Calculators</h1>
+          <p class="text-muted-foreground mt-1">{calculators.length} free calculator{calculators.length !== 1 ? 's' : ''} · Updated for 2025/26</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calculator Grid -->
+    {calculators.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {calculators.map((calc) => (
+          <a
+            href={`/calculator/${calc.slug}/`}
+            class="rounded-xl border border-border p-5 hover:bg-accent hover:border-primary/30 transition-all group"
+          >
+            <div class="flex items-start gap-3">
+              <div class={`flex h-10 w-10 items-center justify-center rounded-lg ${category.color} ${category.darkColor} shrink-0`}>
+                <span class={`text-sm font-bold ${category.iconColor} ${category.darkIconColor}`}>{calc.title.charAt(0)}</span>
+              </div>
+              <div class="min-w-0">
+                <div class="flex items-center gap-2">
+                  <h2 class="text-sm font-semibold group-hover:text-primary transition-colors">{calc.title}</h2>
+                  {calc.financialYear && (
+                    <span class="inline-flex items-center rounded bg-primary/10 px-1.5 py-0.5 text-xs font-medium text-primary shrink-0">
+                      {calc.financialYear}
+                    </span>
+                  )}
+                  {calc.isTrending && (
+                    <span class="inline-flex items-center rounded bg-orange-100 dark:bg-orange-950 px-1.5 py-0.5 text-xs font-medium text-orange-700 dark:text-orange-400 shrink-0">
+                      Trending
+                    </span>
+                  )}
+                </div>
+                <p class="text-xs text-muted-foreground mt-1 line-clamp-2">{calc.description}</p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <div class="text-center py-16 text-muted-foreground">
+        <p class="text-lg font-medium">Calculators coming soon</p>
+        <p class="mt-1 text-sm">We're currently building calculators for this category.</p>
+      </div>
+    )}
+  </div>
+</Layout>

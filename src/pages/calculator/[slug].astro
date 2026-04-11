@@ -1,0 +1,172 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import AdSlot from '@/components/AdSlot.astro'
+import Disclaimer from '@/components/Disclaimer.astro'
+import CalculatorRenderer from '@/components/CalculatorRenderer'
+import { CALCULATORS, getCalculatorBySlug, getRelatedCalculators } from '@/data/calculators'
+import { CATEGORIES } from '@/data/categories'
+import { CALCULATOR_FAQS } from '@/data/faqs'
+import { CALCULATOR_CONTENT } from '@/data/calculator-content'
+import { getCalculatorSchema, getBreadcrumbSchema, getWebPageSchema, getFaqSchema } from '@/utils/seo'
+import type { GetStaticPaths } from 'astro'
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return CALCULATORS.map((calc) => ({
+    params: { slug: calc.slug },
+  }))
+}
+
+const { slug } = Astro.params
+const calc = getCalculatorBySlug(slug as string)!
+const category = CATEGORIES[calc.category]
+const related = getRelatedCalculators(slug as string)
+const faqs = CALCULATOR_FAQS[slug as string] || []
+const content = CALCULATOR_CONTENT[slug as string]
+
+const schemas = [
+  getWebPageSchema(calc.title, calc.description, `/calculator/${calc.slug}/`),
+  getCalculatorSchema(calc),
+  getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: category.name, url: `/category/${calc.category}/` },
+    { name: calc.title, url: `/calculator/${calc.slug}/` },
+  ]),
+  ...(faqs.length > 0 ? [getFaqSchema(faqs)] : []),
+]
+---
+
+<Layout
+  title={calc.metaTitle || calc.title}
+  description={calc.description}
+  schemas={schemas}
+>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-foreground transition-colors">Home</a>
+      <span>/</span>
+      <a href={`/category/${calc.category}/`} class="hover:text-foreground transition-colors">{category.name}</a>
+      <span>/</span>
+      <span class="text-foreground font-medium">{calc.title}</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Main Content -->
+      <div class="lg:col-span-2 space-y-6">
+        <!-- Title -->
+        <div>
+          <h1 class="text-3xl font-bold tracking-tight">
+            {calc.title}
+            {calc.financialYear && (
+              <span class="ml-2 inline-flex items-center rounded-lg bg-primary/10 px-2.5 py-1 text-sm font-medium text-primary">
+                {calc.financialYear}
+              </span>
+            )}
+            {calc.isTrending && (
+              <span class="ml-2 inline-flex items-center rounded-lg bg-orange-100 dark:bg-orange-950 px-2.5 py-1 text-sm font-medium text-orange-700 dark:text-orange-400">
+                Trending
+              </span>
+            )}
+          </h1>
+          <p class="mt-2 text-muted-foreground">{calc.description}</p>
+          {content && (
+            <p class="mt-1.5 text-xs text-muted-foreground/70">
+              Last updated: {content.lastUpdated} · Source: <a href={content.sourceUrl} target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">{content.sourceName}</a>
+            </p>
+          )}
+        </div>
+
+        <!-- Ad Slot -->
+        <AdSlot type="responsive" class="no-print" />
+
+        <!-- Calculator Component -->
+        <div class="rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <CalculatorRenderer client:visible slug={slug as string} />
+        </div>
+
+        <!-- Disclaimer -->
+        <Disclaimer />
+
+        <!-- How It Works Section -->
+        {content && (
+          <section class="rounded-2xl border border-border bg-card p-6 shadow-sm">
+            <h2 class="text-xl font-semibold mb-4">How It Works</h2>
+            <div class="space-y-3">
+              {content.howItWorks.map((paragraph) => (
+                <p class="text-sm text-muted-foreground leading-relaxed">{paragraph}</p>
+              ))}
+            </div>
+
+            <!-- Worked Example -->
+            <div class="mt-5 rounded-xl bg-muted/50 border border-border p-4">
+              <h3 class="text-sm font-semibold mb-2">{content.example.title}</h3>
+              <ol class="space-y-1">
+                {content.example.steps.map((step) => (
+                  <li class="text-sm text-muted-foreground flex items-start gap-2">
+                    <span class="mt-1.5 h-1 w-1 rounded-full bg-primary shrink-0"></span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <p class="mt-4 text-xs text-muted-foreground/70">
+              Source: <a href={content.sourceUrl} target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">{content.sourceName}</a>
+            </p>
+          </section>
+        )}
+
+        <!-- FAQ Section -->
+        {faqs.length > 0 && (
+          <section class="rounded-2xl border border-border bg-card p-6 shadow-sm">
+            <h2 class="text-xl font-semibold mb-4">Frequently Asked Questions</h2>
+            <dl class="space-y-4">
+              {faqs.map((faq) => (
+                <div class="border-b border-border pb-4 last:border-0 last:pb-0">
+                  <dt class="text-sm font-medium text-foreground">{faq.question}</dt>
+                  <dd class="mt-1.5 text-sm text-muted-foreground leading-relaxed">{faq.answer}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
+
+        <!-- Ad Slot -->
+        <AdSlot type="responsive" class="no-print" />
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-6">
+        <!-- Ad Slot -->
+        <AdSlot type="rectangle" class="no-print" />
+
+        <!-- Related Calculators -->
+        {related.length > 0 && (
+          <div class="rounded-2xl border border-border bg-card p-5">
+            <h2 class="text-lg font-semibold mb-4">Related Calculators</h2>
+            <ul class="space-y-3">
+              {related.map((r) => (
+                <li>
+                  <a
+                    href={`/calculator/${r.slug}/`}
+                    class="flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-accent transition-colors group"
+                  >
+                    <div class={`flex h-8 w-8 items-center justify-center rounded-lg ${category.color} shrink-0`}>
+                      <span class={`text-xs font-bold ${category.iconColor}`}>{r.title.charAt(0)}</span>
+                    </div>
+                    <div class="min-w-0">
+                      <p class="text-sm font-medium truncate group-hover:text-primary transition-colors">{r.title}</p>
+                      {r.financialYear && (
+                        <p class="text-xs text-muted-foreground">{r.financialYear}</p>
+                      )}
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </aside>
+    </div>
+  </div>
+</Layout>

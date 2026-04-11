@@ -1,0 +1,76 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { getWebPageSchema } from '@/utils/seo'
+
+const schemas = [getWebPageSchema('Contact', 'Get in touch with the Calks.uk team. Report errors, suggest new calculators or ask questions.', '/contact/')]
+---
+
+<Layout title="Contact" description="Get in touch with the Calks.uk team. Report errors, suggest new calculators or ask questions." schemas={schemas}>
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-foreground transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-foreground font-medium">Contact</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold tracking-tight mb-2">Contact Us</h1>
+    <p class="text-sm text-muted-foreground mb-8">We'd love to hear from you</p>
+
+    <div class="prose prose-neutral dark:prose-invert max-w-none space-y-6">
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Get in Touch</h2>
+        <p>Whether you've found an error, have a suggestion for a new calculator, or just want to say hello — we're happy to hear from you.</p>
+        <p>Email us at <a href="mailto:info@calks.uk" class="text-primary hover:underline">info@calks.uk</a></p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Report an Error</h2>
+        <p>Accuracy is our top priority. If you notice a calculation that doesn't look right, an outdated rate, or a typo, please let us know. When reporting an error, it helps if you include:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>The name of the calculator</li>
+          <li>The values you entered</li>
+          <li>The result you received</li>
+          <li>What you expected the result to be</li>
+          <li>Your source for the expected result (e.g. HMRC, your accountant)</li>
+        </ul>
+        <p>We investigate every report and typically resolve issues within 24-48 hours.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Suggest a Calculator</h2>
+        <p>We're always expanding our collection. If there's a calculator you'd find useful that we don't currently offer, let us know. We prioritise suggestions based on:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>How many people would benefit from it</li>
+          <li>Whether reliable official data sources exist</li>
+          <li>How complex the calculation is to implement accurately</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Business Enquiries</h2>
+        <p>For partnerships, advertising, media enquiries or anything else business-related, please email <a href="mailto:info@calks.uk" class="text-primary hover:underline">info@calks.uk</a> with "Business" in the subject line.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Response Time</h2>
+        <p>We aim to respond to all emails within 2 working days. For urgent accuracy issues, we'll do our best to respond sooner.</p>
+      </section>
+
+      <section class="not-prose">
+        <div class="mt-8 rounded-xl border border-border bg-muted/30 p-6">
+          <div class="flex items-start gap-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold mb-1">Email</h3>
+              <a href="mailto:info@calks.uk" class="text-primary hover:underline text-sm">info@calks.uk</a>
+              <p class="text-sm text-muted-foreground mt-1">The best way to reach us for any enquiry.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>

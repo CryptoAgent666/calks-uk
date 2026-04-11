@@ -1,0 +1,17 @@
+---
+interface Props {
+  source?: string
+}
+
+const { source = 'HMRC and GOV.UK' } = Astro.props
+---
+
+<div class="mt-8 p-4 rounded-xl bg-muted/50 border border-border text-sm text-muted-foreground">
+  <p class="font-medium text-foreground mb-1">Disclaimer</p>
+  <p>
+    This calculator is provided for informational purposes only and should not be considered as financial or tax advice.
+    All calculations are performed locally in your browser — no personal data is collected or sent to our servers.
+    Rates and thresholds are sourced from {source} and are updated for the current tax year.
+    Always verify results with HMRC or consult a qualified professional before making financial decisions.
+  </p>
+</div>

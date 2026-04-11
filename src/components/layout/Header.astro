@@ -1,0 +1,117 @@
+---
+import { CATEGORIES } from '@/data/categories'
+import type { CategoryId } from '@/data/types'
+import ThemeToggle from './ThemeToggle'
+
+const NAV_CATEGORIES: CategoryId[] = ['tax', 'pay', 'pension', 'mortgage', 'loans', 'business']
+const MORE_CATEGORIES: CategoryId[] = ['investment', 'benefits', 'auto', 'health', 'building', 'energy', 'education', 'farming', 'immigration', 'insurance', 'legal', 'tools', 'math', 'gardening']
+---
+
+<header
+  id="site-header"
+  class="sticky top-0 z-50 w-full bg-background/60 backdrop-blur-md transition-all duration-300"
+>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2.5 group">
+        <div class="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-700 to-blue-900 shadow-lg shadow-blue-600/25 group-hover:shadow-blue-600/40 transition-shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+        </div>
+        <span class="text-xl font-bold tracking-tight">
+          <span class="text-gradient-uk">Calks</span>
+          <span class="text-muted-foreground">.uk</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-1">
+        {NAV_CATEGORIES.map((catId) => (
+          <a
+            href={`/category/${catId}/`}
+            class="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-muted-foreground rounded-lg hover:text-foreground hover:bg-accent transition-colors"
+          >
+            {CATEGORIES[catId].name}
+          </a>
+        ))}
+
+        <!-- More dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground rounded-lg hover:text-foreground hover:bg-accent transition-colors">
+            <span>More</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="absolute top-full right-0 mt-1 w-60 rounded-xl border border-border bg-popover p-2 shadow-xl shadow-black/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
+            {MORE_CATEGORIES.map((catId) => (
+              <a
+                href={`/category/${catId}/`}
+                class="flex items-center gap-2.5 px-3 py-2.5 text-sm rounded-lg hover:bg-accent transition-colors"
+              >
+                <div class={`flex h-8 w-8 items-center justify-center rounded-lg ${CATEGORIES[catId].color}`}>
+                  <span class={`text-xs font-bold ${CATEGORIES[catId].iconColor}`}>{CATEGORIES[catId].name.charAt(0)}</span>
+                </div>
+                <span class="font-medium">{CATEGORIES[catId].name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right side -->
+      <div class="flex items-center gap-2">
+        <ThemeToggle client:load />
+
+        <!-- Mobile menu button -->
+        <button
+          id="mobile-menu-btn"
+          class="inline-flex items-center justify-center h-9 w-9 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors lg:hidden"
+          aria-label="Menu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-menu" class="hidden border-t border-border lg:hidden">
+    <div class="mx-auto max-w-7xl px-4 py-4 space-y-1">
+      {[...NAV_CATEGORIES, ...MORE_CATEGORIES].map((catId) => (
+        <a
+          href={`/category/${catId}/`}
+          class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium hover:bg-accent transition-colors"
+        >
+          <div class={`flex h-8 w-8 items-center justify-center rounded-lg ${CATEGORIES[catId].color}`}>
+            <span class={`text-xs font-bold ${CATEGORIES[catId].iconColor}`}>{CATEGORIES[catId].name.charAt(0)}</span>
+          </div>
+          {CATEGORIES[catId].name}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  // Scroll effect
+  const header = document.getElementById('site-header')
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add('bg-background/80', 'backdrop-blur-xl', 'border-b', 'border-border', 'shadow-sm')
+        header.classList.remove('bg-background/60', 'backdrop-blur-md')
+      } else {
+        header.classList.remove('bg-background/80', 'backdrop-blur-xl', 'border-b', 'border-border', 'shadow-sm')
+        header.classList.add('bg-background/60', 'backdrop-blur-md')
+      }
+    }, { passive: true })
+  }
+
+  // Mobile menu toggle
+  const btn = document.getElementById('mobile-menu-btn')
+  const menu = document.getElementById('mobile-menu')
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden')
+    })
+  }
+</script>

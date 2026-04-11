@@ -1,0 +1,124 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { getWebPageSchema, getOrganizationSchema } from '@/utils/seo'
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': 'https://calks.uk/#author',
+  name: 'Konstantin Iakovlev',
+  url: 'https://www.linkedin.com/in/konstantin-iakovlev',
+  jobTitle: 'Financial Tools Developer',
+  sameAs: [
+    'https://www.linkedin.com/in/konstantin-iakovlev',
+    'https://calk-au.com',
+    'https://calk.nz',
+    'https://calk.kz',
+  ],
+  knowsAbout: ['UK taxation', 'financial calculators', 'web development', 'HMRC rates', 'personal finance'],
+}
+
+const schemas = [
+  getOrganizationSchema(),
+  getWebPageSchema('About Calks.uk', 'Meet the founder, learn about our mission and discover how Calks.uk builds accurate, privacy-first UK calculators. 330+ free tools updated for 2025/26.', '/about/'),
+  personSchema,
+]
+---
+
+<Layout title="About Us — Calks.uk Free UK Calculators" description="Meet the founder, learn about our mission and discover how Calks.uk builds accurate, privacy-first UK calculators. 330+ free tools updated for 2025/26." schemas={schemas}>
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-foreground transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-foreground font-medium">About</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold tracking-tight mb-8">About Calks.uk</h1>
+
+    <div class="prose prose-neutral dark:prose-invert max-w-none space-y-6">
+
+      <!-- Author Bio -->
+      <section class="not-prose">
+        <div class="rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <div class="flex flex-col sm:flex-row gap-5">
+            <div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-700 to-blue-900 text-white text-2xl font-bold">
+              KI
+            </div>
+            <div>
+              <h2 class="text-lg font-semibold">Konstantin Iakovlev</h2>
+              <p class="text-sm text-primary font-medium">Founder & Developer</p>
+              <p class="text-sm text-muted-foreground mt-2 leading-relaxed">
+                I build free, accurate financial calculators because I got tired of the alternatives — most were outdated, hidden behind sign-up walls, or simply wrong. During tax season I found myself cross-referencing results against official rate tables, so I decided to build the calculator site I wished existed: one that is always free, always current, and completely transparent about how every number is derived.
+              </p>
+              <p class="text-sm text-muted-foreground mt-2 leading-relaxed">
+                Calks.uk is part of a network I have built from the ground up. I started with <a href="https://calk.kz" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">calk.kz</a> for Kazakhstan, then expanded to <a href="https://calk.nz" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">calk.nz</a> for New Zealand and <a href="https://calk-au.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">calk-au.com</a> for Australia. Every site is adapted to local tax law, rates and financial systems — not a copy-paste translation. Calks.uk is the latest addition, built specifically for UK legislation and the 2025/26 tax year.
+              </p>
+              <div class="flex gap-3 mt-3">
+                <a href="https://www.linkedin.com/in/konstantin-iakovlev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-primary transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  LinkedIn
+                </a>
+                <a href="mailto:info@calks.uk" class="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-primary transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  info@calks.uk
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Our Mission</h2>
+        <p>Calks.uk provides over 330 free, accurate online calculators for people living and working in the United Kingdom. We cover income tax, salary, mortgage, pension, VAT, stamp duty, National Insurance, business rates, benefits, motoring, health, construction, energy and everyday tools — all updated for the current UK financial year.</p>
+        <p>Our goal is straightforward: take complex UK financial calculations and make them accessible to everyone, instantly, without spreadsheets, paid software or an appointment with an accountant. Whether you are checking how much income tax you owe, working out a mortgage overpayment, or estimating your take-home pay after a raise, you should be able to get a clear answer in under a minute.</p>
+        <p>We believe that financial literacy starts with access to the right tools. A first-time buyer should be able to see the true cost of purchasing a home — including stamp duty, solicitor fees and mortgage costs — before speaking to a broker. A self-employed contractor should be able to estimate their tax bill at any point during the year. And a family should be able to check their Universal Credit or Child Benefit entitlement without navigating a confusing government website.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Privacy First</h2>
+        <p>Every calculation on Calks.uk runs entirely in your browser using JavaScript. <strong>No personal data is collected, stored or sent to our servers.</strong> We do not track what you calculate, and we never will. There are no accounts, no logins, and no personal data to breach.</p>
+        <p>This is a deliberate architectural decision. Financial calculations are inherently sensitive — your salary, mortgage balance, tax situation and pension savings are private. By running everything client-side, we eliminate the risk of data leaks entirely. Your numbers never leave your device.</p>
+        <p>We use minimal, privacy-respecting analytics to understand which calculators are most popular (so we can prioritise improvements), but we do not use fingerprinting, tracking pixels or cross-site advertising profiles. See our <a href="/privacy/" class="text-primary hover:underline">Privacy Policy</a> for full details.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Accuracy & Sources</h2>
+        <p>Every rate, threshold and allowance used in our calculators comes from official UK government sources — primarily <a href="https://www.gov.uk/government/organisations/hm-revenue-customs" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">HMRC</a>, <a href="https://www.gov.uk" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">GOV.UK</a>, the <a href="https://www.bankofengland.co.uk" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Bank of England</a> and the <a href="https://www.ons.gov.uk" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Office for National Statistics</a>.</p>
+        <p>We update all tax-related calculators at the start of each UK financial year (6 April) and whenever mid-year changes are announced. Every calculator displays the tax year it applies to, so you always know which rates are being used. Our full verification process is described on the <a href="/methodology/" class="text-primary hover:underline">Methodology</a> page.</p>
+        <p>That said, our calculators provide <strong>estimates for guidance only</strong>. Individual circumstances vary, and we always recommend verifying results with HMRC or consulting a qualified accountant, financial adviser or solicitor before making important decisions.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">How We Are Built</h2>
+        <p>Calks.uk is engineered for speed, reliability and accessibility:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>Astro 5</strong> — every page is pre-rendered as static HTML at build time, delivering near-instant load times</li>
+          <li><strong>React</strong> — interactive calculator components load on demand using the "islands" architecture, keeping initial page weight minimal</li>
+          <li><strong>Tailwind CSS 4</strong> — responsive design that works seamlessly on phones, tablets and desktops, with full dark-mode support</li>
+          <li><strong>Cloudflare Pages</strong> — global edge network ensures fast delivery from the nearest data centre, anywhere in the world</li>
+        </ul>
+        <p>The result is a site that scores highly on Core Web Vitals, loads in under a second on most connections, and works perfectly without JavaScript for content (calculators require JS to be interactive). The entire site is pre-rendered into over 350 static HTML pages, which means no server-side processing, no database, and no single point of failure.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Part of a Network</h2>
+        <p>Calks.uk is part of a growing network of country-specific calculator sites, each built from scratch for local legislation:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><a href="https://calk.kz" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">calk.kz</a> — Calculators for Kazakhstan (Kazakh tax code, tenge formatting)</li>
+          <li><a href="https://calk.nz" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">calk.nz</a> — Calculators for New Zealand (IRD rates, KiwiSaver, NZD)</li>
+          <li><a href="https://calk-au.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">calk-au.com</a> — Calculators for Australia (ATO rates, superannuation, AUD)</li>
+          <li><strong>calks.uk</strong> — Calculators for the United Kingdom (HMRC rates, workplace pensions, GBP)</li>
+        </ul>
+        <p>Each site is adapted to its country's specific tax system, currency formatting, financial year dates and regulatory framework. This is not a one-size-fits-all translation — it is ground-up development informed by years of working with each country's financial rules.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Get in Touch</h2>
+        <p>Found an error? Have a suggestion for a new calculator? Want to report an outdated rate? We take every piece of feedback seriously.</p>
+        <p>Email us at <a href="mailto:info@calks.uk" class="text-primary hover:underline">info@calks.uk</a> or visit our <a href="/contact/" class="text-primary hover:underline">Contact</a> page for full details on how to reach us.</p>
+      </section>
+    </div>
+  </div>
+</Layout>

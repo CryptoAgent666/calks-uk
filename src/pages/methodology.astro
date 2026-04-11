@@ -1,0 +1,97 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { getWebPageSchema } from '@/utils/seo'
+
+const schemas = [getWebPageSchema('Methodology', 'How Calks.uk calculators are built, verified and maintained. Our data sources, accuracy standards and update process.', '/methodology/')]
+---
+
+<Layout title="Methodology" description="How Calks.uk calculators are built, verified and maintained. Our data sources, accuracy standards and update process." schemas={schemas}>
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-foreground transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-foreground font-medium">Methodology</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold tracking-tight mb-2">Methodology</h1>
+    <p class="text-sm text-muted-foreground mb-8">How we build and maintain our calculators</p>
+
+    <div class="prose prose-neutral dark:prose-invert max-w-none space-y-6">
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Our Approach</h2>
+        <p>Every calculator on Calks.uk is built with a focus on accuracy, transparency and usability. We follow a rigorous process to ensure the numbers you see are reliable and up to date.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Data Sources</h2>
+        <p>All rates, thresholds and rules used in our calculators come from official UK government and regulatory sources:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>HMRC</strong> — Income Tax bands, National Insurance rates, Capital Gains Tax, Inheritance Tax, VAT rates, student loan thresholds</li>
+          <li><strong>GOV.UK</strong> — Stamp Duty Land Tax, pension allowances, benefits rates, minimum wage, statutory pay rates</li>
+          <li><strong>Bank of England</strong> — Base rate for mortgage and savings calculators</li>
+          <li><strong>NHS</strong> — Health-related reference values (BMI categories, recommended intake levels)</li>
+          <li><strong>Office for National Statistics (ONS)</strong> — Inflation indices (CPI, RPI) for real-terms calculations</li>
+          <li><strong>The Pensions Regulator</strong> — Auto-enrolment contribution rates and thresholds</li>
+          <li><strong>Student Loans Company</strong> — Repayment plan thresholds and interest rates</li>
+          <li><strong>DVLA</strong> — Vehicle Excise Duty (road tax) bands and rates</li>
+        </ul>
+        <p>We never use unofficial or third-party data for core calculations. Where rates are subject to change (e.g. Bank of England base rate), we note the date the calculator was last updated.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Calculation Logic</h2>
+        <p>Our calculators are designed to handle the most common scenarios accurately:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>Tax calculations</strong> follow the exact banding structure used by HMRC, including the Personal Allowance taper above &pound;100,000</li>
+          <li><strong>National Insurance</strong> is calculated using the correct Class 1, Class 2 and Class 4 thresholds and rates</li>
+          <li><strong>Student loan repayments</strong> apply the correct threshold for each plan (1, 2, 4, 5 and Postgraduate)</li>
+          <li><strong>Mortgage calculations</strong> use standard amortisation formulae with monthly compounding</li>
+          <li><strong>VAT calculations</strong> support standard (20%), reduced (5%) and zero-rated (0%) categories</li>
+        </ul>
+        <p>All calculations run entirely in your browser using JavaScript. Nothing is sent to a server. This means results are instant and your data remains completely private.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Update Process</h2>
+        <p>We follow a structured update schedule:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>Annual update (April)</strong> — At the start of each UK tax year (6 April), we update all tax-related calculators with new rates, thresholds and allowances announced in the Budget or Autumn Statement</li>
+          <li><strong>Mid-year changes</strong> — If HMRC or GOV.UK announce mid-year changes (e.g. emergency NI rate changes, stamp duty adjustments), we update affected calculators within 48 hours</li>
+          <li><strong>Quarterly review</strong> — We review all calculators quarterly to ensure continued accuracy and catch any regulatory changes</li>
+          <li><strong>Base rate updates</strong> — Mortgage and savings calculators are reviewed after each Bank of England Monetary Policy Committee meeting</li>
+        </ul>
+        <p>Each calculator displays the tax year it applies to (e.g. 2025/26), so you always know which rates are being used.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Verification</h2>
+        <p>Before publishing, every calculator goes through a multi-step verification process:</p>
+        <ol class="list-decimal pl-6 space-y-1">
+          <li><strong>Source verification</strong> — All rates are cross-referenced against at least two official sources</li>
+          <li><strong>Edge case testing</strong> — We test boundary conditions (e.g. the &pound;100K Personal Allowance taper, NI thresholds, multiple student loan plans)</li>
+          <li><strong>Cross-validation</strong> — Results are compared against official HMRC examples and published worked examples where available</li>
+          <li><strong>Regression testing</strong> — When rates are updated, we verify that previously correct calculations remain accurate for their respective tax years</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Limitations</h2>
+        <p>While we strive for accuracy, our calculators have inherent limitations:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>They provide <strong>estimates</strong>, not definitive calculations — individual circumstances vary</li>
+          <li>They may not account for every edge case or special arrangement</li>
+          <li>Scottish and Welsh tax variations are handled by separate calculators where rates differ</li>
+          <li>Benefits calculators provide indicative figures — actual entitlements depend on full circumstances assessed by DWP</li>
+          <li>Mortgage calculators do not include arrangement fees, valuation fees or other costs unless specifically stated</li>
+        </ul>
+        <p>We always recommend verifying results with HMRC, GOV.UK or a qualified professional (accountant, financial adviser or solicitor) before making important financial decisions.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Open to Feedback</h2>
+        <p>If you notice an error, an outdated rate, or have a suggestion for improvement, please let us know at <a href="mailto:info@calks.uk" class="text-primary hover:underline">info@calks.uk</a>. We take accuracy seriously and appreciate every correction.</p>
+      </section>
+    </div>
+  </div>
+</Layout>

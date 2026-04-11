@@ -1,0 +1,121 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { getWebPageSchema } from '@/utils/seo'
+
+const schemas = [getWebPageSchema('Privacy Policy', 'How Calks.uk handles your data. All calculations run in your browser — no personal data is collected.', '/privacy/')]
+---
+
+<Layout title="Privacy Policy" description="How Calks.uk handles your data. All calculations run in your browser — no personal data is collected." schemas={schemas}>
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-foreground transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-foreground font-medium">Privacy Policy</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold tracking-tight mb-2">Privacy Policy</h1>
+    <p class="text-sm text-muted-foreground mb-8">Last updated: April 2026</p>
+
+    <div class="prose prose-neutral dark:prose-invert max-w-none space-y-6">
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Summary</h2>
+        <p><strong>All calculations run entirely in your browser.</strong> We do not collect, store, process or transmit any of the numbers you enter into our calculators. Your financial data never leaves your device.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">What We Collect</h2>
+        <h3 class="text-lg font-medium mt-4 mb-2">Calculator Data</h3>
+        <p>Nothing. Zero. All calculations are performed client-side using JavaScript in your web browser. No data is sent to our servers or any third party.</p>
+
+        <h3 class="text-lg font-medium mt-4 mb-2">Analytics</h3>
+        <p>We may use Google Analytics to understand which pages are visited and how our site is used. This collects:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Pages viewed</li>
+          <li>Approximate location (country/city level)</li>
+          <li>Device type and browser</li>
+          <li>Referring website</li>
+        </ul>
+        <p>Google Analytics does not collect any data you enter into calculators. You can opt out of Google Analytics using a <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">browser plugin</a>.</p>
+
+        <h3 class="text-lg font-medium mt-4 mb-2">Advertising</h3>
+        <p>We may display advertisements via Google AdSense. Google may use cookies to serve ads based on your prior visits to this or other websites. You can opt out of personalised advertising at <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Google Ads Settings</a>.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Cookies</h2>
+        <p>We use minimal cookies:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>Theme preference</strong> — stores your light/dark mode choice (localStorage, not a cookie)</li>
+          <li><strong>Analytics cookies</strong> — if Google Analytics is enabled</li>
+          <li><strong>Advertising cookies</strong> — if Google AdSense is enabled</li>
+        </ul>
+        <p>You can block all cookies in your browser settings without affecting calculator functionality.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Third-Party Services</h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>Google Analytics</strong> — website analytics (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Google Privacy Policy</a>)</li>
+          <li><strong>Google AdSense</strong> — advertising (<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Google Ads Privacy</a>)</li>
+          <li><strong>Self-hosted fonts</strong> — the Inter typeface is served from our own domain (no external font CDN requests)</li>
+          <li><strong>Cloudflare</strong> — hosting and CDN (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Cloudflare Privacy Policy</a>)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Your Rights (UK GDPR)</h2>
+        <p>Under UK data protection law, you have the right to:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Access any personal data we hold about you</li>
+          <li>Request correction or deletion of your data</li>
+          <li>Object to processing of your data</li>
+          <li>Lodge a complaint with the ICO (<a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">ico.org.uk</a>)</li>
+        </ul>
+        <p>Since we don't collect personal data from calculators, there is typically nothing to request. For analytics data, contact us at <a href="mailto:info@calks.uk" class="text-primary hover:underline">info@calks.uk</a>.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Data Retention</h2>
+        <p>Since we do not collect personal data from calculator usage, there is nothing to retain or delete. For analytics data collected by Google Analytics, data is retained according to Google's standard retention policy (14 months by default). Advertising data is managed by Google AdSense under their own data retention policies.</p>
+        <p>Your dark/light theme preference is stored in your browser's localStorage on your device. You can clear it at any time through your browser settings. It is never transmitted to our servers.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Cookie Categories</h2>
+        <p>We classify cookies into three categories:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>Strictly necessary</strong> — None. Our site functions without cookies. Theme preference uses localStorage, not cookies.</li>
+          <li><strong>Analytics</strong> — Google Analytics cookies (_ga, _gid) if analytics is enabled. These help us understand which calculators are most used so we can prioritise updates and improvements. No personal financial data is included.</li>
+          <li><strong>Advertising</strong> — Google AdSense cookies if advertising is enabled. These may serve personalised or contextual ads. You can opt out via <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Google Ads Settings</a> or by using a browser extension.</li>
+        </ul>
+        <p>You can block all cookies in your browser settings without affecting any calculator functionality. The calculators work entirely without cookies.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">International Transfers</h2>
+        <p>Our site is hosted on Cloudflare Pages, which serves content from edge locations worldwide. Google Analytics and Google AdSense may process data in the United States or other countries. Both Google services operate under appropriate safeguards for international data transfers as described in their respective privacy policies.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Children</h2>
+        <p>Our calculators are suitable for all ages. We do not knowingly collect personal data from children under 13. Since we do not collect personal data from calculator usage, no special provisions are required. If you believe a child has somehow provided personal data to us, please contact us and we will investigate promptly.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Changes to This Policy</h2>
+        <p>We may update this privacy policy from time to time to reflect changes in our practices, technology or legal requirements. The "Last updated" date at the top of this page indicates when the most recent revision was made. We encourage you to review this page periodically. Significant changes will be noted on our <a href="/updates/" class="text-primary hover:underline">Updates</a> page.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Contact the Data Controller</h2>
+        <p>For privacy-related questions, data subject access requests, or to exercise any of your rights under UK GDPR, please contact:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Email: <a href="mailto:info@calks.uk" class="text-primary hover:underline">info@calks.uk</a></li>
+          <li>Subject line: "Privacy enquiry"</li>
+        </ul>
+        <p>We aim to respond to all privacy enquiries within 30 days, in accordance with UK GDPR requirements. If you are not satisfied with our response, you have the right to lodge a complaint with the Information Commissioner's Office at <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">ico.org.uk</a>.</p>
+      </section>
+    </div>
+  </div>
+</Layout>

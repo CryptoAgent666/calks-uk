@@ -1,0 +1,86 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { getWebPageSchema } from '@/utils/seo'
+
+const schemas = [getWebPageSchema('Terms of Use', 'Terms and conditions for using Calks.uk online calculators.', '/terms/')]
+---
+
+<Layout title="Terms of Use" description="Terms and conditions for using Calks.uk online calculators." schemas={schemas}>
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-foreground transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-foreground font-medium">Terms of Use</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold tracking-tight mb-2">Terms of Use</h1>
+    <p class="text-sm text-muted-foreground mb-8">Last updated: April 2026</p>
+
+    <div class="prose prose-neutral dark:prose-invert max-w-none space-y-6">
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">1. Acceptance</h2>
+        <p>By using Calks.uk ("the Site"), you agree to these Terms of Use. If you do not agree, please do not use the Site.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">2. Purpose</h2>
+        <p>The calculators on this Site are provided for <strong>informational and educational purposes only</strong>. They are not a substitute for professional financial, tax, legal or medical advice.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">3. No Financial Advice</h2>
+        <p>Nothing on this Site constitutes financial advice, tax advice, legal advice or any other form of professional advice. The results from our calculators are estimates based on the information you provide and the rates/rules in effect at the time of development.</p>
+        <p>You should always:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>Verify results with HMRC, GOV.UK or other official sources</li>
+          <li>Consult a qualified accountant, financial adviser or solicitor for personal advice</li>
+          <li>Not rely solely on calculator results for important financial decisions</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">4. Accuracy</h2>
+        <p>We strive to keep our calculators accurate and up to date with current UK tax rates, thresholds and legislation. However, we cannot guarantee absolute accuracy. Rates may change mid-year, individual circumstances vary, and edge cases may not be fully accounted for.</p>
+        <p>We update calculators annually at the start of each UK tax year (6 April) and during significant mid-year changes.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">5. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law, Calks.uk and its operators shall not be liable for any direct, indirect, incidental, consequential or other damages arising from the use of, or inability to use, the calculators or information on this Site.</p>
+        <p>This includes, but is not limited to, damages arising from errors in calculations, outdated rates, misinterpretation of results, or decisions made based on calculator outputs.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">6. Intellectual Property</h2>
+        <p>All content, code, design and calculators on this Site are the property of Calks.uk. You may not copy, reproduce, distribute or create derivative works from our calculators without written permission.</p>
+        <p>You may link to our calculators and share results for personal, non-commercial purposes.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">7. Availability</h2>
+        <p>We aim to keep the Site available at all times but do not guarantee uninterrupted access. We may modify, suspend or discontinue any calculator or feature at any time without notice.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">8. External Links</h2>
+        <p>Our Site may contain links to external websites (HMRC, GOV.UK, etc.). We are not responsible for the content or availability of external sites.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">9. Governing Law</h2>
+        <p>These Terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">10. Changes</h2>
+        <p>We may update these Terms at any time. Continued use of the Site after changes constitutes acceptance of the updated Terms.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mt-8 mb-3">Contact</h2>
+        <p>For questions about these Terms, email <a href="mailto:info@calks.uk" class="text-primary hover:underline">info@calks.uk</a>.</p>
+      </section>
+    </div>
+  </div>
+</Layout>

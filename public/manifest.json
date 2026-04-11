@@ -1,0 +1,18 @@
+{
+  "name": "Calks.uk — Free UK Calculators",
+  "short_name": "Calks.uk",
+  "description": "Free online calculators for the UK. Tax, salary, mortgage, pension, VAT, stamp duty, NI and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a5f",
+  "lang": "en-GB",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["finance", "utilities"]
+}

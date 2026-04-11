@@ -1,0 +1,49 @@
+# Calks.uk
+
+> Free online calculators for the United Kingdom. Tax, salary, mortgage, pension, VAT, stamp duty, NI and 300+ more — updated for the 2025/26 tax year.
+
+## About
+
+Calks.uk provides over 330 free UK-focused calculators across 20 categories. All calculations are performed client-side in the user's browser. No personal data is collected or sent to servers.
+
+## Categories
+
+- Tax & HMRC: Income tax, NI, VAT, stamp duty, capital gains, inheritance tax, dividend tax, corporation tax, self assessment
+- Salary & Employment: Take-home pay, payroll, minimum wage, holiday entitlement, redundancy, maternity/paternity pay
+- Mortgage & Property: Repayment, affordability, overpayment, stamp duty, buy-to-let, shared ownership, equity release
+- Pensions: Workplace pension, SIPP, drawdown, state pension, tax relief, annual allowance
+- Savings & Investment: ISA, compound interest, premium bonds, stocks & shares ISA, investment returns
+- Loans & Debt: Personal loan, credit card repayment, student loan, debt consolidation, APR
+- Business: Corporation tax, VAT return, R&D tax credits, employer costs, CIS, IR35
+- Benefits: Universal Credit, child benefit, housing benefit, pension credit, tax credits
+- Motoring: Car tax, fuel cost, EV charging, car finance, mileage allowance
+- Health & Wellbeing: BMI, calories, macros, heart rate zones, sleep calculator
+- Construction: Bricks, concrete, tiles, timber, flooring, roofing, insulation
+- Energy: Energy bills, solar panels, EV savings, heat pump, EPC rating
+- Education: Student loan repayment, UCAS points, GPA, university costs
+- Insurance: Life, home, car, pet, travel, income protection
+- Immigration: Visa fees, ILR, citizenship, spouse visa, points calculator
+- Legal: Court fees, probate, divorce settlement, personal injury
+- Farming: Crop yield, fertiliser, farm costs, ELM payments
+- Maths: Percentage, fractions, standard deviation, probability
+- Gardening: Lawn seed, mulch, topsoil, raised beds, fencing
+- Everyday Tools: Currency converter, tip calculator, date calculator, unit converters
+
+## Data Sources
+
+All rates and thresholds come from official UK government sources:
+- HMRC (tax rates, NI thresholds, allowances)
+- GOV.UK (stamp duty, pension rules, benefits rates, minimum wage)
+- Bank of England (base rate)
+- Office for National Statistics (inflation indices)
+- The Pensions Regulator (auto-enrolment rates)
+- Student Loans Company (repayment thresholds)
+
+## Tax Year
+
+All tax-related calculators are updated for the 2025/26 UK tax year (6 April 2025 to 5 April 2026).
+
+## Contact
+
+Email: info@calks.uk
+Website: https://calks.uk

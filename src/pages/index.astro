@@ -1,0 +1,109 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { CATEGORIES, CATEGORY_IDS } from '@/data/categories'
+import { CALCULATORS } from '@/data/calculators'
+import { getOrganizationSchema, getWebSiteSchema, getWebPageSchema } from '@/utils/seo'
+import HomeSearch from '@/components/HomeSearch'
+
+const popularCalculators = CALCULATORS.filter((c) => c.priority === 1).slice(0, 12)
+
+const schemas = [
+  getOrganizationSchema(),
+  getWebSiteSchema(),
+  getWebPageSchema(
+    'Free UK Calculators — Tax, Salary, Mortgage & More',
+    'Free online calculators for the UK. Income tax, salary, mortgage, VAT, stamp duty, pension, NI and more — updated for the 2025/26 tax year.',
+    '/'
+  ),
+]
+---
+
+<Layout
+  title="Free UK Calculators — Tax, Salary, Mortgage & More | Calks.uk"
+  description="Free online calculators for the UK. Income tax, salary, mortgage, VAT, stamp duty, pension, NI and more — updated for the 2025/26 tax year."
+  schemas={schemas}
+>
+  <!-- Hero -->
+  <section class="py-16 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+        <span class="text-gradient-uk">Free UK</span> Calculators
+      </h1>
+      <p class="mt-4 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+        Tax, salary, mortgage, pension, VAT and more — updated for the 2025/26 tax year. All calculations run in your browser.
+      </p>
+
+      <!-- Search -->
+      <div class="mt-8 max-w-xl mx-auto">
+        <HomeSearch client:load calculators={CALCULATORS.map(c => ({ slug: c.slug, title: c.title, description: c.description, category: c.category }))} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Grid -->
+  <section class="pb-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold mb-6">Browse by Category</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+        {CATEGORY_IDS.map((catId) => {
+          const cat = CATEGORIES[catId]
+          const count = CALCULATORS.filter((c) => c.category === catId).length
+          return (
+            <a
+              href={`/category/${catId}/`}
+              class="flex items-center gap-3 rounded-xl border border-border p-4 hover:bg-accent hover:border-primary/30 transition-all group"
+            >
+              <div class={`flex h-10 w-10 items-center justify-center rounded-lg ${cat.color} ${cat.darkColor} shrink-0`}>
+                <span class={`text-sm font-bold ${cat.iconColor} ${cat.darkIconColor}`}>{cat.name.charAt(0)}</span>
+              </div>
+              <div class="min-w-0">
+                <p class="text-sm font-semibold truncate group-hover:text-primary transition-colors">{cat.name}</p>
+                <p class="text-xs text-muted-foreground">{count} calculator{count !== 1 ? 's' : ''}</p>
+              </div>
+            </a>
+          )
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Calculators -->
+  <section class="pb-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold mb-6">Popular Calculators</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {popularCalculators.map((calc) => {
+          const cat = CATEGORIES[calc.category]
+          return (
+            <a
+              href={`/calculator/${calc.slug}/`}
+              class="rounded-xl border border-border p-5 hover:bg-accent hover:border-primary/30 transition-all group"
+            >
+              <div class="flex items-start gap-3">
+                <div class={`flex h-10 w-10 items-center justify-center rounded-lg ${cat.color} ${cat.darkColor} shrink-0`}>
+                  <span class={`text-sm font-bold ${cat.iconColor} ${cat.darkIconColor}`}>{calc.title.charAt(0)}</span>
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-sm font-semibold group-hover:text-primary transition-colors">{calc.title}</h3>
+                    {calc.financialYear && (
+                      <span class="inline-flex items-center rounded bg-primary/10 px-1.5 py-0.5 text-xs font-medium text-primary shrink-0">
+                        {calc.financialYear}
+                      </span>
+                    )}
+                    {calc.isTrending && (
+                      <span class="inline-flex items-center rounded bg-orange-100 dark:bg-orange-950 px-1.5 py-0.5 text-xs font-medium text-orange-700 dark:text-orange-400 shrink-0">
+                        New
+                      </span>
+                    )}
+                  </div>
+                  <p class="text-xs text-muted-foreground mt-1 line-clamp-2">{calc.description}</p>
+                </div>
+              </div>
+            </a>
+          )
+        })}
+      </div>
+    </div>
+  </section>
+</Layout>
