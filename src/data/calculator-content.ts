@@ -795,56 +795,62 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'state-pension-calculator': {
     howItWorks: [
-      'This calculator helps you estimate your UK State Pension based on your National Insurance record. Full new State Pension is £230.25 per week. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The full new State Pension is £221.20 per week (£11,502.40/year) for 2025/26, uprated annually by the triple lock (highest of earnings growth, CPI inflation, or 2.5%). You need 35 qualifying years of National Insurance contributions to receive the full amount. With fewer than 35 years, you receive a proportional amount: each qualifying year adds 1/35th, so 25 years gives 25/35 x £221.20 = £158.00/week. A minimum of 10 qualifying years is required to receive anything.',
+      'Qualifying years are built through employed earnings above the lower earnings limit (£6,396/year for 2025/26), self-employed Class 2 NI contributions, or National Insurance credits (received automatically for Child Benefit recipients, Universal Credit claimants, and carers). You can check your NI record online to see how many qualifying years you have and identify any gaps.',
+      'Gaps in your NI record can be filled by paying voluntary Class 3 contributions (£17.45/week for 2025/26). Each additional year purchased adds approximately £6.34/week (£329.68/year) to your State Pension. At the current Class 3 rate, buying one year costs around £907 and pays back within about 2.75 years of receiving the pension — making it one of the best returns available for most people with gaps in their record.'
     ],
     example: {
-      title: 'How to use the State Pension Calculator',
+      title: 'State Pension estimate with 28 qualifying years',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Full new State Pension rate: £221.20/week',
+        'Qualifying years on NI record: 28 out of 35 needed',
+        'Proportional pension: 28/35 x £221.20 = £176.96/week (£9,201.92/year)',
+        'Shortfall from full pension: £221.20 - £176.96 = £44.24/week (£2,300.48/year)',
+        'Cost to buy 7 missing years via Class 3 NI: 7 x £907 = £6,349. Extra pension: £44.24/week (payback in ~2.8 years)'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/new-state-pension',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'pension-tax-relief-calculator': {
     howItWorks: [
-      'This calculator helps you calculate how much tax relief you get on pension contributions as a basic, higher or additional rate taxpayer. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Pension tax relief restores income tax paid on contributions. Under relief at source (used by most personal pensions), you contribute from net pay and the provider claims 20% basic rate relief from HMRC automatically. A £80 net contribution becomes £100 gross in your pension. Higher-rate (40%) and additional-rate (45%) taxpayers claim the extra relief through self-assessment: on a £100 gross contribution, a 40% taxpayer gets £40 total relief (£20 automatic + £20 via tax return).',
+      'Net pay arrangements (used by many workplace schemes) deduct contributions before calculating income tax, so full relief is given immediately regardless of tax rate. A £100 gross contribution costs a basic-rate taxpayer £80, a higher-rate taxpayer £60, and an additional-rate taxpayer £55. Scottish taxpayers use Scottish income tax rates (19/20/21/42/45/48%) which alter the relief calculation.',
+      'Total contributions from all sources must stay within the annual allowance of £60,000 (or 100% of earnings if lower) to avoid a tax charge. The annual allowance charge claws back the tax relief on excess contributions at your marginal rate. Contributions exceeding £60,000 are added to taxable income. Carry forward of unused allowance from the previous three years can shelter larger one-off contributions.'
     ],
     example: {
-      title: 'How to use the Pension Tax Relief Calculator',
+      title: 'Tax relief on £500/month pension contribution for a 40% taxpayer',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Net monthly contribution: £500 (£6,000/year)',
+        'Basic rate relief added automatically (20%): £500 / 0.80 = £625 gross per month (£7,500/year)',
+        'Extra higher-rate relief via self-assessment: £7,500 x 20% = £1,500/year tax rebate',
+        'Total tax relief: £1,500 (basic rate at source) + £1,500 (higher rate via SA) = £3,000',
+        'Effective cost of £7,500 gross contribution: only £4,500 after all tax relief'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension/pension-tax-relief',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'isa-calculator': {
     howItWorks: [
-      'This calculator helps you calculate your tax-free ISA savings growth with the £20,000 annual allowance. Compare Cash ISA and Stocks & Shares ISA. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'ISAs shelter savings and investments from all UK income tax and capital gains tax. The annual ISA allowance is £20,000 per tax year, which can be split across Cash ISAs, Stocks and Shares ISAs, Innovative Finance ISAs, and Lifetime ISAs in any combination. Once invested, all interest, dividends, and capital gains within the ISA wrapper are completely tax-free, with no reporting requirement to HMRC.',
+      'Cash ISA projections use the stated AER (Annual Equivalent Rate) to calculate growth. A fixed-rate Cash ISA locks your money for 1-5 years at a guaranteed rate, while easy-access ISAs offer flexibility but typically lower rates. The calculation compounds interest annually or monthly depending on the product. For a £20,000 deposit at 4.5% AER over 5 years with annual compounding, the balance reaches £24,931.',
+      'Stocks and Shares ISA projections use assumed growth rates since returns are variable. Historical UK equity returns have averaged approximately 7-8% nominal (4-5% real) over the long term, but with significant year-to-year volatility. The calculator models growth at multiple assumed rates and shows the range of outcomes. Platform fees (0.15-0.45%) and fund charges (0.1-1.5%) reduce the effective return and are deducted in the projection.'
     ],
     example: {
-      title: 'How to use the ISA Calculator — Tax-Free Savings Growth',
+      title: 'ISA growth: £20,000/year for 10 years in a Stocks and Shares ISA',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Annual contribution: £20,000 (full ISA allowance)',
+        'Assumed growth rate: 6% per year after charges',
+        'After year 1: £20,000 x 1.06 = £21,200',
+        'After 10 years of £20,000 annual contributions at 6%: approximately £279,100',
+        'All growth is tax-free — a basic-rate taxpayer saves approx £4,700 in tax vs a general investment account'
+      ]
     },
     sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'personal-loan-calculator': {
@@ -868,39 +874,42 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'credit-card-repayment-calculator': {
     howItWorks: [
-      'Credit card interest is typically charged on the outstanding balance at the end of each statement period. If you only pay the minimum — usually the greater of 2.5% of the balance or £5 — the majority of your payment covers interest rather than reducing the debt. This means it can take decades to clear even a moderate balance.',
-      'The calculator shows how long it takes to pay off your balance under three scenarios: minimum payments only, a fixed monthly amount you choose, or paying the full balance each month. It also shows how much interest you pay in total under each approach.',
-      'Section 77A of the Consumer Credit Act requires lenders to include a minimum-repayment warning on statements. This calculator helps you see why a fixed payment strategy can save thousands in interest compared to sticking with the minimum.',
+      'Credit card interest compounds monthly on the outstanding balance after each statement period. A typical UK APR of 24.9% translates to a monthly periodic rate of approximately 1.867% (calculated as (1 + 0.249)^(1/12) - 1). Each month, interest is charged on whatever balance remains after your payment is applied, creating a compounding effect that significantly increases total costs when only minimum payments are made.',
+      'Minimum payments in the UK are usually calculated as the greater of a fixed floor amount (typically £5 or £25) or a percentage of the outstanding balance (usually 1% to 3% plus that month\'s interest). Because the percentage-based minimum shrinks as your balance decreases, repayment slows dramatically over time. A £3,000 balance at 24.9% APR with 2% minimum payments would take over 25 years to clear, costing more than £4,000 in interest alone.',
+      'The calculator models three repayment strategies side by side: minimum payments only, fixed monthly payment, and a target payoff date approach. Fixed payments above the minimum accelerate principal reduction because the interest portion shrinks each month while total payment stays constant. Even adding £50 above the minimum can cut repayment time by 10-15 years and save thousands in interest charges.'
     ],
     example: {
-      title: 'Example: £3,000 balance at 22.9% APR',
+      title: 'Paying off a £4,500 credit card balance at 24.9% APR',
       steps: [
-        'Minimum payment (2.5%): takes over 20 years, total interest approx. £3,400',
-        'Fixed £100/month: cleared in 38 months, total interest approx. £780',
-        'Fixed £200/month: cleared in 17 months, total interest approx. £350',
-        'Paying £100 instead of the minimum saves over £2,600 in interest',
-      ],
+        'Balance: £4,500, APR: 24.9%, monthly rate: 1.867%',
+        'Minimum payment (2.5% of balance or £25, whichever is greater): month 1 = £112.50',
+        'Interest in month 1: £4,500 x 1.867% = £84.02, principal paid: £28.48',
+        'With minimum payments only: 27 years 4 months to clear, total interest: £5,891',
+        'With fixed £150/month: 3 years 3 months to clear, total interest: £1,356 (saving £4,535)'
+      ]
     },
-    sourceUrl: 'https://www.moneyhelper.org.uk/en/everyday-money/credit/how-to-pay-off-credit-card-debt',
-    sourceName: 'MoneyHelper — Paying off credit card debt',
+    sourceUrl: 'https://www.fca.org.uk/consumers/credit-cards',
+    sourceName: 'FCA - Credit Cards Consumer Information',
     lastUpdated: 'April 2026',
   },
   'sole-trader-tax-calculator': {
     howItWorks: [
-      'This calculator helps you calculate income tax, Class 2 and Class 4 NI for sole traders and self-employed individuals. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Sole trader profits are taxed as personal income through the Self Assessment system. Your taxable profit is calculated as total business income minus allowable business expenses (materials, travel, insurance, professional fees, a proportion of home costs if you work from home, and capital allowances on equipment). This net profit figure is then combined with any other income to determine your total taxable income for the year.',
+      'Income Tax is charged in bands after deducting the \u00a312,570 Personal Allowance: 20% basic rate on income from \u00a312,571 to \u00a350,270, 40% higher rate from \u00a350,271 to \u00a3125,140, and 45% additional rate above \u00a3125,140. The Personal Allowance reduces by \u00a31 for every \u00a32 earned above \u00a3100,000, creating an effective 60% marginal rate between \u00a3100,000 and \u00a3125,140. Tax is paid in two Payments on Account (January and July) plus a balancing payment in the following January.',
+      'National Insurance adds a further layer: Class 2 contributions are \u00a33.45 per week (\u00a3179.40 per year) when profits exceed the Small Profits Threshold of \u00a36,725. Class 4 contributions are 6% on profits between \u00a312,570 and \u00a350,270, then 2% on profits above \u00a350,270. Both classes are collected through Self Assessment. Sole traders may also claim the \u00a31,000 trading allowance instead of actual expenses if their total trading income is low, which exempts the first \u00a31,000 from tax entirely.'
     ],
     example: {
-      title: 'How to use the Sole Trader Tax Calculator',
+      title: 'Tax bill on \u00a355,000 sole trader profit',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Net profit after expenses: \u00a355,000.',
+        'Income Tax: \u00a30 on first \u00a312,570. \u00a337,700 \u00d7 20% = \u00a37,540. \u00a34,730 \u00d7 40% = \u00a31,892. Total IT: \u00a39,432.',
+        'Class 2 NI: \u00a33.45 \u00d7 52 = \u00a3179.40.',
+        'Class 4 NI: (\u00a350,270 \u2212 \u00a312,570) \u00d7 6% = \u00a32,262. (\u00a355,000 \u2212 \u00a350,270) \u00d7 2% = \u00a394.60.',
+        'Total tax and NI: \u00a39,432 + \u00a3179.40 + \u00a32,262 + \u00a394.60 = \u00a311,968. Take-home: \u00a343,032.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/income-tax-rates',
+    sourceName: 'GOV.UK \u2013 Income Tax Rates',
     lastUpdated: 'April 2026',
   },
   'ir35-calculator': {
@@ -925,20 +934,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'dividend-vs-salary-calculator': {
     howItWorks: [
-      'This calculator helps you find the most tax-efficient mix of salary and dividends for limited company directors. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'For company directors who also own shares, the most tax-efficient extraction of profits typically involves a combination of salary and dividends. The optimal salary level is usually set at the NI Primary Threshold (\u00a312,570 for 2025/26), which uses the full Personal Allowance, is deductible as a company expense (reducing Corporation Tax), and avoids employee NI contributions. Above this threshold, salary attracts both employee NI (8%) and employer NI (15%), making it expensive.',
+      'Dividends are paid from post-Corporation Tax profits, so the company has already paid 19\u201325% tax on the underlying profit. The first \u00a3500 of dividends is covered by the dividend allowance and is tax-free. Beyond that, dividends are taxed at 8.75% (basic rate), 33.75% (higher rate), and 39.35% (additional rate). Crucially, dividends carry no National Insurance for either the individual or the company, which is the primary source of tax savings compared with a pure salary approach.',
+      'The combined effective tax rate on profit extracted as salary (Corporation Tax saving offset by income tax plus double NI) is typically higher than the rate on dividends (Corporation Tax followed by dividend tax but no NI). However, salary counts as pensionable earnings for contribution purposes and builds state pension entitlement, while dividends do not. The calculation must also factor in the employer NI cost, which is an additional 15% charge the company bears on salary above the Secondary Threshold.'
     ],
     example: {
-      title: 'How to use the Dividend vs Salary Calculator',
+      title: 'Tax on extracting \u00a360,000 profit: salary vs dividend split',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Take salary of \u00a312,570: income tax \u00a30, employee NI \u00a30, employer NI \u00a30. Corporation Tax saved: \u00a312,570 \u00d7 19% = \u00a32,388.',
+        'Remaining company profit: \u00a360,000 \u2212 \u00a312,570 = \u00a347,430.',
+        'Corporation Tax at 19% on \u00a347,430: \u00a39,012. Profit after CT: \u00a338,418.',
+        'Dividend tax on \u00a338,418: first \u00a3500 free, then \u00a337,918 \u00d7 8.75% = \u00a33,318.',
+        'Total take-home: \u00a312,570 + \u00a338,418 \u2212 \u00a33,318 = \u00a347,670. Total tax paid: \u00a312,330 (effective rate 20.6%).'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/tax-on-dividends',
+    sourceName: 'GOV.UK \u2013 Tax on Dividends',
     lastUpdated: 'April 2026',
   },
   'calorie-calculator': {
@@ -1097,20 +1108,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'vat-flat-rate-calculator': {
     howItWorks: [
-      'This calculator helps you compare VAT Flat Rate Scheme vs standard VAT for your business sector. See if you save or lose. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The VAT Flat Rate Scheme simplifies VAT accounting for small businesses with VAT-taxable turnover of \u00a3150,000 or less (excluding VAT). Instead of tracking VAT on every purchase and sale, you charge customers the standard 20% VAT but pay HMRC a fixed percentage of your gross (VAT-inclusive) turnover. The flat rate percentage varies by business sector\u2014for example, 14.5% for computer and IT consultancy, 12% for management consultancy, and 10% for real estate. You keep the difference between the 20% charged and the flat rate paid.',
+      'In the first year of VAT registration, you receive an additional 1% discount on the flat rate, reducing the percentage by one point. However, the limited cost trader rule applies if your goods purchases (excluding capital expenditure over \u00a32,000) are less than 2% of turnover or under \u00a31,000 per year\u2014in which case a flat rate of 16.5% applies regardless of sector, significantly reducing the scheme\'s benefit for service-based businesses with low material costs.',
+      'To determine if the flat rate scheme saves money, compare: (a) VAT collected from customers (20% of net sales) minus (b) VAT on purchases you could reclaim under standard accounting, against (c) the flat rate payment. The scheme saves admin time by eliminating the need to track VAT on individual purchases, but you cannot reclaim VAT on most purchases (except capital assets over \u00a32,000 including VAT). You can leave the scheme if turnover exceeds \u00a3230,000 including VAT, or voluntarily at any time.'
     ],
     example: {
-      title: 'How to use the VAT Flat Rate Scheme Calculator',
+      title: 'Flat Rate VAT for an IT consultant billing \u00a38,000/month',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Tax rates and allowances',
-      ],
+        'Monthly invoices: \u00a38,000 net + \u00a31,600 VAT = \u00a39,600 gross.',
+        'Flat rate for IT consultancy: 14.5% (13.5% in first year).',
+        'VAT payment to HMRC: \u00a39,600 \u00d7 14.5% = \u00a31,392.',
+        'Under standard VAT, you\'d pay \u00a31,600 collected minus \u00a3250 reclaimable on expenses = \u00a31,350.',
+        'Flat rate costs \u00a342 more per month in this scenario. Check if the admin time saved justifies the cost.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/income-tax-rates',
-    sourceName: 'GOV.UK — Tax rates and allowances',
+    sourceUrl: 'https://www.gov.uk/vat-flat-rate-scheme',
+    sourceName: 'GOV.UK \u2013 VAT Flat Rate Scheme',
     lastUpdated: 'April 2026',
   },
   'flooring-calculator': {
@@ -1351,40 +1364,42 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'inflation-calculator': {
     howItWorks: [
-      'This calculator helps you see what money was worth in the past or what it will be worth in the future with UK inflation rates. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The Consumer Prices Index (CPI) tracks the average price change of a weighted basket of around 700 goods and services purchased by UK households. The Office for National Statistics collects approximately 180,000 price quotes each month from shops, online retailers, and service providers across the country. Each item\'s weight reflects its share of total household spending, updated annually from the Living Costs and Food Survey.',
+      'To convert a historical amount to today\'s prices, the calculator divides the current CPI index value by the historical index value, then multiplies by the original sum. For example, the CPI index stood at 68.0 in January 2000 and approximately 136.0 in early 2026, giving a ratio of 2.0. This means £100 in January 2000 had roughly the same purchasing power as £200 in 2026.',
+      'CPI differs from the older Retail Prices Index (RPI) in several ways: CPI excludes mortgage interest payments and council tax, uses a geometric rather than arithmetic mean for averaging prices, and covers a broader population including foreign visitors\' spending. CPIH extends CPI by adding owner-occupiers\' housing costs. The calculator defaults to CPI as it is the UK government\'s preferred inflation measure and the Bank of England\'s target index.'
     ],
     example: {
-      title: 'How to use the Inflation Calculator',
+      title: 'Adjusting a 2010 salary to 2026 equivalent',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK',
-      ],
+        'Original salary in 2010: £32,000',
+        'CPI index January 2010: 112.4, CPI index January 2026: approximately 139.7',
+        'Inflation multiplier: 139.7 / 112.4 = 1.243',
+        'Equivalent 2026 salary: £32,000 x 1.243 = £39,776',
+        'Cumulative inflation over the period: 24.3%, meaning prices rose by nearly a quarter'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk',
-    sourceName: 'GOV.UK',
+    sourceUrl: 'https://www.ons.gov.uk/economy/inflationandpriceindices',
+    sourceName: 'ONS - Inflation and Price Indices',
     lastUpdated: 'April 2026',
   },
   'wedding-budget-calculator': {
     howItWorks: [
-      'The average UK wedding in 2025 costs between £18,000 and £22,000. The biggest expenses are typically the venue (30–40%), catering (20–25%), photography and videography (8–10%), entertainment (5–8%) and the wedding dress (5–7%). However, costs vary enormously by region, with London weddings costing 40–60% more than the national average.',
-      'This calculator helps you allocate your total budget across standard categories using recommended percentage splits. You can adjust each category to match your priorities — for example, spending more on food and less on flowers.',
-      'Hidden costs often catch couples out: service charges, corkage fees, overtime charges for evening suppliers, and VAT (which may not be included in quoted prices). The calculator includes a contingency percentage (typically 5–10%) to cover unexpected expenses.',
+      'UK wedding costs vary significantly by region, season, and guest count. The calculator breaks your total budget into category allocations based on industry-standard percentage splits derived from annual Hitched survey data. Venue and catering typically consume 55-60% combined, with photography at 8-12%, entertainment at 5-8%, and attire and accessories at 6-10% of the total spend.',
+      'Guest count is the single largest cost driver. The calculator estimates a per-head cost by dividing your catering budget by guest numbers, typically ranging from £60-£150 per guest for food and drink at UK venues. Evening-only guests are costed at roughly 40% of a full day guest. Reducing your guest list by 20 people can save £2,000-£4,000 depending on your chosen venue tier.',
+      'Regional price differences are substantial across the UK. London and the South East command a 25-40% premium over the national average, while Scotland, Wales, and Northern England can be 15-25% below it. Saturday summer weddings in peak season (June-September) attract the highest venue hire fees, whereas midweek or winter dates can reduce venue costs by 20-50%.'
     ],
     example: {
-      title: 'Example: £20,000 wedding budget',
+      title: 'Allocating a £22,000 wedding budget for 80 guests',
       steps: [
-        'Venue hire: £6,000 (30%)',
-        'Catering (80 guests): £4,400 (22%)',
-        'Photography and video: £1,800 (9%)',
-        'Entertainment / DJ: £1,000 (5%)',
-        'Remaining (dress, flowers, cake, rings, stationery, transport, contingency): £6,800 (34%)',
-      ],
+        'Venue hire: 35% of £22,000 = £7,700',
+        'Catering and drinks (80 day guests at £68/head): £5,440 (25%)',
+        'Photography and videography: £2,200 (10%)',
+        'Wedding attire, suits, and accessories: £1,760 (8%)',
+        'Remaining £4,900 covers flowers (£1,100), entertainment (£1,300), stationery (£500), transport (£600), and contingency (£1,400)'
+      ]
     },
-    sourceUrl: 'https://www.moneyhelper.org.uk/en/family-and-care/becoming-a-couple/planning-a-wedding-on-a-budget',
-    sourceName: 'MoneyHelper — Planning a wedding on a budget',
+    sourceUrl: 'https://www.hitched.co.uk/wedding-planning/organising-and-planning/the-average-wedding-cost-in-the-uk/',
+    sourceName: 'Hitched - Average UK Wedding Cost Survey',
     lastUpdated: 'April 2026',
   },
   'visa-points-calculator': {
@@ -1602,20 +1617,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'mileage-allowance-calculator': {
     howItWorks: [
-      'This calculator helps you calculate HMRC approved mileage allowance payments for car, motorcycle or bicycle. 45p/25p per mile rates. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Approved Mileage Allowance Payments cover four vehicle categories, each with a fixed per-mile rate set by HMRC. Cars and vans receive 45p per mile up to 10,000 miles and 25p thereafter. Motorcycles are paid at a flat 24p per mile regardless of distance. Bicycles attract 20p per mile with no tiered threshold. These rates apply for the entire 2025/26 tax year.',
+      'Passenger payments add a further 5p per mile for each fellow employee carried on a qualifying business journey. This passenger supplement applies to car and van journeys only and is received tax-free by the driver. The passenger does not need to claim separately provided they travel in the same vehicle on the same qualifying trip.',
+      'Self-employed individuals cannot use AMAP rates for tax deductions. Instead, they must choose between claiming actual vehicle running costs (fuel, insurance, repairs, depreciation) with appropriate business-use proportion, or using HMRC\'s simplified flat-rate mileage expenses. Once a method is chosen for a particular vehicle, it must be used for the vehicle\'s lifetime in the business.'
     ],
     example: {
-      title: 'How to use the Mileage Allowance Calculator (HMRC)',
+      title: 'Mixed vehicle mileage allowance for a tax year',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Employment and pay',
-      ],
+        'Car journeys: 8,500 business miles at 45p = £3,825',
+        'Passenger supplement: colleague carried for 3,200 of those miles at 5p = £160',
+        'Motorcycle journeys: 1,200 miles at 24p = £288',
+        'Bicycle journeys: 400 miles at 20p = £80',
+        'Total tax-free mileage allowance: £3,825 + £160 + £288 + £80 = £4,353'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/national-minimum-wage-rates',
-    sourceName: 'GOV.UK — Employment and pay',
+    sourceUrl: 'https://www.gov.uk/government/publications/rates-and-allowances-travel-mileage-and-fuel-allowances/travel-mileage-and-fuel-rates-and-allowances',
+    sourceName: 'HMRC - Travel Mileage and Fuel Rates',
     lastUpdated: 'April 2026',
   },
   'radiator-btu-calculator': {
@@ -1778,20 +1795,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'savings-goal-calculator': {
     howItWorks: [
-      'This calculator helps you calculate how long to reach your savings goal or how much to save monthly to hit a target date. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The savings goal calculation solves for one unknown variable given the others. To find the monthly saving needed, it rearranges the future value of an annuity formula: PMT = FV x (r/12) / [((1 + r/12)^(12n) - 1)], where FV is the target amount, r is the annual interest rate, and n is the number of years. This accounts for compound interest on each monthly deposit, giving a lower required saving than simple division of target by months.',
+      'To find the time to reach a goal given a fixed monthly saving, the formula is rearranged to solve for n: n = ln(1 + FV x r / (12 x PMT)) / (12 x ln(1 + r/12)). At 0% interest, saving £500/month to reach £30,000 takes exactly 60 months. At 4% AER, compound interest reduces this to approximately 56 months, saving the equivalent of 2 months of contributions.',
+      'The calculator also handles lump sum starting balances combined with regular contributions. If you already have £5,000 saved toward a £25,000 goal, the lump sum compounds separately while monthly contributions accumulate. Inflation adjustment shows whether your target amount will have the same purchasing power by the time you reach it — a £30,000 target in 5 years needs to be £34,400 at 2.8% inflation to maintain equivalent value.'
     ],
     example: {
-      title: 'How to use the Savings Goal Calculator',
+      title: 'Monthly saving needed for a £15,000 car fund in 3 years',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Target amount: £15,000',
+        'Time frame: 3 years (36 months)',
+        'Savings account rate: 4.2% AER',
+        'Required monthly saving: £15,000 / FV annuity factor = £393/month',
+        'Without interest (simple division): £15,000 / 36 = £417/month — interest saves £24/month'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.gov.uk/government/publications/state-of-the-nation-report',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'number-to-words-calculator': {
@@ -2022,56 +2041,62 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'break-even-calculator': {
     howItWorks: [
-      'This calculator helps you calculate the break-even point in units and revenue. Find your contribution margin. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Break-even analysis determines the exact sales volume at which total revenue equals total costs, producing zero profit and zero loss. The core formula is: Break-even units = Fixed costs \u00f7 Contribution margin per unit. The contribution margin per unit equals the selling price minus the variable cost per unit\u2014this represents how much each sale contributes toward covering fixed overheads.',
+      'Fixed costs are expenses that remain constant regardless of output\u2014rent, salaries, insurance, loan repayments. Variable costs change in direct proportion to production volume\u2014raw materials, packaging, direct labour, shipping per unit. Accurately separating these two categories is critical; misclassifying a variable cost as fixed will skew your break-even point significantly.',
+      'Beyond the unit-based break-even, the revenue-based break-even equals Fixed costs \u00f7 Contribution margin ratio, where the ratio is (Selling price \u2212 Variable cost) \u00f7 Selling price. This is useful for businesses selling multiple products at varying prices. Sensitivity analysis\u2014adjusting price, costs, or volume\u2014reveals how fragile or robust your margin is against market changes.'
     ],
     example: {
-      title: 'How to use the Break-Even Calculator',
+      title: 'Break-even for a UK candle business',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Fixed costs (rent, insurance, website): \u00a32,400 per month.',
+        'Selling price per candle: \u00a318.00.',
+        'Variable cost per candle (wax, wick, jar, label, postage): \u00a36.50.',
+        'Contribution margin: \u00a318.00 \u2212 \u00a36.50 = \u00a311.50 per candle.',
+        'Break-even units: \u00a32,400 \u00f7 \u00a311.50 = 209 candles per month (rounded up).'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/set-up-business',
+    sourceName: 'GOV.UK \u2013 Set Up a Business',
     lastUpdated: 'April 2026',
   },
   'margin-calculator': {
     howItWorks: [
-      'This calculator helps you calculate profit margin, markup percentage and selling price from cost and revenue. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Profit margin and markup are both measures of profitability but use different denominators, which is a frequent source of confusion in business. Margin is calculated as: (Revenue \u2212 Cost) \u00f7 Revenue \u00d7 100. It tells you what percentage of the selling price is profit. Markup is calculated as: (Revenue \u2212 Cost) \u00f7 Cost \u00d7 100. It tells you what percentage above cost you have charged. The same transaction produces very different numbers: selling at \u00a3100 with a cost of \u00a360 gives a 40% margin but a 66.7% markup.',
+      'To convert between the two: Margin = Markup \u00f7 (1 + Markup), and Markup = Margin \u00f7 (1 \u2212 Margin). A 50% markup equals a 33.3% margin. A 100% markup equals a 50% margin. These formulas are essential when pricing products\u2014if your target gross margin is 30%, you need to apply a 42.9% markup to your costs, not 30%.',
+      'Gross margin uses only direct costs (cost of goods sold) and reflects production efficiency. Net margin includes all overheads, tax, and interest, showing true bottom-line profitability. UK retail averages range from 2\u20135% net margin (supermarkets) to 50\u201370% gross margin (software). Tracking margin per product line, per client, or per period highlights where your business generates and erodes value.'
     ],
     example: {
-      title: 'How to use the Profit Margin & Markup Calculator',
+      title: 'Margin and markup on a product sold for \u00a345',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Selling price: \u00a345.00. Cost of goods: \u00a327.00.',
+        'Gross profit: \u00a345.00 \u2212 \u00a327.00 = \u00a318.00.',
+        'Margin: \u00a318.00 \u00f7 \u00a345.00 \u00d7 100 = 40.0%.',
+        'Markup: \u00a318.00 \u00f7 \u00a327.00 \u00d7 100 = 66.7%.',
+        'To achieve a 40% margin on a new product costing \u00a330, set price at \u00a330 \u00f7 (1 \u2212 0.40) = \u00a350.00.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/set-up-business',
+    sourceName: 'GOV.UK \u2013 Set Up a Business',
     lastUpdated: 'April 2026',
   },
   'depreciation-calculator': {
     howItWorks: [
-      'This calculator helps you calculate asset depreciation using straight-line or reducing balance methods with a year-by-year schedule. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Depreciation systematically allocates the cost of a tangible asset over its useful economic life, reflecting the consumption of its value. Straight-line depreciation uses the formula: Annual charge = (Original cost \u2212 Estimated residual value) \u00f7 Useful life in years. This produces an equal expense each year and is the most common method for UK financial reporting under FRS 102. The net book value (NBV) decreases by the same fixed amount annually until it reaches the residual value.',
+      'Reducing-balance (diminishing-balance) depreciation applies a fixed percentage rate to the NBV at the start of each period. The formula is: Annual charge = NBV at start of year \u00d7 Depreciation rate. This front-loads higher charges in the early years when the asset is most productive, tapering off as the NBV shrinks. To calculate the rate needed to reach a target residual value, use: Rate = 1 \u2212 (Residual \u00f7 Cost)^(1/n), where n is the asset\'s life in years.',
+      'Depreciation is a non-cash accounting entry\u2014it does not directly represent tax relief. For tax purposes, UK businesses claim capital allowances instead, which follow different rules and rates. However, depreciation affects reported profit, balance sheet values, and financial ratios. Companies must disclose their depreciation policies in the notes to accounts. Common useful lives used in practice: computers 3\u20135 years, vehicles 4\u20138 years, furniture 5\u201310 years, buildings 25\u201350 years.'
     ],
     example: {
-      title: 'How to use the Depreciation Calculator',
+      title: 'Straight-line vs reducing-balance on a \u00a312,000 van',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Van cost: \u00a312,000. Residual value: \u00a32,000. Useful life: 5 years.',
+        'Straight-line annual charge: (\u00a312,000 \u2212 \u00a32,000) \u00f7 5 = \u00a32,000 per year. NBV after year 1: \u00a310,000.',
+        'Reducing-balance rate to reach \u00a32,000 in 5 years: 1 \u2212 (2,000/12,000)^(1/5) \u2248 30.1%.',
+        'Year 1 reducing-balance charge: \u00a312,000 \u00d7 30.1% = \u00a33,612. NBV after year 1: \u00a38,388.',
+        'Year 2 reducing-balance charge: \u00a38,388 \u00d7 30.1% = \u00a32,525. NBV after year 2: \u00a35,863.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/capital-allowances',
+    sourceName: 'GOV.UK \u2013 Capital Allowances',
     lastUpdated: 'April 2026',
   },
   'visa-fee-calculator': {
@@ -2277,92 +2302,102 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'pension-drawdown-calculator': {
     howItWorks: [
-      'This calculator helps you calculate how long your pension pot will last with drawdown. See year-by-year projections with growth. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Flexi-access drawdown lets you take 25% of your pension pot as a tax-free Pension Commencement Lump Sum (PCLS), then draw taxable income from the remaining 75% while keeping the pot invested. The tax-free portion is calculated at crystallisation: for a £200,000 pot, £50,000 is tax-free and £150,000 enters the drawdown fund. Withdrawals from the drawdown fund are taxed as earned income at your marginal rate.',
+      'Pot longevity projections model the balance between investment growth and withdrawal rate. The sustainable withdrawal rate depends on asset allocation, charges, and assumed growth. At a 4% withdrawal rate with 5% nominal growth and 0.5% charges, a pot typically lasts 30+ years. At 6% withdrawal, the same pot may deplete within 20 years. Sequence-of-returns risk means poor early performance disproportionately shortens pot life.',
+      'Income tax on drawdown withdrawals stacks on top of any other income including State Pension. The first £12,570 of total income is tax-free (personal allowance), then 20% basic rate to £50,270, 40% higher rate to £125,140, and 45% additional rate above that. The personal allowance tapers by £1 for every £2 earned above £100,000, creating an effective 60% marginal rate between £100,000 and £125,140.'
     ],
     example: {
-      title: 'How to use the Pension Drawdown Calculator',
+      title: 'Drawdown from a £300,000 pension pot at age 60',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Tax-free lump sum (25%): £300,000 x 25% = £75,000',
+        'Remaining drawdown fund: £225,000, invested at assumed 5% growth minus 0.5% charges',
+        'Annual withdrawal of £12,000 (approx 5.3% of drawdown fund)',
+        'With State Pension of £11,500/year from age 66 and personal allowance of £12,570, drawdown taxed at 20% = £2,400 tax on £12,000 withdrawal',
+        'Projected pot duration at this withdrawal rate: approximately 28 years (to age 88)'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/pension-types/income-drawdown',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'annuity-calculator': {
     howItWorks: [
-      'This calculator helps you estimate annuity income from your pension pot. Compare single and joint life annuity rates by age. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Annuity rates are calculated by insurers based on your pension pot size, age at purchase, health status, and chosen options. The insurer invests your lump sum and pays you a guaranteed income for life, using actuarial life expectancy tables and current gilt yields to determine the annual payout. A larger pot, older age, or poor health typically produces a higher annual income.',
+      'You select between a single-life annuity (pays only you) or a joint-life annuity (continues paying a spouse at a reduced rate, typically 50-66%). Level annuities pay a fixed amount, while escalating annuities start lower but increase each year by a fixed percentage or in line with RPI, protecting against inflation erosion over a 20-30 year retirement.',
+      'The calculation divides your pot by an annuity factor derived from mortality tables and the selected options. Guarantee periods (typically 5 or 10 years) ensure payments continue to beneficiaries if you die early, but reduce the headline rate slightly. Enhanced annuities for smokers or those with medical conditions can pay 20-40% more than standard rates.'
     ],
     example: {
-      title: 'How to use the Annuity Calculator — Retirement Income',
+      title: 'Annuity income from a £200,000 pension pot at age 65',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Pension pot value: £200,000',
+        'Single-life, level annuity rate at age 65: approximately 6.8%',
+        'Annual income: £200,000 x 6.8% = £13,600 per year (£1,133/month)',
+        'If joint-life (50% spouse) selected instead: rate drops to approx 5.9%, giving £11,800/year',
+        'If RPI-linked escalation chosen: starting income drops to approx £9,400/year but rises annually with inflation'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/pension-types',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'pension-vs-isa-calculator': {
     howItWorks: [
-      'This calculator helps you compare pension and ISA over time. See which gives you more after tax relief and withdrawal tax. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Pensions receive income tax relief on contributions (20/40/45%) but withdrawals are taxed as income after the 25% tax-free lump sum. ISAs receive no tax relief on contributions (money goes in from post-tax income) but all growth and withdrawals are completely tax-free. The comparison depends on your tax rate when contributing versus your expected tax rate in retirement, plus the value of the 25% PCLS.',
+      'For a 40% taxpayer contributing £100 gross, a pension costs £60 after relief and the full £100 is invested. An ISA receives £60 (post-tax) for investment. If the pension fund grows to £200, you get £50 tax-free (25%) plus £150 taxed at 20% in retirement = £170 net. The ISA £60 grows proportionally to £120, all tax-free. Pension wins when your retirement tax rate is lower than your contribution tax rate.',
+      'Additional factors tilt the comparison: employer pension contributions are free money an ISA cannot match. Pensions are shielded from creditors and inheritance tax (passed tax-free if you die before 75). ISAs offer flexible access at any age, no lifetime limit on withdrawals, and no impact on State Pension or benefits. The optimal strategy for most people combines both: maximise employer pension matching first, then use ISAs for additional savings.'
     ],
     example: {
-      title: 'How to use the Pension vs ISA Calculator',
+      title: 'Pension vs ISA for a 40% taxpayer investing £10,000 gross over 20 years',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Pension: £10,000 gross invested (costs £6,000 after 40% tax relief). At 5% growth for 20 years = £26,533',
+        'After 25% tax-free (£6,633) + 75% taxed at 20% (£19,900 x 0.80 = £15,920): net pension = £22,553',
+        'ISA: £6,000 post-tax invested. At 5% growth for 20 years = £15,920. All tax-free: net ISA = £15,920',
+        'Pension advantage: £22,553 - £15,920 = £6,633 more from the pension',
+        'If retirement tax rate were 40% instead of 20%, pension net drops to £18,566 — advantage shrinks to £2,646'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension/pension-tax-relief',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'lifetime-isa-calculator': {
     howItWorks: [
-      'This calculator helps you calculate LISA growth with the 25% government bonus. For first homes (up to £450K) or retirement (60+). The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The Lifetime ISA allows contributions of up to £4,000 per tax year, on which the government pays a 25% bonus of up to £1,000 per year. The bonus is paid monthly within 4-6 weeks of each contribution. You must be aged 18-39 to open a LISA, and can contribute until age 50. The LISA can be used to buy a first home worth up to £450,000 or withdrawn penalty-free after age 60.',
+      'For property purchase, the calculator compounds contributions plus bonus over the saving period. Contributing £4,000/year for 5 years gives £20,000 in contributions plus £5,000 in government bonuses, totalling £25,000 before growth. With investment returns on a Stocks and Shares LISA, the total could reach £28,000-£30,000. The full amount including all bonuses and growth can be used toward the deposit on a first home.',
+      'Early withdrawal for purposes other than first home purchase or retirement incurs a 25% government withdrawal charge on the total amount, not just the bonus. This effectively creates a 6.25% loss on your own contributions: depositing £1,000 receives a £250 bonus (total £1,250), but the 25% withdrawal charge takes £312.50, leaving you with only £937.50 — less than you put in. The calculator shows the penalty impact clearly to help with decision-making.'
     ],
     example: {
-      title: 'How to use the Lifetime ISA Calculator',
+      title: 'Lifetime ISA for first home deposit over 4 years',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Annual contribution: £4,000 (maximum)',
+        'Government bonus each year: £4,000 x 25% = £1,000',
+        'After 4 years: £16,000 contributions + £4,000 bonus = £20,000',
+        'With 5% growth on a Stocks and Shares LISA: approximately £21,600',
+        'If withdrawn early (not for home/retirement): 25% charge on £21,600 = £5,400 penalty, receiving only £16,200'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.gov.uk/lifetime-isa',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'premium-bonds-calculator': {
     howItWorks: [
-      'This calculator helps you calculate expected returns and prize odds for NS&I Premium Bonds based on your holding. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Premium Bonds do not pay interest. Instead, each £1 bond enters a monthly prize draw funded by a prize fund rate set by NS&I (currently 4.00% as of early 2026). The prize fund rate determines the total value of prizes distributed across all bondholders. With approximately £120 billion in bonds outstanding, the monthly prize fund is roughly £400 million, distributed as prizes ranging from £25 to £1 million.',
+      'Each £1 bond has an equal and independent chance of winning each month, generated by the ERNIE (Electronic Random Number Indicator Equipment) random number generator. The current odds of any single £1 bond winning a prize in any given month are approximately 1 in 21,000. The expected return equals the prize fund rate, but actual returns for individual holders vary significantly — particularly for smaller holdings where the probability of winning nothing in a given year is substantial.',
+      'For a £10,000 holding at 4.00% prize fund rate, the expected annual return is £400, but this is a statistical average across all bondholders. In practice, most holders of £10,000 will win several £25 prizes per year, occasionally a £50 or £100 prize, and very rarely a larger prize. The median return for small holdings is below the mean because large prizes skew the average upward. The calculator shows expected return alongside the probability distribution of likely outcomes.'
     ],
     example: {
-      title: 'How to use the Premium Bonds Calculator',
+      title: 'Expected returns on £30,000 in Premium Bonds',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Holding: £30,000 (30,000 individual £1 bonds)',
+        'Prize fund rate: 4.00%',
+        'Expected annual return: £30,000 x 4.00% = £1,200',
+        'Expected monthly prizes: approximately 1.4 prizes per month (mainly £25, occasional £50+)',
+        'Comparison: a 4.5% easy-access savings account would pay £1,350/year guaranteed — but Premium Bond prizes are tax-free while savings interest above £1,000 PSA is taxable'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.nsandi.com/products/premium-bonds',
+    sourceName: 'NS&I',
     lastUpdated: 'April 2026',
   },
   'child-maintenance-calculator': {
@@ -2548,20 +2583,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'late-payment-interest-calculator': {
     howItWorks: [
-      'This calculator helps you calculate statutory interest and compensation on overdue commercial invoices under UK law. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Under the Late Payment of Commercial Debts (Interest) Act 1998, UK businesses have a statutory right to charge interest and claim compensation when another business pays an invoice late. The statutory interest rate is the Bank of England base rate plus 8 percentage points per annum. Interest accrues from the day after the agreed payment date (or 30 days after delivery of goods/services or receipt of invoice, whichever is later, if no payment terms were agreed).',
+      'In addition to interest, you can claim a fixed compensation amount based on the size of the unpaid debt: \u00a340 for debts up to \u00a3999.99, \u00a370 for debts between \u00a31,000 and \u00a39,999.99, and \u00a3100 for debts of \u00a310,000 or more. You can also claim reasonable recovery costs\u2014such as the cost of sending reminder letters or instructing a debt collection agency\u2014if the fixed compensation does not cover them.',
+      'Interest is calculated as: Debt amount \u00d7 (Base rate + 8%) \u00f7 365 \u00d7 Number of days overdue. Contract terms can specify a different interest rate, but it must be a substantial remedy\u2014if a contract sets an unreasonably low rate, the statutory rate can still be invoked. These rights apply to all business-to-business transactions and to public authority debts. They do not apply to consumer debts (business-to-consumer).'
     ],
     example: {
-      title: 'How to use the Late Payment Interest Calculator',
+      title: 'Late payment charges on a \u00a35,500 invoice overdue by 45 days',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Invoice amount: \u00a35,500. Payment was due 45 days ago.',
+        'Current BoE base rate: 4.5%. Statutory rate: 4.5% + 8% = 12.5%.',
+        'Daily interest: \u00a35,500 \u00d7 12.5% \u00f7 365 = \u00a31.883 per day.',
+        'Interest for 45 days: \u00a31.883 \u00d7 45 = \u00a384.75.',
+        'Fixed compensation (debt \u00a31,000\u2013\u00a39,999.99): \u00a370. Total claim: \u00a384.75 + \u00a370 = \u00a3154.75.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/late-commercial-payments-interest',
+    sourceName: 'GOV.UK \u2013 Late Commercial Payments Interest',
     lastUpdated: 'April 2026',
   },
   'overtime-calculator': {
@@ -2794,22 +2831,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'greenhouse-size-calculator': {
     howItWorks: [
-      'Greenhouse size depends on what you want to grow and how intensively you garden. A small greenhouse (6 \u00D7 4 ft / 1.8 \u00D7 1.2 m) suits seed starting and a few tomato plants. A medium greenhouse (8 \u00D7 6 ft / 2.4 \u00D7 1.8 m) allows year-round growing with staging for potting. A large greenhouse (10 \u00D7 8 ft or bigger) supports a full range of crops, propagation and overwintering.',
-      'This calculator helps you choose the right size based on what you plan to grow. Tomatoes and cucumbers need roughly 0.5 m\u00B2 per plant (cordon-trained). Staging and paths typically occupy 30\u201340% of the floor area, so the usable growing space is smaller than the footprint. Allow at least a 600 mm path down the centre.',
-      'Enter your desired crops and quantities. The calculator suggests a greenhouse footprint and checks it fits your available garden space. It also estimates heating costs if you want to keep the greenhouse frost-free through winter (typically £100\u2013£300 per year for electric heating in a 6 \u00D7 8 ft greenhouse, depending on insulation).',
+      'Greenhouse growing area is calculated as the internal floor space in square feet or square metres, minus any permanent staging, pathways, and structural obstructions. A standard 6ft x 8ft greenhouse provides 48 sq ft of total floor area but approximately 36-40 sq ft of usable growing space after accounting for a central path. The calculator converts your chosen dimensions into both usable ground beds and shelved growing capacity.',
+      'Plant capacity depends on species spacing requirements at maturity. Tomato cordons need roughly 3 sq ft per plant (18-inch spacing in rows 24 inches apart). Seedling trays (standard UK seed tray is 14" x 9") hold 24-40 plugs and require about 0.9 sq ft of bench space each. Pepper and aubergine plants need 2.5 sq ft each, while cucumber plants require 4 sq ft for adequate air circulation.',
+      'Staging and shelving effectively double your growing area for smaller plants and propagation. A 6ft x 8ft greenhouse with staging along both long walls gains an additional 20-24 sq ft of shelf space. The calculator factors in whether you plan ground-level beds for tall crops (tomatoes, cucumbers) or multi-tier staging for compact plants (herbs, lettuce, seed trays), providing a combined plant count estimate.'
     ],
     example: {
-      title: 'Example: 12 tomato plants, 4 cucumber, seed trays, potting bench',
+      title: 'Planning capacity for a 8ft x 10ft greenhouse',
       steps: [
-        'Tomatoes: 12 \u00D7 0.5 m\u00B2 = 6.0 m\u00B2 growing space',
-        'Cucumbers: 4 \u00D7 0.5 m\u00B2 = 2.0 m\u00B2',
-        'Staging for seeds and potting: 2.0 m\u00B2',
-        'Path (30%): 3.3 m\u00B2',
-        'Total footprint: ~13.3 m\u00B2 \u2014 suggests 10 \u00D7 8 ft (2.4 \u00D7 3.0 m)',
-      ],
+        'Total floor area: 8 x 10 = 80 sq ft, minus 2ft central path = approx 64 sq ft usable ground',
+        'Ground bed allocation: 6 cordon tomato plants (18 sq ft) + 4 cucumber plants (16 sq ft) = 34 sq ft',
+        'Remaining ground space: 30 sq ft for aubergines (4 plants) and peppers (6 plants)',
+        'Staging along one 10ft wall (2ft deep): 20 sq ft shelf space for 22 seed trays or 40 herb pots',
+        'Total growing capacity: 14 large plants at ground level plus propagation space for 500+ seedlings on staging'
+      ]
     },
     sourceUrl: 'https://www.rhs.org.uk/garden-features/greenhouses',
-    sourceName: 'RHS \u2014 Greenhouses',
+    sourceName: 'RHS - Greenhouse Growing Guide',
     lastUpdated: 'April 2026',
   },
   'pond-volume-calculator': {
@@ -3055,20 +3092,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'salary-sacrifice-pension-calculator': {
     howItWorks: [
-      'This calculator helps you compare salary sacrifice vs relief at source pension contributions. See tax and NI savings. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Salary sacrifice reduces your gross contractual pay and your employer pays the sacrificed amount directly into your pension. Because the contribution comes from the employer, neither employee National Insurance (8% on earnings £12,570-£50,270) nor employer NI (13.8%) is payable on the sacrificed amount. Under relief at source, you contribute from net pay and only save income tax, not NI — so salary sacrifice is always more efficient when NI applies.',
+      'The calculation compares take-home pay under both methods. With relief at source on a £500 monthly contribution from a £40,000 salary, you pay from net pay and reclaim 20% basic rate relief, costing you £400/month. With salary sacrifice, your salary drops by £500 but you save £40 employee NI (8% of £500), so your net pay only drops by £360 — an extra £40/month reaching your pension or pocket.',
+      'Your employer also saves 13.8% NI on the sacrificed amount (£69 on £500). Many employers share part or all of this saving by adding it to your pension contribution. Salary sacrifice reduces your qualifying earnings for State Pension, statutory maternity pay, and mortgage affordability assessments, so the calculator flags when sacrifice would take earnings below the NI lower earnings limit (£6,396) or affect benefit entitlements.'
     ],
     example: {
-      title: 'How to use the Salary Sacrifice Pension Calculator',
+      title: 'Salary sacrifice vs relief at source on £600/month pension contribution',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Gross salary: £45,000/year. Monthly contribution target: £600 gross',
+        'Relief at source: £480 from net pay + £120 tax relief = £600 in pension. Employee NI still paid on £600.',
+        'Salary sacrifice: salary reduced to £37,800. £600 goes to pension. Employee NI saved: £600 x 8% x 12 = £576/year',
+        'Employer NI saved: £600 x 13.8% x 12 = £993.60/year (employer adds 50% to pension = £496.80 extra)',
+        'Total annual benefit of salary sacrifice: £576 NI saving + £496.80 employer share = £1,072.80 more per year'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/guidance/salary-sacrifice-and-the-effects-on-paye',
+    sourceName: 'HMRC',
     lastUpdated: 'April 2026',
   },
   'temperature-converter': {
@@ -3259,56 +3298,62 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'business-rates-calculator': {
     howItWorks: [
-      'This calculator helps you calculate business rates from rateable value. Includes Small Business Rate Relief. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Business rates are calculated by multiplying your property\'s rateable value (RV) by the applicable multiplier set annually by the government. For 2025/26, the standard multiplier is 51.2p in the pound for properties with an RV of \u00a351,000 or above, and the small business multiplier is 49.9p for properties below that threshold. The rateable value is an estimate of the open-market annual rent for the property as assessed by the Valuation Office Agency (VOA).',
+      'Small Business Rate Relief (SBRR) applies if your single property has an RV below \u00a315,000. Properties with an RV of \u00a312,000 or below receive 100% relief\u2014paying zero business rates. Between \u00a312,001 and \u00a315,000, the relief tapers on a sliding scale. If you occupy multiple properties, your eligibility is based on the combined RV, and SBRR may be reduced or unavailable.',
+      'Additional reliefs may apply: rural rate relief for shops and post offices in designated rural areas, charitable relief at 80% for qualifying charities, and the retail/hospitality/leisure relief scheme which has provided up to 75% discount in recent years. Transitional relief caps annual increases or decreases following a revaluation to smooth bill changes. Your local council issues the bill and administers collection.'
     ],
     example: {
-      title: 'How to use the Business Rates Calculator',
+      title: 'Business rates for a shop with \u00a320,000 rateable value',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Rateable value of the property: \u00a320,000.',
+        'Property RV is below \u00a351,000, so the small business multiplier applies: 49.9p.',
+        'Basic rates bill: \u00a320,000 \u00d7 0.499 = \u00a39,980 per year.',
+        'RV exceeds \u00a315,000, so no Small Business Rate Relief applies.',
+        'Annual business rates payable: \u00a39,980, typically paid in 10 monthly instalments of \u00a3998.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/apply-for-business-rate-relief/small-business-rate-relief',
+    sourceName: 'GOV.UK \u2013 Business Rate Relief',
     lastUpdated: 'April 2026',
   },
   'rd-tax-credit-calculator': {
     howItWorks: [
-      'This calculator helps you estimate R&D tax credits for profitable and loss-making companies under the merged RDEC scheme. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'From 1 April 2024, the UK operates a merged R&D tax relief scheme replacing the previous separate SME and RDEC schemes. Under the merged scheme, qualifying companies receive a taxable above-the-line credit of 20% on eligible R&D expenditure. This credit is calculated on the total qualifying costs\u2014staff costs, software, consumables, subcontracted R&D (at 65% of cost for connected parties), and externally provided workers (at 65%)\u2014minus any grant or subsidised income related to the R&D.',
+      'R&D-intensive SMEs\u2014companies where qualifying R&D expenditure represents 30% or more of total expenditure\u2014receive an enhanced rate of 27% under the Enhanced R&D Intensive Support (ERIS) scheme. Loss-making R&D-intensive companies can surrender losses for a payable tax credit at a higher rate, providing vital cash flow for pre-revenue startups. To qualify as R&D, the project must seek an advance in science or technology by resolving scientific or technological uncertainty that a competent professional could not readily deduce.',
+      'Claims are made through the Corporation Tax return (CT600) and must include a detailed technical narrative explaining the R&D activities, the uncertainties faced, and how they were addressed. From April 2023, all claims must also be supported by a pre-notification to HMRC (if the company has not claimed in the previous three years) and include a named senior officer of the company endorsing the claim. HMRC actively investigates claims, so maintaining contemporaneous project records, timesheets, and technical documentation is critical.'
     ],
     example: {
-      title: 'How to use the R&D Tax Credit Calculator',
+      title: 'R&D credit for a software company with \u00a3200,000 qualifying spend',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Qualifying R&D expenditure: staff \u00a3150,000 + cloud computing \u00a330,000 + subcontractors (65% of \u00a340,000) \u00a326,000 = \u00a3206,000.',
+        'Merged scheme credit: \u00a3206,000 \u00d7 20% = \u00a341,200 taxable credit.',
+        'Company has \u00a3100,000 taxable profit. Credit reduces CT liability: \u00a3100,000 \u00d7 25% = \u00a325,000 CT, offset by \u00a341,200 credit.',
+        'Tax on the credit itself: \u00a341,200 \u00d7 25% = \u00a310,300. Net benefit: \u00a341,200 \u2212 \u00a310,300 = \u00a330,900.',
+        'Effective tax position: \u00a325,000 CT \u2212 \u00a330,900 net credit = -\u00a35,900 (refundable or carried forward).'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/guidance/corporation-tax-research-and-development-rd-relief',
+    sourceName: 'GOV.UK \u2013 R&D Tax Relief',
     lastUpdated: 'April 2026',
   },
   'cis-calculator': {
     howItWorks: [
-      'This calculator helps you calculate CIS deductions on subcontractor invoices at 20%, 30% or gross payment status. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Under the Construction Industry Scheme (CIS), contractors must deduct tax at source from payments made to subcontractors for construction operations. The standard deduction rate is 20% and applies to the labour element of each payment. Material costs that the subcontractor has incurred are excluded from the deduction, provided the subcontractor provides evidence such as supplier invoices. The contractor then pays the withheld amount to HMRC on behalf of the subcontractor.',
+      'Subcontractors can apply for gross payment status (0% deduction) if they meet HMRC\'s turnover, compliance, and business tests. Unverified subcontractors\u2014those not registered with HMRC under CIS or whose details cannot be confirmed\u2014face a higher 30% deduction rate. Contractors must verify each new subcontractor with HMRC before making the first payment, using the online verification service.',
+      'Contractors file monthly CIS returns by the 19th of each month, reporting all payments made to subcontractors and the deductions applied. Subcontractors offset their CIS deductions against their Self Assessment or Corporation Tax liability at the end of the year. If total CIS deductions exceed the tax owed, the subcontractor receives a refund. Accurate record-keeping of gross payment amounts, material deductions, and CIS deductions is mandatory for both parties.'
     ],
     example: {
-      title: 'How to use the CIS Subcontractor Tax Calculator',
+      title: 'CIS deduction on a \u00a35,000 subcontractor payment',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Total invoice from verified subcontractor: \u00a35,000.',
+        'Materials element supported by receipts: \u00a31,200.',
+        'Labour element subject to CIS: \u00a35,000 \u2212 \u00a31,200 = \u00a33,800.',
+        'CIS deduction at 20%: \u00a33,800 \u00d7 0.20 = \u00a3760.',
+        'Net payment to subcontractor: \u00a35,000 \u2212 \u00a3760 = \u00a34,240. The \u00a3760 is paid to HMRC.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/what-is-the-construction-industry-scheme',
+    sourceName: 'GOV.UK \u2013 Construction Industry Scheme',
     lastUpdated: 'April 2026',
   },
   'pet-insurance-calculator': {
@@ -3475,38 +3520,42 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'sole-trader-vs-ltd-calculator': {
     howItWorks: [
-      'This calculator helps you compare take-home pay as a sole trader vs limited company director. See full tax breakdown for both. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'A sole trader pays Income Tax and National Insurance directly on all business profits. The tax rates are personal rates: 20%/40%/45% IT bands plus Class 2 (\u00a3179.40/year) and Class 4 NI (6%/2%). Setup is immediate\u2014register with HMRC and start trading. There is no legal separation between you and the business, meaning personal assets are exposed to business liabilities. Accounting requirements are minimal: simple income/expenses records and an annual Self Assessment return.',
+      'A limited company pays Corporation Tax on profits at 19% (profits under \u00a350,000) scaling to 25% (profits over \u00a3250,000), with marginal relief between those thresholds. The director/shareholder then extracts profits via a combination of salary and dividends. This two-stage extraction (CT then dividend tax) is often cheaper than sole trader rates at higher profit levels because dividends avoid National Insurance entirely. However, the company must file annual accounts with Companies House, maintain statutory registers, and comply with more complex regulatory obligations.',
+      'The crossover point where a limited company becomes more tax-efficient than sole trading typically falls between \u00a330,000 and \u00a345,000 of annual profit, depending on the director\'s other income and personal circumstances. Below this level, the administrative cost and complexity of a limited company often outweigh the modest tax saving. Above \u00a350,000 profit, the combined CT plus dividend tax route usually saves several thousand pounds per year compared with sole trader IT and NI. Other factors include liability protection, pension contribution options, and the perceived credibility of a limited company structure.'
     ],
     example: {
-      title: 'How to use the Sole Trader vs Limited Company Calculator',
+      title: 'Tax comparison at \u00a360,000 profit',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Sole trader: IT on \u00a360,000 = \u00a311,432 + Class 2 \u00a3179 + Class 4 \u00a32,557 = \u00a314,168 total. Take-home: \u00a345,832.',
+        'Ltd: salary \u00a312,570 (IT \u00a30, NI \u00a30). Remaining profit: \u00a347,430.',
+        'Corporation Tax at 19%: \u00a39,012. Post-CT profit: \u00a338,418 paid as dividends.',
+        'Dividend tax: \u00a3500 allowance free, \u00a337,918 \u00d7 8.75% = \u00a33,318.',
+        'Ltd total tax: \u00a39,012 + \u00a33,318 = \u00a312,330. Take-home: \u00a347,670. Annual saving: \u00a31,838.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/set-up-limited-company',
+    sourceName: 'GOV.UK \u2013 Set Up a Limited Company',
     lastUpdated: 'April 2026',
   },
   'pension-credit-calculator': {
     howItWorks: [
-      'This calculator helps you estimate Pension Credit Guarantee Credit entitlement based on income, pension and savings. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Pension Credit has two elements assessed independently. Guarantee Credit tops up weekly income to a minimum level: £218.15 for single claimants or £332.95 for couples in 2025/26. Your qualifying income includes State Pension, private pensions, earnings, and most benefits. If your assessed income falls below the appropriate minimum guarantee, the shortfall is paid as Guarantee Credit.',
+      'Savings Credit rewards people who made modest provision for retirement beyond the basic State Pension. It is only available to those who reached State Pension age before 6 April 2016. The maximum Savings Credit is £17.01 per week for singles or £19.04 for couples. It is calculated by taking 60% of qualifying income above the Savings Credit threshold (£189.80 single, £301.22 couple), then reducing by 40% of any income above the Guarantee Credit minimum.',
+      'Certain income is disregarded from the assessment: the first £10,000 of capital is ignored entirely, and each £500 (or part thereof) of capital between £10,000 and £99,999 counts as £1 per week of deemed income. Unlike means-tested benefits for working-age claimants, there is no upper capital limit that disqualifies you from Pension Credit entirely.'
     ],
     example: {
-      title: 'How to use the Pension Credit Calculator',
+      title: 'Single pensioner with State Pension and savings',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Benefits',
-      ],
+        'Weekly State Pension income: £185.50',
+        'Savings of £18,000: first £10,000 ignored, remaining £8,000 = 16 x £1 = £16/week deemed income',
+        'Total assessed weekly income: £185.50 + £16.00 = £201.50',
+        'Guarantee Credit minimum for single person: £218.15',
+        'Guarantee Credit payable: £218.15 - £201.50 = £16.65 per week (£866 per year)'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/browse/benefits',
-    sourceName: 'GOV.UK — Benefits',
+    sourceUrl: 'https://www.gov.uk/pension-credit/eligibility',
+    sourceName: 'GOV.UK - Pension Credit',
     lastUpdated: 'April 2026',
   },
   'housing-benefit-calculator': {
@@ -3646,38 +3695,42 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'capital-allowances-calculator': {
     howItWorks: [
-      'This calculator helps you calculate AIA, Full Expensing or Writing Down Allowance on business assets. See year-by-year tax relief. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Capital allowances let UK businesses deduct the cost of qualifying capital assets from taxable profits over time, or in full in the year of purchase. The main routes are: Annual Investment Allowance (AIA) offering 100% relief on the first \u00a31,000,000 of qualifying plant and machinery; Full Expensing at 100% for new (not second-hand) main-rate plant and machinery purchased by companies; and the 50% First Year Allowance for new special-rate assets like long-life assets and integral features.',
+      'Assets that don\'t qualify for first-year relief enter writing down allowance (WDA) pools. The main pool covers most plant and machinery at 18% per year on a reducing-balance basis. The special rate pool\u2014covering integral features, long-life assets, and thermal insulation\u2014writes down at 6% per year. Cars have specific rules: zero-emission cars get 100% first-year allowance, cars with CO\u2082 emissions up to 50g/km enter the main pool, and higher-emission cars enter the special rate pool.',
+      'Balancing allowances or charges arise when you dispose of an asset. If the disposal value is less than the pool balance, the shortfall is claimed as a balancing allowance. If the disposal value exceeds the pool balance, the excess is a balancing charge added to taxable profits. Accurate tracking of each pool\'s written-down value is essential for correct annual claims.'
     ],
     example: {
-      title: 'How to use the Capital Allowances Calculator',
+      title: 'Capital allowances on \u00a3150,000 of mixed assets',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Purchase \u00a390,000 of machinery (main-rate, new) and \u00a360,000 of integral features (special-rate).',
+        'Claim AIA on both: \u00a3150,000 is within the \u00a31M limit, so 100% deduction in year one.',
+        'Alternatively, use Full Expensing on the \u00a390,000 machinery (100%) and 50% FYA on the \u00a360,000 integral features (\u00a330,000 relief).',
+        'Remaining \u00a330,000 of integral features enters the special rate pool at 6% WDA: \u00a31,800 relief in year two.',
+        'Using AIA gives \u00a3150,000 total deduction in year one vs \u00a3120,000 + \u00a31,800 over two years with FE/FYA route.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/capital-allowances',
+    sourceName: 'GOV.UK \u2013 Capital Allowances',
     lastUpdated: 'April 2026',
   },
   'cash-flow-calculator': {
     howItWorks: [
-      'This calculator helps you project monthly cash flow with income and expenses. See closing balance and lowest point. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Cash flow forecasting tracks the actual movement of money in and out of your business on a weekly or monthly basis. The formula is straightforward: Opening balance + Total cash inflows \u2212 Total cash outflows = Closing balance. The closing balance of one period becomes the opening balance of the next. Unlike profit, cash flow accounts for the timing of payments\u2014you may invoice \u00a310,000 in March but not receive payment until May.',
+      'Cash inflows include customer payments, loan drawdowns, tax refunds, grants, asset sales, and any other money physically entering your bank account. Cash outflows cover supplier payments, wages, rent, utilities, loan repayments, tax payments (VAT, PAYE, Corporation Tax), equipment purchases, and dividend distributions. Categorising each flow allows you to identify which areas consume the most cash.',
+      'A negative closing balance signals a shortfall that must be covered by an overdraft, loan, or deferring payments. Projecting 12 months ahead lets you spot potential crises before they happen. Key metrics include the cash burn rate (average monthly outflows minus inflows when negative) and the runway (current balance divided by monthly burn rate), showing how many months the business can survive without additional income.'
     ],
     example: {
-      title: 'How to use the Cash Flow Calculator',
+      title: 'Monthly cash flow for a freelance design studio',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Opening balance on 1 April: \u00a34,200.',
+        'April cash inflows: \u00a37,500 (client payments received).',
+        'April cash outflows: rent \u00a3800 + software \u00a3150 + subcontractor \u00a32,000 + personal draw \u00a32,500 + VAT payment \u00a31,400 = \u00a36,850.',
+        'Closing balance: \u00a34,200 + \u00a37,500 \u2212 \u00a36,850 = \u00a34,850.',
+        'Net positive cash flow of \u00a3650 for the month; balance carried forward to May.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/set-up-business',
+    sourceName: 'GOV.UK \u2013 Set Up a Business',
     lastUpdated: 'April 2026',
   },
   'spouse-visa-calculator': {
@@ -3743,92 +3796,102 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'investment-return-calculator': {
     howItWorks: [
-      'This calculator helps you calculate nominal and real (inflation-adjusted) investment returns with monthly contributions over time. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Compound growth calculates returns on both the original principal and accumulated gains. The formula for a lump sum is: Future Value = Present Value x (1 + r)^n, where r is the annual return rate and n is the number of years. For regular monthly contributions, each payment compounds for a different duration, calculated using the future value of an annuity formula: FV = PMT x [((1 + r/12)^(12n) - 1) / (r/12)].',
+      'Nominal returns represent the headline growth rate before accounting for inflation. Real returns strip out inflation to show actual purchasing power gain. If your investment grows 7% nominally and inflation is 3%, your real return is approximately 3.88% (calculated as (1.07/1.03) - 1, not simply 7% - 3%). Over long periods this distinction is crucial: £100,000 growing at 7% nominal for 30 years reaches £761,226, but at 3% inflation its real purchasing power is only £352,365.',
+      'The calculator separates returns into components: original contributions, investment growth, and the effect of charges. Platform fees and fund charges compound negatively just as returns compound positively. A 1% annual charge on a £100,000 portfolio growing at 6% over 30 years costs approximately £132,000 in foregone growth — nearly as much as the original investment. The tool shows gross return, charges deducted, and net return side by side.'
     ],
     example: {
-      title: 'How to use the Investment Return Calculator',
+      title: 'Investment growth: £500/month for 20 years at 7% nominal',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Monthly contribution: £500 (£6,000/year)',
+        'Total contributions over 20 years: £120,000',
+        'At 7% nominal annual growth: portfolio reaches approximately £260,500',
+        'Investment gain: £260,500 - £120,000 = £140,500',
+        'Real value at 2.5% inflation: approximately £199,000 in today\'s money (purchasing power of the £260,500)'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.bankofengland.co.uk/statistics/yield-curves',
+    sourceName: 'Bank of England',
     lastUpdated: 'April 2026',
   },
   'savings-interest-tax-calculator': {
     howItWorks: [
-      'This calculator helps you calculate tax on savings interest above your Personal Savings Allowance. See max tax-free savings. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The Personal Savings Allowance (PSA) lets you earn tax-free interest each year: £1,000 for basic-rate taxpayers (20%), £500 for higher-rate taxpayers (40%), and £0 for additional-rate taxpayers (45%). Interest above the PSA is taxed at your marginal income tax rate. The PSA applies to interest from bank and building society accounts, NS&I (except Premium Bond prizes which are always tax-free), and peer-to-peer lending.',
+      'The calculation totals all taxable interest across your savings accounts, subtracts the PSA for your tax band, and applies the appropriate tax rate to the excess. Your tax band is determined by total income including salary, pension, rental income, and dividends. If adding savings interest pushes you from basic into higher rate, the portion in each band is taxed separately. ISA interest is excluded entirely as it does not count toward the PSA threshold.',
+      'The starting rate for savings provides an additional £5,000 tax-free band for those with non-savings income below £17,570. For every £1 of non-savings income above £12,570, the starting rate band reduces by £1. Someone earning £14,000 salary gets a £3,570 starting rate band (£17,570 - £14,000) plus the £1,000 PSA, allowing £4,570 of interest tax-free. Retirees with only State Pension income often benefit significantly from this starting rate band.'
     ],
     example: {
-      title: 'How to use the Savings Interest Tax Calculator',
+      title: 'Tax on £2,800 savings interest for a higher-rate taxpayer',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Total savings interest across all accounts: £2,800/year',
+        'Tax band: higher rate (salary £55,000)',
+        'Personal Savings Allowance at higher rate: £500',
+        'Taxable interest: £2,800 - £500 = £2,300',
+        'Tax due at 40%: £2,300 x 40% = £920 (collected via self-assessment or PAYE code adjustment)'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.gov.uk/apply-tax-free-interest-on-savings',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'real-return-calculator': {
     howItWorks: [
-      'This calculator helps you calculate the real return on investments after accounting for inflation. See purchasing power impact. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The real return strips inflation from nominal investment returns to reveal actual purchasing power growth. The precise formula is: Real Return = ((1 + Nominal Return) / (1 + Inflation Rate)) - 1. This multiplicative method is more accurate than simply subtracting inflation from the nominal rate, especially when rates are high. At 8% nominal growth and 4% inflation, the real return is (1.08/1.04) - 1 = 3.85%, not 4%.',
+      'UK inflation is measured primarily by CPI (Consumer Prices Index) and CPIH (CPI including owner occupiers\' housing costs). The Bank of England targets 2% CPI inflation. Historical UK CPI has averaged approximately 2.5-3% over the past two decades, with spikes to 11.1% in October 2022. The calculator allows custom inflation assumptions or uses the BoE target rate for forward projections.',
+      'Purchasing power erosion accelerates over time. At 3% annual inflation, £100,000 buys only £74,400 worth of today\'s goods after 10 years, £55,400 after 20 years, and £41,200 after 30 years. For retirement planning over 25-30 years, failing to account for inflation can leave you with half the expected spending power. The calculator shows the nominal portfolio value alongside its inflation-adjusted equivalent at 10, 20, and 30-year intervals.'
     ],
     example: {
-      title: 'How to use the Real Return Calculator (After Inflation)',
+      title: 'Real return on a portfolio averaging 7% nominal over 25 years',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Nominal annual return: 7%',
+        'Assumed CPI inflation: 2.5%',
+        'Real annual return: (1.07 / 1.025) - 1 = 4.39%',
+        'Nominal value of £100,000 after 25 years at 7%: £542,743',
+        'Real purchasing power of that £542,743 at 2.5% inflation: £292,400 in today\'s money'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.bankofengland.co.uk/monetary-policy/inflation',
+    sourceName: 'Bank of England',
     lastUpdated: 'April 2026',
   },
   'rule-of-72-calculator': {
     howItWorks: [
-      'This calculator helps you estimate how long it takes to double your money at a given interest rate using the Rule of 72. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The Rule of 72 is a mental arithmetic shortcut for estimating how long it takes an investment to double at a given compound annual growth rate. The formula is: Years to Double = 72 / Annual Rate (as a whole number). At 6% growth, money doubles in approximately 72 / 6 = 12 years. At 8%, it doubles in 72 / 8 = 9 years. The rule is most accurate for rates between 2% and 15%.',
+      'The mathematical basis is the natural logarithm: the exact doubling time is ln(2) / ln(1 + r), which equals 0.693 / ln(1 + r). For small rates, ln(1 + r) approximates to r, giving 0.693 / r, or roughly 69.3 / r%. The number 72 is used instead of 69.3 because it has more factors (divisible by 2, 3, 4, 6, 8, 9, 12) making mental division easier, and the slight overestimate partially compensates for the approximation error.',
+      'The rule also works in reverse: if you want to double your money in a specific number of years, divide 72 by the years to get the required rate. To double in 10 years, you need 72 / 10 = 7.2% annual growth. The rule applies equally to inflation erosion: at 3% inflation, the cost of living doubles every 72 / 3 = 24 years, meaning your £1 buys only 50p worth of today\'s goods.'
     ],
     example: {
-      title: 'How to use the Rule of 72 Calculator',
+      title: 'Doubling time at various rates using Rule of 72',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Cash savings at 4.5%: 72 / 4.5 = 16 years to double',
+        'Equity investment at 7%: 72 / 7 = 10.3 years to double',
+        'High-growth fund at 10%: 72 / 10 = 7.2 years to double',
+        'Inflation at 3%: purchasing power halves every 72 / 3 = 24 years',
+        'Exact doubling time at 7% (using ln(2)/ln(1.07)): 10.24 years — Rule of 72 estimate of 10.3 is very close'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.bankofengland.co.uk/statistics/yield-curves',
+    sourceName: 'Bank of England',
     lastUpdated: 'April 2026',
   },
   'cost-of-delay-calculator': {
     howItWorks: [
-      'This calculator helps you see how much you lose by waiting to invest. Compare starting now vs delaying by 1-10+ years. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The cost of delay quantifies the compound growth forfeited by postponing the start of regular investing. Because compound interest generates returns on previous returns, early contributions are disproportionately valuable. A single £5,000 contribution at age 25 growing at 7% for 40 years reaches £74,872. The same £5,000 invested at age 35 (10-year delay) grows for only 30 years to £38,061 — losing £36,811, or almost half the final value, despite the same contribution.',
+      'For regular monthly contributions, the cost of delay is even more dramatic. Starting at age 25 with £300/month at 7% for 40 years (to age 65) accumulates approximately £790,000. Delaying 10 years to age 35, the same £300/month for 30 years reaches only £365,000 — a cost of delay of £425,000. To match the early starter\'s outcome, the delayed investor would need to contribute approximately £650/month, more than double the amount.',
+      'The calculator isolates the growth lost by showing three scenarios side by side: starting now, starting with a 1-year delay, a 5-year delay, and a 10-year delay. Each scenario shows total contributions, total growth, and the shortfall compared to starting immediately. It also calculates the additional monthly contribution needed in each delayed scenario to match the non-delayed outcome, quantifying the real cost of procrastination in pounds.'
     ],
     example: {
-      title: 'How to use the Cost of Delay Calculator',
+      title: 'Cost of delaying £400/month investment by 5 years',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Scenario A: Start now (age 30), invest £400/month at 7% for 35 years to age 65 = £690,700',
+        'Scenario B: Start at 35, invest £400/month at 7% for 30 years = £489,300',
+        'Cost of 5-year delay: £690,700 - £489,300 = £201,400 in lost growth',
+        'Total contributed in A: £168,000. Total contributed in B: £144,000. Extra contributions: only £24,000',
+        'To match Scenario A from age 35: need £565/month — 41% higher monthly savings to overcome the delay'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.gov.uk/government/publications/automatic-enrolment-review-2017-maintaining-the-momentum',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'teacher-pay-calculator': {
@@ -3854,22 +3917,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'shared-parental-leave-calculator': {
     howItWorks: [
-      'Shared Parental Leave (SPL) allows eligible parents to share up to 50 weeks of leave and 37 weeks of pay following the birth or adoption of a child. The mother must end her maternity leave early by giving a "curtailment notice" to create the shared pool. The minimum maternity leave is 2 weeks (4 weeks for factory workers).',
-      'Leave can be taken by one parent at a time or both simultaneously. It can be taken in continuous blocks (which the employer must approve) or discontinuous blocks (which the employer can refuse). Each parent can give up to three "period of leave" notices. The leave must be taken before the child\'s first birthday or within one year of adoption placement.',
-      'This calculator helps you plan your leave schedule. Enter when the mother will end maternity leave and how you want to split the remaining entitlement. It generates a visual timeline showing each parent\'s leave periods, pay periods and returns to work.',
+      'Shared Parental Leave allows eligible parents to split up to 50 weeks of leave and 37 weeks of Statutory Shared Parental Pay (ShPP) between them. The mother or primary adopter must first end their maternity or adoption leave by giving a binding curtailment notice. The first two weeks after birth are compulsory maternity leave and cannot be shared. Any remaining untaken weeks become available for either parent to book.',
+      'ShPP is paid at £184.03 per week or 90% of average weekly earnings, whichever is lower, for up to 37 weeks total (minus any weeks of statutory maternity pay already taken). Unlike maternity pay, ShPP does not include an initial six-week period at 90% of earnings. Both parents can take leave simultaneously, giving families flexibility to be off work together or take turns.',
+      'Each parent must give their employer at least eight weeks\' notice before each block of leave. Leave can be taken in up to three separate discontinuous blocks, though employers may refuse discontinuous requests and offer alternative dates. Both parents must have at least 26 weeks\' continuous employment by the 15th week before the due date and earn above the Lower Earnings Limit of £123 per week.'
     ],
     example: {
-      title: 'Example: Mother curtails maternity after 20 weeks',
+      title: 'Splitting leave after mother takes 20 weeks maternity',
       steps: [
-        'Total maternity leave entitlement: 52 weeks',
-        'Maternity leave taken: 20 weeks',
-        'SPL available to share: 52 − 20 = 32 weeks of leave',
-        'ShPP available: 39 − 20 = 19 weeks of pay',
-        'Example split: Father 16 weeks leave (16 weeks paid), Mother 16 weeks (3 weeks paid)',
-      ],
+        'Mother takes 20 weeks maternity leave (2 compulsory + 18 additional)',
+        'Remaining leave pool: 52 - 20 = 32 weeks leave, 39 - 20 = 19 weeks pay available to share',
+        'Mother books 10 more weeks as ShPL, partner books 22 weeks as ShPL',
+        'ShPP available: 19 weeks split as mother 10 weeks + partner 9 weeks at £184.03/week',
+        'Partner\'s total ShPP: 9 x £184.03 = £1,656.27 (remaining 13 weeks unpaid)'
+      ]
     },
     sourceUrl: 'https://www.gov.uk/shared-parental-leave-and-pay',
-    sourceName: 'GOV.UK — Shared Parental Leave and Pay',
+    sourceName: 'GOV.UK - Shared Parental Leave and Pay',
     lastUpdated: 'April 2026',
   },
   'high-income-child-benefit-calculator': {
@@ -3932,20 +3995,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'freelance-tax-calculator': {
     howItWorks: [
-      'This calculator helps you calculate freelancer take-home pay from day rate. Includes tax, NI, expenses and VAT threshold warning. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Freelance tax in the UK is calculated on your net taxable profit: total business income minus allowable expenses. Allowable expenses include materials, software, professional subscriptions, travel, insurance, a proportion of home office costs, phone, and accountancy fees. The resulting profit figure is then subject to Income Tax and two classes of National Insurance via the Self Assessment system, with payments due by 31 January following the tax year.',
+      'Income Tax is applied in bands after deducting the \u00a312,570 Personal Allowance: 20% on the first \u00a337,700 of taxable income (basic rate), 40% on income between \u00a350,271 and \u00a3125,140 (higher rate), and 45% above \u00a3125,140 (additional rate). The Personal Allowance reduces by \u00a31 for every \u00a32 of income above \u00a3100,000, reaching zero at \u00a3125,140\u2014creating an effective 60% marginal rate in that band.',
+      'Class 2 NI is a flat weekly amount of \u00a33.45 per week (\u00a3179.40 per year) payable when profits exceed \u00a312,570. Class 4 NI is 6% on profits between \u00a312,570 and \u00a350,270, then 2% on profits above \u00a350,270. Both are collected through Self Assessment. Payments on Account (two advance payments of 50% each in January and July) apply if your tax bill exceeds \u00a31,000 and less than 80% is collected at source.'
     ],
     example: {
-      title: 'How to use the Freelance Tax Calculator',
+      title: 'Tax on \u00a348,000 freelance profit',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Employment and pay',
-      ],
+        'Freelance revenue: \u00a358,000. Allowable expenses: \u00a310,000. Net profit: \u00a348,000.',
+        'Income Tax: \u00a30 on first \u00a312,570. Then \u00a335,430 \u00d7 20% = \u00a37,086.',
+        'Class 2 NI: \u00a33.45 \u00d7 52 = \u00a3179.40 per year.',
+        'Class 4 NI: (\u00a348,000 \u2212 \u00a312,570) \u00d7 6% = \u00a32,125.80.',
+        'Total tax and NI: \u00a37,086 + \u00a3179.40 + \u00a32,125.80 = \u00a39,391.20. Take-home: \u00a338,608.80.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/national-minimum-wage-rates',
-    sourceName: 'GOV.UK — Employment and pay',
+    sourceUrl: 'https://www.gov.uk/self-employed-national-insurance-rates',
+    sourceName: 'GOV.UK \u2013 Self-Employed National Insurance',
     lastUpdated: 'April 2026',
   },
   'macro-calculator': {
@@ -4172,20 +4237,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'stock-unit-calculator': {
     howItWorks: [
-      'This calculator helps you calculate total livestock units for cattle, sheep, pigs and horses. See land requirement at 2 SU/ha. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Livestock Units (LU) provide a standardised measure for comparing the grazing demand and environmental impact of different farm animals. Each species and age class is assigned a coefficient relative to a reference animal (one dairy cow = 1.0 LU). Standard UK coefficients include: dairy cow 1.0, beef suckler cow 0.75, other cattle over 2 years 0.65, cattle 1-2 years 0.6, sheep (ewe) 0.12, ram 0.15, hogget 0.10, sow 0.4, finishing pig 0.12, and horse 0.80.',
+      'Total Livestock Units determine your farm\'s stocking density when divided by the available forage hectares. Defra and the Rural Payments Agency use stocking density thresholds for agri-environment scheme eligibility, cross-compliance checks, and Countryside Stewardship agreements. Typical extensive grazing targets 0.5-1.0 LU per hectare, while intensive grassland systems may support 1.5-2.5 LU/ha.',
+      'The calculator aggregates all animal classes on your holding and produces a total LU figure, overall stocking rate per hectare, and comparison against scheme thresholds. Seasonal adjustments can be applied where animals are only present for part of the year by multiplying the LU coefficient by the fraction of months grazed (e.g., 200 ewes present for 8 months = 200 x 0.12 x 8/12 = 16.0 adjusted LU).'
     ],
     example: {
-      title: 'How to use the Livestock Stock Unit Calculator',
+      title: 'Mixed farm livestock unit calculation on 65 hectares',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from Defra — Farming schemes',
-      ],
+        '45 dairy cows x 1.0 LU = 45.0 LU',
+        '30 beef cattle (over 2 years) x 0.65 LU = 19.5 LU',
+        '250 breeding ewes x 0.12 LU = 30.0 LU',
+        'Total Livestock Units: 45.0 + 19.5 + 30.0 = 94.5 LU',
+        'Stocking density: 94.5 LU / 65 hectares = 1.45 LU/ha (within typical grassland range)'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/government/collections/environmental-land-management-schemes',
-    sourceName: 'Defra — Farming schemes',
+    sourceUrl: 'https://www.gov.uk/guidance/rural-payments-service',
+    sourceName: 'Defra - Rural Payments and Stocking Guidance',
     lastUpdated: 'April 2026',
   },
   'agricultural-worker-wage-calculator': {
@@ -4504,38 +4571,42 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'pension-annual-allowance-calculator': {
     howItWorks: [
-      'This calculator helps you check your pension annual allowance (£60K), tapered allowance and MPAA. See if you face a tax charge. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The standard annual allowance is £60,000, meaning total pension contributions from all sources (employer, employee, and tax relief) in a tax year cannot exceed this without triggering a tax charge. Unused allowance can be carried forward from the previous three tax years, provided you were a member of a registered pension scheme in those years. The carry-forward is used oldest year first.',
+      'For high earners, the tapered annual allowance reduces the £60,000 limit by £1 for every £2 of adjusted income above £260,000, down to a minimum of £10,000. Adjusted income includes all earnings plus employer pension contributions. Threshold income (net income before pension contributions) must also exceed £200,000 for tapering to apply; if it doesn\'t, the full £60,000 allowance remains.',
+      'The Money Purchase Annual Allowance (MPAA) of £10,000 applies once you flexibly access taxable income from a defined contribution pension (e.g., drawdown or an uncrystallised funds pension lump sum). The MPAA only restricts money purchase contributions; defined benefit accrual retains a separate £50,000 allowance under the alternative annual allowance rules.'
     ],
     example: {
-      title: 'How to use the Pension Annual Allowance Calculator',
+      title: 'Annual allowance check for a higher earner',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Adjusted income: £280,000 (salary £240,000 + employer pension £40,000)',
+        'Threshold income: £240,000 (exceeds £200,000, so tapering applies)',
+        'Taper reduction: (£280,000 - £260,000) / 2 = £10,000 reduction',
+        'Tapered annual allowance: £60,000 - £10,000 = £50,000',
+        'Total contributions this year: £40,000 — within the £50,000 tapered limit, no tax charge'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension/annual-allowance',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'state-pension-age-calculator': {
     howItWorks: [
-      'This calculator helps you find your State Pension age based on date of birth. See exact date and days remaining. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'State Pension age in the UK follows a legislated schedule set by the Pensions Act 2014 and subsequent reviews. The current State Pension age is 66 for both men and women. It is legislated to rise to 67 between May 2026 and March 2028 (phased by date of birth), and then to 68 between 2044 and 2046. The government periodically reviews the timetable; the 2023 review confirmed the rise to 67 but deferred the decision on the rise to 68.',
+      'The calculation maps your date of birth to the exact date you reach State Pension age using the published tables. For those born between 6 March 1961 and 5 April 1977, State Pension age is 67. For those born after 5 April 1977, the currently legislated age is 68 (between 2044-2046), though this is subject to future review. The phasing means people born a day apart can have State Pension ages months apart during transition periods.',
+      'The calculator factors in the state pension age for both new State Pension and the basic/additional State Pension for those who reached pension age before April 2016. It also shows how many years remain until your State Pension age, helping with retirement planning. The government\'s principle is that people should spend up to one-third of adult life in retirement, which guides future age increases linked to life expectancy projections.'
     ],
     example: {
-      title: 'How to use the State Pension Age Calculator',
+      title: 'State Pension age for someone born 15 September 1970',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Date of birth: 15 September 1970',
+        'Born between 6 April 1961 and 5 April 1977: State Pension age = 67',
+        'State Pension date: 15 September 2037',
+        'Current age (April 2026): 55 years old',
+        'Years until State Pension: 11 years and 5 months remaining'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/state-pension-age',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'student-loan-early-repay-calculator': {
@@ -4559,38 +4630,42 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'pension-pot-calculator': {
     howItWorks: [
-      'This calculator helps you calculate the pension pot needed for your target retirement income using drawdown, 4% rule or annuity. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Target pot calculation works backwards from desired retirement income. The 4% rule (derived from the Trinity Study) suggests withdrawing 4% of your pot in year one, then adjusting for inflation annually, gives a high probability of lasting 30 years. To generate £20,000/year from drawdown, you need £20,000 / 0.04 = £500,000. Alternatively, current annuity rates convert pot to income directly: at a 6.5% annuity rate, £20,000/year requires £307,692.',
+      'The State Pension offsets your required private provision. The full new State Pension of £221.20/week (£11,502/year in 2025/26) reduces the income your private pension must generate. If you want £25,000/year total and expect full State Pension, your private pension only needs to produce £13,498/year, requiring a pot of approximately £337,450 at 4% drawdown or £207,662 at a 6.5% annuity rate.',
+      'Working backwards to today, the calculator uses compound growth projections. Given a target pot, current savings, years to retirement, and assumed growth rate (typically 5% nominal for a balanced portfolio), it calculates the required monthly contribution using the future value of an annuity formula. Charges reduce effective growth, so a 5% gross return with 0.5% charges yields 4.5% net growth.'
     ],
     example: {
-      title: 'How to use the How Much Pension Do I Need?',
+      title: 'How much pension pot for £30,000/year retirement income',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Desired annual retirement income: £30,000',
+        'State Pension offset: £11,502/year (full new State Pension)',
+        'Private pension income needed: £30,000 - £11,502 = £18,498/year',
+        'Using 4% withdrawal rule: £18,498 / 0.04 = £462,450 target pot',
+        'Currently aged 35 with £25,000 saved, 30 years to retirement at 4.5% net growth: need to contribute £530/month'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/plan-retirement-income',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'junior-isa-calculator': {
     howItWorks: [
-      'This calculator helps you calculate how much a Junior ISA will be worth when your child turns 18. Tax-free growth with £9,000/year limit. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Junior ISAs have an annual contribution limit of £9,000 per child per tax year, available from birth until age 18. Any UK resident child under 18 who does not have a Child Trust Fund can have a JISA. Parents, grandparents, and anyone else can contribute, but the total from all sources cannot exceed £9,000. The child takes ownership at 18 and can withdraw or continue holding the ISA as an adult ISA.',
+      'The compound growth calculation is particularly powerful for JISAs because of the long time horizon (up to 18 years). At 6% annual growth, £9,000 contributed every year for 18 years grows to approximately £311,000 — of which £149,000 is pure investment growth. Even modest contributions of £100/month over 18 years at 6% growth produce approximately £38,700, nearly double the £21,600 contributed.',
+      'Cash JISAs offer guaranteed returns at a fixed or variable interest rate, suitable for shorter time horizons. Stocks and Shares JISAs invest in funds or shares and are generally recommended for JISAs because the 18-year time horizon smooths out short-term volatility. The calculator shows both scenarios side by side, illustrating how even modest differences in average return (e.g., 4% cash vs 6% equities) compound to substantial differences over 18 years.'
     ],
     example: {
-      title: 'How to use the Junior ISA Calculator',
+      title: 'Junior ISA: £250/month from birth to age 18',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Monthly contribution: £250 (£3,000/year, within £9,000 limit)',
+        'Total contributed over 18 years: £3,000 x 18 = £54,000',
+        'At 6% annual growth (Stocks & Shares JISA): approximately £103,400 at age 18',
+        'Investment growth: £103,400 - £54,000 = £49,400 tax-free gains',
+        'At 3% growth (Cash JISA): approximately £70,100 — £33,300 less than the equities scenario'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.gov.uk/junior-individual-savings-accounts',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'zero-hours-calculator': {
@@ -4917,74 +4992,82 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'benefits-in-kind-calculator': {
     howItWorks: [
-      'This calculator helps you calculate tax on company benefits — car, medical insurance, gym, phone and more. See monthly tax impact. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'HMRC taxes workplace benefits by converting them into a cash equivalent value, which is then taxed at your marginal income tax rate. Each benefit type has its own valuation method defined in the Income Tax (Earnings and Pensions) Act 2003. Your employer reports these values annually on form P11D, and HMRC adjusts your tax code to collect the additional tax owed through PAYE.',
+      'Company car benefit is calculated by multiplying the car\'s P11D price (list price plus accessories, minus capital contributions up to £5,000) by the appropriate percentage based on CO2 emissions. For 2025/26, zero-emission vehicles attract a 2% rate, rising in 1% increments through to 37% for the highest polluters. The resulting cash equivalent is added to your taxable income.',
+      'Private medical insurance benefit equals the cost your employer pays for the policy premium. Accommodation benefit uses the annual value or, if the property cost exceeds £75,000, adds a supplementary charge calculated as the excess multiplied by the official rate of interest (currently 2.25%).'
     ],
     example: {
-      title: 'How to use the Benefits in Kind (P11D) Calculator',
+      title: 'Company car and medical insurance BiK calculation',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Employment and pay',
-      ],
+        'Company car P11D price: £35,000, CO2 emissions 120g/km giving a 29% benefit rate',
+        'Car benefit cash equivalent: £35,000 x 29% = £10,150',
+        'Employer-paid medical insurance premium: £1,200 per year',
+        'Total taxable benefit: £10,150 + £1,200 = £11,350',
+        'Tax due at 20% basic rate: £11,350 x 20% = £2,270 per year (£189.17/month via adjusted tax code)'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/national-minimum-wage-rates',
-    sourceName: 'GOV.UK — Employment and pay',
+    sourceUrl: 'https://www.gov.uk/tax-company-benefits',
+    sourceName: 'HMRC - Tax on Company Benefits',
     lastUpdated: 'April 2026',
   },
   'regular-savings-calculator': {
     howItWorks: [
-      'This calculator helps you calculate returns on a regular saver account with monthly deposits. See effective vs headline rate. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Regular savings accounts accept fixed monthly deposits (typically £1-£500) and often offer a higher introductory rate than instant-access accounts. Interest calculation differs from lump-sum accounts because each monthly deposit earns interest for a different number of months. The first deposit earns 12 months of interest, the second earns 11 months, and the final deposit earns just 1 month — so the effective return on total deposits is roughly half the headline rate.',
+      'The effective AER (Annual Equivalent Rate) accounts for this timing difference. A regular saver advertising 6% where you deposit £200/month totals £2,400 deposited over the year, but the average balance is only about £1,300 (since early deposits are in longer than late ones). Actual interest earned is approximately £78, which is 6% on the average balance but only about 3.25% on the total £2,400 deposited. The calculator shows both the headline rate and the effective return on total contributions.',
+      'Monthly vs annual interest crediting affects the compounding. When interest is paid monthly, it begins earning interest immediately (compound interest). When paid annually, the interest sits un-compounded for up to 12 months. The difference is small for regular savers (typically less than £5 on £2,400 at 6%) but becomes meaningful on larger balances and longer terms. The calculator shows both scenarios for transparent comparison.'
     ],
     example: {
-      title: 'How to use the Regular Savings Calculator',
+      title: 'Regular saver: £300/month at 5.5% for 12 months',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Monthly deposit: £300 for 12 months = £3,600 total deposited',
+        'First deposit earns 12 months interest: £300 x 5.5% = £16.50',
+        'Last deposit earns 1 month interest: £300 x 5.5% / 12 = £1.38',
+        'Total interest over the year: approximately £107 (sum of declining monthly interest)',
+        'Effective return on £3,600 deposited: £107 / £3,600 = 2.97% — roughly half the headline 5.5% rate'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.bankofengland.co.uk/statistics/interest-rate-statistics',
+    sourceName: 'Bank of England',
     lastUpdated: 'April 2026',
   },
   'business-mileage-calculator': {
     howItWorks: [
-      'This calculator helps you compare HMRC mileage allowance vs actual fuel costs. See if you profit or lose from the 45p/25p rates. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'When you use your personal vehicle for business journeys, HMRC sets Approved Mileage Allowance Payments (AMAP) rates that your employer can reimburse tax-free. For cars and vans, the rate is 45p per mile for the first 10,000 business miles in a tax year, dropping to 25p per mile for each additional mile beyond that threshold. These rates are designed to cover fuel, insurance, wear and tear, and depreciation.',
+      'If your employer pays less than the AMAP rate, you can claim Mileage Allowance Relief (MAR) on the shortfall through your Self Assessment return or by contacting HMRC to adjust your tax code. The relief equals the difference between what HMRC allows and what your employer actually paid, multiplied by the number of qualifying business miles driven.',
+      'Commuting between home and your regular workplace does not count as business mileage. Qualifying journeys include travel to temporary workplaces, client sites, and locations that are not part of your ordinary commute. You must keep a contemporaneous mileage log recording dates, destinations, purposes, and distances for each claim.'
     ],
     example: {
-      title: 'How to use the Business Mileage Calculator',
+      title: 'Annual business mileage claim for an employee',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Employment and pay',
-      ],
+        'Total business miles driven in the tax year: 14,000',
+        'First 10,000 miles at 45p: 10,000 x £0.45 = £4,500',
+        'Remaining 4,000 miles at 25p: 4,000 x £0.25 = £1,000',
+        'Total AMAP allowance: £4,500 + £1,000 = £5,500',
+        'Employer reimbursed £3,200, so Mileage Allowance Relief claimable: £5,500 - £3,200 = £2,300'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/national-minimum-wage-rates',
-    sourceName: 'GOV.UK — Employment and pay',
+    sourceUrl: 'https://www.gov.uk/expenses-and-benefits-business-travel-mileage/rules-for-tax',
+    sourceName: 'HMRC - Business Travel Mileage',
     lastUpdated: 'April 2026',
   },
   'wealth-growth-calculator': {
     howItWorks: [
-      'This calculator helps you project wealth growth over time with annual savings and compound returns. See milestones (£100K, £1M). The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Wealth growth projection combines multiple income streams and savings vehicles into a single compound growth model. The calculation takes your current net worth, adds monthly contributions (potentially split across pension, ISA, and general savings), applies different growth rates to each portion based on asset allocation, and projects the total forward year by year. Pension contributions include tax relief uplift, and ISA growth is modelled tax-free.',
+      'Milestone tracking identifies when your portfolio crosses key thresholds: £50,000, £100,000, £250,000, £500,000, and £1,000,000. The first £100,000 is often the hardest because compound growth on a small base is modest. With £500/month at 7% growth, reaching £100,000 takes approximately 11 years, but the second £100,000 takes only 6 more years, and the third about 4 years — demonstrating the accelerating power of compounding on a larger base.',
+      'The projector models real-world scenarios including salary increases (and therefore contribution increases), anticipated windfalls or inheritances, changing risk profiles with age (shifting from equities to bonds reduces assumed returns), and the impact of reaching ISA or pension contribution limits. It shows the path to financial independence, defined as the point where your portfolio can sustain your target annual spending indefinitely at a safe withdrawal rate.'
     ],
     example: {
-      title: 'How to use the Wealth Growth Projector',
+      title: 'Wealth projection from £50,000 with £1,000/month savings at 6%',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Starting portfolio: £50,000. Monthly saving: £1,000 (£12,000/year)',
+        'Year 5: approximately £125,300 (first £100K milestone reached in year 4)',
+        'Year 10: approximately £218,600',
+        'Year 20: approximately £530,800 (£500K milestone at ~year 19)',
+        'Year 30: approximately £1,050,000 — millionaire status reached, of which £410,000 is contributions and £640,000 is compound growth'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.bankofengland.co.uk/statistics',
+    sourceName: 'Bank of England',
     lastUpdated: 'April 2026',
   },
   'cgt-on-shares-calculator': {
@@ -5009,20 +5092,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'dividend-income-calculator': {
     howItWorks: [
-      'This calculator helps you calculate annual dividend income and project portfolio growth with or without reinvestment (DRIP). The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Dividend income from UK shares and funds is calculated by multiplying the number of shares held by the dividend per share, or by applying the portfolio\'s dividend yield to the total investment value. A portfolio worth £100,000 with a 4% yield produces £4,000 in annual dividends. Yields vary by sector: FTSE 100 companies typically yield 3.5-4.5%, while growth stocks may yield under 1% and high-yield investment trusts can exceed 6%.',
+      'The dividend allowance for 2025/26 is £500 — the first £500 of dividend income is tax-free regardless of your tax band. Above this, dividends are taxed at 8.75% (basic rate), 33.75% (higher rate), or 39.35% (additional rate). These rates are lower than income tax on earnings because company profits have already been subject to corporation tax before being distributed as dividends.',
+      'The calculator stacks dividend income on top of other income to determine the correct tax band. If your salary is £45,000 and you receive £6,000 in dividends, the first £500 is tax-free, the next £5,270 (up to the £50,270 basic rate limit) is taxed at 8.75%, and the remaining £230 is taxed at 33.75%. Dividends within an ISA or pension are completely tax-free and do not count toward the allowance or tax bands.'
     ],
     example: {
-      title: 'How to use the Dividend Income Calculator',
+      title: 'Dividend tax on £8,000 annual dividends for a higher-rate taxpayer',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Portfolio value: £200,000 with 4% average yield = £8,000 dividends',
+        'Salary: £60,000 (already in higher-rate band)',
+        'Dividend allowance: £500 tax-free',
+        'Taxable dividends: £8,000 - £500 = £7,500',
+        'Tax at higher rate (33.75%): £7,500 x 33.75% = £2,531.25'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.gov.uk/tax-on-dividends',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'non-dom-tax-calculator': {
@@ -5047,38 +5132,42 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'annual-investment-allowance-calculator': {
     howItWorks: [
-      'This calculator helps you calculate AIA tax relief on plant & machinery spending. 100% deduction on first £1M. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The Annual Investment Allowance (AIA) provides a 100% first-year tax deduction on qualifying expenditure on plant and machinery, up to the current limit of \u00a31,000,000 per year. The full cost of qualifying assets is deducted from your taxable profits in the year of purchase, rather than being spread over multiple years through writing down allowances. The AIA applies per business, not per asset, so a single \u00a31M cap covers all qualifying purchases combined.',
+      'Qualifying expenditure includes most tangible assets used in the business such as machinery, tools, computers, office furniture, vans, and certain fixtures in buildings. Cars are excluded from AIA, as are assets given to the business or purchased for non-business use. Where expenditure exceeds the \u00a31M annual limit, the excess is allocated to the main or special rate writing down allowance pool at 18% or 6% respectively.',
+      'For accounting periods that straddle two AIA limit periods or that are shorter or longer than 12 months, the allowance is proportionally adjusted. A 6-month accounting period would carry a \u00a3500,000 AIA limit. The deduction directly reduces your Corporation Tax or Income Tax bill by lowering the profit figure on which tax is computed.'
     ],
     example: {
-      title: 'How to use the Annual Investment Allowance Calculator',
+      title: 'AIA on \u00a380,000 of equipment for a limited company',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'A Ltd purchases \u00a380,000 of qualifying machinery in the 2025/26 tax year.',
+        'The full \u00a380,000 falls within the \u00a31,000,000 AIA limit, so 100% is deductible.',
+        'Taxable profits before the purchase: \u00a3150,000.',
+        'Taxable profits after AIA deduction: \u00a3150,000 \u2212 \u00a380,000 = \u00a370,000.',
+        'Corporation Tax saved at 19% marginal rate: \u00a370,000 tax vs \u00a3150,000 tax = \u00a315,200 saving.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/capital-allowances/annual-investment-allowance',
+    sourceName: 'GOV.UK \u2013 Annual Investment Allowance',
     lastUpdated: 'April 2026',
   },
   'mortgage-interest-rate-calculator': {
     howItWorks: [
-      'This calculator helps you compare monthly payments at different interest rates. See how rate changes affect your mortgage. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Mortgage repayments are calculated using a standard annuity formula where the monthly payment equals the loan principal multiplied by [r(1+r)^n] / [(1+r)^n - 1], with r being the monthly interest rate and n the total number of payments. Even small rate differences produce significant cost variations over a 25 or 30-year term because interest compounds monthly on the gradually reducing balance.',
+      'The calculator compares up to four mortgage rates side by side, showing the monthly payment difference and total interest paid over the full term for each. A 0.5% rate difference on a £250,000 mortgage over 25 years typically changes the monthly payment by £60-£70 and alters total interest paid by £17,000-£20,000. This makes rate comparison essential when choosing between fixed-rate, tracker, or variable products.',
+      'UK mortgages commonly offer an initial fixed or discounted period (typically 2 or 5 years) before reverting to the lender\'s Standard Variable Rate (SVR). The calculator models both the initial rate period and the SVR reversion to show true total cost of ownership. Early Repayment Charges during the initial period are also factored in when comparing whether remortgaging at a new rate saves money after fees.'
     ],
     example: {
-      title: 'How to use the Mortgage Interest Rate Comparison',
+      title: 'Comparing two fixed rates on a £280,000 mortgage over 25 years',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Property and housing',
-      ],
+        'Rate A: 4.29% fixed for 5 years, monthly payment: £1,521',
+        'Rate B: 4.79% fixed for 5 years, monthly payment: £1,596',
+        'Monthly saving with Rate A: £75 per month',
+        'Total interest over 25 years at Rate A: £176,340 vs Rate B: £198,720',
+        'Lifetime saving choosing Rate A: £22,380 (even accounting for a £999 product fee on Rate A)'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/stamp-duty-land-tax',
-    sourceName: 'GOV.UK — Property and housing',
+    sourceUrl: 'https://www.bankofengland.co.uk/statistics/mortgage-lenders-and-administrators/2026/2026-q1',
+    sourceName: 'Bank of England - Mortgage Statistics',
     lastUpdated: 'April 2026',
   },
   'first-home-buyer-calculator': {
@@ -5104,20 +5193,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'sipp-calculator': {
     howItWorks: [
-      'This calculator helps you project your Self-Invested Personal Pension with tax relief, employer contributions and growth. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'A Self-Invested Personal Pension (SIPP) operates under relief at source: you contribute net of basic rate tax and the provider claims 20% from HMRC automatically. Contributing £800 net results in £1,000 gross in your SIPP. Higher and additional rate taxpayers reclaim the extra 20% or 25% through their self-assessment tax return. The SIPP invests across a wide range of assets including funds, shares, ETFs, investment trusts, and commercial property.',
+      'Growth projection uses compound interest on regular contributions plus tax relief top-ups. Monthly contributions of £400 net become £500 gross after basic rate relief. At 5% annual growth (net of platform and fund charges), £500/month over 25 years compounds to approximately £298,000. The calculator models different growth scenarios: cautious (3%), moderate (5%), and adventurous (7%) to show the range of possible outcomes.',
+      'SIPP access is currently available from age 55 (rising to 57 from April 2028 under the Pension Schemes Act 2021). At access, 25% can be taken as a tax-free lump sum, with the remainder drawn as taxable income via flexi-access drawdown. The calculator models both accumulation phase (contributions + growth) and decumulation phase (drawdown withdrawals), showing projected pot value and sustainable income at your chosen retirement age.'
     ],
     example: {
-      title: 'How to use the SIPP Calculator — Self-Invested Pension',
+      title: 'SIPP projection: £400/month net contribution over 25 years',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Net monthly contribution: £400. Gross after 20% tax relief: £500/month',
+        'Assumed annual growth: 5% (net of 0.4% platform fee)',
+        'After 25 years compounding: £500/month grows to approximately £298,000',
+        'Tax-free lump sum (25%): £74,500',
+        'Remaining £223,500 in drawdown at 4% = £8,940/year taxable income'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/personal-pensions-your-rights',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'tax-credits-calculator': {
@@ -5143,20 +5234,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'stocks-shares-isa-calculator': {
     howItWorks: [
-      'This calculator helps you project Stocks & Shares ISA growth with capital appreciation and dividends. See tax saved vs taxable account. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'A Stocks and Shares ISA shelters up to £20,000 per tax year of investments from income tax on dividends, capital gains tax on profits, and income tax on bond fund distributions. Unlike a Cash ISA with guaranteed returns, growth depends on market performance of the selected funds, ETFs, investment trusts, or individual shares held within the wrapper. Historical UK equity returns have averaged approximately 7-8% nominal over the long term.',
+      'Platform fees and fund charges reduce your effective return. The calculation deducts an annual percentage from the portfolio value, typically comprising a platform fee (0.15-0.45% for major platforms) plus the fund\'s ongoing charge figure (OCF) ranging from 0.07% for passive index trackers to 1.5%+ for active funds. On a £100,000 portfolio, the difference between 0.22% total charges (cheap index tracker on a low-cost platform) and 1.50% total charges costs approximately £1,280/year, compounding to tens of thousands over decades.',
+      'The projection models annual contributions at the ISA limit with compound growth at the assumed rate minus charges. Volatility drag means the arithmetic average return overstates actual compound growth — a fund returning +20% then -20% over two years doesn\'t break even (£100 becomes £96). The calculator uses geometric mean returns for more realistic projections and optionally models Monte Carlo scenarios to show the probability distribution of outcomes.'
     ],
     example: {
-      title: 'How to use the Stocks & Shares ISA Calculator',
+      title: 'Stocks and Shares ISA: £15,000/year for 15 years',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Annual contribution: £15,000',
+        'Assumed growth: 7% gross, platform fee 0.25%, fund OCF 0.15% = 6.60% net',
+        'After 15 years at 6.60% net growth: approximately £383,500',
+        'Total contributed: £225,000. Tax-free growth: £158,500',
+        'At 1.50% total charges instead: only £341,200 — charges cost £42,300 over 15 years'
+      ]
     },
     sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'epc-rating-comparison-calculator': {
@@ -5182,38 +5275,42 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'help-to-save-calculator': {
     howItWorks: [
-      'This calculator helps you calculate Help to Save returns with the 50% government bonus. Max £50/month for 4 years. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Help to Save is a government savings scheme for people receiving Working Tax Credit, Universal Credit (with minimum earnings equivalent to 16 hours at National Living Wage), or both. You can save between £1 and £50 per month for four years. The government pays a 50% bonus on the highest balance achieved, calculated at two points: after year 2 and again after year 4.',
+      'The first bonus at the end of year 2 is 50% of the highest balance reached in months 1-24. If you saved £50 every month, your highest balance would be £1,200, earning a £600 bonus. The second bonus at year 4 is 50% of the difference between the highest balance in months 25-48 and the highest balance at the time of the first bonus. If you continue saving £50/month, the year 4 highest balance is £2,400, and the second bonus is 50% x (£2,400 - £1,200) = £600.',
+      'Maximum total bonus is £1,200 (£600 at year 2 + £600 at year 4) on total savings of £2,400. You can withdraw at any time without losing future eligibility, but withdrawals reduce the highest balance calculation. The bonus is equivalent to a 50% return on savings, far exceeding any savings account rate. The calculator models different monthly contribution amounts and shows the impact of withdrawals on bonus calculations.'
     ],
     example: {
-      title: 'How to use the Help to Save Calculator',
+      title: 'Help to Save: £40/month for 4 years',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'Monthly contribution: £40',
+        'Highest balance after 24 months: £40 x 24 = £960',
+        'First bonus (50% of highest balance): £960 x 50% = £480',
+        'Highest balance after 48 months: £40 x 48 = £1,920',
+        'Second bonus: 50% x (£1,920 - £960) = £480. Total bonuses: £960 on £1,920 saved'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.gov.uk/get-help-savings-low-income',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'ns-i-savings-calculator': {
     howItWorks: [
-      'This calculator helps you calculate savings interest with different compounding frequencies. See AER vs nominal rate. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'NS&I (National Savings and Investments) products are backed by HM Treasury, making them among the safest savings vehicles in the UK with 100% government guarantee (compared to the £85,000 FSCS limit on bank deposits). Products include Income Bonds, Direct Saver, Green Savings Bonds, and Premium Bonds, each with different interest rates, access terms, and minimum deposits.',
+      'Interest calculation varies by product. Income Bonds pay interest monthly on the full balance at a variable rate. Direct Saver pays variable interest on balances from £1 upward. Green Savings Bonds offer a fixed rate over a 3-year term with interest paid at maturity or annually depending on the issue. The calculator applies the correct compounding method for each product: monthly compounding for Income Bonds, annual for fixed-term products.',
+      'The comparison with high-street banks uses AER (Annual Equivalent Rate) for a like-for-like assessment. NS&I rates are often slightly below the best high-street rates because of the superior government backing. However, NS&I interest is paid gross (no tax deducted at source), and for Premium Bonds, all prizes are entirely tax-free. The calculator factors in your personal savings allowance (£1,000 basic rate, £500 higher rate) to show after-tax comparisons.'
     ],
     example: {
-      title: 'How to use the NS&I Savings Calculator',
+      title: 'NS&I Income Bonds vs high-street easy-access for £50,000',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Savings and ISAs',
-      ],
+        'NS&I Income Bonds rate: 3.93% AER (variable)',
+        'Annual interest on £50,000: £1,965 paid monthly (£163.75/month)',
+        'High-street best buy easy-access: 4.50% AER = £2,250/year',
+        'Higher-rate taxpayer PSA: £500. Tax on NS&I excess: (£1,965 - £500) x 40% = £586. Net: £1,379',
+        'Tax on bank excess: (£2,250 - £500) x 40% = £700. Net: £1,550. Bank wins by £171/year after tax, but NS&I has unlimited government guarantee'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/individual-savings-accounts',
-    sourceName: 'GOV.UK — Savings and ISAs',
+    sourceUrl: 'https://www.nsandi.com/',
+    sourceName: 'NS&I',
     lastUpdated: 'April 2026',
   },
   'bmi-children-calculator': {
@@ -5298,38 +5395,42 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'pension-consolidation-calculator': {
     howItWorks: [
-      'This calculator helps you compare keeping multiple pension pots vs consolidating into one. See fee savings over time. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Pension consolidation compares the total annual charges across multiple separate pension pots against the charges of a single combined pot. Each pot typically has a platform fee (0.2-0.5%) plus fund charges (0.1-1.5%), applied as a percentage of the pot value. Over 20-30 years, even a 0.5% fee difference compounds dramatically: on a £100,000 pot over 25 years at 5% growth, a 1.5% charge leaves £181,000 while a 0.5% charge leaves £261,000.',
+      'The calculation totals current annual charges across all pots using each scheme\'s fee schedule, then compares against the projected charges of the target consolidated scheme. Exit penalties must be factored in, particularly for older contract-based pensions that may levy early transfer charges of 1-5%. Some workplace pensions include valuable employer contribution matching or lower charges that would be lost on transfer.',
+      'Protected benefits such as guaranteed annuity rates (GARs), protected tax-free cash above 25%, or defined benefit entitlements require careful valuation before consolidation. The calculator flags pots with potential safeguarded benefits and estimates the monetary value of guaranteed features against the fee savings from consolidation.'
     ],
     example: {
-      title: 'How to use the Pension Consolidation Calculator',
+      title: 'Consolidating three pension pots into one SIPP',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Pot A: £45,000 at 1.2% annual charge = £540/year in fees',
+        'Pot B: £28,000 at 0.9% annual charge = £252/year in fees',
+        'Pot C: £17,000 at 1.5% annual charge = £255/year in fees',
+        'Total current fees: £1,047/year on combined £90,000 (effective 1.16%)',
+        'Consolidated SIPP at 0.35% platform + 0.12% fund = 0.47%, costing £423/year — saving £624/year'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/transferring-your-pension',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'employer-pension-contribution-calculator': {
     howItWorks: [
-      'This calculator helps you calculate auto-enrolment pension contributions on qualifying earnings with tax relief. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Under auto-enrolment rules, employer contributions are calculated on qualifying earnings, which is the band of gross pay between £6,240 and £50,270 per year (2025/26 thresholds). The employer must contribute at least 3% of qualifying earnings, while the employee contributes 5% (including 1% tax relief). Total minimum contribution is 8% of qualifying earnings, not total salary.',
+      'The calculation first identifies qualifying earnings by subtracting the lower threshold from gross pay, capped at the upper limit. For someone earning £30,000, qualifying earnings are £30,000 minus £6,240, giving £23,760. The employer\'s 3% minimum on this amount is £712.80 per year. Many employers voluntarily contribute more, often matching employee contributions up to 5-10%.',
+      'Salary sacrifice arrangements alter the calculation: the employee gives up gross salary in exchange for additional employer pension contributions. This saves both employer and employee National Insurance (currently 13.8% employer, 8% employee on earnings between £12,570 and £50,270), making each pound of contribution more tax-efficient than relief at source.'
     ],
     example: {
-      title: 'How to use the Employer Pension Contribution Calculator',
+      title: 'Auto-enrolment contributions on a £35,000 salary',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Gross annual salary: £35,000',
+        'Qualifying earnings: £35,000 - £6,240 = £28,760',
+        'Employer minimum contribution (3%): £28,760 x 3% = £862.80/year',
+        'Employee contribution (5% including tax relief): £28,760 x 5% = £1,438.00/year',
+        'Total annual pension contribution (8%): £2,300.80/year (£191.73/month)'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/workplace-pensions/what-you-your-employer-and-the-government-pay',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'right-to-buy-calculator': {
@@ -5374,20 +5475,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'pension-lump-sum-calculator': {
     howItWorks: [
-      'This calculator helps you compare taking 0-100% as lump sum. See tax-free portion, tax on excess and remaining pot for drawdown. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The Pension Commencement Lump Sum (PCLS) entitles you to withdraw 25% of your crystallised pension pot completely free of income tax. For defined contribution pensions, the PCLS is simply 25% of the pot value at the point of crystallisation. You can crystallise your pension in stages (phased drawdown), taking 25% tax-free from each tranche, which can be more tax-efficient than crystallising everything at once.',
+      'Withdrawals above the 25% PCLS are taxed as earned income. The tax calculation adds the taxable withdrawal to your other income for the year, then applies standard income tax bands: 0% on the personal allowance (£12,570), 20% basic rate (£12,571-£50,270), 40% higher rate (£50,271-£125,140), and 45% additional rate (above £125,140). Emergency tax coding on first withdrawals often results in overpayment that must be reclaimed.',
+      'Uncrystallised Funds Pension Lump Sum (UFPLS) is an alternative where you take a lump sum directly without entering drawdown. Each UFPLS payment is 25% tax-free and 75% taxable. This triggers the Money Purchase Annual Allowance (MPAA) of £10,000, restricting future contributions. The total lump sum allowance across all pensions is £268,275 (25% of the standard lifetime limit).'
     ],
     example: {
-      title: 'How to use the Pension Lump Sum Calculator (PCLS)',
+      title: 'Lump sum and tax on a £180,000 pension pot',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Pension pot: £180,000',
+        'Tax-free PCLS (25%): £180,000 x 25% = £45,000 — no income tax due',
+        'Additional lump sum withdrawal of £20,000 from the remaining £135,000',
+        'Assuming £30,000 salary: total income becomes £50,000. The £20,000 withdrawal is taxed at 20% = £4,000 tax',
+        'Net received: £45,000 + £16,000 = £61,000 from the £65,000 withdrawn'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/tax-on-pension/lump-sums',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'elm-payment-calculator': {
@@ -5562,38 +5665,42 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'business-mileage-record-calculator': {
     howItWorks: [
-      'This calculator helps you log business trips with dates and mileage. Calculate HMRC mileage allowance claim automatically. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'HMRC\'s approved mileage allowance payment (AMAP) rates let you claim 45p per mile for the first 10,000 business miles in a tax year and 25p per mile thereafter when using your own car. Motorcycles attract 24p per mile and bicycles 20p per mile with no threshold. Each journey must be logged with the date, start and end locations, purpose, and miles driven to satisfy HMRC record-keeping requirements.',
+      'Only journeys with a genuine business purpose qualify\u2014visiting clients, travelling between work sites, collecting supplies, or attending business meetings. Ordinary commuting between home and a permanent workplace does not count. If you work from home as your main base and travel to a client site, that journey qualifies. HMRC may request your mileage log during an enquiry, so contemporaneous records kept throughout the year are essential.',
+      'For employees, if your employer pays less than the AMAP rate, you can claim Mileage Allowance Relief (MAR) on the shortfall via your Self Assessment return or form P87. For self-employed sole traders, you choose between AMAP simplified expenses or actual vehicle costs\u2014but once chosen, you must stick with that method for the life of the vehicle.'
     ],
     example: {
-      title: 'How to use the Business Mileage Log Calculator',
+      title: 'Annual mileage claim for a self-employed consultant',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Total business miles driven in the tax year: 14,000.',
+        'First 10,000 miles at 45p: 10,000 \u00d7 \u00a30.45 = \u00a34,500.',
+        'Remaining 4,000 miles at 25p: 4,000 \u00d7 \u00a30.25 = \u00a31,000.',
+        'Total mileage allowance: \u00a34,500 + \u00a31,000 = \u00a35,500.',
+        'At the 20% basic tax rate, this reduces your tax bill by \u00a31,100.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/expenses-and-benefits-business-travel-mileage/rules-for-tax',
+    sourceName: 'GOV.UK \u2013 Business Travel Mileage',
     lastUpdated: 'April 2026',
   },
   'pension-sharing-divorce-calculator': {
     howItWorks: [
-      'This calculator helps you calculate pension division in divorce. Compare sharing orders with different splits. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Pension sharing on divorce uses the Cash Equivalent Transfer Value (CETV) as the basis for division. The CETV represents the present-day capital value of future pension benefits and is calculated by the pension scheme\'s actuary using discount rates, mortality assumptions, and benefit projections. For defined benefit schemes, the CETV can be significantly lower than the actuarial value of the income stream, making fair division complex.',
+      'A pension sharing order specifies a percentage of the CETV to be transferred to the ex-spouse, creating a pension credit in their name. The receiving spouse either joins the same scheme (internal transfer) or transfers the credit to their own pension arrangement (external transfer). The percentage split need not be 50/50; courts consider the length of marriage, other assets, and each party\'s needs. Pension offsetting is an alternative where pension value is traded against other assets like the family home.',
+      'Earmarking (or attachment orders) differs from pension sharing: the pension stays with the scheme member, but the court directs a portion of payments to the ex-spouse when benefits are drawn. The disadvantage is dependency on the member\'s decisions about when to retire. Pension sharing provides a clean break. For defined benefit pensions, the CETV may not reflect the true income value, so pension-on-pension comparison using the Pension Advisory Group methodology is often more equitable.'
     ],
     example: {
-      title: 'How to use the Pension Sharing on Divorce Calculator',
+      title: 'Pension sharing order on a £400,000 CETV',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Pension rules',
-      ],
+        'Husband\'s pension CETV: £400,000 (defined benefit scheme)',
+        'Court orders 40% pension sharing order to wife',
+        'Pension credit to wife: £400,000 x 40% = £160,000',
+        'Wife transfers £160,000 externally to her SIPP',
+        'Husband\'s remaining CETV: £240,000 (scheme recalculates reduced benefits accordingly)'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-your-private-pension',
-    sourceName: 'GOV.UK — Pension rules',
+    sourceUrl: 'https://www.gov.uk/money-property-when-relationship-ends/pensions',
+    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'working-hours-benefits-calculator': {
@@ -5643,20 +5750,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
    * ────────────────────────────────────────────────────────────────────── */
   'mtd-readiness-calculator': {
     howItWorks: [
-      'This calculator helps you score your Making Tax Digital readiness across 10 key criteria. See what you still need to do. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Making Tax Digital for Income Tax Self Assessment (MTD ITSA) requires self-employed individuals and landlords with qualifying income above \u00a350,000 to maintain digital records and submit quarterly updates to HMRC using MTD-compatible software from April 2026. Those with income between \u00a330,000 and \u00a350,000 will follow from April 2027. Quarterly updates must be submitted within one month of each quarter end, with a final End of Period Statement and Final Declaration replacing the traditional Self Assessment return.',
+      'Readiness is assessed across multiple criteria: whether you currently use MTD-compatible accounting software (spreadsheets linked via bridging software also qualify), whether your income and expense records are kept digitally from the point of transaction, whether you can generate and submit quarterly summaries to HMRC through the API, and whether your record-keeping already categorises income and expenses to the level HMRC requires.',
+      'Additional readiness factors include whether your tax agent is prepared for MTD, whether you have tested the submission process using HMRC\'s sandbox environment, and whether your business processes can meet the quarterly filing deadlines (5 July, 5 October, 5 January, 5 April with one-month submission windows). Penalties under the new points-based regime accumulate for late submissions: each late filing adds a point, and at the threshold (4 points for quarterly obligations), a \u00a3200 penalty is triggered for that and every subsequent late submission.'
     ],
     example: {
-      title: 'How to use the MTD Readiness Checklist',
+      title: 'Readiness assessment for a freelance developer earning \u00a365,000',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Income exceeds \u00a350,000 threshold: MTD ITSA mandatory from April 2026.',
+        'Currently uses spreadsheets: needs MTD-compatible software or HMRC-approved bridging tool. Score: 4/10.',
+        'Records are digital but not categorised per MTD requirements: partial compliance. Score: 6/10.',
+        'No quarterly submission testing done with HMRC sandbox: Score: 2/10.',
+        'Overall readiness: 40%. Actions needed: purchase compatible software, set up quarterly filing workflow, and test API submissions before April 2026 deadline.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/guidance/use-software-to-send-income-tax-updates',
+    sourceName: 'GOV.UK \u2013 Making Tax Digital for Income Tax',
     lastUpdated: 'April 2026',
   },
   'congestion-charge-calculator': {
@@ -5780,22 +5889,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'high-council-tax-calculator': {
     howItWorks: [
-      'Council tax bands in England are based on property values as of 1 April 1991, and many properties are in the wrong band. The Valuation Office Agency (VOA) estimated that up to 400,000 homes may be incorrectly banded. If your property is in too high a band, you could be paying hundreds of pounds more than you should each year.',
-      'You can check your band by comparing your property\'s estimated 1991 value against the band thresholds: Band A (up to £40,000), Band B (£40,001-£52,000), Band C (£52,001-£68,000), Band D (£68,001-£88,000), Band E (£88,001-£120,000), Band F (£120,001-£160,000), Band G (£160,001-£320,000), Band H (over £320,000).',
-      'You can challenge your band for free by contacting the VOA. Compare recent sale prices of similar neighbouring properties and estimate the 1991 equivalent. This calculator helps you assess whether a challenge is likely to succeed and estimates the potential annual saving from moving to a lower band.',
+      'Council Tax bands in England are based on property valuations from 1 April 1991. Band H currently covers all properties valued above £320,000 at that date, meaning a modest terraced house in central London and a country estate may both sit in the same band. Proposed reforms would introduce bands I, J, and K above the existing Band H to create a more proportional system for the highest-value properties.',
+      'Under the consultation framework published for potential implementation from 2028, properties in proposed Band I would pay approximately 1.25 times the Band D rate, Band J around 1.5 times, and Band K approximately 1.75 times. Current Band H already charges twice the Band D rate. The exact multipliers and valuation thresholds are subject to parliamentary approval and may vary by billing authority.',
+      'To estimate your potential liability, the calculator applies these proposed ratios to your local authority\'s current Band D charge. For example, if Band D is £2,100 and your property falls into proposed Band J, your annual bill would be roughly £2,100 x 1.5 = £3,150. Revaluation itself would redistribute all properties across all bands, so many homes currently in lower bands could also see changes.'
     ],
     example: {
-      title: 'Example: Property currently in Band D, should be Band C',
+      title: 'Estimated council tax for a high-value London property',
       steps: [
-        'Current Band D council tax: £2,100/year',
-        'Band C rate (8/9 of Band D): £1,866.67/year',
-        'Annual saving if rebanded: £233.33',
-        'Potential backdated refund (up to 6 years): ~£1,400',
-        'Cost to challenge: Free (apply to VOA)',
-      ],
+        'Property estimated 1991 value: £550,000 (current market value ~£3.2 million)',
+        'Local authority Band D rate: £1,950 per year',
+        'Current Band H charge: £1,950 x 2.0 = £3,900',
+        'Proposed Band K multiplier: 1.75 x Band D = £1,950 x 1.75 = £3,412.50',
+        'Potential increase if revaluation places property in Band K: difference depends on final legislation and local precepts'
+      ]
     },
     sourceUrl: 'https://www.gov.uk/council-tax-bands',
-    sourceName: 'GOV.UK — Council Tax bands',
+    sourceName: 'GOV.UK - Council Tax Bands',
     lastUpdated: 'April 2026',
   },
 
@@ -5804,38 +5913,42 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
      ────────────────────────────────────────────────────────────── */
   'sole-trader-vs-ltd-comparison-calculator': {
     howItWorks: [
-      'This calculator helps you side-by-side take-home pay comparison at 7 different profit levels (£20K-£100K). The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'This comparison generates a side-by-side table at multiple profit levels from \u00a320,000 to \u00a3100,000, showing the total tax burden and take-home pay under each business structure. For the sole trader column, each profit level is run through the full Income Tax bands (20%/40%/45% after the \u00a312,570 Personal Allowance), Class 2 NI (\u00a3179.40/year), and Class 4 NI (6% on \u00a312,570\u2013\u00a350,270, 2% above). The result is the net income the sole trader retains.',
+      'For the limited company column, the calculation assumes an optimal extraction strategy: salary set at the Personal Allowance level of \u00a312,570 (minimising NI), with remaining profits subject to Corporation Tax and then withdrawn as dividends. Corporation Tax rates are applied using the marginal relief formula for profits between \u00a350,000 and \u00a3250,000 (effective rate rising from 19% to 25%). Dividend tax is calculated at 8.75%/33.75%/39.35% after the \u00a3500 dividend allowance.',
+      'The comparison accounts for the additional running costs of a limited company\u2014typically \u00a31,000\u2013\u00a32,000 per year for accountancy, Companies House filing fees (\u00a313), and Confirmation Statement fees (\u00a334). These are deducted from the Ltd take-home to give a fair like-for-like comparison. The table clearly shows the crossover point where Ltd becomes more tax-efficient and quantifies the annual saving or cost at each profit level, helping business owners make an informed structural decision.'
     ],
     example: {
-      title: 'How to use the Sole Trader vs Ltd Comparison Table',
+      title: 'Comparison table at \u00a340,000 profit',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Sole trader at \u00a340,000: IT \u00a35,486 + Class 2 \u00a3179 + Class 4 \u00a31,646 = \u00a37,311. Take-home: \u00a332,689.',
+        'Ltd at \u00a340,000: salary \u00a312,570 (no tax/NI). Profit after salary: \u00a327,430.',
+        'Corporation Tax: \u00a327,430 \u00d7 19% = \u00a35,212. Available for dividends: \u00a322,218.',
+        'Dividend tax: \u00a3500 free, \u00a321,718 \u00d7 8.75% = \u00a31,900. Accountancy fees: \u00a31,200.',
+        'Ltd take-home: \u00a312,570 + \u00a322,218 \u2212 \u00a31,900 \u2212 \u00a31,200 = \u00a331,688. Sole trader wins by \u00a31,001 at this level.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/working-for-yourself',
+    sourceName: 'GOV.UK \u2013 Working for Yourself',
     lastUpdated: 'April 2026',
   },
   'apprenticeship-levy-calculator': {
     howItWorks: [
-      'This calculator helps you calculate apprenticeship levy at 0.5% of pay bill over £3M. See government top-up and total training fund. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The Apprenticeship Levy is charged at 0.5% of an employer\'s total annual pay bill, which includes all earnings subject to Class 1 secondary National Insurance contributions\u2014salaries, wages, bonuses, and commissions. Every employer receives a \u00a315,000 annual allowance that offsets the levy, meaning only employers with a pay bill exceeding \u00a33,000,000 per year face an actual payment. The levy is calculated and paid monthly through PAYE alongside other payroll deductions.',
+      'Each month, you calculate 0.5% of your monthly pay bill and then subtract one-twelfth of the \u00a315,000 annual allowance (\u00a31,250 per month). If the result is negative, no levy is due for that month. Connected employers (companies linked by common ownership) must share the single \u00a315,000 allowance between them, allocated at the start of the tax year via a declaration to HMRC.',
+      'Levy payments are converted into digital funds in your Apprenticeship Service account, topped up by 10% by the government. These funds can only be spent on approved apprenticeship training and assessment with registered providers. Unspent funds expire 24 months after they appear in the account, so timely planning of apprenticeship starts is important.'
     ],
     example: {
-      title: 'How to use the Apprenticeship Levy Calculator',
+      title: 'Monthly levy for an employer with a \u00a35M annual pay bill',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Annual pay bill: \u00a35,000,000.',
+        'Monthly pay bill: \u00a35,000,000 \u00f7 12 = \u00a3416,667.',
+        '0.5% levy on monthly pay bill: \u00a3416,667 \u00d7 0.005 = \u00a32,083.33.',
+        'Subtract monthly allowance: \u00a32,083.33 \u2212 \u00a31,250 = \u00a3833.33 due to HMRC.',
+        'Annual levy payable: \u00a3833.33 \u00d7 12 = \u00a310,000. Plus 10% government top-up gives \u00a311,000 in your apprenticeship account.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/guidance/pay-apprenticeship-levy',
+    sourceName: 'GOV.UK \u2013 Pay Apprenticeship Levy',
     lastUpdated: 'April 2026',
   },
   'shared-parental-pay-calculator': {
@@ -5983,38 +6096,42 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'invoice-profit-calculator': {
     howItWorks: [
-      'This calculator helps you calculate profit margin and markup on jobs. Add VAT and generate invoice total. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Invoice profit analysis breaks down each invoice into its component costs to reveal the true profit earned. Start with the invoice total (excluding VAT, which is collected on behalf of HMRC and is not your income). Deduct direct material costs\u2014the actual cost of goods, raw materials, or supplies consumed in fulfilling the order. Then deduct direct labour\u2014wages or subcontractor fees directly attributable to this job, including employer NI and pension on those wages.',
+      'Next, allocate a share of overheads: rent, utilities, insurance, software, vehicle costs, and administrative salaries that are not directly tied to one job but support all work. Common allocation methods include a percentage of direct labour hours, a flat rate per job, or a proportion based on revenue. The remaining figure after all deductions is your net job profit.',
+      'Two related metrics give context: Profit margin (%) = Net profit \u00f7 Invoice total \u00d7 100, showing what percentage of revenue you keep. Markup (%) = Net profit \u00f7 Total costs \u00d7 100, showing the premium charged above costs. These differ\u2014a 25% markup equates to a 20% margin. Tracking profit per invoice over time reveals which clients, services, or project types are most (or least) profitable, enabling better pricing decisions.'
     ],
     example: {
-      title: 'How to use the Invoice & Job Profit Calculator',
+      title: 'Profit analysis on a \u00a34,800 landscaping invoice',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Invoice total (ex-VAT): \u00a34,800.',
+        'Materials (turf, soil, plants, paving): \u00a31,650.',
+        'Labour (subcontractor 3 days at \u00a3180): \u00a3540.',
+        'Overhead allocation (vehicle, insurance, tools): \u00a3480.',
+        'Net profit: \u00a34,800 \u2212 \u00a31,650 \u2212 \u00a3540 \u2212 \u00a3480 = \u00a32,130. Margin: 44.4%. Markup: 79.9%.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/invoicing-and-taking-payment-from-customers',
+    sourceName: 'GOV.UK \u2013 Invoicing and Taking Payment',
     lastUpdated: 'April 2026',
   },
   'employee-vs-contractor-calculator': {
     howItWorks: [
-      'This calculator helps you compare take-home pay as an employee vs contractor for the same total cost to the hiring company. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'The true cost of employing someone extends well beyond their gross salary. Employers pay secondary Class 1 NI contributions at 15% on earnings above the Secondary Threshold (\u00a39,100 for 2025/26). Auto-enrolment pension contributions add a minimum 3% of qualifying earnings. Additional employer costs often include recruitment fees, training, office space, equipment, employer\'s liability insurance, and payroll administration. These overheads typically add 20\u201335% on top of the gross salary.',
+      'A contractor or freelancer, by contrast, charges a day rate or project fee with no employer NI, pension, or benefit obligations on the hiring business. However, the day rate is typically higher to compensate the contractor for bearing their own tax, insurance, pension, holiday, sick pay, and bench time between contracts. A rough equivalence is that a contractor\'s annual billings need to be 30\u201350% higher than an equivalent salary to achieve the same take-home, depending on IR35 status.',
+      'The comparison must account for hidden employer costs: statutory sick pay obligations, maternity/paternity cover, redundancy liability, annual leave (typically 28 days minimum), training investment, and management overhead. Contractors provide flexibility\u2014you pay only for productive days\u2014but the relationship must genuinely reflect self-employment to avoid IR35 reclassification, which would impose employment taxes retrospectively on unpaid NI and PAYE.'
     ],
     example: {
-      title: 'How to use the Employee vs Contractor Calculator',
+      title: 'Total cost of a \u00a345,000 employee vs contractor at \u00a3350/day',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Employee gross salary: \u00a345,000. Employer NI: (\u00a345,000 \u2212 \u00a39,100) \u00d7 15% = \u00a35,385.',
+        'Employer pension (3%): \u00a345,000 \u00d7 3% = \u00a31,350. Other costs (insurance, equipment, training): \u00a32,500.',
+        'Total employer cost for employee: \u00a345,000 + \u00a35,385 + \u00a31,350 + \u00a32,500 = \u00a354,235 per year.',
+        'Contractor at \u00a3350/day \u00d7 220 working days = \u00a377,000 per year (no NI, pension, or benefits cost).',
+        'Contractor costs \u00a322,765 more per year but offers flexibility and no long-term employment obligations.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/guidance/check-employment-status-for-tax',
+    sourceName: 'GOV.UK \u2013 Check Employment Status for Tax',
     lastUpdated: 'April 2026',
   },
   'standing-charge-savings-calculator': {
@@ -6118,20 +6235,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'contractor-vs-perm-calculator': {
     howItWorks: [
-      'This calculator helps you compare contractor day rate vs permanent salary. See the premium needed to match perm benefits. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Comparing contractor and permanent employment requires normalising both options to the same measure: annual take-home pay. For a contractor operating through a limited company, start with the day rate multiplied by the estimated number of working days per year (typically 220\u2013230, minus holidays and bench time). From this gross revenue, deduct Corporation Tax, salary, employer NI on that salary, pension contributions, accountancy fees, insurance, and any other business costs.',
+      'The contractor\'s take-home is then the combination of a tax-efficient salary (usually \u00a312,570 to use the personal allowance) plus dividends drawn from post-tax profits. Dividends are taxed at 8.75% basic rate, 33.75% higher rate, and 39.35% additional rate after the \u00a3500 dividend allowance. IR35 status is critical: if inside IR35, the tax advantage largely disappears because deemed employment taxes apply.',
+      'For the permanent role, total compensation includes base salary, employer pension contributions (minimum 3% under auto-enrolment), paid holidays (typically 25 days plus 8 bank holidays), sick pay, and any benefits such as health insurance, share schemes, or bonuses. The permanent employee also gains employment rights\u2014redundancy protection, statutory maternity/paternity pay, and unfair dismissal rights\u2014which have real economic value that does not appear on a payslip.'
     ],
     example: {
-      title: 'How to use the Contractor vs Permanent Salary Calculator',
+      title: 'Contractor at \u00a3450/day vs permanent at \u00a375,000',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Contractor gross revenue: \u00a3450 \u00d7 220 working days = \u00a399,000.',
+        'Deduct: salary \u00a312,570 + employer NI \u00a3690 + Corporation Tax on \u00a385,000 profit at 19% (\u00a316,150) + accountant \u00a31,500 + insurance \u00a3600 = \u00a331,510 total deductions.',
+        'Post-tax profit available as dividends: approximately \u00a367,490. Dividend tax at blended rate \u2248 \u00a38,700.',
+        'Contractor annual take-home: approximately \u00a371,360.',
+        'Permanent take-home after IT + NI on \u00a375,000 salary: approximately \u00a354,100, plus employer pension worth \u00a32,250 and 33 days paid leave.'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/guidance/check-employment-status-for-tax',
+    sourceName: 'GOV.UK \u2013 Check Employment Status for Tax',
     lastUpdated: 'April 2026',
   },
   'postgraduate-loan-cost-calculator': {
@@ -6232,38 +6351,42 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   // ─── LEGAL ───────────────────────────────────────────────────────────
   'profit-and-loss-calculator': {
     howItWorks: [
-      'This calculator helps you build a simple P&L statement. Enter revenue, COGS and overheads to see gross and net profit margins. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'A Profit and Loss (P&L) statement, also called an income statement, summarises revenue and expenses over a specific period to show whether the business made a profit or loss. The structure follows a cascading format: Revenue (or turnover) minus Cost of Goods Sold (COGS) equals Gross Profit. COGS includes all direct costs of delivering your product or service\u2014materials, direct labour, manufacturing overheads, and freight-in.',
+      'Gross Profit minus operating expenses (overheads) equals Operating Profit (EBIT). Overheads cover rent, utilities, salaries of non-production staff, marketing, insurance, depreciation, professional fees, and administrative costs. Operating Profit minus interest and tax equals Net Profit\u2014the bottom line. Each level reveals different aspects of performance: gross margin shows production efficiency, operating margin shows management effectiveness, and net margin shows overall profitability after all obligations.',
+      'Key ratios derived from the P&L include: Gross margin = Gross profit \u00f7 Revenue \u00d7 100; Net margin = Net profit \u00f7 Revenue \u00d7 100; and the Overheads ratio = Total overheads \u00f7 Revenue \u00d7 100. Comparing these ratios month-on-month and against industry benchmarks identifies trends. A rising gross margin but falling net margin, for example, indicates overhead costs are growing faster than revenue\u2014a common scaling problem. UK limited companies must file accounts including a P&L with Companies House annually.'
     ],
     example: {
-      title: 'How to use the Profit & Loss Calculator',
+      title: 'Monthly P&L for a small e-commerce business',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Revenue: \u00a328,000 from product sales.',
+        'Cost of Goods Sold: product cost \u00a311,200 + shipping \u00a31,400 + packaging \u00a3600 = \u00a313,200. Gross profit: \u00a314,800 (52.9% margin).',
+        'Overheads: rent \u00a3750 + staff \u00a34,500 + marketing \u00a32,200 + software \u00a3350 + insurance \u00a3150 + accountant \u00a3200 = \u00a38,150.',
+        'Operating profit: \u00a314,800 \u2212 \u00a38,150 = \u00a36,650 (23.8% margin).',
+        'Interest: \u00a3120. Net profit before tax: \u00a36,530 (23.3% net margin).'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/annual-accounts',
+    sourceName: 'GOV.UK \u2013 Annual Accounts',
     lastUpdated: 'April 2026',
   },
   'freelance-quote-calculator': {
     howItWorks: [
-      'This calculator helps you build a quote from hourly rate, hours and materials. Add profit margin and VAT. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
-      'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
+      'Building a freelance quote starts with estimating the time required, broken into distinct phases: research, production, revisions, and project management. Multiply total estimated hours by your hourly rate, which should reflect your skill level, market rates, and the value delivered. Then add direct material or third-party costs at their actual price. A contingency buffer of 10\u201320% on the hours estimate protects against scope creep and unforeseen complications.',
+      'Next, add your overhead recovery\u2014a proportion of fixed business costs (software licences, insurance, equipment depreciation, workspace costs) allocated per project. Then apply your target profit margin on top: a 20% margin means multiplying subtotal costs by 1.25. If you are VAT-registered (turnover above \u00a390,000), add 20% VAT to the final figure. The quote should clearly separate labour, materials, expenses, and VAT so the client can see the breakdown.',
+      'When pricing, consider whether the work is a one-off or ongoing (retainer pricing may offer a discount for volume commitment), the client\'s budget sensitivity, and competitive rates in your sector. HMRC considers your pricing as part of your self-employment evidence\u2014a genuine freelancer sets their own rates and bears financial risk. Always issue a written quote with a validity period, payment terms (e.g. 30 days), and a clear scope statement to limit disputes.'
     ],
     example: {
-      title: 'How to use the Freelance Quote Calculator',
+      title: 'Web design quote for a small business website',
       steps: [
-        'Enter your details in the input fields above',
-        'The calculator applies current UK rates and thresholds automatically',
-        'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
-      ],
+        'Estimated hours: 40 hours \u00d7 \u00a365/hr = \u00a32,600 labour.',
+        'Third-party costs: stock images \u00a380, premium plugin licence \u00a3120 = \u00a3200 materials.',
+        'Overhead allocation: \u00a3200 (software, insurance pro-rata).',
+        'Subtotal: \u00a33,000. Apply 15% profit margin: \u00a33,000 \u00d7 1.15 = \u00a33,450.',
+        'Add 20% VAT: \u00a33,450 + \u00a3690 = \u00a34,140 total quote (VAT shown separately on invoice).'
+      ]
     },
-    sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
-    sourceName: 'GOV.UK — Business tax',
+    sourceUrl: 'https://www.gov.uk/set-up-sole-trader',
+    sourceName: 'GOV.UK \u2013 Set Up as a Sole Trader',
     lastUpdated: 'April 2026',
   },
 }
