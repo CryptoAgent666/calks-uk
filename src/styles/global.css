@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Class-based dark mode: activates dark: utilities when html.dark is set */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Self-hosted Inter variable font */
 @font-face {
   font-family: 'Inter';
