@@ -23,7 +23,7 @@ export default function ThemeToggle() {
 
   return (
     <button
-      className="inline-flex items-center justify-center h-9 w-9 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+      className="inline-flex items-center justify-center h-11 w-11 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
       onClick={toggle}
       aria-label="Toggle theme"
     >

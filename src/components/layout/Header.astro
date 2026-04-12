@@ -29,7 +29,7 @@ const MORE_CATEGORIES: CategoryId[] = ['investment', 'benefits', 'auto', 'health
         {NAV_CATEGORIES.map((catId) => (
           <a
             href={`/category/${catId}/`}
-            class="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-muted-foreground rounded-lg hover:text-foreground hover:bg-accent transition-colors"
+            class="flex items-center gap-1.5 px-3 py-2.5 min-h-[44px] text-sm font-medium text-muted-foreground rounded-lg hover:text-foreground hover:bg-accent transition-colors"
           >
             {CATEGORIES[catId].name}
           </a>
@@ -37,7 +37,7 @@ const MORE_CATEGORIES: CategoryId[] = ['investment', 'benefits', 'auto', 'health
 
         <!-- More dropdown -->
         <div class="relative group">
-          <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground rounded-lg hover:text-foreground hover:bg-accent transition-colors">
+          <button class="flex items-center gap-1 px-3 py-2.5 min-h-[44px] text-sm font-medium text-muted-foreground rounded-lg hover:text-foreground hover:bg-accent transition-colors">
             <span>More</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
           </button>
@@ -64,7 +64,7 @@ const MORE_CATEGORIES: CategoryId[] = ['investment', 'benefits', 'auto', 'health
         <!-- Mobile menu button -->
         <button
           id="mobile-menu-btn"
-          class="inline-flex items-center justify-center h-9 w-9 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors lg:hidden"
+          class="inline-flex items-center justify-center h-11 w-11 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors lg:hidden"
           aria-label="Menu"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -79,7 +79,7 @@ const MORE_CATEGORIES: CategoryId[] = ['investment', 'benefits', 'auto', 'health
       {[...NAV_CATEGORIES, ...MORE_CATEGORIES].map((catId) => (
         <a
           href={`/category/${catId}/`}
-          class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium hover:bg-accent transition-colors"
+          class="flex items-center gap-3 px-3 py-3 min-h-[44px] rounded-xl text-sm font-medium hover:bg-accent transition-colors"
         >
           <div class={`flex h-8 w-8 items-center justify-center rounded-lg ${CATEGORIES[catId].color}`}>
             <span class={`text-xs font-bold ${CATEGORIES[catId].iconColor}`}>{CATEGORIES[catId].name.charAt(0)}</span>
