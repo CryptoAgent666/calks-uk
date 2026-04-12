@@ -1,31 +1,32 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// VED rates 2025/26 first year + standard rate
-const STANDARD_RATE = 190 // per year after first year (petrol/diesel)
-const EV_RATE = 10 // electric vehicles from April 2025
+// VED rates 2025/26 — Budget Oct 2024 changes effective April 2025
+// First-year rates doubled for 76g/km+ CO2; EVs now pay standard rate from year 2
+const STANDARD_RATE = 195 // per year after first year (petrol/diesel/hybrid/EV)
 
 function getFirstYearRate(co2: number, fuelType: string): number {
-  if (fuelType === 'electric') return 10
+  if (fuelType === 'electric') return 10 // lowest band for 0g CO2
   if (co2 === 0) return 10
   if (co2 <= 50) return 10
   if (co2 <= 75) return 30
-  if (co2 <= 90) return 135
-  if (co2 <= 100) return 175
-  if (co2 <= 110) return 195
-  if (co2 <= 130) return 220
-  if (co2 <= 150) return 270
-  if (co2 <= 170) return 680
-  if (co2 <= 190) return 1_095
-  if (co2 <= 225) return 1_650
-  if (co2 <= 255) return 2_340
-  return 2_745
+  // From April 2025: first-year rates doubled for 76g/km+ (Budget Oct 2024)
+  if (co2 <= 90) return 270
+  if (co2 <= 100) return 350
+  if (co2 <= 110) return 390
+  if (co2 <= 130) return 440
+  if (co2 <= 150) return 540
+  if (co2 <= 170) return 1_360
+  if (co2 <= 190) return 2_190
+  if (co2 <= 225) return 3_300
+  if (co2 <= 255) return 4_680
+  return 5_490
 }
 
 function calculate(co2: number, fuelType: string, listPrice: number) {
   const firstYear = getFirstYearRate(co2, fuelType)
-  const standard = fuelType === 'electric' ? EV_RATE : STANDARD_RATE
-  const expensiveSupplement = listPrice > 40_000 ? 410 : 0 // £410/yr for 5 years if over £40k
+  const standard = STANDARD_RATE // all vehicles pay standard rate from year 2 (inc. EVs from April 2025)
+  const expensiveSupplement = listPrice > 40_000 ? 425 : 0 // £425/yr for 5 years if over £40k
   const annualAfterFirst = standard + expensiveSupplement
 
   return { firstYear, standard, expensiveSupplement, annualAfterFirst, monthlyAfterFirst: annualAfterFirst / 12 }
@@ -83,9 +84,10 @@ export default function CarTaxCalculator() {
         )}
 
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-1">
-          <p>Standard rate (year 2+): <span className="font-medium text-foreground">£{STANDARD_RATE}</span> (petrol/diesel/hybrid)</p>
-          <p>Electric vehicles: <span className="font-medium text-foreground">£{EV_RATE}</span> from April 2025</p>
-          <p>Cars over £40,000: <span className="font-medium text-foreground">+£410/year</span> supplement for 5 years</p>
+          <p>Standard rate (year 2+): <span className="font-medium text-foreground">£{STANDARD_RATE}</span> (all vehicles incl. EVs from April 2025)</p>
+          <p>First year rate for EVs (0g CO2): <span className="font-medium text-foreground">£10</span></p>
+          <p>Cars over £40,000: <span className="font-medium text-foreground">+£425/year</span> supplement for 5 years</p>
+          <p className="text-xs">First year rates for 76g+ CO2 cars doubled from April 2025 (Budget Oct 2024)</p>
         </div>
       </div>
     </div>

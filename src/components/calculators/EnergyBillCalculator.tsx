@@ -1,10 +1,10 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Ofgem price cap Q2 2025 (pence per kWh + daily standing charge pence)
+// Ofgem price cap Q2 2026 (April–June 2026) — pence per kWh + daily standing charge
 const ELEC_UNIT = 24.50 // p/kWh
 const ELEC_STANDING = 61.64 // p/day
-const GAS_UNIT = 6.76 // p/kWh
+const GAS_UNIT = 6.33 // p/kWh (reduced from 6.76 in Q2 2025)
 const GAS_STANDING = 31.65 // p/day
 
 function calculate(elecKwh: number, gasKwh: number) {
@@ -63,7 +63,7 @@ export default function EnergyBillCalculator() {
         </div>
 
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-1">
-          <p className="font-medium text-foreground">Ofgem Price Cap rates (Q2 2025):</p>
+          <p className="font-medium text-foreground">Ofgem Price Cap rates (Q2 2026, April–June 2026):</p>
           <p>Electricity: {ELEC_UNIT}p/kWh + {ELEC_STANDING}p/day standing charge</p>
           <p>Gas: {GAS_UNIT}p/kWh + {GAS_STANDING}p/day standing charge</p>
         </div>

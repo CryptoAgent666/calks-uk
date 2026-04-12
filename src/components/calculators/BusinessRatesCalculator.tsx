@@ -2,8 +2,8 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // Business rates 2025/26
-const STANDARD_MULTIPLIER = 0.546 // 54.6p in the pound
-const SMALL_MULTIPLIER = 0.499 // 49.9p for small businesses
+const STANDARD_MULTIPLIER = 0.555 // 55.5p in the pound (2024/25 was 54.6p, uprated 1.7% CPI)
+const SMALL_MULTIPLIER = 0.499 // 49.9p for small businesses (frozen at 2024/25 level)
 const SMALL_RELIEF_THRESHOLD = 15_000
 const FULL_RELIEF_THRESHOLD = 12_000
 

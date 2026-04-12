@@ -9,9 +9,7 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     react(),
-    sitemap({
-      lastmod: new Date(),
-    }),
+    sitemap(),
   ],
   vite: {
     plugins: [tailwindcss()],

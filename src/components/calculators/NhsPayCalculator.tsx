@@ -1,20 +1,21 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// NHS Agenda for Change pay bands 2025/26 (approximate)
+// NHS Agenda for Change pay bands 2025/26 (approximate, ~3.5% uplift from 2024/25)
+// Verify exact figures at nhsemployers.org — pay award effective April 2025
 const NHS_BANDS: Record<string, { min: number; max: number; description: string }> = {
-  '1': { min: 23_615, max: 23_615, description: 'Support staff' },
-  '2': { min: 23_615, max: 25_674, description: 'Healthcare assistants, porters' },
-  '3': { min: 25_674, max: 28_407, description: 'Senior HCA, admin' },
-  '4': { min: 26_530, max: 29_114, description: 'Associate practitioners' },
-  '5': { min: 29_970, max: 36_483, description: 'Newly qualified nurses, therapists' },
-  '6': { min: 37_338, max: 44_962, description: 'Senior nurses, specialists' },
-  '7': { min: 46_148, max: 52_809, description: 'Advanced practitioners, team leaders' },
-  '8a': { min: 53_755, max: 60_504, description: 'Consultant therapists, senior managers' },
-  '8b': { min: 62_215, max: 72_293, description: 'Principal specialists' },
-  '8c': { min: 74_290, max: 86_893, description: 'Senior managers' },
-  '8d': { min: 88_168, max: 102_400, description: 'Director level' },
-  '9': { min: 105_385, max: 121_271, description: 'Executive level' },
+  '1': { min: 24_442, max: 24_442, description: 'Support staff' },
+  '2': { min: 24_442, max: 26_573, description: 'Healthcare assistants, porters' },
+  '3': { min: 26_573, max: 29_401, description: 'Senior HCA, admin' },
+  '4': { min: 27_459, max: 30_133, description: 'Associate practitioners' },
+  '5': { min: 31_019, max: 37_760, description: 'Newly qualified nurses, therapists' },
+  '6': { min: 38_645, max: 46_535, description: 'Senior nurses, specialists' },
+  '7': { min: 47_763, max: 54_657, description: 'Advanced practitioners, team leaders' },
+  '8a': { min: 55_637, max: 62_622, description: 'Consultant therapists, senior managers' },
+  '8b': { min: 64_393, max: 74_823, description: 'Principal specialists' },
+  '8c': { min: 76_890, max: 89_934, description: 'Senior managers' },
+  '8d': { min: 91_254, max: 105_984, description: 'Director level' },
+  '9': { min: 109_074, max: 125_515, description: 'Executive level' },
 }
 
 function calculate(band: string, point: number) {

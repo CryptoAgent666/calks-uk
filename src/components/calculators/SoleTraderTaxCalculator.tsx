@@ -18,8 +18,8 @@ function calculate(revenue: number, expenses: number) {
     else incomeTax = (BASIC_LIMIT - pa) * 0.20 + (HIGHER_LIMIT - BASIC_LIMIT) * 0.40 + (profit - HIGHER_LIMIT) * 0.45
   }
 
-  // Class 2 NI: £3.45/week if profit >= £12,570
-  const class2 = profit >= 12_570 ? 3.45 * 52 : 0
+  // Class 2 NI: £3.50/week if profit >= £12,570 (2025/26)
+  const class2 = profit >= 12_570 ? 3.50 * 52 : 0
 
   // Class 4 NI
   let class4 = 0

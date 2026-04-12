@@ -13,7 +13,7 @@ function calculate(profit: number) {
   }
   let stClass4 = 0
   if (profit > 12_570) { if (profit <= 50_270) stClass4 = (profit - 12_570) * 0.06; else stClass4 = (50_270 - 12_570) * 0.06 + (profit - 50_270) * 0.02 }
-  const stClass2 = profit >= 12_570 ? 3.45 * 52 : 0
+  const stClass2 = profit >= 12_570 ? 3.50 * 52 : 0
   const stTotal = stTax + stClass4 + stClass2
   const stTakeHome = profit - stTotal
 

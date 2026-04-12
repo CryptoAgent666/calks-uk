@@ -15,8 +15,8 @@ function calculate(trades: { buyPrice: number; sellPrice: number; quantity: numb
   const netGain = totalGains - totalLosses
   const allowance = 3_000
   const taxableGain = Math.max(0, netGain - allowance)
-  const cgtBasic = taxableGain * 0.10
-  const cgtHigher = taxableGain * 0.20
+  const cgtBasic = taxableGain * 0.18 // 18% from Oct 2024 Budget
+  const cgtHigher = taxableGain * 0.24 // 24% from Oct 2024 Budget
 
   return { totalGains, totalLosses, netGain, taxableGain, cgtBasic, cgtHigher, allowance }
 }
@@ -57,8 +57,8 @@ export default function CryptoTaxCARFCalculator() {
         </div>
         {result.taxableGain > 0 && (
           <div className="grid grid-cols-2 gap-3">
-            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">CGT (basic 10%)</p><p className="text-lg font-bold">{formatCurrency(result.cgtBasic)}</p></div>
-            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">CGT (higher 20%)</p><p className="text-lg font-bold">{formatCurrency(result.cgtHigher)}</p></div>
+            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">CGT (basic 18%)</p><p className="text-lg font-bold">{formatCurrency(result.cgtBasic)}</p></div>
+            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">CGT (higher 24%)</p><p className="text-lg font-bold">{formatCurrency(result.cgtHigher)}</p></div>
           </div>
         )}
         <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-4 text-sm text-orange-800 dark:text-orange-300">

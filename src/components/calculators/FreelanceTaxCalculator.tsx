@@ -20,7 +20,7 @@ function calculate(dayRate: number, daysPerMonth: number, monthsPerYear: number,
     if (netProfit <= 50_270) class4 = (netProfit - 12_570) * 0.06
     else class4 = (50_270 - 12_570) * 0.06 + (netProfit - 50_270) * 0.02
   }
-  const class2 = netProfit >= 12_570 ? 3.45 * 52 : 0
+  const class2 = netProfit >= 12_570 ? 3.50 * 52 : 0
 
   const totalTax = tax + class4 + class2
   const takeHome = netProfit - totalTax

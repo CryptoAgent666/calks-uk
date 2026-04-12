@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-const BPA = 3_070 // 2025/26
+const BPA = 3_130 // 2025/26 (uprated from £3,070 by 1.7% CPI)
 const PA = 12_570
 
 function calculate(income: number, isRegistered: boolean) {

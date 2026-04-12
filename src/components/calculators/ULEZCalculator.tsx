@@ -7,7 +7,7 @@ const CC_DAILY = 15.00
 function calculate(euroStandard: string, fuelType: string, daysInULEZ: number, inCongestionZone: boolean, daysInCC: number) {
   const petrolCompliant = parseInt(euroStandard) >= 4
   const dieselCompliant = parseInt(euroStandard) >= 6
-  const isCompliant = fuelType === 'electric' || fuelType === 'petrol' ? petrolCompliant : dieselCompliant
+  const isCompliant = fuelType === 'electric' ? true : fuelType === 'petrol' ? petrolCompliant : dieselCompliant
 
   const ulezAnnual = isCompliant ? 0 : daysInULEZ * ULEZ_DAILY * 52
   const ccAnnual = inCongestionZone ? daysInCC * CC_DAILY * 52 : 0

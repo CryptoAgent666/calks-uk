@@ -16,7 +16,7 @@ function calculate(benefits: Record<string, number>, salary: number) {
   const totalBiK = Object.values(benefits).reduce((s, v) => s + v, 0)
   const taxRate = salary > 125_140 ? 0.45 : salary > 50_270 ? 0.40 : 0.20
   const taxOnBiK = totalBiK * taxRate
-  const niOnBiK = totalBiK * 0.02 // Class 1A employer NI, but employee pays tax
+  const niOnBiK = totalBiK * 0.15 // Class 1A employer NI (15% from April 2025)
   const monthlyTax = taxOnBiK / 12
 
   return { totalBiK, taxRate: taxRate * 100, taxOnBiK, niOnBiK, monthlyTax }

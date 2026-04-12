@@ -5,7 +5,9 @@ const CC_DAILY = 15.00
 const CC_MONTHLY_AUTOPAY = 319.50 // roughly £15 * 21.3 working days, slight discount with auto pay
 
 function calculate(daysPerWeek: number, weeksPerYear: number, hasAutoPay: boolean, isEV: boolean, isDisabled: boolean) {
-  if (isEV || isDisabled) return { annualCost: 0, dailyRate: 0, exempt: true, reason: isEV ? 'Cleaner Vehicle Discount (EV)' : 'Disabled person\'s exemption' }
+  // Note: EV exemption (Cleaner Vehicle Discount) ended 25 December 2025 — EVs now pay full charge
+  if (isDisabled) return { annualCost: 0, dailyRate: 0, exempt: true, reason: 'Disabled person\'s exemption (Blue Badge)' }
+  if (isEV) {/* EVs no longer exempt — fall through to charge calculation */}
 
   const dailyRate = CC_DAILY
   const annualDays = daysPerWeek * weeksPerYear
@@ -34,7 +36,7 @@ export default function CongestionChargeCalculator() {
       </div>
       <div className="space-y-2">
         <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={autopay} onChange={(e) => setAutopay(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Auto Pay registered</span></label>
-        <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={ev} onChange={(e) => setEv(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Electric vehicle</span></label>
+        <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={ev} onChange={(e) => setEv(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Electric vehicle (no longer exempt — CVD ended Dec 2025)</span></label>
         <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={disabled} onChange={(e) => setDisabled(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Blue Badge holder</span></label>
       </div>
 

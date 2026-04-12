@@ -14,7 +14,7 @@ function calculate(purchasePrice: number, salePrice: number, fees: number, other
   const gainAtBasic = Math.min(taxableGain, remainingBasic)
   const gainAtHigher = taxableGain - gainAtBasic
 
-  const cgt = gainAtBasic * 0.10 + gainAtHigher * 0.20
+  const cgt = gainAtBasic * 0.18 + gainAtHigher * 0.24 // 18%/24% from Oct 2024 Budget
   const effectiveRate = gain > 0 ? (cgt / gain) * 100 : 0
 
   return { gain, taxableGain, cgt, effectiveRate, hasGain: true, gainAtBasic, gainAtHigher, allowance }
@@ -55,8 +55,8 @@ export default function CGTOnSharesCalculator() {
               </div>
               {'gainAtBasic' in result && result.taxableGain > 0 && (
                 <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-                  {result.gainAtBasic > 0 && <p>At 10% (basic rate): {formatCurrency(result.gainAtBasic)} = {formatCurrency(result.gainAtBasic * 0.10)}</p>}
-                  {result.gainAtHigher > 0 && <p>At 20% (higher rate): {formatCurrency(result.gainAtHigher)} = {formatCurrency(result.gainAtHigher * 0.20)}</p>}
+                  {result.gainAtBasic > 0 && <p>At 18% (basic rate): {formatCurrency(result.gainAtBasic)} = {formatCurrency(result.gainAtBasic * 0.18)}</p>}
+                  {result.gainAtHigher > 0 && <p>At 24% (higher rate): {formatCurrency(result.gainAtHigher)} = {formatCurrency(result.gainAtHigher * 0.24)}</p>}
                   <p className="mt-1">Tip: selling within an ISA wrapper avoids CGT entirely.</p>
                 </div>
               )}

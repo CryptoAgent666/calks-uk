@@ -1,4 +1,28 @@
+# Allow all search engine crawlers
 User-agent: *
+Allow: /
+
+# Block AI training crawlers (not needed for search indexing)
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# Allow AI search/citation crawlers (good for brand visibility)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /
 
 Sitemap: https://calks.uk/sitemap-index.xml

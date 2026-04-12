@@ -7,7 +7,7 @@ const HIGHER_LIMIT = 125_140
 const PA_TAPER = 100_000
 
 // Class 2 NI
-const CLASS2_RATE = 3.45 * 52 // £3.45/week
+const CLASS2_RATE = 3.50 * 52 // £3.50/week (2025/26)
 const CLASS2_THRESHOLD = 12_570
 
 // Class 4 NI

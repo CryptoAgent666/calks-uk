@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // Late payment interest (commercial debts) - Late Payment of Commercial Debts Act
-const BOE_BASE_RATE = 5.25 // Bank of England base rate
+const BOE_BASE_RATE = 4.25 // Bank of England base rate (as of Q1 2026; check bankofengland.co.uk for current rate)
 const STATUTORY_RATE = BOE_BASE_RATE + 8 // base rate + 8%
 const FIXED_COMPENSATION = [
   { upTo: 1_000, amount: 40 },

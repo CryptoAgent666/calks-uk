@@ -5,12 +5,12 @@ import { formatCurrency } from '@/utils'
 function getBikRate(co2: number, fuelType: string): number {
   if (fuelType === 'electric') return 3
   if (fuelType === 'hybrid' && co2 <= 50) return 3 + Math.ceil(co2 / 5)
-  // Petrol/diesel
-  const base = fuelType === 'diesel' ? 4 : 0 // diesel supplement
+  // Petrol/diesel — 4% diesel supplement applies to non-RDE2 compliant diesel only
+  const base = fuelType === 'diesel-nonrde2' ? 4 : 0
   if (co2 <= 50) return 2 + base
   if (co2 <= 54) return 15 + base
   // Each 5g above 55 adds 1%
-  const extra = Math.ceil((co2 - 55) / 5)
+  const extra = Math.floor((co2 - 55) / 5)
   return Math.min(37, 16 + extra + base)
 }
 
@@ -51,6 +51,7 @@ export default function CompanyCarTaxCalculator() {
           <select value={fuelType} onChange={(e) => setFuelType(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">
             <option value="petrol">Petrol</option>
             <option value="diesel">Diesel (RDE2 compliant)</option>
+            <option value="diesel-nonrde2">Diesel (non-RDE2, +4% surcharge)</option>
             <option value="hybrid">Plug-in Hybrid</option>
             <option value="electric">Electric (0g CO2)</option>
           </select>

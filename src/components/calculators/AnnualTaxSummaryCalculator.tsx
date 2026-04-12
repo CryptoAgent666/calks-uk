@@ -32,12 +32,12 @@ function calculate(salary: number, dividends: number, selfEmployment: number, re
 
   let class4NI = 0
   if (selfEmployment > 12_570) { if (selfEmployment <= 50_270) class4NI = (selfEmployment - 12_570) * 0.06; else class4NI = (50_270 - 12_570) * 0.06 + (selfEmployment - 50_270) * 0.02 }
-  const class2NI = selfEmployment >= 12_570 ? 3.45 * 52 : 0
+  const class2NI = selfEmployment >= 12_570 ? 3.50 * 52 : 0
 
-  // CGT
+  // CGT (post-Oct 2024 Budget: 18%/24% for all assets)
   const cgtAllowance = 3_000
   const taxableCGT = Math.max(0, capitalGains - cgtAllowance)
-  const cgt = nonDivIncome <= 50_270 ? taxableCGT * 0.10 : taxableCGT * 0.20
+  const cgt = nonDivIncome <= 50_270 ? taxableCGT * 0.18 : taxableCGT * 0.24
 
   const totalTax = incomeTax + dividendTax + employeeNI + class4NI + class2NI + cgt
   const totalGross = totalIncome + capitalGains

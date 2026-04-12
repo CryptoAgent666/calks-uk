@@ -9,8 +9,7 @@ const SMP_HIGHER_RATE = 0.90 // 90% of average weekly earnings
 
 function calculate(weeklyPay: number) {
   const higherWeeklyRate = weeklyPay * SMP_HIGHER_RATE
-  const lowerWeeklyRate = Math.min(weeklyPay * SMP_HIGHER_RATE, SMP_RATE)
-  const actualLowerRate = Math.min(weeklyPay, SMP_RATE)
+  const actualLowerRate = Math.min(weeklyPay * SMP_HIGHER_RATE, SMP_RATE) // 90% of AWE or SMP rate, whichever is lower
 
   const first6Weeks = higherWeeklyRate * SMP_HIGHER_WEEKS
   const next33Weeks = actualLowerRate * SMP_LOWER_WEEKS

@@ -12,7 +12,7 @@ function calculate(weeklyRent: number, lhaRate: number, isSingle: boolean, age: 
   const excessBedrooms = 0 // simplified
 
   // Taper: 65% of excess income (for HB) or 55% for UC
-  const applicableAmount = isSingle ? 90.98 : 142.83 // weekly personal allowance
+  const applicableAmount = isSingle ? 92.53 : 145.26 // weekly personal allowance 2025/26
   const excessIncome = Math.max(0, weeklyIncome - applicableAmount)
   const taper = excessIncome * 0.65
 

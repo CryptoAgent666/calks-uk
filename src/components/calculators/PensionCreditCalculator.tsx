@@ -1,15 +1,16 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Pension Credit 2025/26 (Guarantee Credit)
-const SINGLE_GUARANTEE = 218.15 // weekly
-const COUPLE_GUARANTEE = 332.95
+// Pension Credit 2025/26 (Guarantee Credit) — uprated April 2025
+// Single/couple uprated by earnings (triple lock ~4.1%); additional amounts by CPI 1.7%
+const SINGLE_GUARANTEE = 227.10 // weekly (was £218.15 in 2024/25)
+const COUPLE_GUARANTEE = 346.60 // weekly (was £332.95 in 2024/25)
 
 function calculate(isSingle: boolean, weeklyIncome: number, weeklyPension: number, hasSavings: boolean, savings: number, hasDisability: boolean, hasCarer: boolean) {
   const guarantee = isSingle ? SINGLE_GUARANTEE : COUPLE_GUARANTEE
   let additionalAmount = 0
-  if (hasDisability) additionalAmount += 81.50 // severe disability
-  if (hasCarer) additionalAmount += 45.60
+  if (hasDisability) additionalAmount += 84.65 // severe disability (was £81.50 in 2024/25, uprated 1.7% CPI + adjustment)
+  if (hasCarer) additionalAmount += 46.40 // carer addition (was £45.60 in 2024/25, uprated 1.7% CPI)
 
   const totalGuarantee = guarantee + additionalAmount
   const totalIncome = weeklyIncome + weeklyPension

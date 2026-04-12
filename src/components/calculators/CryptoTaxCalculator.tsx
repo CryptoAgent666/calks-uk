@@ -14,7 +14,8 @@ function calculate(totalGains: number, totalLosses: number, otherIncome: number)
   const gainAtBasic = Math.min(taxableGain, remainingBasic)
   const gainAtHigher = taxableGain - gainAtBasic
 
-  const cgt = gainAtBasic * 0.10 + gainAtHigher * 0.20
+  // CGT rates from 30 October 2024 Budget: 18% basic, 24% higher
+  const cgt = gainAtBasic * 0.18 + gainAtHigher * 0.24
 
   return { netGain, taxableGain, cgt, effectiveRate: netGain > 0 ? (cgt / netGain) * 100 : 0 }
 }
@@ -62,7 +63,7 @@ export default function CryptoTaxCalculator() {
             <p className="font-medium text-foreground">UK Crypto Tax Rules:</p>
             <p>Crypto is treated as a capital asset — CGT applies when you sell, swap or spend.</p>
             <p>Annual exempt amount: <span className="font-medium text-foreground">£{CGT_ALLOWANCE.toLocaleString()}</span> (2025/26)</p>
-            <p>Basic rate: <span className="font-medium text-foreground">10%</span> | Higher rate: <span className="font-medium text-foreground">20%</span></p>
+            <p>Basic rate: <span className="font-medium text-foreground">18%</span> | Higher rate: <span className="font-medium text-foreground">24%</span> (from Oct 2024)</p>
             <p>Losses can be offset against gains in the same or future tax years.</p>
           </div>
         </div>

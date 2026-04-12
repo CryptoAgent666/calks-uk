@@ -1,11 +1,11 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, formatPercent } from '@/utils'
 
-// CGT 2025/26
+// CGT 2025/26 — rates increased from 30 October 2024 Budget
 const ANNUAL_EXEMPT = 3_000
 const BASIC_RATE_LIMIT = 50_270
-const CGT_BASIC = 0.10
-const CGT_HIGHER = 0.20
+const CGT_BASIC = 0.18      // 18% from Oct 2024 (was 10%)
+const CGT_HIGHER = 0.24     // 24% from Oct 2024 (was 20%)
 const CGT_PROPERTY_BASIC = 0.18
 const CGT_PROPERTY_HIGHER = 0.24
 
@@ -44,7 +44,7 @@ export default function CapitalGainsTaxCalculator() {
       <div>
         <label className="block text-sm font-medium mb-2">Asset Type</label>
         <div className="grid grid-cols-2 gap-2">
-          {([{ v: 'shares' as AssetType, l: 'Shares & Investments', d: '10% / 20%' }, { v: 'property' as AssetType, l: 'Residential Property', d: '18% / 24%' }]).map((o) => (
+          {([{ v: 'shares' as AssetType, l: 'Shares & Investments', d: '18% / 24%' }, { v: 'property' as AssetType, l: 'Residential Property', d: '18% / 24%' }]).map((o) => (
             <button key={o.v} onClick={() => setAssetType(o.v)} className={`px-4 py-3 rounded-xl text-sm text-left transition-colors border ${assetType === o.v ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border hover:bg-accent'}`}>
               <div className="font-medium">{o.l}</div>
               <div className={`text-xs ${assetType === o.v ? 'text-primary-foreground/70' : 'text-muted-foreground'}`}>{o.d}</div>
@@ -82,8 +82,8 @@ export default function CapitalGainsTaxCalculator() {
           {result.taxableGain > 0 && (
             <div className="rounded-xl border border-border p-4 text-sm space-y-1">
               <p><span className="font-medium">Taxable gain:</span> {formatCurrency(result.taxableGain)}</p>
-              {result.basicRateTax > 0 && <p><span className="font-medium">At {assetType === 'property' ? '18' : '10'}% (basic rate):</span> {formatCurrency(result.basicRateTax)}</p>}
-              {result.higherRateTax > 0 && <p><span className="font-medium">At {assetType === 'property' ? '24' : '20'}% (higher rate):</span> {formatCurrency(result.higherRateTax)}</p>}
+              {result.basicRateTax > 0 && <p><span className="font-medium">At 18% (basic rate):</span> {formatCurrency(result.basicRateTax)}</p>}
+              {result.higherRateTax > 0 && <p><span className="font-medium">At 24% (higher rate):</span> {formatCurrency(result.higherRateTax)}</p>}
             </div>
           )}
         </div>

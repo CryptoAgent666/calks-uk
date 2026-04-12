@@ -2,10 +2,10 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 function calculate(marketValue: number, yearsAsTenant: number, isHouse: boolean) {
-  const baseDiscount = isHouse ? 35 : 50 // houses 35%, flats 50%
-  const additionalPerYear = isHouse ? 1 : 2 // per year above 3/5 years
-  const minYears = isHouse ? 3 : 5
-  const maxDiscount = isHouse ? 96_000 : 127_900 // 2025/26 England caps
+  const baseDiscount = isHouse ? 35 : 50 // houses 35%, flats 50% (from year 3)
+  const additionalPerYear = isHouse ? 1 : 2 // +1%/yr for houses, +2%/yr for flats
+  const minYears = 3 // 3 years minimum for both houses and flats
+  const maxDiscount = 34_000 // England cap (outside London) — reduced from £96K to £38K in Nov 2023, further reduced to ~£34K from Oct 2024
 
   const qualifies = yearsAsTenant >= minYears
   const extraYears = Math.max(0, yearsAsTenant - minYears)
@@ -32,6 +32,7 @@ export default function RightToBuyCalculator() {
         <div><label className="block text-sm font-medium mb-2">Years as Tenant</label><input type="number" min="0" max="50" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
         <div><label className="block text-sm font-medium mb-2">Property Type</label><div className="grid grid-cols-2 gap-2"><button onClick={() => setIsHouse(true)} className={`px-4 py-3 rounded-xl text-sm font-medium border ${isHouse ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border'}`}>House</button><button onClick={() => setIsHouse(false)} className={`px-4 py-3 rounded-xl text-sm font-medium border ${!isHouse ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border'}`}>Flat</button></div></div>
       </div>
+      <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-3 text-sm text-orange-800 dark:text-orange-300">Right to Buy discounts have been significantly reduced. Max discount £34,000 (outside London) or £38,400 (London) from October 2024. Check gov.uk for the latest caps — further changes are possible.</div>
       {!result.qualifies && y > 0 && <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-3 text-center text-sm text-orange-800 dark:text-orange-300">You need at least {result.minYears} years as a public sector tenant to qualify</div>}
       {v > 0 && result.qualifies && (
         <div className="space-y-4 animate-fade-in-up">

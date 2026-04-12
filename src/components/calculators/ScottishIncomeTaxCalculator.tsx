@@ -29,7 +29,7 @@ function calculate(gross: number) {
 
   for (const band of SCOTTISH_BANDS) {
     if (band.rate === 0) continue
-    const adjustedFrom = band.from < PERSONAL_ALLOWANCE ? pa : band.from
+    const adjustedFrom = band.from <= PERSONAL_ALLOWANCE ? pa : band.from
     if (gross <= adjustedFrom) {
       breakdown.push({ name: band.name, taxable: 0, tax: 0, rate: band.rate })
       continue

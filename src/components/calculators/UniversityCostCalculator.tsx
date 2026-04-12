@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-const TUITION_FEE = 9_250
+const TUITION_FEE = 9_535 // raised from £9,250 to £9,535 from September 2025 (Autumn Budget 2024)
 const MAINTENANCE_LOANS: Record<string, Record<string, number>> = {
   home: { london: 13_762, other: 10_544, parents: 8_490 },
   away: { london: 13_762, other: 10_544, parents: 8_490 },
