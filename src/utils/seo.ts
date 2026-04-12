@@ -35,7 +35,7 @@ export function getWebSiteSchema() {
   }
 }
 
-export function getWebPageSchema(title: string, description: string, url: string) {
+export function getWebPageSchema(title: string, description: string, url: string, dateModified?: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -46,10 +46,11 @@ export function getWebPageSchema(title: string, description: string, url: string
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
     inLanguage: 'en-GB',
+    ...(dateModified ? { dateModified } : {}),
   }
 }
 
-export function getCalculatorSchema(calc: CalculatorMeta) {
+export function getCalculatorSchema(calc: CalculatorMeta, dateModified?: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
@@ -67,6 +68,7 @@ export function getCalculatorSchema(calc: CalculatorMeta) {
     },
     publisher: { '@id': `${SITE_URL}/#organization` },
     inLanguage: 'en-GB',
+    ...(dateModified ? { dateModified } : {}),
   }
 }
 

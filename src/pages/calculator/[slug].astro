@@ -23,9 +23,23 @@ const related = getRelatedCalculators(slug as string)
 const faqs = CALCULATOR_FAQS[slug as string] || []
 const content = CALCULATOR_CONTENT[slug as string]
 
+// Convert "April 2026" → "2026-04-01" for schema dateModified
+const MONTH_MAP: Record<string, string> = {
+  January: '01', February: '02', March: '03', April: '04',
+  May: '05', June: '06', July: '07', August: '08',
+  September: '09', October: '10', November: '11', December: '12',
+}
+function toIsoDate(s?: string): string | undefined {
+  if (!s) return undefined
+  const m = s.match(/^(\w+)\s+(\d{4})$/)
+  if (!m) return undefined
+  return `${m[2]}-${MONTH_MAP[m[1]] ?? '01'}-01`
+}
+const dateModified = toIsoDate(content?.lastUpdated) ?? '2025-04-06'
+
 const schemas = [
-  getWebPageSchema(calc.title, calc.description, `/calculator/${calc.slug}/`),
-  getCalculatorSchema(calc),
+  getWebPageSchema(calc.title, calc.description, `/calculator/${calc.slug}/`, dateModified),
+  getCalculatorSchema(calc, dateModified),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: category.name, url: `/category/${calc.category}/` },
