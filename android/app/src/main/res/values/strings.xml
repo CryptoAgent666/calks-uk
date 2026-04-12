@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Calks UK</string>
+    <string name="title_activity_main">Calks UK</string>
+    <string name="package_name">uk.calks.app</string>
+    <string name="custom_url_scheme">uk.calks.app</string>
+</resources>
