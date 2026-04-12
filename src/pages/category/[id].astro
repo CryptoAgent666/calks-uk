@@ -2,7 +2,7 @@
 import Layout from '@/layouts/Layout.astro'
 import { CATEGORIES, CATEGORY_IDS } from '@/data/categories'
 import { getCalculatorsByCategory } from '@/data/calculators'
-import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
+import { getWebPageSchema, getBreadcrumbSchema, getItemListSchema } from '@/utils/seo'
 import type { GetStaticPaths } from 'astro'
 
 export const getStaticPaths: GetStaticPaths = () => {
@@ -48,6 +48,9 @@ const schemas = [
     { name: 'Home', url: '/' },
     { name: category.name, url: `/category/${id}/` },
   ]),
+  ...(calculators.length > 0 ? [getItemListSchema(
+    calculators.map((c) => ({ name: c.title, url: `/calculator/${c.slug}/`, description: c.description }))
+  )] : []),
 ]
 ---
 

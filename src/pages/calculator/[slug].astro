@@ -7,7 +7,7 @@ import { CALCULATORS, getCalculatorBySlug, getRelatedCalculators } from '@/data/
 import { CATEGORIES } from '@/data/categories'
 import { CALCULATOR_FAQS } from '@/data/faqs'
 import { CALCULATOR_CONTENT } from '@/data/calculator-content'
-import { getCalculatorSchema, getBreadcrumbSchema, getWebPageSchema, getFaqSchema } from '@/utils/seo'
+import { getCalculatorSchema, getBreadcrumbSchema, getWebPageSchema } from '@/utils/seo'
 import type { GetStaticPaths } from 'astro'
 
 export const getStaticPaths: GetStaticPaths = () => {
@@ -31,7 +31,6 @@ const schemas = [
     { name: category.name, url: `/category/${calc.category}/` },
     { name: calc.title, url: `/calculator/${calc.slug}/` },
   ]),
-  ...(faqs.length > 0 ? [getFaqSchema(faqs)] : []),
 ]
 ---
 

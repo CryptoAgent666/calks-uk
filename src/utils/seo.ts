@@ -12,6 +12,14 @@ export function getOrganizationSchema() {
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
     description: 'Free online calculators for the UK. Tax, salary, mortgage, pension, VAT and more — updated for 2025/26.',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'info@calks.uk',
+      contactType: 'customer support',
+    },
+    sameAs: [
+      'https://www.linkedin.com/in/konstantin-iakovlev',
+    ],
   }
 }
 
@@ -51,6 +59,7 @@ export function getCalculatorSchema(calc: CalculatorMeta) {
     description: calc.description,
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'Any',
+    browserRequirements: 'Requires JavaScript. Requires HTML5.',
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -74,17 +83,16 @@ export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
   }
 }
 
-export function getFaqSchema(faqs: { question: string; answer: string }[]) {
+export function getItemListSchema(items: { name: string; url: string; description: string }[]) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
+    '@type': 'ItemList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      description: item.description,
+      url: `${SITE_URL}${item.url}`,
     })),
   }
 }
