@@ -43,6 +43,11 @@ All rates and thresholds come from official UK government sources:
 
 All tax-related calculators are updated for the 2025/26 UK tax year (6 April 2025 to 5 April 2026).
 
+## Full Content
+
+For detailed citable passages on individual calculators (rates, thresholds, worked examples):
+https://calks.uk/llms-full.txt
+
 ## Contact
 
 Email: info@calks.uk

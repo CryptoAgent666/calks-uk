@@ -8,7 +8,7 @@ const { type = 'responsive', class: className = '' } = Astro.props
 const slotClass = `ad-slot-${type}`
 ---
 
-<div class={`${slotClass} ${className}`} data-no-print>
+<div class={`${slotClass} ${className}`} data-no-print style={type === 'rectangle' ? 'min-height:250px' : type === 'leaderboard' ? 'min-height:90px' : 'min-height:90px'}>
   <!-- AdSense ad unit will be inserted here -->
   <!-- <ins class="adsbygoogle"
     style="display:block"

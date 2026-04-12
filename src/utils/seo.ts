@@ -35,6 +35,8 @@ export function getWebSiteSchema() {
   }
 }
 
+const AUTHOR_ID = `${SITE_URL}/#author`
+
 export function getWebPageSchema(title: string, description: string, url: string, dateModified?: string) {
   return {
     '@context': 'https://schema.org',
@@ -45,6 +47,7 @@ export function getWebPageSchema(title: string, description: string, url: string
     description,
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
+    author: { '@id': AUTHOR_ID },
     inLanguage: 'en-GB',
     ...(dateModified ? { dateModified } : {}),
   }
@@ -66,6 +69,7 @@ export function getCalculatorSchema(calc: CalculatorMeta, dateModified?: string)
       price: '0',
       priceCurrency: 'GBP',
     },
+    author: { '@id': AUTHOR_ID },
     publisher: { '@id': `${SITE_URL}/#organization` },
     inLanguage: 'en-GB',
     ...(dateModified ? { dateModified } : {}),

@@ -1,0 +1,156 @@
+# Calks.uk — Full Content for AI Ingestion
+
+> Free UK financial calculators updated for the 2025/26 tax year. All calculations run client-side in the browser; no data is collected. Sources: HMRC, GOV.UK, Bank of England, ONS, DWP.
+
+Site: https://calks.uk
+Author: Konstantin Iakovlev
+Contact: info@calks.uk
+Last updated: April 2026
+Coverage: 331 calculators across 20 categories
+
+---
+
+## UK Income Tax Calculator
+
+For the 2025/26 tax year, UK income tax applies to income above the Personal Allowance of £12,570. The Basic Rate of 20% applies to income from £12,571 to £50,270. The Higher Rate of 40% applies from £50,271 to £125,140. The Additional Rate of 45% applies above £125,140. For earners above £100,000, the Personal Allowance tapers at £1 for every £2 of income, creating an effective 60% marginal rate between £100,000 and £125,140 where the allowance is fully withdrawn. These rates apply in England, Wales and Northern Ireland. Scottish taxpayers pay different rates under the Scottish Rate of Income Tax. National Insurance contributions are calculated separately. Source: HMRC (gov.uk/income-tax-rates). Last updated: April 2026.
+URL: https://calks.uk/calculator/income-tax-calculator/
+
+---
+
+## UK Take-Home Pay Calculator
+
+The UK take-home pay calculation for 2025/26 deducts income tax, Employee National Insurance (Class 1), and optional pension contributions from gross salary. Employee NI is 8% on earnings between £12,570 and £50,270, and 2% above £50,270. The income tax Personal Allowance is £12,570. Workplace pension contributions under auto-enrolment are a minimum of 5% employee and 3% employer on qualifying earnings (£6,240–£50,270). Salary sacrifice pension contributions are deducted before tax, reducing the taxable income. Student loan repayments (Plan 2: 9% above £27,295; Plan 5: 9% above £25,000; Postgraduate: 6% above £21,000) are also deducted from net pay. The calculator shows gross pay, total deductions, and net take-home monthly and annually. Source: HMRC. Last updated: April 2026.
+URL: https://calks.uk/calculator/take-home-pay-calculator/
+
+---
+
+## National Insurance Calculator
+
+For 2025/26, employees pay Class 1 National Insurance at 8% on weekly earnings between £242 (£12,570/year) and £967 (£50,270/year), and 2% on earnings above £967 per week. Employers pay Class 1 NI at 15% on employee earnings above £96 per week (£5,000/year secondary threshold), with no upper earnings limit. The Employment Allowance of £10,500 per year reduces employer NI liability for eligible businesses. Self-employed workers pay Class 4 NI at 6% on profits between £12,570 and £50,270, and 2% above. Class 2 NI was abolished from April 2024; self-employed workers with profits above £6,725 still receive NI credits. Source: HMRC. Last updated: April 2026.
+URL: https://calks.uk/calculator/national-insurance-calculator/
+
+---
+
+## VAT Calculator
+
+UK VAT (Value Added Tax) has three rates for 2025/26: Standard rate 20% on most goods and services; Reduced rate 5% on domestic energy, children's car seats, and certain other items; Zero rate 0% on food, children's clothing, books, and most exports. The VAT registration threshold is £90,000 of taxable turnover in any rolling 12-month period. To add VAT to a net price: multiply by 1.20 (standard) or 1.05 (reduced). To remove VAT from a gross price: divide by 1.20 or 1.05. To reverse-calculate the VAT element from a gross price: subtract (gross ÷ 1.20 × 0.20). Businesses below the threshold may voluntarily register. Source: HMRC (gov.uk/vat-rates). Last updated: April 2026.
+URL: https://calks.uk/calculator/vat-calculator/
+
+---
+
+## Stamp Duty Calculator (England & Northern Ireland)
+
+Stamp Duty Land Tax (SDLT) in England and Northern Ireland for 2025/26: For standard residential purchases, 0% up to £125,000; 2% from £125,001 to £250,000; 5% from £250,001 to £925,000; 10% from £925,001 to £1.5m; 12% above £1.5m. First-time buyers pay 0% up to £300,000 and 5% from £300,001 to £500,000 (relief withdrawn above £500,000). Additional dwellings and buy-to-let properties attract a 5% surcharge on all bands. Rates differ in Scotland (Land and Buildings Transaction Tax) and Wales (Land Transaction Tax). The calculator covers all three scenarios and both nations. Source: HMRC (gov.uk/stamp-duty-land-tax). Last updated: April 2026.
+URL: https://calks.uk/calculator/stamp-duty-calculator/
+
+---
+
+## Mortgage Repayment Calculator
+
+UK mortgage repayment is calculated using the standard amortisation formula: monthly payment = P × [r(1+r)^n] / [(1+r)^n - 1], where P is the principal loan amount, r is the monthly interest rate (annual rate ÷ 12), and n is the total number of monthly payments. For a £250,000 repayment mortgage at 4.5% over 25 years, the monthly payment is £1,390. Total interest paid over the full term is £167,000, making the total cost £417,000. An interest-only mortgage at the same rate would cost £938 per month but leave the £250,000 principal outstanding at the end of the term. Overpayments directly reduce the outstanding principal and the total interest paid. Most lenders allow overpayments of up to 10% per year without penalty. Source: Bank of England. Last updated: April 2026.
+URL: https://calks.uk/calculator/mortgage-repayment-calculator/
+
+---
+
+## Capital Gains Tax Calculator
+
+Following the October 2024 Autumn Budget, UK Capital Gains Tax rates were unified. For disposals on or after 30 October 2024, basic-rate taxpayers pay 18% on all gains (residential property and other assets). Higher and additional-rate taxpayers pay 24% on all gains. The Annual Exempt Amount for 2025/26 is £3,000 per individual. Gains are added to income to determine which rate band applies. For residential property disposed of before 30 October 2024, the old rates of 18% (basic) and 28% (higher) applied. Business Asset Disposal Relief (formerly Entrepreneurs' Relief) remains at 10% on qualifying business disposals up to a lifetime limit of £1m, rising to 14% from April 2025. Source: HMRC (gov.uk/capital-gains-tax). Last updated: April 2026.
+URL: https://calks.uk/calculator/capital-gains-tax-calculator/
+
+---
+
+## Corporation Tax Calculator
+
+UK Corporation Tax for 2025/26 applies at two rates based on annual profits. Small companies with profits up to £50,000 pay 19%. Large companies with profits above £250,000 pay 25%. For profits between £50,000 and £250,000, marginal relief applies, tapering the effective rate between 19% and 25%. The effective marginal rate in the taper band is approximately 26.5%. Associated companies split the thresholds. Qualifying expenditure on plant and machinery can be deducted in full in the year of purchase under the £1m Annual Investment Allowance. R&D tax credits for SMEs were reformed in April 2024: enhanced R&D Intensive Support (RDIS) offers 27% tax credit for R&D-intensive loss-making companies. Source: HMRC (gov.uk/corporation-tax). Last updated: April 2026.
+URL: https://calks.uk/calculator/corporation-tax-calculator/
+
+---
+
+## Pension Calculator
+
+UK workplace pensions under auto-enrolment require minimum contributions of 8% of qualifying earnings (£6,240–£50,270 in 2025/26): at least 3% from the employer and 5% from the employee. The Annual Allowance for pension contributions attracting tax relief is £60,000 for 2025/26, reduced to £10,000 for those who have flexibly accessed their pension (Money Purchase Annual Allowance). The Lifetime Allowance was abolished from April 2024. The State Pension (new full rate) is £230.25 per week for 2025/26. The State Pension Age is currently 66 for both men and women, rising to 67 between 2026 and 2028. Pension projections use the assumption that investments grow by 5% per year after charges, in line with FCA guidance. Source: DWP, HMRC. Last updated: April 2026.
+URL: https://calks.uk/calculator/pension-calculator/
+
+---
+
+## Self-Assessment Tax Calculator
+
+UK Self Assessment for 2025/26 covers income tax on all sources: employment, self-employment, rental, dividends, savings interest, and capital gains. The filing deadline is 31 January 2026 for the 2024/25 online return. Payments on Account (POAs) are due on 31 January and 31 July each year if the previous year's tax bill exceeded £1,000 and less than 80% was collected at source. Each POA is 50% of the previous year's liability. A Balancing Payment for 2024/25 is due 31 January 2026. Late filing penalty: £100 immediately, plus £10/day after 3 months (up to £900), plus further penalties at 6 and 12 months. Late payment interest accrues from 1 February at Bank of England base rate plus 2.5%. Source: HMRC (gov.uk/self-assessment-tax-returns). Last updated: April 2026.
+URL: https://calks.uk/calculator/self-assessment-calculator/
+
+---
+
+## Dividend Tax Calculator
+
+UK dividend tax for 2025/26 applies after the Dividend Allowance of £500. Dividends within the Basic Rate band are taxed at 8.75%. Dividends in the Higher Rate band are taxed at 33.75%. Dividends in the Additional Rate band are taxed at 39.35%. The Dividend Allowance was £1,000 in 2023/24 and was halved to £500 from April 2024. For a limited company director receiving a salary of £12,570 and dividends, the optimal strategy is typically to pay salary up to the Primary Threshold (£12,570), avoiding both income tax and employee NI, and to draw remaining profits as dividends taxed at 8.75% up to the Basic Rate band ceiling of £50,270. Source: HMRC (gov.uk/tax-on-dividends). Last updated: April 2026.
+URL: https://calks.uk/calculator/dividend-tax-calculator/
+
+---
+
+## Inheritance Tax Calculator
+
+UK Inheritance Tax (IHT) for 2025/26 is charged at 40% on the estate value above the Nil Rate Band of £325,000. The Residence Nil Rate Band (RNRB) adds £175,000 when a main residence is passed to direct descendants, giving a combined threshold of £500,000 per person or £1m for a married couple. The RNRB tapers by £1 for every £2 the estate exceeds £2m. Gifts made more than 7 years before death are generally exempt (Potentially Exempt Transfers). Gifts within 7 years are subject to taper relief: 0% reduction in years 1–3, 20% off in year 4, 40% in year 5, 60% in year 6, 80% in year 7. Business Relief of 50–100% applies to qualifying business assets and AIM shares. Source: HMRC (gov.uk/inheritance-tax). Last updated: April 2026.
+URL: https://calks.uk/calculator/inheritance-tax-calculator/
+
+---
+
+## Employer NI Calculator
+
+From April 2025, UK Employer National Insurance is charged at 15% (increased from 13.8%) on employee earnings above the Secondary Threshold of £5,000 per year (£96.15/week). There is no upper earnings limit for employers. The Employment Allowance was increased to £10,500 from April 2025, and the restriction preventing single-director companies from claiming was removed. Eligible employers can offset the allowance against their employer NI bill. For a single employee on a £30,000 salary, the employer NI is 15% × (£30,000 − £5,000) = £3,750. With the Employment Allowance, the net cost falls to zero for employers with a bill below £10,500. Employer NI on salaries above £100,000 is charged on the full excess with no relief. Source: HMRC. Last updated: April 2026.
+URL: https://calks.uk/calculator/employer-ni-calculator/
+
+---
+
+## Redundancy Pay Calculator
+
+UK statutory redundancy pay is calculated using a three-tier age and service formula: employees receive 0.5 week's pay per year of service under age 22; 1 week's pay per year aged 22–40; 1.5 weeks' pay per year aged 41 and over. Service is capped at 20 years. The weekly pay used in the calculation is capped at £700 for 2025/26 (increased from £643). The maximum statutory redundancy payment is therefore 20 × 1.5 × £700 = £21,000. The first £30,000 of redundancy pay is tax-free if it is a genuine redundancy payment and not in lieu of notice (PILON). Enhanced redundancy pay above statutory is taxable. Employees need a minimum of 2 years' continuous service to qualify. Source: GOV.UK (gov.uk/redundancy-your-rights). Last updated: April 2026.
+URL: https://calks.uk/calculator/redundancy-pay-calculator/
+
+---
+
+## Universal Credit Calculator
+
+Universal Credit (UC) for 2025/26 comprises a Standard Allowance plus elements for children, disability, childcare, housing, and carer responsibilities. The standard allowance is £316.98/month (single under 25), £400.14/month (single 25+), £497.55/month (couple both under 25), or £628.10/month (couple, one or both 25+). UC is reduced by the taper rate of 55p for every £1 of net earned income above the Work Allowance. The Work Allowance is £404/month (with housing element) or £673/month (without housing element) for claimants with children or a disability. UC replaces Working Tax Credit, Child Tax Credit, Housing Benefit, Income Support, income-based JSA, and income-related ESA. Source: DWP (gov.uk/universal-credit). Last updated: April 2026.
+URL: https://calks.uk/calculator/universal-credit-calculator/
+
+---
+
+## Child Benefit Calculator
+
+UK Child Benefit for 2025/26 is £25.60 per week for the eldest or only child and £16.95 per week for each additional child. The High Income Child Benefit Charge (HICBC) applies when either partner's adjusted net income exceeds £60,000. The charge is 1% of the Child Benefit received for every £200 of income above £60,000, and reaches 100% (full clawback) at £80,000. A family with two children claiming the full rate receives £2,212 per year. If one parent earns £70,000, the charge is 50% of benefit = £1,106. At £80,000, the charge equals the full benefit, making the net gain zero unless the NI credit value is considered (Child Benefit still builds State Pension entitlement). Source: HMRC (gov.uk/child-benefit). Last updated: April 2026.
+URL: https://calks.uk/calculator/child-benefit-calculator/
+
+---
+
+## Salary Sacrifice Calculator
+
+Salary sacrifice in the UK reduces an employee's gross salary by a specified amount, with the employer contributing the equivalent to the employee's pension. Because the contribution is made before tax and National Insurance, the employee saves income tax (20%, 40%, or 45%) and Employee NI (8% or 2%) on the sacrificed amount. The employer also saves Employer NI at 15% on the sacrificed salary, and employers often pass some or all of this saving to the employee as an enhanced contribution. For a basic-rate taxpayer sacrificing £200/month: income tax saving £40, employee NI saving £16, net cost £144 instead of £200 — effectively 28% more pension per pound spent. Source: HMRC. Last updated: April 2026.
+URL: https://calks.uk/calculator/salary-sacrifice-calculator/
+
+---
+
+## Maternity Pay Calculator
+
+UK Statutory Maternity Pay (SMP) for 2025/26 is paid for up to 39 weeks: the first 6 weeks at 90% of average weekly earnings (AWE) with no cap; the remaining 33 weeks at the lower of 90% of AWE or the flat rate of £187.18 per week. To qualify, the employee must have worked for the employer for at least 26 weeks into the 15th week before the expected week of childbirth and earn at least £123/week (the lower earnings limit). Employers can reclaim 92% of SMP from HMRC; small employers (annual NI bill below £45,000) can reclaim 103%. Maternity Allowance of £187.18/week for 39 weeks is available to those who do not qualify for SMP (e.g. self-employed). Source: GOV.UK, HMRC. Last updated: April 2026.
+URL: https://calks.uk/calculator/maternity-pay-calculator/
+
+---
+
+## Sole Trader Tax Calculator
+
+A UK sole trader pays income tax and Class 4 National Insurance on their taxable profits for 2025/26. Income tax: 0% on profits up to £12,570 (Personal Allowance); 20% on £12,571–£50,270; 40% on £50,271–£125,140; 45% above £125,140. Class 4 NI: 6% on profits from £12,570 to £50,270; 2% above £50,270. Class 2 NI was abolished from April 2024. Sole traders whose profits exceed £30,000 typically benefit from incorporating as a limited company: drawing a £12,570 salary (no tax or NI) plus dividends at 8.75%. Allowable deductions include business use of home, vehicle costs (actual or flat rate), phone, professional subscriptions, and equipment under the Annual Investment Allowance. Source: HMRC. Last updated: April 2026.
+URL: https://calks.uk/calculator/sole-trader-tax-calculator/
+
+---
+
+## Student Loan Repayment Calculator
+
+UK student loan repayments are income-contingent and depend on which plan the borrower is on. Plan 1 (pre-2012 English/Welsh): 9% above £24,990/year. Plan 2 (2012–2023 English/Welsh): 9% above £27,295/year. Plan 5 (from 2023 English/Welsh): 9% above £25,000/year with a 40-year write-off period. Plan 3 (Scottish): 9% above £31,395/year. Plan 4 (Scottish pre-2012): same as Plan 1. Postgraduate Loan: 6% above £21,000/year, running concurrently with undergraduate repayments. Plans 1 and 2 are written off after 25 years (Plan 1) or 30 years (Plan 2). Repayments are collected through PAYE for employees and self-assessment for the self-employed. Interest: Plan 2 charges RPI + 3% while studying, tapering to RPI only once income falls below £27,295. Source: Student Loans Company, HMRC. Last updated: April 2026.
+URL: https://calks.uk/calculator/student-loan-repayment-calculator/
+
+---
+
+## About Calks.uk
+
+Calks.uk provides over 330 free, accurate online calculators for the United Kingdom, covering income tax, salary, mortgage, pension, VAT, stamp duty, National Insurance, business rates, benefits, motoring, and more. All calculators are updated for the 2025/26 UK tax year (6 April 2025 to 5 April 2026). Calculations run entirely in the browser — no personal data is collected or stored. Every rate and threshold is sourced from HMRC, GOV.UK, the Bank of England, and the Office for National Statistics. The site is built by Konstantin Iakovlev, a financial tools developer who also operates calk.kz (Kazakhstan), calk.nz (New Zealand), and calk-au.com (Australia). For errors or rate updates, contact info@calks.uk. Full methodology at https://calks.uk/methodology/.
+URL: https://calks.uk/about/
