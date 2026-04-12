@@ -93,8 +93,16 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
       }
     </script>
 
-    <!-- Google AdSense (replace ID) -->
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+    <!-- Google AdSense (consent-gated, replace ca-pub-XXXXXXX with your publisher ID) -->
+    <script is:inline>
+      if (localStorage.getItem('cookie-consent') === 'accepted') {
+        var a = document.createElement('script');
+        a.async = true;
+        a.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX';
+        a.crossOrigin = 'anonymous';
+        document.head.appendChild(a);
+      }
+    </script>
   </head>
   <body class="min-h-screen flex flex-col antialiased">
     <Header />
