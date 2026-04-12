@@ -6389,4 +6389,243 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     sourceName: 'GOV.UK \u2013 Set Up as a Sole Trader',
     lastUpdated: 'April 2026',
   },
+  'car-tax-calculator': {
+    howItWorks: [
+      'Vehicle Excise Duty (VED), commonly called car tax or road tax, is charged annually and collected by the DVLA. The amount you pay depends on when your vehicle was first registered, its fuel type and CO2 emissions. From April 2025, electric vehicles are no longer exempt — they now pay the lowest first-year rate and the standard annual rate from year two.',
+      'For petrol and diesel cars registered after 1 April 2017, first-year rates are based on CO2 emissions and range from £0 (under 1g/km) to over £2,000 for the highest-emission vehicles. From year two, most cars pay the standard annual rate (£195 in 2025/26). Cars with a list price over £40,000 pay an additional £620 per year for the first five years on top of the standard rate.',
+      'Vehicles registered between 1 March 2001 and 31 March 2017 are taxed under the old banding system based on CO2 emissions, with Band A (up to 100g/km) paying nothing and higher bands paying up to £695.',
+    ],
+    example: {
+      title: 'Example: New petrol car, 120g/km CO2, list price £28,000',
+      steps: [
+        'First-year rate (120g/km CO2): £220',
+        'Standard rate from year 2: £195/year',
+        'List price under £40,000: no premium rate surcharge',
+        'Total cost over 3 years: £220 + £195 + £195 = £610',
+      ],
+    },
+    sourceUrl: 'https://www.gov.uk/vehicle-tax-rate-tables',
+    sourceName: 'DVLA – Vehicle tax rate tables',
+    lastUpdated: 'April 2026',
+  },
+
+  'tax-code-checker': {
+    howItWorks: [
+      'Your HMRC tax code tells your employer how much income to treat as tax-free before applying income tax. The most common code is 1257L, meaning you have the standard Personal Allowance of £12,570 for 2025/26. The numbers represent your tax-free entitlement divided by 10, so 1257 means £12,570.',
+      'Letter suffixes modify how your allowance works. L means the standard Personal Allowance. M and N are used for Marriage Allowance (M = recipient, N = transferor). T means HMRC needs more information. S means Scottish rates apply; C means Welsh rates. Prefix K indicates a negative allowance — you have untaxed income or benefits that exceed your allowances, so extra tax is collected on top of your salary.',
+      'Emergency codes (W1, M1, X) mean each pay period is taxed independently rather than cumulatively. Code 0T means no Personal Allowance at all. Code BR, D0 or D1 apply a flat 20%, 40% or 45% rate to all earnings — typically used for secondary employment.',
+    ],
+    example: {
+      title: 'Example: Decoding tax code 1257L',
+      steps: [
+        'Numbers 1257 → tax-free amount = 1257 × 10 = £12,570',
+        'Letter L → standard Personal Allowance, England/Wales/NI tax rates',
+        'Monthly tax-free income = £12,570 ÷ 12 = £1,047.50',
+        'Income above £1,047.50/month taxed at 20%, 40% or 45%',
+      ],
+    },
+    sourceUrl: 'https://www.gov.uk/tax-codes',
+    sourceName: 'HMRC – Understanding your tax code',
+    lastUpdated: 'April 2026',
+  },
+
+  'car-depreciation-calculator': {
+    howItWorks: [
+      'Cars lose value from the moment they leave the showroom. UK data shows new cars typically lose 15–25% of their value in the first year and 50–60% over three years. Depreciation slows significantly with age — an 8-year-old car loses far less in absolute terms each year than a brand new one.',
+      'This calculator uses the declining balance method: each year the car retains a fixed percentage of its previous value. Retention rates vary by fuel type and model — EVs currently depreciate faster than average due to rapid technology change, while popular mainstream models hold value relatively well.',
+      'Key depreciation drivers: fuel type, annual mileage (vs 12,000-mile industry benchmark), full service history, number of owners, condition, and ULEZ compliance status which increasingly affects older petrol and diesel values in urban areas.',
+    ],
+    example: {
+      title: 'Example: £30,000 petrol car with 20% annual depreciation',
+      steps: [
+        'Year 1: £30,000 × 0.80 = £24,000 (lost £6,000)',
+        'Year 2: £24,000 × 0.80 = £19,200 (lost £4,800)',
+        'Year 3: £19,200 × 0.80 = £15,360 (lost £3,840)',
+        'After 3 years: 51% of original value retained; total loss £14,640',
+      ],
+    },
+    sourceUrl: 'https://www.gov.uk/buying-a-car',
+    sourceName: 'GOV.UK – Buying a car',
+    lastUpdated: 'April 2026',
+  },
+
+  'mpg-calculator': {
+    howItWorks: [
+      'Miles Per Gallon (MPG) measures how far your car travels on one UK gallon of fuel (4.546 litres). Higher MPG means lower running costs. To get accurate real-world MPG: fill to the brim, reset the trip counter, drive normally, then fill up again and note the litres added and distance covered.',
+      'Official WLTP manufacturer figures typically exceed real-world MPG by 10–25%. This calculator uses your actual journey data for a true fuel economy figure. It also converts to L/100km (European standard) and km/L.',
+      "HMRC's approved mileage rate for business travel is 45p per mile for the first 10,000 business miles and 25p thereafter (cars). Knowing your real MPG lets you calculate your true cost per mile and check whether this exceeds or falls short of the HMRC allowance.",
+    ],
+    example: {
+      title: 'Example: 350-mile trip using 40 litres of fuel',
+      steps: [
+        '40 litres ÷ 4.546 = 8.80 UK gallons',
+        'MPG = 350 ÷ 8.80 = 39.8 MPG real-world',
+        'Fuel cost at £1.40/litre: (40 × £1.40) ÷ 350 = 16.0p per mile',
+        'HMRC rate is 45p/mile — covers fuel plus wear and depreciation',
+      ],
+    },
+    sourceUrl: 'https://www.gov.uk/guidance/advisory-fuel-rates',
+    sourceName: 'HMRC – Advisory fuel rates',
+    lastUpdated: 'April 2026',
+  },
+
+  'carer-allowance-calculator': {
+    howItWorks: [
+      "Carer's Allowance is the main state benefit for unpaid carers. For 2025/26 it pays £81.90 per week (£4,258.80 per year). To qualify you must care for someone for at least 35 hours per week who receives a qualifying disability benefit: PIP Daily Living (either rate), Attendance Allowance, or DLA care component at the middle or highest rate.",
+      "There is a weekly net earnings limit of £151. After deducting income tax, NI, pension contributions, and 50% of any qualifying pension premium costs, your net weekly earnings must not exceed this amount. If you earn more in any given week, Carer's Allowance is not payable for that week.",
+      "Claiming Carer's Allowance also entitles you to the Carer Element in Universal Credit (£198.31/month in 2025/26). If you already receive State Pension or another benefit at the same or higher rate, you may be 'underlying entitled' — you won't receive the cash payment but still qualify for the Carer Element in UC.",
+    ],
+    example: {
+      title: "Example: Part-time carer earning £200 gross per week",
+      steps: [
+        'Gross weekly pay: £200',
+        'Less income tax and NI (approx £25): net £175',
+        'Less 50% of £60/week pension contribution (£30): adjusted net £145',
+        '£145 < £151 limit → Carer’s Allowance of £81.90/week is payable',
+      ],
+    },
+    sourceUrl: 'https://www.gov.uk/carers-allowance',
+    sourceName: "GOV.UK – Carer's Allowance",
+    lastUpdated: 'April 2026',
+  },
+
+  'employers-liability-calculator': {
+    howItWorks: [
+      "Employers' Liability (EL) insurance is a legal requirement for virtually all UK businesses with at least one employee, under the Employers' Liability (Compulsory Insurance) Act 1969. It covers compensation claims from employees injured or made ill through their work. The minimum required cover is £5 million, though most policies provide £10 million. Fines for non-compliance reach £2,500 per day.",
+      'Premiums are set as a percentage of annual payroll, adjusted by sector risk. Low-risk sectors (professional services, office work) typically pay 0.3–0.8% of payroll. Medium-risk sectors (light manufacturing, logistics) pay 0.5–1.5%. High-risk industries (construction, demolition, chemical processing) pay 1.0–3.0% or more. A clean claims history earns significant discounts.',
+      'This calculator provides indicative estimates only. Actual premiums are underwritten individually and depend on full disclosure of activities, employee roles, claims history and risk management measures in place.',
+    ],
+    example: {
+      title: "Example: 10-employee professional services firm, £350,000 wage bill",
+      steps: [
+        'Risk rate for professional services: 0.4% of payroll',
+        'Base premium: £350,000 × 0.004 = £1,400/year',
+        'Clean claims history discount (15%): −£210',
+        'Estimated annual premium: £1,190',
+      ],
+    },
+    sourceUrl: 'https://www.hse.gov.uk/pubns/hse40.htm',
+    sourceName: "HSE – Employers' liability compulsory insurance guide",
+    lastUpdated: 'April 2026',
+  },
+
+  'blind-persons-allowance-calculator': {
+    howItWorks: [
+      "Blind Person's Allowance (BPA) is an additional income tax allowance for people registered as severely sight impaired (blind). For 2025/26 it is worth £3,070. It is added on top of the standard Personal Allowance of £12,570, giving a total tax-free income of £15,640.",
+      "Unused BPA can be transferred to a spouse or civil partner. They do not need to be registered as blind themselves — the transferred amount simply reduces their taxable income, potentially saving up to £614 per year at the basic rate or £1,228 at the higher rate.",
+      "To claim in England and Wales, you need a Certificate of Vision Impairment (CVI) classifying you as severely sight impaired. In Scotland, the equivalent is an SOAVI form. You can also qualify if an ophthalmologist certifies you as unable to do any work for which eyesight is essential, before formal registration is complete. Claim via Self Assessment or by contacting HMRC.",
+    ],
+    example: {
+      title: "Example: Higher-rate taxpayer claiming full BPA",
+      steps: [
+        'Standard Personal Allowance 2025/26: £12,570',
+        "Add Blind Person's Allowance: + £3,070",
+        'Total tax-free income: £15,640',
+        'Annual tax saving at 40% (higher rate): £3,070 × 40% = £1,228/year',
+      ],
+    },
+    sourceUrl: 'https://www.gov.uk/blind-persons-allowance',
+    sourceName: "HMRC – Blind Person's Allowance",
+    lastUpdated: 'April 2026',
+  },
+
+  'teachers-pension-calculator': {
+    howItWorks: [
+      "The Teachers' Pension Scheme (TPS) is a defined benefit career average revalued earnings (CARE) pension. Each year of service accrues 1/57th of your pensionable pay for that year as a pension entitlement. That annual slice is then revalued each April by CPI + 1.6% until you retire, protecting its real value.",
+      'Member contributions are tiered by salary band. For 2025/26: 7.4% up to £32,135; 8.6% on £32,136–£43,259; 9.7% on £43,260–£51,292; 10.2% on £51,293–£67,431; 11.7% on £67,432–£92,297; 12.4% above £92,297. Employer contributions are 23.68% of pensionable pay. Both employer and employee contributions attract tax relief.',
+      'Normal Pension Age is linked to State Pension Age (67, rising to 68). The pension is CPI-linked in payment. There is no automatic lump sum in the career average scheme, but you can commute pension at £12 lump sum for every £1/year of annual pension surrendered.',
+    ],
+    example: {
+      title: "Example: Teacher earning £40,000, 20 years' service",
+      steps: [
+        'Annual accrual: £40,000 ÷ 57 = £701.75',
+        '20 years simplified (no revaluation): 20 × £701.75 = £14,035/year pension',
+        'With CPI+1.6% revaluation on earlier accruals, actual pension higher',
+        'Approximate monthly pension before tax: £1,170',
+      ],
+    },
+    sourceUrl: 'https://www.teacherspensions.co.uk/members/working-life/your-pension/how-your-pension-is-calculated.aspx',
+    sourceName: "Teachers' Pensions – How your pension is calculated",
+    lastUpdated: 'April 2026',
+  },
+
+  'student-loan-total-cost-calculator': {
+    howItWorks: [
+      'Most graduates do not repay their student loan in full. Under Plan 5 (new students from September 2023) the loan is written off after 40 years; under Plan 2 (2012–2022) after 30 years. This makes the true cost entirely dependent on your earnings trajectory — not the headline balance.',
+      'Repayments are 9% of income above the threshold: £25,000 for Plan 5; £27,295 for Plan 2 in 2025/26. Interest accrues at RPI only (Plan 5) or RPI+up to 3% (Plan 2). On median-salary careers, interest often accrues faster than repayments early on, causing the balance to grow before eventually being written off.',
+      'For many graduates, the student loan works like a time-limited graduate tax rather than a traditional debt. High earners repay in full and pay substantial interest. Those on lower or median earnings have a portion or all of their balance written off at the end of the term. The calculator projects total repayments using realistic salary growth.',
+    ],
+    example: {
+      title: 'Example: Plan 5, £60,000 loan, starting salary £30,000',
+      steps: [
+        'Year 1 repayment: (£30,000 − £25,000) × 9% = £450/year',
+        'RPI interest at 3%: £60,000 × 3% = £1,800 added — balance rises to £61,350',
+        'Balance continues growing until salary rises enough to outpace interest',
+        'At UK median salary trajectory, many Plan 5 graduates never clear balance before 40-year write-off',
+      ],
+    },
+    sourceUrl: 'https://www.gov.uk/repaying-your-student-loan',
+    sourceName: 'GOV.UK – Repaying your student loan',
+    lastUpdated: 'April 2026',
+  },
+
+  'ni-salary-sacrifice-2029-calculator': {
+    howItWorks: [
+      'Pension contributions made via salary sacrifice currently reduce the salary on which employer National Insurance is calculated. At the 2025/26 employer NI rate of 15%, every £1,000 redirected to a pension saves the employer £150 in NI — many employers pass this saving to employees as an enhanced pension contribution.',
+      'The government has consulted on removing the employer NI advantage on salary sacrifice pension contributions, with 2029 cited as a potential implementation date. Under the proposed change, the pension contribution would not reduce the employer NI base, eliminating the NI efficiency of current salary sacrifice arrangements.',
+      'This calculator quantifies your current NI saving and estimates what you would lose under the proposed rules. This is a proposed change only — no legislation has been passed as of April 2026. Use these results for financial planning and to assess whether it is worth locking in current arrangements.',
+    ],
+    example: {
+      title: 'Example: £50,000 salary, £5,000 pension via salary sacrifice',
+      steps: [
+        'Current employer NI base: (£50,000 − £5,000 sacrifice − £5,000 threshold) = £40,000',
+        'Current employer NI: £40,000 × 15% = £6,000/year',
+        'Proposed 2029 NI base: (£50,000 − £5,000 threshold) = £45,000 × 15% = £6,750',
+        'Annual NI saving lost: £750/year per employee',
+      ],
+    },
+    sourceUrl: 'https://www.gov.uk/guidance/salary-sacrifice-for-employers',
+    sourceName: 'HMRC – Salary sacrifice for employers',
+    lastUpdated: 'April 2026',
+  },
+
+  'mortgage-early-repayment-calculator': {
+    howItWorks: [
+      'Most fixed-rate mortgages carry an Early Repayment Charge (ERC) if you repay more than your annual overpayment allowance — typically 10% of the outstanding balance per year — during the fixed period. ERCs usually range from 1–5% of the amount repaid early, declining year by year through the fixed term.',
+      'The break-even calculation compares: (A) paying the ERC now and clearing the mortgage or switching to a cheaper rate; versus (B) continuing regular payments until the end of the fix, then remortgaging. If the interest saved in scenario A exceeds the ERC, early repayment makes financial sense.',
+      'Opportunity cost also matters. Money used to clear a 4% mortgage earns a guaranteed 4% return but cannot be invested elsewhere. If you can reliably earn more than your mortgage rate in a stocks and shares ISA, investing may be preferable. Mortgage overpayments are guaranteed savings; investment returns are not.',
+    ],
+    example: {
+      title: 'Example: £120,000 remaining, 3% ERC, 2 years left at 4.5%',
+      steps: [
+        'ERC cost to clear now: £120,000 × 3% = £3,600',
+        'Approximate interest over 2 remaining years: £120,000 × 4.5% × 2 = £10,800',
+        'Net saving from paying off now: £10,800 − £3,600 = £7,200',
+        'Early repayment worthwhile here — always verify your lender\'s exact ERC schedule',
+      ],
+    },
+    sourceUrl: 'https://www.fca.org.uk/consumers/mortgages',
+    sourceName: 'FCA – Mortgage consumer information',
+    lastUpdated: 'April 2026',
+  },
+
+  'care-cost-calculator': {
+    howItWorks: [
+      'Care home costs in England are means-tested by the local authority. If your total assessable assets exceed the upper capital limit of £23,250, you are fully self-funded and pay the full weekly care fee. Below £14,250, the local authority covers most costs and you contribute only from income. Between the two limits a sliding scale applies.',
+      'Your home is included in the means test when you enter permanent residential care and the property is empty — unless a spouse, civil partner, dependent child under 18, or a qualifying carer still lives there. If included, it often creates a large notional asset. A Deferred Payment Agreement (DPA) allows the council to fund your care, taking a legal charge on the property to be repaid when it is eventually sold.',
+      'The proposed £86,000 lifetime care cap was originally set for October 2023, delayed to 2025, and subsequently indefinitely postponed. As of April 2026, the £23,250 upper and £14,250 lower capital thresholds remain in force in England.',
+    ],
+    example: {
+      title: 'Example: £40,000 savings, partner still living in family home',
+      steps: [
+        'Assessable assets: £40,000 savings only (property excluded — partner in residence)',
+        '£40,000 > £23,250 upper limit → fully self-funded',
+        'Weekly residential care fee: £1,200 (national average)',
+        'After approx 14 weeks, assets fall to £23,250 and local authority funding begins',
+      ],
+    },
+    sourceUrl: 'https://www.gov.uk/care-homes/paying-for-care-in-a-care-home',
+    sourceName: 'GOV.UK – Paying for care in a care home',
+    lastUpdated: 'April 2026',
+  },
 }

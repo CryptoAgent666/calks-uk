@@ -42,8 +42,19 @@ const schemas = [
       <section class="not-prose">
         <div class="rounded-2xl border border-border bg-card p-6 shadow-sm">
           <div class="flex flex-col sm:flex-row gap-5">
-            <div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-700 to-blue-900 text-white text-2xl font-bold">
-              KI
+            <!-- Author photo: upload your headshot to /public/author.jpg to replace the initials -->
+            <div class="h-20 w-20 shrink-0 relative">
+              <img
+                src="/author.jpg"
+                alt="Konstantin Iakovlev — Founder of Calks.uk"
+                width="80"
+                height="80"
+                class="h-20 w-20 rounded-full object-cover"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="h-20 w-20 rounded-full bg-gradient-to-br from-blue-700 to-blue-900 text-white text-2xl font-bold items-center justify-center" style="display:none;">
+                KI
+              </div>
             </div>
             <div>
               <h2 class="text-lg font-semibold">Konstantin Iakovlev</h2>
