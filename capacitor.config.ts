@@ -5,8 +5,6 @@ const config: CapacitorConfig = {
   appName: "Calks UK",
   webDir: "dist",
   server: {
-    url: "https://calks.uk",
-    cleartext: false,
     androidScheme: "https",
   },
   plugins: {
