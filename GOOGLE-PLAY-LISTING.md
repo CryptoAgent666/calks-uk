@@ -24,87 +24,52 @@ Free UK calculators: income tax, NI, VAT, stamp duty, mortgage & 330+ more
 ## Full Description (4,000 characters max)
 
 ```
-DISCLAIMER: This app is NOT affiliated with, endorsed by, or associated with the UK government, HMRC, GOV.UK, or any other government agency. Calks UK is an independent, privately developed calculator tool. All calculations are estimates for general information purposes only and should not be relied upon as professional financial, tax, or legal advice. Always consult a qualified accountant, financial adviser, or solicitor for advice specific to your circumstances.
+DISCLAIMER: This app is NOT a government service. It is NOT affiliated with, endorsed by, or associated with the UK government, HMRC, GOV.UK, or any other government agency. Calks UK is an independent, privately developed calculator tool. All calculations are estimates only and should not be relied upon as professional financial, tax, or legal advice. Always verify results with official government sources and consult a qualified professional.
 
-Calks UK is a free calculator app with 330+ tools built for people living and working in the United Kingdom. Updated for the 2025/26 tax year.
+OFFICIAL GOVERNMENT SOURCES USED IN THIS APP:
+- HMRC income tax rates: https://www.gov.uk/income-tax-rates
+- National Insurance rates: https://www.gov.uk/national-insurance-rates-letters
+- VAT rates: https://www.gov.uk/vat-rates
+- Stamp Duty rates: https://www.gov.uk/stamp-duty-land-tax/residential-property-rates
+- Capital Gains Tax: https://www.gov.uk/capital-gains-tax/rates
+- State Pension: https://www.gov.uk/new-state-pension/what-youll-get
+- Student loan repayment: https://www.gov.uk/repaying-your-student-loan
+- Universal Credit: https://www.gov.uk/universal-credit
+- Bank of England base rate: https://www.bankofengland.co.uk/boeapps/database/Bank-Rate.asp
+- ONS inflation data: https://www.ons.gov.uk/economy/inflationandpriceindices
 
-WORKS OFFLINE
-All calculations run entirely on your device. Once loaded, calculators work without an internet connection. Your financial data never leaves your phone.
+Calks UK is a free calculator app with 330+ tools for the UK. Updated for the 2025/26 tax year.
+
+WORKS OFFLINE — all calculations run on your device. Your financial data never leaves your phone.
 
 WHAT YOU CAN CALCULATE
 
-Tax & HMRC
-- Income tax with Personal Allowance (£12,570) and all UK bands (20%, 40%, 45%)
-- Scottish income tax with all 6 bands (19% to 48%)
-- National Insurance (Classes 1, 2, 4) and Employer NI (15%)
-- VAT — add, remove or reverse at 20%, 5% or 0%
-- Stamp Duty Land Tax (England/NI), LBTT (Scotland), LTT (Wales)
-- Capital Gains Tax, Inheritance Tax, Corporation Tax (25%)
-- Self-Assessment, Dividend Tax, Marriage Allowance
-- Council Tax, Crypto Tax, Company Car Tax (BiK)
+Tax & HMRC — Income tax, Scottish tax (6 bands), National Insurance, VAT (20%/5%/0%), Stamp Duty, CGT, Inheritance Tax, Corporation Tax, Self-Assessment, Dividend Tax, Council Tax, Crypto Tax
 
-Salary & Employment
-- Take-home pay (PAYE) after all deductions
-- Holiday entitlement (28 days statutory)
-- Statutory Maternity, Paternity, Sick Pay
-- Redundancy pay, salary sacrifice, bonus tax
-- Employer cost calculator, NHS pay bands, teacher pay scales
+Salary — Take-home pay (PAYE), holiday entitlement, maternity/paternity/sick pay, redundancy, salary sacrifice, bonus tax, NHS and teacher pay
 
-Mortgage & Property
-- Repayment, affordability, overpayment calculators
-- Buy-to-let yield, rental yield, rent vs buy
-- Shared ownership, Right to Buy, equity release
-- Property CGT, LTV, stamp duty for first-time buyers
+Mortgage — Repayment, affordability, overpayment, buy-to-let yield, rent vs buy, shared ownership, stamp duty for first-time buyers
 
-Pensions & Retirement
-- State pension, workplace pension (auto-enrolment)
-- Pension tax relief (20%/40%/45%), annual allowance (£60,000)
-- Drawdown, SIPP, pension vs ISA comparison
-- Pension pot estimator, annuity calculator
+Pensions — State pension, workplace pension, tax relief, annual allowance (£60,000), drawdown, SIPP, pension vs ISA
 
-Savings & Investment
-- ISA (£20,000), Lifetime ISA (25% bonus), Junior ISA
-- Compound interest, Premium Bonds odds
-- CGT on shares, dividend income, NS&I savings
+Savings — ISA (£20,000), Lifetime ISA, compound interest, Premium Bonds, CGT on shares, NS&I
 
-Loans & Debt
-- Student loan repayment (Plans 1, 2, 4, 5 + Postgraduate)
-- Personal loan, credit card payoff, car finance (PCP/HP)
-- APR calculator, debt consolidation, overdraft costs
+Loans — Student loan (Plans 1-5), personal loan, credit card payoff, car finance, APR, overdraft
 
-Business & Self-Employed
-- Sole trader tax, IR35, dividend vs salary
-- VAT return, VAT threshold, Making Tax Digital
-- Payroll, employer NI, CIS, R&D tax credits
+Business — Sole trader tax, IR35, VAT return, Making Tax Digital, payroll, CIS, R&D tax credits
 
-Benefits & Welfare
-- Universal Credit, Child Benefit, Child Maintenance
-- Housing Benefit, Pension Credit, Carer's Allowance
+Benefits — Universal Credit, Child Benefit, Housing Benefit, Pension Credit
 
-Plus: motoring (car tax, fuel cost, EV charging, ULEZ), health (BMI, calories, alcohol units), construction (concrete, bricks, flooring, insulation), energy (solar panels, heat pump, EPC), education (student loans, UCAS points, GCSE/A-Level grades), and everyday tools (percentage, unit converters, date calculator).
+Plus: motoring, health, construction, energy, education, and everyday tools.
 
 WHY CALKS UK?
-
-- 330+ calculators — the most comprehensive UK calculator app
-- 100% free with no hidden features or sign-up walls
-- Works offline — all calculations run on your device
-- Your financial data never leaves your phone
-- Dark mode support
-- Updated for the 2025/26 UK tax year (6 April 2025 onwards)
-
-DATA SOURCES
-
-Tax rates and financial data are sourced from publicly available information published by official UK bodies:
-
-1. HMRC — income tax rates, NI thresholds, CGT, VAT, stamp duty, student loan repayment thresholds
-2. GOV.UK — pension allowances, benefits rates, minimum wage, statutory pay
-3. Bank of England — base rate for mortgage and savings calculators
-4. Office for National Statistics (ONS) — CPI/RPI inflation indices
-5. The Pensions Regulator — auto-enrolment contribution rates
-6. Student Loans Company — repayment plan thresholds and interest rates
+- 330+ calculators, 100% free
+- Works offline
+- Your data stays private
+- Dark mode
+- Updated for 2025/26
 
 This app is independently developed by Konstantin Iakovlev. It is not a government service.
-
 Website: https://calks.uk
 Contact: info@calks.uk
 ```
