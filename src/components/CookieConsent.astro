@@ -40,6 +40,8 @@
 
 <script is:inline>
   (function() {
+    // Skip cookie banner in Capacitor mobile app (no cookies used offline)
+    if (window.__IS_CAPACITOR__) return;
     var consent = localStorage.getItem('cookie-consent');
     if (consent === 'accepted') return;
     if (consent === 'rejected') return;

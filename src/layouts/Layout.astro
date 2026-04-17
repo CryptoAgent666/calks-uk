@@ -79,28 +79,24 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
       document.documentElement.classList.toggle('dark', theme === 'dark')
     </script>
 
-    <!-- Google Analytics (consent-gated) -->
+    <!-- Detect Capacitor WebView (mobile app) -->
+    <script is:inline>
+      window.__IS_CAPACITOR__ = /Capacitor|(calks-uk|uk\.calks\.app)/i.test(navigator.userAgent) ||
+        window.location.protocol === 'capacitor:' ||
+        (window.Capacitor !== undefined);
+    </script>
+
+    <!-- Google Analytics (consent-gated, skipped in mobile app) -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      if (localStorage.getItem('cookie-consent') === 'accepted') {
+      if (!window.__IS_CAPACITOR__ && localStorage.getItem('cookie-consent') === 'accepted') {
         var s = document.createElement('script');
         s.async = true;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7ZTS02YTBC';
         document.head.appendChild(s);
         gtag('js', new Date());
         gtag('config', 'G-7ZTS02YTBC');
-      }
-    </script>
-
-    <!-- Google AdSense (consent-gated, replace ca-pub-XXXXXXX with your publisher ID) -->
-    <script is:inline>
-      if (localStorage.getItem('cookie-consent') === 'accepted') {
-        var a = document.createElement('script');
-        a.async = true;
-        a.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX';
-        a.crossOrigin = 'anonymous';
-        document.head.appendChild(a);
       }
     </script>
   </head>
@@ -112,7 +108,8 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
     <Footer />
     <CookieConsent />
     <script is:inline>
-      if ('serviceWorker' in navigator) {
+      // Register Service Worker only on the live website (not in mobile app)
+      if (!window.__IS_CAPACITOR__ && 'serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').catch(function(){});
       }
     </script>
