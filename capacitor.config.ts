@@ -6,7 +6,11 @@ const config: CapacitorConfig = {
   webDir: "dist",
   server: {
     androidScheme: "https",
-  },
+    // html5mode=false via JSON cast (undocumented in TS types but read by Java).
+    // Without this, Capacitor serves root /index.html for ALL directory paths,
+    // breaking /category/ and /calculator/ multi-page navigation.
+    ...({ html5mode: false } as Record<string, unknown>),
+  } as any,
   plugins: {
     SplashScreen: {
       launchAutoHide: true,

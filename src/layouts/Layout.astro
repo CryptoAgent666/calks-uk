@@ -86,6 +86,26 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
         window.location.protocol === 'capacitor:' ||
         window.location.protocol === 'file:' ||
         !!window.Capacitor;
+
+      // In Capacitor WebView, trailing-slash URLs don't auto-resolve to index.html.
+      // Rewrite <a href="/path/"> clicks to navigate to /path/index.html instead.
+      if (window.__IS_CAPACITOR__) {
+        document.addEventListener('click', function(e) {
+          var a = e.target.closest ? e.target.closest('a') : null;
+          if (!a || !a.href) return;
+          var url;
+          try { url = new URL(a.href); } catch(_) { return; }
+          // Only rewrite same-origin internal links ending with '/'
+          if (url.origin !== window.location.origin) return;
+          if (!url.pathname.endsWith('/')) return;
+          if (a.target && a.target !== '_self') return;
+          e.preventDefault();
+          window.location.href = url.origin + url.pathname + 'index.html' + url.search + url.hash;
+        }, true);
+
+        // Also rewrite history.pushState / replaceState if any client-side routing uses them
+        // (none in this app, but defensive)
+      }
     </script>
 
     <!-- Google Analytics (consent-gated, skipped in mobile app) -->
