@@ -79,11 +79,13 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
       document.documentElement.classList.toggle('dark', theme === 'dark')
     </script>
 
-    <!-- Detect Capacitor WebView (mobile app) -->
+    <!-- Detect Capacitor WebView (mobile app) — reliable via hostname -->
     <script is:inline>
-      window.__IS_CAPACITOR__ = /Capacitor|(calks-uk|uk\.calks\.app)/i.test(navigator.userAgent) ||
+      window.__IS_CAPACITOR__ =
+        window.location.hostname === 'localhost' ||
         window.location.protocol === 'capacitor:' ||
-        (window.Capacitor !== undefined);
+        window.location.protocol === 'file:' ||
+        !!window.Capacitor;
     </script>
 
     <!-- Google Analytics (consent-gated, skipped in mobile app) -->
@@ -108,9 +110,20 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
     <Footer />
     <CookieConsent />
     <script is:inline>
-      // Register Service Worker only on the live website (not in mobile app)
-      if (!window.__IS_CAPACITOR__ && 'serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(function(){});
+      if ('serviceWorker' in navigator) {
+        if (window.__IS_CAPACITOR__) {
+          // Unregister any existing SW + clear caches (left from previous versions)
+          navigator.serviceWorker.getRegistrations().then(function(regs){
+            regs.forEach(function(r){ r.unregister(); });
+          }).catch(function(){});
+          if (window.caches) {
+            caches.keys().then(function(keys){
+              keys.forEach(function(k){ caches.delete(k); });
+            }).catch(function(){});
+          }
+        } else {
+          navigator.serviceWorker.register('/sw.js').catch(function(){});
+        }
       }
     </script>
   </body>
