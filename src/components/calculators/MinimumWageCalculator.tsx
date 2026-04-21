@@ -2,10 +2,10 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 const RATES_2025: Record<string, { rate: number; name: string }> = {
-  '21plus': { rate: 12.21, name: 'National Living Wage (21+)' },
-  '18to20': { rate: 10.00, name: 'Age 18-20' },
-  'under18': { rate: 7.55, name: 'Under 18' },
-  'apprentice': { rate: 7.55, name: 'Apprentice' },
+  '21plus': { rate: 12.71, name: 'National Living Wage (21+)' },
+  '18to20': { rate: 10.85, name: 'Age 18-20' },
+  'under18': { rate: 8.00, name: 'Under 18' },
+  'apprentice': { rate: 8.00, name: 'Apprentice' },
 }
 
 function calculate(ageGroup: string, hoursPerWeek: number) {
@@ -38,7 +38,7 @@ export default function MinimumWageCalculator() {
         <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Annual</p><p className="text-lg font-bold">{formatCurrency(result.annual)}</p></div>
       </div>
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p className="font-medium text-foreground">2025/26 National Minimum/Living Wage rates:</p>
+        <p className="font-medium text-foreground">2026/27 National Minimum/Living Wage rates:</p>
         {Object.entries(RATES_2025).map(([,v]) => <p key={v.name}>{v.name}: <span className="font-medium text-foreground">£{v.rate}/hour</span></p>)}
       </div>
     </div>

@@ -7,34 +7,34 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'income-tax-calculator',
     title: 'Income Tax Calculator',
-    description: 'Calculate your UK income tax for the 2025/26 tax year. See your Personal Allowance, Basic Rate, Higher Rate and Additional Rate tax breakdown.',
+    description: 'Calculate your UK income tax for the 2026/27 tax year. See your Personal Allowance, Basic Rate, Higher Rate and Additional Rate tax breakdown.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['income tax', 'tax calculator', 'HMRC', 'personal allowance', 'tax bands', 'tax brackets'],
     priority: 1,
-    financialYear: '2025-26',
-    metaTitle: 'UK Income Tax Calculator 2025/26 — Free HMRC Calculator',
+    financialYear: '2026-27',
+    metaTitle: 'UK Income Tax Calculator 2026/27 — Free HMRC Calculator',
   },
   {
     slug: 'scottish-income-tax-calculator',
     title: 'Scottish Income Tax Calculator',
-    description: 'Calculate Scottish income tax with all 6 bands: Starter, Basic, Intermediate, Higher, Advanced and Top rate for 2025/26.',
+    description: 'Calculate Scottish income tax with all 6 bands: Starter, Basic, Intermediate, Higher, Advanced and Top rate for 2026/27.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['scottish tax', 'scotland income tax', 'scottish tax bands', 'scottish rates'],
     priority: 1,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'national-insurance-calculator',
     title: 'National Insurance Calculator',
-    description: 'Calculate your Class 1 National Insurance contributions as an employee for the 2025/26 tax year.',
+    description: 'Calculate your Class 1 National Insurance contributions as an employee for the 2026/27 tax year.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['national insurance', 'NI', 'NIC', 'class 1', 'employee NI'],
     priority: 1,
-    financialYear: '2025-26',
-    metaTitle: 'National Insurance Calculator 2025/26 — UK NI Contributions',
+    financialYear: '2026-27',
+    metaTitle: 'National Insurance Calculator 2026/27 — UK NI Contributions',
   },
   {
     slug: 'employer-ni-calculator',
@@ -44,7 +44,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Receipt',
     keywords: ['employer NI', 'employer national insurance', 'secondary threshold', 'employer contributions'],
     priority: 1,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
     isTrending: true,
   },
   {
@@ -65,7 +65,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Receipt',
     keywords: ['stamp duty', 'SDLT', 'stamp duty land tax', 'property tax', 'house purchase tax'],
     priority: 1,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
     metaTitle: 'Stamp Duty Calculator 2025 — SDLT Calculator England & NI',
     isTrending: true,
   },
@@ -77,7 +77,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Receipt',
     keywords: ['first time buyer', 'stamp duty relief', 'FTB', 'first home'],
     priority: 2,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'self-assessment-tax-calculator',
@@ -87,17 +87,17 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Receipt',
     keywords: ['self assessment', 'self employed tax', 'tax return', 'freelancer tax'],
     priority: 1,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'capital-gains-tax-calculator',
     title: 'Capital Gains Tax Calculator',
-    description: 'Calculate CGT on shares, investments and other assets. Includes annual exempt amount and tax rates for 2025/26.',
+    description: 'Calculate CGT on shares, investments and other assets. Includes annual exempt amount and tax rates for 2026/27.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['capital gains tax', 'CGT', 'shares tax', 'investment tax'],
     priority: 2,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'inheritance-tax-calculator',
@@ -107,7 +107,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Receipt',
     keywords: ['inheritance tax', 'IHT', 'estate tax', 'death tax', 'nil rate band'],
     priority: 2,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'corporation-tax-calculator',
@@ -117,7 +117,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Receipt',
     keywords: ['corporation tax', 'company tax', 'business tax', 'limited company'],
     priority: 2,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'dividend-tax-calculator',
@@ -127,7 +127,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Receipt',
     keywords: ['dividend tax', 'dividend allowance', 'dividend income'],
     priority: 2,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'council-tax-calculator',
@@ -146,7 +146,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Receipt',
     keywords: ['marriage allowance', 'marriage tax', 'spouse allowance', 'transferable allowance'],
     priority: 2,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'company-car-tax-calculator',
@@ -156,7 +156,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Receipt',
     keywords: ['company car', 'BiK', 'benefit in kind', 'P11D', 'car tax'],
     priority: 2,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'crypto-tax-calculator',
@@ -180,8 +180,8 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Banknote',
     keywords: ['take home pay', 'net pay', 'salary calculator', 'PAYE', 'after tax'],
     priority: 1,
-    financialYear: '2025-26',
-    metaTitle: 'UK Take-Home Pay Calculator 2025/26 — Salary After Tax',
+    financialYear: '2026-27',
+    metaTitle: 'UK Take-Home Pay Calculator 2026/27 — Salary After Tax',
   },
   {
     slug: 'hourly-to-salary-calculator',
@@ -204,12 +204,12 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'redundancy-pay-calculator',
     title: 'Redundancy Pay Calculator',
-    description: 'Calculate statutory redundancy pay based on your age, weekly pay and years of service. Updated for 2025/26.',
+    description: 'Calculate statutory redundancy pay based on your age, weekly pay and years of service. Updated for 2026/27.',
     category: 'pay',
     icon: 'Banknote',
     keywords: ['redundancy', 'redundancy pay', 'statutory redundancy', 'redundancy calculator'],
     priority: 1,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'maternity-pay-calculator',
@@ -219,7 +219,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Banknote',
     keywords: ['maternity pay', 'SMP', 'statutory maternity pay', 'maternity leave'],
     priority: 2,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'employer-cost-calculator',
@@ -229,7 +229,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Banknote',
     keywords: ['employer cost', 'cost of employment', 'employment cost', 'total cost'],
     priority: 2,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'salary-sacrifice-calculator',
@@ -320,7 +320,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'PiggyBank',
     keywords: ['state pension', 'new state pension', 'pension age', 'NI record'],
     priority: 1,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'pension-tax-relief-calculator',
@@ -365,8 +365,8 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'CreditCard',
     keywords: ['student loan', 'student loan repayment', 'plan 1', 'plan 2', 'plan 4', 'plan 5'],
     priority: 1,
-    financialYear: '2025-26',
-    metaTitle: 'UK Student Loan Repayment Calculator 2025/26 — All Plans',
+    financialYear: '2026-27',
+    metaTitle: 'UK Student Loan Repayment Calculator 2026/27 — All Plans',
   },
   {
     slug: 'personal-loan-calculator',
@@ -398,7 +398,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Briefcase',
     keywords: ['sole trader', 'self employed', 'sole trader tax', 'self employed tax'],
     priority: 1,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'ir35-calculator',
@@ -417,7 +417,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Briefcase',
     keywords: ['dividend vs salary', 'director salary', 'tax efficient', 'limited company'],
     priority: 2,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
 
   // ========================================
@@ -431,7 +431,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Shield',
     keywords: ['child benefit', 'HICBC', 'high income charge'],
     priority: 2,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
 
   // ========================================
@@ -1191,7 +1191,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     icon: 'Banknote',
     keywords: ['sick pay', 'SSP', 'statutory sick pay', 'illness pay'],
     priority: 2,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'pay-rise-calculator',
@@ -1292,12 +1292,12 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'paternity-pay-calculator',
     title: 'Statutory Paternity Pay Calculator',
-    description: 'Calculate SPP entitlement — 2 weeks at £187.18/week or 90% of AWE (whichever is lower).',
+    description: 'Calculate SPP entitlement — 2 weeks at £194.32/week or 90% of AWE (whichever is lower).',
     category: 'pay',
     icon: 'Banknote',
     keywords: ['paternity pay', 'SPP', 'statutory paternity pay', 'paternity leave'],
     priority: 2,
-    financialYear: '2025-26',
+    financialYear: '2026-27',
   },
   {
     slug: 'notice-period-calculator',
@@ -1482,7 +1482,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // INSURANCE
   { slug: 'pet-insurance-calculator', title: 'Pet Insurance Calculator', description: 'Estimate pet insurance premiums for dogs and cats by age, breed and cover level.', category: 'insurance', icon: 'ShieldCheck', keywords: ['pet insurance', 'dog insurance', 'cat insurance', 'vet fees'], priority: 2 },
   // EDUCATION
-  { slug: 'student-maintenance-loan-calculator', title: 'Student Maintenance Loan Calculator', description: 'Estimate your maintenance loan based on household income and living situation. England 2025/26 rates.', category: 'education', icon: 'GraduationCap', keywords: ['maintenance loan', 'student loan', 'student finance', 'living costs loan'], priority: 1 },
+  { slug: 'student-maintenance-loan-calculator', title: 'Student Maintenance Loan Calculator', description: 'Estimate your maintenance loan based on household income and living situation. England 2026/27 rates.', category: 'education', icon: 'GraduationCap', keywords: ['maintenance loan', 'student loan', 'student finance', 'living costs loan'], priority: 1 },
   // ENERGY
   { slug: 'boiler-replacement-calculator', title: 'Boiler Replacement Cost Calculator', description: 'Compare old vs new boiler efficiency. Calculate installation cost, annual savings and payback period.', category: 'energy', icon: 'Zap', keywords: ['boiler', 'boiler replacement', 'gas boiler', 'new boiler cost'], priority: 2 },
   { slug: 'double-glazing-calculator', title: 'Double Glazing Savings Calculator', description: 'Calculate double glazing costs and annual energy savings by house type. See payback period.', category: 'energy', icon: 'Zap', keywords: ['double glazing', 'windows', 'energy saving', 'UPVC'], priority: 2 },
@@ -1575,7 +1575,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // IMMIGRATION
   { slug: 'cost-of-living-comparison-calculator', title: 'UK Cost of Living Comparison', description: 'Compare cost of living between UK cities. See rent, food, transport differences and equivalent salary.', category: 'immigration', icon: 'Globe', keywords: ['cost of living', 'city comparison', 'relocation', 'UK cities'], priority: 2 },
   // PENSION
-  { slug: 'pension-annual-allowance-calculator', title: 'Pension Annual Allowance Calculator', description: 'Check your pension annual allowance (£60K), tapered allowance and MPAA. See if you face a tax charge.', category: 'pension', icon: 'PiggyBank', keywords: ['annual allowance', 'pension limit', 'taper', 'MPAA', 'pension tax charge'], priority: 2, financialYear: '2025-26' },
+  { slug: 'pension-annual-allowance-calculator', title: 'Pension Annual Allowance Calculator', description: 'Check your pension annual allowance (£60K), tapered allowance and MPAA. See if you face a tax charge.', category: 'pension', icon: 'PiggyBank', keywords: ['annual allowance', 'pension limit', 'taper', 'MPAA', 'pension tax charge'], priority: 2, financialYear: '2026-27' },
   { slug: 'state-pension-age-calculator', title: 'State Pension Age Calculator', description: 'Find your State Pension age based on date of birth. See exact date and days remaining.', category: 'pension', icon: 'PiggyBank', keywords: ['state pension age', 'SPA', 'pension age', 'when can I retire'], priority: 1 },
   // LOANS
   { slug: 'student-loan-early-repay-calculator', title: 'Should I Repay Student Loan Early?', description: 'Compare total cost of normal repayments vs lump sum. See if early repayment saves money or wastes it.', category: 'loans', icon: 'CreditCard', keywords: ['early repayment', 'student loan overpay', 'write off', 'plan 2 repay'], priority: 1 },
@@ -1677,7 +1677,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // EDUCATION
   { slug: 'a-level-grade-calculator', title: 'A-Level Grade Calculator', description: 'Calculate UCAS tariff points from A-Level grades. See which universities your grades qualify for.', category: 'education', icon: 'GraduationCap', keywords: ['A-Level', 'UCAS points', 'A-Level grades', 'university entry'], priority: 1 },
   // LOANS
-  { slug: 'student-loan-plan4-calculator', title: 'Student Loan Plan 4 (Scotland) Calculator', description: 'Calculate Plan 4 (Scottish) student loan repayments at 9% above the £31,395 threshold for 2025/26. See monthly and annual deductions.', category: 'loans', icon: 'CreditCard', keywords: ['plan 4', 'Scotland loan', 'Scottish student loan', 'SAAS'], priority: 2 },
+  { slug: 'student-loan-plan4-calculator', title: 'Student Loan Plan 4 (Scotland) Calculator', description: 'Calculate Plan 4 (Scottish) student loan repayments at 9% above the £33,795 threshold for 2026/27. See monthly and annual deductions.', category: 'loans', icon: 'CreditCard', keywords: ['plan 4', 'Scotland loan', 'Scottish student loan', 'SAAS'], priority: 2 },
   // TAX (trending)
   { slug: 'crypto-carf-calculator', title: 'Crypto Tax CARF Calculator', description: 'Track crypto disposals, calculate CGT and understand CARF automatic reporting from 2026.', category: 'tax', icon: 'Receipt', keywords: ['crypto CARF', 'crypto reporting', 'crypto CGT', 'bitcoin tax'], priority: 2, isTrending: true },
   { slug: 'employer-ni-rise-calculator', title: 'Employer NI Rise Impact Calculator (April 2025)', description: 'Calculate the extra employer NI cost from the April 2025 rate rise (13.8% → 15%, threshold £9,100 → £5,000).', category: 'tax', icon: 'Receipt', keywords: ['employer NI rise', 'NI increase', 'April 2025', 'employer cost increase'], priority: 1, isTrending: true },
@@ -1692,7 +1692,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // MORTGAGE
   { slug: 'mortgage-early-repayment-calculator', title: 'Mortgage Early Repayment Calculator', description: 'Compare paying off your mortgage now (including ERC) vs continuing payments. See if it\'s worth it.', category: 'mortgage', icon: 'Home', keywords: ['early repayment', 'ERC', 'pay off mortgage', 'repayment charge'], priority: 2 },
   // PAY
-  { slug: 'shared-parental-pay-calculator', title: 'Shared Parental Pay (ShPP) Quick Calculator', description: 'Quick calculation of Shared Parental Pay at £187.18/week or 90% of salary.', category: 'pay', icon: 'Banknote', keywords: ['shared parental pay', 'ShPP', 'parental leave pay'], priority: 2 },
+  { slug: 'shared-parental-pay-calculator', title: 'Shared Parental Pay (ShPP) Quick Calculator', description: 'Quick calculation of Shared Parental Pay at £194.32/week or 90% of salary.', category: 'pay', icon: 'Banknote', keywords: ['shared parental pay', 'ShPP', 'parental leave pay'], priority: 2 },
   // MORTGAGE
   { slug: 'home-buying-total-cost-calculator', title: 'Home Buying Total Cost Calculator', description: 'Calculate every cost of buying a home — deposit, stamp duty, solicitor, survey, searches, and monthly mortgage.', category: 'mortgage', icon: 'Home', keywords: ['home buying cost', 'buying a house', 'total cost', 'first time buyer costs'], priority: 1 },
   // TAX

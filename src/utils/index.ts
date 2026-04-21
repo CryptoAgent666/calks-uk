@@ -48,7 +48,7 @@ export function formatDate(date: Date): string {
 
 /**
  * UK financial year runs 6 April to 5 April.
- * Returns e.g. "2025-26" for dates between 6 April 2025 and 5 April 2026.
+ * Returns e.g. "2026-27" for dates between 6 April 2026 and 5 April 2026.
  */
 export function getFinancialYear(date: Date = new Date()): string {
   const year = date.getFullYear()

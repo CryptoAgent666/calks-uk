@@ -36,8 +36,8 @@ function calculate(grossSalary: number, taxCode: string, pensionPct: number, stu
 
   // Student Loan
   const plans: Record<string, { threshold: number; rate: number }> = {
-    none: { threshold: 0, rate: 0 }, plan1: { threshold: 24_990, rate: 0.09 },
-    plan2: { threshold: 27_295, rate: 0.09 }, plan4: { threshold: 31_395, rate: 0.09 },
+    none: { threshold: 0, rate: 0 }, plan1: { threshold: 26_900, rate: 0.09 },
+    plan2: { threshold: 29_385, rate: 0.09 }, plan4: { threshold: 33_795, rate: 0.09 },
   }
   const sl = plans[studentLoan] || plans.none
   const monthlySL = grossSalary > sl.threshold ? ((grossSalary - sl.threshold) * sl.rate) / 12 : 0

@@ -14,14 +14,14 @@ const category = CATEGORIES[id as keyof typeof CATEGORIES]
 const calculators = getCalculatorsByCategory(id as string)
 
 const catDescriptions: Record<string, string> = {
-  tax: 'Free UK tax calculators for income tax, NI, VAT, stamp duty, capital gains and inheritance tax. Updated with HMRC rates for 2025/26.',
-  pay: 'Free UK salary and pay calculators. Calculate take-home pay, employer costs, bonus tax, maternity pay, holiday entitlement and minimum wage for 2025/26.',
-  pension: 'Free UK pension calculators. Project your pension pot, calculate drawdown income, check State Pension age and estimate tax relief for 2025/26.',
+  tax: 'Free UK tax calculators for income tax, NI, VAT, stamp duty, capital gains and inheritance tax. Updated with HMRC rates for 2026/27.',
+  pay: 'Free UK salary and pay calculators. Calculate take-home pay, employer costs, bonus tax, maternity pay, holiday entitlement and minimum wage for 2026/27.',
+  pension: 'Free UK pension calculators. Project your pension pot, calculate drawdown income, check State Pension age and estimate tax relief for 2026/27.',
   mortgage: 'Free UK mortgage and property calculators. Calculate repayments, affordability, stamp duty, rental yield, equity release and the true cost of buying a home.',
   loans: 'Free UK loan and debt calculators. Calculate personal loan repayments, credit card payoff timelines, debt consolidation savings and debt-to-income ratios.',
-  business: 'Free UK business calculators. Calculate corporation tax, VAT returns, sole trader tax, dividend vs salary splits, CIS deductions and employer costs for 2025/26.',
+  business: 'Free UK business calculators. Calculate corporation tax, VAT returns, sole trader tax, dividend vs salary splits, CIS deductions and employer costs for 2026/27.',
   investment: 'Free UK savings and investment calculators. Project ISA growth, compound interest, Premium Bond returns, savings goals and inflation-adjusted real returns.',
-  benefits: 'Free UK benefits calculators. Estimate Universal Credit, Child Benefit, housing benefit, council tax reduction and childcare entitlements for 2025/26.',
+  benefits: 'Free UK benefits calculators. Estimate Universal Credit, Child Benefit, housing benefit, council tax reduction and childcare entitlements for 2026/27.',
   auto: 'Free UK motoring calculators. Calculate car tax (VED), fuel costs, EV charging costs, commute expenses, congestion charges and ULEZ compliance.',
   health: 'Free health and fitness calculators. Calculate BMI, daily calories, macros, ideal weight, heart rate zones, pregnancy due dates and sleep cycles.',
   building: 'Free UK construction and DIY calculators. Calculate materials needed for concrete, bricks, tiles, paint, flooring, roofing and extension costs.',
@@ -36,7 +36,7 @@ const catDescriptions: Record<string, string> = {
   gardening: 'Free UK gardening calculators. Calculate lawn seed, mulch, topsoil, fertiliser, fencing materials, raised bed soil and greenhouse sizing.',
 }
 
-const metaDesc = catDescriptions[id as string] || `Free ${category.name.toLowerCase()} calculators for the UK. Updated for the 2025/26 tax year.`
+const metaDesc = catDescriptions[id as string] || `Free ${category.name.toLowerCase()} calculators for the UK. Updated for the 2026/27 tax year.`
 
 const schemas = [
   getWebPageSchema(
@@ -75,7 +75,7 @@ const schemas = [
         </div>
         <div>
           <h1 class="text-3xl font-bold tracking-tight">{category.name} Calculators</h1>
-          <p class="text-muted-foreground mt-1">{calculators.length} free calculator{calculators.length !== 1 ? 's' : ''} · Updated for 2025/26</p>
+          <p class="text-muted-foreground mt-1">{calculators.length} free calculator{calculators.length !== 1 ? 's' : ''} · Updated for 2026/27</p>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// NHS Agenda for Change pay bands 2025/26 (approximate, ~3.5% uplift from 2024/25)
+// NHS Agenda for Change pay bands 2026/27 (approximate, ~3.5% uplift from 2024/25)
 // Verify exact figures at nhsemployers.org — pay award effective April 2025
 const NHS_BANDS: Record<string, { min: number; max: number; description: string }> = {
   '1': { min: 24_442, max: 24_442, description: 'Support staff' },

@@ -34,7 +34,7 @@ export async function GET({ params }: { params: { slug: string } }) {
   <!-- Description -->
   <text x="60" y="240" font-family="Inter,system-ui,sans-serif" font-size="22" fill="#94a3b8">${escapeXml(desc)}</text>
   <!-- Tax year badge -->
-  <text x="60" y="310" font-family="Inter,system-ui,sans-serif" font-size="18" fill="#64748b">Updated for 2025/26 tax year</text>
+  <text x="60" y="310" font-family="Inter,system-ui,sans-serif" font-size="18" fill="#64748b">Updated for 2026/27 tax year</text>
   <!-- Brand -->
   <rect x="60" y="520" width="180" height="50" rx="12" fill="#1e40af" opacity="0.3"/>
   <text x="90" y="552" font-family="Inter,system-ui,sans-serif" font-size="24" font-weight="700" fill="#ffffff">Calks.uk</text>

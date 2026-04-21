@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// WFH tax relief options 2025/26
+// WFH tax relief options 2026/27
 const FLAT_RATE_WEEKLY = 6 // £6/week without evidence
 const FLAT_RATE_ANNUAL = FLAT_RATE_WEEKLY * 52
 

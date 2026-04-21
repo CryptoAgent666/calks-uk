@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, formatPercent } from '@/utils'
 
-// Scottish Income Tax 2025/26
+// Scottish Income Tax 2026/27
 const PERSONAL_ALLOWANCE = 12_570
 const PA_TAPER_START = 100_000
 

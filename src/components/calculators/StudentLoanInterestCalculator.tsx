@@ -3,7 +3,7 @@ import { formatCurrency, formatPercent } from '@/utils'
 
 const PLANS: Record<string, { name: string; baseRate: number; maxRate: number; incomeThresholdLow: number; incomeThresholdHigh: number }> = {
   plan1: { name: 'Plan 1', baseRate: 4.3, maxRate: 4.3, incomeThresholdLow: 0, incomeThresholdHigh: 0 },
-  plan2: { name: 'Plan 2', baseRate: 4.3, maxRate: 7.3, incomeThresholdLow: 27_295, incomeThresholdHigh: 49_130 },
+  plan2: { name: 'Plan 2', baseRate: 4.3, maxRate: 7.3, incomeThresholdLow: 29_385, incomeThresholdHigh: 49_130 },
   plan4: { name: 'Plan 4', baseRate: 4.3, maxRate: 4.3, incomeThresholdLow: 0, incomeThresholdHigh: 0 },
   plan5: { name: 'Plan 5', baseRate: 4.3, maxRate: 7.3, incomeThresholdLow: 25_000, incomeThresholdHigh: 49_130 },
 }

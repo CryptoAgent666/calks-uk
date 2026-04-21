@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, formatPercent } from '@/utils'
 
-// 2025/26 rates
+// 2026/27 rates
 const PERSONAL_ALLOWANCE = 12_570
 const BASIC_LIMIT = 50_270
 const HIGHER_LIMIT = 125_140
@@ -14,9 +14,9 @@ const NI_ADDITIONAL = 0.02
 
 const STUDENT_LOAN_PLANS: Record<string, { threshold: number; rate: number }> = {
   none: { threshold: 0, rate: 0 },
-  plan1: { threshold: 24_990, rate: 0.09 },
-  plan2: { threshold: 27_295, rate: 0.09 },
-  plan4: { threshold: 31_395, rate: 0.09 },
+  plan1: { threshold: 26_900, rate: 0.09 },
+  plan2: { threshold: 29_385, rate: 0.09 },
+  plan4: { threshold: 33_795, rate: 0.09 },
   plan5: { threshold: 25_000, rate: 0.09 },
   postgrad: { threshold: 21_000, rate: 0.06 },
 }

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, formatPercent } from '@/utils'
 
-// R&D Tax Credits 2025/26 (merged scheme)
+// R&D Tax Credits 2026/27 (merged scheme)
 const ENHANCEMENT_RATE = 0.86 // 86% for loss-making, above-the-line for profitable
 const ABOVE_LINE_RATE = 0.20 // 20% of qualifying expenditure
 const CORP_TAX_RATE = 0.25

@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // Plan 4 Scotland specific
-const PLAN4_THRESHOLD = 31_395
+const PLAN4_THRESHOLD = 33_795
 const PLAN4_RATE = 0.09
 
 function calculate(salary: number, balance: number) {

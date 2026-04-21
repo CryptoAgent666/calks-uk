@@ -28,7 +28,7 @@ export interface CalculatorMeta {
   icon: string
   keywords: string[]
   priority: number // 1-3, 1 = highest
-  financialYear?: string // e.g. "2025-26"
+  financialYear?: string // e.g. "2026-27"
   metaTitle?: string // override for <title> tag
   isNew?: boolean
   isTrending?: boolean

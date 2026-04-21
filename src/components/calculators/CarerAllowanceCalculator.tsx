@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Carer's Allowance 2025/26 (from April 2025)
+// Carer's Allowance 2026/27 (from April 2025)
 const CA_WEEKLY = 83.30 // was £81.90 in 2024/25, uprated 1.7% CPI
 const EARNINGS_LIMIT = 196 // raised from £151/week to £196/week from April 2025 (Autumn Budget 2024)
 
@@ -51,7 +51,7 @@ export default function CarerAllowanceCalculator() {
       </div>
 
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-1">
-        <p>Carer's Allowance: <span className="font-medium text-foreground">£{CA_WEEKLY}/week</span> (2025/26)</p>
+        <p>Carer's Allowance: <span className="font-medium text-foreground">£{CA_WEEKLY}/week</span> (2026/27)</p>
         <p>Must care for someone 35+ hours/week who gets a qualifying disability benefit.</p>
         <p>Earnings limit: £{EARNINGS_LIMIT}/week net (after tax, NI, pension, and care costs).</p>
         <p>CA counts as taxable income and may affect other benefits (Universal Credit, Pension Credit).</p>

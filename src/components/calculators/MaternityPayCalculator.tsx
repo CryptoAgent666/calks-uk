@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// SMP 2025/26
-const SMP_RATE = 187.18 // per week (statutory rate)
+// SMP 2026/27
+const SMP_RATE = 194.32 // per week (statutory rate)
 const SMP_HIGHER_WEEKS = 6
 const SMP_LOWER_WEEKS = 33
 const SMP_HIGHER_RATE = 0.90 // 90% of average weekly earnings

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Benefit cap 2025/26 (from April 2025, uprated 1.7% CPI from 2023/24 rates)
+// Benefit cap 2026/27 (from April 2025, uprated 1.7% CPI from 2023/24 rates)
 // 2023/24 rates were: couple London £25,323, single London £16,967, couple outside £22,020, single outside £14,753
 const CAPS = {
   single_london: 1_437.84 * 12, // £17,254/year (was £1,284.17/month pre-2023 freeze)
@@ -57,7 +57,7 @@ export default function BenefitCapCalculator() {
       </div>
 
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p className="font-medium text-foreground">Benefit Cap (2025/26):</p>
+        <p className="font-medium text-foreground">Benefit Cap (2026/27):</p>
         <p>Couple/family: £{(CAPS.couple_outside / 12).toFixed(0)}/month (outside London) / £{(CAPS.couple_london / 12).toFixed(0)}/month (London)</p>
         <p>Single: £{(CAPS.single_outside / 12).toFixed(0)}/month (outside London) / £{(CAPS.single_london / 12).toFixed(0)}/month (London)</p>
       </div>

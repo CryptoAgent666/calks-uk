@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Statutory redundancy pay 2025/26 (effective 6 April 2025)
+// Statutory redundancy pay 2026/27 (effective 6 April 2026)
 const WEEKLY_PAY_CAP = 719 // capped weekly pay (was £643 in 2023/24 and 2024/25)
 const MAX_YEARS = 20
 

@@ -3,7 +3,7 @@ import { formatCurrency } from '@/utils'
 
 type BillingType = 'metered' | 'unmetered'
 
-// Average UK water rates 2025/26 (Ofwat PR24, ~26% increase from April 2025)
+// Average UK water rates 2026/27 (Ofwat PR24, ~26% increase from April 2025)
 const AVG_METERED_WATER = 2.15 // £/m³ (up from ~1.74 in 2024/25)
 const AVG_METERED_SEWERAGE = 2.42 // £/m³ (up from ~1.96 in 2024/25)
 const AVG_STANDING_WATER = 55 // £/year

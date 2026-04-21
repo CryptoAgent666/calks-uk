@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Pension Credit 2025/26 (Guarantee Credit) — uprated April 2025
+// Pension Credit 2026/27 (Guarantee Credit) — uprated April 2025
 // Single/couple uprated by earnings (triple lock ~4.1%); additional amounts by CPI 1.7%
 const SINGLE_GUARANTEE = 227.10 // weekly (was £218.15 in 2024/25)
 const COUPLE_GUARANTEE = 346.60 // weekly (was £332.95 in 2024/25)

@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// SPP 2025/26
-const SPP_RATE = 187.18 // per week or 90% of AWE, whichever is lower
+// SPP 2026/27
+const SPP_RATE = 194.32 // per week or 90% of AWE, whichever is lower
 const SPP_WEEKS = 2
 
 function calculate(weeklyPay: number) {

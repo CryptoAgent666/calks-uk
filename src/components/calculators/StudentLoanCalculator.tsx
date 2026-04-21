@@ -2,9 +2,9 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 const PLANS = {
-  plan1: { name: 'Plan 1 (pre-2012)', threshold: 24_990, rate: 0.09 },
-  plan2: { name: 'Plan 2 (post-2012)', threshold: 27_295, rate: 0.09 },
-  plan4: { name: 'Plan 4 (Scotland)', threshold: 31_395, rate: 0.09 },
+  plan1: { name: 'Plan 1 (pre-2012)', threshold: 26_900, rate: 0.09 },
+  plan2: { name: 'Plan 2 (post-2012)', threshold: 29_385, rate: 0.09 },
+  plan4: { name: 'Plan 4 (Scotland)', threshold: 33_795, rate: 0.09 },
   plan5: { name: 'Plan 5 (post-2023)', threshold: 25_000, rate: 0.09 },
   postgrad: { name: 'Postgraduate Loan', threshold: 21_000, rate: 0.06 },
 }

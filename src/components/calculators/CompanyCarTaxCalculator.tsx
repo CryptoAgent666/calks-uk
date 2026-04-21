@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// BiK rates 2025/26 by CO2 (simplified brackets)
+// BiK rates 2026/27 by CO2 (simplified brackets)
 function getBikRate(co2: number, fuelType: string): number {
   if (fuelType === 'electric') return 3
   if (fuelType === 'hybrid' && co2 <= 50) return 3 + Math.ceil(co2 / 5)

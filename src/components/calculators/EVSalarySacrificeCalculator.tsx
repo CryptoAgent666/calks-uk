@@ -59,7 +59,7 @@ export default function EVSalarySacrificeCalculator() {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div><label className="block text-sm font-medium mb-2">Annual Salary</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={salary} onChange={(e) => setSalary(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Car List Price</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
-        <div><label className="block text-sm font-medium mb-2">BiK Rate (%)</label><input type="number" min="2" max="37" value={bik} onChange={(e) => setBik(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /><p className="text-xs text-muted-foreground mt-1">EV: 3% (2025/26)</p></div>
+        <div><label className="block text-sm font-medium mb-2">BiK Rate (%)</label><input type="number" min="2" max="37" value={bik} onChange={(e) => setBik(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /><p className="text-xs text-muted-foreground mt-1">EV: 3% (2026/27)</p></div>
         <div><label className="block text-sm font-medium mb-2">Lease Term (months)</label><input type="number" min="24" max="48" value={term} onChange={(e) => setTerm(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
       </div>
 
@@ -77,7 +77,7 @@ export default function EVSalarySacrificeCalculator() {
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Effective Cost ({t}mo)</p><p className="text-lg font-bold">{formatCurrency(result.equivalentPurchaseCost)}</p></div>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>EV salary sacrifice: lease an electric car through your employer, saving income tax and NI. BiK rate for EVs is just {b}% (2025/26). Includes insurance, servicing, breakdown cover and tyres. One of the most tax-efficient employee benefits.</p>
+            <p>EV salary sacrifice: lease an electric car through your employer, saving income tax and NI. BiK rate for EVs is just {b}% (2026/27). Includes insurance, servicing, breakdown cover and tyres. One of the most tax-efficient employee benefits.</p>
           </div>
         </div>
       )}

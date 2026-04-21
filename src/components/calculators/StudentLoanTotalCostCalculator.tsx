@@ -3,8 +3,8 @@ import { formatCurrency } from '@/utils'
 
 function calculate(startBalance: number, startSalary: number, salaryGrowth: number, plan: string) {
   const plans: Record<string, { threshold: number; rate: number; interest: number; writeOff: number }> = {
-    plan1: { threshold: 24_990, rate: 0.09, interest: 4.3, writeOff: 25 },
-    plan2: { threshold: 27_295, rate: 0.09, interest: 7.3, writeOff: 30 },
+    plan1: { threshold: 26_900, rate: 0.09, interest: 4.3, writeOff: 25 },
+    plan2: { threshold: 29_385, rate: 0.09, interest: 7.3, writeOff: 30 },
     plan5: { threshold: 25_000, rate: 0.09, interest: 7.3, writeOff: 40 },
   }
 

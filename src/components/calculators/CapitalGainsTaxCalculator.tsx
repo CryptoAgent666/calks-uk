@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, formatPercent } from '@/utils'
 
-// CGT 2025/26 — rates increased from 30 October 2024 Budget
+// CGT 2026/27 — rates increased from 30 October 2024 Budget
 const ANNUAL_EXEMPT = 3_000
 const BASIC_RATE_LIMIT = 50_270
 const CGT_BASIC = 0.18      // 18% from Oct 2024 (was 10%)

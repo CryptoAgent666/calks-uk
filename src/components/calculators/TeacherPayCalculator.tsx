@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Teacher pay scales 2025/26 (England, outside London)
+// Teacher pay scales 2026/27 (England, outside London)
 const MAIN_SCALE = [31_650, 33_483, 35_674, 37_733, 40_625, 43_607]
 const UPPER_SCALE = [47_417, 49_348, 51_179]
 const LEADERSHIP: Record<string, { min: number; max: number }> = {

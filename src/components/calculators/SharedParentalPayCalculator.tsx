@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-const SHPP_RATE = 187.18
+const SHPP_RATE = 194.32
 
 function calculate(salary: number, weeksOff: number) {
   const weeklyRate = Math.min(salary / 52 * 0.90, SHPP_RATE)

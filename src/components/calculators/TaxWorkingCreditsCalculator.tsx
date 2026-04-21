@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Working Tax Credit 2025/26 (legacy - being replaced by UC but still exists for some)
+// Working Tax Credit 2026/27 (legacy - being replaced by UC but still exists for some)
 // Uprated by 1.7% CPI from April 2025
 const WTC_BASIC = 2_476        // was £2,435 in 2024/25
 const WTC_COUPLES = 2_543      // was £2,500 in 2024/25
@@ -11,7 +11,7 @@ const WTC_CHILDCARE_70 = 0.70 // 70% of childcare costs
 const WTC_CHILDCARE_MAX_1 = 175 * 52 // max weekly for 1 child
 const WTC_CHILDCARE_MAX_2 = 300 * 52
 
-const CTC_PER_CHILD = 3_455    // child element per child (2025/26, uprated from 2024/25)
+const CTC_PER_CHILD = 3_455    // child element per child (2026/27, uprated from 2024/25)
 const CTC_FAMILY = 545         // family element (frozen)
 
 const INCOME_THRESHOLD = 7_582 // was £7,455 in 2024/25

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, formatPercent } from '@/utils'
 
-// Class 1 Employee NI rates 2025/26
+// Class 1 Employee NI rates 2026/27
 const NI_PRIMARY_THRESHOLD = 12_570
 const NI_UPPER_EARNINGS_LIMIT = 50_270
 const NI_MAIN_RATE = 0.08 // 8%

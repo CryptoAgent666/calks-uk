@@ -11,7 +11,7 @@ function calculate() {
     if (profit > stPA) { if (profit <= 50_270) stTax = (profit - stPA) * 0.20; else stTax = (50_270 - stPA) * 0.20 + (profit - 50_270) * 0.40 }
     let stNI = 0
     if (profit > 12_570) { if (profit <= 50_270) stNI = (profit - 12_570) * 0.06; else stNI = (50_270 - 12_570) * 0.06 + (profit - 50_270) * 0.02 }
-    const stClass2 = profit >= 12_570 ? 182.00 : 0 // £3.50/week × 52 (2025/26)
+    const stClass2 = profit >= 12_570 ? 182.00 : 0 // £3.50/week × 52 (2026/27)
     const stTotal = stTax + stNI + stClass2
 
     // Ltd (salary £12,570 + dividends)
@@ -32,7 +32,7 @@ export default function SoleTraderVsLtdComparisonCalculator() {
 
   return (
     <div className="space-y-6">
-      <p className="text-sm text-muted-foreground">Side-by-side comparison at different profit levels (2025/26 rates)</p>
+      <p className="text-sm text-muted-foreground">Side-by-side comparison at different profit levels (2026/27 rates)</p>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead><tr className="border-b border-border"><th className="text-left py-2 font-medium text-muted-foreground">Profit</th><th className="text-right py-2 font-medium text-muted-foreground">Sole Trader</th><th className="text-right py-2 font-medium text-muted-foreground">Ltd Company</th><th className="text-right py-2 font-medium text-muted-foreground">Saving</th></tr></thead>

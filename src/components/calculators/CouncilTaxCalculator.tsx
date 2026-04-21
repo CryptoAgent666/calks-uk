@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Average Band D council tax 2025/26 by region (approximate)
+// Average Band D council tax 2026/27 by region (approximate)
 const REGIONS: Record<string, number> = {
   'England Average': 2_171,
   'London': 1_902,

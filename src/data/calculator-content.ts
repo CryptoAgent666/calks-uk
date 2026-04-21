@@ -19,7 +19,7 @@ export interface CalculatorContent {
 export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'income-tax-calculator': {
     howItWorks: [
-      'UK income tax is calculated on a progressive banding system. You are entitled to a tax-free Personal Allowance of £12,570 for the 2025/26 tax year. Income above that is taxed at increasing rates: 20% Basic Rate (£12,571–£50,270), 40% Higher Rate (£50,271–£125,140) and 45% Additional Rate (above £125,140).',
+      'UK income tax is calculated on a progressive banding system. You are entitled to a tax-free Personal Allowance of £12,570 for the 2026/27 tax year. Income above that is taxed at increasing rates: 20% Basic Rate (£12,571–£50,270), 40% Higher Rate (£50,271–£125,140) and 45% Additional Rate (above £125,140).',
       'If you earn more than £100,000, your Personal Allowance is reduced by £1 for every £2 above this threshold. This creates an effective marginal rate of 60% on income between £100,000 and £125,140. The allowance is completely eliminated at £125,140.',
       'This calculator applies the exact banding structure used by HMRC. Enter your gross annual salary and it will show your tax breakdown by band, your effective tax rate and your take-home position. Scottish taxpayers should use the Scottish Income Tax Calculator instead, as Scotland has its own rates and bands.',
     ],
@@ -39,7 +39,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
 
   'national-insurance-calculator': {
     howItWorks: [
-      'Class 1 Employee National Insurance is charged on earnings above the Primary Threshold of £12,570 per year. For the 2025/26 tax year, the rate is 8% on earnings between £12,570 and £50,270 (the Upper Earnings Limit), then 2% on everything above £50,270.',
+      'Class 1 Employee National Insurance is charged on earnings above the Primary Threshold of £12,570 per year. For the 2026/27 tax year, the rate is 8% on earnings between £12,570 and £50,270 (the Upper Earnings Limit), then 2% on everything above £50,270.',
       'NI is calculated on a per-pay-period basis, so weekly and monthly thresholds differ slightly from the annual figures. This calculator uses annualised thresholds for simplicity, which gives results that match HMRC\'s annual calculation to within a few pence.',
       'You stop paying employee NI when you reach State Pension age, even if you continue working. The calculator assumes you are below State Pension age.',
     ],
@@ -52,7 +52,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ],
     },
     sourceUrl: 'https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026',
-    sourceName: 'HMRC — NI rates and thresholds 2025/26',
+    sourceName: 'HMRC — NI rates and thresholds 2026/27',
     lastUpdated: 'April 2026',
   },
 
@@ -60,7 +60,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     howItWorks: [
       'Value Added Tax (VAT) in the UK is charged at three rates: Standard (20%), Reduced (5%) and Zero (0%). The standard rate applies to most goods and services. The reduced rate covers items like home energy, child car seats and mobility aids. The zero rate applies to essentials including most food, children\'s clothing and books.',
       'This calculator supports three modes: Add VAT (calculate the gross from a net amount), Remove VAT (find the net from a gross amount) and Reverse VAT (extract the VAT component from a VAT-inclusive total). The formula to remove 20% VAT from a gross price is: Net = Gross ÷ 1.20.',
-      'Businesses with VAT-taxable turnover above £90,000 (the 2025/26 threshold) must register for VAT. Below this threshold, voluntary registration is possible.',
+      'Businesses with VAT-taxable turnover above £90,000 (the 2026/27 threshold) must register for VAT. Below this threshold, voluntary registration is possible.',
     ],
     example: {
       title: 'Example: Adding 20% VAT to £500',
@@ -110,7 +110,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Taxable income: £38,000',
         'Income tax: £5,086 (£25,430 at 20%)',
         'Employee NI: £1,874.40',
-        'Student loan Plan 2 (9% above £27,295): £1,143.45',
+        'Student loan Plan 2 (9% above £29,385): £1,143.45',
         'Take-home pay: £29,896.15/year (£2,491.35/month)',
       ],
     },
@@ -142,7 +142,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'pension-calculator': {
     howItWorks: [
       'This calculator projects the value of your pension pot at retirement based on your current contributions, employer contributions, investment growth and tax relief. It uses compound growth with monthly contributions to model how your pot grows over time.',
-      'UK pension contributions receive tax relief at your marginal rate. Basic-rate taxpayers get 20% relief automatically (a £100 contribution costs you £80). Higher-rate taxpayers can claim an additional 20% through Self Assessment. The annual allowance for 2025/26 is £60,000.',
+      'UK pension contributions receive tax relief at your marginal rate. Basic-rate taxpayers get 20% relief automatically (a £100 contribution costs you £80). Higher-rate taxpayers can claim an additional 20% through Self Assessment. The annual allowance for 2026/27 is £60,000.',
       'Auto-enrolment requires a minimum total contribution of 8% (5% employee + 3% employer). Many employers offer more generous matching schemes. The calculator lets you model different contribution levels and see the impact on your projected retirement income.',
     ],
     example: {
@@ -163,7 +163,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
 
   'capital-gains-tax-calculator': {
     howItWorks: [
-      'Capital Gains Tax (CGT) is charged on the profit you make when you sell or dispose of an asset that has increased in value. For the 2025/26 tax year, the annual exempt amount is £3,000. Gains above this are taxed at different rates depending on the asset type and your income tax band.',
+      'Capital Gains Tax (CGT) is charged on the profit you make when you sell or dispose of an asset that has increased in value. For the 2026/27 tax year, the annual exempt amount is £3,000. Gains above this are taxed at different rates depending on the asset type and your income tax band.',
       'Residential property gains are taxed at 18% (basic rate) or 24% (higher/additional rate). All other assets are taxed at 10% (basic rate) or 20% (higher/additional rate). Your unused basic rate band determines which rate applies to your gains.',
       'Your main home is usually exempt under Private Residence Relief. Losses from other disposals in the same or previous tax years can be offset against gains before tax is calculated.',
     ],
@@ -204,7 +204,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
 
   'dividend-tax-calculator': {
     howItWorks: [
-      'UK dividends are taxed at special rates that are lower than income tax rates. For 2025/26, the tax-free dividend allowance is £500. Dividends above this are taxed at 8.75% (basic rate), 33.75% (higher rate) or 39.35% (additional rate).',
+      'UK dividends are taxed at special rates that are lower than income tax rates. For 2026/27, the tax-free dividend allowance is £500. Dividends above this are taxed at 8.75% (basic rate), 33.75% (higher rate) or 39.35% (additional rate).',
       'Dividends are added on top of your other income to determine which band they fall into. If your salary already uses up the basic-rate band, your dividends will be taxed at the higher rate. Company directors often optimise the salary/dividend split to minimise total tax.',
       'Dividends received within an ISA or pension are tax-free and do not count towards the dividend allowance. The allowance was reduced from £1,000 in 2023/24 to £500 from 2024/25 onwards.',
     ],
@@ -225,14 +225,14 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
 
   'student-loan-repayment-calculator': {
     howItWorks: [
-      'Student loan repayments are collected through PAYE alongside tax and NI. You repay 9% of income above your plan\'s threshold (6% for Postgraduate Loans). For 2025/26: Plan 1 threshold is £24,990, Plan 2 is £27,295, Plan 4 (Scotland) is £31,395, and Plan 5 is £25,000.',
-      'Repayments are calculated per pay period, not annually. If you are on multiple plans, you repay each one separately. For example, if you have a Plan 2 loan and a Postgraduate Loan, you pay 9% on income above £27,295 for Plan 2, plus 6% above £21,000 for the Postgraduate Loan.',
+      'Student loan repayments are collected through PAYE alongside tax and NI. You repay 9% of income above your plan\'s threshold (6% for Postgraduate Loans). For 2026/27: Plan 1 threshold is £26,900, Plan 2 is £29,385, Plan 4 (Scotland) is £33,795, and Plan 5 is £25,000.',
+      'Repayments are calculated per pay period, not annually. If you are on multiple plans, you repay each one separately. For example, if you have a Plan 2 loan and a Postgraduate Loan, you pay 9% on income above £29,385 for Plan 2, plus 6% above £21,000 for the Postgraduate Loan.',
       'Remaining balances are written off after a set period: 25 years for Plan 1, 30 years for Plans 2 and 4, and 40 years for Plan 5. Interest is charged at RPI plus up to 3% depending on income and plan type.',
     ],
     example: {
       title: 'Example: £32,000 salary, Plan 2 loan',
       steps: [
-        'Income above threshold: £32,000 − £27,295 = £4,705',
+        'Income above threshold: £32,000 − £29,385 = £4,705',
         'Annual repayment: £4,705 × 9% = £423.45',
         'Monthly deduction: £35.29',
       ],
@@ -265,7 +265,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'corporation-tax-calculator': {
     howItWorks: [
       'UK Corporation Tax is charged on company profits. The main rate is 25% for profits over £250,000. The small profits rate is 19% for profits up to £50,000. Marginal Relief applies for profits between £50,000 and £250,000, creating a gradual transition between the two rates.',
-      'The Marginal Relief fraction for 2025/26 is 3/200. This means companies in the marginal band pay an effective rate that rises gradually from 19% to 25% as profits increase from £50,000 to £250,000.',
+      'The Marginal Relief fraction for 2026/27 is 3/200. This means companies in the marginal band pay an effective rate that rises gradually from 19% to 25% as profits increase from £50,000 to £250,000.',
       'Associated companies share the thresholds. If your company has one associated company, the small profits threshold becomes £25,000 and the main threshold becomes £125,000.',
     ],
     example: {
@@ -286,7 +286,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'employer-ni-calculator': {
     howItWorks: [
       'From April 2025, employer National Insurance increased to 15% (up from 13.8%). The secondary threshold was reduced to £5,000 (down from £9,100), meaning employers now pay NI on a significantly larger portion of each employee\'s salary.',
-      'The Employment Allowance for 2025/26 is £10,500, which offsets your employer NI bill. Most businesses are eligible unless their total employer NI liability exceeded £100,000 in the previous tax year, or the company has a single director with no other employees.',
+      'The Employment Allowance for 2026/27 is £10,500, which offsets your employer NI bill. Most businesses are eligible unless their total employer NI liability exceeded £100,000 in the previous tax year, or the company has a single director with no other employees.',
       'This calculator shows the cost per employee and lets you estimate the impact of the April 2025 changes compared to the previous year\'s rates.',
     ],
     example: {
@@ -299,20 +299,20 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ],
     },
     sourceUrl: 'https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026',
-    sourceName: 'HMRC — Rates and thresholds for employers 2025/26',
+    sourceName: 'HMRC — Rates and thresholds for employers 2026/27',
     lastUpdated: 'April 2026',
   },
 
   'child-benefit-calculator': {
     howItWorks: [
-      'Child Benefit for 2025/26 is £26.05 per week for the eldest or only child and £17.25 per week for each additional child. Payments are made every 4 weeks and are tax-free unless either parent earns over £60,000.',
+      'Child Benefit for 2026/27 is £27.05 per week for the eldest or only child and £17.90 per week for each additional child. Payments are made every 4 weeks and are tax-free unless either parent earns over £60,000.',
       'The High Income Child Benefit Charge (HICBC) applies when the higher-earning parent earns between £60,000 and £80,000. You repay 1% of the Child Benefit received for every £200 of income above £60,000. At £80,000 or above, the full amount is effectively clawed back through tax.',
       'You should still claim Child Benefit even if subject to HICBC, as it protects your National Insurance record (important for State Pension qualification) and automatically registers the child for a National Insurance number at 16.',
     ],
     example: {
       title: 'Example: 2 children, higher earner on £70,000',
       steps: [
-        'Annual Child Benefit: (£26.05 + £17.25) × 52 = £2,251.60',
+        'Annual Child Benefit: (£27.05 + £17.90) × 52 = £2,251.60',
         'HICBC: income £70,000, excess over £60,000 = £10,000',
         'Clawback: £10,000 ÷ £200 = 50% of benefit',
         'Tax charge: £2,251.60 × 50% = £1,125.80',
@@ -410,7 +410,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
 
   'redundancy-pay-calculator': {
     howItWorks: [
-      'Statutory redundancy pay is calculated based on your age, length of continuous service (up to 20 years) and weekly pay (capped at £700 for 2025/26). The formula gives: 0.5 weeks\' pay per year of service under age 22, 1 week per year aged 22–40, and 1.5 weeks per year aged 41 and over.',
+      'Statutory redundancy pay is calculated based on your age, length of continuous service (up to 20 years) and weekly pay (capped at £700 for 2026/27). The formula gives: 0.5 weeks\' pay per year of service under age 22, 1 week per year aged 22–40, and 1.5 weeks per year aged 41 and over.',
       'The maximum statutory redundancy payment is therefore 30 weeks\' pay (20 years × 1.5 for over-41s), capped at £21,000 (30 × £700). Your employer may offer enhanced redundancy pay above the statutory minimum.',
       'The first £30,000 of any redundancy payment (statutory plus contractual) is tax-free. Amounts above £30,000 are subject to income tax and potentially employer NI.',
     ],
@@ -471,7 +471,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
 
   'maternity-pay-calculator': {
     howItWorks: [
-      'Statutory Maternity Pay (SMP) is paid for up to 39 weeks. The first 6 weeks are paid at 90% of your average weekly earnings (AWE) with no cap. The remaining 33 weeks are paid at the lower of £187.18 per week or 90% of your AWE. The final 13 weeks of the 52-week maternity leave entitlement are unpaid.',
+      'Statutory Maternity Pay (SMP) is paid for up to 39 weeks. The first 6 weeks are paid at 90% of your average weekly earnings (AWE) with no cap. The remaining 33 weeks are paid at the lower of £194.32 per week or 90% of your AWE. The final 13 weeks of the 52-week maternity leave entitlement are unpaid.',
       'To qualify for SMP you must have worked for your employer continuously for at least 26 weeks by the 15th week before the expected week of childbirth, and your average earnings must be at least £125 per week (the Lower Earnings Limit). You must also give at least 28 days\' notice and provide proof of pregnancy (MATB1 certificate).',
       'SMP is treated as earnings, so income tax, National Insurance and pension contributions may still be deducted. Employers can reclaim 92% of SMP from HMRC, or 103% if they qualify for Small Employers\' Relief. This calculator shows your weekly and monthly SMP for the full 39-week period.',
     ],
@@ -479,7 +479,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       title: 'Example: Average weekly earnings of £600',
       steps: [
         'Weeks 1-6 (90% of AWE): £600 × 90% = £540/week = £3,240 total',
-        'Weeks 7-39 (lower of £187.18 or 90%): £187.18/week = £6,176.94 total',
+        'Weeks 7-39 (lower of £194.32 or 90%): £194.32/week = £6,176.94 total',
         'Total SMP over 39 weeks: £9,416.94',
         'Weeks 40-52: unpaid leave (13 weeks)',
         'Monthly average (first 6 weeks): approx. £2,340 gross',
@@ -576,7 +576,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   // === Auto-generated content for remaining calculators ===
   'scottish-income-tax-calculator': {
     howItWorks: [
-      'Scotland sets its own income tax rates and bands under powers devolved by the Scotland Act 2016. For 2025/26 there are six bands above the Personal Allowance of £12,570: Starter (19%), Basic (20%), Intermediate (21%), Higher (42%), Advanced (45%) and Top (48%). These differ significantly from the rest-of-UK rates.',
+      'Scotland sets its own income tax rates and bands under powers devolved by the Scotland Act 2016. For 2026/27 there are six bands above the Personal Allowance of £12,570: Starter (19%), Basic (20%), Intermediate (21%), Higher (42%), Advanced (45%) and Top (48%). These differ significantly from the rest-of-UK rates.',
       'The Starter band covers income from £12,571 to £14,876, Basic from £14,877 to £26,561, Intermediate from £26,562 to £43,662, Higher from £43,663 to £75,000, Advanced from £75,001 to £125,140 and Top rate applies above £125,140. The same £100,000 Personal Allowance taper applies as in the rest of the UK.',
       'Your tax code letter S indicates you pay Scottish rates. HMRC determines this based on your main place of residence on 6 April each year. This calculator applies all six Scottish bands to give you an accurate breakdown of your liability.',
     ],
@@ -636,8 +636,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'company-car-tax-calculator': {
     howItWorks: [
-      'Company car tax is based on the Benefit-in-Kind (BiK) value of the vehicle. HMRC assigns a BiK percentage to each car based on its CO2 emissions and fuel type. For 2025/26, pure electric vehicles have a BiK rate of 3%, while the highest-polluting petrol or diesel cars reach 37%. You pay income tax on the BiK value at your marginal rate.',
-      'The BiK value is calculated as: P11D price (list price including options and delivery, minus the first year registration fee and vehicle excise duty) multiplied by the BiK percentage. If the employer also provides free fuel for private use, a separate fuel benefit charge applies based on a fixed multiplier of £27,800 for 2025/26.',
+      'Company car tax is based on the Benefit-in-Kind (BiK) value of the vehicle. HMRC assigns a BiK percentage to each car based on its CO2 emissions and fuel type. For 2026/27, pure electric vehicles have a BiK rate of 3%, while the highest-polluting petrol or diesel cars reach 37%. You pay income tax on the BiK value at your marginal rate.',
+      'The BiK value is calculated as: P11D price (list price including options and delivery, minus the first year registration fee and vehicle excise duty) multiplied by the BiK percentage. If the employer also provides free fuel for private use, a separate fuel benefit charge applies based on a fixed multiplier of £27,800 for 2026/27.',
       'Employers pay Class 1A National Insurance at 15% on the full BiK value. This calculator takes the car\'s list price, CO2 emissions, fuel type and your tax band to show both your annual tax cost and the employer\'s NI cost.',
     ],
     example: {
@@ -655,9 +655,9 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'crypto-tax-calculator': {
     howItWorks: [
-      'HMRC treats cryptocurrency as a taxable asset. Capital Gains Tax applies when you sell, swap, gift or spend crypto at a profit. For the 2025/26 tax year, the annual exempt amount is £3,000. Gains above this are taxed at 10% for basic-rate taxpayers or 20% for higher and additional-rate taxpayers.',
+      'HMRC treats cryptocurrency as a taxable asset. Capital Gains Tax applies when you sell, swap, gift or spend crypto at a profit. For the 2026/27 tax year, the annual exempt amount is £3,000. Gains above this are taxed at 10% for basic-rate taxpayers or 20% for higher and additional-rate taxpayers.',
       'The cost basis is calculated using the share-pooling method, which is the same approach used for shares. Under this method, you maintain a pool of tokens with an average cost. The rules also include the same-day rule (matching disposals with acquisitions on the same day) and the bed-and-breakfast rule (matching with acquisitions within 30 days).',
-      'You must report crypto gains exceeding four times the annual exempt amount (£12,000 for 2025/26) via Self Assessment, even if no tax is due after the exemption. Mining, staking rewards and airdrops may be treated as income rather than capital gains depending on the activity.',
+      'You must report crypto gains exceeding four times the annual exempt amount (£12,000 for 2026/27) via Self Assessment, even if no tax is due after the exemption. Mining, staking rewards and airdrops may be treated as income rather than capital gains depending on the activity.',
     ],
     example: {
       title: 'Example: Selling Bitcoin for £15,000 profit, higher-rate taxpayer',
@@ -709,7 +709,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ],
     },
     sourceUrl: 'https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026',
-    sourceName: 'HMRC — Rates and thresholds for employers 2025/26',
+    sourceName: 'HMRC — Rates and thresholds for employers 2026/27',
     lastUpdated: 'April 2026',
   },
   'bonus-tax-calculator': {
@@ -795,17 +795,17 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'state-pension-calculator': {
     howItWorks: [
-      'The full new State Pension is £221.20 per week (£11,502.40/year) for 2025/26, uprated annually by the triple lock (highest of earnings growth, CPI inflation, or 2.5%). You need 35 qualifying years of National Insurance contributions to receive the full amount. With fewer than 35 years, you receive a proportional amount: each qualifying year adds 1/35th, so 25 years gives 25/35 x £221.20 = £158.00/week. A minimum of 10 qualifying years is required to receive anything.',
-      'Qualifying years are built through employed earnings above the lower earnings limit (£6,396/year for 2025/26), self-employed Class 2 NI contributions, or National Insurance credits (received automatically for Child Benefit recipients, Universal Credit claimants, and carers). You can check your NI record online to see how many qualifying years you have and identify any gaps.',
-      'Gaps in your NI record can be filled by paying voluntary Class 3 contributions (£17.45/week for 2025/26). Each additional year purchased adds approximately £6.34/week (£329.68/year) to your State Pension. At the current Class 3 rate, buying one year costs around £907 and pays back within about 2.75 years of receiving the pension — making it one of the best returns available for most people with gaps in their record.'
+      'The full new State Pension is £241.30 per week (£12,547.60/year) for 2026/27, uprated annually by the triple lock (highest of earnings growth, CPI inflation, or 2.5%). You need 35 qualifying years of National Insurance contributions to receive the full amount. With fewer than 35 years, you receive a proportional amount: each qualifying year adds 1/35th, so 25 years gives 25/35 x £241.30 = £158.00/week. A minimum of 10 qualifying years is required to receive anything.',
+      'Qualifying years are built through employed earnings above the lower earnings limit (£6,500/year for 2026/27), self-employed Class 2 NI contributions, or National Insurance credits (received automatically for Child Benefit recipients, Universal Credit claimants, and carers). You can check your NI record online to see how many qualifying years you have and identify any gaps.',
+      'Gaps in your NI record can be filled by paying voluntary Class 3 contributions (£17.45/week for 2026/27). Each additional year purchased adds approximately £6.34/week (£329.68/year) to your State Pension. At the current Class 3 rate, buying one year costs around £907 and pays back within about 2.75 years of receiving the pension — making it one of the best returns available for most people with gaps in their record.'
     ],
     example: {
       title: 'State Pension estimate with 28 qualifying years',
       steps: [
-        'Full new State Pension rate: £221.20/week',
+        'Full new State Pension rate: £241.30/week',
         'Qualifying years on NI record: 28 out of 35 needed',
-        'Proportional pension: 28/35 x £221.20 = £176.96/week (£9,201.92/year)',
-        'Shortfall from full pension: £221.20 - £176.96 = £44.24/week (£2,300.48/year)',
+        'Proportional pension: 28/35 x £241.30 = £176.96/week (£9,201.92/year)',
+        'Shortfall from full pension: £241.30 - £176.96 = £44.24/week (£2,300.48/year)',
         'Cost to buy 7 missing years via Class 3 NI: 7 x £907 = £6,349. Extra pension: £44.24/week (payback in ~2.8 years)'
       ]
     },
@@ -934,7 +934,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'dividend-vs-salary-calculator': {
     howItWorks: [
-      'For company directors who also own shares, the most tax-efficient extraction of profits typically involves a combination of salary and dividends. The optimal salary level is usually set at the NI Primary Threshold (\u00a312,570 for 2025/26), which uses the full Personal Allowance, is deductible as a company expense (reducing Corporation Tax), and avoids employee NI contributions. Above this threshold, salary attracts both employee NI (8%) and employer NI (15%), making it expensive.',
+      'For company directors who also own shares, the most tax-efficient extraction of profits typically involves a combination of salary and dividends. The optimal salary level is usually set at the NI Primary Threshold (\u00a312,570 for 2026/27), which uses the full Personal Allowance, is deductible as a company expense (reducing Corporation Tax), and avoids employee NI contributions. Above this threshold, salary attracts both employee NI (8%) and employer NI (15%), making it expensive.',
       'Dividends are paid from post-Corporation Tax profits, so the company has already paid 19\u201325% tax on the underlying profit. The first \u00a3500 of dividends is covered by the dividend allowance and is tax-free. Beyond that, dividends are taxed at 8.75% (basic rate), 33.75% (higher rate), and 39.35% (additional rate). Crucially, dividends carry no National Insurance for either the individual or the company, which is the primary source of tax savings compared with a pure salary approach.',
       'The combined effective tax rate on profit extracted as salary (Corporation Tax saving offset by income tax plus double NI) is typically higher than the rate on dividends (Corporation Tax followed by dividend tax but no NI). However, salary counts as pensionable earnings for contribution purposes and builds state pension entitlement, while dividends do not. The calculation must also factor in the employer NI cost, which is an additional 15% charge the company bears on salary above the Secondary Threshold.'
     ],
@@ -1617,7 +1617,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'mileage-allowance-calculator': {
     howItWorks: [
-      'Approved Mileage Allowance Payments cover four vehicle categories, each with a fixed per-mile rate set by HMRC. Cars and vans receive 45p per mile up to 10,000 miles and 25p thereafter. Motorcycles are paid at a flat 24p per mile regardless of distance. Bicycles attract 20p per mile with no tiered threshold. These rates apply for the entire 2025/26 tax year.',
+      'Approved Mileage Allowance Payments cover four vehicle categories, each with a fixed per-mile rate set by HMRC. Cars and vans receive 45p per mile up to 10,000 miles and 25p thereafter. Motorcycles are paid at a flat 24p per mile regardless of distance. Bicycles attract 20p per mile with no tiered threshold. These rates apply for the entire 2026/27 tax year.',
       'Passenger payments add a further 5p per mile for each fellow employee carried on a qualifying business journey. This passenger supplement applies to car and van journeys only and is received tax-free by the driver. The passenger does not need to claim separately provided they travel in the same vehicle on the same qualifying trip.',
       'Self-employed individuals cannot use AMAP rates for tax deductions. Instead, they must choose between claiming actual vehicle running costs (fuel, insurance, repairs, depreciation) with appropriate business-use proportion, or using HMRC\'s simplified flat-rate mileage expenses. Once a method is chosen for a particular vehicle, it must be used for the vehicle\'s lifetime in the business.'
     ],
@@ -2204,7 +2204,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'lbtt-ltt-calculator': {
     howItWorks: [
       'Land and Buildings Transaction Tax (LBTT) applies to property purchases in Scotland, while Land Transaction Tax (LTT) applies in Wales. Both replaced Stamp Duty in their respective nations and use a progressive slab structure similar to income tax, where each band is taxed at its own rate rather than a single percentage on the whole price.',
-      'Scottish LBTT residential bands for 2025/26 are: 0% up to £145,000, 2% from £145,001 to £250,000, 5% from £250,001 to £325,000, 10% from £325,001 to £750,000 and 12% above £750,000. Welsh LTT bands are: 0% up to £225,000, 6% from £225,001 to £400,000, 7.5% from £400,001 to £750,000, 10% from £750,001 to £1.5m and 12% above £1.5m.',
+      'Scottish LBTT residential bands for 2026/27 are: 0% up to £145,000, 2% from £145,001 to £250,000, 5% from £250,001 to £325,000, 10% from £325,001 to £750,000 and 12% above £750,000. Welsh LTT bands are: 0% up to £225,000, 6% from £225,001 to £400,000, 7.5% from £400,001 to £750,000, 10% from £750,001 to £1.5m and 12% above £1.5m.',
       'Both nations apply an Additional Dwelling Supplement for second homes and buy-to-let properties. In Scotland this is 8% on the total price; in Wales it is 4% on the total price. First-time buyer relief differs between the two nations.',
     ],
     example: {
@@ -2224,7 +2224,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     howItWorks: [
       'Landlord income tax is calculated on your net rental profit — total rental income minus allowable expenses. Allowable expenses include letting agent fees, maintenance and repairs, insurance, accountancy fees, advertising costs and travel to the property. Since April 2020, mortgage interest cannot be deducted as an expense; instead, a 20% tax credit is given on finance costs.',
       'Your rental profit is added to any other income to determine your tax band. Basic-rate taxpayers pay 20% on rental profits, higher-rate pay 40% and additional-rate pay 45%. The 20% mortgage interest tax credit is the same regardless of your band, meaning higher-rate taxpayers pay more effective tax on rental income with mortgage interest than under the old rules.',
-      'This calculator works out your landlord tax liability for the 2025/26 tax year. Enter your rental income, expenses, mortgage interest and other income to see the tax due, the effect of the finance cost restriction and your effective tax rate on rental profits.',
+      'This calculator works out your landlord tax liability for the 2026/27 tax year. Enter your rental income, expenses, mortgage interest and other income to see the tax due, the effect of the finance cost restriction and your effective tax rate on rental profits.',
     ],
     example: {
       title: 'Example: £18,000 rental income, £4,000 expenses, £7,200 mortgage interest, 40% taxpayer',
@@ -2242,7 +2242,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'sick-pay-calculator': {
     howItWorks: [
-      'Statutory Sick Pay (SSP) is paid by your employer when you are too ill to work. For 2025/26, the rate is £116.75 per week. To qualify, you must be an employee, have been ill for at least 4 consecutive days (including non-working days), earn at least £125 per week on average (the Lower Earnings Limit) and have notified your employer within their deadline.',
+      'Statutory Sick Pay (SSP) is paid by your employer when you are too ill to work. For 2026/27, the rate is £123.25 per week. To qualify, you must be an employee, have been ill for at least 4 consecutive days (including non-working days), earn at least £125 per week on average (the Lower Earnings Limit) and have notified your employer within their deadline.',
       'The first 3 qualifying days of illness are "waiting days" and no SSP is paid. SSP starts on the 4th qualifying day and can continue for up to 28 weeks. Qualifying days are the days you would normally work — if you work Monday to Friday, only those count. SSP is taxable and subject to NI deductions.',
       'Some employers offer contractual sick pay that exceeds SSP. This calculator shows the SSP entitlement based on your qualifying days and pay period, and compares it with your normal earnings so you can see the shortfall. It also checks your eligibility based on average weekly earnings.',
     ],
@@ -2252,7 +2252,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Total days ill: 14 (including weekends)',
         'Qualifying days (Mon-Fri): 10',
         'Less 3 waiting days: 7 qualifying days of SSP',
-        'SSP per qualifying day: £116.75 ÷ 5 = £23.35',
+        'SSP per qualifying day: £123.25 ÷ 5 = £23.35',
         'Total SSP: 7 × £23.35 = £163.45',
       ],
     },
@@ -2463,7 +2463,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'paternity-pay-calculator': {
     howItWorks: [
-      'Statutory Paternity Pay (SPP) is paid for up to 2 weeks at the lower of £187.18 per week or 90% of your average weekly earnings for 2025/26. From April 2024, the two weeks can be taken as two separate one-week blocks at any time within 52 weeks of the birth or adoption placement, rather than consecutively.',
+      'Statutory Paternity Pay (SPP) is paid for up to 2 weeks at the lower of £194.32 per week or 90% of your average weekly earnings for 2026/27. From April 2024, the two weeks can be taken as two separate one-week blocks at any time within 52 weeks of the birth or adoption placement, rather than consecutively.',
       'To qualify, you must be the biological father, the mother\'s spouse or partner, or the intended parent in a surrogacy arrangement. You must have worked continuously for your employer for at least 26 weeks by the 15th week before the expected week of childbirth and earn at least £125 per week on average.',
       'SPP is subject to tax and National Insurance like normal earnings. Your employer can reclaim 92% of SPP from HMRC (or 103% for small employers). This calculator shows your weekly SPP amount and the net pay after deductions, plus a comparison with your normal weekly earnings.',
     ],
@@ -2471,8 +2471,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       title: 'Example: Employee earning £35,000/year',
       steps: [
         'Average weekly earnings: £35,000 ÷ 52 = £673.08',
-        '90% of AWE: £605.77 — exceeds £187.18 cap',
-        'SPP rate: £187.18/week (the lower amount)',
+        '90% of AWE: £605.77 — exceeds £194.32 cap',
+        'SPP rate: £194.32/week (the lower amount)',
         'Gross SPP for 2 weeks: £374.36',
         'Net SPP (after ~28% deductions): approx. £269.54',
       ],
@@ -2545,7 +2545,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'vat-return-calculator': {
     howItWorks: [
-      'This calculator helps you calculate your VAT return — output VAT on sales vs input VAT on purchases. See amount due or refund. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
+      'This calculator helps you calculate your VAT return — output VAT on sales vs input VAT on purchases. See amount due or refund. The calculation follows official UK rules and rates for the 2026/27 financial year, using data sourced directly from government publications.',
       'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
     ],
     example: {
@@ -2554,7 +2554,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Enter your details in the input fields above',
         'The calculator applies current UK rates and thresholds automatically',
         'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
+        'All calculations use official 2026/27 rates from GOV.UK — Business tax',
       ],
     },
     sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
@@ -2578,7 +2578,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ],
     },
     sourceUrl: 'https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026',
-    sourceName: 'HMRC — PAYE rates and thresholds 2025/26',
+    sourceName: 'HMRC — PAYE rates and thresholds 2026/27',
     lastUpdated: 'April 2026',
   },
   'late-payment-interest-calculator': {
@@ -2623,7 +2623,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'nhs-pay-calculator': {
     howItWorks: [
-      'NHS pay in England is structured under the Agenda for Change (AfC) framework, which groups roles into nine pay bands. Each band has multiple pay points (incremental steps) that staff progress through annually based on length of service. For 2025/26, Band 5 (newly qualified nurses) starts at around £29,970 rising to £36,483.',
+      'NHS pay in England is structured under the Agenda for Change (AfC) framework, which groups roles into nine pay bands. Each band has multiple pay points (incremental steps) that staff progress through annually based on length of service. For 2026/27, Band 5 (newly qualified nurses) starts at around £29,970 rising to £36,483.',
       'In addition to basic pay, many NHS staff receive High Cost Area Supplements (HCAS) for working in London and surrounding areas: Inner London (20% up to £8,096), Outer London (15% up to £5,329) and Fringe (5% up to £1,929). Unsociable hours, on-call and overtime attract additional premiums.',
       'This calculator takes your band, pay point and location to show your total gross pay including any HCAS. It then calculates take-home pay after income tax, NI and NHS Pension contributions (the NHS Pension scheme has tiered contribution rates from 5.2% to 13.5% based on pensionable pay).',
     ],
@@ -2663,7 +2663,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'mot-date-calculator': {
     howItWorks: [
-      'All vehicles in the UK over 3 years old must have a valid MOT certificate. The MOT test checks roadworthiness including brakes, lights, steering, suspension, tyres, exhaust emissions and bodywork. The maximum fee is set by the DVSA at £54.85 for a standard car (2025/26). Many garages charge less as a loss leader.',
+      'All vehicles in the UK over 3 years old must have a valid MOT certificate. The MOT test checks roadworthiness including brakes, lights, steering, suspension, tyres, exhaust emissions and bodywork. The maximum fee is set by the DVSA at £54.85 for a standard car (2026/27). Many garages charge less as a loss leader.',
       'You can check your MOT due date for free using the DVLA\'s online service with your registration number. Your MOT can be done up to one month before the expiry date without losing any days from the next certificate — the new MOT will run from the old one\'s expiry date.',
       'Common MOT failure items include blown bulbs (£5-£15 to fix), worn tyres (£60-£120 each), damaged windscreens (£75-£350), worn brake pads (£100-£250 per axle) and emissions failures (£100-£500+ depending on cause). This calculator estimates the cost of your MOT plus likely repairs based on your vehicle\'s age and type.',
     ],
@@ -2811,7 +2811,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'university-cost-calculator': {
     howItWorks: [
-      'The total cost of a UK degree extends well beyond tuition fees. For a three-year course starting in 2025/26, tuition alone is £9,535 per year (£28,605 total). Accommodation ranges from £4,500 to £9,500 per year depending on city and type. Living costs (food, transport, social, course materials) add £5,000\u2013£8,000 per year.',
+      'The total cost of a UK degree extends well beyond tuition fees. For a three-year course starting in 2026/27, tuition alone is £9,535 per year (£28,605 total). Accommodation ranges from £4,500 to £9,500 per year depending on city and type. Living costs (food, transport, social, course materials) add £5,000\u2013£8,000 per year.',
       'This calculator estimates the total cost across 3 or 4 years by combining tuition fees, accommodation, living costs, travel home, and extras. It separates what is covered by student loans from what needs to come from other sources. Many students face a funding gap between their maintenance loan and actual costs.',
       'Enter your chosen university city, accommodation type and course length. The calculator shows a year-by-year and total cost breakdown, highlighting the gap between available student finance and projected expenses. This helps with planning family contributions, savings targets and part-time work hours.',
     ],
@@ -2895,7 +2895,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'employment-tribunal-calculator': {
     howItWorks: [
       'Employment tribunal compensation has two main elements: the basic award and the compensatory award. The basic award for unfair dismissal is calculated like statutory redundancy pay: 0.5 week\'s pay per year of service under age 22, 1 week per year aged 22–40, and 1.5 weeks per year aged 41+, subject to a weekly pay cap (currently £700).',
-      'The compensatory award covers financial losses — loss of earnings, loss of pension contributions, loss of statutory rights and expenses. It is capped at the lower of 52 weeks\' pay or £115,115 (2025/26 figure). For discrimination claims, there is no cap on compensation and an award for injury to feelings (Vento bands) may apply.',
+      'The compensatory award covers financial losses — loss of earnings, loss of pension contributions, loss of statutory rights and expenses. It is capped at the lower of 52 weeks\' pay or £115,115 (2026/27 figure). For discrimination claims, there is no cap on compensation and an award for injury to feelings (Vento bands) may apply.',
       'This calculator estimates both components based on your age, length of service, weekly pay and claim type. It includes the Vento bands for injury to feelings: lower band (£1,200–£11,200), middle band (£11,200–£33,700) and upper band (£33,700–£56,200).',
     ],
     example: {
@@ -3094,7 +3094,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     howItWorks: [
       'Salary sacrifice reduces your gross contractual pay and your employer pays the sacrificed amount directly into your pension. Because the contribution comes from the employer, neither employee National Insurance (8% on earnings £12,570-£50,270) nor employer NI (13.8%) is payable on the sacrificed amount. Under relief at source, you contribute from net pay and only save income tax, not NI — so salary sacrifice is always more efficient when NI applies.',
       'The calculation compares take-home pay under both methods. With relief at source on a £500 monthly contribution from a £40,000 salary, you pay from net pay and reclaim 20% basic rate relief, costing you £400/month. With salary sacrifice, your salary drops by £500 but you save £40 employee NI (8% of £500), so your net pay only drops by £360 — an extra £40/month reaching your pension or pocket.',
-      'Your employer also saves 13.8% NI on the sacrificed amount (£69 on £500). Many employers share part or all of this saving by adding it to your pension contribution. Salary sacrifice reduces your qualifying earnings for State Pension, statutory maternity pay, and mortgage affordability assessments, so the calculator flags when sacrifice would take earnings below the NI lower earnings limit (£6,396) or affect benefit entitlements.'
+      'Your employer also saves 15% NI on the sacrificed amount (£69 on £500). Many employers share part or all of this saving by adding it to your pension contribution. Salary sacrifice reduces your qualifying earnings for State Pension, statutory maternity pay, and mortgage affordability assessments, so the calculator flags when sacrifice would take earnings below the NI lower earnings limit (£6,500) or affect benefit entitlements.'
     ],
     example: {
       title: 'Salary sacrifice vs relief at source on £600/month pension contribution',
@@ -3279,7 +3279,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'annual-tax-summary-calculator': {
     howItWorks: [
       'Each year HMRC publishes a breakdown showing how your income tax and National Insurance contributions are spent by the government. The Annual Tax Summary divides spending into categories such as Health (NHS), Welfare, State Pensions, Education, Defence, Transport, Public Order and Safety, and Government Debt Interest.',
-      'For 2025/26, the largest share of tax goes to Health (around 20%), followed by Welfare (around 19%) and State Pensions (around 13%). The summary uses published Treasury data on departmental spending to calculate your personal share based on the total tax and NI you paid during the year.',
+      'For 2026/27, the largest share of tax goes to Health (around 20%), followed by Welfare (around 19%) and State Pensions (around 13%). The summary uses published Treasury data on departmental spending to calculate your personal share based on the total tax and NI you paid during the year.',
       'This calculator takes your income tax and NI figures and produces a visual pie chart showing exactly where your money goes. It helps taxpayers understand the real-world impact of their contributions and can be useful for financial literacy and personal budgeting decisions.',
     ],
     example: {
@@ -3298,7 +3298,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'business-rates-calculator': {
     howItWorks: [
-      'Business rates are calculated by multiplying your property\'s rateable value (RV) by the applicable multiplier set annually by the government. For 2025/26, the standard multiplier is 51.2p in the pound for properties with an RV of \u00a351,000 or above, and the small business multiplier is 49.9p for properties below that threshold. The rateable value is an estimate of the open-market annual rent for the property as assessed by the Valuation Office Agency (VOA).',
+      'Business rates are calculated by multiplying your property\'s rateable value (RV) by the applicable multiplier set annually by the government. For 2026/27, the standard multiplier is 51.2p in the pound for properties with an RV of \u00a351,000 or above, and the small business multiplier is 49.9p for properties below that threshold. The rateable value is an estimate of the open-market annual rent for the property as assessed by the Valuation Office Agency (VOA).',
       'Small Business Rate Relief (SBRR) applies if your single property has an RV below \u00a315,000. Properties with an RV of \u00a312,000 or below receive 100% relief\u2014paying zero business rates. Between \u00a312,001 and \u00a315,000, the relief tapers on a sliding scale. If you occupy multiple properties, your eligibility is based on the combined RV, and SBRR may be reduced or unavailable.',
       'Additional reliefs may apply: rural rate relief for shops and post offices in designated rural areas, charitable relief at 80% for qualifying charities, and the retail/hospitality/leisure relief scheme which has provided up to 75% discount in recent years. Transitional relief caps annual increases or decreases following a revaluation to smooth bill changes. Your local council issues the bill and administers collection.'
     ],
@@ -3379,7 +3379,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'student-maintenance-loan-calculator': {
     howItWorks: [
-      'The maintenance loan helps cover living costs while studying. For 2025/26, the maximum loan depends on where you live and study: up to £13,022 if living away from home in London, £9,978 if living away outside London and £8,400 if living with parents. Final-year students receive slightly less.',
+      'The maintenance loan helps cover living costs while studying. For 2026/27, the maximum loan depends on where you live and study: up to £13,022 if living away from home in London, £9,978 if living away outside London and £8,400 if living with parents. Final-year students receive slightly less.',
       'The loan is means-tested on household income. Students from households earning £25,000 or below receive the full amount. Above this, the loan is reduced gradually \u2014 the taper rate is roughly £1 less for every £5.84 of household income above £25,000. The minimum loan (for the highest earners) is £4,767 regardless of income.',
       'Enter your household income, where you plan to live and your year of study. The calculator applies the correct taper rate and shows your estimated annual and termly loan amount. Scottish, Welsh and Northern Irish students have separate systems and should use the appropriate devolved calculator.',
     ],
@@ -3540,7 +3540,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'pension-credit-calculator': {
     howItWorks: [
-      'Pension Credit has two elements assessed independently. Guarantee Credit tops up weekly income to a minimum level: £218.15 for single claimants or £332.95 for couples in 2025/26. Your qualifying income includes State Pension, private pensions, earnings, and most benefits. If your assessed income falls below the appropriate minimum guarantee, the shortfall is paid as Guarantee Credit.',
+      'Pension Credit has two elements assessed independently. Guarantee Credit tops up weekly income to a minimum level: £218.15 for single claimants or £332.95 for couples in 2026/27. Your qualifying income includes State Pension, private pensions, earnings, and most benefits. If your assessed income falls below the appropriate minimum guarantee, the shortfall is paid as Guarantee Credit.',
       'Savings Credit rewards people who made modest provision for retirement beyond the basic State Pension. It is only available to those who reached State Pension age before 6 April 2016. The maximum Savings Credit is £17.01 per week for singles or £19.04 for couples. It is calculated by taking 60% of qualifying income above the Savings Credit threshold (£189.80 single, £301.22 couple), then reducing by 40% of any income above the Guarantee Credit minimum.',
       'Certain income is disregarded from the assessment: the first £10,000 of capital is ignored entirely, and each £500 (or part thereof) of capital between £10,000 and £99,999 counts as £1 per week of deemed income. Unlike means-tested benefits for working-age claimants, there is no upper capital limit that disqualifies you from Pension Credit entirely.'
     ],
@@ -3581,7 +3581,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'vat-threshold-calculator': {
     howItWorks: [
-      'This calculator helps you track your rolling 12-month turnover against the £90,000 VAT registration threshold. See headroom remaining. The calculation follows official UK rules and rates for the 2025/26 financial year, using data sourced directly from government publications.',
+      'This calculator helps you track your rolling 12-month turnover against the £90,000 VAT registration threshold. See headroom remaining. The calculation follows official UK rules and rates for the 2026/27 financial year, using data sourced directly from government publications.',
       'All inputs are processed entirely in your browser — no data is sent to a server. You can adjust the figures as many times as you need to explore different scenarios. The results update instantly as you type.',
     ],
     example: {
@@ -3590,7 +3590,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Enter your details in the input fields above',
         'The calculator applies current UK rates and thresholds automatically',
         'Results update in real time — adjust any figure to explore scenarios',
-        'All calculations use official 2025/26 rates from GOV.UK — Business tax',
+        'All calculations use official 2026/27 rates from GOV.UK — Business tax',
       ],
     },
     sourceUrl: 'https://www.gov.uk/corporation-tax-rates',
@@ -3896,7 +3896,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'teacher-pay-calculator': {
     howItWorks: [
-      'Teacher pay in England and Wales is set by the School Teachers\' Pay and Conditions Document (STPCD). The Main Pay Range (MPR) for classroom teachers in 2025/26 runs from M1 (approximately £31,650) to M6 (approximately £43,607) outside London. The Upper Pay Range (UPR) for experienced teachers runs from UPR1 to UPR3, topping out at approximately £49,084.',
+      'Teacher pay in England and Wales is set by the School Teachers\' Pay and Conditions Document (STPCD). The Main Pay Range (MPR) for classroom teachers in 2026/27 runs from M1 (approximately £31,650) to M6 (approximately £43,607) outside London. The Upper Pay Range (UPR) for experienced teachers runs from UPR1 to UPR3, topping out at approximately £49,084.',
       'London weighting applies in four zones: Inner London, Outer London, Fringe and Rest of England. Inner London attracts the highest premiums, with MPR starting approximately £5,000 higher. Leadership pay scales cover headteachers, deputy heads and assistant heads with separate spine points.',
       'This calculator shows your gross salary based on your pay range, spine point and location. It then deducts income tax, NI and Teachers\' Pension contributions (currently 7.4% to 11.7% of pensionable pay depending on salary band) to show your monthly and annual take-home pay.',
     ],
@@ -3938,13 +3938,13 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'high-income-child-benefit-calculator': {
     howItWorks: [
       'The High Income Child Benefit Charge (HICBC) applies when either parent in a household has adjusted net income between £60,000 and £80,000. For every £200 of income above £60,000, 1% of the total Child Benefit received must be repaid through Self Assessment. At £80,000 or above, the charge equals 100% of the benefit.',
-      'Child Benefit for 2025/26 is £26.05 per week for the eldest child and £17.25 per week for each subsequent child. For a two-child family, total annual benefit is £2,251.60. The charge is calculated on the higher earner\'s income, not combined household income.',
+      'Child Benefit for 2026/27 is £27.05 per week for the eldest child and £17.90 per week for each subsequent child. For a two-child family, total annual benefit is £2,251.60. The charge is calculated on the higher earner\'s income, not combined household income.',
       'Parents can choose to keep receiving Child Benefit and pay the charge, or opt out of receiving payments. Claiming but opting out of payment protects the claimant\'s National Insurance record (which matters for State Pension). This calculator shows the net benefit after the charge is applied.',
     ],
     example: {
       title: 'Example: Income £70,000, two children',
       steps: [
-        'Annual Child Benefit: £26.05 + £17.25 = £43.30/week = £2,251.60/year',
+        'Annual Child Benefit: £27.05 + £17.90 = £43.30/week = £2,251.60/year',
         'Income above £60,000: £10,000',
         'Charge: £10,000 ÷ £200 = 50 × 1% = 50% clawback',
         'HICBC: £2,251.60 × 50% = £1,125.80',
@@ -3957,7 +3957,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'benefit-cap-calculator': {
     howItWorks: [
-      'The benefit cap limits the total amount of benefits a working-age household can receive. For 2025/26 the cap is £22,020 per year (£423.46/week) for couples and single parents outside London, and £25,323 per year (£486.98/week) in Greater London. Single people without children are capped at £14,753 (£283.71/week) outside London or £16,967 (£326.29/week) in London.',
+      'The benefit cap limits the total amount of benefits a working-age household can receive. For 2026/27 the cap is £22,020 per year (£423.46/week) for couples and single parents outside London, and £25,323 per year (£486.98/week) in Greater London. Single people without children are capped at £14,753 (£283.71/week) outside London or £16,967 (£326.29/week) in London.',
       'The cap applies to the combined total of most benefits including Universal Credit, Child Benefit, Child Tax Credit, Housing Benefit, Jobseeker\'s Allowance and Employment and Support Allowance. Some benefits are exempt from the cap, including Disability Living Allowance, Personal Independence Payment, Carer\'s Allowance, and Working Tax Credit.',
       'You are exempt from the benefit cap if anyone in your household qualifies for Working Tax Credit, earns enough to receive the UC work allowance after the earnings taper, or receives certain disability or carer benefits. This calculator checks whether the cap applies to your household and estimates the reduction.',
     ],
@@ -4257,7 +4257,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'agricultural-worker-wage-calculator': {
     howItWorks: [
-      'Agricultural workers in England are covered by the Agricultural Wages Orders, which set minimum pay rates based on grade. The National Living Wage (for ages 21+) is currently £12.21 per hour and applies as a minimum for all agricultural workers. Some older Agricultural Wages Orders set higher rates for specialist grades.',
+      'Agricultural workers in England are covered by the Agricultural Wages Orders, which set minimum pay rates based on grade. The National Living Wage (for ages 21+) is currently £12.71 per hour and applies as a minimum for all agricultural workers. Some older Agricultural Wages Orders set higher rates for specialist grades.',
       'Workers are entitled to overtime, holiday pay (5.6 weeks per year), sick pay and accommodation offsets where housing is provided by the employer. In Wales, the Agricultural Advisory Panel for Wales sets separate minimum rates, and in Scotland, minimum rates are aligned with the National Minimum/Living Wage.',
       'This calculator works out weekly and monthly gross pay based on hours worked, grade and any overtime. It also calculates holiday pay entitlement and shows the employer\'s NI and pension auto-enrolment contributions on top of the gross wage.',
     ],
@@ -4489,7 +4489,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'ev-savings-calculator': {
     howItWorks: [
-      'Switching from a petrol or diesel car to an electric vehicle can save significant money on fuel, road tax and maintenance. Electricity is cheaper per mile than petrol: a typical EV costs 4-7p per mile to run on home charging versus 14-18p per mile for a petrol car. Road tax (VED) for EVs registered before April 2025 is £0, while those registered from April 2025 onwards pay the standard rate.',
+      'Switching from a petrol or diesel car to an electric vehicle can save significant money on fuel, road tax and maintenance. Electricity is cheaper per mile than petrol: a typical EV costs 4-7p per mile to run on home charging versus 14-18p per mile for a petrol car. Road tax (VED) for EVs registered before April 2025 is £0, while those registered from April 2026 onwards pay the standard rate.',
       'Maintenance costs are lower for EVs because they have fewer moving parts. There is no clutch, exhaust system, cambelt or traditional gearbox to service. Brake pad wear is reduced through regenerative braking. Annual servicing costs are typically £100-£200 less than an equivalent petrol car.',
       'This calculator compares the total cost of ownership between an EV and a comparable petrol or diesel car over 3-5 years. It includes purchase price (or lease cost), fuel/charging, insurance, road tax, MOT and maintenance to show the true financial picture.',
     ],
@@ -4510,7 +4510,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'property-cgt-calculator': {
     howItWorks: [
-      'Capital Gains Tax on residential property is charged at higher rates than other assets. For 2025/26, basic-rate taxpayers pay 18% on residential property gains, while higher and additional-rate taxpayers pay 24%. The annual exempt amount of £3,000 applies before these rates are calculated.',
+      'Capital Gains Tax on residential property is charged at higher rates than other assets. For 2026/27, basic-rate taxpayers pay 18% on residential property gains, while higher and additional-rate taxpayers pay 24%. The annual exempt amount of £3,000 applies before these rates are calculated.',
       'Your main home is usually exempt from CGT under Private Residence Relief (PRR). If you lived in the property for part of the ownership period, partial relief is available. Letting Relief provides up to £40,000 of additional exemption if the property was once your main home and was subsequently let to tenants.',
       'CGT on UK residential property must be reported and paid within 60 days of completion via the Capital Gains Tax on UK property service. This is earlier than the normal Self Assessment deadline. This calculator factors in PRR, letting relief and the £3,000 annual exemption to show your net liability.',
     ],
@@ -4631,7 +4631,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'pension-pot-calculator': {
     howItWorks: [
       'Target pot calculation works backwards from desired retirement income. The 4% rule (derived from the Trinity Study) suggests withdrawing 4% of your pot in year one, then adjusting for inflation annually, gives a high probability of lasting 30 years. To generate £20,000/year from drawdown, you need £20,000 / 0.04 = £500,000. Alternatively, current annuity rates convert pot to income directly: at a 6.5% annuity rate, £20,000/year requires £307,692.',
-      'The State Pension offsets your required private provision. The full new State Pension of £221.20/week (£11,502/year in 2025/26) reduces the income your private pension must generate. If you want £25,000/year total and expect full State Pension, your private pension only needs to produce £13,498/year, requiring a pot of approximately £337,450 at 4% drawdown or £207,662 at a 6.5% annuity rate.',
+      'The State Pension offsets your required private provision. The full new State Pension of £241.30/week (£11,502/year in 2026/27) reduces the income your private pension must generate. If you want £25,000/year total and expect full State Pension, your private pension only needs to produce £13,498/year, requiring a pot of approximately £337,450 at 4% drawdown or £207,662 at a 6.5% annuity rate.',
       'Working backwards to today, the calculator uses compound growth projections. Given a target pot, current savings, years to retirement, and assumed growth rate (typically 5% nominal for a balanced portfolio), it calculates the required monthly contribution using the future value of an annuity formula. Charges reduce effective growth, so a 5% gross return with 0.5% charges yields 4.5% net growth.'
     ],
     example: {
@@ -4675,7 +4675,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'This calculator estimates your annual earnings, holiday pay and statutory entitlements based on your average weekly hours and hourly rate. It also shows estimated tax and NI, and flags if your earnings fall below the NI Primary Threshold, meaning you would not build State Pension qualifying years.',
     ],
     example: {
-      title: 'Example: Average 20 hours/week at £12.21/hour',
+      title: 'Example: Average 20 hours/week at £12.71/hour',
       steps: [
         'Weekly gross: 20 × £12.21 = £244.20',
         'Annual gross (52 weeks): £12,698.40',
@@ -4793,7 +4793,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'student-loan-interest-calculator': {
     howItWorks: [
-      'Interest on student loans accrues from the day the loan is paid out, including while you are still studying. For Plan 2 loans, the rate is linked to RPI (Retail Prices Index) plus a margin of up to 3% depending on income. While studying, you are charged RPI + 3%. After graduation, the rate scales from RPI (income \u2264 £27,295) to RPI + 3% (income \u2265 £49,130).',
+      'Interest on student loans accrues from the day the loan is paid out, including while you are still studying. For Plan 2 loans, the rate is linked to RPI (Retail Prices Index) plus a margin of up to 3% depending on income. While studying, you are charged RPI + 3%. After graduation, the rate scales from RPI (income \u2264 £29,385) to RPI + 3% (income \u2265 £49,130).',
       'For Plan 5 loans (started from 2023/24), interest is capped at RPI only, with no additional income-based margin. This means Plan 5 borrowers pay lower interest than Plan 2 borrowers at the same income level.',
       'This calculator shows the interest accruing on your balance each month and year, based on your current balance, plan type and income. It also shows how much of your monthly repayment goes to interest versus reducing the principal. For many graduates, repayments do not cover the interest, and the balance grows until it is written off.',
     ],
@@ -4802,7 +4802,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       steps: [
         'Interest rate: RPI + partial margin \u2248 4.2%',
         'Annual interest: £45,000 \u00D7 4.2% = £1,890',
-        'Monthly repayment: (£35,000 \u2212 £27,295) \u00D7 9% \u00F7 12 = £57.79',
+        'Monthly repayment: (£35,000 \u2212 £29,385) \u00D7 9% \u00F7 12 = £57.79',
         'Annual repayment: £693.45 \u2014 balance grows by ~£1,197/year',
       ],
     },
@@ -4832,7 +4832,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'postgraduate-loan-calculator': {
     howItWorks: [
-      'Postgraduate Master\'s loans of up to £12,471 (2025/26) are available for taught and research master\'s courses. Repayment is at 6% of income above £21,000. This is collected alongside any existing undergraduate loan repayment \u2014 the two are separate deductions, so you can end up paying 9% + 6% = 15% of income above the respective thresholds.',
+      'Postgraduate Master\'s loans of up to £12,471 (2026/27) are available for taught and research master\'s courses. Repayment is at 6% of income above £21,000. This is collected alongside any existing undergraduate loan repayment \u2014 the two are separate deductions, so you can end up paying 9% + 6% = 15% of income above the respective thresholds.',
       'Interest is charged at RPI (currently around 3\u20134%). The loan is written off 30 years after the April following course completion. Unlike undergraduate loans, the postgraduate loan has no means-testing on household income \u2014 the full amount is available to all eligible students.',
       'Enter your salary to see monthly repayments. If you also have an undergraduate Plan 2 loan, the calculator shows both deductions and the combined impact on your take-home pay.',
     ],
@@ -4953,7 +4953,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'student-allowance-calculator': {
     howItWorks: [
-      'Your total student finance package combines several elements: the tuition fee loan (up to £9,535 for 2025/26, paid directly to the university), the maintenance loan (means-tested, paid to you) and any grants or bursaries. Some students also qualify for Disabled Students\' Allowances or Childcare Grants.',
+      'Your total student finance package combines several elements: the tuition fee loan (up to £9,535 for 2026/27, paid directly to the university), the maintenance loan (means-tested, paid to you) and any grants or bursaries. Some students also qualify for Disabled Students\' Allowances or Childcare Grants.',
       'This calculator estimates your total package by combining tuition and maintenance loans with any additional grants. Tuition fee loans are not means-tested and cover up to the full fee. Maintenance loans are means-tested on household income. Additional grants (such as the Parents\' Learning Allowance or Adult Dependants\' Grant) have separate eligibility criteria.',
       'Enter your household income, dependants status and study details. The calculator shows each component and the total finance available, as well as what arrives as a loan (to be repaid) versus a grant (non-repayable). Remember that tuition fee loans go directly to your university, not into your bank account.',
     ],
@@ -4993,7 +4993,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'benefits-in-kind-calculator': {
     howItWorks: [
       'HMRC taxes workplace benefits by converting them into a cash equivalent value, which is then taxed at your marginal income tax rate. Each benefit type has its own valuation method defined in the Income Tax (Earnings and Pensions) Act 2003. Your employer reports these values annually on form P11D, and HMRC adjusts your tax code to collect the additional tax owed through PAYE.',
-      'Company car benefit is calculated by multiplying the car\'s P11D price (list price plus accessories, minus capital contributions up to £5,000) by the appropriate percentage based on CO2 emissions. For 2025/26, zero-emission vehicles attract a 2% rate, rising in 1% increments through to 37% for the highest polluters. The resulting cash equivalent is added to your taxable income.',
+      'Company car benefit is calculated by multiplying the car\'s P11D price (list price plus accessories, minus capital contributions up to £5,000) by the appropriate percentage based on CO2 emissions. For 2026/27, zero-emission vehicles attract a 2% rate, rising in 1% increments through to 37% for the highest polluters. The resulting cash equivalent is added to your taxable income.',
       'Private medical insurance benefit equals the cost your employer pays for the policy premium. Accommodation benefit uses the annual value or, if the property cost exceeds £75,000, adds a supplementary charge calculated as the excess multiplied by the official rate of interest (currently 2.25%).'
     ],
     example: {
@@ -5093,7 +5093,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'dividend-income-calculator': {
     howItWorks: [
       'Dividend income from UK shares and funds is calculated by multiplying the number of shares held by the dividend per share, or by applying the portfolio\'s dividend yield to the total investment value. A portfolio worth £100,000 with a 4% yield produces £4,000 in annual dividends. Yields vary by sector: FTSE 100 companies typically yield 3.5-4.5%, while growth stocks may yield under 1% and high-yield investment trusts can exceed 6%.',
-      'The dividend allowance for 2025/26 is £500 — the first £500 of dividend income is tax-free regardless of your tax band. Above this, dividends are taxed at 8.75% (basic rate), 33.75% (higher rate), or 39.35% (additional rate). These rates are lower than income tax on earnings because company profits have already been subject to corporation tax before being distributed as dividends.',
+      'The dividend allowance for 2026/27 is £500 — the first £500 of dividend income is tax-free regardless of your tax band. Above this, dividends are taxed at 8.75% (basic rate), 33.75% (higher rate), or 39.35% (additional rate). These rates are lower than income tax on earnings because company profits have already been subject to corporation tax before being distributed as dividends.',
       'The calculator stacks dividend income on top of other income to determine the correct tax band. If your salary is £45,000 and you receive £6,000 in dividends, the first £500 is tax-free, the next £5,270 (up to the £50,270 basic rate limit) is taxed at 8.75%, and the remaining £230 is taxed at 33.75%. Dividends within an ISA or pension are completely tax-free and do not count toward the allowance or tax bands.'
     ],
     example: {
@@ -5113,7 +5113,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'non-dom-tax-calculator': {
     howItWorks: [
       'From April 2025, the UK replaced the traditional remittance basis for non-domiciled individuals with a new four-year Foreign Income and Gains (FIG) regime. New UK residents can elect to pay no UK tax on foreign income and gains for their first four years of UK tax residency, provided they have not been UK resident in the previous ten years.',
-      'After the four-year FIG window, all worldwide income and gains become fully taxable in the UK regardless of domicile status. Transitional provisions apply for existing non-doms: the Temporary Repatriation Facility allows previously unremitted income to be brought into the UK at a reduced rate of 12% in 2025/26 and 2026/27, then 15% in 2027/28.',
+      'After the four-year FIG window, all worldwide income and gains become fully taxable in the UK regardless of domicile status. Transitional provisions apply for existing non-doms: the Temporary Repatriation Facility allows previously unremitted income to be brought into the UK at a reduced rate of 12% in 2026/27 and 2026/27, then 15% in 2027/28.',
       'Inheritance Tax also changed from a domicile basis to a residence basis from April 2025. Individuals resident in the UK for at least ten of the previous twenty years become liable for IHT on worldwide assets. This calculator models your tax position under the new regime based on your residency history and foreign income.',
     ],
     example: {
@@ -5139,7 +5139,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     example: {
       title: 'AIA on \u00a380,000 of equipment for a limited company',
       steps: [
-        'A Ltd purchases \u00a380,000 of qualifying machinery in the 2025/26 tax year.',
+        'A Ltd purchases \u00a380,000 of qualifying machinery in the 2026/27 tax year.',
         'The full \u00a380,000 falls within the \u00a31,000,000 AIA limit, so 100% is deductible.',
         'Taxable profits before the purchase: \u00a3150,000.',
         'Taxable profits after AIA deduction: \u00a3150,000 \u2212 \u00a380,000 = \u00a370,000.',
@@ -5213,9 +5213,9 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'tax-credits-calculator': {
     howItWorks: [
-      'Tax Credits are legacy benefits being replaced by Universal Credit, but existing claimants can still receive Working Tax Credit (WTC) and Child Tax Credit (CTC). WTC is for people working a certain number of hours per week: at least 16 hours if you have a disability or are a single parent, or 30 hours otherwise. The basic element for 2025/26 is £2,435 per year.',
+      'Tax Credits are legacy benefits being replaced by Universal Credit, but existing claimants can still receive Working Tax Credit (WTC) and Child Tax Credit (CTC). WTC is for people working a certain number of hours per week: at least 16 hours if you have a disability or are a single parent, or 30 hours otherwise. The basic element for 2026/27 is £2,435 per year.',
       'Child Tax Credit provides up to £3,455 per child (the child element) plus a family element of £545. Entitlement is reduced by 41% of household income above the threshold of £7,455 for those receiving both WTC and CTC, or £19,995 for CTC-only claimants.',
-      'New claims for Tax Credits are no longer accepted in most areas. Existing claimants will be migrated to Universal Credit by the end of 2025/26. If you receive a migration notice, you may be eligible for transitional protection to ensure your income does not drop.',
+      'New claims for Tax Credits are no longer accepted in most areas. Existing claimants will be migrated to Universal Credit by the end of 2026/27. If you receive a migration notice, you may be eligible for transitional protection to ensure your income does not drop.',
     ],
     example: {
       title: 'Example: Couple, 2 children, £25,000 income, 35 hours/week',
@@ -5415,7 +5415,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'employer-pension-contribution-calculator': {
     howItWorks: [
-      'Under auto-enrolment rules, employer contributions are calculated on qualifying earnings, which is the band of gross pay between £6,240 and £50,270 per year (2025/26 thresholds). The employer must contribute at least 3% of qualifying earnings, while the employee contributes 5% (including 1% tax relief). Total minimum contribution is 8% of qualifying earnings, not total salary.',
+      'Under auto-enrolment rules, employer contributions are calculated on qualifying earnings, which is the band of gross pay between £6,240 and £50,270 per year (2026/27 thresholds). The employer must contribute at least 3% of qualifying earnings, while the employee contributes 5% (including 1% tax relief). Total minimum contribution is 8% of qualifying earnings, not total salary.',
       'The calculation first identifies qualifying earnings by subtracting the lower threshold from gross pay, capped at the upper limit. For someone earning £30,000, qualifying earnings are £30,000 minus £6,240, giving £23,760. The employer\'s 3% minimum on this amount is £712.80 per year. Many employers voluntarily contribute more, often matching employee contributions up to 5-10%.',
       'Salary sacrifice arrangements alter the calculation: the employee gives up gross salary in exchange for additional employer pension contributions. This saves both employer and employee National Insurance (currently 13.8% employer, 8% employee on earnings between £12,570 and £50,270), making each pound of contribution more tax-efficient than relief at source.'
     ],
@@ -5436,7 +5436,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'right-to-buy-calculator': {
     howItWorks: [
       'Right to Buy allows eligible council tenants in England to buy their home at a discount. The discount depends on the property type and length of tenancy. For houses, the discount starts at 35% after 3 years of tenancy and increases by 1% per additional year up to a maximum of 70%. For flats, the discount starts at 50% and increases by 2% per year up to 70%.',
-      'Maximum discount caps are set annually: for 2025/26 this is £96,000 in London and £127,900 outside London. If you sell the property within 5 years, you must repay some or all of the discount on a sliding scale. Former council tenants can also use the Preserved Right to Buy if their home was transferred to a housing association.',
+      'Maximum discount caps are set annually: for 2026/27 this is £96,000 in London and £127,900 outside London. If you sell the property within 5 years, you must repay some or all of the discount on a sliding scale. Former council tenants can also use the Preserved Right to Buy if their home was transferred to a housing association.',
       'This calculator shows the discount you are entitled to based on your tenancy length and property type. Enter the market value of your home, your tenancy start date and location to see the purchase price after discount, plus the repayment amount if you sell within 5 years.',
     ],
     example: {
@@ -5535,7 +5535,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'ev-salary-sacrifice-calculator': {
     howItWorks: [
-      'An EV salary sacrifice scheme lets you lease an electric car through your employer, paying from your gross salary before tax and National Insurance. The Benefit in Kind (BiK) rate for pure electric vehicles is just 2% for 2024/25, rising to 3% for 2025/26 and 4% for 2026/27. This makes salary sacrifice one of the cheapest ways to drive a new EV.',
+      'An EV salary sacrifice scheme lets you lease an electric car through your employer, paying from your gross salary before tax and National Insurance. The Benefit in Kind (BiK) rate for pure electric vehicles is just 2% for 2024/25, rising to 3% for 2026/27 and 4% for 2026/27. This makes salary sacrifice one of the cheapest ways to drive a new EV.',
       'The saving works because you avoid income tax and NI on the sacrificed salary, and the BiK tax on the EV is minimal. A higher-rate taxpayer can save 40-50% compared to leasing the same car personally. The scheme typically includes insurance, maintenance, breakdown cover and tyres in one monthly payment.',
       'This calculator compares the net cost of leasing an EV through salary sacrifice versus a personal lease or PCP deal. It shows the BiK tax payable, the tax and NI savings, and the effective monthly cost. Most schemes require a minimum contract of 2-4 years.',
     ],
@@ -5544,7 +5544,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       steps: [
         'Monthly salary sacrifice: £450 (from gross pay)',
         'P11D value: £42,000',
-        'BiK at 3% (2025/26): £42,000 x 3% = £1,260/year',
+        'BiK at 3% (2026/27): £42,000 x 3% = £1,260/year',
         'BiK tax at 40%: £504/year (£42/month)',
         'Income tax saving: £450 x 40% = £180/month',
         'NI saving: £450 x 8% = £36/month',
@@ -5809,14 +5809,14 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'student-loan-plan4-calculator': {
     howItWorks: [
-      'Plan 4 applies to students who took out loans from the Student Awards Agency for Scotland (SAAS) or who started undergraduate courses in England or Wales before September 2012 and now live in Scotland. The repayment threshold for 2025/26 is £31,395 \u2014 the highest of all UK plan types.',
-      'You repay 9% of everything you earn above £31,395. The interest rate on Plan 4 is the lower of RPI or the Bank of England base rate plus 1%. Plan 4 loans are written off when you turn 65 (or 25 years after the April you were first eligible to repay, whichever comes first).',
+      'Plan 4 applies to students who took out loans from the Student Awards Agency for Scotland (SAAS) or who started undergraduate courses in England or Wales before September 2012 and now live in Scotland. The repayment threshold for 2026/27 is £33,795 \u2014 the highest of all UK plan types.',
+      'You repay 9% of everything you earn above £33,795. The interest rate on Plan 4 is the lower of RPI or the Bank of England base rate plus 1%. Plan 4 loans are written off when you turn 65 (or 25 years after the April you were first eligible to repay, whichever comes first).',
       'Enter your salary to see monthly and annual repayments. If you are on Plan 4 plus a Postgraduate Loan, both are deducted separately. The higher threshold means Scottish graduates repay less per month than English graduates on the same salary.',
     ],
     example: {
       title: 'Example: £40,000 salary, Plan 4',
       steps: [
-        'Income above threshold: £40,000 \u2212 £31,395 = £8,605',
+        'Income above threshold: £40,000 \u2212 £33,795 = £8,605',
         'Annual repayment: £8,605 \u00D7 9% = £774.45',
         'Monthly deduction: £64.54',
         'Compare to Plan 2 at same salary: £1,143.45/year (£95.29/month)',
@@ -5863,7 +5863,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ],
     },
     sourceUrl: 'https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026',
-    sourceName: 'HMRC — Employer NI rates and thresholds 2025/26',
+    sourceName: 'HMRC — Employer NI rates and thresholds 2026/27',
     lastUpdated: 'April 2026',
   },
   'pay-per-mile-calculator': {
@@ -5953,17 +5953,17 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'shared-parental-pay-calculator': {
     howItWorks: [
-      'Shared Parental Pay (ShPP) allows eligible parents to share up to 37 weeks of statutory pay between them after the birth or adoption of a child. The mother must curtail her maternity leave and pay to create the shared entitlement. ShPP is paid at £187.18 per week or 90% of average weekly earnings, whichever is lower, for 2025/26.',
+      'Shared Parental Pay (ShPP) allows eligible parents to share up to 37 weeks of statutory pay between them after the birth or adoption of a child. The mother must curtail her maternity leave and pay to create the shared entitlement. ShPP is paid at £194.32 per week or 90% of average weekly earnings, whichever is lower, for 2026/27.',
       'The total shared entitlement is calculated by subtracting the weeks of maternity pay already taken from 39 weeks. For example, if the mother takes 10 weeks of maternity pay, 29 weeks of ShPP are available to share. Both parents must meet eligibility criteria — the person taking ShPP must have 26 weeks\' continuous employment and the other parent must have worked for at least 26 weeks in the 66 weeks before the due date.',
       'ShPP can be taken in blocks with gaps between them, allowing parents to alternate caring responsibilities. Each parent can submit up to three notices of entitlement. This calculator models different sharing scenarios and shows the pay each parent receives.',
     ],
     example: {
       title: 'Example: Mother takes 12 weeks maternity, then shares',
       steps: [
-        'Mother\'s SMP: 6 weeks at 90% + 6 weeks at £187.18 = £4,363.08',
+        'Mother\'s SMP: 6 weeks at 90% + 6 weeks at £194.32 = £4,363.08',
         'Remaining ShPP weeks: 39 − 12 = 27 weeks available',
-        'Father takes 15 weeks ShPP: 15 × £187.18 = £2,807.70',
-        'Mother takes 12 weeks ShPP: 12 × £187.18 = £2,246.16',
+        'Father takes 15 weeks ShPP: 15 × £194.32 = £2,807.70',
+        'Mother takes 12 weeks ShPP: 12 × £194.32 = £2,246.16',
         'Total family statutory pay: £9,416.94',
       ],
     },
@@ -6036,14 +6036,14 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'minimum-wage-calculator': {
     howItWorks: [
-      'The UK sets minimum hourly pay rates that vary by age. From April 2025, the National Living Wage for workers aged 21 and over is £12.21 per hour. The National Minimum Wage is £10.00 for 18-20 year olds, £7.55 for under-18s, and £7.55 for apprentices in their first year or under 19.',
+      'The UK sets minimum hourly pay rates that vary by age. From April 2025, the National Living Wage for workers aged 21 and over is £12.71 per hour. The National Minimum Wage is £10.00 for 18-20 year olds, £8.00 for under-18s, and £8.00 for apprentices in their first year or under 19.',
       'These rates are statutory minimums — employers must pay at least these amounts for every hour worked. Hours include time spent working, on-call at the workplace, travelling as part of the job and training. Sleep-in shifts and travel between home and a fixed workplace are generally excluded.',
       'This calculator checks whether your current pay meets the legal minimum based on your age, hours worked and pay received. It also shows what your annual and monthly income should be at the minimum rate, helping you verify your payslips are correct.',
     ],
     example: {
       title: 'Example: 23-year-old working 40 hours/week',
       steps: [
-        'National Living Wage (21+): £12.21/hour',
+        'National Living Wage (21+): £12.71/hour',
         'Weekly minimum pay: £12.21 × 40 = £488.40',
         'Monthly minimum: £488.40 × 52 ÷ 12 = £2,116.40',
         'Annual minimum: £488.40 × 52 = £25,396.80',
@@ -6116,7 +6116,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'employee-vs-contractor-calculator': {
     howItWorks: [
-      'The true cost of employing someone extends well beyond their gross salary. Employers pay secondary Class 1 NI contributions at 15% on earnings above the Secondary Threshold (\u00a39,100 for 2025/26). Auto-enrolment pension contributions add a minimum 3% of qualifying earnings. Additional employer costs often include recruitment fees, training, office space, equipment, employer\'s liability insurance, and payroll administration. These overheads typically add 20\u201335% on top of the gross salary.',
+      'The true cost of employing someone extends well beyond their gross salary. Employers pay secondary Class 1 NI contributions at 15% on earnings above the Secondary Threshold (\u00a39,100 for 2026/27). Auto-enrolment pension contributions add a minimum 3% of qualifying earnings. Additional employer costs often include recruitment fees, training, office space, equipment, employer\'s liability insurance, and payroll administration. These overheads typically add 20\u201335% on top of the gross salary.',
       'A contractor or freelancer, by contrast, charges a day rate or project fee with no employer NI, pension, or benefit obligations on the hiring business. However, the day rate is typically higher to compensate the contractor for bearing their own tax, insurance, pension, holiday, sick pay, and bench time between contracts. A rough equivalence is that a contractor\'s annual billings need to be 30\u201350% higher than an equivalent salary to achieve the same take-home, depending on IR35 status.',
       'The comparison must account for hidden employer costs: statutory sick pay obligations, maternity/paternity cover, redundancy liability, annual leave (typically 28 days minimum), training investment, and management overhead. Contractors provide flexibility\u2014you pay only for productive days\u2014but the relationship must genuinely reflect self-employment to avoid IR35 reclassification, which would impose employment taxes retrospectively on unpaid NI and PAYE.'
     ],
@@ -6214,7 +6214,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'employee-cost-breakdown-calculator': {
     howItWorks: [
-      'The full cost of an employee includes far more than their headline salary. Mandatory costs include employer National Insurance (15% above £5,000 for 2025/26), workplace pension (minimum 3% of qualifying earnings) and employer\'s liability insurance. These statutory requirements add approximately 18-20% on top of the gross salary.',
+      'The full cost of an employee includes far more than their headline salary. Mandatory costs include employer National Insurance (15% above £5,000 for 2026/27), workplace pension (minimum 3% of qualifying earnings) and employer\'s liability insurance. These statutory requirements add approximately 18-20% on top of the gross salary.',
       'Discretionary costs may include private medical insurance (averaging £1,000-£2,000 per employee), training and development budgets, equipment and IT costs, office space per head, recruitment costs (typically 15-25% of salary for agency hires) and any performance bonuses or profit-sharing schemes.',
       'This calculator provides an itemised breakdown of all employer costs. Enter the salary and toggle each optional benefit to build a complete picture. The output shows both the per-employee cost and the cost as a percentage of salary, helping businesses budget accurately for headcount expansion.',
     ],
@@ -6230,7 +6230,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ],
     },
     sourceUrl: 'https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026',
-    sourceName: 'HMRC — Rates and thresholds for employers 2025/26',
+    sourceName: 'HMRC — Rates and thresholds for employers 2026/27',
     lastUpdated: 'April 2026',
   },
   'contractor-vs-perm-calculator': {
@@ -6256,7 +6256,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'postgraduate-loan-cost-calculator': {
     howItWorks: [
       'This calculator projects the total lifetime cost of your postgraduate loan, including interest, over the 30-year repayment period. It models your salary trajectory and calculates annual repayments at 6% of income above £21,000, while interest accrues at RPI on the remaining balance.',
-      'Because the repayment threshold is lower than for undergraduate loans (£21,000 versus £27,295 for Plan 2), postgraduate loan repayments begin at a lower salary. However, the 6% rate means each monthly payment is smaller. Whether you repay in full or have the balance written off depends on your career earnings.',
+      'Because the repayment threshold is lower than for undergraduate loans (£21,000 versus £29,385 for Plan 2), postgraduate loan repayments begin at a lower salary. However, the 6% rate means each monthly payment is smaller. Whether you repay in full or have the balance written off depends on your career earnings.',
       'Enter your loan amount, starting salary and expected pay growth. The calculator shows year-by-year repayments, the interest that accrues and the projected balance at write-off. It also shows the total amount repaid compared to the original loan, so you can see the true cost of borrowing.',
     ],
     example: {
@@ -6392,7 +6392,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'car-tax-calculator': {
     howItWorks: [
       'Vehicle Excise Duty (VED), commonly called car tax or road tax, is charged annually and collected by the DVLA. The amount you pay depends on when your vehicle was first registered, its fuel type and CO2 emissions. From April 2025, electric vehicles are no longer exempt — they now pay the lowest first-year rate and the standard annual rate from year two.',
-      'For petrol and diesel cars registered after 1 April 2017, first-year rates are based on CO2 emissions and range from £0 (under 1g/km) to over £2,000 for the highest-emission vehicles. From year two, most cars pay the standard annual rate (£195 in 2025/26). Cars with a list price over £40,000 pay an additional £620 per year for the first five years on top of the standard rate.',
+      'For petrol and diesel cars registered after 1 April 2017, first-year rates are based on CO2 emissions and range from £0 (under 1g/km) to over £2,000 for the highest-emission vehicles. From year two, most cars pay the standard annual rate (£195 in 2026/27). Cars with a list price over £40,000 pay an additional £620 per year for the first five years on top of the standard rate.',
       'Vehicles registered between 1 March 2001 and 31 March 2017 are taxed under the old banding system based on CO2 emissions, with Band A (up to 100g/km) paying nothing and higher bands paying up to £695.',
     ],
     example: {
@@ -6411,7 +6411,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
 
   'tax-code-checker': {
     howItWorks: [
-      'Your HMRC tax code tells your employer how much income to treat as tax-free before applying income tax. The most common code is 1257L, meaning you have the standard Personal Allowance of £12,570 for 2025/26. The numbers represent your tax-free entitlement divided by 10, so 1257 means £12,570.',
+      'Your HMRC tax code tells your employer how much income to treat as tax-free before applying income tax. The most common code is 1257L, meaning you have the standard Personal Allowance of £12,570 for 2026/27. The numbers represent your tax-free entitlement divided by 10, so 1257 means £12,570.',
       'Letter suffixes modify how your allowance works. L means the standard Personal Allowance. M and N are used for Marriage Allowance (M = recipient, N = transferor). T means HMRC needs more information. S means Scottish rates apply; C means Welsh rates. Prefix K indicates a negative allowance — you have untaxed income or benefits that exceed your allowances, so extra tax is collected on top of your salary.',
       'Emergency codes (W1, M1, X) mean each pay period is taxed independently rather than cumulatively. Code 0T means no Personal Allowance at all. Code BR, D0 or D1 apply a flat 20%, 40% or 45% rate to all earnings — typically used for secondary employment.',
     ],
@@ -6471,9 +6471,9 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
 
   'carer-allowance-calculator': {
     howItWorks: [
-      "Carer's Allowance is the main state benefit for unpaid carers. For 2025/26 it pays £81.90 per week (£4,258.80 per year). To qualify you must care for someone for at least 35 hours per week who receives a qualifying disability benefit: PIP Daily Living (either rate), Attendance Allowance, or DLA care component at the middle or highest rate.",
+      "Carer's Allowance is the main state benefit for unpaid carers. For 2026/27 it pays £81.90 per week (£4,258.80 per year). To qualify you must care for someone for at least 35 hours per week who receives a qualifying disability benefit: PIP Daily Living (either rate), Attendance Allowance, or DLA care component at the middle or highest rate.",
       "There is a weekly net earnings limit of £151. After deducting income tax, NI, pension contributions, and 50% of any qualifying pension premium costs, your net weekly earnings must not exceed this amount. If you earn more in any given week, Carer's Allowance is not payable for that week.",
-      "Claiming Carer's Allowance also entitles you to the Carer Element in Universal Credit (£198.31/month in 2025/26). If you already receive State Pension or another benefit at the same or higher rate, you may be 'underlying entitled' — you won't receive the cash payment but still qualify for the Carer Element in UC.",
+      "Claiming Carer's Allowance also entitles you to the Carer Element in Universal Credit (£198.31/month in 2026/27). If you already receive State Pension or another benefit at the same or higher rate, you may be 'underlying entitled' — you won't receive the cash payment but still qualify for the Carer Element in UC.",
     ],
     example: {
       title: "Example: Part-time carer earning £200 gross per week",
@@ -6511,14 +6511,14 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
 
   'blind-persons-allowance-calculator': {
     howItWorks: [
-      "Blind Person's Allowance (BPA) is an additional income tax allowance for people registered as severely sight impaired (blind). For 2025/26 it is worth £3,070. It is added on top of the standard Personal Allowance of £12,570, giving a total tax-free income of £15,640.",
+      "Blind Person's Allowance (BPA) is an additional income tax allowance for people registered as severely sight impaired (blind). For 2026/27 it is worth £3,070. It is added on top of the standard Personal Allowance of £12,570, giving a total tax-free income of £15,640.",
       "Unused BPA can be transferred to a spouse or civil partner. They do not need to be registered as blind themselves — the transferred amount simply reduces their taxable income, potentially saving up to £614 per year at the basic rate or £1,228 at the higher rate.",
       "To claim in England and Wales, you need a Certificate of Vision Impairment (CVI) classifying you as severely sight impaired. In Scotland, the equivalent is an SOAVI form. You can also qualify if an ophthalmologist certifies you as unable to do any work for which eyesight is essential, before formal registration is complete. Claim via Self Assessment or by contacting HMRC.",
     ],
     example: {
       title: "Example: Higher-rate taxpayer claiming full BPA",
       steps: [
-        'Standard Personal Allowance 2025/26: £12,570',
+        'Standard Personal Allowance 2026/27: £12,570',
         "Add Blind Person's Allowance: + £3,070",
         'Total tax-free income: £15,640',
         'Annual tax saving at 40% (higher rate): £3,070 × 40% = £1,228/year',
@@ -6532,7 +6532,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'teachers-pension-calculator': {
     howItWorks: [
       "The Teachers' Pension Scheme (TPS) is a defined benefit career average revalued earnings (CARE) pension. Each year of service accrues 1/57th of your pensionable pay for that year as a pension entitlement. That annual slice is then revalued each April by CPI + 1.6% until you retire, protecting its real value.",
-      'Member contributions are tiered by salary band. For 2025/26: 7.4% up to £32,135; 8.6% on £32,136–£43,259; 9.7% on £43,260–£51,292; 10.2% on £51,293–£67,431; 11.7% on £67,432–£92,297; 12.4% above £92,297. Employer contributions are 23.68% of pensionable pay. Both employer and employee contributions attract tax relief.',
+      'Member contributions are tiered by salary band. For 2026/27: 7.4% up to £32,135; 8.6% on £32,136–£43,259; 9.7% on £43,260–£51,292; 10.2% on £51,293–£67,431; 11.7% on £67,432–£92,297; 12.4% above £92,297. Employer contributions are 23.68% of pensionable pay. Both employer and employee contributions attract tax relief.',
       'Normal Pension Age is linked to State Pension Age (67, rising to 68). The pension is CPI-linked in payment. There is no automatic lump sum in the career average scheme, but you can commute pension at £12 lump sum for every £1/year of annual pension surrendered.',
     ],
     example: {
@@ -6552,7 +6552,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'student-loan-total-cost-calculator': {
     howItWorks: [
       'Most graduates do not repay their student loan in full. Under Plan 5 (new students from September 2023) the loan is written off after 40 years; under Plan 2 (2012–2022) after 30 years. This makes the true cost entirely dependent on your earnings trajectory — not the headline balance.',
-      'Repayments are 9% of income above the threshold: £25,000 for Plan 5; £27,295 for Plan 2 in 2025/26. Interest accrues at RPI only (Plan 5) or RPI+up to 3% (Plan 2). On median-salary careers, interest often accrues faster than repayments early on, causing the balance to grow before eventually being written off.',
+      'Repayments are 9% of income above the threshold: £25,000 for Plan 5; £29,385 for Plan 2 in 2026/27. Interest accrues at RPI only (Plan 5) or RPI+up to 3% (Plan 2). On median-salary careers, interest often accrues faster than repayments early on, causing the balance to grow before eventually being written off.',
       'For many graduates, the student loan works like a time-limited graduate tax rather than a traditional debt. High earners repay in full and pay substantial interest. Those on lower or median earnings have a portion or all of their balance written off at the end of the term. The calculator projects total repayments using realistic salary growth.',
     ],
     example: {
@@ -6571,7 +6571,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
 
   'ni-salary-sacrifice-2029-calculator': {
     howItWorks: [
-      'Pension contributions made via salary sacrifice currently reduce the salary on which employer National Insurance is calculated. At the 2025/26 employer NI rate of 15%, every £1,000 redirected to a pension saves the employer £150 in NI — many employers pass this saving to employees as an enhanced pension contribution.',
+      'Pension contributions made via salary sacrifice currently reduce the salary on which employer National Insurance is calculated. At the 2026/27 employer NI rate of 15%, every £1,000 redirected to a pension saves the employer £150 in NI — many employers pass this saving to employees as an enhanced pension contribution.',
       'The government has consulted on removing the employer NI advantage on salary sacrifice pension contributions, with 2029 cited as a potential implementation date. Under the proposed change, the pension contribution would not reduce the employer NI base, eliminating the NI efficiency of current salary sacrifice arrangements.',
       'This calculator quantifies your current NI saving and estimates what you would lose under the proposed rules. This is a proposed change only — no legislation has been passed as of April 2026. Use these results for financial planning and to assess whether it is worth locking in current arrangements.',
     ],

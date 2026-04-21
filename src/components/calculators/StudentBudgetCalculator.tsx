@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 const DEFAULT_INCOME = [
-  { id: 'loan', label: 'Maintenance Loan', amount: 10544 }, // 2025/26 England, away from home
+  { id: 'loan', label: 'Maintenance Loan', amount: 10544 }, // 2026/27 England, away from home
   { id: 'grant', label: 'Grant / Bursary', amount: 0 },
   { id: 'parents', label: 'Family Support', amount: 0 },
   { id: 'job', label: 'Part-Time Job', amount: 0 },

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// UC rates 2025/26 (monthly, from April 2025, uprated by 1.7% CPI)
+// UC rates 2026/27 (monthly, from April 2025, uprated by 1.7% CPI)
 const STANDARD_SINGLE_UNDER25 = 316.98
 const STANDARD_SINGLE_25PLUS = 400.14
 const STANDARD_COUPLE_UNDER25 = 497.55

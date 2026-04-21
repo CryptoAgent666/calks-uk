@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// HMRC Approved Mileage Allowance Payments (AMAP) 2025/26
+// HMRC Approved Mileage Allowance Payments (AMAP) 2026/27
 const CAR_FIRST_10K = 0.45 // 45p/mile
 const CAR_OVER_10K = 0.25 // 25p/mile
 const MOTORCYCLE = 0.24 // 24p/mile

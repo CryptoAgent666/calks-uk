@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Maintenance loan 2025/26 (England)
+// Maintenance loan 2026/27 (England)
 const RATES = {
   home_parents: { min: 4_767, max: 8_490 },
   home_away: { min: 4_767, max: 10_544 },
@@ -53,7 +53,7 @@ export default function StudentMaintenanceLoanCalculator() {
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Minimum Loan</p><p className="text-lg font-bold">{formatCurrency(result.min)}</p><p className="text-xs text-muted-foreground">Income over £62K</p></div>
         </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-          <p>England rates 2025/26. Scotland, Wales and NI have different rates. Loan reduces as household income rises above £25,000. Apply via Student Finance England.</p>
+          <p>England rates 2026/27. Scotland, Wales and NI have different rates. Loan reduces as household income rises above £25,000. Apply via Student Finance England.</p>
         </div>
       </div>
     </div>

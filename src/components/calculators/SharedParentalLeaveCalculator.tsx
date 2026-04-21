@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// ShPP 2025/26
-const SHPP_RATE = 187.18 // per week or 90% AWE
+// ShPP 2026/27
+const SHPP_RATE = 194.32 // per week or 90% AWE
 const MAX_WEEKS = 50 // shared between partners (37 ShPP-eligible after 2 weeks compulsory maternity)
 const COMPULSORY_MAT = 2
 

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, formatPercent } from '@/utils'
 
-// Corporation Tax 2025/26
+// Corporation Tax 2026/27
 const SMALL_PROFITS_RATE = 0.19
 const SMALL_PROFITS_LIMIT = 50_000
 const MAIN_RATE = 0.25

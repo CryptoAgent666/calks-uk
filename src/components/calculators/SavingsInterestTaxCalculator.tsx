@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Personal Savings Allowance 2025/26
+// Personal Savings Allowance 2026/27
 const PSA_BASIC = 1_000
 const PSA_HIGHER = 500
 const PSA_ADDITIONAL = 0

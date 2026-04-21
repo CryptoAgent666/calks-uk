@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// SSP 2025/26
+// SSP 2026/27
 const SSP_RATE = 118.75 // per week
 const SSP_WAITING_DAYS = 3
 const SSP_MAX_WEEKS = 28

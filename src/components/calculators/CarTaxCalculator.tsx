@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// VED rates 2025/26 — Budget Oct 2024 changes effective April 2025
+// VED rates 2026/27 — Budget Oct 2024 changes effective April 2025
 // First-year rates doubled for 76g/km+ CO2; EVs now pay standard rate from year 2
 const STANDARD_RATE = 195 // per year after first year (petrol/diesel/hybrid/EV)
 

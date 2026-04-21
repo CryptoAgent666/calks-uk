@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Agricultural Wages (England) 2025/26
+// Agricultural Wages (England) 2026/27
 const MIN_WAGE = 12.21 // NMW age 21+
 const AG_GRADE_1 = 12.21 // Initial grade
 const AG_GRADE_2 = 12.77 // Standard
@@ -60,7 +60,7 @@ export default function AgricultureWorkerWageCalculator() {
           <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Holiday Hours</p><p className="text-lg font-bold">{result.holiday.toFixed(0)} hrs/yr</p></div>
         </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-          <p>Agricultural Wages Order (England) 2025/26. Scotland and Wales have separate arrangements. Overtime at 1.5x applies to hours over the basic week. On-call and night work attract additional allowances.</p>
+          <p>Agricultural Wages Order (England) 2026/27. Scotland and Wales have separate arrangements. Overtime at 1.5x applies to hours over the basic week. On-call and night work attract additional allowances.</p>
         </div>
       </div>
     </div>

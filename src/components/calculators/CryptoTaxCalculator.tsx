@@ -62,7 +62,7 @@ export default function CryptoTaxCalculator() {
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-1">
             <p className="font-medium text-foreground">UK Crypto Tax Rules:</p>
             <p>Crypto is treated as a capital asset — CGT applies when you sell, swap or spend.</p>
-            <p>Annual exempt amount: <span className="font-medium text-foreground">£{CGT_ALLOWANCE.toLocaleString()}</span> (2025/26)</p>
+            <p>Annual exempt amount: <span className="font-medium text-foreground">£{CGT_ALLOWANCE.toLocaleString()}</span> (2026/27)</p>
             <p>Basic rate: <span className="font-medium text-foreground">18%</span> | Higher rate: <span className="font-medium text-foreground">24%</span> (from Oct 2024)</p>
             <p>Losses can be offset against gains in the same or future tax years.</p>
           </div>

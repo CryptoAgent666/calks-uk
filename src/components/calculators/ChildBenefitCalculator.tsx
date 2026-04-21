@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// 2025/26 rates
+// 2026/27 rates
 const FIRST_CHILD_WEEKLY = 26.05
 const ADDITIONAL_CHILD_WEEKLY = 17.25
 const HICBC_START = 60_000

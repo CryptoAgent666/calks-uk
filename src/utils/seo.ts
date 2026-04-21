@@ -11,7 +11,7 @@ export function getOrganizationSchema() {
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
-    description: 'Free online calculators for the UK. Tax, salary, mortgage, pension, VAT and more — updated for 2025/26.',
+    description: 'Free online calculators for the UK. Tax, salary, mortgage, pension, VAT and more — updated for 2026/27.',
     contactPoint: {
       '@type': 'ContactPoint',
       email: 'info@calks.uk',

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-const JISA_LIMIT = 9_000 // annual limit 2025/26
+const JISA_LIMIT = 9_000 // annual limit 2026/27
 
 function calculate(monthlyDeposit: number, childAge: number, currentBalance: number, growthRate: number) {
   const yearlyDeposit = Math.min(monthlyDeposit * 12, JISA_LIMIT)
