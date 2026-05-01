@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Android signing — NEVER commit (use keystore.properties locally)
+*.keystore
+*.jks
+android/keystore.properties
+keystore.properties

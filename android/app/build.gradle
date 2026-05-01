@@ -1,5 +1,12 @@
 apply plugin: 'com.android.application'
 
+// Load signing credentials from local keystore.properties (NOT in git)
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 android {
     namespace = "uk.calks.app"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -18,17 +25,21 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file('../calks-uk-release.keystore')
-            storePassword 'REDACTED_PASSWORD'
-            keyAlias 'calks-uk'
-            keyPassword 'REDACTED_PASSWORD'
+            if (keystoreProperties['storeFile']) {
+                storeFile file(keystoreProperties['storeFile'])
+                storePassword keystoreProperties['storePassword']
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+            }
         }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            if (keystoreProperties['storeFile']) {
+                signingConfig signingConfigs.release
+            }
         }
     }
 }
