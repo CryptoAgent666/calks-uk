@@ -2,9 +2,9 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // Tribunal limits 2026/27 (effective 6 April 2026)
-const BASIC_AWARD_MAX = 21_570 // 30 weeks x £719 cap
-const COMPENSATORY_AWARD_CAP = 117_071 // uprated from £115,115 in 2024/25
-const WEEKLY_PAY_CAP = 719 // was £643 in 2023/24 and 2024/25
+const WEEKLY_PAY_CAP = 735 // £735/week from 6 April 2026
+const BASIC_AWARD_MAX = WEEKLY_PAY_CAP * 30 // max 30 weeks x cap
+const COMPENSATORY_AWARD_CAP = 118_223 // uprated for 2026/27 (was £117,071 in 2025/26)
 
 function calculate(weeklyPay: number, age: number, yearsService: number, weeksLostPay: number) {
   const cappedPay = Math.min(weeklyPay, WEEKLY_PAY_CAP)

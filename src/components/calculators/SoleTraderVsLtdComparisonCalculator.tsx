@@ -11,8 +11,8 @@ function calculate() {
     if (profit > stPA) { if (profit <= 50_270) stTax = (profit - stPA) * 0.20; else stTax = (50_270 - stPA) * 0.20 + (profit - 50_270) * 0.40 }
     let stNI = 0
     if (profit > 12_570) { if (profit <= 50_270) stNI = (profit - 12_570) * 0.06; else stNI = (50_270 - 12_570) * 0.06 + (profit - 50_270) * 0.02 }
-    const stClass2 = profit >= 12_570 ? 182.00 : 0 // £3.50/week × 52 (2026/27)
-    const stTotal = stTax + stNI + stClass2
+    // Class 2 NI abolished from 6 April 2024 — no longer payable
+    const stTotal = stTax + stNI
 
     // Ltd (salary £12,570 + dividends)
     const ltdSalary = 12_570

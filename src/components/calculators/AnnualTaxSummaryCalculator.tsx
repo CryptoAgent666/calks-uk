@@ -32,18 +32,18 @@ function calculate(salary: number, dividends: number, selfEmployment: number, re
 
   let class4NI = 0
   if (selfEmployment > 12_570) { if (selfEmployment <= 50_270) class4NI = (selfEmployment - 12_570) * 0.06; else class4NI = (50_270 - 12_570) * 0.06 + (selfEmployment - 50_270) * 0.02 }
-  const class2NI = selfEmployment >= 12_570 ? 3.50 * 52 : 0
+  // Class 2 NI abolished from 6 April 2024 — removed
 
   // CGT (post-Oct 2024 Budget: 18%/24% for all assets)
   const cgtAllowance = 3_000
   const taxableCGT = Math.max(0, capitalGains - cgtAllowance)
   const cgt = nonDivIncome <= 50_270 ? taxableCGT * 0.18 : taxableCGT * 0.24
 
-  const totalTax = incomeTax + dividendTax + employeeNI + class4NI + class2NI + cgt
+  const totalTax = incomeTax + dividendTax + employeeNI + class4NI + cgt
   const totalGross = totalIncome + capitalGains
   const takeHome = totalGross - totalTax
 
-  return { totalIncome, pa, incomeTax, dividendTax, employeeNI, class4NI, class2NI, cgt, totalTax, takeHome, effectiveRate: totalGross > 0 ? (totalTax / totalGross) * 100 : 0 }
+  return { totalIncome, pa, incomeTax, dividendTax, employeeNI, class4NI, cgt, totalTax, takeHome, effectiveRate: totalGross > 0 ? (totalTax / totalGross) * 100 : 0 }
 }
 
 export default function AnnualTaxSummaryCalculator() {
@@ -84,8 +84,7 @@ export default function AnnualTaxSummaryCalculator() {
             {result.incomeTax > 0 && <tr className="border-b border-border/50"><td className="py-2 text-destructive">Income Tax</td><td className="text-right tabular-nums text-destructive">{formatCurrency(result.incomeTax)}</td></tr>}
             {result.dividendTax > 0 && <tr className="border-b border-border/50"><td className="py-2 text-destructive">Dividend Tax</td><td className="text-right tabular-nums text-destructive">{formatCurrency(result.dividendTax)}</td></tr>}
             {result.employeeNI > 0 && <tr className="border-b border-border/50"><td className="py-2 text-destructive">Employee NI (Class 1)</td><td className="text-right tabular-nums text-destructive">{formatCurrency(result.employeeNI)}</td></tr>}
-            {result.class4NI > 0 && <tr className="border-b border-border/50"><td className="py-2 text-destructive">Class 4 NI</td><td className="text-right tabular-nums text-destructive">{formatCurrency(result.class4NI)}</td></tr>}
-            {result.class2NI > 0 && <tr className="border-b border-border/50"><td className="py-2 text-destructive">Class 2 NI</td><td className="text-right tabular-nums text-destructive">{formatCurrency(result.class2NI)}</td></tr>}
+            {result.class4NI > 0 && <tr className="border-b border-border/50"><td className="py-2 text-destructive">Class 4 NI (6%/2%)</td><td className="text-right tabular-nums text-destructive">{formatCurrency(result.class4NI)}</td></tr>}
             {result.cgt > 0 && <tr className="border-b border-border/50"><td className="py-2 text-destructive">Capital Gains Tax</td><td className="text-right tabular-nums text-destructive">{formatCurrency(result.cgt)}</td></tr>}
             <tr className="font-semibold"><td className="py-2 text-destructive">Total Tax</td><td className="text-right tabular-nums text-destructive">{formatCurrency(result.totalTax)}</td></tr>
           </tbody>

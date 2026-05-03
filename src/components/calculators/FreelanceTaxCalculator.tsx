@@ -20,14 +20,14 @@ function calculate(dayRate: number, daysPerMonth: number, monthsPerYear: number,
     if (netProfit <= 50_270) class4 = (netProfit - 12_570) * 0.06
     else class4 = (50_270 - 12_570) * 0.06 + (netProfit - 50_270) * 0.02
   }
-  const class2 = netProfit >= 12_570 ? 3.50 * 52 : 0
+  // Class 2 NI was abolished from 6 April 2024 — no longer payable.
 
-  const totalTax = tax + class4 + class2
+  const totalTax = tax + class4
   const takeHome = netProfit - totalTax
   const effectiveRate = grossRevenue > 0 ? (totalTax / grossRevenue) * 100 : 0
   const needsVAT = grossRevenue > 90_000
 
-  return { grossRevenue, expenses, accountancyFee, netProfit, tax, class4, class2, totalTax, takeHome, effectiveRate, needsVAT, hourlyTakeHome: takeHome / (daysPerMonth * monthsPerYear * 8) }
+  return { grossRevenue, expenses, accountancyFee, netProfit, tax, class4, totalTax, takeHome, effectiveRate, needsVAT, hourlyTakeHome: takeHome / (daysPerMonth * monthsPerYear * 8) }
 }
 
 export default function FreelanceTaxCalculator() {
@@ -68,8 +68,7 @@ export default function FreelanceTaxCalculator() {
               <tr className="border-b border-border/50"><td className="py-2">Expenses + Accountancy</td><td className="text-right tabular-nums">-{formatCurrency(result.expenses + result.accountancyFee)}</td></tr>
               <tr className="border-b border-border font-medium"><td className="py-2">Net Profit</td><td className="text-right tabular-nums">{formatCurrency(result.netProfit)}</td></tr>
               <tr className="border-b border-border/50"><td className="py-2 text-destructive">Income Tax</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.tax)}</td></tr>
-              <tr className="border-b border-border/50"><td className="py-2 text-destructive">Class 4 NI</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.class4)}</td></tr>
-              <tr className="border-b border-border/50"><td className="py-2 text-destructive">Class 2 NI</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.class2)}</td></tr>
+              <tr className="border-b border-border/50"><td className="py-2 text-destructive">Class 4 NI (6%/2%)</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.class4)}</td></tr>
               <tr className="font-semibold"><td className="py-2 text-primary">Take-Home</td><td className="text-right tabular-nums text-primary">{formatCurrency(result.takeHome)}</td></tr>
             </tbody>
           </table>

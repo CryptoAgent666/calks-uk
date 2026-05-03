@@ -245,14 +245,13 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'self-assessment-tax-calculator': {
     howItWorks: [
       'Self Assessment is the system HMRC uses to collect income tax from people whose tax is not fully deducted at source. This includes the self-employed, company directors, landlords, and anyone with income over £150,000 or significant untaxed income.',
-      'This calculator estimates your Self Assessment tax bill by combining income tax, Class 2 NI (£3.45/week if profits exceed £12,570), Class 4 NI (6% on profits between £12,570 and £50,270, then 2% above) and any student loan repayments.',
+      'This calculator estimates your Self Assessment tax bill by combining income tax, Class 4 NI (6% on profits between £12,570 and £50,270, then 2% above) and any student loan repayments.',
       'Payment on Account may apply: if your tax bill is over £1,000 and less than 80% was collected at source, you may need to make two advance payments (each 50% of the previous year\'s bill) on 31 January and 31 July.',
     ],
     example: {
       title: 'Example: Self-employed, £55,000 profit',
       steps: [
         'Income tax: £8,432 (PA + Basic + partial Higher)',
-        'Class 2 NI: £179.40 (52 weeks × £3.45)',
         'Class 4 NI: £2,264 + £94.60 = £2,358.60',
         'Total Self Assessment bill: £10,970',
       ],
@@ -796,7 +795,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'state-pension-calculator': {
     howItWorks: [
       'The full new State Pension is £241.30 per week (£12,547.60/year) for 2026/27, uprated annually by the triple lock (highest of earnings growth, CPI inflation, or 2.5%). You need 35 qualifying years of National Insurance contributions to receive the full amount. With fewer than 35 years, you receive a proportional amount: each qualifying year adds 1/35th, so 25 years gives 25/35 x £241.30 = £158.00/week. A minimum of 10 qualifying years is required to receive anything.',
-      'Qualifying years are built through employed earnings above the lower earnings limit (£6,500/year for 2026/27), self-employed Class 2 NI contributions, or National Insurance credits (received automatically for Child Benefit recipients, Universal Credit claimants, and carers). You can check your NI record online to see how many qualifying years you have and identify any gaps.',
+      'Qualifying years are built through employed earnings above the lower earnings limit (£6,708/year for 2026/27), self-employed Class 4 NI contributions, or National Insurance credits (received automatically for Child Benefit recipients, Universal Credit claimants, and carers). You can check your NI record online to see how many qualifying years you have and identify any gaps.',
       'Gaps in your NI record can be filled by paying voluntary Class 3 contributions (£17.45/week for 2026/27). Each additional year purchased adds approximately £6.34/week (£329.68/year) to your State Pension. At the current Class 3 rate, buying one year costs around £907 and pays back within about 2.75 years of receiving the pension — making it one of the best returns available for most people with gaps in their record.'
     ],
     example: {
@@ -903,8 +902,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       steps: [
         'Net profit after expenses: \u00a355,000.',
         'Income Tax: \u00a30 on first \u00a312,570. \u00a337,700 \u00d7 20% = \u00a37,540. \u00a34,730 \u00d7 40% = \u00a31,892. Total IT: \u00a39,432.',
-        'Class 2 NI: \u00a33.45 \u00d7 52 = \u00a3179.40.',
-        'Class 4 NI: (\u00a350,270 \u2212 \u00a312,570) \u00d7 6% = \u00a32,262. (\u00a355,000 \u2212 \u00a350,270) \u00d7 2% = \u00a394.60.',
+                'Class 4 NI: (\u00a350,270 \u2212 \u00a312,570) \u00d7 6% = \u00a32,262. (\u00a355,000 \u2212 \u00a350,270) \u00d7 2% = \u00a394.60.',
         'Total tax and NI: \u00a39,432 + \u00a3179.40 + \u00a32,262 + \u00a394.60 = \u00a311,968. Take-home: \u00a343,032.'
       ]
     },
@@ -2870,7 +2868,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'side-hustle-tax-calculator': {
     howItWorks: [
-      'Income from a side hustle is taxable if it exceeds the £1,000 trading allowance. Below this threshold, you do not need to declare it or register for Self Assessment. Above £1,000, you must register as self-employed with HMRC, file a Self Assessment tax return and pay income tax and Class 2 and Class 4 National Insurance on your profits.',
+      'Income from a side hustle is taxable if it exceeds the £1,000 trading allowance. Below this threshold, you do not need to declare it or register for Self Assessment. Above £1,000, you must register as self-employed with HMRC, file a Self Assessment tax return and pay income tax and Class 4 National Insurance on your profits.',
       'You can choose to either deduct the £1,000 trading allowance from your gross income or deduct your actual expenses instead — whichever gives a lower taxable profit. For side income with minimal expenses, the trading allowance is usually more beneficial. Separate property income allowance of £1,000 also exists for rental income.',
       'Tax on side income is calculated at your marginal rate, which depends on your total income from all sources. If your day job already uses your basic-rate band, side hustle profits may be taxed at the higher rate of 40%. Class 4 NI is 6% on profits between £12,570 and £50,270, then 2% above that.',
     ],
@@ -3094,7 +3092,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     howItWorks: [
       'Salary sacrifice reduces your gross contractual pay and your employer pays the sacrificed amount directly into your pension. Because the contribution comes from the employer, neither employee National Insurance (8% on earnings £12,570-£50,270) nor employer NI (13.8%) is payable on the sacrificed amount. Under relief at source, you contribute from net pay and only save income tax, not NI — so salary sacrifice is always more efficient when NI applies.',
       'The calculation compares take-home pay under both methods. With relief at source on a £500 monthly contribution from a £40,000 salary, you pay from net pay and reclaim 20% basic rate relief, costing you £400/month. With salary sacrifice, your salary drops by £500 but you save £40 employee NI (8% of £500), so your net pay only drops by £360 — an extra £40/month reaching your pension or pocket.',
-      'Your employer also saves 15% NI on the sacrificed amount (£69 on £500). Many employers share part or all of this saving by adding it to your pension contribution. Salary sacrifice reduces your qualifying earnings for State Pension, statutory maternity pay, and mortgage affordability assessments, so the calculator flags when sacrifice would take earnings below the NI lower earnings limit (£6,500) or affect benefit entitlements.'
+      'Your employer also saves 15% NI on the sacrificed amount (£69 on £500). Many employers share part or all of this saving by adding it to your pension contribution. Salary sacrifice reduces your qualifying earnings for State Pension, statutory maternity pay, and mortgage affordability assessments, so the calculator flags when sacrifice would take earnings below the NI lower earnings limit (£6,708) or affect benefit entitlements.'
     ],
     example: {
       title: 'Salary sacrifice vs relief at source on £600/month pension contribution',
@@ -3520,14 +3518,14 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'sole-trader-vs-ltd-calculator': {
     howItWorks: [
-      'A sole trader pays Income Tax and National Insurance directly on all business profits. The tax rates are personal rates: 20%/40%/45% IT bands plus Class 2 (\u00a3179.40/year) and Class 4 NI (6%/2%). Setup is immediate\u2014register with HMRC and start trading. There is no legal separation between you and the business, meaning personal assets are exposed to business liabilities. Accounting requirements are minimal: simple income/expenses records and an annual Self Assessment return.',
+      'A sole trader pays Income Tax and National Insurance directly on all business profits. The tax rates are personal rates: 20%/40%/45% IT bands plus Class 4 NI (6%/2%) — Class 2 NI was abolished in April 2024. Setup is immediate\u2014register with HMRC and start trading. There is no legal separation between you and the business, meaning personal assets are exposed to business liabilities. Accounting requirements are minimal: simple income/expenses records and an annual Self Assessment return.',
       'A limited company pays Corporation Tax on profits at 19% (profits under \u00a350,000) scaling to 25% (profits over \u00a3250,000), with marginal relief between those thresholds. The director/shareholder then extracts profits via a combination of salary and dividends. This two-stage extraction (CT then dividend tax) is often cheaper than sole trader rates at higher profit levels because dividends avoid National Insurance entirely. However, the company must file annual accounts with Companies House, maintain statutory registers, and comply with more complex regulatory obligations.',
       'The crossover point where a limited company becomes more tax-efficient than sole trading typically falls between \u00a330,000 and \u00a345,000 of annual profit, depending on the director\'s other income and personal circumstances. Below this level, the administrative cost and complexity of a limited company often outweigh the modest tax saving. Above \u00a350,000 profit, the combined CT plus dividend tax route usually saves several thousand pounds per year compared with sole trader IT and NI. Other factors include liability protection, pension contribution options, and the perceived credibility of a limited company structure.'
     ],
     example: {
       title: 'Tax comparison at \u00a360,000 profit',
       steps: [
-        'Sole trader: IT on \u00a360,000 = \u00a311,432 + Class 2 \u00a3179 + Class 4 \u00a32,557 = \u00a314,168 total. Take-home: \u00a345,832.',
+        'Sole trader: IT on \u00a360,000 = \u00a311,432 + Class 4 \u00a32,557 = \u00a313,989 total. Take-home: \u00a346,011.',
         'Ltd: salary \u00a312,570 (IT \u00a30, NI \u00a30). Remaining profit: \u00a347,430.',
         'Corporation Tax at 19%: \u00a39,012. Post-CT profit: \u00a338,418 paid as dividends.',
         'Dividend tax: \u00a3500 allowance free, \u00a337,918 \u00d7 8.75% = \u00a33,318.',
@@ -3997,15 +3995,14 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     howItWorks: [
       'Freelance tax in the UK is calculated on your net taxable profit: total business income minus allowable expenses. Allowable expenses include materials, software, professional subscriptions, travel, insurance, a proportion of home office costs, phone, and accountancy fees. The resulting profit figure is then subject to Income Tax and two classes of National Insurance via the Self Assessment system, with payments due by 31 January following the tax year.',
       'Income Tax is applied in bands after deducting the \u00a312,570 Personal Allowance: 20% on the first \u00a337,700 of taxable income (basic rate), 40% on income between \u00a350,271 and \u00a3125,140 (higher rate), and 45% above \u00a3125,140 (additional rate). The Personal Allowance reduces by \u00a31 for every \u00a32 of income above \u00a3100,000, reaching zero at \u00a3125,140\u2014creating an effective 60% marginal rate in that band.',
-      'Class 2 NI is a flat weekly amount of \u00a33.45 per week (\u00a3179.40 per year) payable when profits exceed \u00a312,570. Class 4 NI is 6% on profits between \u00a312,570 and \u00a350,270, then 2% on profits above \u00a350,270. Both are collected through Self Assessment. Payments on Account (two advance payments of 50% each in January and July) apply if your tax bill exceeds \u00a31,000 and less than 80% is collected at source.'
+      'Class 2 NI was abolished from 6 April 2024 \u2014 self-employed people no longer pay it. You receive NI credit automatically if profits reach \u00a36,725 (Small Profits Threshold). Class 4 NI is 6% on profits between \u00a312,570 and \u00a350,270, then 2% on profits above \u00a350,270. Both are collected through Self Assessment. Payments on Account (two advance payments of 50% each in January and July) apply if your tax bill exceeds \u00a31,000 and less than 80% is collected at source.'
     ],
     example: {
       title: 'Tax on \u00a348,000 freelance profit',
       steps: [
         'Freelance revenue: \u00a358,000. Allowable expenses: \u00a310,000. Net profit: \u00a348,000.',
         'Income Tax: \u00a30 on first \u00a312,570. Then \u00a335,430 \u00d7 20% = \u00a37,086.',
-        'Class 2 NI: \u00a33.45 \u00d7 52 = \u00a3179.40 per year.',
-        'Class 4 NI: (\u00a348,000 \u2212 \u00a312,570) \u00d7 6% = \u00a32,125.80.',
+                'Class 4 NI: (\u00a348,000 \u2212 \u00a312,570) \u00d7 6% = \u00a32,125.80.',
         'Total tax and NI: \u00a37,086 + \u00a3179.40 + \u00a32,125.80 = \u00a39,391.20. Take-home: \u00a338,608.80.'
       ]
     },
@@ -5913,14 +5910,14 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
      ────────────────────────────────────────────────────────────── */
   'sole-trader-vs-ltd-comparison-calculator': {
     howItWorks: [
-      'This comparison generates a side-by-side table at multiple profit levels from \u00a320,000 to \u00a3100,000, showing the total tax burden and take-home pay under each business structure. For the sole trader column, each profit level is run through the full Income Tax bands (20%/40%/45% after the \u00a312,570 Personal Allowance), Class 2 NI (\u00a3179.40/year), and Class 4 NI (6% on \u00a312,570\u2013\u00a350,270, 2% above). The result is the net income the sole trader retains.',
+      'This comparison generates a side-by-side table at multiple profit levels from \u00a320,000 to \u00a3100,000, showing the total tax burden and take-home pay under each business structure. For the sole trader column, each profit level is run through the full Income Tax bands (20%/40%/45% after the \u00a312,570 Personal Allowance), and Class 4 NI (6% on \u00a312,570\u2013\u00a350,270, 2% above). The result is the net income the sole trader retains.',
       'For the limited company column, the calculation assumes an optimal extraction strategy: salary set at the Personal Allowance level of \u00a312,570 (minimising NI), with remaining profits subject to Corporation Tax and then withdrawn as dividends. Corporation Tax rates are applied using the marginal relief formula for profits between \u00a350,000 and \u00a3250,000 (effective rate rising from 19% to 25%). Dividend tax is calculated at 8.75%/33.75%/39.35% after the \u00a3500 dividend allowance.',
       'The comparison accounts for the additional running costs of a limited company\u2014typically \u00a31,000\u2013\u00a32,000 per year for accountancy, Companies House filing fees (\u00a313), and Confirmation Statement fees (\u00a334). These are deducted from the Ltd take-home to give a fair like-for-like comparison. The table clearly shows the crossover point where Ltd becomes more tax-efficient and quantifies the annual saving or cost at each profit level, helping business owners make an informed structural decision.'
     ],
     example: {
       title: 'Comparison table at \u00a340,000 profit',
       steps: [
-        'Sole trader at \u00a340,000: IT \u00a35,486 + Class 2 \u00a3179 + Class 4 \u00a31,646 = \u00a37,311. Take-home: \u00a332,689.',
+        'Sole trader at \u00a340,000: IT \u00a35,486 + Class 4 \u00a31,646 = \u00a37,132. Take-home: \u00a332,868.',
         'Ltd at \u00a340,000: salary \u00a312,570 (no tax/NI). Profit after salary: \u00a327,430.',
         'Corporation Tax: \u00a327,430 \u00d7 19% = \u00a35,212. Available for dividends: \u00a322,218.',
         'Dividend tax: \u00a3500 free, \u00a321,718 \u00d7 8.75% = \u00a31,900. Accountancy fees: \u00a31,200.',

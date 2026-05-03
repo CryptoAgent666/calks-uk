@@ -82,7 +82,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'self-assessment-tax-calculator',
     title: 'Self-Assessment Tax Calculator',
-    description: 'Estimate your self-assessment tax bill including income tax, National Insurance Class 2 and Class 4 for self-employed.',
+    description: 'Estimate your self-assessment tax bill including income tax and Class 4 National Insurance for self-employed.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['self assessment', 'self employed tax', 'tax return', 'freelancer tax'],
@@ -393,7 +393,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'sole-trader-tax-calculator',
     title: 'Sole Trader Tax Calculator',
-    description: 'Calculate income tax, Class 2 and Class 4 NI for sole traders and self-employed individuals.',
+    description: 'Calculate income tax and Class 4 NI for sole traders and self-employed individuals.',
     category: 'business',
     icon: 'Briefcase',
     keywords: ['sole trader', 'self employed', 'sole trader tax', 'self employed tax'],

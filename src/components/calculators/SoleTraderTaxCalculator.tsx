@@ -18,20 +18,20 @@ function calculate(revenue: number, expenses: number) {
     else incomeTax = (BASIC_LIMIT - pa) * 0.20 + (HIGHER_LIMIT - BASIC_LIMIT) * 0.40 + (profit - HIGHER_LIMIT) * 0.45
   }
 
-  // Class 2 NI: £3.50/week if profit >= £12,570 (2026/27)
-  const class2 = profit >= 12_570 ? 3.50 * 52 : 0
+  // Class 2 NI was abolished from 6 April 2024.
+  // Self-employed get NI credit automatically if profits >= £6,725 (Small Profits Threshold).
 
-  // Class 4 NI
+  // Class 4 NI (6%/2% from April 2024 onwards)
   let class4 = 0
   if (profit > 12_570) {
     if (profit <= 50_270) class4 = (profit - 12_570) * 0.06
     else class4 = (50_270 - 12_570) * 0.06 + (profit - 50_270) * 0.02
   }
 
-  const totalTax = incomeTax + class2 + class4
+  const totalTax = incomeTax + class4
   const takeHome = profit - totalTax
 
-  return { revenue, expenses, profit, incomeTax, class2, class4, totalTax, takeHome, effectiveRate: profit > 0 ? (totalTax / profit) * 100 : 0 }
+  return { revenue, expenses, profit, incomeTax, class4, totalTax, takeHome, effectiveRate: profit > 0 ? (totalTax / profit) * 100 : 0 }
 }
 
 export default function SoleTraderTaxCalculator() {
@@ -71,8 +71,7 @@ export default function SoleTraderTaxCalculator() {
               <tr className="border-b border-border/50"><td className="py-2.5">Expenses</td><td className="text-right tabular-nums">-{formatCurrency(result.expenses)}</td></tr>
               <tr className="border-b border-border font-medium"><td className="py-2.5">Taxable Profit</td><td className="text-right tabular-nums">{formatCurrency(result.profit)}</td></tr>
               <tr className="border-b border-border/50"><td className="py-2.5 text-destructive">Income Tax</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.incomeTax)}</td></tr>
-              <tr className="border-b border-border/50"><td className="py-2.5 text-destructive">Class 2 NI</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.class2)}</td></tr>
-              <tr className="border-b border-border/50"><td className="py-2.5 text-destructive">Class 4 NI</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.class4)}</td></tr>
+              <tr className="border-b border-border/50"><td className="py-2.5 text-destructive">Class 4 NI (6%/2%)</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.class4)}</td></tr>
               <tr className="font-semibold"><td className="py-2.5 text-primary">Take Home</td><td className="text-right tabular-nums text-primary">{formatCurrency(result.takeHome)}</td></tr>
             </tbody>
           </table>
