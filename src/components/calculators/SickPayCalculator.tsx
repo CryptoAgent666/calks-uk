@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // SSP 2026/27
-const SSP_RATE = 118.75 // per week
+const SSP_RATE = 123.25 // per week (2026/27)
 const SSP_WAITING_DAYS = 3
 const SSP_MAX_WEEKS = 28
 const SSP_LOWER_EARNINGS = 125 // weekly minimum to qualify

@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, formatPercent } from '@/utils'
 
-const FIRST_CHILD = 26.05 * 52
-const ADDITIONAL_CHILD = 17.25 * 52
+const FIRST_CHILD = 27.05 * 52
+const ADDITIONAL_CHILD = 17.90 * 52
 const HICBC_START = 60_000
 const HICBC_END = 80_000
 

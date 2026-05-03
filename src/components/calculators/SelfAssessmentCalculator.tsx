@@ -6,11 +6,11 @@ const BASIC_LIMIT = 50_270
 const HIGHER_LIMIT = 125_140
 const PA_TAPER = 100_000
 
-// Class 2 NI
-const CLASS2_RATE = 3.50 * 52 // £3.50/week (2026/27)
-const CLASS2_THRESHOLD = 12_570
+// Class 2 NI was abolished from 6 April 2024. Self-employed people with profits
+// at or above the Small Profits Threshold (£6,725) automatically receive NI credit
+// without having to pay anything.
 
-// Class 4 NI
+// Class 4 NI (2026/27 — main rate 6% from April 2024 onwards)
 const CLASS4_LOWER = 12_570
 const CLASS4_UPPER = 50_270
 const CLASS4_MAIN_RATE = 0.06 // 6%
@@ -28,9 +28,6 @@ function calculate(profit: number) {
     else incomeTax = (BASIC_LIMIT - pa) * 0.20 + (HIGHER_LIMIT - BASIC_LIMIT) * 0.40 + (profit - HIGHER_LIMIT) * 0.45
   }
 
-  // Class 2 NI
-  const class2 = profit >= CLASS2_THRESHOLD ? CLASS2_RATE : 0
-
   // Class 4 NI
   let class4 = 0
   if (profit > CLASS4_LOWER) {
@@ -38,9 +35,9 @@ function calculate(profit: number) {
     else class4 = (CLASS4_UPPER - CLASS4_LOWER) * CLASS4_MAIN_RATE + (profit - CLASS4_UPPER) * CLASS4_ADDITIONAL_RATE
   }
 
-  const totalTax = incomeTax + class2 + class4
+  const totalTax = incomeTax + class4
   return {
-    profit, incomeTax, class2, class4, totalTax,
+    profit, incomeTax, class4, totalTax,
     takeHome: profit - totalTax,
     effectiveRate: profit > 0 ? (totalTax / profit) * 100 : 0,
   }
@@ -79,8 +76,7 @@ export default function SelfAssessmentCalculator() {
             <tbody>
               <tr className="border-b border-border/50"><td className="py-2.5 font-medium">Net Profit</td><td className="text-right tabular-nums">{formatCurrency(result.profit)}</td><td className="text-right tabular-nums">{formatCurrency(result.profit / 12)}</td></tr>
               <tr className="border-b border-border/50"><td className="py-2.5 text-destructive">Income Tax</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.incomeTax)}</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.incomeTax / 12)}</td></tr>
-              <tr className="border-b border-border/50"><td className="py-2.5 text-destructive">Class 2 NI</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.class2)}</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.class2 / 12)}</td></tr>
-              <tr className="border-b border-border/50"><td className="py-2.5 text-destructive">Class 4 NI</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.class4)}</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.class4 / 12)}</td></tr>
+              <tr className="border-b border-border/50"><td className="py-2.5 text-destructive">Class 4 NI (6%/2%)</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.class4)}</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.class4 / 12)}</td></tr>
               <tr className="font-semibold border-t border-border"><td className="py-2.5 text-primary">Take Home</td><td className="text-right tabular-nums text-primary">{formatCurrency(result.takeHome)}</td><td className="text-right tabular-nums text-primary">{formatCurrency(result.takeHome / 12)}</td></tr>
             </tbody>
           </table>

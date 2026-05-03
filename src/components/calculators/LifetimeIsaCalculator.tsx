@@ -25,8 +25,7 @@ function calculate(monthlyDeposit: number, currentAge: number, currentBalance: n
     totalBonus += bonus
   }
 
-  // If buying property, penalty for early withdrawal (25% of amount withdrawn, not just the bonus)
-  const withdrawalPenalty = purpose === 'property' && currentAge < 60 ? 0 : 0 // no penalty for property or retirement
+  // No penalty applies for qualifying use (first home or age 60+ retirement)
   const totalGrowth = balance - totalDeposits - totalBonus
 
   return { balance, totalDeposits, totalBonus, totalGrowth, yearsContributing, yearlyDeposit, yearlyBonus }
