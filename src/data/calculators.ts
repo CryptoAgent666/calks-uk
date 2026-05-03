@@ -1186,7 +1186,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'sick-pay-calculator',
     title: 'Statutory Sick Pay Calculator',
-    description: 'Calculate SSP entitlement at £118.75/week. Includes waiting days and maximum 28-week limit.',
+    description: 'Calculate SSP entitlement at £123.25/week. Includes waiting days and maximum 28-week limit.',
     category: 'pay',
     icon: 'Banknote',
     keywords: ['sick pay', 'SSP', 'statutory sick pay', 'illness pay'],

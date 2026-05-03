@@ -42,6 +42,11 @@ android {
             }
         }
     }
+    // Workaround for Gradle 9.3 + AGP 8.x lintVitalAnalyzeRelease bug
+    lint {
+        checkReleaseBuilds = false
+        abortOnError = false
+    }
 }
 
 repositories {

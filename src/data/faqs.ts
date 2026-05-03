@@ -518,7 +518,7 @@ export const CALCULATOR_FAQS: Record<string, FAQ[]> = {
     { question: `Do I need to tell HMRC about this?`,  answer: `Whether you need to report to HMRC depends on your individual circumstances. If you are unsure, check GOV.UK or contact HMRC directly. This calculator provides estimates for guidance only.` },
   ],
   'sick-pay-calculator': [
-    { question: `What does the Statutory Sick Pay Calculator do?`,  answer: `Calculate SSP entitlement at £118.75/week. Includes waiting days and maximum 28-week limit.` },
+    { question: `What does the Statutory Sick Pay Calculator do?`,  answer: `Calculate SSP entitlement at £123.25/week. Includes waiting days and maximum 28-week limit.` },
     { question: `Is this calculator based on 2026/27 rates?`,  answer: `Yes. This calculator uses the current 2026/27 UK tax year rates for income tax, National Insurance and other deductions, effective from 6 April 2026.` },
     { question: `Does this include pension contributions?`,  answer: `This calculator can factor in workplace pension contributions. Under auto-enrolment, the minimum is 8% total (5% employee + 3% employer) of qualifying earnings.` },
   ],
