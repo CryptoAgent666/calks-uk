@@ -4,6 +4,10 @@
  */
 
 export interface CalculatorContent {
+  /** Quick TL;DR answer (1-3 sentences) shown above calculator — optimised for AI citation */
+  quickAnswer?: string
+  /** Optional HTML table (rates, thresholds, tiers) — easier for LLMs to cite than prose */
+  rateTable?: { title: string; html: string }
   /** Heading for the explanation section */
   howItWorks: string[]
   /** A worked example with specific numbers */
@@ -18,6 +22,8 @@ export interface CalculatorContent {
 
 export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'income-tax-calculator': {
+    quickAnswer: `UK income tax in 2026/27 has a <strong>£12,570 Personal Allowance</strong>, then <strong>20% Basic Rate</strong> up to £50,270, <strong>40% Higher Rate</strong> up to £125,140, and <strong>45% Additional Rate</strong> above. The allowance tapers off between £100,000 and £125,140 at an effective 60% marginal rate.`,
+    rateTable: { title: `UK Income Tax bands 2026/27 (England, Wales, NI)`, html: `<table><thead><tr><th>Band</th><th>Taxable income</th><th>Rate</th></tr></thead><tbody><tr><td>Personal Allowance</td><td>Up to £12,570</td><td>0%</td></tr><tr><td>Basic Rate</td><td>£12,571 to £50,270</td><td><strong>20%</strong></td></tr><tr><td>Higher Rate</td><td>£50,271 to £125,140</td><td><strong>40%</strong></td></tr><tr><td>Additional Rate</td><td>Over £125,140</td><td><strong>45%</strong></td></tr></tbody></table>` },
     howItWorks: [
       'UK income tax is calculated on a progressive banding system. You are entitled to a tax-free Personal Allowance of £12,570 for the 2026/27 tax year. Income above that is taxed at increasing rates: 20% Basic Rate (£12,571–£50,270), 40% Higher Rate (£50,271–£125,140) and 45% Additional Rate (above £125,140).',
       'If you earn more than £100,000, your Personal Allowance is reduced by £1 for every £2 above this threshold. This creates an effective marginal rate of 60% on income between £100,000 and £125,140. The allowance is completely eliminated at £125,140.',
@@ -38,6 +44,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'national-insurance-calculator': {
+    quickAnswer: `UK employee National Insurance (Class 1) in 2026/27 is <strong>8% on earnings between £12,570 and £50,270</strong>, then <strong>2% above £50,270</strong>. There is no NI below the £12,570 Primary Threshold.`,
     howItWorks: [
       'Class 1 Employee National Insurance is charged on earnings above the Primary Threshold of £12,570 per year. For the 2026/27 tax year, the rate is 8% on earnings between £12,570 and £50,270 (the Upper Earnings Limit), then 2% on everything above £50,270.',
       'NI is calculated on a per-pay-period basis, so weekly and monthly thresholds differ slightly from the annual figures. This calculator uses annualised thresholds for simplicity, which gives results that match HMRC\'s annual calculation to within a few pence.',
@@ -57,6 +64,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'vat-calculator': {
+    quickAnswer: `UK VAT standard rate is <strong>20%</strong> (reduced 5%, zero 0%). To add VAT: multiply by 1.20. To remove VAT: divide by 1.20. The VAT-inclusive total divided by 6 gives the VAT portion. VAT registration threshold is £90,000.`,
+    rateTable: { title: `UK VAT rates`, html: `<table><thead><tr><th>Rate</th><th>Applies to</th></tr></thead><tbody><tr><td><strong>20%</strong> Standard</td><td>Most goods and services</td></tr><tr><td><strong>5%</strong> Reduced</td><td>Domestic energy, children car seats, mobility aids, sanitary products</td></tr><tr><td><strong>0%</strong> Zero</td><td>Most food, children clothing, books, prescription medicines, public transport</td></tr><tr><td>Exempt</td><td>Insurance, finance, education, healthcare (cannot reclaim input VAT)</td></tr></tbody></table>` },
     howItWorks: [
       'Value Added Tax (VAT) in the UK is charged at three rates: Standard (20%), Reduced (5%) and Zero (0%). The standard rate applies to most goods and services. The reduced rate covers items like home energy, child car seats and mobility aids. The zero rate applies to essentials including most food, children\'s clothing and books.',
       'This calculator supports three modes: Add VAT (calculate the gross from a net amount), Remove VAT (find the net from a gross amount) and Reverse VAT (extract the VAT component from a VAT-inclusive total). The formula to remove 20% VAT from a gross price is: Net = Gross ÷ 1.20.',
@@ -77,6 +86,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'stamp-duty-calculator': {
+    quickAnswer: `UK Stamp Duty (SDLT) in 2026/27: <strong>0% up to £125,000</strong>, 2% to £250,000, 5% to £925,000, 10% to £1.5m, 12% above. First-time buyers: 0% up to £300,000, 5% to £500,000. Additional property: +5% surcharge.`,
+    rateTable: { title: `UK Stamp Duty Land Tax bands 2026/27 (standard residential)`, html: `<table><thead><tr><th>Property price band</th><th>SDLT rate</th></tr></thead><tbody><tr><td>£0 to £125,000</td><td>0%</td></tr><tr><td>£125,001 to £250,000</td><td>2%</td></tr><tr><td>£250,001 to £925,000</td><td>5%</td></tr><tr><td>£925,001 to £1,500,000</td><td>10%</td></tr><tr><td>Over £1,500,000</td><td>12%</td></tr></tbody></table>` },
     howItWorks: [
       'Stamp Duty Land Tax (SDLT) is payable on property purchases in England and Northern Ireland above certain thresholds. From April 2025, the standard nil-rate band is £125,000. Rates then rise through bands: 2% (£125,001–£250,000), 5% (£250,001–£925,000), 10% (£925,001–£1.5m) and 12% (above £1.5m).',
       'First-time buyers purchasing their first home up to £500,000 pay no SDLT on the first £300,000, then 5% on the portion from £300,001 to £500,000. Properties above £500,000 do not qualify for first-time buyer relief.',
@@ -97,6 +108,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'take-home-pay-calculator': {
+    quickAnswer: `Your UK take-home pay = gross salary minus income tax (20%/40%/45%), employee NI (8%/2%), pension contribution and student loan if applicable. Typical take-home on <strong>£35,000</strong> is around <strong>£27,800/year</strong> (£2,317/month).`,
     howItWorks: [
       'Your take-home pay is what remains after all statutory deductions are subtracted from your gross salary. In the UK, these deductions include income tax (based on your tax code and banding), employee National Insurance (8% and 2%), workplace pension contributions (typically 5% for auto-enrolment) and student loan repayments (if applicable).',
       'This calculator applies deductions in the correct order: pension contributions are deducted before tax if made via salary sacrifice, or after tax if made via net-pay arrangement. Student loan repayments are calculated at 9% of income above the relevant plan threshold (6% for Postgraduate Loans).',
@@ -120,6 +132,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'mortgage-repayment-calculator': {
+    quickAnswer: `UK mortgage monthly payment uses the standard formula: <strong>M = P × r(1+r)^n / ((1+r)^n − 1)</strong> where P is loan, r is monthly rate, n is number of months. A £200,000 mortgage at 5% over 25 years costs about <strong>£1,169/month</strong>.`,
     howItWorks: [
       'A repayment mortgage calculator uses the standard amortisation formula to calculate your fixed monthly payment. The formula accounts for the loan amount, annual interest rate and loan term to produce a payment that covers both interest and capital repayment, so the loan is fully repaid by the end of the term.',
       'With a repayment mortgage, early payments are mostly interest, but over time the capital portion grows. An interest-only mortgage charges only the interest each month, leaving the full capital balance due at the end. This calculator supports both types and shows the total amount repaid over the life of the loan.',
@@ -140,6 +153,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'pension-calculator': {
+    quickAnswer: `Workplace pension auto-enrolment minimum is <strong>8% total</strong> on qualifying earnings (£6,240 to £50,270): 5% from you, 3% from your employer. Higher rate taxpayers get <strong>40% tax relief</strong>. Annual allowance is £60,000 for 2026/27.`,
     howItWorks: [
       'This calculator projects the value of your pension pot at retirement based on your current contributions, employer contributions, investment growth and tax relief. It uses compound growth with monthly contributions to model how your pot grows over time.',
       'UK pension contributions receive tax relief at your marginal rate. Basic-rate taxpayers get 20% relief automatically (a £100 contribution costs you £80). Higher-rate taxpayers can claim an additional 20% through Self Assessment. The annual allowance for 2026/27 is £60,000.',
@@ -162,6 +176,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'capital-gains-tax-calculator': {
+    quickAnswer: `UK Capital Gains Tax in 2026/27: <strong>£3,000 annual exempt amount</strong>, then 18% (basic rate) or 24% (higher rate) on all asset types including residential property. Rates were unified in the October 2024 Budget.`,
     howItWorks: [
       'Capital Gains Tax (CGT) is charged on the profit you make when you sell or dispose of an asset that has increased in value. For the 2026/27 tax year, the annual exempt amount is £3,000. Gains above this are taxed at different rates depending on the asset type and your income tax band.',
       'Residential property gains are taxed at 18% (basic rate) or 24% (higher/additional rate). All other assets are taxed at 10% (basic rate) or 20% (higher/additional rate). Your unused basic rate band determines which rate applies to your gains.',
@@ -182,6 +197,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'inheritance-tax-calculator': {
+    quickAnswer: `UK Inheritance Tax in 2026/27: <strong>£325,000 nil-rate band</strong> plus <strong>£175,000 residence nil-rate band</strong> (for home left to direct descendants). Rate is <strong>40%</strong> above the threshold. RNRB tapers at £2m+ estates.`,
     howItWorks: [
       'Inheritance Tax (IHT) is charged at 40% on the value of an estate above the nil-rate band of £325,000. An additional residence nil-rate band (RNRB) of £175,000 is available when passing a home to direct descendants (children or grandchildren), giving a potential threshold of £500,000 per person.',
       'Married couples and civil partners can transfer unused nil-rate bands to the surviving partner, potentially giving a combined threshold of £1 million. The rate is reduced to 36% if at least 10% of the net estate is left to qualifying charities.',
@@ -203,6 +219,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'dividend-tax-calculator': {
+    quickAnswer: `UK Dividend Tax in 2026/27 starts after a <strong>£500 tax-free allowance</strong>. Then: <strong>8.75%</strong> Basic Rate, <strong>33.75%</strong> Higher Rate, <strong>39.35%</strong> Additional Rate. Dividends within an ISA are completely tax-free.`,
     howItWorks: [
       'UK dividends are taxed at special rates that are lower than income tax rates. For 2026/27, the tax-free dividend allowance is £500. Dividends above this are taxed at 8.75% (basic rate), 33.75% (higher rate) or 39.35% (additional rate).',
       'Dividends are added on top of your other income to determine which band they fall into. If your salary already uses up the basic-rate band, your dividends will be taxed at the higher rate. Company directors often optimise the salary/dividend split to minimise total tax.',
@@ -224,6 +241,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'student-loan-repayment-calculator': {
+    quickAnswer: `UK student loan repayments (2026/27): <strong>Plan 1</strong> 9% above £26,900; <strong>Plan 2</strong> 9% above £29,385; <strong>Plan 4</strong> 9% above £33,795 (Scotland); <strong>Plan 5</strong> 9% above £25,000; <strong>Postgraduate</strong> 6% above £21,000.`,
+    rateTable: { title: `UK Student Loan plan thresholds (2026/27)`, html: `<table><thead><tr><th>Plan</th><th>Who</th><th>Threshold</th><th>Rate</th></tr></thead><tbody><tr><td>Plan 1</td><td>Started before Sep 2012 (E&amp;W)</td><td>£26,900</td><td>9%</td></tr><tr><td>Plan 2</td><td>Sep 2012 to Aug 2023 (E&amp;W)</td><td>£29,385</td><td>9%</td></tr><tr><td>Plan 4</td><td>Scotland</td><td>£33,795</td><td>9%</td></tr><tr><td>Plan 5</td><td>From Aug 2023 (E&amp;W)</td><td>£25,000</td><td>9%</td></tr><tr><td>Postgraduate</td><td>Master or PhD loans</td><td>£21,000</td><td>6%</td></tr></tbody></table>` },
     howItWorks: [
       'Student loan repayments are collected through PAYE alongside tax and NI. You repay 9% of income above your plan\'s threshold (6% for Postgraduate Loans). For 2026/27: Plan 1 threshold is £26,900, Plan 2 is £29,385, Plan 4 (Scotland) is £33,795, and Plan 5 is £25,000.',
       'Repayments are calculated per pay period, not annually. If you are on multiple plans, you repay each one separately. For example, if you have a Plan 2 loan and a Postgraduate Loan, you pay 9% on income above £29,385 for Plan 2, plus 6% above £21,000 for the Postgraduate Loan.',
@@ -243,6 +262,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'self-assessment-tax-calculator': {
+    quickAnswer: `Self Assessment for 2026/27 includes income tax (20%/40%/45%) plus <strong>Class 4 NI at 6%/2%</strong>. Class 2 was abolished in April 2024. Filing deadline: <strong>31 January 2028</strong> for the 2026/27 year. Penalty £100 for late filing.`,
     howItWorks: [
       'Self Assessment is the system HMRC uses to collect income tax from people whose tax is not fully deducted at source. This includes the self-employed, company directors, landlords, and anyone with income over £150,000 or significant untaxed income.',
       'This calculator estimates your Self Assessment tax bill by combining income tax, Class 4 NI (6% on profits between £12,570 and £50,270, then 2% above) and any student loan repayments.',
@@ -262,6 +282,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'corporation-tax-calculator': {
+    quickAnswer: `UK Corporation Tax in 2026/27: <strong>19% Small Profits Rate</strong> on profits up to £50,000, <strong>25% Main Rate</strong> above £250,000. Marginal Relief applies between (effective ~26.5% on the slice from £50k to £250k).`,
     howItWorks: [
       'UK Corporation Tax is charged on company profits. The main rate is 25% for profits over £250,000. The small profits rate is 19% for profits up to £50,000. Marginal Relief applies for profits between £50,000 and £250,000, creating a gradual transition between the two rates.',
       'The Marginal Relief fraction for 2026/27 is 3/200. This means companies in the marginal band pay an effective rate that rises gradually from 19% to 25% as profits increase from £50,000 to £250,000.',
@@ -283,6 +304,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'employer-ni-calculator': {
+    quickAnswer: `Employer NI (Class 1 secondary) in 2026/27 is <strong>15%</strong> on earnings above the <strong>£5,000 Secondary Threshold</strong> (down from £9,100 in 2024). Employment Allowance of <strong>£10,500</strong> can reduce your annual bill if eligible.`,
     howItWorks: [
       'From April 2025, employer National Insurance increased to 15% (up from 13.8%). The secondary threshold was reduced to £5,000 (down from £9,100), meaning employers now pay NI on a significantly larger portion of each employee\'s salary.',
       'The Employment Allowance for 2026/27 is £10,500, which offsets your employer NI bill. Most businesses are eligible unless their total employer NI liability exceeded £100,000 in the previous tax year, or the company has a single director with no other employees.',
@@ -408,6 +430,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'redundancy-pay-calculator': {
+    quickAnswer: `Statutory redundancy pay (2026/27): <strong>0.5 weeks</strong> per year aged under 22, <strong>1 week</strong> aged 22 to 40, <strong>1.5 weeks</strong> aged 41+. Capped at <strong>£735/week</strong> and 20 years service. Tax-free up to £30,000.`,
     howItWorks: [
       'Statutory redundancy pay is calculated based on your age, length of continuous service (up to 20 years) and weekly pay (capped at £700 for 2026/27). The formula gives: 0.5 weeks\' pay per year of service under age 22, 1 week per year aged 22–40, and 1.5 weeks per year aged 41 and over.',
       'The maximum statutory redundancy payment is therefore 30 weeks\' pay (20 years × 1.5 for over-41s), capped at £21,000 (30 × £700). Your employer may offer enhanced redundancy pay above the statutory minimum.',
@@ -793,6 +816,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     lastUpdated: 'April 2026',
   },
   'state-pension-calculator': {
+    quickAnswer: `The full new UK State Pension in 2026/27 is <strong>£241.30/week</strong> (£12,547.60/year) — up 4.1% from £221.20 due to triple lock. You need <strong>35 qualifying NI years</strong> for the full amount and at least 10 to receive anything.`,
     howItWorks: [
       'The full new State Pension is £241.30 per week (£12,547.60/year) for 2026/27, uprated annually by the triple lock (highest of earnings growth, CPI inflation, or 2.5%). You need 35 qualifying years of National Insurance contributions to receive the full amount. With fewer than 35 years, you receive a proportional amount: each qualifying year adds 1/35th, so 25 years gives 25/35 x £241.30 = £158.00/week. A minimum of 10 qualifying years is required to receive anything.',
       'Qualifying years are built through employed earnings above the lower earnings limit (£6,708/year for 2026/27), self-employed Class 4 NI contributions, or National Insurance credits (received automatically for Child Benefit recipients, Universal Credit claimants, and carers). You can check your NI record online to see how many qualifying years you have and identify any gaps.',
@@ -833,6 +857,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     lastUpdated: 'April 2026',
   },
   'isa-calculator': {
+    quickAnswer: `UK ISA allowance for 2026/27 is <strong>£20,000</strong> across all ISA types (Cash, Stocks &amp; Shares, Innovative Finance, Lifetime). Lifetime ISA limit is £4,000 with 25% government bonus. All gains and income are completely tax-free.`,
     howItWorks: [
       'ISAs shelter savings and investments from all UK income tax and capital gains tax. The annual ISA allowance is £20,000 per tax year, which can be split across Cash ISAs, Stocks and Shares ISAs, Innovative Finance ISAs, and Lifetime ISAs in any combination. Once invested, all interest, dividends, and capital gains within the ISA wrapper are completely tax-free, with no reporting requirement to HMRC.',
       'Cash ISA projections use the stated AER (Annual Equivalent Rate) to calculate growth. A fixed-rate Cash ISA locks your money for 1-5 years at a guaranteed rate, while easy-access ISAs offer flexibility but typically lower rates. The calculation compounds interest annually or monthly depending on the product. For a £20,000 deposit at 4.5% AER over 5 years with annual compounding, the balance reaches £24,931.',
@@ -892,6 +917,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     lastUpdated: 'April 2026',
   },
   'sole-trader-tax-calculator': {
+    quickAnswer: `UK sole trader tax (2026/27): income tax on profits (20%/40%/45% after £12,570 PA) plus <strong>Class 4 NI at 6%</strong> on profits £12,570 to £50,270 then <strong>2% above</strong>. Class 2 NI was abolished April 2024.`,
     howItWorks: [
       'Sole trader profits are taxed as personal income through the Self Assessment system. Your taxable profit is calculated as total business income minus allowable business expenses (materials, travel, insurance, professional fees, a proportion of home costs if you work from home, and capital allowances on equipment). This net profit figure is then combined with any other income to determine your total taxable income for the year.',
       'Income Tax is charged in bands after deducting the \u00a312,570 Personal Allowance: 20% basic rate on income from \u00a312,571 to \u00a350,270, 40% higher rate from \u00a350,271 to \u00a3125,140, and 45% additional rate above \u00a3125,140. The Personal Allowance reduces by \u00a31 for every \u00a32 earned above \u00a3100,000, creating an effective 60% marginal rate between \u00a3100,000 and \u00a3125,140. Tax is paid in two Payments on Account (January and July) plus a balancing payment in the following January.',
@@ -2971,6 +2997,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     lastUpdated: 'April 2026',
   },
   'ltv-calculator': {
+    quickAnswer: `<strong>LTV = mortgage divided by property value times 100</strong>. Typical UK rate tiers (May 2026): <strong>60% LTV around 4.2% fixed</strong>, 75% around 4.5%, 85% around 4.7%, 90% around 4.9%, 95% around 5.5%. Each 5% drop in LTV typically cuts the rate by 0.2 to 0.3%.`,
+    rateTable: { title: `UK Mortgage rates by LTV tier (typical 2-year fix, May 2026)`, html: `<table><thead><tr><th>LTV</th><th>Typical rate</th><th>£200k loan / 25yr</th></tr></thead><tbody><tr><td>60% or less</td><td>4.20%</td><td>£1,074/mo</td></tr><tr><td>75%</td><td>4.50%</td><td>£1,112/mo</td></tr><tr><td>85%</td><td>4.70%</td><td>£1,137/mo</td></tr><tr><td>90%</td><td>4.90%</td><td>£1,163/mo</td></tr><tr><td>95%</td><td>5.50%</td><td>£1,228/mo</td></tr></tbody></table>` },
     howItWorks: [
       'Loan-to-Value (LTV) ratio is the percentage of the property value that you are borrowing. It is calculated as: LTV = (Mortgage amount ÷ Property value) × 100. A £180,000 mortgage on a £200,000 property gives a 90% LTV. The lower your LTV, the better mortgage rates you can access.',
       'UK lenders typically offer their best rates at 60% LTV, with competitive rates up to 75% LTV. Rates increase noticeably above 80% LTV, and again above 90%. The maximum LTV for most residential mortgages is 95%. For buy-to-let, the typical maximum is 75-80%. First-time buyer schemes may offer up to 95% LTV.',
@@ -6032,6 +6060,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     lastUpdated: 'April 2026',
   },
   'minimum-wage-calculator': {
+    quickAnswer: `From 1 April 2026 the UK National Living Wage (21+) is <strong>£12.71/hour</strong>. Ages 18 to 20: £10.85/hour. Under 18 / apprentice: £8.00/hour. If you are paid less, your employer is breaking the law — report to ACAS on <strong>0300 123 1100</strong>.`,
+    rateTable: { title: `UK Minimum Wage rates (from 1 April 2026)`, html: `<table><thead><tr><th>Age group</th><th>Rate</th><th>Annual (39 hr/wk)</th></tr></thead><tbody><tr><td>21 and over (National Living Wage)</td><td><strong>£12.71</strong></td><td>£25,775</td></tr><tr><td>18 to 20</td><td>£10.85</td><td>£22,004</td></tr><tr><td>Under 18 / Apprentice</td><td>£8.00</td><td>£16,224</td></tr></tbody></table>` },
     howItWorks: [
       'The UK sets minimum hourly pay rates that vary by age. From April 2025, the National Living Wage for workers aged 21 and over is £12.71 per hour. The National Minimum Wage is £10.00 for 18-20 year olds, £8.00 for under-18s, and £8.00 for apprentices in their first year or under 19.',
       'These rates are statutory minimums — employers must pay at least these amounts for every hour worked. Hours include time spent working, on-call at the workplace, travelling as part of the job and training. Sleep-in shifts and travel between home and a fixed workplace are generally excluded.',

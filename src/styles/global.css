@@ -39,6 +39,36 @@
   --color-text: #fafafa;
 }
 
+/* Rate table styling (rendered from rateTable.html in calculator-content.ts) */
+.rate-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.rate-table-wrapper thead {
+  background-color: var(--color-muted);
+}
+.rate-table-wrapper th,
+.rate-table-wrapper td {
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+.rate-table-wrapper th {
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+.rate-table-wrapper td {
+  color: var(--color-muted-foreground);
+}
+.rate-table-wrapper tr:last-child td {
+  border-bottom: none;
+}
+.rate-table-wrapper strong {
+  color: var(--color-foreground);
+  font-weight: 600;
+}
+
 /* Self-hosted Inter variable font */
 @font-face {
   font-family: 'Inter';

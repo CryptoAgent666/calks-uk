@@ -3,6 +3,8 @@ import Layout from '@/layouts/Layout.astro'
 import AdSlot from '@/components/AdSlot.astro'
 import Disclaimer from '@/components/Disclaimer.astro'
 import CalculatorRenderer from '@/components/CalculatorRenderer'
+import AuthorByline from '@/components/AuthorByline.astro'
+import QuickAnswer from '@/components/QuickAnswer.astro'
 import { CALCULATORS, getCalculatorBySlug, getRelatedCalculators } from '@/data/calculators'
 import { CATEGORIES } from '@/data/categories'
 import { CALCULATOR_FAQS } from '@/data/faqs'
@@ -85,10 +87,16 @@ const schemas = [
           <p class="mt-2 text-muted-foreground">{calc.description}</p>
           {content && (
             <p class="mt-1.5 text-xs text-muted-foreground/70">
-              Last updated: {content.lastUpdated} · Source: <a href={content.sourceUrl} target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">{content.sourceName}</a>
+              Source: <a href={content.sourceUrl} target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">{content.sourceName}</a>
             </p>
           )}
         </div>
+
+        <!-- Author byline (E-E-A-T) -->
+        <AuthorByline lastUpdated={content?.lastUpdated} />
+
+        <!-- Quick Answer (AI citation block) -->
+        {content?.quickAnswer && <QuickAnswer answer={content.quickAnswer} />}
 
         <!-- Ad Slot -->
         <AdSlot type="responsive" class="no-print" />
@@ -100,6 +108,14 @@ const schemas = [
 
         <!-- Disclaimer -->
         <Disclaimer />
+
+        <!-- Rate Table (citation-worthy structured data for LLMs) -->
+        {content?.rateTable && (
+          <section class="rounded-2xl border border-border bg-card p-6 shadow-sm">
+            <h2 class="text-xl font-semibold mb-3">{content.rateTable.title}</h2>
+            <div class="overflow-x-auto rate-table-wrapper" set:html={content.rateTable.html} />
+          </section>
+        )}
 
         <!-- How It Works Section -->
         {content && (
