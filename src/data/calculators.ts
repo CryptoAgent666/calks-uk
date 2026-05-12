@@ -141,6 +141,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'tax',
     icon: 'Receipt',
     keywords: ['council tax', 'council tax bands', 'local authority tax'],
+    metaTitle: 'Council Tax Calculator UK 2026/27 — All Bands A-H',
     priority: 2,
   },
   {
@@ -160,6 +161,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'tax',
     icon: 'Receipt',
     keywords: ['company car', 'BiK', 'benefit in kind', 'P11D', 'car tax'],
+    metaTitle: 'Company Car Tax Calculator UK 2026/27 — BiK Tax + Fuel',
     priority: 2,
     financialYear: '2026-27',
   },
@@ -195,6 +197,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'pay',
     icon: 'Banknote',
     keywords: ['hourly rate', 'annual salary', 'salary conversion', 'hourly to annual'],
+    metaTitle: 'Hourly to Salary Calculator UK 2026 — Annual Pay Converter',
     priority: 2,
   },
   {
@@ -204,6 +207,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'pay',
     icon: 'Banknote',
     keywords: ['holiday entitlement', 'annual leave', 'holiday calculator', 'statutory leave'],
+    metaTitle: 'UK Holiday Entitlement Calculator 2026 — Statutory 28 Days',
     priority: 2,
   },
   {
@@ -235,6 +239,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'pay',
     icon: 'Banknote',
     keywords: ['employer cost', 'cost of employment', 'employment cost', 'total cost'],
+    metaTitle: 'Employer Cost Calculator UK 2026/27 — True Cost of Employee',
     priority: 2,
     financialYear: '2026-27',
   },
@@ -245,6 +250,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'pay',
     icon: 'Banknote',
     keywords: ['salary sacrifice', 'tax savings', 'pension sacrifice', 'cycle to work'],
+    metaTitle: 'Salary Sacrifice Calculator UK 2026/27 — Tax & NI Savings',
     priority: 2,
   },
   {
@@ -254,6 +260,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'pay',
     icon: 'Banknote',
     keywords: ['bonus tax', 'bonus calculator', 'bonus after tax'],
+    metaTitle: 'Bonus Tax Calculator UK 2026/27 — Take-Home from Annual Bonus',
     priority: 2,
   },
 
@@ -355,6 +362,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'investment',
     icon: 'TrendingUp',
     keywords: ['compound interest', 'interest calculator', 'savings growth', 'investment growth'],
+    metaTitle: 'Compound Interest Calculator UK — Daily/Monthly/Annual Compounding',
     priority: 1,
   },
   {
@@ -364,6 +372,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'investment',
     icon: 'TrendingUp',
     keywords: ['ISA', 'individual savings account', 'ISA allowance', 'tax free savings'],
+    metaTitle: 'UK ISA Calculator 2026/27 — Tax-Free Savings (£20,000 Limit)',
     priority: 1,
   },
 
@@ -467,6 +476,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'auto',
     icon: 'Car',
     keywords: ['car tax', 'VED', 'vehicle excise duty', 'road tax'],
+    metaTitle: 'UK Car Tax (VED) Calculator 2026/27 — CO2 + List Price',
     priority: 2,
   },
 
@@ -503,6 +513,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'building',
     icon: 'Hammer',
     keywords: ['concrete', 'concrete calculator', 'cement', 'cubic metres'],
+    metaTitle: 'Concrete Calculator UK — Cubic Metres + Bag Requirement',
     priority: 2,
   },
   {
@@ -512,6 +523,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'building',
     icon: 'Hammer',
     keywords: ['paint calculator', 'wall paint', 'paint coverage'],
+    metaTitle: 'Paint Calculator UK — Litres Needed by Wall Area',
     priority: 2,
   },
 
@@ -873,6 +885,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'pay',
     icon: 'Banknote',
     keywords: ['mileage allowance', 'AMAP', 'HMRC mileage', '45p per mile', 'business mileage'],
+    metaTitle: 'UK Mileage Allowance Calculator 2026 — HMRC 45p/25p Rates',
     priority: 2,
   },
 
@@ -967,6 +980,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'investment',
     icon: 'TrendingUp',
     keywords: ['savings goal', 'save for', 'savings target', 'how long to save'],
+    metaTitle: 'Savings Goal Calculator UK — How Much to Save Each Month',
     priority: 2,
   },
   // TOOLS (additional)
@@ -1128,6 +1142,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'benefits',
     icon: 'Shield',
     keywords: ['universal credit', 'UC', 'benefits calculator', 'DWP'],
+    metaTitle: 'Universal Credit Calculator UK 2026/27 — Standard + Elements',
     priority: 1,
   },
   // EDUCATION (additional)
@@ -1205,6 +1220,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'pay',
     icon: 'Banknote',
     keywords: ['sick pay', 'SSP', 'statutory sick pay', 'illness pay'],
+    metaTitle: 'UK Statutory Sick Pay (SSP) Calculator 2026 — £123.25/week',
     priority: 2,
     financialYear: '2026-27',
   },
@@ -1215,6 +1231,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'pay',
     icon: 'Banknote',
     keywords: ['pay rise', 'salary increase', 'inflation', 'real terms', 'pay cut'],
+    metaTitle: 'Pay Rise Calculator UK 2026 — Real Terms vs Inflation',
     priority: 2,
   },
   // MORTGAGE (additional)
@@ -1235,6 +1252,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'pension',
     icon: 'PiggyBank',
     keywords: ['pension drawdown', 'flexi-access', 'income drawdown', 'pension withdrawal'],
+    metaTitle: 'Pension Drawdown Calculator UK 2026/27 — Sustainable Withdrawal',
     priority: 1,
   },
   {
@@ -1264,6 +1282,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'investment',
     icon: 'TrendingUp',
     keywords: ['LISA', 'lifetime ISA', 'government bonus', 'first home', 'help to buy ISA'],
+    metaTitle: 'Lifetime ISA Calculator UK 2026/27 — 25% Bonus + £4,000 Limit',
     priority: 1,
   },
   {
@@ -1312,6 +1331,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'pay',
     icon: 'Banknote',
     keywords: ['paternity pay', 'SPP', 'statutory paternity pay', 'paternity leave'],
+    metaTitle: 'UK Statutory Paternity Pay Calculator 2026 — £194.32/week',
     priority: 2,
     financialYear: '2026-27',
   },
@@ -1379,6 +1399,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'pay',
     icon: 'Banknote',
     keywords: ['overtime', 'overtime pay', 'time and a half', 'double time', 'extra hours'],
+    metaTitle: 'Overtime Pay Calculator UK 2026 — Time-and-a-Half & Double Time',
     priority: 2,
   },
   {
@@ -1388,6 +1409,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'pay',
     icon: 'Banknote',
     keywords: ['NHS pay', 'agenda for change', 'AFC band', 'nurse salary', 'NHS salary'],
+    metaTitle: 'NHS Pay Calculator 2026/27 — Agenda for Change Bands',
     priority: 2,
   },
   // BENEFITS (additional)
@@ -1444,6 +1466,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'auto',
     icon: 'Car',
     keywords: ['MPG', 'miles per gallon', 'fuel economy', 'fuel consumption', 'L/100km'],
+    metaTitle: 'MPG Calculator UK — Miles Per Gallon & L/100km Conversion',
     priority: 2,
   },
   // INSURANCE (additional)
@@ -1466,7 +1489,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // ENERGY (additional)
   { slug: 'water-bill-calculator', title: 'Water Bill Calculator', description: 'Estimate your annual water bill for metered or unmetered supply including sewerage charges.', category: 'energy', icon: 'Zap', keywords: ['water bill', 'water rates', 'metered water', 'sewerage'], priority: 2 },
   // MORTGAGE (additional)
-  { slug: 'buy-to-let-yield-calculator', title: 'Buy-to-Let Yield Calculator', description: 'Calculate gross yield, net yield, return on deposit and monthly cashflow for buy-to-let investments.', category: 'mortgage', icon: 'Home', keywords: ['buy to let', 'BTL yield', 'rental return', 'property investment'], priority: 2 },
+  { slug: 'buy-to-let-yield-calculator', title: 'Buy-to-Let Yield Calculator', description: 'Calculate gross yield, net yield, return on deposit and monthly cashflow for buy-to-let investments.', category: 'mortgage', icon: 'Home', keywords: ['buy to let', 'BTL yield', 'rental return', 'property investment'], priority: 2, metaTitle: 'Buy-to-Let Yield Calculator UK 2026 — Gross & Net Rental Return' },
   { slug: 'ltv-calculator', title: 'Loan-to-Value (LTV) Calculator', description: 'Calculate your loan-to-value ratio and see exactly how much it cuts your mortgage rate across 60%/75%/85%/90%/95% tiers.', category: 'mortgage', icon: 'Home', keywords: ['LTV', 'loan to value', 'equity', 'mortgage ratio'], priority: 2, metaTitle: 'LTV Calculator UK 2026 — Loan-to-Value Ratio & Rate Tiers' },
   { slug: 'stamp-duty-additional-property-calculator', title: 'Stamp Duty Additional Property Calculator', description: 'Calculate SDLT with the 5% additional property surcharge for buy-to-let and second homes.', category: 'tax', icon: 'Receipt', keywords: ['additional property', 'second home stamp duty', 'BTL stamp duty', '5% surcharge'], priority: 2 },
   { slug: 'remortgage-calculator', title: 'Remortgage Calculator', description: 'Compare current vs new mortgage rate. See monthly savings, break-even and total cost including fees.', category: 'mortgage', icon: 'Home', keywords: ['remortgage', 'switch mortgage', 'mortgage renewal', 'save on mortgage'], priority: 1 },
@@ -1475,7 +1498,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'apr-calculator', title: 'APR Calculator — True Interest Rate', description: 'Calculate the true Annual Percentage Rate of any loan from the amount borrowed and total repaid.', category: 'loans', icon: 'CreditCard', keywords: ['APR', 'annual percentage rate', 'true cost', 'interest rate'], priority: 2 },
   { slug: 'bnpl-calculator', title: 'Buy Now Pay Later Calculator', description: 'Calculate BNPL instalment costs for Klarna, Clearpay and custom plans. See the true cost and late fee risks.', category: 'loans', icon: 'CreditCard', keywords: ['BNPL', 'buy now pay later', 'Klarna', 'Clearpay', 'instalments'], priority: 2 },
   // PENSION (additional)
-  { slug: 'salary-sacrifice-pension-calculator', title: 'Salary Sacrifice Pension Calculator', description: 'Compare salary sacrifice vs relief at source pension contributions. See tax and NI savings.', category: 'pension', icon: 'PiggyBank', keywords: ['salary sacrifice pension', 'pension contribution', 'relief at source', 'pension NI saving'], priority: 2 },
+  { slug: 'salary-sacrifice-pension-calculator', title: 'Salary Sacrifice Pension Calculator', description: 'Compare salary sacrifice vs relief at source pension contributions. See tax and NI savings.', category: 'pension', icon: 'PiggyBank', keywords: ['salary sacrifice pension', 'pension contribution', 'relief at source', 'pension NI saving'], priority: 2, metaTitle: 'Salary Sacrifice Pension Calculator UK 2026/27 — Tax + NI Savings' },
   // TOOLS (additional)
   { slug: 'temperature-converter', title: 'Temperature Converter', description: 'Convert between Celsius, Fahrenheit and Kelvin instantly. Includes common temperature reference points and conversion formulas.', category: 'tools', icon: 'Wrench', keywords: ['temperature', 'celsius', 'fahrenheit', 'kelvin', 'convert temperature'], priority: 2 },
   { slug: 'length-converter', title: 'Length Converter — Metric & Imperial', description: 'Convert between mm, cm, metres, km, inches, feet, yards and miles. Includes feet & inches display.', category: 'tools', icon: 'Wrench', keywords: ['length converter', 'feet to metres', 'inches to cm', 'miles to km'], priority: 2 },
@@ -1511,9 +1534,9 @@ export const CALCULATORS: CalculatorMeta[] = [
   // BUSINESS
   { slug: 'sole-trader-vs-ltd-calculator', title: 'Sole Trader vs Limited Company Calculator', description: 'Compare take-home pay as a sole trader vs limited company director. See full tax breakdown for both.', category: 'business', icon: 'Briefcase', keywords: ['sole trader vs ltd', 'incorporate', 'limited company', 'self employed'], priority: 1 },
   // BENEFITS
-  { slug: 'carer-allowance-calculator', title: "Carer's Allowance Calculator", description: "Check if you qualify for Carer's Allowance at £81.90/week and understand the eligibility rules.", category: 'benefits', icon: 'Shield', keywords: ['carer allowance', 'caring', 'disability benefit', 'carer'], priority: 2 },
-  { slug: 'pension-credit-calculator', title: 'Pension Credit Calculator', description: 'Estimate Pension Credit Guarantee Credit entitlement based on income, pension and savings.', category: 'benefits', icon: 'Shield', keywords: ['pension credit', 'guarantee credit', 'retirement benefit', 'over 66'], priority: 2 },
-  { slug: 'housing-benefit-calculator', title: 'Housing Benefit Calculator', description: 'Estimate Housing Benefit based on rent, LHA rate and income. Includes taper calculation.', category: 'benefits', icon: 'Shield', keywords: ['housing benefit', 'LHA', 'rent help', 'housing element'], priority: 2 },
+  { slug: 'carer-allowance-calculator', title: "Carer's Allowance Calculator", description: "Check if you qualify for Carer's Allowance at £81.90/week and understand the eligibility rules.", category: 'benefits', icon: 'Shield', keywords: ['carer allowance', 'caring', 'disability benefit', 'carer'], priority: 2, metaTitle: 'Carer\'s Allowance Calculator UK 2026 — £83.30/week + £196 Limit' },
+  { slug: 'pension-credit-calculator', title: 'Pension Credit Calculator', description: 'Estimate Pension Credit Guarantee Credit entitlement based on income, pension and savings.', category: 'benefits', icon: 'Shield', keywords: ['pension credit', 'guarantee credit', 'retirement benefit', 'over 66'], priority: 2, metaTitle: 'Pension Credit Calculator UK 2026/27 — £227.10 Top-up' },
+  { slug: 'housing-benefit-calculator', title: 'Housing Benefit Calculator', description: 'Estimate Housing Benefit based on rent, LHA rate and income. Includes taper calculation.', category: 'benefits', icon: 'Shield', keywords: ['housing benefit', 'LHA', 'rent help', 'housing element'], priority: 2, metaTitle: 'Housing Benefit Calculator UK 2026 — LHA Rates' },
   // BUSINESS
   { slug: 'vat-threshold-calculator', title: 'VAT Threshold Monitor', description: 'Track your rolling 12-month turnover against the £90,000 VAT registration threshold. See headroom remaining.', category: 'business', icon: 'Briefcase', keywords: ['VAT threshold', 'VAT registration', '£90000', 'turnover monitor'], priority: 2 },
   { slug: 'umbrella-company-calculator', title: 'Umbrella Company Calculator', description: 'Calculate take-home pay through an umbrella company. See full payslip breakdown with employer NI and fees.', category: 'pay', icon: 'Banknote', keywords: ['umbrella company', 'umbrella pay', 'contractor umbrella', 'PAYE umbrella'], priority: 2 },
@@ -1540,11 +1563,11 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'rule-of-72-calculator', title: 'Rule of 72 Calculator', description: 'Estimate how long it takes to double your money at a given interest rate using the Rule of 72.', category: 'investment', icon: 'TrendingUp', keywords: ['rule of 72', 'doubling time', 'compound interest', 'money double'], priority: 2 },
   { slug: 'cost-of-delay-calculator', title: 'Cost of Delay Calculator', description: 'See how much you lose by waiting to invest. Compare starting now vs delaying by 1-10+ years.', category: 'investment', icon: 'TrendingUp', keywords: ['cost of delay', 'start investing', 'compound growth', 'time in market'], priority: 2 },
   // PAY
-  { slug: 'teacher-pay-calculator', title: 'Teacher Pay Calculator', description: 'Calculate teacher salary by pay scale (M1-M6, UPS, Leadership). Includes London weighting and take-home pay.', category: 'pay', icon: 'Banknote', keywords: ['teacher pay', 'teacher salary', 'MPS', 'UPS', 'leadership pay'], priority: 2 },
-  { slug: 'shared-parental-leave-calculator', title: 'Shared Parental Leave Calculator', description: 'Split parental leave between parents. Calculate ShPP payments for mother and partner.', category: 'pay', icon: 'Banknote', keywords: ['shared parental leave', 'ShPL', 'ShPP', 'parental pay'], priority: 2 },
+  { slug: 'teacher-pay-calculator', title: 'Teacher Pay Calculator', description: 'Calculate teacher salary by pay scale (M1-M6, UPS, Leadership). Includes London weighting and take-home pay.', category: 'pay', icon: 'Banknote', keywords: ['teacher pay', 'teacher salary', 'MPS', 'UPS', 'leadership pay'], priority: 2, metaTitle: 'UK Teacher Pay Calculator 2026/27 — M1-UPS3 Scales' },
+  { slug: 'shared-parental-leave-calculator', title: 'Shared Parental Leave Calculator', description: 'Split parental leave between parents. Calculate ShPP payments for mother and partner.', category: 'pay', icon: 'Banknote', keywords: ['shared parental leave', 'ShPL', 'ShPP', 'parental pay'], priority: 2, metaTitle: 'Shared Parental Leave Pay Calculator UK 2026/27' },
   // BENEFITS
-  { slug: 'high-income-child-benefit-calculator', title: 'High Income Child Benefit Charge Calculator', description: 'Calculate HICBC clawback between £60K-£80K. See if you should still claim for NI credits.', category: 'benefits', icon: 'Shield', keywords: ['HICBC', 'high income', 'child benefit charge', 'clawback'], priority: 1 },
-  { slug: 'benefit-cap-calculator', title: 'Benefit Cap Calculator', description: 'Check if the benefit cap applies and how much your benefits will be reduced.', category: 'benefits', icon: 'Shield', keywords: ['benefit cap', 'cap limit', 'benefits limit', 'UC cap'], priority: 2 },
+  { slug: 'high-income-child-benefit-calculator', title: 'High Income Child Benefit Charge Calculator', description: 'Calculate HICBC clawback between £60K-£80K. See if you should still claim for NI credits.', category: 'benefits', icon: 'Shield', keywords: ['HICBC', 'high income', 'child benefit charge', 'clawback'], priority: 1, metaTitle: 'High Income Child Benefit Charge Calculator 2026/27 (Threshold £60k)' },
+  { slug: 'benefit-cap-calculator', title: 'Benefit Cap Calculator', description: 'Check if the benefit cap applies and how much your benefits will be reduced.', category: 'benefits', icon: 'Shield', keywords: ['benefit cap', 'cap limit', 'benefits limit', 'UC cap'], priority: 2, metaTitle: 'Benefit Cap Calculator UK 2026 — £15,010 / £22,394 Limits' },
   // MATH
   { slug: 'trigonometry-calculator', title: 'Trigonometry Calculator', description: 'Calculate sin, cos, tan and inverse functions in degrees or radians. Includes sec, csc, cot.', category: 'math', icon: 'Calculator', keywords: ['trigonometry', 'sin cos tan', 'trig calculator', 'inverse trig', 'radians'], priority: 2 },
   // PAY
@@ -1571,7 +1594,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'waist-hip-ratio-calculator', title: 'Waist-to-Hip Ratio Calculator', description: 'Calculate your waist-to-hip ratio and cardiovascular disease risk using WHO guidelines.', category: 'health', icon: 'Heart', keywords: ['waist hip ratio', 'WHR', 'body shape', 'cardiovascular risk'], priority: 2 },
   // GARDENING
   { slug: 'raised-bed-calculator', title: 'Raised Bed Soil Calculator', description: 'Calculate soil, bags and sleepers needed for raised garden beds with common size presets.', category: 'gardening', icon: 'Flower2', keywords: ['raised bed', 'garden bed', 'soil calculator', 'sleepers'], priority: 1 },
-  { slug: 'fence-paint-calculator', title: 'Fence Paint Calculator', description: 'Calculate fence paint or stain needed based on panels, height and number of coats.', category: 'gardening', icon: 'Flower2', keywords: ['fence paint', 'fence stain', 'garden fence', 'fence treatment'], priority: 2 },
+  { slug: 'fence-paint-calculator', title: 'Fence Paint Calculator', description: 'Calculate fence paint or stain needed based on panels, height and number of coats.', category: 'gardening', icon: 'Flower2', keywords: ['fence paint', 'fence stain', 'garden fence', 'fence treatment'], priority: 2, metaTitle: 'Fence Paint Calculator UK — Litres for Garden Fencing' },
   // TOOLS
   { slug: 'clothing-size-converter', title: 'Clothing Size Converter (UK/EU/US)', description: 'Convert clothing sizes between UK, EU and US for women and men. Includes body measurements.', category: 'tools', icon: 'Wrench', keywords: ['clothing size', 'dress size', 'UK to EU', 'size chart', 'size converter'], priority: 2 },
   { slug: 'volume-converter', title: 'Volume Converter — Litres, Gallons & More', description: 'Convert between ml, litres, pints, gallons, cups, tablespoons and cubic metres.', category: 'tools', icon: 'Wrench', keywords: ['volume converter', 'litres to pints', 'ml to cups', 'gallons'], priority: 2 },
@@ -1591,15 +1614,15 @@ export const CALCULATORS: CalculatorMeta[] = [
   // IMMIGRATION
   { slug: 'cost-of-living-comparison-calculator', title: 'UK Cost of Living Comparison', description: 'Compare cost of living between UK cities. See rent, food, transport differences and equivalent salary.', category: 'immigration', icon: 'Globe', keywords: ['cost of living', 'city comparison', 'relocation', 'UK cities'], priority: 2 },
   // PENSION
-  { slug: 'pension-annual-allowance-calculator', title: 'Pension Annual Allowance Calculator', description: 'Check your pension annual allowance (£60K), tapered allowance and MPAA. See if you face a tax charge.', category: 'pension', icon: 'PiggyBank', keywords: ['annual allowance', 'pension limit', 'taper', 'MPAA', 'pension tax charge'], priority: 2, financialYear: '2026-27' },
-  { slug: 'state-pension-age-calculator', title: 'State Pension Age Calculator', description: 'Find your State Pension age based on date of birth. See exact date and days remaining.', category: 'pension', icon: 'PiggyBank', keywords: ['state pension age', 'SPA', 'pension age', 'when can I retire'], priority: 1 },
+  { slug: 'pension-annual-allowance-calculator', title: 'Pension Annual Allowance Calculator', description: 'Check your pension annual allowance (£60K), tapered allowance and MPAA. See if you face a tax charge.', category: 'pension', icon: 'PiggyBank', keywords: ['annual allowance', 'pension limit', 'taper', 'MPAA', 'pension tax charge'], priority: 2, financialYear: '2026-27', metaTitle: 'Pension Annual Allowance Calculator UK 2026/27 — £60k Limit + Taper' },
+  { slug: 'state-pension-age-calculator', title: 'State Pension Age Calculator', description: 'Find your State Pension age based on date of birth. See exact date and days remaining.', category: 'pension', icon: 'PiggyBank', keywords: ['state pension age', 'SPA', 'pension age', 'when can I retire'], priority: 1, metaTitle: 'UK State Pension Age Calculator — Check Your Pension Date' },
   // LOANS
   { slug: 'student-loan-early-repay-calculator', title: 'Should I Repay Student Loan Early?', description: 'Compare total cost of normal repayments vs lump sum. See if early repayment saves money or wastes it.', category: 'loans', icon: 'CreditCard', keywords: ['early repayment', 'student loan overpay', 'write off', 'plan 2 repay'], priority: 1 },
   // PENSION
-  { slug: 'pension-pot-calculator', title: 'How Much Pension Do I Need?', description: 'Calculate the pension pot needed for your target retirement income using drawdown, 4% rule or annuity.', category: 'pension', icon: 'PiggyBank', keywords: ['pension pot needed', 'retirement savings', 'how much pension', '4% rule'], priority: 1 },
+  { slug: 'pension-pot-calculator', title: 'How Much Pension Do I Need?', description: 'Calculate the pension pot needed for your target retirement income using drawdown, 4% rule or annuity.', category: 'pension', icon: 'PiggyBank', keywords: ['pension pot needed', 'retirement savings', 'how much pension', '4% rule'], priority: 1, metaTitle: 'Pension Pot Calculator UK 2026 — How Much Will I Have at 65?' },
   { slug: 'teachers-pension-calculator', title: "Teachers' Pension Calculator", description: "Project your Teachers' Pension Scheme (TPS) benefits — career average (1/57th) and final salary calculations with 2026/27 contribution tiers.", category: 'pension', icon: 'PiggyBank', keywords: ['teachers pension', 'TPS', 'career average', 'teaching pension'], priority: 2, metaTitle: "Teachers' Pension Calculator UK 2026 — TPS Career Average" },
   // INVESTMENT
-  { slug: 'junior-isa-calculator', title: 'Junior ISA Calculator', description: 'Calculate how much a Junior ISA will be worth when your child turns 18. Tax-free growth with £9,000/year limit.', category: 'investment', icon: 'TrendingUp', keywords: ['junior ISA', 'JISA', 'child savings', 'under 18'], priority: 2 },
+  { slug: 'junior-isa-calculator', title: 'Junior ISA Calculator', description: 'Calculate how much a Junior ISA will be worth when your child turns 18. Tax-free growth with £9,000/year limit.', category: 'investment', icon: 'TrendingUp', keywords: ['junior ISA', 'JISA', 'child savings', 'under 18'], priority: 2, metaTitle: 'Junior ISA Calculator UK 2026/27 — £9,000 Annual Allowance' },
   // PAY
   { slug: 'zero-hours-calculator', title: 'Zero-Hours Contract Earnings Calculator', description: 'Calculate annual earnings, tax and holiday pay accrual on a zero-hours contract. NMW check included.', category: 'pay', icon: 'Banknote', keywords: ['zero hours', 'zero-hours contract', 'casual work', 'flexible work'], priority: 2 },
   { slug: 'agency-worker-calculator', title: 'Agency Worker Pay Calculator', description: 'Calculate take-home pay as an agency worker. See what you actually earn after agency margin and deductions.', category: 'pay', icon: 'Banknote', keywords: ['agency worker', 'temp work', 'agency pay', 'charge rate'], priority: 2 },
@@ -1640,9 +1663,9 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'mortgage-interest-rate-calculator', title: 'Mortgage Interest Rate Comparison', description: 'Compare monthly payments at different interest rates. See how rate changes affect your mortgage.', category: 'mortgage', icon: 'Home', keywords: ['mortgage rate', 'interest rate comparison', 'rate change', 'mortgage payment'], priority: 2 },
   { slug: 'first-home-buyer-calculator', title: 'First-Time Buyer Cost Calculator', description: 'Calculate everything a first-time buyer needs: deposit, stamp duty, solicitor, survey, mortgage fees and monthly payments.', category: 'mortgage', icon: 'Home', keywords: ['first home', 'buying costs', 'first time buyer', 'total cost of buying'], priority: 1 },
   // PENSION
-  { slug: 'sipp-calculator', title: 'SIPP Calculator — Self-Invested Pension', description: 'Project your Self-Invested Personal Pension with tax relief, employer contributions and growth.', category: 'pension', icon: 'PiggyBank', keywords: ['SIPP', 'self invested pension', 'personal pension', 'pension pot'], priority: 2 },
+  { slug: 'sipp-calculator', title: 'SIPP Calculator — Self-Invested Pension', description: 'Project your Self-Invested Personal Pension with tax relief, employer contributions and growth.', category: 'pension', icon: 'PiggyBank', keywords: ['SIPP', 'self invested pension', 'personal pension', 'pension pot'], priority: 2, metaTitle: 'SIPP Calculator UK 2026/27 — Self-Invested Pension Pot' },
   // BENEFITS
-  { slug: 'tax-credits-calculator', title: 'Tax Credits Calculator (Legacy)', description: 'Calculate Working Tax Credit and Child Tax Credit for existing claimants. Includes childcare element.', category: 'benefits', icon: 'Shield', keywords: ['tax credits', 'working tax credit', 'child tax credit', 'WTC', 'CTC'], priority: 2 },
+  { slug: 'tax-credits-calculator', title: 'Tax Credits Calculator (Legacy)', description: 'Calculate Working Tax Credit and Child Tax Credit for existing claimants. Includes childcare element.', category: 'benefits', icon: 'Shield', keywords: ['tax credits', 'working tax credit', 'child tax credit', 'WTC', 'CTC'], priority: 2, metaTitle: 'Tax Credits Calculator UK 2026/27 — Migrated to UC' },
   // INVESTMENT
   { slug: 'stocks-shares-isa-calculator', title: 'Stocks & Shares ISA Calculator', description: 'Project Stocks & Shares ISA growth with capital appreciation and dividends. See tax saved vs taxable account.', category: 'investment', icon: 'TrendingUp', keywords: ['stocks and shares ISA', 'S&S ISA', 'equity ISA', 'investment ISA'], priority: 1 },
   // ENERGY
@@ -1670,9 +1693,9 @@ export const CALCULATORS: CalculatorMeta[] = [
   // EDUCATION
   { slug: 'student-loan-total-cost-calculator', title: 'Student Loan Total Cost Calculator', description: 'Calculate total amount you\'ll actually repay over the loan lifetime with salary growth projections.', category: 'education', icon: 'GraduationCap', keywords: ['student loan cost', 'total repaid', 'loan lifetime', 'write off'], priority: 1 },
   // PAY
-  { slug: 'ev-salary-sacrifice-calculator', title: 'EV Salary Sacrifice Calculator', description: 'Calculate savings from EV salary sacrifice. See tax/NI savings, BiK at 3% and effective monthly cost.', category: 'pay', icon: 'Banknote', keywords: ['EV salary sacrifice', 'electric car scheme', 'BiK EV', 'salary sacrifice car'], priority: 1, isTrending: true },
+  { slug: 'ev-salary-sacrifice-calculator', title: 'EV Salary Sacrifice Calculator', description: 'Calculate savings from EV salary sacrifice. See tax/NI savings, BiK at 3% and effective monthly cost.', category: 'pay', icon: 'Banknote', keywords: ['EV salary sacrifice', 'electric car scheme', 'BiK EV', 'salary sacrifice car'], priority: 1, isTrending: true, metaTitle: 'EV Salary Sacrifice Calculator UK 2026/27 — 2% BiK Rate' },
   // AUTO
-  { slug: 'ulez-calculator', title: 'ULEZ Compliance Checker', description: 'Check if your car is ULEZ compliant and calculate annual ULEZ and Congestion Charge costs.', category: 'auto', icon: 'Car', keywords: ['ULEZ', 'ultra low emission', 'London', 'congestion charge', 'euro standard'], priority: 1 },
+  { slug: 'ulez-calculator', title: 'ULEZ Compliance Checker', description: 'Check if your car is ULEZ compliant and calculate annual ULEZ and Congestion Charge costs.', category: 'auto', icon: 'Car', keywords: ['ULEZ', 'ultra low emission', 'London', 'congestion charge', 'euro standard'], priority: 1, metaTitle: 'ULEZ Calculator UK 2026 — Compliance Checker by Reg' },
   { slug: 'car-import-duty-calculator', title: 'Car Import Duty Calculator', description: 'Calculate total UK landing cost for imported cars — duty, VAT, VED and type approval.', category: 'auto', icon: 'Car', keywords: ['car import', 'import duty', 'vehicle import', 'customs duty'], priority: 2 },
   { slug: 'road-trip-cost-calculator', title: 'Road Trip Cost Calculator', description: 'Calculate fuel cost, driving time and cost per person for road trips. Split costs easily.', category: 'auto', icon: 'Car', keywords: ['road trip', 'journey cost', 'fuel cost trip', 'travel cost'], priority: 2 },
   // TAX

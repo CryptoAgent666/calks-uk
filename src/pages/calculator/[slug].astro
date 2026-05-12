@@ -123,7 +123,7 @@ const schemas = [
             <h2 class="text-xl font-semibold mb-4">How It Works</h2>
             <div class="space-y-3">
               {content.howItWorks.map((paragraph) => (
-                <p class="text-sm text-muted-foreground leading-relaxed">{paragraph}</p>
+                <p class="text-sm text-muted-foreground leading-relaxed" set:html={paragraph} />
               ))}
             </div>
 
