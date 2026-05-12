@@ -2,8 +2,8 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // Agricultural Wages (England) 2026/27
-const MIN_WAGE = 12.21 // NMW age 21+
-const AG_GRADE_1 = 12.21 // Initial grade
+const MIN_WAGE = 12.71 // NMW age 21+
+const AG_GRADE_1 = 12.71 // Initial grade
 const AG_GRADE_2 = 12.77 // Standard
 const AG_GRADE_3 = 13.57 // Lead worker
 const AG_GRADE_4 = 14.78 // Craft grade

@@ -8,7 +8,7 @@ function calculate(hourlyRate: number, avgHoursWeek: number, weeksPerYear: numbe
   const holidayPay = annualPay * 0.1207 // 12.07% accrued holiday
 
   // NMW check
-  const nmw = 12.21
+  const nmw = 12.71
   const meetsNMW = hourlyRate >= nmw
 
   // Tax & NI (simplified)
@@ -28,7 +28,7 @@ function calculate(hourlyRate: number, avgHoursWeek: number, weeksPerYear: numbe
 }
 
 export default function ZeroHoursCalculator() {
-  const [rate, setRate] = useState('12.21')
+  const [rate, setRate] = useState('12.71')
   const [hours, setHours] = useState('20')
   const [weeks, setWeeks] = useState('48')
 

@@ -4261,8 +4261,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     example: {
       title: 'Example: Standard worker, 39 hours/week',
       steps: [
-        'Hourly rate: £12.21 (National Living Wage)',
-        'Weekly gross pay: 39 × £12.21 = £476.19',
+        'Hourly rate: £12.71 (National Living Wage)',
+        'Weekly gross pay: 39 × £12.71 = £495.69',
         'Monthly gross pay: £2,063.49',
         'Annual holiday entitlement: 5.6 weeks = £2,666.66',
         'Employer NI (13.8% above threshold): approx. £33/week',
@@ -4674,7 +4674,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     example: {
       title: 'Example: Average 20 hours/week at £12.71/hour',
       steps: [
-        'Weekly gross: 20 × £12.21 = £244.20',
+        'Weekly gross: 20 × £12.71 = £254.20',
         'Annual gross (52 weeks): £12,698.40',
         'Holiday entitlement: 20 × 5.6 = 112 hours (£1,367.52)',
         'Below Personal Allowance (£12,570): minimal income tax',
@@ -6041,7 +6041,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       title: 'Example: 23-year-old working 40 hours/week',
       steps: [
         'National Living Wage (21+): £12.71/hour',
-        'Weekly minimum pay: £12.21 × 40 = £488.40',
+        'Weekly minimum pay: £12.71 × 40 = £508.40',
         'Monthly minimum: £488.40 × 52 ÷ 12 = £2,116.40',
         'Annual minimum: £488.40 × 52 = £25,396.80',
         'Below this rate? Your employer is breaking the law',

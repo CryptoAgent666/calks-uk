@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react'
 function calculate(hoursPerWeek: number, hourlyRate: number, isSingle: boolean, hasChildren: boolean) {
   const weeklyPay = hoursPerWeek * hourlyRate
   const annualPay = weeklyPay * 52
-  const nmw = 12.21
+  const nmw = 12.71
 
   const meetsNMW = hourlyRate >= nmw
   const isFullTime = hoursPerWeek >= 35
@@ -30,7 +30,7 @@ function calculate(hoursPerWeek: number, hourlyRate: number, isSingle: boolean, 
 
 export default function WorkingTaxCreditHoursCalculator() {
   const [hours, setHours] = useState('20')
-  const [rate, setRate] = useState('12.21')
+  const [rate, setRate] = useState('12.71')
   const [single, setSingle] = useState(true)
   const [children, setChildren] = useState(true)
 

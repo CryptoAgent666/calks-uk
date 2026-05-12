@@ -1,0 +1,114 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { CALCULATORS } from '@/data/calculators'
+import { CATEGORIES, CATEGORY_IDS } from '@/data/categories'
+import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
+import type { CategoryId } from '@/data/types'
+
+const total = CALCULATORS.length
+
+const schemas = [
+  getWebPageSchema(
+    `All ${total} UK Calculators — Complete Index`,
+    `Browse every Calks.uk calculator. ${total}+ free UK calculators for tax, salary, mortgage, pension, VAT, benefits, business and more — updated for 2026/27.`,
+    '/calculators/',
+    '2026-04-06'
+  ),
+  getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'All Calculators', url: '/calculators/' },
+  ]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': 'https://calks.uk/calculators/#itemlist',
+    name: 'Complete UK Calculator Index',
+    numberOfItems: total,
+    itemListElement: CALCULATORS.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.title,
+      url: `https://calks.uk/calculator/${c.slug}/`,
+    })),
+  },
+]
+
+// Group calculators by category
+const grouped = CATEGORY_IDS.map((catId: CategoryId) => ({
+  category: CATEGORIES[catId],
+  catId,
+  calcs: CALCULATORS.filter((c) => c.category === catId).sort((a, b) => a.title.localeCompare(b.title)),
+})).filter((g) => g.calcs.length > 0)
+---
+
+<Layout
+  title={`All ${total} UK Calculators — Complete Index`}
+  description={`Browse every Calks.uk calculator. ${total}+ free UK calculators for tax, salary, mortgage, pension, VAT, benefits, business and more — updated for 2026/27.`}
+  schemas={schemas}
+>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-foreground transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-foreground font-medium">All Calculators</span>
+    </nav>
+
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-2">All {total} UK Calculators</h1>
+    <p class="text-muted-foreground mb-8 max-w-3xl">
+      Every free UK calculator on Calks.uk, organised by category. All calculations use the latest 2026/27 rates from HMRC, GOV.UK, and the Bank of England.
+    </p>
+
+    <!-- Quick anchor nav -->
+    <div class="mb-10 flex flex-wrap gap-2">
+      {grouped.map((g) => (
+        <a
+          href={`#${g.catId}`}
+          class="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-sm font-medium hover:bg-accent hover:border-primary/30 transition-colors"
+        >
+          {g.category.name} <span class="text-muted-foreground">({g.calcs.length})</span>
+        </a>
+      ))}
+    </div>
+
+    <!-- Category sections -->
+    <div class="space-y-12">
+      {grouped.map((g) => (
+        <section id={g.catId} class="scroll-mt-20">
+          <div class="flex items-center gap-3 mb-4 pb-3 border-b border-border">
+            <div class={`flex h-10 w-10 items-center justify-center rounded-lg ${g.category.color} ${g.category.darkColor} shrink-0`}>
+              <span class={`text-base font-bold ${g.category.iconColor} ${g.category.darkIconColor}`}>{g.category.name.charAt(0)}</span>
+            </div>
+            <h2 class="text-2xl font-bold tracking-tight">
+              <a href={`/category/${g.catId}/`} class="hover:text-primary transition-colors">{g.category.name}</a>
+            </h2>
+            <span class="text-sm text-muted-foreground">({g.calcs.length} calculators)</span>
+          </div>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+            {g.calcs.map((c) => (
+              <li>
+                <a
+                  href={`/calculator/${c.slug}/`}
+                  class="block py-2 text-sm hover:text-primary transition-colors group"
+                >
+                  <span class="group-hover:underline">{c.title}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+
+    <div class="mt-16 rounded-xl border border-border bg-muted/30 p-6">
+      <h2 class="text-lg font-semibold mb-2">Can't find what you need?</h2>
+      <p class="text-sm text-muted-foreground mb-4">
+        We add new calculators every month. Email <a href="mailto:info@calks.uk" class="text-primary hover:underline">info@calks.uk</a> with suggestions.
+      </p>
+      <a href="/search/" class="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        Search calculators
+      </a>
+    </div>
+  </div>
+</Layout>

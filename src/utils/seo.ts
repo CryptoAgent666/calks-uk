@@ -3,22 +3,77 @@ import type { CalculatorMeta } from '@/data/types'
 const SITE_URL = 'https://calks.uk'
 const SITE_NAME = 'Calks.uk'
 
+const AUTHOR_ID = `${SITE_URL}/#author`
+
+// Today's ISO date — set at build time so dateModified stays fresh on every deploy
+const BUILD_DATE = new Date().toISOString().split('T')[0]
+
+/**
+ * Person schema for the author (Konstantin Iakovlev) — emitted on every page
+ * to fix broken @id references identified in the GSC audit.
+ */
+export function getPersonSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': AUTHOR_ID,
+    name: 'Konstantin Iakovlev',
+    givenName: 'Konstantin',
+    familyName: 'Iakovlev',
+    url: `${SITE_URL}/about/`,
+    image: `${SITE_URL}/author.jpg`,
+    jobTitle: 'Financial Tools Developer',
+    description: 'Founder of Calks.uk and the Calk network of country-specific calculator sites.',
+    worksFor: { '@id': `${SITE_URL}/#organization` },
+    founderOf: { '@id': `${SITE_URL}/#organization` },
+    sameAs: [
+      'https://www.linkedin.com/in/konstantin-iakovlev',
+      'https://calk.nz',
+      'https://calk-au.com',
+      'https://calk.kz',
+    ],
+    knowsAbout: [
+      'UK taxation',
+      'HMRC rates',
+      'PAYE',
+      'National Insurance',
+      'financial calculators',
+      'personal finance',
+      'web development',
+    ],
+  }
+}
+
 export function getOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${SITE_URL}/#organization`,
     name: SITE_NAME,
+    alternateName: 'Calks UK',
     url: SITE_URL,
-    logo: `${SITE_URL}/logo.png`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/logo.png`,
+      width: 512,
+      height: 512,
+    },
     description: 'Free online calculators for the UK. Tax, salary, mortgage, pension, VAT and more — updated for 2026/27.',
+    foundingDate: '2026-04-06',
+    founder: { '@id': AUTHOR_ID },
+    areaServed: { '@type': 'Country', name: 'United Kingdom' },
+    knowsLanguage: 'en-GB',
     contactPoint: {
       '@type': 'ContactPoint',
       email: 'info@calks.uk',
       contactType: 'customer support',
+      availableLanguage: ['English'],
     },
     sameAs: [
       'https://www.linkedin.com/in/konstantin-iakovlev',
+      'https://calk.nz',
+      'https://calk-au.com',
+      'https://calk.kz',
     ],
   }
 }
@@ -30,12 +85,18 @@ export function getWebSiteSchema() {
     '@id': `${SITE_URL}/#website`,
     url: SITE_URL,
     name: SITE_NAME,
+    inLanguage: 'en-GB',
     publisher: { '@id': `${SITE_URL}/#organization` },
-    // SearchAction removed: site search is client-side only, no URL-based endpoint
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_URL}/search/?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   }
 }
-
-const AUTHOR_ID = `${SITE_URL}/#author`
 
 export function getWebPageSchema(title: string, description: string, url: string, dateModified?: string) {
   return {
@@ -48,8 +109,10 @@ export function getWebPageSchema(title: string, description: string, url: string
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
     author: { '@id': AUTHOR_ID },
+    publisher: { '@id': `${SITE_URL}/#organization` },
     inLanguage: 'en-GB',
-    ...(dateModified ? { dateModified } : {}),
+    // Always emit dateModified — use the explicit one if given, otherwise build date
+    dateModified: dateModified || BUILD_DATE,
   }
 }
 

@@ -3,6 +3,10 @@ import '@/styles/global.css'
 import Header from '@/components/layout/Header.astro'
 import Footer from '@/components/layout/Footer.astro'
 import CookieConsent from '@/components/CookieConsent.astro'
+import { getPersonSchema } from '@/utils/seo'
+
+// Person schema is inlined on every page so #author @id references resolve sitewide
+const personSchema = getPersonSchema()
 
 interface Props {
   title: string
@@ -66,10 +70,11 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
     <!-- Theme color -->
     <meta name="theme-color" content="#1e3a5f" />
 
-    <!-- Schema.org JSON-LD -->
+    <!-- Schema.org JSON-LD: per-page schemas + site-wide Person -->
     {schemas.map((schema) => (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
     <!-- Theme (prevent FOUC) -->
     <script is:inline>
