@@ -9,7 +9,13 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      // Exclude pages that shouldn't be indexed: search endpoint, PWA offline fallback, 404
+      filter: (page) =>
+        !page.includes('/offline/') &&
+        !page.includes('/search/') &&
+        !page.includes('/404'),
+    }),
   ],
   vite: {
     plugins: [tailwindcss()],
