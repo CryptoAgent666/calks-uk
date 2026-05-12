@@ -98,6 +98,28 @@ export function getWebSiteSchema() {
   }
 }
 
+/**
+ * CollectionPage schema for category/listing pages.
+ * More semantically correct than WebPage for index pages.
+ */
+export function getCollectionPageSchema(title: string, description: string, url: string, dateModified?: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${SITE_URL}${url}#webpage`,
+    url: `${SITE_URL}${url}`,
+    name: title,
+    description,
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    about: { '@id': `${SITE_URL}/#organization` },
+    author: { '@id': AUTHOR_ID },
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    inLanguage: 'en-GB',
+    datePublished: '2026-04-06',
+    dateModified: dateModified || BUILD_DATE,
+  }
+}
+
 export function getWebPageSchema(title: string, description: string, url: string, dateModified?: string) {
   return {
     '@context': 'https://schema.org',

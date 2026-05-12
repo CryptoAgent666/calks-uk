@@ -36,6 +36,11 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Preconnect / DNS prefetch — speeds up early third-party fetches -->
+    <link rel="preconnect" href="https://calks.uk" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="manifest" href="/manifest.json" />
 
@@ -64,8 +69,8 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
     <link rel="alternate" hreflang="en-GB" href={canonical} />
     <link rel="alternate" hreflang="x-default" href={canonical} />
 
-    <!-- Fonts (self-hosted) -->
-    <link rel="preload" href="/fonts/inter-variable-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Fonts (self-hosted) — fetchpriority high for LCP text -->
+    <link rel="preload" href="/fonts/inter-variable-subset.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
 
     <!-- Theme color -->
     <meta name="theme-color" content="#1e3a5f" />

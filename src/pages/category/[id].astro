@@ -2,7 +2,7 @@
 import Layout from '@/layouts/Layout.astro'
 import { CATEGORIES, CATEGORY_IDS } from '@/data/categories'
 import { getCalculatorsByCategory } from '@/data/calculators'
-import { getWebPageSchema, getBreadcrumbSchema, getItemListSchema } from '@/utils/seo'
+import { getCollectionPageSchema, getBreadcrumbSchema, getItemListSchema } from '@/utils/seo'
 import type { GetStaticPaths } from 'astro'
 
 export const getStaticPaths: GetStaticPaths = () => {
@@ -39,7 +39,7 @@ const catDescriptions: Record<string, string> = {
 const metaDesc = catDescriptions[id as string] || `Free ${category.name.toLowerCase()} calculators for the UK. Updated for the 2026/27 tax year.`
 
 const schemas = [
-  getWebPageSchema(
+  getCollectionPageSchema(
     `${category.name} Calculators`,
     metaDesc,
     `/category/${id}/`

@@ -1,0 +1,16 @@
+# Cloudflare Pages _redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# 1. /sitemap.xml → sitemap-index.xml (Google probes default location)
+/sitemap.xml /sitemap-index.xml 301
+
+# 2. Trailing slash normalisation handled by Astro `trailingSlash: 'always'`
+# 3. Double-slash normalisation — Cloudflare auto-normalises consecutive
+#    slashes in URL paths at the edge before this file runs.
+
+# 4. Legacy / common typo redirects
+/sitemap/ /sitemap-index.xml 301
+/sitemap /sitemap-index.xml 301
+/calculator/ /calculators/ 301
+/all/ /calculators/ 301
+/all-calculators/ /calculators/ 301
