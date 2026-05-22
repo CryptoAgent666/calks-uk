@@ -46,7 +46,7 @@ export default function ShoeSizeConverter() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium mb-2">Size System</label>
-          <select value={system} onChange={(e) => setSystem(e.target.value as System)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={system} onChange={(e) => setSystem(e.target.value as System)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Size System">
             <option value="uk">UK</option>
             <option value="eu">EU</option>
             <option value="us_m">US (Men's)</option>
@@ -56,7 +56,7 @@ export default function ShoeSizeConverter() {
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Size</label>
-          <input type="number" min="0" max="50" step="0.5" value={value} onChange={(e) => setValue(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="0" max="50" step="0.5" value={value} onChange={(e) => setValue(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Size" />
         </div>
       </div>
 

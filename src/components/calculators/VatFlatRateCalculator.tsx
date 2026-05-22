@@ -43,11 +43,11 @@ export default function VatFlatRateCalculator() {
         <div>
           <label className="block text-sm font-medium mb-2">Annual Turnover (excl. VAT)</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={turnover} onChange={(e) => setTurnover(e.target.value)} placeholder="60,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="text" inputMode="numeric" value={turnover} onChange={(e) => setTurnover(e.target.value)} placeholder="60,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Turnover (excl. VAT)" /></div>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Business Sector</label>
-          <select value={sector} onChange={(e) => setSector(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={sector} onChange={(e) => setSector(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Business Sector">
             {Object.entries(FLAT_RATES).map(([name, rate]) => (
               <option key={name} value={name}>{name} ({rate}%)</option>
             ))}

@@ -24,9 +24,9 @@ export default function GasCostCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Annual Gas Usage (kWh)</label><input type="number" min="0" max="50000" value={kwh} onChange={(e) => setKwh(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /><p className="text-xs text-muted-foreground mt-1">UK avg: 11,500 kWh</p></div>
-        <div><label className="block text-sm font-medium mb-2">Unit Rate (p/kWh)</label><input type="number" min="0" max="20" step="0.01" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Standing Charge (p/day)</label><input type="number" min="0" max="100" step="0.01" value={standing} onChange={(e) => setStanding(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Annual Gas Usage (kWh)</label><input type="number" min="0" max="50000" value={kwh} onChange={(e) => setKwh(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Gas Usage (kWh)" /><p className="text-xs text-muted-foreground mt-1">UK avg: 11,500 kWh</p></div>
+        <div><label className="block text-sm font-medium mb-2">Unit Rate (p/kWh)</label><input type="number" min="0" max="20" step="0.01" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Unit Rate (p/kWh)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Standing Charge (p/day)</label><input type="number" min="0" max="100" step="0.01" value={standing} onChange={(e) => setStanding(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Standing Charge (p/day)" /></div>
       </div>
 
       {k > 0 && (

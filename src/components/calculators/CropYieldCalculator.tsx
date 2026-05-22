@@ -35,10 +35,10 @@ export default function CropYieldCalculator() {
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div><label className="block text-sm font-medium mb-2">Crop</label>
-          <select value={crop} onChange={(e) => setCrop(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={crop} onChange={(e) => setCrop(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Crop">
             {Object.keys(CROPS).map(c => <option key={c} value={c}>{c}</option>)}
           </select></div>
-        <div><label className="block text-sm font-medium mb-2">Growing Area (m²)</label><input type="number" min="0" step="1" value={area} onChange={(e) => setArea(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Growing Area (m²)</label><input type="number" min="0" step="1" value={area} onChange={(e) => setArea(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Growing Area (m²)" /></div>
         <div><label className="block text-sm font-medium mb-2">Price per {CROPS[crop]?.unit || 'kg'} (£)</label><input type="number" min="0" step="0.01" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
       </div>
       {result && (

@@ -32,7 +32,7 @@ export default function CouncilTaxReductionCalculator() {
 
   return (
     <div className="space-y-6">
-      <div><label className="block text-sm font-medium mb-2">Annual Council Tax Bill</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={ct} onChange={(e) => setCt(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
+      <div><label className="block text-sm font-medium mb-2">Annual Council Tax Bill</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={ct} onChange={(e) => setCt(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Council Tax Bill" /></div></div>
       <div className="space-y-2">
         <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={single} onChange={(e) => setSingle(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Only adult in property (25% discount)</span></label>
         <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={student} onChange={(e) => setStudent(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">All occupants full-time students (exempt)</span></label>

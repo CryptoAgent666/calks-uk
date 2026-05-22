@@ -40,15 +40,15 @@ export default function CompanyCarTaxCalculator() {
         <div>
           <label className="block text-sm font-medium mb-2">Car List Price (P11D value)</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={listPrice} onChange={(e) => setListPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="text" inputMode="numeric" value={listPrice} onChange={(e) => setListPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Car List Price (P11D value)" /></div>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">CO2 Emissions (g/km)</label>
-          <input type="number" min="0" max="300" value={co2} onChange={(e) => setCo2(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="0" max="300" value={co2} onChange={(e) => setCo2(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="CO2 Emissions (g/km)" />
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Fuel Type</label>
-          <select value={fuelType} onChange={(e) => setFuelType(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={fuelType} onChange={(e) => setFuelType(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Fuel Type">
             <option value="petrol">Petrol</option>
             <option value="diesel">Diesel (RDE2 compliant)</option>
             <option value="diesel-nonrde2">Diesel (non-RDE2, +4% surcharge)</option>
@@ -58,7 +58,7 @@ export default function CompanyCarTaxCalculator() {
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Your Tax Band</label>
-          <select value={taxBand} onChange={(e) => setTaxBand(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={taxBand} onChange={(e) => setTaxBand(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Your Tax Band">
             <option value="basic">Basic Rate (20%)</option>
             <option value="higher">Higher Rate (40%)</option>
             <option value="additional">Additional Rate (45%)</option>

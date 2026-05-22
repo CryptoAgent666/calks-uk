@@ -69,8 +69,8 @@ export default function CookingConverter() {
       {cat !== 'temperature' ? (
         <>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div><label className="block text-sm font-medium mb-2">Value</label><input type="number" min="0" step="any" value={value} onChange={(e) => setValue(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-            <div><label className="block text-sm font-medium mb-2">From</label><select value={from} onChange={(e) => setFrom(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">{units.map(u => <option key={u.id} value={u.id}>{u.name}</option>)}</select></div>
+            <div><label className="block text-sm font-medium mb-2">Value</label><input type="number" min="0" step="any" value={value} onChange={(e) => setValue(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Value" /></div>
+            <div><label className="block text-sm font-medium mb-2">From</label><select value={from} onChange={(e) => setFrom(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="From">{units.map(u => <option key={u.id} value={u.id}>{u.name}</option>)}</select></div>
           </div>
           {v > 0 && (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 animate-fade-in-up">

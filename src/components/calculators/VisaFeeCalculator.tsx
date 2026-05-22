@@ -42,19 +42,19 @@ export default function VisaFeeCalculator() {
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div><label className="block text-sm font-medium mb-2">Visa Type</label>
-          <select value={visa} onChange={(e) => setVisa(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={visa} onChange={(e) => setVisa(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Visa Type">
             {VISA_TYPES.map(v => <option key={v.id} value={v.id}>{v.name}</option>)}
           </select></div>
         <div><label className="block text-sm font-medium mb-2">Duration</label>
-          <select value={duration} onChange={(e) => setDuration(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={duration} onChange={(e) => setDuration(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Duration">
             <option value="3yr">Up to 3 years</option><option value="5yr">Up to 5 years</option>
           </select></div>
         <div><label className="block text-sm font-medium mb-2">Processing Speed</label>
-          <select value={priority} onChange={(e) => setPriority(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={priority} onChange={(e) => setPriority(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Processing Speed">
             <option value="standard">Standard</option><option value="priority">Priority (+£500)</option><option value="super">Super Priority (+£1,000)</option>
           </select></div>
         <div><label className="block text-sm font-medium mb-2">Dependants</label>
-          <input type="number" min="0" max="10" value={deps} onChange={(e) => setDeps(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <input type="number" min="0" max="10" value={deps} onChange={(e) => setDeps(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Dependants" /></div>
       </div>
 
       {result && (

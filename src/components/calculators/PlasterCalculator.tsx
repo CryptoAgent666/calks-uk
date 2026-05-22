@@ -36,10 +36,10 @@ export default function PlasterCalculator() {
         ))}
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Wall Height (m)</label><input type="number" min="0" step="0.1" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Wall Width (m)</label><input type="number" min="0" step="0.1" value={width} onChange={(e) => setWidth(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Number of Walls</label><input type="number" min="1" max="20" value={walls} onChange={(e) => setWalls(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Doors/Windows (m²)</label><input type="number" min="0" step="0.1" value={dw} onChange={(e) => setDw(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Wall Height (m)</label><input type="number" min="0" step="0.1" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Wall Height (m)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Wall Width (m)</label><input type="number" min="0" step="0.1" value={width} onChange={(e) => setWidth(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Wall Width (m)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Number of Walls</label><input type="number" min="1" max="20" value={walls} onChange={(e) => setWalls(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Number of Walls" /></div>
+        <div><label className="block text-sm font-medium mb-2">Doors/Windows (m²)</label><input type="number" min="0" step="0.1" value={dw} onChange={(e) => setDw(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Doors/Windows (m²)" /></div>
       </div>
 
       {result.totalArea > 0 && (

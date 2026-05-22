@@ -50,8 +50,8 @@ export default function WaistHipRatioCalculator() {
         ))}
       </div>
       <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Waist (cm)</label><input type="number" min="40" max="200" value={waist} onChange={(e) => setWaist(e.target.value)} placeholder="85" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /><p className="text-xs text-muted-foreground mt-1">Measure at narrowest point</p></div>
-        <div><label className="block text-sm font-medium mb-2">Hip (cm)</label><input type="number" min="50" max="200" value={hip} onChange={(e) => setHip(e.target.value)} placeholder="100" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /><p className="text-xs text-muted-foreground mt-1">Measure at widest point</p></div>
+        <div><label className="block text-sm font-medium mb-2">Waist (cm)</label><input type="number" min="40" max="200" value={waist} onChange={(e) => setWaist(e.target.value)} placeholder="85" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Waist (cm)" /><p className="text-xs text-muted-foreground mt-1">Measure at narrowest point</p></div>
+        <div><label className="block text-sm font-medium mb-2">Hip (cm)</label><input type="number" min="50" max="200" value={hip} onChange={(e) => setHip(e.target.value)} placeholder="100" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Hip (cm)" /><p className="text-xs text-muted-foreground mt-1">Measure at widest point</p></div>
       </div>
 
       {result && (

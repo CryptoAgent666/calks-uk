@@ -75,7 +75,7 @@ export default function IncomeTaxCalculator() {
             onChange={(e) => setIncome(e.target.value)}
             placeholder="50,000"
             className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"
-          />
+           aria-label="Annual Gross Income" />
         </div>
         {/* Quick amounts */}
         <div className="flex flex-wrap gap-2 mt-3">

@@ -38,7 +38,7 @@ export default function RomanNumeralConverter() {
       <div className="rounded-xl border border-border p-5 space-y-4">
         <h3 className="font-semibold">Decimal to Roman</h3>
         <div className="grid grid-cols-2 gap-4 items-end">
-          <div><label className="block text-sm font-medium mb-2">Number (1-3999)</label><input type="number" min="1" max="3999" value={decimal} onChange={(e) => setDecimal(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-sm font-medium mb-2">Number (1-3999)</label><input type="number" min="1" max="3999" value={decimal} onChange={(e) => setDecimal(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Number (1-3999)" /></div>
           <div className="rounded-xl bg-primary/10 p-3 text-center"><p className="text-2xl font-bold text-primary font-serif tracking-widest">{romanResult}</p></div>
         </div>
       </div>
@@ -46,7 +46,7 @@ export default function RomanNumeralConverter() {
       <div className="rounded-xl border border-border p-5 space-y-4">
         <h3 className="font-semibold">Roman to Decimal</h3>
         <div className="grid grid-cols-2 gap-4 items-end">
-          <div><label className="block text-sm font-medium mb-2">Roman Numeral</label><input type="text" value={roman} onChange={(e) => setRoman(e.target.value.toUpperCase())} placeholder="MMXXV" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-bold uppercase tracking-widest font-serif focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-sm font-medium mb-2">Roman Numeral</label><input type="text" value={roman} onChange={(e) => setRoman(e.target.value.toUpperCase())} placeholder="MMXXV" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-bold uppercase tracking-widest font-serif focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Roman Numeral" /></div>
           <div className="rounded-xl bg-primary/10 p-3 text-center"><p className="text-2xl font-bold text-primary">{decimalResult !== null ? decimalResult : '—'}</p></div>
         </div>
       </div>

@@ -36,7 +36,7 @@ export default function TaxBracketVisualizerCalculator() {
 
   return (
     <div className="space-y-6">
-      <div><label className="block text-sm font-medium mb-2">Annual Gross Income</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={income} onChange={(e) => setIncome(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-2xl font-bold text-center focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
+      <div><label className="block text-sm font-medium mb-2">Annual Gross Income</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={income} onChange={(e) => setIncome(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-2xl font-bold text-center focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Gross Income" /></div></div>
 
       {i > 0 && (
         <div className="space-y-4 animate-fade-in-up">

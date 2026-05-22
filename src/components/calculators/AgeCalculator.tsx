@@ -33,7 +33,7 @@ export default function AgeCalculator() {
     <div className="space-y-6">
       <div>
         <label htmlFor="age-dob" className="block text-sm font-medium mb-2">Date of Birth</label>
-        <input id="age-dob" type="date" value={dob} onChange={(e) => setDob(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+        <input id="age-dob" type="date" value={dob} onChange={(e) => setDob(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Date of Birth" />
       </div>
 
       {result && (

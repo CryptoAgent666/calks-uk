@@ -58,7 +58,7 @@ export default function TaxCodeCheckerCalculator() {
     <div className="space-y-6">
       <div>
         <label className="block text-sm font-medium mb-2">Enter Your Tax Code</label>
-        <input type="text" value={code} onChange={(e) => setCode(e.target.value)} placeholder="1257L" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-2xl font-bold text-center uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-ring" />
+        <input type="text" value={code} onChange={(e) => setCode(e.target.value)} placeholder="1257L" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-2xl font-bold text-center uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Enter Your Tax Code" />
         <p className="text-xs text-muted-foreground mt-1 text-center">Find your tax code on your payslip, P45, P60 or HMRC letter</p>
       </div>
 

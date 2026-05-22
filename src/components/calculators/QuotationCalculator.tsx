@@ -35,7 +35,7 @@ export default function QuotationCalculator() {
         ))}
       </div>
       <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Profit Margin (%)</label><input type="number" min="0" max="100" value={marginPct} onChange={(e) => setMarginPct(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Profit Margin (%)</label><input type="number" min="0" max="100" value={marginPct} onChange={(e) => setMarginPct(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Profit Margin (%)" /></div>
         <div className="flex items-end pb-1"><label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={addVat} onChange={(e) => setAddVat(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Add VAT (20%)</span></label></div>
       </div>
 

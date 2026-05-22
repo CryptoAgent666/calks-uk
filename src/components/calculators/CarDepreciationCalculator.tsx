@@ -40,9 +40,9 @@ export default function CarDepreciationCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Purchase Price (new)</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
-        <div><label className="block text-sm font-medium mb-2">Current Age (years)</label><input type="number" min="0" max="20" value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Project Forward (years)</label><input type="number" min="1" max="15" value={project} onChange={(e) => setProject(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Purchase Price (new)</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Purchase Price (new)" /></div></div>
+        <div><label className="block text-sm font-medium mb-2">Current Age (years)</label><input type="number" min="0" max="20" value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Current Age (years)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Project Forward (years)</label><input type="number" min="1" max="15" value={project} onChange={(e) => setProject(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Project Forward (years)" /></div>
       </div>
 
       {p > 0 && (

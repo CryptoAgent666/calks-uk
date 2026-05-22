@@ -47,16 +47,16 @@ export default function BNPLCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Purchase Amount</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="200" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
-        <div><label className="block text-sm font-medium mb-2">BNPL Provider</label><select value={provider} onChange={(e) => setProvider(e.target.value as Provider)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+        <div><label className="block text-sm font-medium mb-2">Purchase Amount</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="200" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Purchase Amount" /></div></div>
+        <div><label className="block text-sm font-medium mb-2">BNPL Provider</label><select value={provider} onChange={(e) => setProvider(e.target.value as Provider)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="BNPL Provider">
           {Object.entries(PROVIDERS).map(([k, v]) => <option key={k} value={k}>{v.name}</option>)}
         </select></div>
       </div>
 
       {provider === 'custom' && (
         <div className="grid grid-cols-2 gap-4">
-          <div><label className="block text-sm font-medium mb-2">Instalments</label><input type="number" min="2" max="36" value={customInst} onChange={(e) => setCustomInst(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-          <div><label className="block text-sm font-medium mb-2">APR (%)</label><input type="number" min="0" max="50" step="0.1" value={customApr} onChange={(e) => setCustomApr(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-sm font-medium mb-2">Instalments</label><input type="number" min="2" max="36" value={customInst} onChange={(e) => setCustomInst(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Instalments" /></div>
+          <div><label className="block text-sm font-medium mb-2">APR (%)</label><input type="number" min="0" max="50" step="0.1" value={customApr} onChange={(e) => setCustomApr(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="APR (%)" /></div>
         </div>
       )}
 

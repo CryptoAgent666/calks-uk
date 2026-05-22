@@ -27,11 +27,11 @@ export default function TipCalculator() {
         <div>
           <label className="block text-sm font-medium mb-2">Bill Amount</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="number" min="0" step="0.01" value={bill} onChange={(e) => setBill(e.target.value)} placeholder="50.00" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="number" min="0" step="0.01" value={bill} onChange={(e) => setBill(e.target.value)} placeholder="50.00" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Bill Amount" /></div>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Tip (%)</label>
-          <input type="number" min="0" max="100" value={tipPct} onChange={(e) => setTipPct(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="0" max="100" value={tipPct} onChange={(e) => setTipPct(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Tip (%)" />
           <div className="flex gap-2 mt-2">
             {[5, 10, 12.5, 15, 20].map((pct) => (
               <button key={pct} onClick={() => setTipPct(pct.toString())} className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${parseFloat(tipPct) === pct ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-accent'}`}>{pct}%</button>
@@ -40,7 +40,7 @@ export default function TipCalculator() {
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Split Between</label>
-          <input type="number" min="1" max="50" value={people} onChange={(e) => setPeople(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="1" max="50" value={people} onChange={(e) => setPeople(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Split Between" />
         </div>
       </div>
 

@@ -32,12 +32,12 @@ export default function MarriageAllowanceCalculator() {
         <div>
           <label className="block text-sm font-medium mb-2">Your Annual Income</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={income1} onChange={(e) => setIncome1(e.target.value)} placeholder="10,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="text" inputMode="numeric" value={income1} onChange={(e) => setIncome1(e.target.value)} placeholder="10,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Your Annual Income" /></div>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Partner's Annual Income</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={income2} onChange={(e) => setIncome2(e.target.value)} placeholder="30,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="text" inputMode="numeric" value={income2} onChange={(e) => setIncome2(e.target.value)} placeholder="30,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Partner's Annual Income" /></div>
         </div>
       </div>
 

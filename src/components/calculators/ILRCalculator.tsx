@@ -40,9 +40,9 @@ export default function ILRCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div><label className="block text-sm font-medium mb-2">ILR Route</label><select value={route} onChange={(e) => setRoute(e.target.value as Route)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">{Object.entries(ROUTES).map(([k, v]) => <option key={k} value={k}>{v.name}</option>)}</select></div>
-        <div><label className="block text-sm font-medium mb-2">UK Entry Date</label><input type="date" value={entry} onChange={(e) => setEntry(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Total Days Absent</label><input type="number" min="0" max="1000" value={absence} onChange={(e) => setAbsence(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">ILR Route</label><select value={route} onChange={(e) => setRoute(e.target.value as Route)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="ILR Route">{Object.entries(ROUTES).map(([k, v]) => <option key={k} value={k}>{v.name}</option>)}</select></div>
+        <div><label className="block text-sm font-medium mb-2">UK Entry Date</label><input type="date" value={entry} onChange={(e) => setEntry(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="UK Entry Date" /></div>
+        <div><label className="block text-sm font-medium mb-2">Total Days Absent</label><input type="number" min="0" max="1000" value={absence} onChange={(e) => setAbsence(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Total Days Absent" /></div>
       </div>
 
       {result && (

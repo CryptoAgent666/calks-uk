@@ -55,14 +55,14 @@ export default function ConcreteCalculator() {
 
       {shape !== 'column' ? (
         <div className="grid grid-cols-3 gap-4">
-          <div><label className="block text-sm font-medium mb-2">Length (mm)</label><input type="number" min="0" value={length} onChange={(e) => setLength(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-          <div><label className="block text-sm font-medium mb-2">Width (mm)</label><input type="number" min="0" value={width} onChange={(e) => setWidth(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-          <div><label className="block text-sm font-medium mb-2">Depth (mm)</label><input type="number" min="0" value={depth} onChange={(e) => setDepth(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-sm font-medium mb-2">Length (mm)</label><input type="number" min="0" value={length} onChange={(e) => setLength(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Length (mm)" /></div>
+          <div><label className="block text-sm font-medium mb-2">Width (mm)</label><input type="number" min="0" value={width} onChange={(e) => setWidth(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Width (mm)" /></div>
+          <div><label className="block text-sm font-medium mb-2">Depth (mm)</label><input type="number" min="0" value={depth} onChange={(e) => setDepth(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Depth (mm)" /></div>
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-4">
-          <div><label className="block text-sm font-medium mb-2">Diameter (mm)</label><input type="number" min="0" value={diameter} onChange={(e) => setDiameter(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-          <div><label className="block text-sm font-medium mb-2">Height (mm)</label><input type="number" min="0" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-sm font-medium mb-2">Diameter (mm)</label><input type="number" min="0" value={diameter} onChange={(e) => setDiameter(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Diameter (mm)" /></div>
+          <div><label className="block text-sm font-medium mb-2">Height (mm)</label><input type="number" min="0" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Height (mm)" /></div>
         </div>
       )}
 

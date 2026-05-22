@@ -66,12 +66,12 @@ export default function SleepCalculator() {
       {mode === 'wake' ? (
         <div>
           <label className="block text-sm font-medium mb-2">Wake-up Time</label>
-          <input type="time" value={wakeTime} onChange={(e) => setWakeTime(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="time" value={wakeTime} onChange={(e) => setWakeTime(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Wake-up Time" />
         </div>
       ) : (
         <div>
           <label className="block text-sm font-medium mb-2">Bedtime</label>
-          <input type="time" value={bedTime} onChange={(e) => setBedTime(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="time" value={bedTime} onChange={(e) => setBedTime(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Bedtime" />
         </div>
       )}
 

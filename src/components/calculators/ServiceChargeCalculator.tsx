@@ -33,8 +33,8 @@ export default function ServiceChargeCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Total Units in Block</label><input type="number" min="1" max="200" value={units} onChange={(e) => setUnits(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Your Share (%)</label><input type="number" min="1" max="100" value={yourShare} onChange={(e) => setYourShare(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /><p className="text-xs text-muted-foreground mt-1">100% = you pay total. Equal split = set units.</p></div>
+        <div><label className="block text-sm font-medium mb-2">Total Units in Block</label><input type="number" min="1" max="200" value={units} onChange={(e) => setUnits(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Total Units in Block" /></div>
+        <div><label className="block text-sm font-medium mb-2">Your Share (%)</label><input type="number" min="1" max="100" value={yourShare} onChange={(e) => setYourShare(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Your Share (%)" /><p className="text-xs text-muted-foreground mt-1">100% = you pay total. Equal split = set units.</p></div>
       </div>
       <h3 className="text-sm font-semibold">Annual Building Costs</h3>
       <div className="space-y-2">

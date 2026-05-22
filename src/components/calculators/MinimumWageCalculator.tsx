@@ -27,8 +27,8 @@ export default function MinimumWageCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Age Group</label><select value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">{Object.entries(RATES_2025).map(([k,v]) => <option key={k} value={k}>{v.name} (£{v.rate}/hr)</option>)}</select></div>
-        <div><label className="block text-sm font-medium mb-2">Hours/Week</label><input type="number" min="1" max="60" step="0.5" value={hours} onChange={(e) => setHours(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Age Group</label><select value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Age Group">{Object.entries(RATES_2025).map(([k,v]) => <option key={k} value={k}>{v.name} (£{v.rate}/hr)</option>)}</select></div>
+        <div><label className="block text-sm font-medium mb-2">Hours/Week</label><input type="number" min="1" max="60" step="0.5" value={hours} onChange={(e) => setHours(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Hours/Week" /></div>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 animate-fade-in-up">

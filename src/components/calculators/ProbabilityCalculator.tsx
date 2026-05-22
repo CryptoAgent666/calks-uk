@@ -30,8 +30,8 @@ export default function ProbabilityCalculator() {
       <div className="rounded-xl border border-border p-5 space-y-4">
         <h3 className="font-semibold">Event Probability</h3>
         <div className="grid grid-cols-2 gap-4">
-          <div><label className="block text-sm font-medium mb-2">P(A)</label><input type="number" min="0" max="1" step="0.01" value={eventA} onChange={(e) => setEventA(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-          <div><label className="block text-sm font-medium mb-2">P(B)</label><input type="number" min="0" max="1" step="0.01" value={eventB} onChange={(e) => setEventB(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-sm font-medium mb-2">P(A)</label><input type="number" min="0" max="1" step="0.01" value={eventA} onChange={(e) => setEventA(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="P(A)" /></div>
+          <div><label className="block text-sm font-medium mb-2">P(B)</label><input type="number" min="0" max="1" step="0.01" value={eventB} onChange={(e) => setEventB(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="P(B)" /></div>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div className="rounded-xl bg-primary/10 p-3 text-center"><p className="text-xs text-muted-foreground">P(A or B)</p><p className="text-lg font-bold text-primary">{fmt(pAorB)}</p></div>
@@ -45,8 +45,8 @@ export default function ProbabilityCalculator() {
       <div className="rounded-xl border border-border p-5 space-y-4">
         <h3 className="font-semibold">Combinations & Permutations</h3>
         <div className="grid grid-cols-2 gap-4">
-          <div><label className="block text-sm font-medium mb-2">n (total items)</label><input type="number" min="0" max="20" value={combN} onChange={(e) => setCombN(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-          <div><label className="block text-sm font-medium mb-2">r (choosing)</label><input type="number" min="0" max="20" value={combR} onChange={(e) => setCombR(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-sm font-medium mb-2">n (total items)</label><input type="number" min="0" max="20" value={combN} onChange={(e) => setCombN(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="n (total items)" /></div>
+          <div><label className="block text-sm font-medium mb-2">r (choosing)</label><input type="number" min="0" max="20" value={combR} onChange={(e) => setCombR(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="r (choosing)" /></div>
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">C(n,r) Combinations</p><p className="text-xl font-bold text-primary">{fmt(comb)}</p><p className="text-xs text-muted-foreground">Order doesn't matter</p></div>

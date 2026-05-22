@@ -52,28 +52,28 @@ export default function WorkplacePensionCalculator() {
         <div>
           <label className="block text-sm font-medium mb-2">Annual Salary</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={salary} onChange={(e) => setSalary(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="text" inputMode="numeric" value={salary} onChange={(e) => setSalary(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Salary" /></div>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Your Contribution (%)</label>
-          <input type="number" min="0" max="100" step="0.5" value={employeePct} onChange={(e) => setEmployeePct(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="0" max="100" step="0.5" value={employeePct} onChange={(e) => setEmployeePct(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Your Contribution (%)" />
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Employer Contribution (%)</label>
-          <input type="number" min="0" max="100" step="0.5" value={employerPct} onChange={(e) => setEmployerPct(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="0" max="100" step="0.5" value={employerPct} onChange={(e) => setEmployerPct(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Employer Contribution (%)" />
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Current Pension Pot</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={currentPot} onChange={(e) => setCurrentPot(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="text" inputMode="numeric" value={currentPot} onChange={(e) => setCurrentPot(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Current Pension Pot" /></div>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Years to Retirement</label>
-          <input type="number" min="1" max="50" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="1" max="50" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Years to Retirement" />
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Expected Growth (%)</label>
-          <input type="number" min="0" max="15" step="0.5" value={growth} onChange={(e) => setGrowth(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="0" max="15" step="0.5" value={growth} onChange={(e) => setGrowth(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Expected Growth (%)" />
         </div>
       </div>
 

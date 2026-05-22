@@ -46,11 +46,11 @@ export default function HolidayEntitlementCalculator() {
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label htmlFor="hol-days" className="block text-sm font-medium mb-2">Days Per Week</label>
-          <input id="hol-days" type="number" min="1" max="7" step="0.5" value={days} onChange={(e) => setDays(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input id="hol-days" type="number" min="1" max="7" step="0.5" value={days} onChange={(e) => setDays(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Days Per Week" />
         </div>
         <div>
           <label htmlFor="hol-hours" className="block text-sm font-medium mb-2">Hours Per Week</label>
-          <input id="hol-hours" type="number" min="1" max="80" step="0.5" value={hours} onChange={(e) => setHours(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input id="hol-hours" type="number" min="1" max="80" step="0.5" value={hours} onChange={(e) => setHours(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Hours Per Week" />
         </div>
       </div>
 

@@ -42,7 +42,7 @@ export default function StatePensionAgeCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Date of Birth</label><input type="date" value={dob} onChange={(e) => setDob(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Date of Birth</label><input type="date" value={dob} onChange={(e) => setDob(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Date of Birth" /></div>
         <div><label className="block text-sm font-medium mb-2">Gender</label><div className="grid grid-cols-2 gap-2"><button onClick={() => setGender('male')} className={`px-4 py-3 rounded-xl text-sm font-medium border ${gender === 'male' ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border hover:bg-accent'}`}>Male</button><button onClick={() => setGender('female')} className={`px-4 py-3 rounded-xl text-sm font-medium border ${gender === 'female' ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border hover:bg-accent'}`}>Female</button></div></div>
       </div>
 

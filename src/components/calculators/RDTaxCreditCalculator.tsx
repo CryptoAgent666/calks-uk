@@ -37,8 +37,8 @@ export default function RDTaxCreditCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Qualifying R&D Spend</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={spend} onChange={(e) => setSpend(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
-        <div><label className="block text-sm font-medium mb-2">Company Status</label><select value={type} onChange={(e) => setType(e.target.value as CompanyType)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"><option value="profitable">Profitable</option><option value="loss_making">Loss-Making</option></select></div>
+        <div><label className="block text-sm font-medium mb-2">Qualifying R&D Spend</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={spend} onChange={(e) => setSpend(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Qualifying R&D Spend" /></div></div>
+        <div><label className="block text-sm font-medium mb-2">Company Status</label><select value={type} onChange={(e) => setType(e.target.value as CompanyType)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Company Status"><option value="profitable">Profitable</option><option value="loss_making">Loss-Making</option></select></div>
       </div>
 
       {s > 0 && (

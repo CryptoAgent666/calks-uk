@@ -76,8 +76,8 @@ export default function AlcoholUnitsCalculator() {
       <div className="rounded-xl border border-border p-4 space-y-3">
         <h3 className="text-sm font-semibold">Custom Drink</h3>
         <div className="grid grid-cols-3 gap-3 items-end">
-          <div><label className="block text-xs text-muted-foreground mb-1">Volume (ml)</label><input type="number" min="0" value={customMl} onChange={(e) => setCustomMl(e.target.value)} placeholder="500" className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-          <div><label className="block text-xs text-muted-foreground mb-1">ABV (%)</label><input type="number" min="0" max="100" step="0.1" value={customAbv} onChange={(e) => setCustomAbv(e.target.value)} placeholder="5" className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-xs text-muted-foreground mb-1">Volume (ml)</label><input type="number" min="0" value={customMl} onChange={(e) => setCustomMl(e.target.value)} placeholder="500" className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Volume (ml)" /></div>
+          <div><label className="block text-xs text-muted-foreground mb-1">ABV (%)</label><input type="number" min="0" max="100" step="0.1" value={customAbv} onChange={(e) => setCustomAbv(e.target.value)} placeholder="5" className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="ABV (%)" /></div>
           <div className="text-center"><span className="text-lg font-bold text-primary">{customUnits.toFixed(1)} units</span></div>
         </div>
       </div>

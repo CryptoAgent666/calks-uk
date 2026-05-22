@@ -62,7 +62,7 @@ export default function PrimeNumberCalculator() {
     <div className="space-y-6">
       <div>
         <label className="block text-sm font-medium mb-2">Enter a Number</label>
-        <input type="number" min="1" max="999999999" value={number} onChange={(e) => setNumber(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-2xl font-bold text-center focus:outline-none focus:ring-2 focus:ring-ring" />
+        <input type="number" min="1" max="999999999" value={number} onChange={(e) => setNumber(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-2xl font-bold text-center focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Enter a Number" />
       </div>
 
       {result && (

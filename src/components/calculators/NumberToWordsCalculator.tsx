@@ -53,7 +53,7 @@ export default function NumberToWordsCalculator() {
     <div className="space-y-6">
       <div>
         <label className="block text-sm font-medium mb-2">Enter a Number</label>
-        <input type="text" inputMode="numeric" value={number} onChange={(e) => setNumber(e.target.value)} placeholder="1,234,567" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+        <input type="text" inputMode="numeric" value={number} onChange={(e) => setNumber(e.target.value)} placeholder="1,234,567" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Enter a Number" />
       </div>
 
       {isValid && number.trim() !== '' && (

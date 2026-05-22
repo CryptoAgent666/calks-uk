@@ -56,8 +56,8 @@ export default function DateCalculator() {
       <div className="rounded-xl border border-border p-5 space-y-4">
         <h3 className="font-semibold">Days Between Two Dates</h3>
         <div className="grid grid-cols-2 gap-4">
-          <div><label className="block text-sm font-medium mb-2">Start Date</label><input type="date" value={date1} onChange={(e) => setDate1(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-          <div><label className="block text-sm font-medium mb-2">End Date</label><input type="date" value={date2} onChange={(e) => setDate2(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-sm font-medium mb-2">Start Date</label><input type="date" value={date1} onChange={(e) => setDate1(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Start Date" /></div>
+          <div><label className="block text-sm font-medium mb-2">End Date</label><input type="date" value={date2} onChange={(e) => setDate2(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="End Date" /></div>
         </div>
         {result && (
           <div className="space-y-3 animate-fade-in-up">
@@ -79,8 +79,8 @@ export default function DateCalculator() {
       <div className="rounded-xl border border-border p-5 space-y-4">
         <h3 className="font-semibold">Add or Subtract Days</h3>
         <div className="grid grid-cols-2 gap-4">
-          <div><label className="block text-sm font-medium mb-2">Start Date</label><input type="date" value={addDate} onChange={(e) => setAddDate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-          <div><label className="block text-sm font-medium mb-2">Days to Add (negative to subtract)</label><input type="number" value={addNum} onChange={(e) => setAddNum(e.target.value)} placeholder="30" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-sm font-medium mb-2">Start Date</label><input type="date" value={addDate} onChange={(e) => setAddDate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Start Date" /></div>
+          <div><label className="block text-sm font-medium mb-2">Days to Add (negative to subtract)</label><input type="number" value={addNum} onChange={(e) => setAddNum(e.target.value)} placeholder="30" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Days to Add (negative to subtract)" /></div>
         </div>
         {addDate && addNum && (
           <div className="rounded-xl bg-primary/10 p-4 text-center animate-fade-in-up">

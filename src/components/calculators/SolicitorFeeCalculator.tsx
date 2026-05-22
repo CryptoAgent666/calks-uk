@@ -41,8 +41,8 @@ export default function SolicitorFeeCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Legal Matter</label><select value={matter} onChange={(e) => setMatter(e.target.value as MatterType)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">{Object.entries(MATTERS).map(([k,v]) => <option key={k} value={k}>{v.name}</option>)}</select></div>
-        {isConveyancing && <div><label className="block text-sm font-medium mb-2">Property Value</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => setValue(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>}
+        <div><label className="block text-sm font-medium mb-2">Legal Matter</label><select value={matter} onChange={(e) => setMatter(e.target.value as MatterType)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Legal Matter">{Object.entries(MATTERS).map(([k,v]) => <option key={k} value={k}>{v.name}</option>)}</select></div>
+        {isConveyancing && <div><label className="block text-sm font-medium mb-2">Property Value</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => setValue(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Property Value" /></div></div>}
       </div>
 
       <div className="space-y-4 animate-fade-in-up">

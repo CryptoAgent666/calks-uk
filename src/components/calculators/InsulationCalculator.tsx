@@ -40,7 +40,7 @@ export default function InsulationCalculator() {
           ))}
         </div>
       </div>
-      <div><label className="block text-sm font-medium mb-2">Area to Insulate (m²)</label><input type="number" min="0" max="500" value={area} onChange={(e) => setArea(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+      <div><label className="block text-sm font-medium mb-2">Area to Insulate (m²)</label><input type="number" min="0" max="500" value={area} onChange={(e) => setArea(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Area to Insulate (m²)" /></div>
 
       {a > 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 animate-fade-in-up">

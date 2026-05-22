@@ -25,8 +25,8 @@ export default function WaterIntakeCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Weight (kg)</label><input type="number" min="20" max="200" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Activity Level</label><select value={activity} onChange={(e) => setActivity(e.target.value as Activity)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+        <div><label className="block text-sm font-medium mb-2">Weight (kg)</label><input type="number" min="20" max="200" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Weight (kg)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Activity Level</label><select value={activity} onChange={(e) => setActivity(e.target.value as Activity)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Activity Level">
           <option value="sedentary">Sedentary (desk job)</option><option value="light">Light exercise</option><option value="moderate">Moderate exercise</option><option value="heavy">Heavy exercise</option><option value="athlete">Athlete / physical job</option>
         </select></div>
       </div>

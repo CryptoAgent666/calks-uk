@@ -58,14 +58,14 @@ export default function CapitalGainsTaxCalculator() {
           <label htmlFor="cgt-gain" className="block text-sm font-medium mb-2">Capital Gain</label>
           <div className="relative">
             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input id="cgt-gain" type="text" inputMode="numeric" value={gain} onChange={(e) => setGain(e.target.value)} placeholder="20,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input id="cgt-gain" type="text" inputMode="numeric" value={gain} onChange={(e) => setGain(e.target.value)} placeholder="20,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Capital Gain" />
           </div>
         </div>
         <div>
           <label htmlFor="cgt-income" className="block text-sm font-medium mb-2">Annual Income (for rate band)</label>
           <div className="relative">
             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input id="cgt-income" type="text" inputMode="numeric" value={income} onChange={(e) => setIncome(e.target.value)} placeholder="35,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input id="cgt-income" type="text" inputMode="numeric" value={income} onChange={(e) => setIncome(e.target.value)} placeholder="35,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Income (for rate band)" />
           </div>
         </div>
       </div>

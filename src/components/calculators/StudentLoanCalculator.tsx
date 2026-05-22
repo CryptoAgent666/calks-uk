@@ -82,7 +82,7 @@ export default function StudentLoanCalculator() {
             onChange={(e) => setSalary(e.target.value)}
             placeholder="35,000"
             className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"
-          />
+           aria-label="Annual Gross Salary" />
         </div>
       </div>
 

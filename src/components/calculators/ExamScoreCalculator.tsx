@@ -46,8 +46,8 @@ export default function ExamScoreCalculator() {
       <div className="rounded-xl border border-border p-5 space-y-4">
         <h3 className="font-semibold">Calculate Grade</h3>
         <div className="grid grid-cols-2 gap-4">
-          <div><label className="block text-sm font-medium mb-2">Marks Scored</label><input type="number" min="0" value={scored} onChange={(e) => setScored(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-          <div><label className="block text-sm font-medium mb-2">Total Marks</label><input type="number" min="1" value={total} onChange={(e) => setTotal(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-sm font-medium mb-2">Marks Scored</label><input type="number" min="0" value={scored} onChange={(e) => setScored(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Marks Scored" /></div>
+          <div><label className="block text-sm font-medium mb-2">Total Marks</label><input type="number" min="1" value={total} onChange={(e) => setTotal(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Total Marks" /></div>
         </div>
         {result && (
           <div className="grid grid-cols-2 gap-3 animate-fade-in-up">
@@ -60,10 +60,10 @@ export default function ExamScoreCalculator() {
       <div className="rounded-xl border border-border p-5 space-y-4">
         <h3 className="font-semibold">What Do I Need to Get?</h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <div><label className="block text-sm font-medium mb-2">Marks So Far</label><input type="number" min="0" value={currentMarks} onChange={(e) => setCurrentMarks(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-          <div><label className="block text-sm font-medium mb-2">Out Of</label><input type="number" min="1" value={currentTotal} onChange={(e) => setCurrentTotal(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-          <div><label className="block text-sm font-medium mb-2">Target Overall (%)</label><input type="number" min="0" max="100" value={targetPct} onChange={(e) => setTargetPct(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-          <div><label className="block text-sm font-medium mb-2">Remaining Marks</label><input type="number" min="0" value={remaining} onChange={(e) => setRemaining(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-sm font-medium mb-2">Marks So Far</label><input type="number" min="0" value={currentMarks} onChange={(e) => setCurrentMarks(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Marks So Far" /></div>
+          <div><label className="block text-sm font-medium mb-2">Out Of</label><input type="number" min="1" value={currentTotal} onChange={(e) => setCurrentTotal(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Out Of" /></div>
+          <div><label className="block text-sm font-medium mb-2">Target Overall (%)</label><input type="number" min="0" max="100" value={targetPct} onChange={(e) => setTargetPct(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Target Overall (%)" /></div>
+          <div><label className="block text-sm font-medium mb-2">Remaining Marks</label><input type="number" min="0" value={remaining} onChange={(e) => setRemaining(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Remaining Marks" /></div>
         </div>
         <div className={`rounded-xl p-4 text-center ${needed.achievable ? 'bg-green-100 dark:bg-green-950' : 'bg-destructive/10'}`}>
           {needed.achievable ? (

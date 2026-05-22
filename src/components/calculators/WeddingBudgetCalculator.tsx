@@ -37,7 +37,7 @@ export default function WeddingBudgetCalculator() {
         <div>
           <label className="block text-sm font-medium mb-2">Total Budget</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={budget} onChange={(e) => setBudget(e.target.value)} placeholder="20,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="text" inputMode="numeric" value={budget} onChange={(e) => setBudget(e.target.value)} placeholder="20,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Total Budget" /></div>
           <div className="flex gap-2 mt-2">
             {[10_000, 15_000, 20_000, 30_000, 50_000].map(a => (
               <button key={a} onClick={() => setBudget(a.toLocaleString())} className="px-3 py-1.5 rounded-lg bg-muted text-sm font-medium hover:bg-accent transition-colors">£{a/1000}K</button>
@@ -46,7 +46,7 @@ export default function WeddingBudgetCalculator() {
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Number of Guests</label>
-          <input type="number" min="1" max="500" value={guests} onChange={(e) => setGuests(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="1" max="500" value={guests} onChange={(e) => setGuests(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Number of Guests" />
         </div>
       </div>
 

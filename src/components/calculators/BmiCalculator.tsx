@@ -63,30 +63,30 @@ export default function BmiCalculator() {
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-2">Height (cm)</label>
-            <input type="number" value={heightCm} onChange={(e) => setHeightCm(e.target.value)} placeholder="175" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input type="number" value={heightCm} onChange={(e) => setHeightCm(e.target.value)} placeholder="175" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Height (cm)" />
           </div>
           <div>
             <label className="block text-sm font-medium mb-2">Weight (kg)</label>
-            <input type="number" value={weightKg} onChange={(e) => setWeightKg(e.target.value)} placeholder="75" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input type="number" value={weightKg} onChange={(e) => setWeightKg(e.target.value)} placeholder="75" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Weight (kg)" />
           </div>
         </div>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div>
             <label className="block text-sm font-medium mb-2">Feet</label>
-            <input type="number" value={heightFt} onChange={(e) => setHeightFt(e.target.value)} placeholder="5" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input type="number" value={heightFt} onChange={(e) => setHeightFt(e.target.value)} placeholder="5" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Feet" />
           </div>
           <div>
             <label className="block text-sm font-medium mb-2">Inches</label>
-            <input type="number" value={heightIn} onChange={(e) => setHeightIn(e.target.value)} placeholder="9" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input type="number" value={heightIn} onChange={(e) => setHeightIn(e.target.value)} placeholder="9" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Inches" />
           </div>
           <div>
             <label className="block text-sm font-medium mb-2">Stone</label>
-            <input type="number" value={weightSt} onChange={(e) => setWeightSt(e.target.value)} placeholder="11" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input type="number" value={weightSt} onChange={(e) => setWeightSt(e.target.value)} placeholder="11" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Stone" />
           </div>
           <div>
             <label className="block text-sm font-medium mb-2">Pounds</label>
-            <input type="number" value={weightLb} onChange={(e) => setWeightLb(e.target.value)} placeholder="10" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input type="number" value={weightLb} onChange={(e) => setWeightLb(e.target.value)} placeholder="10" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Pounds" />
           </div>
         </div>
       )}

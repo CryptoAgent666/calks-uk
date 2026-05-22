@@ -33,9 +33,9 @@ export default function FarmOperatingCostCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Hectares</label><input type="number" min="1" value={ha} onChange={(e) => setHa(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Yield (t/ha)</label><input type="number" min="0" step="0.1" value={yld} onChange={(e) => setYld(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Price (£/tonne)</label><input type="number" min="0" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Hectares</label><input type="number" min="1" value={ha} onChange={(e) => setHa(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Hectares" /></div>
+        <div><label className="block text-sm font-medium mb-2">Yield (t/ha)</label><input type="number" min="0" step="0.1" value={yld} onChange={(e) => setYld(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Yield (t/ha)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Price (£/tonne)</label><input type="number" min="0" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Price (£/tonne)" /></div>
       </div>
       <h3 className="text-sm font-semibold">Costs per Hectare (£/ha)</h3>
       <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">

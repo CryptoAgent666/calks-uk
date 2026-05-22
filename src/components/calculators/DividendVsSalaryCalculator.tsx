@@ -66,7 +66,7 @@ export default function DividendVsSalaryCalculator() {
       <div>
         <label className="block text-sm font-medium mb-2">Company Profit Available (before salary & tax)</label>
         <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-          <input type="text" inputMode="numeric" value={profit} onChange={(e) => setProfit(e.target.value)} placeholder="80,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <input type="text" inputMode="numeric" value={profit} onChange={(e) => setProfit(e.target.value)} placeholder="80,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Company Profit Available (before salary & tax)" /></div>
         <div className="flex flex-wrap gap-2 mt-3">
           {[50_000, 75_000, 100_000, 150_000].map((a) => (
             <button key={a} onClick={() => setProfit(a.toLocaleString())} className="px-3 py-1.5 rounded-lg bg-muted text-sm font-medium hover:bg-accent transition-colors">£{a / 1000}K</button>

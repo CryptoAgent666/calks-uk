@@ -52,10 +52,10 @@ export default function NhsPayCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">AFC Band</label><select value={band} onChange={(e) => setBand(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+        <div><label className="block text-sm font-medium mb-2">AFC Band</label><select value={band} onChange={(e) => setBand(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="AFC Band">
           {Object.entries(NHS_BANDS).map(([k, v]) => <option key={k} value={k}>Band {k} — {v.description}</option>)}
         </select></div>
-        <div><label className="block text-sm font-medium mb-2">Pay Point (% through band)</label><input type="range" min="0" max="100" value={point} onChange={(e) => setPoint(e.target.value)} className="w-full mt-3" /><div className="flex justify-between text-xs text-muted-foreground"><span>Bottom ({formatCurrency(NHS_BANDS[band]?.min || 0)})</span><span>Top ({formatCurrency(NHS_BANDS[band]?.max || 0)})</span></div></div>
+        <div><label className="block text-sm font-medium mb-2">Pay Point (% through band)</label><input type="range" min="0" max="100" value={point} onChange={(e) => setPoint(e.target.value)} className="w-full mt-3"  aria-label="Pay Point (% through band)" /><div className="flex justify-between text-xs text-muted-foreground"><span>Bottom ({formatCurrency(NHS_BANDS[band]?.min || 0)})</span><span>Top ({formatCurrency(NHS_BANDS[band]?.max || 0)})</span></div></div>
       </div>
 
       {result && (

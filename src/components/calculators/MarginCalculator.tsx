@@ -24,8 +24,8 @@ export default function MarginCalculator() {
       <div className="rounded-xl border border-border p-5 space-y-4">
         <h3 className="font-semibold">Profit Margin Calculator</h3>
         <div className="grid grid-cols-2 gap-4">
-          <div><label className="block text-sm font-medium mb-2">Cost</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="number" min="0" step="0.01" value={cost} onChange={(e) => setCost(e.target.value)} placeholder="10" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
-          <div><label className="block text-sm font-medium mb-2">Revenue / Selling Price</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="number" min="0" step="0.01" value={revenue} onChange={(e) => setRevenue(e.target.value)} placeholder="25" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
+          <div><label className="block text-sm font-medium mb-2">Cost</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="number" min="0" step="0.01" value={cost} onChange={(e) => setCost(e.target.value)} placeholder="10" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Cost" /></div></div>
+          <div><label className="block text-sm font-medium mb-2">Revenue / Selling Price</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="number" min="0" step="0.01" value={revenue} onChange={(e) => setRevenue(e.target.value)} placeholder="25" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Revenue / Selling Price" /></div></div>
         </div>
         {c > 0 && r > 0 && (
           <div className="grid grid-cols-3 gap-3 animate-fade-in-up">
@@ -39,8 +39,8 @@ export default function MarginCalculator() {
       <div className="rounded-xl border border-border p-5 space-y-4">
         <h3 className="font-semibold">Markup Calculator</h3>
         <div className="grid grid-cols-2 gap-4">
-          <div><label className="block text-sm font-medium mb-2">Cost</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="number" min="0" step="0.01" value={markupCost} onChange={(e) => setMarkupCost(e.target.value)} placeholder="10" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
-          <div><label className="block text-sm font-medium mb-2">Markup (%)</label><input type="number" min="0" step="1" value={markupPct} onChange={(e) => setMarkupPct(e.target.value)} placeholder="50" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-sm font-medium mb-2">Cost</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="number" min="0" step="0.01" value={markupCost} onChange={(e) => setMarkupCost(e.target.value)} placeholder="10" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Cost" /></div></div>
+          <div><label className="block text-sm font-medium mb-2">Markup (%)</label><input type="number" min="0" step="1" value={markupPct} onChange={(e) => setMarkupPct(e.target.value)} placeholder="50" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Markup (%)" /></div>
         </div>
         {mc > 0 && mp > 0 && (
           <div className="grid grid-cols-2 gap-3 animate-fade-in-up">

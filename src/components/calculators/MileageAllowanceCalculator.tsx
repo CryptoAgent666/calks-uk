@@ -54,12 +54,12 @@ export default function MileageAllowanceCalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium mb-2">Annual Business Miles</label>
-          <input type="text" inputMode="numeric" value={miles} onChange={(e) => setMiles(e.target.value)} placeholder="8,000" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="text" inputMode="numeric" value={miles} onChange={(e) => setMiles(e.target.value)} placeholder="8,000" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Business Miles" />
         </div>
         {vehicle === 'car' && (
           <div>
             <label className="block text-sm font-medium mb-2">Passengers Carried</label>
-            <input type="number" min="0" max="4" value={passengers} onChange={(e) => setPassengers(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input type="number" min="0" max="4" value={passengers} onChange={(e) => setPassengers(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Passengers Carried" />
           </div>
         )}
       </div>

@@ -45,8 +45,8 @@ export default function OvulationCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">First Day of Last Period</label><input type="date" value={lmp} onChange={(e) => setLmp(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Average Cycle Length (days)</label><input type="number" min="21" max="40" value={cycle} onChange={(e) => setCycle(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+        <div><label className="block text-sm font-medium mb-2">First Day of Last Period</label><input type="date" value={lmp} onChange={(e) => setLmp(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="First Day of Last Period" /></div>
+        <div><label className="block text-sm font-medium mb-2">Average Cycle Length (days)</label><input type="number" min="21" max="40" value={cycle} onChange={(e) => setCycle(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Average Cycle Length (days)" />
           <div className="flex gap-2 mt-2">{[26, 28, 30, 32].map(v => <button key={v} onClick={() => setCycle(v.toString())} className={`px-3 py-1 rounded-lg text-xs font-medium ${parseInt(cycle)===v ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-accent'}`}>{v}</button>)}</div></div>
       </div>
 

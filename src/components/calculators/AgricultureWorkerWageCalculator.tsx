@@ -43,9 +43,9 @@ export default function AgricultureWorkerWageCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div><label className="block text-sm font-medium mb-2">AWO Grade</label><select value={gradeIdx} onChange={(e) => setGradeIdx(parseInt(e.target.value))} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">{GRADES.map((g, i) => <option key={i} value={i}>{g.name} (£{g.hourly}/hr)</option>)}</select></div>
-        <div><label className="block text-sm font-medium mb-2">Standard Hours/Week</label><input type="number" min="0" max="60" value={hours} onChange={(e) => setHours(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Overtime Hours/Week</label><input type="number" min="0" max="30" value={overtime} onChange={(e) => setOvertime(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">AWO Grade</label><select value={gradeIdx} onChange={(e) => setGradeIdx(parseInt(e.target.value))} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="AWO Grade">{GRADES.map((g, i) => <option key={i} value={i}>{g.name} (£{g.hourly}/hr)</option>)}</select></div>
+        <div><label className="block text-sm font-medium mb-2">Standard Hours/Week</label><input type="number" min="0" max="60" value={hours} onChange={(e) => setHours(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Standard Hours/Week" /></div>
+        <div><label className="block text-sm font-medium mb-2">Overtime Hours/Week</label><input type="number" min="0" max="30" value={overtime} onChange={(e) => setOvertime(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Overtime Hours/Week" /></div>
       </div>
 
       <div className="space-y-4 animate-fade-in-up">

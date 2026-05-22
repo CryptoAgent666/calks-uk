@@ -46,16 +46,16 @@ export default function ElectricityCostCalculator() {
     <div className="space-y-6">
       <div>
         <label className="block text-sm font-medium mb-2">Quick Select Appliance</label>
-        <select onChange={(e) => selectAppliance(parseInt(e.target.value))} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+        <select onChange={(e) => selectAppliance(parseInt(e.target.value))} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Quick Select Appliance">
           <option value="">-- Select an appliance --</option>
           {APPLIANCES.map((a, i) => <option key={a.name} value={i}>{a.name} ({a.watts}W)</option>)}
         </select>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Power (Watts)</label><input type="number" min="0" max="20000" value={watts} onChange={(e) => setWatts(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Hours per Day</label><input type="number" min="0" max="24" step="0.25" value={hours} onChange={(e) => setHours(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Electricity Rate (p/kWh)</label><input type="number" min="0" max="60" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Power (Watts)</label><input type="number" min="0" max="20000" value={watts} onChange={(e) => setWatts(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Power (Watts)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Hours per Day</label><input type="number" min="0" max="24" step="0.25" value={hours} onChange={(e) => setHours(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Hours per Day" /></div>
+        <div><label className="block text-sm font-medium mb-2">Electricity Rate (p/kWh)</label><input type="number" min="0" max="60" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Electricity Rate (p/kWh)" /></div>
       </div>
 
       {w > 0 && h > 0 && (

@@ -42,17 +42,17 @@ export default function RedundancyPayCalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
           <label htmlFor="red-age" className="block text-sm font-medium mb-2">Your Age</label>
-          <input id="red-age" type="number" min="16" max="75" value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input id="red-age" type="number" min="16" max="75" value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Your Age" />
         </div>
         <div>
           <label htmlFor="red-years" className="block text-sm font-medium mb-2">Years of Service</label>
-          <input id="red-years" type="number" min="0" max="50" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input id="red-years" type="number" min="0" max="50" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Years of Service" />
         </div>
         <div>
           <label htmlFor="red-pay" className="block text-sm font-medium mb-2">Weekly Pay (gross)</label>
           <div className="relative">
             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input id="red-pay" type="number" min="0" value={weeklyPay} onChange={(e) => setWeeklyPay(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input id="red-pay" type="number" min="0" value={weeklyPay} onChange={(e) => setWeeklyPay(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Weekly Pay (gross)" />
           </div>
         </div>
       </div>

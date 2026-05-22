@@ -56,7 +56,7 @@ export default function PaceCalculator() {
         {mode !== 'distance' && (
           <div>
             <label className="block text-sm font-medium mb-2">Distance (km)</label>
-            <input type="number" min="0" step="0.01" value={dist} onChange={(e) => setDist(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input type="number" min="0" step="0.01" value={dist} onChange={(e) => setDist(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Distance (km)" />
             <div className="flex gap-2 mt-2">{PRESETS.map(p => <button key={p.l} onClick={() => setDist(p.v.toString())} className="px-2 py-1 rounded-lg bg-muted text-xs font-medium hover:bg-accent transition-colors">{p.l}</button>)}</div>
           </div>
         )}
@@ -64,9 +64,9 @@ export default function PaceCalculator() {
           <div>
             <label className="block text-sm font-medium mb-2">Time</label>
             <div className="grid grid-cols-3 gap-2">
-              <div><label className="block text-xs text-muted-foreground mb-1">Hours</label><input type="number" min="0" max="24" value={h} onChange={(e) => setH(e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-              <div><label className="block text-xs text-muted-foreground mb-1">Minutes</label><input type="number" min="0" max="59" value={m} onChange={(e) => setM(e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-              <div><label className="block text-xs text-muted-foreground mb-1">Seconds</label><input type="number" min="0" max="59" value={s} onChange={(e) => setS(e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+              <div><label className="block text-xs text-muted-foreground mb-1">Hours</label><input type="number" min="0" max="24" value={h} onChange={(e) => setH(e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Hours" /></div>
+              <div><label className="block text-xs text-muted-foreground mb-1">Minutes</label><input type="number" min="0" max="59" value={m} onChange={(e) => setM(e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Minutes" /></div>
+              <div><label className="block text-xs text-muted-foreground mb-1">Seconds</label><input type="number" min="0" max="59" value={s} onChange={(e) => setS(e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Seconds" /></div>
             </div>
           </div>
         )}
@@ -74,8 +74,8 @@ export default function PaceCalculator() {
           <div>
             <label className="block text-sm font-medium mb-2">Pace (per km)</label>
             <div className="grid grid-cols-2 gap-2">
-              <div><label className="block text-xs text-muted-foreground mb-1">Minutes</label><input type="number" min="0" max="30" value={pm} onChange={(e) => setPm(e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-              <div><label className="block text-xs text-muted-foreground mb-1">Seconds</label><input type="number" min="0" max="59" value={ps} onChange={(e) => setPs(e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+              <div><label className="block text-xs text-muted-foreground mb-1">Minutes</label><input type="number" min="0" max="30" value={pm} onChange={(e) => setPm(e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Minutes" /></div>
+              <div><label className="block text-xs text-muted-foreground mb-1">Seconds</label><input type="number" min="0" max="59" value={ps} onChange={(e) => setPs(e.target.value)} className="w-full rounded-lg border border-input bg-background px-3 py-2 font-medium text-center focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Seconds" /></div>
             </div>
           </div>
         )}

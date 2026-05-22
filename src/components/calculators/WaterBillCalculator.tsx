@@ -44,9 +44,9 @@ export default function WaterBillCalculator() {
       </div>
 
       {type === 'metered' ? (
-        <div><label className="block text-sm font-medium mb-2">People in Household</label><input type="number" min="1" max="10" value={people} onChange={(e) => setPeople(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /><p className="text-xs text-muted-foreground mt-1">Average usage: {LITRES_PER_PERSON_DAY} litres/person/day</p></div>
+        <div><label className="block text-sm font-medium mb-2">People in Household</label><input type="number" min="1" max="10" value={people} onChange={(e) => setPeople(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="People in Household" /><p className="text-xs text-muted-foreground mt-1">Average usage: {LITRES_PER_PERSON_DAY} litres/person/day</p></div>
       ) : (
-        <div><label className="block text-sm font-medium mb-2">Rateable Value (£)</label><input type="number" min="50" max="1000" value={rv} onChange={(e) => setRv(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /><p className="text-xs text-muted-foreground mt-1">Find on your water bill</p></div>
+        <div><label className="block text-sm font-medium mb-2">Rateable Value (£)</label><input type="number" min="50" max="1000" value={rv} onChange={(e) => setRv(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Rateable Value (£)" /><p className="text-xs text-muted-foreground mt-1">Find on your water bill</p></div>
       )}
 
       <div className="space-y-4 animate-fade-in-up">

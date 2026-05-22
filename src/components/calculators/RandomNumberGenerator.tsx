@@ -34,9 +34,9 @@ export default function RandomNumberGenerator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Minimum</label><input type="number" value={min} onChange={(e) => setMin(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Maximum</label><input type="number" value={max} onChange={(e) => setMax(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">How Many</label><input type="number" min="1" max="100" value={count} onChange={(e) => setCount(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Minimum</label><input type="number" value={min} onChange={(e) => setMin(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Minimum" /></div>
+        <div><label className="block text-sm font-medium mb-2">Maximum</label><input type="number" value={max} onChange={(e) => setMax(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Maximum" /></div>
+        <div><label className="block text-sm font-medium mb-2">How Many</label><input type="number" min="1" max="100" value={count} onChange={(e) => setCount(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="How Many" /></div>
       </div>
 
       <label className="flex items-center gap-3 cursor-pointer">

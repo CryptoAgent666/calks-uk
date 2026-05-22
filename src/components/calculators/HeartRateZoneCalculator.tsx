@@ -30,8 +30,8 @@ export default function HeartRateZoneCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Age</label><input type="number" min="10" max="90" value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Resting Heart Rate (BPM)</label><input type="number" min="30" max="120" value={resting} onChange={(e) => setResting(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /><p className="text-xs text-muted-foreground mt-1">Measure first thing in the morning</p></div>
+        <div><label className="block text-sm font-medium mb-2">Age</label><input type="number" min="10" max="90" value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Age" /></div>
+        <div><label className="block text-sm font-medium mb-2">Resting Heart Rate (BPM)</label><input type="number" min="30" max="120" value={resting} onChange={(e) => setResting(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Resting Heart Rate (BPM)" /><p className="text-xs text-muted-foreground mt-1">Measure first thing in the morning</p></div>
       </div>
 
       {result && (

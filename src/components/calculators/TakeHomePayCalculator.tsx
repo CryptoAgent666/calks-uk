@@ -95,7 +95,7 @@ export default function TakeHomePayCalculator() {
               onChange={(e) => setIncome(e.target.value)}
               placeholder="35,000"
               className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"
-            />
+             aria-label="Annual Gross Salary" />
           </div>
           <div className="flex flex-wrap gap-2 mt-3">
             {[25_000, 30_000, 35_000, 45_000, 55_000, 75_000].map((a) => (
@@ -115,7 +115,7 @@ export default function TakeHomePayCalculator() {
             value={pensionPct}
             onChange={(e) => setPensionPct(e.target.value)}
             className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"
-          />
+           aria-label="Pension Contribution (%)" />
         </div>
 
         <div>
@@ -125,7 +125,7 @@ export default function TakeHomePayCalculator() {
             value={studentLoan}
             onChange={(e) => setStudentLoan(e.target.value)}
             className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"
-          >
+           aria-label="Student Loan">
             <option value="none">None</option>
             <option value="plan1">Plan 1 (pre-2012)</option>
             <option value="plan2">Plan 2 (post-2012)</option>

@@ -24,10 +24,10 @@ export default function FencingCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Total Length (m)</label><input type="number" min="0" step="0.1" value={length} onChange={(e) => setLength(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Panel Width (mm)</label><input type="number" min="500" max="3000" value={panelW} onChange={(e) => setPanelW(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Price/Panel (£)</label><input type="number" min="0" value={priceP} onChange={(e) => setPriceP(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Price/Post (£)</label><input type="number" min="0" value={pricePost} onChange={(e) => setPricePost(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Total Length (m)</label><input type="number" min="0" step="0.1" value={length} onChange={(e) => setLength(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Total Length (m)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Panel Width (mm)</label><input type="number" min="500" max="3000" value={panelW} onChange={(e) => setPanelW(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Panel Width (mm)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Price/Panel (£)</label><input type="number" min="0" value={priceP} onChange={(e) => setPriceP(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Price/Panel (£)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Price/Post (£)</label><input type="number" min="0" value={pricePost} onChange={(e) => setPricePost(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Price/Post (£)" /></div>
       </div>
 
       {l > 0 && (

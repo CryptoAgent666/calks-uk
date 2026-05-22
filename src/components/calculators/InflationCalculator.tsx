@@ -35,19 +35,19 @@ export default function InflationCalculator() {
         <div>
           <label className="block text-sm font-medium mb-2">Amount</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="text" inputMode="numeric" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Amount" /></div>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">From Year</label>
-          <input type="number" min="1900" max="2026" value={yearFrom} onChange={(e) => setYearFrom(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="1900" max="2026" value={yearFrom} onChange={(e) => setYearFrom(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="From Year" />
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">To Year</label>
-          <input type="number" min="1900" max="2050" value={yearTo} onChange={(e) => setYearTo(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="1900" max="2050" value={yearTo} onChange={(e) => setYearTo(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="To Year" />
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Average Inflation (%)</label>
-          <input type="number" min="0" max="20" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="0" max="20" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Average Inflation (%)" />
         </div>
       </div>
 

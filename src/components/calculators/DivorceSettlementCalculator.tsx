@@ -41,7 +41,7 @@ export default function DivorceSettlementCalculator() {
         <Input label="Pension (Person 2)" value={pensions2} onChange={setPensions2} />
         <Input label="Savings / Investments" value={savings} onChange={setSavings} />
         <Input label="Debts" value={debts} onChange={setDebts} />
-        <div><label className="block text-sm font-medium mb-2">Years Married</label><input type="number" min="0" max="50" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Years Married</label><input type="number" min="0" max="50" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Years Married" /></div>
       </div>
       <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={children} onChange={(e) => setChildren(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Dependent children (primary carer adjustment)</span></label>
 

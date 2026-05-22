@@ -50,7 +50,7 @@ export default function NationalInsuranceCalculator() {
             onChange={(e) => setIncome(e.target.value)}
             placeholder="35,000"
             className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"
-          />
+           aria-label="Annual Gross Income" />
         </div>
         <div className="flex flex-wrap gap-2 mt-3">
           {[25_000, 35_000, 50_000, 75_000, 100_000].map((amount) => (

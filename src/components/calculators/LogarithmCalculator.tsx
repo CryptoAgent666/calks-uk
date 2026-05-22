@@ -17,8 +17,8 @@ export default function LogarithmCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Number</label><input type="number" step="any" min="0" value={value} onChange={(e) => setValue(e.target.value)} placeholder="100" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Custom Base</label><input type="number" step="any" min="0" value={base} onChange={(e) => setBase(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Number</label><input type="number" step="any" min="0" value={value} onChange={(e) => setValue(e.target.value)} placeholder="100" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Number" /></div>
+        <div><label className="block text-sm font-medium mb-2">Custom Base</label><input type="number" step="any" min="0" value={base} onChange={(e) => setBase(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Custom Base" /></div>
       </div>
 
       {v > 0 && (

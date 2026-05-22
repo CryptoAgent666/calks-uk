@@ -46,13 +46,13 @@ export default function CouncilTaxCalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium mb-2">Region</label>
-          <select value={region} onChange={(e) => setRegion(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={region} onChange={(e) => setRegion(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Region">
             {Object.keys(REGIONS).map((r) => <option key={r} value={r}>{r}</option>)}
           </select>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Council Tax Band</label>
-          <select value={band} onChange={(e) => setBand(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={band} onChange={(e) => setBand(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Council Tax Band">
             {Object.entries(BAND_VALUES).map(([b, v]) => <option key={b} value={b}>Band {b} — {v}</option>)}
           </select>
         </div>

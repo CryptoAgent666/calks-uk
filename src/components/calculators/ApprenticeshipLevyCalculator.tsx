@@ -23,7 +23,7 @@ export default function ApprenticeshipLevyCalculator() {
 
   return (
     <div className="space-y-6">
-      <div><label className="block text-sm font-medium mb-2">Annual Pay Bill</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={payBill} onChange={(e) => setPayBill(e.target.value)} placeholder="4,000,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div><p className="text-xs text-muted-foreground mt-1">Levy applies if pay bill exceeds £3M</p></div>
+      <div><label className="block text-sm font-medium mb-2">Annual Pay Bill</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={payBill} onChange={(e) => setPayBill(e.target.value)} placeholder="4,000,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Pay Bill" /></div><p className="text-xs text-muted-foreground mt-1">Levy applies if pay bill exceeds £3M</p></div>
 
       {p > 0 && (
         <div className="space-y-4 animate-fade-in-up">

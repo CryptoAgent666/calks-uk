@@ -70,8 +70,8 @@ export default function DebtConsolidationCalculator() {
 
       <h3 className="text-sm font-semibold">Consolidation Loan</h3>
       <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Consolidation APR (%)</label><input type="number" min="0" max="30" step="0.1" value={consApr} onChange={(e) => setConsApr(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Term (years)</label><input type="number" min="1" max="10" value={consTerm} onChange={(e) => setConsTerm(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Consolidation APR (%)</label><input type="number" min="0" max="30" step="0.1" value={consApr} onChange={(e) => setConsApr(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Consolidation APR (%)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Term (years)</label><input type="number" min="1" max="10" value={consTerm} onChange={(e) => setConsTerm(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Term (years)" /></div>
       </div>
 
       {result.totalBalance > 0 && (

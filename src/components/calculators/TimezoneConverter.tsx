@@ -45,8 +45,8 @@ export default function TimezoneConverter() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Time</label><input type="time" value={time} onChange={(e) => setTime(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">From Timezone</label><select value={from} onChange={(e) => setFrom(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">{ZONES.map(z => <option key={z.id} value={z.id}>{z.name} (UTC{z.offset >= 0 ? '+' : ''}{z.offset})</option>)}</select></div>
+        <div><label className="block text-sm font-medium mb-2">Time</label><input type="time" value={time} onChange={(e) => setTime(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Time" /></div>
+        <div><label className="block text-sm font-medium mb-2">From Timezone</label><select value={from} onChange={(e) => setFrom(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="From Timezone">{ZONES.map(z => <option key={z.id} value={z.id}>{z.name} (UTC{z.offset >= 0 ? '+' : ''}{z.offset})</option>)}</select></div>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 animate-fade-in-up">

@@ -43,10 +43,10 @@ export default function MOTDateCalculator() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {!hasHadMOT && (
-          <div><label className="block text-sm font-medium mb-2">First Registration Date</label><input type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /><p className="text-xs text-muted-foreground mt-1">First MOT due 3 years after registration</p></div>
+          <div><label className="block text-sm font-medium mb-2">First Registration Date</label><input type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="First Registration Date" /><p className="text-xs text-muted-foreground mt-1">First MOT due 3 years after registration</p></div>
         )}
         {hasHadMOT && (
-          <div><label className="block text-sm font-medium mb-2">Last MOT Date</label><input type="date" value={lastMOT} onChange={(e) => setLastMOT(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /><p className="text-xs text-muted-foreground mt-1">Check your V5C or MOT certificate</p></div>
+          <div><label className="block text-sm font-medium mb-2">Last MOT Date</label><input type="date" value={lastMOT} onChange={(e) => setLastMOT(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Last MOT Date" /><p className="text-xs text-muted-foreground mt-1">Check your V5C or MOT certificate</p></div>
         )}
       </div>
 

@@ -37,8 +37,8 @@ export default function ProteinIntakeCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Weight (kg)</label><input type="number" min="30" max="200" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Goal</label><select value={goal} onChange={(e) => setGoal(e.target.value as Goal)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">{Object.entries(RATES).map(([k, v]) => <option key={k} value={k}>{v.name} ({v.min}-{v.max}g/kg)</option>)}</select></div>
+        <div><label className="block text-sm font-medium mb-2">Weight (kg)</label><input type="number" min="30" max="200" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Weight (kg)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Goal</label><select value={goal} onChange={(e) => setGoal(e.target.value as Goal)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Goal">{Object.entries(RATES).map(([k, v]) => <option key={k} value={k}>{v.name} ({v.min}-{v.max}g/kg)</option>)}</select></div>
       </div>
 
       {w > 0 && (

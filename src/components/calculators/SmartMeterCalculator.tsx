@@ -34,7 +34,7 @@ export default function SmartMeterCalculator() {
 
   return (
     <div className="space-y-6">
-      <div><label className="block text-sm font-medium mb-2">Electricity Rate (p/kWh)</label><input type="number" min="0" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-48 rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+      <div><label className="block text-sm font-medium mb-2">Electricity Rate (p/kWh)</label><input type="number" min="0" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-48 rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Electricity Rate (p/kWh)" /></div>
 
       <div className="space-y-2">
         {items.map((item, i) => (

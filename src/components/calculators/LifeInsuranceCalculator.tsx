@@ -39,7 +39,7 @@ export default function LifeInsuranceCalculator() {
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <Input label="Annual Income" value={income} onChange={setIncome} />
-        <div><label className="block text-sm font-medium mb-2">Years to Replace Income</label><input type="number" min="1" max="40" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Years to Replace Income</label><input type="number" min="1" max="40" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Years to Replace Income" /></div>
         <Input label="Outstanding Mortgage" value={mortgage} onChange={setMortgage} />
         <Input label="Other Debts" value={debts} onChange={setDebts} />
         <Input label="Children's Costs (education etc.)" value={children} onChange={setChildren} />

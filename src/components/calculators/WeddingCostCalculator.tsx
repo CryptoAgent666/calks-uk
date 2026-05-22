@@ -38,7 +38,7 @@ export default function WeddingCostCalculator() {
 
   return (
     <div className="space-y-6">
-      <div><label className="block text-sm font-medium mb-2">Number of Guests</label><input type="number" min="10" max="500" value={guests} onChange={(e) => setGuests(e.target.value)} className="w-48 rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+      <div><label className="block text-sm font-medium mb-2">Number of Guests</label><input type="number" min="10" max="500" value={guests} onChange={(e) => setGuests(e.target.value)} className="w-48 rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Number of Guests" /></div>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
         {ITEMS.map(item => (
           <div key={item.id} className="flex items-center gap-2">

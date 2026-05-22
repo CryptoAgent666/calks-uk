@@ -30,7 +30,7 @@ export default function StdDevCalculator() {
     <div className="space-y-6">
       <div>
         <label className="block text-sm font-medium mb-2">Enter Numbers (comma or space separated)</label>
-        <textarea value={input} onChange={(e) => setInput(e.target.value)} rows={3} placeholder="10, 12, 23, 23, 16, 23, 21, 16" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring resize-y" />
+        <textarea value={input} onChange={(e) => setInput(e.target.value)} rows={3} placeholder="10, 12, 23, 23, 16, 23, 21, 16" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring resize-y"  aria-label="Enter Numbers (comma or space separated)" />
       </div>
 
       {result && (

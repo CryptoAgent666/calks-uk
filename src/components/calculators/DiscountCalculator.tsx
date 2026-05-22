@@ -29,11 +29,11 @@ export default function DiscountCalculator() {
           <div>
             <label className="block text-sm font-medium mb-2">Original Price</label>
             <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-              <input type="number" min="0" step="0.01" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="100" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+              <input type="number" min="0" step="0.01" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="100" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Original Price" /></div>
           </div>
           <div>
             <label className="block text-sm font-medium mb-2">Discount (%)</label>
-            <input type="number" min="0" max="100" step="0.1" value={discount} onChange={(e) => setDiscount(e.target.value)} placeholder="20" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input type="number" min="0" max="100" step="0.1" value={discount} onChange={(e) => setDiscount(e.target.value)} placeholder="20" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Discount (%)" />
           </div>
         </div>
         {p > 0 && d > 0 && (
@@ -58,12 +58,12 @@ export default function DiscountCalculator() {
           <div>
             <label className="block text-sm font-medium mb-2">Original Price</label>
             <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-              <input type="number" min="0" step="0.01" value={originalForFinal} onChange={(e) => setOriginalForFinal(e.target.value)} placeholder="80" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+              <input type="number" min="0" step="0.01" value={originalForFinal} onChange={(e) => setOriginalForFinal(e.target.value)} placeholder="80" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Original Price" /></div>
           </div>
           <div>
             <label className="block text-sm font-medium mb-2">Sale Price</label>
             <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-              <input type="number" min="0" step="0.01" value={finalPrice} onChange={(e) => setFinalPrice(e.target.value)} placeholder="60" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+              <input type="number" min="0" step="0.01" value={finalPrice} onChange={(e) => setFinalPrice(e.target.value)} placeholder="60" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Sale Price" /></div>
           </div>
         </div>
         {ofp > 0 && fp > 0 && (

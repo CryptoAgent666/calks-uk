@@ -47,7 +47,7 @@ export default function StampDutyFTBCalculator() {
         <label htmlFor="ftb-price" className="block text-sm font-medium mb-2">Property Price</label>
         <div className="relative">
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground font-medium">£</span>
-          <input id="ftb-price" type="text" inputMode="numeric" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="350,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input id="ftb-price" type="text" inputMode="numeric" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="350,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Property Price" />
         </div>
         <div className="flex flex-wrap gap-2 mt-3">
           {[200_000, 300_000, 350_000, 425_000, 500_000, 600_000].map((a) => (

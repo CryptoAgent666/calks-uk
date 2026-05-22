@@ -110,7 +110,7 @@ export default function StampDutyCalculator() {
             onChange={(e) => setPrice(e.target.value)}
             placeholder="350,000"
             className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"
-          />
+           aria-label="Property Price" />
         </div>
         <div className="flex flex-wrap gap-2 mt-3">
           {[200_000, 300_000, 400_000, 500_000, 750_000, 1_000_000].map((amount) => (

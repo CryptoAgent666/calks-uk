@@ -45,8 +45,8 @@ export default function ExtensionCostCalculator() {
         ))}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Floor Area (m²)</label><input type="number" min="5" max="60" value={sqm} onChange={(e) => setSqm(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Current Property Value</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => setValue(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
+        <div><label className="block text-sm font-medium mb-2">Floor Area (m²)</label><input type="number" min="5" max="60" value={sqm} onChange={(e) => setSqm(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Floor Area (m²)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Current Property Value</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => setValue(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Current Property Value" /></div></div>
       </div>
       <div className="space-y-2">
         <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={kitchen} onChange={(e) => setKitchen(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">New kitchen (+~£15K)</span></label>

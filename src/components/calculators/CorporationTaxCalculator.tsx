@@ -40,7 +40,7 @@ export default function CorporationTaxCalculator() {
         <label htmlFor="ct-profit" className="block text-sm font-medium mb-2">Annual Taxable Profit</label>
         <div className="relative">
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground font-medium">£</span>
-          <input id="ct-profit" type="text" inputMode="numeric" value={profit} onChange={(e) => setProfit(e.target.value)} placeholder="100,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input id="ct-profit" type="text" inputMode="numeric" value={profit} onChange={(e) => setProfit(e.target.value)} placeholder="100,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Taxable Profit" />
         </div>
         <div className="flex flex-wrap gap-2 mt-3">
           {[30_000, 50_000, 100_000, 150_000, 250_000, 500_000].map((a) => (

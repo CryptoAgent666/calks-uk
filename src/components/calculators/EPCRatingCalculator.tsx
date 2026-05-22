@@ -17,8 +17,8 @@ export default function EPCRatingCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Current EPC Band</label><select value={current} onChange={(e) => setCurrent(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">{bands.map(b => <option key={b} value={b}>Band {b} (~£{EPC_COSTS[b]}/yr)</option>)}</select></div>
-        <div><label className="block text-sm font-medium mb-2">Target EPC Band</label><select value={target} onChange={(e) => setTarget(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">{bands.map(b => <option key={b} value={b}>Band {b} (~£{EPC_COSTS[b]}/yr)</option>)}</select></div>
+        <div><label className="block text-sm font-medium mb-2">Current EPC Band</label><select value={current} onChange={(e) => setCurrent(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Current EPC Band">{bands.map(b => <option key={b} value={b}>Band {b} (~£{EPC_COSTS[b]}/yr)</option>)}</select></div>
+        <div><label className="block text-sm font-medium mb-2">Target EPC Band</label><select value={target} onChange={(e) => setTarget(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Target EPC Band">{bands.map(b => <option key={b} value={b}>Band {b} (~£{EPC_COSTS[b]}/yr)</option>)}</select></div>
       </div>
       <div className="flex gap-1 justify-center">{bands.map(b => <div key={b} className={`${colors[b]} text-white text-sm font-bold w-10 h-10 rounded flex items-center justify-center ${b === current ? 'ring-2 ring-foreground ring-offset-2' : 'opacity-60'}`}>{b}</div>)}</div>
       {annualSaving > 0 && (

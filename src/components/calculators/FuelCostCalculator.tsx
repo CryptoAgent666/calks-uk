@@ -40,7 +40,7 @@ export default function FuelCostCalculator() {
         <div>
           <label className="block text-sm font-medium mb-2">Distance</label>
           <div className="flex gap-2">
-            <input type="number" min="0" value={distance} onChange={(e) => setDistance(e.target.value)} className="flex-1 rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input type="number" min="0" value={distance} onChange={(e) => setDistance(e.target.value)} className="flex-1 rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Distance" />
             <select value={distanceUnit} onChange={(e) => setDistanceUnit(e.target.value as Unit)} className="rounded-xl border border-input bg-background px-3 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">
               <option value="miles">Miles</option>
               <option value="km">Km</option>
@@ -50,14 +50,14 @@ export default function FuelCostCalculator() {
         <div>
           <label className="block text-sm font-medium mb-2">Fuel Price (pence per litre)</label>
           <div className="relative">
-            <input type="number" min="0" max="500" value={fuelPrice} onChange={(e) => setFuelPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input type="number" min="0" max="500" value={fuelPrice} onChange={(e) => setFuelPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Fuel Price (pence per litre)" />
             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground text-sm">p/litre</span>
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Fuel Efficiency</label>
           <div className="flex gap-2">
-            <input type="number" min="0" value={efficiency} onChange={(e) => setEfficiency(e.target.value)} className="flex-1 rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input type="number" min="0" value={efficiency} onChange={(e) => setEfficiency(e.target.value)} className="flex-1 rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Fuel Efficiency" />
             <select value={efficiencyUnit} onChange={(e) => setEfficiencyUnit(e.target.value as Efficiency)} className="rounded-xl border border-input bg-background px-3 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">
               <option value="mpg">MPG</option>
               <option value="lper100km">L/100km</option>

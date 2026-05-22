@@ -22,8 +22,8 @@ export default function MilesPerGallonCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Distance Driven (miles)</label><input type="number" min="0" step="1" value={miles} onChange={(e) => setMiles(e.target.value)} placeholder="300" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Fuel Used (litres)</label><input type="number" min="0" step="0.1" value={litres} onChange={(e) => setLitres(e.target.value)} placeholder="35" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Distance Driven (miles)</label><input type="number" min="0" step="1" value={miles} onChange={(e) => setMiles(e.target.value)} placeholder="300" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Distance Driven (miles)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Fuel Used (litres)</label><input type="number" min="0" step="0.1" value={litres} onChange={(e) => setLitres(e.target.value)} placeholder="35" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Fuel Used (litres)" /></div>
       </div>
 
       {result && (

@@ -34,12 +34,12 @@ export default function EnergyBillCalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium mb-2">Annual Electricity Usage (kWh)</label>
-          <input type="number" min="0" value={elec} onChange={(e) => setElec(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="0" value={elec} onChange={(e) => setElec(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Electricity Usage (kWh)" />
           <p className="text-xs text-muted-foreground mt-1">UK average: ~2,700 kWh/year</p>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Annual Gas Usage (kWh)</label>
-          <input type="number" min="0" value={gas} onChange={(e) => setGas(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="0" value={gas} onChange={(e) => setGas(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Gas Usage (kWh)" />
           <p className="text-xs text-muted-foreground mt-1">UK average: ~11,500 kWh/year</p>
         </div>
       </div>

@@ -31,8 +31,8 @@ export default function HighCouncilTaxCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Band D Rate</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="number" min="500" max="5000" value={bandD} onChange={(e) => setBandD(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
-        <div><label className="block text-sm font-medium mb-2">Band</label><select value={band} onChange={(e) => setBand(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">{BANDS_WITH_SURCHARGE.map(b => <option key={b.band} value={b.band}>Band {b.band} — {b.value}</option>)}</select></div>
+        <div><label className="block text-sm font-medium mb-2">Band D Rate</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="number" min="500" max="5000" value={bandD} onChange={(e) => setBandD(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Band D Rate" /></div></div>
+        <div><label className="block text-sm font-medium mb-2">Band</label><select value={band} onChange={(e) => setBand(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Band">{BANDS_WITH_SURCHARGE.map(b => <option key={b.band} value={b.band}>Band {b.band} — {b.value}</option>)}</select></div>
       </div>
       {result && (
         <div className="space-y-4 animate-fade-in-up">

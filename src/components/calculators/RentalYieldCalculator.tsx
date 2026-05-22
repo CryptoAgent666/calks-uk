@@ -27,17 +27,17 @@ export default function RentalYieldCalculator() {
         <div>
           <label className="block text-sm font-medium mb-2">Property Value</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={value} onChange={(e) => setValue(e.target.value)} placeholder="250,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="text" inputMode="numeric" value={value} onChange={(e) => setValue(e.target.value)} placeholder="250,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Property Value" /></div>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Monthly Rent</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={rent} onChange={(e) => setRent(e.target.value)} placeholder="1,200" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="text" inputMode="numeric" value={rent} onChange={(e) => setRent(e.target.value)} placeholder="1,200" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Monthly Rent" /></div>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Monthly Expenses</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={expenses} onChange={(e) => setExpenses(e.target.value)} placeholder="200" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="text" inputMode="numeric" value={expenses} onChange={(e) => setExpenses(e.target.value)} placeholder="200" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Monthly Expenses" /></div>
         </div>
       </div>
 

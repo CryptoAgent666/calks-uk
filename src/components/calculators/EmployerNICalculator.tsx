@@ -36,12 +36,12 @@ export default function EmployerNICalculator() {
           <label htmlFor="emp-salary" className="block text-sm font-medium mb-2">Employee Annual Salary</label>
           <div className="relative">
             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground font-medium">£</span>
-            <input id="emp-salary" type="text" inputMode="numeric" value={salary} onChange={(e) => setSalary(e.target.value)} placeholder="30,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input id="emp-salary" type="text" inputMode="numeric" value={salary} onChange={(e) => setSalary(e.target.value)} placeholder="30,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Employee Annual Salary" />
           </div>
         </div>
         <div>
           <label htmlFor="emp-count" className="block text-sm font-medium mb-2">Number of Employees</label>
-          <input id="emp-count" type="number" min="1" max="10000" value={employees} onChange={(e) => setEmployees(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input id="emp-count" type="number" min="1" max="10000" value={employees} onChange={(e) => setEmployees(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Number of Employees" />
         </div>
       </div>
 

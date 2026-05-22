@@ -31,8 +31,8 @@ export default function StandingChargeSavingsCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Electricity Standing Charge (p/day)</label><input type="number" min="0" max="100" step="0.01" value={elec} onChange={(ev) => setElec(ev.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        {hasGas && <div><label className="block text-sm font-medium mb-2">Gas Standing Charge (p/day)</label><input type="number" min="0" max="100" step="0.01" value={gas} onChange={(ev) => setGas(ev.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>}
+        <div><label className="block text-sm font-medium mb-2">Electricity Standing Charge (p/day)</label><input type="number" min="0" max="100" step="0.01" value={elec} onChange={(ev) => setElec(ev.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Electricity Standing Charge (p/day)" /></div>
+        {hasGas && <div><label className="block text-sm font-medium mb-2">Gas Standing Charge (p/day)</label><input type="number" min="0" max="100" step="0.01" value={gas} onChange={(ev) => setGas(ev.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Gas Standing Charge (p/day)" /></div>}
       </div>
       <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={hasGas} onChange={(ev) => setHasGas(ev.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">I have gas supply</span></label>
 

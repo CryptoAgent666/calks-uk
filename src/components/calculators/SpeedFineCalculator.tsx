@@ -56,18 +56,18 @@ export default function SpeedFineCalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
           <label className="block text-sm font-medium mb-2">Speed Limit (mph)</label>
-          <select value={limit} onChange={(e) => setLimit(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={limit} onChange={(e) => setLimit(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Speed Limit (mph)">
             {[20, 30, 40, 50, 60, 70].map(l => <option key={l} value={l}>{l} mph</option>)}
           </select>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Your Speed (mph)</label>
-          <input type="number" min="0" max="200" value={speed} onChange={(e) => setSpeed(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="0" max="200" value={speed} onChange={(e) => setSpeed(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Your Speed (mph)" />
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Weekly Income (gross)</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="number" min="0" value={income} onChange={(e) => setIncome(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="number" min="0" value={income} onChange={(e) => setIncome(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Weekly Income (gross)" /></div>
         </div>
       </div>
 

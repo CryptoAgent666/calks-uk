@@ -84,7 +84,7 @@ export default function MortgageRepaymentCalculator() {
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"
-            />
+             aria-label="Mortgage Amount" />
           </div>
         </div>
         <div>
@@ -96,7 +96,7 @@ export default function MortgageRepaymentCalculator() {
             value={rate}
             onChange={(e) => setRate(e.target.value)}
             className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"
-          />
+           aria-label="Interest Rate (%)" />
         </div>
         <div>
           <label htmlFor="mortgage-term" className="block text-sm font-medium mb-2">Term (years)</label>
@@ -107,7 +107,7 @@ export default function MortgageRepaymentCalculator() {
             value={term}
             onChange={(e) => setTerm(e.target.value)}
             className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"
-          />
+           aria-label="Term (years)" />
         </div>
       </div>
 

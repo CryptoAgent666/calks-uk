@@ -27,10 +27,10 @@ export default function PavingCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Area Length (m)</label><input type="number" min="0" step="0.1" value={al} onChange={(e) => setAl(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Area Width (m)</label><input type="number" min="0" step="0.1" value={aw} onChange={(e) => setAw(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Slab Size (cm)</label><input type="number" min="1" value={sl} onChange={(e) => { setSl(e.target.value); setSw(e.target.value) }} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Price/Slab (£)</label><input type="number" min="0" step="0.01" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Area Length (m)</label><input type="number" min="0" step="0.1" value={al} onChange={(e) => setAl(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Area Length (m)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Area Width (m)</label><input type="number" min="0" step="0.1" value={aw} onChange={(e) => setAw(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Area Width (m)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Slab Size (cm)</label><input type="number" min="1" value={sl} onChange={(e) => { setSl(e.target.value); setSw(e.target.value) }} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Slab Size (cm)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Price/Slab (£)</label><input type="number" min="0" step="0.01" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Price/Slab (£)" /></div>
       </div>
 
       {result.slabsNeeded > 0 && (

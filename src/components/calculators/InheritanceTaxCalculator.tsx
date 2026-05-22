@@ -46,7 +46,7 @@ export default function InheritanceTaxCalculator() {
         <label htmlFor="iht-estate" className="block text-sm font-medium mb-2">Total Estate Value</label>
         <div className="relative">
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground font-medium">£</span>
-          <input id="iht-estate" type="text" inputMode="numeric" value={estate} onChange={(e) => setEstate(e.target.value)} placeholder="500,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input id="iht-estate" type="text" inputMode="numeric" value={estate} onChange={(e) => setEstate(e.target.value)} placeholder="500,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Total Estate Value" />
         </div>
         <div className="flex flex-wrap gap-2 mt-3">
           {[325_000, 500_000, 750_000, 1_000_000, 2_000_000].map((a) => (
@@ -59,7 +59,7 @@ export default function InheritanceTaxCalculator() {
         <label htmlFor="iht-spouse" className="block text-sm font-medium mb-2">Amount Left to Spouse/Civil Partner (exempt)</label>
         <div className="relative">
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-          <input id="iht-spouse" type="text" inputMode="numeric" value={spouseExempt} onChange={(e) => setSpouseExempt(e.target.value)} placeholder="0" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input id="iht-spouse" type="text" inputMode="numeric" value={spouseExempt} onChange={(e) => setSpouseExempt(e.target.value)} placeholder="0" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Amount Left to Spouse/Civil Partner (exempt)" />
         </div>
       </div>
 

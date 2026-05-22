@@ -40,7 +40,7 @@ export default function PregnancyDueDateCalculator() {
     <div className="space-y-6">
       <div>
         <label className="block text-sm font-medium mb-2">First Day of Last Menstrual Period (LMP)</label>
-        <input type="date" value={lmp} onChange={(e) => setLmp(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+        <input type="date" value={lmp} onChange={(e) => setLmp(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="First Day of Last Menstrual Period (LMP)" />
       </div>
 
       {result && (

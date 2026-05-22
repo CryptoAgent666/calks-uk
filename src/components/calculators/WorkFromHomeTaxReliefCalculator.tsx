@@ -26,14 +26,14 @@ export default function WorkFromHomeTaxReliefCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Tax Band</label><select value={band} onChange={(e) => setBand(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"><option value="basic">Basic (20%)</option><option value="higher">Higher (40%)</option><option value="additional">Additional (45%)</option></select></div>
-        <div><label className="block text-sm font-medium mb-2">Weeks Working from Home</label><input type="number" min="1" max="52" value={weeks} onChange={(e) => setWeeks(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Tax Band</label><select value={band} onChange={(e) => setBand(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Tax Band"><option value="basic">Basic (20%)</option><option value="higher">Higher (40%)</option><option value="additional">Additional (45%)</option></select></div>
+        <div><label className="block text-sm font-medium mb-2">Weeks Working from Home</label><input type="number" min="1" max="52" value={weeks} onChange={(e) => setWeeks(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Weeks Working from Home" /></div>
       </div>
 
       <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={useActual} onChange={(e) => setUseActual(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Use actual costs (need receipts)</span></label>
 
       {useActual && (
-        <div><label className="block text-sm font-medium mb-2">Actual Additional Costs (annual)</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={actual} onChange={(e) => setActual(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
+        <div><label className="block text-sm font-medium mb-2">Actual Additional Costs (annual)</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={actual} onChange={(e) => setActual(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Actual Additional Costs (annual)" /></div></div>
       )}
 
       <div className="space-y-4 animate-fade-in-up">

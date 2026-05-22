@@ -26,7 +26,7 @@ export default function SqrtCalculator() {
         <h3 className="font-semibold">Roots & Powers</h3>
         <div>
           <label className="block text-sm font-medium mb-2">Number</label>
-          <input type="number" step="any" value={number} onChange={(e) => setNumber(e.target.value)} placeholder="144" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" step="any" value={number} onChange={(e) => setNumber(e.target.value)} placeholder="144" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Number" />
         </div>
         {n !== 0 && (
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 animate-fade-in-up">
@@ -39,7 +39,7 @@ export default function SqrtCalculator() {
         <div className="grid grid-cols-2 gap-4 items-end">
           <div>
             <label className="block text-sm font-medium mb-2">Custom power (n^x)</label>
-            <input type="number" step="any" value={power} onChange={(e) => setPower(e.target.value)} placeholder="0.5" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+            <input type="number" step="any" value={power} onChange={(e) => setPower(e.target.value)} placeholder="0.5" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Custom power (n^x)" />
           </div>
           {n !== 0 && p !== 0 && <div className="rounded-xl bg-primary/10 p-3 text-center"><p className="text-xs text-muted-foreground">{n}^{p}</p><p className="text-lg font-bold text-primary">{fmt(powerResult)}</p></div>}
         </div>
@@ -49,7 +49,7 @@ export default function SqrtCalculator() {
         <h3 className="font-semibold">Logarithms</h3>
         <div>
           <label className="block text-sm font-medium mb-2">Number</label>
-          <input type="number" step="any" min="0" value={log} onChange={(e) => setLog(e.target.value)} placeholder="100" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" step="any" min="0" value={log} onChange={(e) => setLog(e.target.value)} placeholder="100" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Number" />
         </div>
         {lg > 0 && (
           <div className="grid grid-cols-3 gap-3 animate-fade-in-up">

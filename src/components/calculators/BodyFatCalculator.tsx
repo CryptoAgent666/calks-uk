@@ -44,11 +44,11 @@ export default function BodyFatCalculator() {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Height (cm)</label><input type="number" min="100" max="250" value={height} onChange={(e) => setHeight(e.target.value)} placeholder="175" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Waist (cm)</label><input type="number" min="40" max="200" value={waist} onChange={(e) => setWaist(e.target.value)} placeholder="85" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Neck (cm)</label><input type="number" min="20" max="60" value={neck} onChange={(e) => setNeck(e.target.value)} placeholder="38" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Height (cm)</label><input type="number" min="100" max="250" value={height} onChange={(e) => setHeight(e.target.value)} placeholder="175" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Height (cm)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Waist (cm)</label><input type="number" min="40" max="200" value={waist} onChange={(e) => setWaist(e.target.value)} placeholder="85" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Waist (cm)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Neck (cm)</label><input type="number" min="20" max="60" value={neck} onChange={(e) => setNeck(e.target.value)} placeholder="38" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Neck (cm)" /></div>
         {gender === 'female' && (
-          <div><label className="block text-sm font-medium mb-2">Hip (cm)</label><input type="number" min="50" max="200" value={hip} onChange={(e) => setHip(e.target.value)} placeholder="95" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <div><label className="block text-sm font-medium mb-2">Hip (cm)</label><input type="number" min="50" max="200" value={hip} onChange={(e) => setHip(e.target.value)} placeholder="95" className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Hip (cm)" /></div>
         )}
       </div>
 

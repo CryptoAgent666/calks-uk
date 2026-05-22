@@ -35,17 +35,17 @@ export default function CurrencyConverter() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-end">
         <div>
           <label className="block text-sm font-medium mb-2">Amount</label>
-          <input type="number" min="0" step="0.01" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="number" min="0" step="0.01" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Amount" />
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">From</label>
-          <select value={from} onChange={(e) => setFrom(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={from} onChange={(e) => setFrom(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="From">
             {Object.keys(RATES).map((c) => <option key={c} value={c}>{c} — {NAMES[c]}</option>)}
           </select>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">To</label>
-          <select value={to} onChange={(e) => setTo(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={to} onChange={(e) => setTo(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="To">
             {Object.keys(RATES).map((c) => <option key={c} value={c}>{c} — {NAMES[c]}</option>)}
           </select>
         </div>

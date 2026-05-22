@@ -34,8 +34,8 @@ export default function FreeschoolMealsCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">School-Age Children</label><input type="number" min="1" max="10" value={children} onChange={(e) => setChildren(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Qualifying Benefit</label><select value={benefit} onChange={(e) => setBenefit(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">{QUALIFYING_BENEFITS.map(b => <option key={b.id} value={b.id}>{b.name}</option>)}</select></div>
+        <div><label className="block text-sm font-medium mb-2">School-Age Children</label><input type="number" min="1" max="10" value={children} onChange={(e) => setChildren(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="School-Age Children" /></div>
+        <div><label className="block text-sm font-medium mb-2">Qualifying Benefit</label><select value={benefit} onChange={(e) => setBenefit(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Qualifying Benefit">{QUALIFYING_BENEFITS.map(b => <option key={b.id} value={b.id}>{b.name}</option>)}</select></div>
       </div>
 
       <div className={`rounded-2xl p-6 text-center ${result.eligible ? 'bg-green-100 dark:bg-green-950' : 'bg-muted/50'}`}>

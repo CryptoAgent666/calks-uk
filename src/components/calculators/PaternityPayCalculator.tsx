@@ -22,7 +22,7 @@ export default function PaternityPayCalculator() {
       <div>
         <label className="block text-sm font-medium mb-2">Average Weekly Earnings (gross)</label>
         <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-          <input type="number" min="0" value={pay} onChange={(e) => setPay(e.target.value)} placeholder="600" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <input type="number" min="0" value={pay} onChange={(e) => setPay(e.target.value)} placeholder="600" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Average Weekly Earnings (gross)" /></div>
       </div>
 
       {w > 0 && (

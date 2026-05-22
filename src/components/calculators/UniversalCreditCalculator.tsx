@@ -55,20 +55,20 @@ export default function UniversalCreditCalculator() {
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div><label className="block text-sm font-medium mb-2">Your Situation</label>
-          <select value={status} onChange={(e) => setStatus(e.target.value as Status)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={status} onChange={(e) => setStatus(e.target.value as Status)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Your Situation">
             <option value="single_under25">Single, under 25</option>
             <option value="single_25plus">Single, 25 or over</option>
             <option value="couple_under25">Couple, both under 25</option>
             <option value="couple_25plus">Couple, either 25+</option>
           </select></div>
         <div><label className="block text-sm font-medium mb-2">Number of Children</label>
-          <input type="number" min="0" max="10" value={children} onChange={(e) => setChildren(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+          <input type="number" min="0" max="10" value={children} onChange={(e) => setChildren(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Number of Children" /></div>
         <div><label className="block text-sm font-medium mb-2">Monthly Net Earnings</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={earnings} onChange={(e) => setEarnings(e.target.value)} placeholder="0" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
+            <input type="text" inputMode="numeric" value={earnings} onChange={(e) => setEarnings(e.target.value)} placeholder="0" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Monthly Net Earnings" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Monthly Rent</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={rent} onChange={(e) => setRent(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
+            <input type="text" inputMode="numeric" value={rent} onChange={(e) => setRent(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Monthly Rent" /></div></div>
       </div>
       <label className="flex items-center gap-3 cursor-pointer">
         <input type="checkbox" checked={housing} onChange={(e) => setHousing(e.target.checked)} className="h-5 w-5 rounded border-border" />

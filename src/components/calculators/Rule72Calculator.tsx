@@ -13,8 +13,8 @@ export default function Rule72Calculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Interest / Growth Rate (%)</label><input type="number" min="0.1" max="50" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Target Years to Double</label><input type="number" min="1" max="100" value={targetYears} onChange={(e) => setTargetYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Interest / Growth Rate (%)</label><input type="number" min="0.1" max="50" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Interest / Growth Rate (%)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Target Years to Double</label><input type="number" min="1" max="100" value={targetYears} onChange={(e) => setTargetYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Target Years to Double" /></div>
       </div>
 
       <div className="space-y-4 animate-fade-in-up">

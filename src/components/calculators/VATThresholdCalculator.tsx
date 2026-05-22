@@ -38,7 +38,7 @@ export default function VATThresholdCalculator() {
       </div>
 
       {simpleMode ? (
-        <div><label className="block text-sm font-medium mb-2">Average Monthly Revenue</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={simpleMonthly} onChange={(e) => setSimpleMonthly(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
+        <div><label className="block text-sm font-medium mb-2">Average Monthly Revenue</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={simpleMonthly} onChange={(e) => setSimpleMonthly(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Average Monthly Revenue" /></div></div>
       ) : (
         <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
           {monthNames.map((m, i) => (

@@ -42,8 +42,8 @@ export default function UnderfloorHeatingCalculator() {
         ))}
       </div>
       <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Floor Area (m²)</label><input type="number" min="1" max="200" value={area} onChange={(e) => setArea(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Hours/Day Heating</label><input type="number" min="1" max="24" value={hours} onChange={(e) => setHours(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+        <div><label className="block text-sm font-medium mb-2">Floor Area (m²)</label><input type="number" min="1" max="200" value={area} onChange={(e) => setArea(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Floor Area (m²)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Hours/Day Heating</label><input type="number" min="1" max="24" value={hours} onChange={(e) => setHours(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Hours/Day Heating" /></div>
       </div>
 
       {a > 0 && (

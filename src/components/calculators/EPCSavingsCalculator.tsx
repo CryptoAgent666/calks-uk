@@ -10,7 +10,7 @@ export default function EPCSavingsCalculator() {
 
   return (
     <div className="space-y-6">
-      <div><label className="block text-sm font-medium mb-2">Your EPC Band</label><select value={band} onChange={(e) => setBand(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">{bands.map(b => <option key={b} value={b}>Band {b}</option>)}</select></div>
+      <div><label className="block text-sm font-medium mb-2">Your EPC Band</label><select value={band} onChange={(e) => setBand(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Your EPC Band">{bands.map(b => <option key={b} value={b}>Band {b}</option>)}</select></div>
       <div className="space-y-2">
         {bands.filter(b => bands.indexOf(b) < bands.indexOf(band)).map(target => {
           const saving = currentCost - COSTS[target]

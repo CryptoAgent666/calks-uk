@@ -40,8 +40,8 @@ export default function UKCitizenshipCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">ILR Granted Date</label><input type="date" value={ilrDate} onChange={(e) => setIlrDate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-        <div><label className="block text-sm font-medium mb-2">Days Absent (last 3 years)</label><input type="number" min="0" max="1095" value={absence} onChange={(e) => setAbsence(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /><p className="text-xs text-muted-foreground mt-1">Max 270 days in 3 years, 90 in last 12 months</p></div>
+        <div><label className="block text-sm font-medium mb-2">ILR Granted Date</label><input type="date" value={ilrDate} onChange={(e) => setIlrDate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="ILR Granted Date" /></div>
+        <div><label className="block text-sm font-medium mb-2">Days Absent (last 3 years)</label><input type="number" min="0" max="1095" value={absence} onChange={(e) => setAbsence(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Days Absent (last 3 years)" /><p className="text-xs text-muted-foreground mt-1">Max 270 days in 3 years, 90 in last 12 months</p></div>
       </div>
       <div className="space-y-2">
         <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={lifeInUK} onChange={(e) => setLifeInUK(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Passed Life in the UK test</span></label>

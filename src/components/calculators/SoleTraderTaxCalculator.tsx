@@ -48,12 +48,12 @@ export default function SoleTraderTaxCalculator() {
         <div>
           <label className="block text-sm font-medium mb-2">Total Revenue / Turnover</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={revenue} onChange={(ev) => setRevenue(ev.target.value)} placeholder="60,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="text" inputMode="numeric" value={revenue} onChange={(ev) => setRevenue(ev.target.value)} placeholder="60,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Total Revenue / Turnover" /></div>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Allowable Expenses</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-            <input type="text" inputMode="numeric" value={expenses} onChange={(ev) => setExpenses(ev.target.value)} placeholder="10,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+            <input type="text" inputMode="numeric" value={expenses} onChange={(ev) => setExpenses(ev.target.value)} placeholder="10,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Allowable Expenses" /></div>
         </div>
       </div>
 

@@ -51,7 +51,7 @@ export default function IdealWeightCalculator() {
       </div>
       <div>
         <label className="block text-sm font-medium mb-2">Height (cm)</label>
-        <input type="number" min="100" max="250" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+        <input type="number" min="100" max="250" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Height (cm)" />
       </div>
 
       {result && (

@@ -32,11 +32,11 @@ export default function BinaryConverter() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium mb-2">Input</label>
-          <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="255" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-mono font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+          <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="255" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-mono font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Input" />
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Input Base</label>
-          <select value={from} onChange={(e) => setFrom(e.target.value as Base)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+          <select value={from} onChange={(e) => setFrom(e.target.value as Base)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Input Base">
             <option value="decimal">Decimal (Base 10)</option>
             <option value="binary">Binary (Base 2)</option>
             <option value="hex">Hexadecimal (Base 16)</option>

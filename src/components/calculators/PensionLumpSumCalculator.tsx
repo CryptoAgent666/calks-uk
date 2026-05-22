@@ -32,8 +32,8 @@ export default function PensionLumpSumCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Pension Pot</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={pot} onChange={(e) => setPot(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
-        <div><label className="block text-sm font-medium mb-2">Lump Sum (%)</label><input type="range" min="0" max="100" value={pct} onChange={(e) => setPct(e.target.value)} className="w-full mt-3" /><div className="flex justify-between text-xs text-muted-foreground"><span>0% (no lump sum)</span><span className="font-bold text-foreground">{pct}%</span><span>100% (all cash)</span></div></div>
+        <div><label className="block text-sm font-medium mb-2">Pension Pot</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={pot} onChange={(e) => setPot(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Pension Pot" /></div></div>
+        <div><label className="block text-sm font-medium mb-2">Lump Sum (%)</label><input type="range" min="0" max="100" value={pct} onChange={(e) => setPct(e.target.value)} className="w-full mt-3"  aria-label="Lump Sum (%)" /><div className="flex justify-between text-xs text-muted-foreground"><span>0% (no lump sum)</span><span className="font-bold text-foreground">{pct}%</span><span>100% (all cash)</span></div></div>
       </div>
 
       {p > 0 && (

@@ -37,7 +37,7 @@ export default function DebtToIncomeCalculator() {
 
   return (
     <div className="space-y-6">
-      <div><label className="block text-sm font-medium mb-2">Monthly Gross Income</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={income} onChange={(e) => setIncome(e.target.value)} placeholder="3,500" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
+      <div><label className="block text-sm font-medium mb-2">Monthly Gross Income</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={income} onChange={(e) => setIncome(e.target.value)} placeholder="3,500" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Monthly Gross Income" /></div></div>
       <h3 className="text-sm font-semibold">Monthly Debt Payments</h3>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         <Input label="Mortgage/Rent" value={mortgage} onChange={setMortgage} />

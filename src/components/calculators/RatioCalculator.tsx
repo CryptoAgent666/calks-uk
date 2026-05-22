@@ -26,7 +26,7 @@ export default function RatioCalculator() {
 
       <div>
         <label className="block text-sm font-medium mb-2">Total Amount to Divide</label>
-        <input type="text" inputMode="numeric" value={total} onChange={(e) => setTotal(e.target.value)} placeholder="700" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+        <input type="text" inputMode="numeric" value={total} onChange={(e) => setTotal(e.target.value)} placeholder="700" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Total Amount to Divide" />
       </div>
 
       {av > 0 && bv > 0 && tv > 0 && (
