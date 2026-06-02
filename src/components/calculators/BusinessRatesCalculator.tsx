@@ -1,14 +1,16 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Business rates 2026/27
-const STANDARD_MULTIPLIER = 0.555 // 55.5p in the pound (2024/25 was 54.6p, uprated 1.7% CPI)
-const SMALL_MULTIPLIER = 0.499 // 49.9p for small businesses (frozen at 2024/25 level)
+// Business rates 2026/27 (England) — reformed + revalued from 1 April 2026
+const SMALL_MULTIPLIER = 0.432 // 43.2p, rateable value below £51,000 (was 49.9p in 2025/26)
+const STANDARD_MULTIPLIER = 0.48 // 48p, £51,000-£499,999 (was 55.5p in 2025/26)
+const LARGE_MULTIPLIER = 0.508 // 50.8p, new higher rate for RV £500,000+ (from April 2026)
+// NB retail/hospitality/leisure (RHL) get lower multipliers (38.2p small / 43p standard) — not modelled here
 const SMALL_RELIEF_THRESHOLD = 15_000
 const FULL_RELIEF_THRESHOLD = 12_000
 
 function calculate(rateableValue: number, isSmall: boolean) {
-  const multiplier = isSmall ? SMALL_MULTIPLIER : STANDARD_MULTIPLIER
+  const multiplier = isSmall ? SMALL_MULTIPLIER : (rateableValue >= 500_000 ? LARGE_MULTIPLIER : STANDARD_MULTIPLIER)
   const grossRates = rateableValue * multiplier
 
   // Small business rate relief

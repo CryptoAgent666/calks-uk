@@ -52,7 +52,7 @@ export default function HeatPumpCalculator() {
           </div>
           <div className="grid grid-cols-3 gap-3">
             <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Annual Saving</p><p className="text-lg font-bold text-primary">{formatCurrency(result.annualSaving)}</p></div>
-            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Payback Period</p><p className="text-lg font-bold">{result.payback.toFixed(1)} years</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Payback Period</p><p className="text-lg font-bold">{result.annualSaving > 0 ? `${result.payback.toFixed(1)} years` : 'Never at these rates'}</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">10-Year Net Saving</p><p className={`text-lg font-bold ${result.saving10yr > 0 ? 'text-green-600' : 'text-destructive'}`}>{formatCurrency(result.saving10yr)}</p></div>
           </div>
         </div>

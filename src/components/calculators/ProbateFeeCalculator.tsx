@@ -7,7 +7,7 @@ function calculate(estateValue: number) {
   // Fee: £300 if estate over £5,000 (solicitor application) or £273 (personal application)
   const needsProbate = estateValue > 5_000
   const applicationFee = needsProbate ? 300 : 0
-  const extraCopies = needsProbate ? 1.50 * 5 : 0 // typically order 5 copies at £1.50 each
+  const extraCopies = needsProbate ? 16 * 5 : 0 // 5 sealed copies at £16 each (raised from £1.50 on 17 November 2025)
 
   // Solicitor fees (approximate)
   const solicitorFeePct = 1.5 // typical 1-2% of estate

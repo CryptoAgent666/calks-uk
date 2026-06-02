@@ -3,9 +3,9 @@ import { useState, useMemo } from 'react'
 type ChildAge = 'under2' | '2' | '3_4' | 'school'
 
 const ENTITLEMENTS: Record<ChildAge, { freeHours: number; description: string; eligible: string }> = {
-  under2: { freeHours: 15, description: '15 hours/week (from Sept 2024 for working parents)', eligible: 'Both parents working (or single working parent), earning under £100K each' },
-  '2': { freeHours: 15, description: '15 hours/week for eligible 2-year-olds', eligible: 'Working parents earning under £100K, or on qualifying benefits' },
-  '3_4': { freeHours: 30, description: '30 hours/week for 3-4 year olds (working parents)', eligible: 'Both parents working 16+ hrs/week, earning £8,670–£100K each. All 3-4s get 15 hrs regardless.' },
+  under2: { freeHours: 30, description: '30 hours/week (full rollout from Sept 2025 for working parents, from 9 months old)', eligible: 'Both parents working (or single working parent), each earning £10,575–£100K. Available from age 9 months.' },
+  '2': { freeHours: 30, description: '30 hours/week for working parents (from Sept 2025); 15 hours if on qualifying benefits', eligible: 'Working parents each earning £10,575–£100K, or 15 hours on qualifying benefits' },
+  '3_4': { freeHours: 30, description: '30 hours/week for 3-4 year olds (working parents)', eligible: 'Both parents working 16+ hrs/week, each earning £10,575–£100K. All 3-4s get 15 hrs regardless.' },
   school: { freeHours: 0, description: 'No free childcare entitlement (school age)', eligible: 'Tax-Free Childcare and childcare vouchers may still apply for wraparound care' },
 }
 

@@ -1,5 +1,24 @@
 import { useState, useCallback } from 'react'
 
+// Cryptographically secure, unbiased integer in [lo, hi] using rejection sampling.
+// Falls back to Math.random() only if the Web Crypto API is unavailable.
+function secureRandomInt(lo: number, hi: number): number {
+  const range = hi - lo + 1
+  if (range <= 0) return lo
+  if (typeof crypto === 'undefined' || !crypto.getRandomValues) {
+    return lo + Math.floor(Math.random() * range)
+  }
+  const maxUint = 0xFFFFFFFF
+  const limit = maxUint - ((maxUint % range) + 1) % range // largest multiple of range that fits
+  const buf = new Uint32Array(1)
+  let x: number
+  do {
+    crypto.getRandomValues(buf)
+    x = buf[0]
+  } while (x > limit)
+  return lo + (x % range)
+}
+
 export default function RandomNumberGenerator() {
   const [min, setMin] = useState('1')
   const [max, setMax] = useState('100')
@@ -17,15 +36,16 @@ export default function RandomNumberGenerator() {
     if (unique) {
       const pool: number[] = []
       for (let i = lo; i <= hi; i++) pool.push(i)
+      // Fisher–Yates shuffle with a CSPRNG source
       for (let i = pool.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+        const j = secureRandomInt(0, i);
         [pool[i], pool[j]] = [pool[j], pool[i]]
       }
       setResults(pool.slice(0, cnt))
     } else {
       const nums: number[] = []
       for (let i = 0; i < cnt; i++) {
-        nums.push(Math.floor(Math.random() * (hi - lo + 1)) + lo)
+        nums.push(secureRandomInt(lo, hi))
       }
       setResults(nums)
     }

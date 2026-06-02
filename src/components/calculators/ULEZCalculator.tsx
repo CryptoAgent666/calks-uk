@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 const ULEZ_DAILY = 12.50
-const CC_DAILY = 15.00
+const CC_DAILY = 18.00 // London Congestion Charge from 2 January 2026 (was £15)
 
 function calculate(euroStandard: string, fuelType: string, daysInULEZ: number, inCongestionZone: boolean, daysInCC: number) {
   const petrolCompliant = parseInt(euroStandard) >= 4
@@ -58,7 +58,7 @@ export default function ULEZCalculator() {
           </div>
         )}
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-          <p>ULEZ: £{ULEZ_DAILY}/day for non-compliant vehicles (petrol pre-Euro 4, diesel pre-Euro 6). Covers all of Greater London 24/7. Congestion Charge: £{CC_DAILY}/day, Mon-Sun 7am-6pm, central London.</p>
+          <p>ULEZ: £{ULEZ_DAILY}/day for non-compliant vehicles (petrol pre-Euro 4, diesel pre-Euro 6). Covers all of Greater London 24/7. Congestion Charge: £{CC_DAILY}/day, Mon-Fri 7am-6pm and Sat-Sun/bank holidays 12pm-6pm, central London.</p>
         </div>
       </div>
     </div>

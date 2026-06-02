@@ -1,8 +1,14 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import { getWebPageSchema } from '@/utils/seo'
+import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
-const schemas = [getWebPageSchema('Privacy Policy', 'How Calks.uk handles your data. All calculations run in your browser — no personal data is collected.', '/privacy/', '2026-04-06')]
+const schemas = [
+  getWebPageSchema('Privacy Policy', 'How Calks.uk handles your data. All calculations run in your browser — no personal data is collected.', '/privacy/', '2026-04-06'),
+  getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Privacy Policy', url: '/privacy/' },
+  ]),
+]
 ---
 
 <Layout title="Privacy Policy" description="How Calks.uk handles your data. All calculations run in your browser — no personal data is collected." schemas={schemas}>

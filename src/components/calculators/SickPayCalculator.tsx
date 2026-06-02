@@ -11,12 +11,17 @@ function calculate(weeklyPay: number, daysSick: number, daysPerWeek: number) {
   const qualifies = weeklyPay >= SSP_LOWER_EARNINGS && daysSick >= 4
   if (!qualifies) return { qualifies, reason: daysSick < 4 ? 'Must be sick for 4+ consecutive days (including non-working days)' : `Weekly earnings must be at least £${SSP_LOWER_EARNINGS}` }
 
-  const sickWeeks = Math.min(Math.floor((daysSick - SSP_WAITING_DAYS) / 7), SSP_MAX_WEEKS)
-  const remainingDays = Math.max(0, (daysSick - SSP_WAITING_DAYS) % 7)
-  const dailyRate = SSP_RATE / daysPerWeek
-  const totalSSP = sickWeeks * SSP_RATE + Math.min(remainingDays, daysPerWeek) * dailyRate
+  // SSP is paid per "qualifying day" (a normal working day) after the first 3 waiting days.
+  // The input is consecutive *calendar* days, so convert to working days first.
+  const dpw = Math.min(Math.max(daysPerWeek, 1), 7)
+  const workingDaysSick = Math.round(daysSick * dpw / 7)
+  const maxPaidDays = SSP_MAX_WEEKS * dpw
+  const paidDays = Math.min(Math.max(0, workingDaysSick - SSP_WAITING_DAYS), maxPaidDays)
+  const dailyRate = SSP_RATE / dpw
+  const totalSSP = paidDays * dailyRate
+  const sickWeeks = Math.floor(paidDays / dpw)
 
-  return { qualifies, totalSSP, weeklyRate: SSP_RATE, dailyRate, sickWeeks, waitingDays: SSP_WAITING_DAYS }
+  return { qualifies, totalSSP, weeklyRate: SSP_RATE, dailyRate, paidDays, sickWeeks, waitingDays: SSP_WAITING_DAYS }
 }
 
 export default function SickPayCalculator() {

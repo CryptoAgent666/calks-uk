@@ -17,7 +17,7 @@ function calculate(annualMiles: number, ratePerMile: number, currentVED: number,
 export default function PayPerMileCalculator() {
   const [miles, setMiles] = useState('8000')
   const [rate, setRate] = useState('5')
-  const [ved, setVed] = useState('190')
+  const [ved, setVed] = useState('200') // standard VED rate 2026/27 (£200 from 1 April 2026)
   const [mpg, setMpg] = useState('40')
 
   const m = parseFloat(miles.replace(/,/g,'')) || 0

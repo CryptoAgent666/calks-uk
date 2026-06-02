@@ -1,8 +1,14 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import { getWebPageSchema } from '@/utils/seo'
+import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
-const schemas = [getWebPageSchema('Terms of Use', 'Terms and conditions for using Calks.uk online calculators.', '/terms/', '2026-04-06')]
+const schemas = [
+  getWebPageSchema('Terms of Use', 'Terms and conditions for using Calks.uk online calculators.', '/terms/', '2026-04-06'),
+  getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Terms of Use', url: '/terms/' },
+  ]),
+]
 ---
 
 <Layout title="Terms of Use" description="Terms and conditions for using Calks.uk online calculators." schemas={schemas}>

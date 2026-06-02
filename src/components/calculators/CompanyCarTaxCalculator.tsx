@@ -1,13 +1,14 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// BiK rates 2026/27 by CO2 (simplified brackets)
+// BiK rates 2026/27 by CO2 (simplified brackets). Pure-EV rate is 4% for 2026/27
+// (2% to 2024/25, 3% in 2025/26, 4% in 2026/27, 5% in 2027/28, then 7%/9%).
 function getBikRate(co2: number, fuelType: string): number {
-  if (fuelType === 'electric') return 3
-  if (fuelType === 'hybrid' && co2 <= 50) return 3 + Math.ceil(co2 / 5)
+  if (fuelType === 'electric') return 4
+  if (fuelType === 'hybrid' && co2 <= 50) return 4 + Math.ceil(co2 / 5)
   // Petrol/diesel — 4% diesel supplement applies to non-RDE2 compliant diesel only
   const base = fuelType === 'diesel-nonrde2' ? 4 : 0
-  if (co2 <= 50) return 2 + base
+  if (co2 <= 50) return 5 + base
   if (co2 <= 54) return 15 + base
   // Each 5g above 55 adds 1%
   const extra = Math.floor((co2 - 55) / 5)

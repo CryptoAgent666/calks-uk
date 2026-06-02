@@ -218,11 +218,11 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'redundancy-pay-calculator',
     title: 'Redundancy Pay Calculator',
-    description: 'Calculate your statutory redundancy pay for 2026/27. Weekly cap £735, max 30 years service, tax-free up to £30,000. Updated for 6 April 2026 rates.',
+    description: 'Calculate your statutory redundancy pay for 2026/27. Weekly cap £751, max 20 years service, tax-free up to £30,000. Updated for 6 April 2026 rates.',
     category: 'pay',
     icon: 'Banknote',
     keywords: ['redundancy', 'redundancy pay', 'statutory redundancy', 'redundancy calculator'],
-    metaTitle: 'UK Redundancy Pay Calculator 2026/27 — Statutory £735/week Cap',
+    metaTitle: 'UK Redundancy Pay Calculator 2026/27 — Statutory £751/week Cap',
     priority: 1,
     financialYear: '2026-27',
   },
@@ -1575,7 +1575,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // TAX (additional)
   { slug: 'side-hustle-tax-calculator', title: 'Side Hustle / Trading Allowance Calculator', description: 'Calculate tax on side hustle income. Use the £1,000 trading allowance or claim actual expenses.', category: 'tax', icon: 'Receipt', keywords: ['side hustle', 'trading allowance', 'extra income', 'freelance tax'], priority: 2 , metaTitle: 'Side Hustle Tax Calculator UK 2026 (£1,000 Allowance)' },
   // LEGAL (additional)
-  { slug: 'employment-tribunal-calculator', title: 'Employment Tribunal Award Calculator', description: 'Estimate unfair dismissal tribunal awards — basic award and compensatory award.', category: 'legal', icon: 'Scale', keywords: ['employment tribunal', 'unfair dismissal', 'tribunal award', 'compensation'], priority: 2 , metaTitle: 'Employment Tribunal Calculator UK 2026/27 (£118,223 Cap)' },
+  { slug: 'employment-tribunal-calculator', title: 'Employment Tribunal Award Calculator', description: 'Estimate unfair dismissal tribunal awards — basic award and compensatory award.', category: 'legal', icon: 'Scale', keywords: ['employment tribunal', 'unfair dismissal', 'tribunal award', 'compensation'], priority: 2 , metaTitle: 'Employment Tribunal Calculator UK 2026/27 (£123,785 Cap)' },
   // CONSTRUCTION (additional)
   { slug: 'roof-tiles-calculator', title: 'Roof Tiles Calculator', description: 'Calculate roof tiles, ridge tiles, batten and felt needed based on roof dimensions and pitch.', category: 'building', icon: 'Hammer', keywords: ['roof tiles', 'roofing', 'slate', 'ridge tiles', 'roof area'], priority: 2 , metaTitle: 'Roof Tiles Calculator UK' },
   // ENERGY (additional)
@@ -1785,7 +1785,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // EDUCATION
   { slug: 'student-loan-total-cost-calculator', title: 'Student Loan Total Cost Calculator', description: 'Calculate total amount you\'ll actually repay over the loan lifetime with salary growth projections.', category: 'education', icon: 'GraduationCap', keywords: ['student loan cost', 'total repaid', 'loan lifetime', 'write off'], priority: 1 , metaTitle: 'Student Loan Total Cost Calculator UK 2026' },
   // PAY
-  { slug: 'ev-salary-sacrifice-calculator', title: 'EV Salary Sacrifice Calculator', description: 'Calculate savings from EV salary sacrifice. See tax/NI savings, BiK at 3% and effective monthly cost.', category: 'pay', icon: 'Banknote', keywords: ['EV salary sacrifice', 'electric car scheme', 'BiK EV', 'salary sacrifice car'], priority: 1, isTrending: true, metaTitle: 'EV Salary Sacrifice Calculator UK 2026/27 — 2% BiK Rate' },
+  { slug: 'ev-salary-sacrifice-calculator', title: 'EV Salary Sacrifice Calculator', description: 'Calculate savings from EV salary sacrifice. See tax/NI savings, BiK at 4% and effective monthly cost.', category: 'pay', icon: 'Banknote', keywords: ['EV salary sacrifice', 'electric car scheme', 'BiK EV', 'salary sacrifice car'], priority: 1, isTrending: true, metaTitle: 'EV Salary Sacrifice Calculator UK 2026/27 — 4% BiK Rate' },
   // AUTO
   { slug: 'ulez-calculator', title: 'ULEZ Compliance Checker', description: 'Check if your car is ULEZ compliant and calculate annual ULEZ and Congestion Charge costs.', category: 'auto', icon: 'Car', keywords: ['ULEZ', 'ultra low emission', 'London', 'congestion charge', 'euro standard'], priority: 1, metaTitle: 'ULEZ Calculator UK 2026 — Compliance Checker by Reg' },
   { slug: 'car-import-duty-calculator', title: 'Car Import Duty Calculator', description: 'Calculate total UK landing cost for imported cars — duty, VAT, VED and type approval.', category: 'auto', icon: 'Car', keywords: ['car import', 'import duty', 'vehicle import', 'customs duty'], priority: 2 , metaTitle: 'Car Import Duty Calculator UK 2026' },
@@ -1811,7 +1811,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'student-loan-plan4-calculator', title: 'Student Loan Plan 4 (Scotland) Calculator', description: 'Calculate Plan 4 (Scottish) student loan repayments at 9% above the £33,795 threshold for 2026/27. See monthly and annual deductions.', category: 'loans', icon: 'CreditCard', keywords: ['plan 4', 'Scotland loan', 'Scottish student loan', 'SAAS'], priority: 2 , metaTitle: 'Student Loan Plan 4 Calculator UK 2026/27 (Scotland)' },
   // TAX (trending)
   { slug: 'crypto-carf-calculator', title: 'Crypto Tax CARF Calculator', description: 'Track crypto disposals, calculate CGT and understand CARF automatic reporting from 2026.', category: 'tax', icon: 'Receipt', keywords: ['crypto CARF', 'crypto reporting', 'crypto CGT', 'bitcoin tax'], priority: 2, isTrending: true , metaTitle: 'Crypto CARF Calculator UK 2026 — OECD Reporting' },
-  { slug: 'employer-ni-rise-calculator', title: 'Employer NI Rise Impact Calculator (April 2025)', description: 'Calculate the extra employer NI cost from the April 2025 rate rise (13.8% → 15%, threshold £9,100 → £5,000).', category: 'tax', icon: 'Receipt', keywords: ['employer NI rise', 'NI increase', 'April 2025', 'employer cost increase'], priority: 1, isTrending: true , metaTitle: 'Employer NI Rise Calculator 2026 — 15% Impact' },
+  { slug: 'employer-ni-rise-calculator', title: 'Employer NI Rise Impact Calculator', description: 'Calculate the extra employer NI cost from the April 2025 rate rise (13.8% → 15%, threshold £9,100 → £5,000) for the 2026/27 tax year.', category: 'tax', icon: 'Receipt', keywords: ['employer NI rise', 'NI increase', '15% NI', 'employer cost increase'], priority: 1, isTrending: true , metaTitle: 'Employer NI Rise Calculator 2026/27 — 15% Impact' },
   // AUTO (trending)
   { slug: 'pay-per-mile-calculator', title: 'EV Pay-Per-Mile Road Pricing Calculator', description: 'Compare potential road pricing costs vs current VED and fuel duty. Prepare for future EV taxation.', category: 'auto', icon: 'Car', keywords: ['pay per mile', 'road pricing', 'EV tax', 'road user charge'], priority: 2, isTrending: true , metaTitle: 'Pay Per Mile Calculator UK 2026' },
   // TAX (trending)

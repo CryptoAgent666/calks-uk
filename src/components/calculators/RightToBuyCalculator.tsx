@@ -2,14 +2,15 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 function calculate(marketValue: number, yearsAsTenant: number, isHouse: boolean) {
-  const baseDiscount = isHouse ? 35 : 50 // houses 35%, flats 50% (from year 3)
-  const additionalPerYear = isHouse ? 1 : 2 // +1%/yr for houses, +2%/yr for flats
-  const minYears = 3 // 3 years minimum for both houses and flats
-  const maxDiscount = 34_000 // England cap (outside London) — reduced from £96K to £38K in Nov 2023, further reduced to ~£34K from Oct 2024
+  const baseDiscount = isHouse ? 35 : 50 // houses 35%, flats 50% (for 3–5 years' tenancy)
+  const additionalPerYear = isHouse ? 1 : 2 // +1%/yr (houses) / +2%/yr (flats) for each year ABOVE 5
+  const minYears = 3 // 3 years minimum to qualify
+  const incrementFromYear = 5 // base rate applies for 3–5 years; extra % only kicks in after year 5
+  const maxDiscount = 34_000 // England cap (outside London) — reduced to ~£34K from Oct 2024 (London ~£38.4K)
 
   const qualifies = yearsAsTenant >= minYears
-  const extraYears = Math.max(0, yearsAsTenant - minYears)
-  const discountPct = Math.min(baseDiscount + extraYears * additionalPerYear, isHouse ? 70 : 70)
+  const extraYears = Math.max(0, yearsAsTenant - incrementFromYear)
+  const discountPct = Math.min(baseDiscount + extraYears * additionalPerYear, 70)
   const discountAmount = Math.min(marketValue * (discountPct / 100), maxDiscount)
   const purchasePrice = marketValue - discountAmount
 

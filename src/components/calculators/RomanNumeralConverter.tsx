@@ -26,8 +26,8 @@ function fromRoman(s: string): number | null {
 }
 
 export default function RomanNumeralConverter() {
-  const [decimal, setDecimal] = useState('2025')
-  const [roman, setRoman] = useState('MMXXV')
+  const [decimal, setDecimal] = useState('2026')
+  const [roman, setRoman] = useState('MMXXVI')
 
   const d = parseInt(decimal) || 0
   const romanResult = d > 0 ? toRoman(d) : ''
@@ -46,7 +46,7 @@ export default function RomanNumeralConverter() {
       <div className="rounded-xl border border-border p-5 space-y-4">
         <h3 className="font-semibold">Roman to Decimal</h3>
         <div className="grid grid-cols-2 gap-4 items-end">
-          <div><label className="block text-sm font-medium mb-2">Roman Numeral</label><input type="text" value={roman} onChange={(e) => setRoman(e.target.value.toUpperCase())} placeholder="MMXXV" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-bold uppercase tracking-widest font-serif focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Roman Numeral" /></div>
+          <div><label className="block text-sm font-medium mb-2">Roman Numeral</label><input type="text" value={roman} onChange={(e) => setRoman(e.target.value.toUpperCase())} placeholder="MMXXVI" className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-bold uppercase tracking-widest font-serif focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Roman Numeral" /></div>
           <div className="rounded-xl bg-primary/10 p-3 text-center"><p className="text-2xl font-bold text-primary">{decimalResult !== null ? decimalResult : '—'}</p></div>
         </div>
       </div>

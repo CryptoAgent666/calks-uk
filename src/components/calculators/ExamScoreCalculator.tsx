@@ -4,14 +4,16 @@ function calculate(scored: number, total: number) {
   if (total <= 0) return null
   const pct = (scored / total) * 100
 
+  // A-level letter (A*≥90, A≥80, B≥70…) paired with UK degree classification
+  // (First ≥70, 2:1 60-69, 2:2 50-59, Third 40-49, Fail <40). Boundaries vary by institution.
   let grade: string
-  if (pct >= 90) grade = 'A* / First / Distinction'
-  else if (pct >= 80) grade = 'A / First'
-  else if (pct >= 70) grade = 'B / 2:1'
-  else if (pct >= 60) grade = 'C / 2:2'
-  else if (pct >= 50) grade = 'D / Third'
-  else if (pct >= 40) grade = 'E / Pass'
-  else grade = 'F / Fail'
+  if (pct >= 90) grade = 'A* / First (Distinction)'
+  else if (pct >= 80) grade = 'A / First (1st)'
+  else if (pct >= 70) grade = 'B / First (1st)'
+  else if (pct >= 60) grade = 'C / Upper Second (2:1)'
+  else if (pct >= 50) grade = 'D / Lower Second (2:2)'
+  else if (pct >= 40) grade = 'E / Third (3rd)'
+  else grade = 'U / Fail'
 
   // What do you need on remaining?
   return { pct, grade }

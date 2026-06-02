@@ -1,28 +1,16 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import { getWebPageSchema, getOrganizationSchema } from '@/utils/seo'
+import { getWebPageSchema, getOrganizationSchema, getBreadcrumbSchema } from '@/utils/seo'
 
-const personSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  '@id': 'https://calks.uk/#author',
-  name: 'Konstantin Iakovlev',
-  url: 'https://www.linkedin.com/in/konstantin-iakovlev',
-  jobTitle: 'Financial Tools Developer',
-  worksFor: { '@id': 'https://calks.uk/#organization' },
-  sameAs: [
-    'https://www.linkedin.com/in/konstantin-iakovlev',
-    'https://calk-au.com',
-    'https://calk.nz',
-    'https://calk.kz',
-  ],
-  knowsAbout: ['UK taxation', 'financial calculators', 'web development', 'HMRC rates', 'personal finance'],
-}
-
+// Note: the canonical Person (#author) schema is inlined site-wide by Layout.astro,
+// so it is intentionally NOT repeated here to avoid a conflicting duplicate @id node.
 const schemas = [
   getOrganizationSchema(),
   getWebPageSchema('About Calks.uk', 'Meet the founder, learn about our mission and discover how Calks.uk builds accurate, privacy-first UK calculators. 330+ free tools updated for 2026/27.', '/about/', '2026-04-06'),
-  personSchema,
+  getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'About', url: '/about/' },
+  ]),
 ]
 ---
 

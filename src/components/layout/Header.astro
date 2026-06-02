@@ -44,7 +44,7 @@ const MORE_CATEGORIES: CategoryId[] = ['investment', 'benefits', 'auto', 'health
                 href={`/category/${catId}/`}
                 class="flex items-center gap-2.5 px-3 py-2.5 text-sm rounded-lg hover:bg-accent transition-colors"
               >
-                <div class={`flex h-8 w-8 items-center justify-center rounded-lg ${CATEGORIES[catId].color}`}>
+                <div class={`flex h-8 w-8 items-center justify-center rounded-lg ${CATEGORIES[catId].color}`} aria-hidden="true">
                   <span class={`text-xs font-bold ${CATEGORIES[catId].iconColor}`}>{CATEGORIES[catId].name.charAt(0)}</span>
                 </div>
                 <span class="font-medium">{CATEGORIES[catId].name}</span>
@@ -86,10 +86,10 @@ const MORE_CATEGORIES: CategoryId[] = ['investment', 'benefits', 'auto', 'health
           href={`/category/${catId}/`}
           class="flex items-center gap-3 px-3 py-3 min-h-[44px] rounded-xl text-sm font-medium hover:bg-accent transition-colors"
         >
-          <div class={`flex h-8 w-8 items-center justify-center rounded-lg ${CATEGORIES[catId].color}`}>
+          <div class={`flex h-8 w-8 items-center justify-center rounded-lg ${CATEGORIES[catId].color}`} aria-hidden="true">
             <span class={`text-xs font-bold ${CATEGORIES[catId].iconColor}`}>{CATEGORIES[catId].name.charAt(0)}</span>
           </div>
-          {CATEGORIES[catId].name}
+          <span>{CATEGORIES[catId].name}</span>
         </a>
       ))}
     </div>

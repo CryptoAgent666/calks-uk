@@ -45,12 +45,12 @@ function calcNI(income: number) {
 export default function EVSalarySacrificeCalculator() {
   const [salary, setSalary] = useState('45000')
   const [price, setPrice] = useState('35000')
-  const [bik, setBik] = useState('3')
+  const [bik, setBik] = useState('4')
   const [term, setTerm] = useState('36')
 
   const s = parseFloat(salary.replace(/,/g,'')) || 0
   const p = parseFloat(price.replace(/,/g,'')) || 0
-  const b = parseFloat(bik) || 3
+  const b = parseFloat(bik) || 4
   const t = parseInt(term) || 36
   const result = useMemo(() => calculate(s, p, b, t), [s, p, b, t])
 
@@ -59,7 +59,7 @@ export default function EVSalarySacrificeCalculator() {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div><label className="block text-sm font-medium mb-2">Annual Salary</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={salary} onChange={(e) => setSalary(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Salary" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Car List Price</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Car List Price" /></div></div>
-        <div><label className="block text-sm font-medium mb-2">BiK Rate (%)</label><input type="number" min="2" max="37" value={bik} onChange={(e) => setBik(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="BiK Rate (%)" /><p className="text-xs text-muted-foreground mt-1">EV: 3% (2026/27)</p></div>
+        <div><label className="block text-sm font-medium mb-2">BiK Rate (%)</label><input type="number" min="2" max="37" value={bik} onChange={(e) => setBik(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="BiK Rate (%)" /><p className="text-xs text-muted-foreground mt-1">EV: 4% (2026/27)</p></div>
         <div><label className="block text-sm font-medium mb-2">Lease Term (months)</label><input type="number" min="24" max="48" value={term} onChange={(e) => setTerm(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Lease Term (months)" /></div>
       </div>
 

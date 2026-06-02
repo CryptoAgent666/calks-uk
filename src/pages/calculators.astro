@@ -76,7 +76,7 @@ const grouped = CATEGORY_IDS.map((catId: CategoryId) => ({
       {grouped.map((g) => (
         <section id={g.catId} class="scroll-mt-20">
           <div class="flex items-center gap-3 mb-4 pb-3 border-b border-border">
-            <div class={`flex h-10 w-10 items-center justify-center rounded-lg ${g.category.color} ${g.category.darkColor} shrink-0`}>
+            <div class={`flex h-10 w-10 items-center justify-center rounded-lg ${g.category.color} ${g.category.darkColor} shrink-0`} aria-hidden="true">
               <span class={`text-base font-bold ${g.category.iconColor} ${g.category.darkIconColor}`}>{g.category.name.charAt(0)}</span>
             </div>
             <h2 class="text-2xl font-bold tracking-tight">

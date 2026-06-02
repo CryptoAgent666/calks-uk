@@ -7,9 +7,9 @@ const PA_TAPER_START = 100_000
 
 const SCOTTISH_BANDS = [
   { name: 'Personal Allowance (0%)', rate: 0 },
-  { name: 'Starter Rate (19%)', rate: 0.19, from: 12_570, to: 14_876 },
-  { name: 'Basic Rate (20%)', rate: 0.20, from: 14_876, to: 26_561 },
-  { name: 'Intermediate Rate (21%)', rate: 0.21, from: 26_561, to: 43_662 },
+  { name: 'Starter Rate (19%)', rate: 0.19, from: 12_570, to: 15_397 },
+  { name: 'Basic Rate (20%)', rate: 0.20, from: 15_397, to: 27_491 },
+  { name: 'Intermediate Rate (21%)', rate: 0.21, from: 27_491, to: 43_662 },
   { name: 'Higher Rate (42%)', rate: 0.42, from: 43_662, to: 75_000 },
   { name: 'Advanced Rate (45%)', rate: 0.45, from: 75_000, to: 125_140 },
   { name: 'Top Rate (48%)', rate: 0.48, from: 125_140, to: Infinity },

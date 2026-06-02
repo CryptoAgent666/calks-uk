@@ -32,7 +32,7 @@ export default function DebtToIncomeCalculator() {
   const result = useMemo(() => calculate(i, parseFloat(mortgage)||0, parseFloat(car)||0, parseFloat(cards)||0, parseFloat(loans)||0, parseFloat(sl)||0, parseFloat(other)||0), [income, mortgage, car, cards, loans, sl, other])
 
   const Input = ({ label, value, onChange }: { label: string; value: string; onChange: (v: string) => void }) => (
-    <div><label className="block text-sm font-medium mb-2">{label}</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="number" min="0" value={value} onChange={(e) => onChange(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
+    <div><label className="block text-sm font-medium mb-2">{label}</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="number" min="0" value={value} onChange={(e) => onChange(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label={label} /></div></div>
   )
 
   return (

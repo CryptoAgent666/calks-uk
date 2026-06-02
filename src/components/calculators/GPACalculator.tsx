@@ -43,14 +43,14 @@ export default function GPACalculator() {
       <div className="space-y-2">
         {modules.map((m, i) => (
           <div key={i} className="flex items-center gap-2">
-            <select value={m.grade} onChange={(e) => updateModule(i, 'grade', parseInt(e.target.value))} className="flex-1 rounded-lg border border-input bg-background px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+            <select value={m.grade} onChange={(e) => updateModule(i, 'grade', parseInt(e.target.value))} aria-label={`Module ${i + 1} grade`} className="flex-1 rounded-lg border border-input bg-background px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-ring">
               {UK_GRADES.map((g, gi) => <option key={gi} value={gi}>{g.label} (GPA {g.points})</option>)}
             </select>
             <div className="flex items-center gap-1">
-              <input type="number" min="5" max="120" step="5" value={m.credits} onChange={(e) => updateModule(i, 'credits', parseInt(e.target.value) || 15)} className="w-16 rounded-lg border border-input bg-background px-2 py-2 text-sm text-center font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
+              <input type="number" min="5" max="120" step="5" value={m.credits} onChange={(e) => updateModule(i, 'credits', parseInt(e.target.value) || 15)} aria-label={`Module ${i + 1} credits`} className="w-16 rounded-lg border border-input bg-background px-2 py-2 text-sm text-center font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
               <span className="text-xs text-muted-foreground">credits</span>
             </div>
-            <button onClick={() => removeModule(i)} className="px-2 py-2 rounded-lg bg-muted hover:bg-destructive/10 text-sm">x</button>
+            <button onClick={() => removeModule(i)} aria-label={`Remove module ${i + 1}`} className="px-2 py-2 rounded-lg bg-muted hover:bg-destructive/10 text-sm">x</button>
           </div>
         ))}
       </div>

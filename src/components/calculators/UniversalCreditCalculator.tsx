@@ -1,17 +1,17 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// UC rates 2026/27 (monthly, from April 2025, uprated by 1.7% CPI)
-const STANDARD_SINGLE_UNDER25 = 316.98
-const STANDARD_SINGLE_25PLUS = 400.14
-const STANDARD_COUPLE_UNDER25 = 497.55
-const STANDARD_COUPLE_25PLUS = 628.15
-const CHILD_FIRST = 339.00       // was £333.33 in 2024/25
-const CHILD_ADDITIONAL = 292.81  // was £287.92 in 2024/25
+// UC rates 2026/27 (monthly, from 6 April 2026; standard allowances got an above-CPI rise, elements uprated 3.8%)
+const STANDARD_SINGLE_UNDER25 = 338.58  // was £316.98 in 2025/26
+const STANDARD_SINGLE_25PLUS = 424.90   // was £400.14 in 2025/26
+const STANDARD_COUPLE_UNDER25 = 528.34  // was £497.55 in 2025/26
+const STANDARD_COUPLE_25PLUS = 666.97   // was £628.10 in 2025/26
+const CHILD_FIRST = 351.88       // first child born before 6 Apr 2017 (was £339.00 in 2025/26)
+const CHILD_ADDITIONAL = 303.94  // born on/after 6 Apr 2017 + subsequent (was £292.81 in 2025/26)
 const HOUSING_ELEMENT_MAX = 1200 // placeholder, varies by LHA area
 const TAPER_RATE = 0.55
-const WORK_ALLOWANCE_HOUSING = 411   // was £404 in 2024/25
-const WORK_ALLOWANCE_NO_HOUSING = 684 // was £673 in 2024/25
+const WORK_ALLOWANCE_HOUSING = 427   // lower, with housing help (was £411 in 2025/26)
+const WORK_ALLOWANCE_NO_HOUSING = 710 // higher, no housing help (was £684 in 2025/26)
 
 type Status = 'single_under25' | 'single_25plus' | 'couple_under25' | 'couple_25plus'
 

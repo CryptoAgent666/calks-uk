@@ -10,16 +10,20 @@ const QUALIFYING_UPPER = 50_270
 
 function calculate(salary: number, employeePct: number, employerPct: number) {
   const qualifyingEarnings = Math.max(0, Math.min(salary, QUALIFYING_UPPER) - QUALIFYING_LOWER)
+  // The employee % is the gross contribution — under auto-enrolment it already includes basic-rate
+  // tax relief. We split it into the part funded from take-home pay and the relief portion, rather
+  // than adding relief on top (which would overstate the pot and break the 5%+3%=8% statement).
   const employeeContrib = qualifyingEarnings * (employeePct / 100)
   const employerContrib = qualifyingEarnings * (employerPct / 100)
   const totalContrib = employeeContrib + employerContrib
-  const taxRelief = employeeContrib * 0.25 // basic rate added by provider (relief at source)
+  const taxRelief = employeeContrib * 0.20 // basic-rate relief contained within the gross employee contribution
+  const employeeNet = employeeContrib - taxRelief // what actually leaves your take-home pay
 
   const monthlyEmployee = employeeContrib / 12
   const monthlyEmployer = employerContrib / 12
   const monthlyTotal = totalContrib / 12
 
-  return { qualifyingEarnings, employeeContrib, employerContrib, totalContrib, taxRelief, monthlyEmployee, monthlyEmployer, monthlyTotal, grossInPension: totalContrib + taxRelief }
+  return { qualifyingEarnings, employeeContrib, employerContrib, totalContrib, taxRelief, employeeNet, monthlyEmployee, monthlyEmployer, monthlyTotal, grossInPension: totalContrib }
 }
 
 export default function EmployerPensionCalculator() {
@@ -50,8 +54,9 @@ export default function EmployerPensionCalculator() {
           <table className="w-full text-sm">
             <tbody>
               <tr className="border-b border-border/50"><td className="py-2">Your contribution ({empPct}%)</td><td className="text-right tabular-nums">{formatCurrency(result.employeeContrib)}</td><td className="text-right tabular-nums text-muted-foreground">{formatCurrency(result.monthlyEmployee)}/mo</td></tr>
+              <tr className="border-b border-border/50 text-muted-foreground"><td className="py-1.5 pl-4 text-xs">— from your take-home pay</td><td className="text-right tabular-nums text-xs">{formatCurrency(result.employeeNet)}</td><td></td></tr>
+              <tr className="border-b border-border/50 text-muted-foreground"><td className="py-1.5 pl-4 text-xs">— basic-rate tax relief (20%)</td><td className="text-right tabular-nums text-xs text-green-600">{formatCurrency(result.taxRelief)}</td><td></td></tr>
               <tr className="border-b border-border/50"><td className="py-2 text-green-600">Employer contribution ({erPct}%)</td><td className="text-right tabular-nums text-green-600">{formatCurrency(result.employerContrib)}</td><td className="text-right tabular-nums text-muted-foreground">{formatCurrency(result.monthlyEmployer)}/mo</td></tr>
-              <tr className="border-b border-border/50"><td className="py-2 text-green-600">Tax relief (20%)</td><td className="text-right tabular-nums text-green-600">{formatCurrency(result.taxRelief)}</td><td></td></tr>
               <tr className="font-semibold"><td className="py-2">Total in pension</td><td className="text-right tabular-nums text-primary">{formatCurrency(result.grossInPension)}</td><td></td></tr>
             </tbody>
           </table>

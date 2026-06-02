@@ -47,7 +47,7 @@ export default function SoleTraderVsLtdComparisonCalculator() {
         </table>
       </div>
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p>Ltd assumes: £12,570 salary + dividends, ~£1,200 accountancy. Below ~£35K sole trader is simpler. Above ~£50K Ltd usually saves significantly. Consider IR35, mortgage implications and admin burden.</p>
+        <p>Ltd assumes: £12,570 salary + dividends, ~£1,200 accountancy. Since Class 4 NI was cut to 6% (April 2024), the limited-company advantage is much smaller than it used to be — at these assumptions a sole trader keeps more up to around £90K, with Ltd only edging ahead near £100K profit. The gap widens at higher profits. Always weigh IR35, mortgage implications and the extra admin/accountancy burden — and check the figures against your own circumstances.</p>
       </div>
     </div>
   )

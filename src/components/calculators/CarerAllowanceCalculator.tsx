@@ -1,9 +1,9 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Carer's Allowance 2026/27 (from April 2025)
-const CA_WEEKLY = 83.30 // was £81.90 in 2024/25, uprated 1.7% CPI
-const EARNINGS_LIMIT = 196 // raised from £151/week to £196/week from April 2025 (Autumn Budget 2024)
+// Carer's Allowance 2026/27 (from 6 April 2026)
+const CA_WEEKLY = 86.45 // was £83.30 in 2025/26, uprated 3.8% CPI
+const EARNINGS_LIMIT = 204 // weekly net earnings limit 2026/27 (was £196 in 2025/26)
 
 function calculate(hoursPerWeek: number, weeklyEarnings: number, personCaredFor: boolean) {
   const qualifies = hoursPerWeek >= 35 && personCaredFor && weeklyEarnings <= EARNINGS_LIMIT

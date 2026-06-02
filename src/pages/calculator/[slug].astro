@@ -1,6 +1,5 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import AdSlot from '@/components/AdSlot.astro'
 import Disclaimer from '@/components/Disclaimer.astro'
 import CalculatorRenderer from '@/components/CalculatorRenderer'
 import AuthorByline from '@/components/AuthorByline.astro'
@@ -93,13 +92,10 @@ const schemas = [
         </div>
 
         <!-- Author byline (E-E-A-T) -->
-        <AuthorByline lastUpdated={content?.lastUpdated} />
+        <AuthorByline lastUpdated={content?.lastUpdated} category={calc.category} />
 
         <!-- Quick Answer (AI citation block) -->
         {content?.quickAnswer && <QuickAnswer answer={content.quickAnswer} />}
-
-        <!-- Ad Slot -->
-        <AdSlot type="responsive" class="no-print" />
 
         <!-- Calculator Component -->
         <div class="rounded-2xl border border-border bg-card p-6 shadow-sm">
@@ -160,16 +156,10 @@ const schemas = [
             </dl>
           </section>
         )}
-
-        <!-- Ad Slot -->
-        <AdSlot type="responsive" class="no-print" />
       </div>
 
       <!-- Sidebar -->
       <aside class="space-y-6">
-        <!-- Ad Slot -->
-        <AdSlot type="rectangle" class="no-print" />
-
         <!-- Related Calculators -->
         {related.length > 0 && (
           <div class="rounded-2xl border border-border bg-card p-5">

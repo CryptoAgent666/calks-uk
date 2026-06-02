@@ -1,13 +1,13 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Teacher pay scales 2026/27 (England, outside London)
-const MAIN_SCALE = [31_650, 33_483, 35_674, 37_733, 40_625, 43_607]
-const UPPER_SCALE = [47_417, 49_348, 51_179]
+// Teacher pay scales 2025/26 (England, outside London) — STPCD 2025, 4% award from 1 September 2025
+const MAIN_SCALE = [32_916, 34_823, 37_101, 39_556, 42_057, 45_352]
+const UPPER_SCALE = [47_472, 49_232, 51_048]
 const LEADERSHIP: Record<string, { min: number; max: number }> = {
-  'Head (Group 1)': { min: 56_082, max: 73_509 },
-  'Head (Group 4)': { min: 66_919, max: 95_081 },
-  'Head (Group 8)': { min: 89_414, max: 131_056 },
+  'Head (Group 1)': { min: 58_325, max: 76_449 },
+  'Head (Group 4)': { min: 69_596, max: 98_884 },
+  'Head (Group 8)': { min: 92_991, max: 136_298 },
 }
 
 type Scale = 'main' | 'upper' | 'leadership'
@@ -25,21 +25,31 @@ function calculate(scale: Scale, point: number, leadershipGroup: string, isLondo
   const londonAdj: Record<string, number> = { none: 0, inner: 5_000, outer: 2_000, fringe: 1_000 }
   salary += londonAdj[isLondon] || 0
 
-  // After tax/NI
+  // Teachers' Pension Scheme — tiered member contribution rate by salary band
+  const tpsRate =
+    salary < 34_290 ? 0.074 :
+    salary < 46_159 ? 0.086 :
+    salary < 54_730 ? 0.096 :
+    salary < 72_535 ? 0.102 :
+    salary < 98_909 ? 0.113 : 0.117
+  const pension = salary * tpsRate
+
+  // TPS uses a net-pay arrangement: pension is deducted before income tax (automatic relief),
+  // so income tax is charged on salary minus pension. NI is still charged on full salary.
+  const taxablePay = Math.max(0, salary - pension)
   let tax = 0
-  if (salary > 12_570) {
-    if (salary <= 50_270) tax = (salary - 12_570) * 0.20
-    else tax = (50_270 - 12_570) * 0.20 + (salary - 50_270) * 0.40
+  if (taxablePay > 12_570) {
+    if (taxablePay <= 50_270) tax = (taxablePay - 12_570) * 0.20
+    else tax = (50_270 - 12_570) * 0.20 + (taxablePay - 50_270) * 0.40
   }
   let ni = 0
   if (salary > 12_570) {
     if (salary <= 50_270) ni = (salary - 12_570) * 0.08
     else ni = (50_270 - 12_570) * 0.08 + (salary - 50_270) * 0.02
   }
-  const pension = salary * 0.086 // Teachers' Pension ~8.6%
   const takeHome = salary - tax - ni - pension
 
-  return { salary, tax, ni, pension, takeHome, monthly: takeHome / 12 }
+  return { salary, tax, ni, pension, pensionRate: tpsRate, takeHome, monthly: takeHome / 12 }
 }
 
 export default function TeacherPayCalculator() {
@@ -74,7 +84,7 @@ export default function TeacherPayCalculator() {
             <tr className="border-b border-border/50"><td className="py-2">Gross Salary</td><td className="text-right tabular-nums font-medium">{formatCurrency(result.salary)}</td></tr>
             <tr className="border-b border-border/50"><td className="py-2 text-destructive">Income Tax</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.tax)}</td></tr>
             <tr className="border-b border-border/50"><td className="py-2 text-destructive">National Insurance</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.ni)}</td></tr>
-            <tr className="border-b border-border/50"><td className="py-2">Teachers' Pension (8.6%)</td><td className="text-right tabular-nums">-{formatCurrency(result.pension)}</td></tr>
+            <tr className="border-b border-border/50"><td className="py-2">Teachers' Pension ({(result.pensionRate * 100).toFixed(1)}%)</td><td className="text-right tabular-nums">-{formatCurrency(result.pension)}</td></tr>
             <tr className="font-semibold"><td className="py-2 text-primary">Take-Home</td><td className="text-right tabular-nums text-primary">{formatCurrency(result.takeHome)}</td></tr>
           </tbody>
         </table>

@@ -1,31 +1,40 @@
 import { useState, useMemo } from 'react'
 
-// UC work allowance / conditionality thresholds
+// UC work allowance / conditionality thresholds (2026/27)
+// Working Tax Credit closed to new claims and existing claimants were migrated to Universal Credit by April 2025,
+// so all thresholds below are UC-based.
 function calculate(hoursPerWeek: number, hourlyRate: number, isSingle: boolean, hasChildren: boolean) {
   const weeklyPay = hoursPerWeek * hourlyRate
   const annualPay = weeklyPay * 52
+  const monthlyPay = annualPay / 12
   const nmw = 12.71
+
+  // 2026/27 UC earnings thresholds (uprated proportionally with NLW)
+  const aetSingleMonthly = 1_009 // Administrative Earnings Threshold, single (£952 in 2025/26)
+  const aetCoupleMonthly = 1_617 // Administrative Earnings Threshold, couple (£1,524 in 2025/26)
+  const cetMonthly = nmw * 35 * 52 / 12 // Conditionality Earnings Threshold = 35h × NLW
+
+  const aetThreshold = isSingle ? aetSingleMonthly : aetCoupleMonthly
 
   const meetsNMW = hourlyRate >= nmw
   const isFullTime = hoursPerWeek >= 35
-  const qualifiesWTC = (hasChildren && hoursPerWeek >= 16) || (!hasChildren && hoursPerWeek >= 30) || (isSingle && hasChildren && hoursPerWeek >= 16)
 
-  // UC work conditionality
+  // UC work conditionality (post-migration rules)
   let conditionality = ''
-  if (hoursPerWeek === 0) conditionality = 'Intensive work search'
-  else if (hoursPerWeek < 12) conditionality = 'Light touch — expected to increase hours'
-  else if (hoursPerWeek < 35 && annualPay < nmw * 35 * 52) conditionality = 'Working — may be asked to increase hours/pay'
+  if (monthlyPay === 0) conditionality = 'Intensive work search — full job-seeking commitments'
+  else if (monthlyPay < aetThreshold) conditionality = 'Intensive work search — earnings below AET'
+  else if (monthlyPay < cetMonthly) conditionality = 'Light touch — may be asked to increase hours/pay'
   else conditionality = 'No additional conditions — working enough'
 
-  // Key benefit thresholds
+  // Key UC earnings/hours thresholds (current rules, not legacy WTC)
   const thresholds = [
-    { hours: 16, label: '16 hrs: WTC qualifying (with children)', met: hoursPerWeek >= 16 },
-    { hours: 24, label: '24 hrs: Couple WTC minimum', met: hoursPerWeek >= 24 },
-    { hours: 30, label: '30 hrs: WTC 30-hour element / single no children', met: hoursPerWeek >= 30 },
-    { hours: 35, label: '35 hrs: UC full conditionality threshold', met: hoursPerWeek >= 35 },
+    { hours: Math.ceil(aetSingleMonthly * 12 / 52 / nmw), label: `AET (single): £${aetSingleMonthly}/mo — escapes intensive work search`, met: monthlyPay >= aetSingleMonthly },
+    { hours: Math.ceil(aetCoupleMonthly * 12 / 52 / nmw), label: `AET (couple): £${aetCoupleMonthly}/mo joint — escapes intensive work search`, met: monthlyPay >= aetCoupleMonthly },
+    { hours: 35, label: '35 hrs × NLW: CET — no work-related conditions', met: monthlyPay >= cetMonthly },
+    { hours: 16, label: '16 hrs: legacy WTC threshold (closed to new claims April 2025)', met: hoursPerWeek >= 16 },
   ]
 
-  return { weeklyPay, annualPay, meetsNMW, isFullTime, qualifiesWTC, conditionality, thresholds }
+  return { weeklyPay, annualPay, meetsNMW, isFullTime, conditionality, thresholds }
 }
 
 export default function WorkingTaxCreditHoursCalculator() {

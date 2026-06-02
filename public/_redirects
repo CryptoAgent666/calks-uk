@@ -14,3 +14,18 @@
 /calculator/ /calculators/ 301
 /all/ /calculators/ 301
 /all-calculators/ /calculators/ 301
+
+# 5. Catch-all for plural-typo: /calculators/<slug>/ → /calculator/<slug>/
+# (Google or external links may guess plural form since listing is at /calculators/)
+/calculators/:slug/ /calculator/:slug/ 301
+/calculators/:slug /calculator/:slug/ 301
+
+# 6. Category typos: /category (singular) → /category/ list page
+/category/ /calculators/ 301
+/categories/ /calculators/ 301
+/categories/:slug/ /category/:slug/ 301
+
+# 7. Pseudo-extensions
+/index.html / 301
+/calculator/:slug/index.html /calculator/:slug/ 301
+/calculator/:slug.html /calculator/:slug/ 301

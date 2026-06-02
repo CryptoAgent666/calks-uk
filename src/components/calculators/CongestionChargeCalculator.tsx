@@ -1,17 +1,16 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-const CC_DAILY = 15.00
-const CC_MONTHLY_AUTOPAY = 319.50 // roughly £15 * 21.3 working days, slight discount with auto pay
+const CC_DAILY = 18.00 // standard daily charge (advance/same-day), from 2 January 2026
+const CC_DAILY_EV_AUTOPAY = 13.50 // EV Cleaner Vehicle Discount on Auto Pay (the 100% EV exemption ended 25 December 2025)
 
 function calculate(daysPerWeek: number, weeksPerYear: number, hasAutoPay: boolean, isEV: boolean, isDisabled: boolean) {
-  // Note: EV exemption (Cleaner Vehicle Discount) ended 25 December 2025 — EVs now pay full charge
   if (isDisabled) return { annualCost: 0, dailyRate: 0, exempt: true, reason: 'Disabled person\'s exemption (Blue Badge)' }
-  if (isEV) {/* EVs no longer exempt — fall through to charge calculation */}
 
-  const dailyRate = CC_DAILY
+  // Auto Pay is billed at the standard £18/day; EVs on Auto Pay get the discounted Cleaner Vehicle rate
+  const dailyRate = (isEV && hasAutoPay) ? CC_DAILY_EV_AUTOPAY : CC_DAILY
   const annualDays = daysPerWeek * weeksPerYear
-  const annualCost = hasAutoPay ? CC_MONTHLY_AUTOPAY * 12 * (daysPerWeek / 5) : annualDays * dailyRate
+  const annualCost = annualDays * dailyRate
   const monthlyCost = annualCost / 12
 
   return { annualCost, monthlyCost, dailyRate, annualDays, exempt: false }
@@ -44,11 +43,11 @@ export default function CongestionChargeCalculator() {
         {result.exempt ? (
           <><p className="text-lg font-bold text-green-700 dark:text-green-400">Exempt!</p><p className="text-sm text-muted-foreground mt-1">{'reason' in result ? result.reason : ''}</p></>
         ) : (
-          <><p className="text-sm text-muted-foreground">Annual Congestion Charge</p><p className="text-3xl font-bold text-destructive mt-1">{formatCurrency(result.annualCost)}</p><p className="text-sm text-muted-foreground mt-1">{formatCurrency('monthlyCost' in result ? result.monthlyCost : 0)}/month &middot; £{CC_DAILY}/day</p></>
+          <><p className="text-sm text-muted-foreground">Annual Congestion Charge</p><p className="text-3xl font-bold text-destructive mt-1">{formatCurrency(result.annualCost)}</p><p className="text-sm text-muted-foreground mt-1">{formatCurrency('monthlyCost' in result ? result.monthlyCost : 0)}/month &middot; £{result.dailyRate}/day</p></>
         )}
       </div>
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p>London Congestion Charge: £{CC_DAILY}/day, Mon-Sun 7am-6pm (excl. Christmas Day). Auto Pay saves vs daily payment. Zone: central London (roughly within the Inner Ring Road).</p>
+        <p>London Congestion Charge: £{CC_DAILY}/day, Mon-Fri 7am-6pm and Sat-Sun/bank holidays 12pm-6pm (excl. Christmas Day to New Year's Day). Auto Pay saves vs daily payment. Zone: central London (roughly within the Inner Ring Road).</p>
       </div>
     </div>
   )

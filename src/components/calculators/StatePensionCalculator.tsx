@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// 2026/27
-const FULL_NEW_STATE_PENSION_WEEKLY = 230.25
+// 2026/27 (triple lock uprating)
+const FULL_NEW_STATE_PENSION_WEEKLY = 241.30
 const QUALIFYING_YEARS_FULL = 35
 const QUALIFYING_YEARS_MIN = 10
 

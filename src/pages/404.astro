@@ -30,7 +30,7 @@ const popularCategories: CategoryId[] = ['tax', 'pay', 'mortgage', 'pension', 'b
           href={`/category/${catId}/`}
           class="flex items-center gap-2.5 rounded-xl border border-border p-3 hover:bg-accent transition-colors"
         >
-          <div class={`flex h-8 w-8 items-center justify-center rounded-lg ${CATEGORIES[catId].color}`}>
+          <div class={`flex h-8 w-8 items-center justify-center rounded-lg ${CATEGORIES[catId].color}`} aria-hidden="true">
             <span class={`text-xs font-bold ${CATEGORIES[catId].iconColor}`}>{CATEGORIES[catId].name.charAt(0)}</span>
           </div>
           <span class="text-sm font-medium">{CATEGORIES[catId].name}</span>

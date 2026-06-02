@@ -2,8 +2,10 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 function calculate(contribution: number, salary: number) {
-  const basicRelief = contribution * 0.20 // automatically added by provider
-  const grossContribution = contribution + basicRelief
+  // Relief at source: your net contribution is 80% of the gross, so the provider grosses it up
+  // by ÷0.8 (i.e. adds 25% of the net = 20% of the gross). HMRC example: pay £80, get £100.
+  const grossContribution = contribution / 0.80
+  const basicRelief = grossContribution - contribution
 
   // Higher rate reclaim via self-assessment
   let higherRelief = 0

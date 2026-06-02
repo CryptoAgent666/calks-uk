@@ -1,8 +1,14 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import { getWebPageSchema } from '@/utils/seo'
+import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
-const schemas = [getWebPageSchema('Methodology', 'How Calks.uk calculators are built, verified and maintained. Our data sources, accuracy standards and update process.', '/methodology/', '2026-04-06')]
+const schemas = [
+  getWebPageSchema('Methodology', 'How Calks.uk calculators are built, verified and maintained. Our data sources, accuracy standards and update process.', '/methodology/', '2026-04-06'),
+  getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Methodology', url: '/methodology/' },
+  ]),
+]
 ---
 
 <Layout title="How Our UK Calculators Are Built — Sources, Accuracy & Updates | Calks.uk" description="How Calks.uk calculators are built, verified and maintained. Our data sources, accuracy standards and update process." schemas={schemas}>

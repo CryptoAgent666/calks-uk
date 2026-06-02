@@ -106,8 +106,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'Stamp Duty Land Tax (SDLT) is payable on property purchases in England and Northern Ireland above certain thresholds. From April 2025, the standard nil-rate band is £125,000. Rates then rise through bands: 2% (£125,001–£250,000), 5% (£250,001–£925,000), 10% (£925,001–£1.5m) and 12% (above £1.5m).',
       'First-time buyers purchasing their first home up to £500,000 pay no SDLT on the first £300,000, then 5% on the portion from £300,001 to £500,000. Properties above £500,000 do not qualify for first-time buyer relief.',
       'If you already own a property and are buying an additional one (second home, buy-to-let), a 5% surcharge applies to the entire purchase price on top of standard rates. This calculator handles all three scenarios — standard, first-time buyer and additional property.',
-      '<strong>UK SDLT rates 2026/27 — full picture.</strong> Standard buyers: 0% to £125,000; 2% to £250,000; 5% to £925,000; 10% to £1.5M; 12% above £1.5M. First-time buyers: 0% to £425,000; 5% to £625,000; standard rates above £625k (FTB relief lost above this threshold). Additional property (since 31 October 2024): standard rates PLUS 5% surcharge on FULL purchase price. Scotland and Wales: separate systems (LBTT and LTT).',
-      '<strong>SDLT worked examples 2026/27.</strong> £300,000 first home (FTB): £0 (under £425k threshold). £300,000 standard buyer: £2,500 (2% on £125k-£250k band). £500,000 standard: £15,000. £750,000 standard: £27,500. £1M standard: £41,250. £300k second home: £20,000 (£2,500 standard + 5% surcharge on £300k = £15,000). £500k second home: £40,000. Notice: surcharge applies to FULL purchase price, not just amount above thresholds — significant cliff edge.',
+      '<strong>UK SDLT rates 2026/27 — full picture.</strong> Standard buyers: 0% to £125,000; 2% to £250,000; 5% to £925,000; 10% to £1.5M; 12% above £1.5M. First-time buyers: 0% to £300,000; 5% £300,001-£500,000; no FTB relief if the property is over £500,000 (standard rates apply). Additional property (since 31 October 2024): standard rates PLUS 5% surcharge on FULL purchase price. Scotland and Wales: separate systems (LBTT and LTT).',
+      '<strong>SDLT worked examples 2026/27.</strong> £300,000 first home (FTB): £0 (at the £300k threshold). £300,000 standard buyer: £5,000 (£2,500 at 2% on £125k-£250k + £2,500 at 5% on £250k-£300k). £500,000 standard: £15,000. £750,000 standard: £27,500. £1M standard: £43,750. £300k second home: £20,000 (£5,000 standard + £15,000 surcharge on the full £300k). £500k second home: £40,000. Notice: surcharge applies to FULL purchase price, not just amount above thresholds — significant cliff edge.',
       '<strong>Reclaiming the 5% surcharge.</strong> Bought new main residence before selling old? Pay surcharge upfront. Sell old home within 36 months: claim refund via gov.uk SDLT16 form. Processing 15-55 days. Critical: must sell within 36 months — afterwards surcharge permanently lost. Refund covers ONLY surcharge, not standard SDLT. Common scenario: chain difficulty forces overlap. Higher-rate landlords increasingly use limited company structure (still subject to 5% surcharge but mortgage interest fully deductible).',
       '<strong>Scotland LBTT and Wales LTT 2026.</strong> Scotland: 0% to £145,000; 2% to £250k; 5% to £325k; 10% to £750k; 12% above. ADS (Additional Dwelling Supplement) 8% (raised from 6% Dec 2024). Wales: 0% to £225,000; 6% to £400k; 7.5% to £750k; 10% to £1.5M; 12% above. Higher Rates 5% surcharge (raised from 4% Dec 2024). Three separate tax authorities — file return within 30 days of completion. Often more favourable for first-time buyers than English SDLT.',
       '<strong>Legitimate SDLT planning.</strong> Multiple Dwellings Relief (MDR): buying 2+ residential properties simultaneously — averaged rate applies, often lower. Mixed-use rate (commercial + residential): if property has commercial element (e.g. flat above shop), different lower band applies (max 5%). Chattels: separating price for movables (carpets, curtains, kitchen appliances) — limited application, HMRC scrutiny. Lifetime gifting before death: avoid IHT but no SDLT relief. Spousal transfers: SDLT can apply if mortgage transferred. Avoid \'SDLT mitigation schemes\' — GAAR catches them, plus penalties + interest.',
@@ -135,18 +135,17 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'How UK PAYE deductions stack. Your gross salary is reduced by, in order: salary sacrifice (pension, cycle-to-work, EV scheme), income tax via PAYE bands, employee NI at 8%/2%, student loan repayment if applicable, and any remaining pension RAS contributions. Salary sacrifice is most powerful because it reduces both income tax AND NI base — every £100 sacrificed saves £32 (basic rate) or £42 (higher rate) versus the £20-40 saved on RAS pension contributions.',
       'Why your first payslip of the year looks different. UK PAYE is cumulative across the tax year (6 April to 5 April). At the start of a new tax year, your tax-free allowance is fresh. Your monthly tax = (cumulative pay × tax band) - (cumulative tax already paid). This means a bonus in April attracts more apparent tax than the same bonus in March — but balances out over the year. The K-code (e.g. K500) means deductions exceed allowances; the L-code (e.g. 1257L) is standard.',
       'Common reasons for unexpected take-home variations. Pay rises mid-year change your tax code and may shift you into a higher band; bonus payments are taxed as one-off lump sums but adjusted through the year; pension contribution changes affect take-home immediately; student loan crossing the threshold adds 9% above £29,385 (Plan 2); High Income Child Benefit Charge starts kicking in above £60,000; childcare voucher schemes change PAYE; and a P11D benefit (company car, private health) increases your taxable income via your tax code.',
-      'Maximising take-home pay legally. Three biggest levers for UK employees: (1) Pension contributions via salary sacrifice — saves income tax + NI, employer often shares NI saving back; (2) Cycle-to-work scheme — saves 32-42% on bike up to £1,000; (3) EV through salary sacrifice — BiK rate is just 2% until April 2025, then 3-7% to 2030 (still cheap vs PCH). Avoid: (a) earning above £100k loses Personal Allowance taper (effective 60% rate); (b) ad-hoc P11D benefits often less tax-efficient than equivalent cash.',
+      'Maximising take-home pay legally. Three biggest levers for UK employees: (1) Pension contributions via salary sacrifice — saves income tax + NI, employer often shares NI saving back; (2) Cycle-to-work scheme — saves 32-42% on bike up to £1,000; (3) EV through salary sacrifice — BiK rate is just 4% in 2026/27 (was 2% to April 2025), rising toward 9% by 2029/30 (still cheap vs PCH). Avoid: (a) earning above £100k loses Personal Allowance taper (effective 60% rate); (b) ad-hoc P11D benefits often less tax-efficient than equivalent cash.',
     ],
     example: {
       title: 'Example: £40,000 salary, Plan 2 student loan, 5% pension',
       steps: [
         'Gross salary: £40,000',
-        'Pension (5% salary sacrifice): −£2,000',
-        'Taxable income: £38,000',
-        'Income tax: £5,086 (£25,430 at 20%)',
-        'Employee NI: £1,874.40',
-        'Student loan Plan 2 (9% above £29,385): £1,143.45',
-        'Take-home pay: £29,896.15/year (£2,491.35/month)',
+        'Income tax: £5,486 (£27,430 at 20%)',
+        'Employee NI: £2,194.40 (8% on £27,430)',
+        'Pension (5%, net-pay): −£2,000',
+        'Student loan Plan 2 (9% above £29,385): £955.35',
+        'Take-home pay: £29,364.25/year (£2,447.02/month)',
       ],
     },
     sourceUrl: 'https://www.gov.uk/estimate-income-tax',
@@ -215,7 +214,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     quickAnswer: `UK Capital Gains Tax in 2026/27: <strong>£3,000 annual exempt amount</strong>, then 18% (basic rate) or 24% (higher rate) on all asset types including residential property. Rates were unified in the October 2024 Budget.`,
     howItWorks: [
       'Capital Gains Tax (CGT) is charged on the profit you make when you sell or dispose of an asset that has increased in value. For the 2026/27 tax year, the annual exempt amount is £3,000. Gains above this are taxed at different rates depending on the asset type and your income tax band.',
-      'Residential property gains are taxed at 18% (basic rate) or 24% (higher/additional rate). All other assets are taxed at 10% (basic rate) or 20% (higher/additional rate). Your unused basic rate band determines which rate applies to your gains.',
+      'Since 30 October 2024 all asset types are taxed at the same rates: 18% (basic rate) or 24% (higher/additional rate). This includes residential property, shares, crypto and business assets — the previous 10%/20% rates for non-property assets no longer apply. Your unused basic rate band determines which rate applies to your gains.',
       'Your main home is usually exempt under Private Residence Relief. Losses from other disposals in the same or previous tax years can be offset against gains before tax is calculated.',
       'The big October 2024 Budget change. Before 30 October 2024, CGT was 10% (basic rate) or 20% (higher rate) for most assets, and 18%/24% for residential property. The Budget unified rates: now 18% (basic) or 24% (higher) on ALL asset types — shares, crypto, business sales, second properties. The change applies to disposals on or after 30 October 2024. Business Asset Disposal Relief rates also rose: from 10% to 14% (April 2025) and 18% (April 2026). The £1m lifetime BADR limit remains.',
       'The £3,000 Annual Exempt Amount and how to use it. Each person has £3,000 of tax-free gains per tax year (reduced from £12,300 in 2022/23). Married couples and civil partners each get their own £3,000, allowing jointly held assets to use £6,000/year. Unused AEA cannot be carried forward — use it or lose it. Strategy: \'Bed and Spousing\' (sell shares, partner buys back identically) lets one spouse crystallise gains using the other\'s AEA. \'<a href="/calculator/isa-calculator/" class="text-primary underline">Bed and ISA</a>\' (sell taxable shares, immediately rebuy inside an ISA) realises gains within the AEA and shelters future growth.',
@@ -229,7 +228,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Total gain: £25,000',
         'Less annual exempt amount: −£3,000',
         'Taxable gain: £22,000',
-        'CGT at 20% (higher rate, non-property): £4,400',
+        'CGT at 24% (higher rate, from 30 Oct 2024): £22,000 × 24% = £5,280',
       ],
     },
     sourceUrl: 'https://www.gov.uk/capital-gains-tax/rates',
@@ -330,9 +329,10 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     example: {
       title: 'Example: Self-employed, £55,000 profit',
       steps: [
-        'Income tax: £8,432 (PA + Basic + partial Higher)',
-        'Class 4 NI: £2,264 + £94.60 = £2,358.60',
-        'Total Self Assessment bill: £10,970',
+        'Income tax: £9,432 (PA + Basic + partial Higher)',
+        'Class 4 NI: £2,262 + £94.60 = £2,356.60',
+        'Class 2 NI: £0 (abolished from 6 April 2024)',
+        'Total Self Assessment bill: £11,788.60',
       ],
     },
     sourceUrl: 'https://www.gov.uk/self-assessment-tax-returns',
@@ -502,27 +502,27 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'universal-credit-calculator': {
     howItWorks: [
       '<a href="/calculator/universal-credit-calculator/" class="text-primary underline">Universal Credit</a> (UC) is calculated by adding a standard allowance (based on age and relationship status) plus additional elements for children, housing costs, caring responsibilities and disability. Your payment is then reduced based on your earnings through a taper rate of 55%.',
-      'The work allowance lets you earn a set amount before the taper applies: £404/month if your UC includes no housing element, or £673/month if it does not include housing. For every £1 you earn above the work allowance, your UC is reduced by 55p.',
+      'The work allowance lets you earn a set amount before the taper applies: £710/month if your UC includes no housing element, or £427/month if it does include housing. For every £1 you earn above the work allowance, your UC is reduced by 55p.',
       'This calculator estimates your UC entitlement based on your household composition, income, housing costs and circumstances. Actual entitlements depend on a full assessment by the DWP and may differ from estimates.',
-      'Universal Credit base rates 2026/27. Standard allowance (monthly): Single under 25 £316.98, Single 25+ £400.14, Couple both under 25 £497.55, Couple at least one 25+ £628.10. Plus optional elements: Child (£339.00 first child if born before 6 April 2017; £292.81 first born after; £292.81 per additional child); Childcare costs up to 85% reimbursed (max £1,031 for one child, £1,768 for two); Limited Capability for Work £156.11; Carer Element £198.31; Housing Costs (variable by LHA rate).',
-      'The work allowance and taper rate. If you have responsibility for children or limited work capability, you have a work allowance: £404/month (without housing costs) or £673/month (with housing costs). Earn this much before UC reduces. Beyond the allowance, UC reduces by 55p for every £1 of net earnings (the taper). For people without children/capability, the taper applies from the first pound earned. This creates effective marginal tax rates of 75-80% for some workers — a long-standing welfare-to-work problem.',
+      'Universal Credit base rates 2026/27. Standard allowance (monthly): Single under 25 £338.58, Single 25+ £424.90, Couple both under 25 £528.34, Couple at least one 25+ £666.97. Plus optional elements: Child (£351.88 first child if born before 6 April 2017; £303.94 first born after; £303.94 per additional child); Childcare costs up to 85% reimbursed (max £1,031 for one child, £1,768 for two); Limited Capability for Work £156.11; Carer Element £209.34; Housing Costs (variable by LHA rate).',
+      'The work allowance and taper rate. If you have responsibility for children or limited work capability, you have a work allowance: £710/month (without housing costs) or £427/month (with housing costs). Earn this much before UC reduces. Beyond the allowance, UC reduces by 55p for every £1 of net earnings (the taper). For people without children/capability, the taper applies from the first pound earned. This creates effective marginal tax rates of 75-80% for some workers — a long-standing welfare-to-work problem.',
       'Transitional Protection for legacy benefit migration. If you\'re moved from Tax Credits, ESA, Income Support, JSA, or Housing Benefit to UC (managed migration), you receive Transitional Protection — your UC must be at least as much as your old benefits, with the difference paid as a top-up that erodes over time. This protection is not paid if you voluntarily migrate or if your circumstances change significantly. Managed migration is being rolled out 2024-2028.',
       'Common UC mistakes. (1) Capital limit £16,000 — anything above ends your claim. Includes savings, second properties (not main home), investments. £6,000-£16,000 is tariff income (£4.35/month per £250 over £6,000). (2) Self-employed minimum income floor — if you\'re self-employed >12 months, UC assumes you earn 35×NMW per week even if you actually earn less. (3) Childcare reimbursement is paid AFTER you pay the nursery — many parents struggle with cashflow. (4) Surplus earnings rule — earning above the threshold in one month rolls over into next month\'s calculation.',
-      'Standard allowances 2026/27. Monthly: Single under 25 £316.98; Single 25+ £400.14; Couple both under 25 £497.55; Couple at least one 25+ £628.10. Plus additional elements: Child £339 (first born pre-April 2017) or £292.81 (post-2017 + additional children); Childcare costs up to 85% reimbursed (£1,031 max single child, £1,768 two+); Limited Capability for Work £156.11; Carer Element £198.31; Housing Costs (variable by LHA rate).',
-      'Work allowance and taper rate. If you have responsibility for children or limited capability for work: work allowance £404/month (no housing costs) or £673/month (with housing). Earn this much before UC reduces. Beyond allowance, UC reduces by 55p for every £1 of net earnings. For people without children or capability: taper applies from first pound earned. Effective marginal tax rates 75-85% — long-standing welfare-to-work problem.',
+      'Standard allowances 2026/27. Monthly: Single under 25 £338.58; Single 25+ £424.90; Couple both under 25 £528.34; Couple at least one 25+ £666.97. Plus additional elements: Child £351.88 (first born pre-April 2017) or £303.94 (post-2017 + additional children); Childcare costs up to 85% reimbursed (£1,031 max single child, £1,768 two+); Limited Capability for Work £156.11; Carer Element £209.34; Housing Costs (variable by LHA rate).',
+      'Work allowance and taper rate. If you have responsibility for children or limited capability for work: work allowance £710/month (no housing costs) or £427/month (with housing). Earn this much before UC reduces. Beyond allowance, UC reduces by 55p for every £1 of net earnings. For people without children or capability: taper applies from first pound earned. Effective marginal tax rates 75-85% — long-standing welfare-to-work problem.',
       'Capital limits and tariff income. Capital under £6,000: ignored. £6,000-£16,000: \'tariff income\' applies — UC reduces by £4.35/month per £250 over £6,000. Capital over £16,000: ends your UC claim entirely. Capital includes: savings, investments, second properties, business assets. Excluded: main home, personal possessions, certain disability-related capital. ISAs and pension pots: counted as capital while pre-retirement.',
       'Self-employed minimum income floor. If trading 12+ months: UC assumes you earn 35 × NMW per week (£444.85 in 2026/27) even if actual earnings are lower. Prevents people \'underemploying\' themselves to claim UC. Start-up period exemption: first 12 months self-employed exempted from MIF if business is your main income source. Strategy: many self-employed claim UC only in start-up year, then switch to higher actual earnings or close business.',
     ],
     example: {
       title: 'Example: Single parent, 1 child, earning £1,200/month, £700 rent',
       steps: [
-        'Standard allowance (single, 25+): £393.45',
-        'Child element (first child): £333.33',
+        'Standard allowance (single, 25+): £424.90',
+        'Child element (first child): £351.88',
         'Housing element: £700.00',
-        'Total entitlement before taper: £1,426.78',
-        'Earnings above work allowance: £1,200 − £404 = £796',
-        'Taper reduction: £796 × 55% = −£437.80',
-        'Estimated UC payment: £988.98/month',
+        'Total entitlement before taper: £1,476.78',
+        'Earnings above work allowance: £1,200 − £427 = £773',
+        'Taper reduction: £773 × 55% = −£425.15',
+        'Estimated UC payment: £1,051.63/month',
       ],
     },
     sourceUrl: 'https://www.gov.uk/universal-credit/what-youll-get',
@@ -531,12 +531,12 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
 
   'redundancy-pay-calculator': {
-    quickAnswer: `Statutory redundancy pay (2026/27): <strong>0.5 weeks</strong> per year aged under 22, <strong>1 week</strong> aged 22 to 40, <strong>1.5 weeks</strong> aged 41+. Capped at <strong>£735/week</strong> and 20 years service. Tax-free up to £30,000.`,
+    quickAnswer: `Statutory redundancy pay (2026/27): <strong>0.5 weeks</strong> per year aged under 22, <strong>1 week</strong> aged 22 to 40, <strong>1.5 weeks</strong> aged 41+. Capped at <strong>£751/week</strong> and 20 years service. Tax-free up to £30,000.`,
     howItWorks: [
       'Statutory redundancy pay is calculated based on your age, length of continuous service (up to 20 years) and weekly pay (capped at £700 for 2026/27). The formula gives: 0.5 weeks\' pay per year of service under age 22, 1 week per year aged 22–40, and 1.5 weeks per year aged 41 and over.',
       'The maximum statutory redundancy payment is therefore 30 weeks\' pay (20 years × 1.5 for over-41s), capped at £21,000 (30 × £700). Your employer may offer enhanced redundancy pay above the statutory minimum.',
       'The first £30,000 of any redundancy payment (statutory plus contractual) is tax-free. Amounts above £30,000 are subject to income tax and potentially employer NI.',
-      'Statutory redundancy formula explained. For each full year of service from age 22 to 40: 1 week\'s pay. For each full year from 41 to 65: 1.5 weeks. Years under 22: 0.5 weeks. Max 20 years count. Cap on weekly pay £735 (2026/27 — was £719 in 2025/26). Maximum total statutory redundancy: 30 × £735 = £22,050. To qualify: at least 2 years continuous service. Voluntary redundancy and non-redundancy dismissals have different rules.',
+      'Statutory redundancy formula explained. For each full year of service from age 22 to 40: 1 week\'s pay. For each full year from 41 to 65: 1.5 weeks. Years under 22: 0.5 weeks. Max 20 years count. Cap on weekly pay £751 (2026/27 — was £719 in 2025/26). Maximum total statutory redundancy: 30 × £751 = £22,530. To qualify: at least 2 years continuous service. Voluntary redundancy and non-redundancy dismissals have different rules.',
       'Contractual vs statutory redundancy — know your entitlement. Many employers offer enhanced redundancy in the contract or staff handbook: typical packages 2-4 weeks per year of service uncapped, or a multiple of statutory (e.g. 3× statutory). Public sector schemes (NHS, civil service, local government) traditionally offer ~1 month per year. Check your contract, handbook, and union agreement. Enhanced redundancy must be more generous than statutory; if not, statutory applies as the floor.',
       'Tax-free redundancy up to £30,000. The first £30,000 of redundancy pay (statutory + enhanced + ex gratia) is income tax and NI-free. Above £30,000: income tax applies at marginal rate but no NI (since April 2020 employer NI applies but not employee NI). Notice pay (PILON — Payment In Lieu of Notice) is now ALWAYS taxable (post-April 2018 rules), even if paid as part of a redundancy package. Get the breakdown of any settlement agreement in writing.',
       'Your rights during redundancy. (1) Consultation — collective consultation if 20+ redundancies in 90 days (30 days notice if <100 redundancies, 45 days if 100+). (2) Selection — must be fair criteria (skills, attendance, performance); discriminatory selection (age, gender, disability) is unlawful. (3) Notice — statutory minimum 1 week per year (capped at 12 weeks). (4) Time off to look for work — reasonable paid time for those with 2+ years service. (5) Appeals — internal appeal then potential tribunal claim within 3 months.',
@@ -737,14 +737,14 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'scottish-income-tax-calculator': {
     howItWorks: [
       'Scotland sets its own income tax rates and bands under powers devolved by the Scotland Act 2016. For 2026/27 there are six bands above the Personal Allowance of £12,570: Starter (19%), Basic (20%), Intermediate (21%), Higher (42%), Advanced (45%) and Top (48%). These differ significantly from the rest-of-UK rates.',
-      'The Starter band covers income from £12,571 to £14,876, Basic from £14,877 to £26,561, Intermediate from £26,562 to £43,662, Higher from £43,663 to £75,000, Advanced from £75,001 to £125,140 and Top rate applies above £125,140. The same £100,000 Personal Allowance taper applies as in the rest of the UK.',
+      'The Starter band covers income from £12,571 to £15,397, Basic from £15,398 to £27,491, Intermediate from £27,492 to £43,662, Higher from £43,663 to £75,000, Advanced from £75,001 to £125,140 and Top rate applies above £125,140. The same £100,000 Personal Allowance taper applies as in the rest of the UK.',
       'Your tax code letter S indicates you pay Scottish rates. HMRC determines this based on your main place of residence on 6 April each year. This calculator applies all six Scottish bands to give you an accurate breakdown of your liability.',
       'How Scottish income tax differs. Scotland has its own income tax bands set by the Scottish Parliament (since 2017). For 2026/27: Starter Rate 19% (£12,571 to £15,397), Basic 20% (to £27,491), Intermediate 21% (to £43,662), Higher 42% (to £75,000), Advanced 45% (to £125,140), Top 48% (above). Personal Allowance is still £12,570 (UK-wide). NI rates and CGT are also UK-wide. Only earned income (employment, self-employment, pensions) attracts Scottish rates — dividends and savings interest use UK-wide rates.',
       'Who is a \'Scottish taxpayer\'? You\'re a Scottish taxpayer if your main home (closest connection) is in Scotland for most of the tax year. Working in Scotland doesn\'t make you a Scottish taxpayer if you live in England. HMRC determines status based on residence, not employer location. Your tax code starts with \'S\' (e.g. S1257L) if Scottish. If you move house mid-year, HMRC apportions based on the part of the year spent in each area. Notify HMRC of address changes promptly.',
       'Tax planning implications for Scottish taxpayers. Scotland\'s 42% Higher rate kicks in at £43,663 vs £50,271 in England — costing Scottish higher earners ~£1,500/year more on average. Conversely, Scottish basic rate workers earning £15,397-£27,491 save ~£20/year via the Intermediate rate trick. Maximising pension contributions becomes even more valuable in Scotland — Scottish taxpayers in the 42% band get 42% relief via Salary Sacrifice (vs 40% in England).',
       'Cross-border issues. If you have rental income from English property but live in Scotland, the rental profit is taxed at Scottish rates (because the taxpayer is Scottish, not the property). If you have dividend income from a UK company, that\'s at UK-wide rates regardless of where you live. Capital gains on a Scottish-located asset sold by a Scottish resident are still at UK CGT rates (18%/24%). Cross-border employment (e.g. living in Scotland, working in Newcastle) typically taxes at Scottish rates if Scotland is your main home.',
-      '<strong>Scottish income tax rates 2026/27.</strong> Personal Allowance £12,570 (UK-wide, set by Westminster). Starter rate 19%: £12,571-£14,876. Basic rate 20%: £14,877-£26,561. Intermediate rate 21%: £26,562-£43,662. Higher rate 42%: £43,663-£75,000 (rose from 41% Dec 2023). Advanced rate 45%: £75,001-£125,140 (new band Apr 2024). Top rate 48%: above £125,140 (rose from 47% Dec 2023). Scottish rates ONLY apply if Scottish resident — main home in Scotland. Other UK taxes (CGT, dividends, savings interest) follow UK rates regardless.',
-      '<strong>Scotland vs England — key differences.</strong> Higher-rate threshold: Scotland £43,663 vs England £50,270. Result: middle-income Scots pay more tax. Sample £50,000 earner: Scotland tax £11,407 vs England £7,486 — Scottish person £3,921 more. £100,000 earner: Scotland £30,250 vs England £27,432 = £2,818 more. £150,000 earner: Scotland £55,950 vs England £53,703 = £2,247 more. National Insurance: SAME as England (Westminster controls NI). Council Tax: completely separate system (different bands).',
+      '<strong>Scottish income tax rates 2026/27.</strong> Personal Allowance £12,570 (UK-wide, set by Westminster). Starter rate 19%: £12,571-£15,397. Basic rate 20%: £15,398-£27,491. Intermediate rate 21%: £27,492-£43,662. Higher rate 42%: £43,663-£75,000 (rose from 41% Dec 2023). Advanced rate 45%: £75,001-£125,140 (new band Apr 2024). Top rate 48%: above £125,140 (rose from 47% Dec 2023). Scottish rates ONLY apply if Scottish resident — main home in Scotland. Other UK taxes (CGT, dividends, savings interest) follow UK rates regardless.',
+      '<strong>Scotland vs England — key differences.</strong> Higher-rate threshold: Scotland £43,663 vs England £50,270. Result: middle-income Scots pay more tax. Sample £50,000 earner: Scotland tax £9,014 vs England £7,486 — Scottish person £1,528 more. £100,000 earner: Scotland £30,764 vs England £27,432 = £3,332 more. £150,000 earner: Scotland £56,398 vs England £53,703 = £2,695 more. National Insurance: SAME as England (Westminster controls NI). Council Tax: completely separate system (different bands).',
       '<strong>What makes you \'Scottish resident\' for tax.</strong> HMRC Scottish Taxpayer Status definition: main home in Scotland for greater part of tax year, OR more time in Scotland than rest of UK. NOT based on workplace or where company is based. Commuters living in England working in Scotland: pay English rates. Frequent travellers: pay based on where main home is. Get S prefix on PAYE tax code (e.g. S1257L) — automatic from HMRC based on address. Changing residence mid-year: HMRC adjusts pro-rata at year-end via tax return or P800.',
       '<strong>Scottish dividend and savings interest.</strong> Dividend Allowance £500: SAME UK-wide. Dividend tax rates above allowance: SAME UK-wide (8.75%/33.75%/39.35%) — Scottish Parliament has NO power over dividend tax. Same for savings interest, capital gains tax. Only earnings (PAYE, self-employed profit, rental income) attract Scottish rates. Pension contributions: get tax relief at Scottish rate of taxpayer — higher relief for 42%+ Scottish taxpayers than English 40% taxpayer.',
       '<strong>Marriage Allowance and Scotland.</strong> Marriage Allowance £252/year saving — only available if NEITHER partner is higher-rate (Scotland: above £43,663). UK threshold higher (£50,270) — some couples eligible in England but not Scotland. Apply at gov.uk/marriage-allowance — backdate up to 4 years. Couples married/civil-partnered, one with income under £12,570, one in basic/starter/intermediate band. Lost when either partner moves to higher rate. Many Scots miss out due to lower higher-rate threshold.',
@@ -753,11 +753,11 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       title: 'Example: £50,000 salary (Scottish taxpayer)',
       steps: [
         'Personal Allowance: £12,570 at 0% = £0',
-        'Starter band: £2,306 (£12,571–£14,876) at 19% = £438.14',
-        'Basic band: £11,685 (£14,877–£26,561) at 20% = £2,337.00',
-        'Intermediate band: £17,100 (£26,562–£43,662) at 21% = £3,591.00',
+        'Starter band: £2,827 (£12,571–£15,397) at 19% = £537.13',
+        'Basic band: £12,094 (£15,398–£27,491) at 20% = £2,418.80',
+        'Intermediate band: £16,171 (£27,492–£43,662) at 21% = £3,395.91',
         'Higher band: £6,338 (£43,663–£50,000) at 42% = £2,661.96',
-        'Total Scottish income tax: £9,028.10',
+        'Total Scottish income tax: £9,013.80',
       ],
     },
     sourceUrl: 'https://www.gov.uk/scottish-income-tax',
@@ -813,11 +813,11 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'company-car-tax-calculator': {
     howItWorks: [
-      'Company car tax is based on the Benefit-in-Kind (BiK) value of the vehicle. HMRC assigns a BiK percentage to each car based on its CO2 emissions and fuel type. For 2026/27, pure electric vehicles have a BiK rate of 3%, while the highest-polluting petrol or diesel cars reach 37%. You pay income tax on the BiK value at your marginal rate.',
+      'Company car tax is based on the Benefit-in-Kind (BiK) value of the vehicle. HMRC assigns a BiK percentage to each car based on its CO2 emissions and fuel type. For 2026/27, pure electric vehicles have a BiK rate of 4%, while the highest-polluting petrol or diesel cars reach 37%. You pay income tax on the BiK value at your marginal rate.',
       'The BiK value is calculated as: P11D price (list price including options and delivery, minus the first year registration fee and vehicle excise duty) multiplied by the BiK percentage. If the employer also provides free fuel for private use, a separate fuel benefit charge applies based on a fixed multiplier of £27,800 for 2026/27.',
       'Employers pay Class 1A National Insurance at 15% on the full BiK value. This calculator takes the car\'s list price, CO2 emissions, fuel type and your tax band to show both your annual tax cost and the employer\'s NI cost.',
-      'How Company Car Tax (BiK) works. Provided to you by your employer, a company car is a \'Benefit in Kind\' (BiK) — taxable as if it were salary. BiK value = car list price (including options) × BiK %. The BiK % depends on CO2 emissions. For 2026/27: 0g/km electric 3% (rising to 7% by 2030); 1-50g/km PHEV 4-15% (depending on electric range); 51g+ petrol 16-39%; diesel similar +4% (non-RDE2 cars). Multiply BiK value by your income tax rate to get annual tax cost.',
-      'EV company cars are exceptionally tax-efficient — but window closing. A £50,000 BMW i4 at 3% BiK = £1,500 BiK value. Higher-rate taxpayer pays 40% on this = £600/year tax. The same £50,000 petrol car at 32% BiK = £16,000 BiK value × 40% = £6,400/year tax. EV saves £5,800/year. BiK rate rises: 4% in 2027/28, 5% in 2028/29, 6% in 2029/30, 7% in 2030/31. Still much cheaper than ICE even at 7%. Combined with salary sacrifice, EV company cars are typically the best-value perk available.',
+      'How Company Car Tax (BiK) works. Provided to you by your employer, a company car is a \'Benefit in Kind\' (BiK) — taxable as if it were salary. BiK value = car list price (including options) × BiK %. The BiK % depends on CO2 emissions. For 2026/27: 0g/km electric 4% (rising to 9% by 2029/30); 1-50g/km PHEV 5-15% (depending on electric range); 51g+ petrol 16-39%; diesel similar +4% (non-RDE2 cars). Multiply BiK value by your income tax rate to get annual tax cost.',
+      'EV company cars are exceptionally tax-efficient — but window closing. A £50,000 BMW i4 at 4% BiK (2026/27) = £2,000 BiK value. Higher-rate taxpayer pays 40% on this = £800/year tax. The same £50,000 petrol car at 32% BiK = £16,000 BiK value × 40% = £6,400/year tax. EV saves £5,600/year. BiK rate rises: 5% in 2027/28, then 7% in 2028/29 and 9% in 2029/30. Still much cheaper than ICE. Combined with salary sacrifice, EV company cars are typically the best-value perk available.',
       'Fuel benefit charge — usually a bad deal. If your employer pays for personal fuel in a company car, you\'re taxed on an additional fuel benefit charge: £27,800 (2026/27) × BiK % × your income tax rate. For 32% BiK car: 32% × £27,800 = £8,896 BiK × 40% tax = £3,558/year tax for personal fuel. Most employees would pay less by buying their own fuel and claiming HMRC business mileage rates (Advisory Fuel Rates) for work miles. Always calculate before accepting employer-paid fuel.',
       'Practical car vs cash allowance decision. Many employers offer \'cash allowance instead of company car\' (typically £4-£8k/year). Compare: cash allowance is taxable salary (full income tax + NI + pension implications). Company car BiK is taxable but cheaper for EVs. Cash gives ownership flexibility; company car gives no maintenance costs, insurance, MOT hassle. For ICE cars (>30% BiK), cash usually wins. For EVs (<10% BiK), company car wins by £1,000-£3,000/year. Many employers offer EV salary sacrifice — combining both worlds.',
     ],
@@ -854,8 +854,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Total gain on disposal: £15,000',
         'Less annual exempt amount: −£3,000',
         'Taxable gain: £12,000',
-        'CGT at 20% (higher rate): £12,000 × 20% = £2,400',
-        'Reporting required: Yes (gain exceeds £12,000 threshold)',
+        'CGT at 24% (higher rate, from 30 Oct 2024): £12,000 × 24% = £2,880',
+        'Reporting required: Yes (gains exceed the £3,000 annual exempt amount)',
       ],
     },
     sourceUrl: 'https://www.gov.uk/hmrc-internal-manuals/cryptoassets-manual',
@@ -1020,7 +1020,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     lastUpdated: 'April 2026',
   },
   'state-pension-calculator': {
-    quickAnswer: `The full new UK State Pension in 2026/27 is <strong>£241.30/week</strong> (£12,547.60/year) — up 4.1% from £221.20 due to triple lock. You need <strong>35 qualifying NI years</strong> for the full amount and at least 10 to receive anything.`,
+    quickAnswer: `The full new UK State Pension in 2026/27 is <strong>£241.30/week</strong> (£12,547.60/year) — up 4.8% from £230.25 (2025/26) due to the triple lock. You need <strong>35 qualifying NI years</strong> for the full amount and at least 10 to receive anything.`,
     howItWorks: [
       'The full new State Pension is £241.30 per week (£12,547.60/year) for 2026/27, uprated annually by the triple lock (highest of earnings growth, CPI inflation, or 2.5%). You need 35 qualifying years of National Insurance contributions to receive the full amount. With fewer than 35 years, you receive a proportional amount: each qualifying year adds 1/35th, so 25 years gives 25/35 x £241.30 = £158.00/week. A minimum of 10 qualifying years is required to receive anything.',
       'Qualifying years are built through employed earnings above the lower earnings limit (£6,708/year for 2026/27), self-employed <a href="/calculator/sole-trader-tax-calculator/" class="text-primary underline">Class 4 NI</a> contributions, or National Insurance credits (received automatically for Child Benefit recipients, <a href="/calculator/universal-credit-calculator/" class="text-primary underline">Universal Credit</a> claimants, and carers). You can check your NI record online to see how many qualifying years you have and identify any gaps.',
@@ -1028,8 +1028,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'What you need to qualify. The new State Pension (from 6 April 2016) requires 10 qualifying NI years to receive anything and 35 years for the full £241.30/week (2026/27). Each missing year costs you 1/35 of the full pension — £6.89/week or £358/year. Qualifying years come from employment (above the Lower Earnings Limit of £6,708/year in 2026/27), self-employment Class 4 NI, or NI credits given automatically to those receiving Child Benefit (until youngest child is 12), Universal Credit, Carer\'s Allowance, or Jobseeker\'s Allowance.',
       'How to check and fill gaps. Visit gov.uk/check-state-pension to see your forecast and full NI record. If you have gaps, you can usually pay voluntary Class 3 NI contributions (£17.45/week in 2026/27 = £907/year) to fill years up to 6 years back. Each year purchased adds £6.89/week to your pension — a payback period of just over 3 years if you live to State Pension age. This is one of the highest-return \'investments\' available to UK adults. Specific historical years can sometimes be filled at lower rates.',
       'State Pension age changes. State Pension age is currently 66 for both men and women. It rises to 67 between 6 April 2026 and 5 April 2028 (depending on date of birth). A further increase to 68 is scheduled between 2044 and 2046, though there is pressure to bring this forward to 2037-2039. Use the gov.uk/state-pension-age tool to check your exact date. You can defer your State Pension after reaching pension age — for every 9 weeks of deferral, your pension increases by 1% (5.8% per year deferred), with no upper limit.',
-      'Triple lock and how the £241.30 was calculated. The triple lock guarantees the State Pension rises each April by the highest of: (1) CPI inflation in September, (2) average weekly earnings growth, or (3) 2.5%. For 2026/27, average earnings growth of 4.1% applied — taking the new State Pension from £221.20 to £241.30/week (£11,502/year to £12,547.60/year). The triple lock has been politically controversial and several governments have committed to maintaining it, though long-term sustainability is debated.',
-      '<a href="/calculator/pension-credit-calculator/" class="text-primary underline">Pension Credit</a> top-up for low earners. If your total income (including State Pension) is below £227.10/week (single) or £346.60/week (couple), you qualify for <a href="/calculator/pension-credit-calculator/" class="text-primary underline">Pension Credit</a> which tops you up to those figures. Pension Credit also opens doors to other benefits: free TV licence (over 75), Cold Weather Payments, Council Tax Reduction, Housing Benefit, free dental care, glasses, NHS prescriptions. ~850,000 eligible pensioners do not claim — a single person can be missing out on £4,000+/year. Apply via gov.uk/pension-credit or 0800 99 1234.',
+      'Triple lock and how the £241.30 was calculated. The triple lock guarantees the State Pension rises each April by the highest of: (1) CPI inflation in September, (2) average weekly earnings growth, or (3) 2.5%. For 2026/27, average earnings growth of 4.8% applied — taking the new State Pension from £230.25 to £241.30/week (£11,973/year to £12,547.60/year). The triple lock has been politically controversial and several governments have committed to maintaining it, though long-term sustainability is debated.',
+      '<a href="/calculator/pension-credit-calculator/" class="text-primary underline">Pension Credit</a> top-up for low earners. If your total income (including State Pension) is below £238.00/week (single) or £363.25/week (couple), you qualify for <a href="/calculator/pension-credit-calculator/" class="text-primary underline">Pension Credit</a> which tops you up to those figures. Pension Credit also opens doors to other benefits: free TV licence (over 75), Cold Weather Payments, Council Tax Reduction, Housing Benefit, free dental care, glasses, NHS prescriptions. ~850,000 eligible pensioners do not claim — a single person can be missing out on £4,000+/year. Apply via gov.uk/pension-credit or 0800 99 1234.',
     ],
     example: {
       title: 'State Pension estimate with 28 qualifying years',
@@ -1140,7 +1140,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.fca.org.uk/consumers/credit-cards',
-    sourceName: 'FCA - Credit Cards Consumer Information',
+    sourceName: 'FCA — Credit Cards Consumer Information',
     lastUpdated: 'April 2026',
   },
   'sole-trader-tax-calculator': {
@@ -1164,7 +1164,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/income-tax-rates',
-    sourceName: 'GOV.UK \u2013 Income Tax Rates',
+    sourceName: 'GOV.UK \u2014 Income Tax Rates',
     lastUpdated: 'April 2026',
   },
   'ir35-calculator': {
@@ -1213,7 +1213,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/tax-on-dividends',
-    sourceName: 'GOV.UK \u2013 Tax on Dividends',
+    sourceName: 'GOV.UK \u2014 Tax on Dividends',
     lastUpdated: 'April 2026',
   },
   'calorie-calculator': {
@@ -1431,7 +1431,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/vat-flat-rate-scheme',
-    sourceName: 'GOV.UK \u2013 VAT Flat Rate Scheme',
+    sourceName: 'GOV.UK \u2014 VAT Flat Rate Scheme',
     lastUpdated: 'April 2026',
   },
   'flooring-calculator': {
@@ -1602,7 +1602,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Formula: 86.010 \u00D7 log\u2081\u2080(waist \u2212 neck) \u2212 70.041 \u00D7 log\u2081\u2080(height) + 36.76',
         'log\u2081\u2080(88 \u2212 38) = log\u2081\u2080(50) = 1.699',
         'log\u2081\u2080(180) = 2.255',
-        'Body fat: 86.010 \u00D7 1.699 \u2212 70.041 \u00D7 2.255 + 36.76 \u2248 18.6%',
+        'Body fat: 86.010 \u00D7 1.699 \u2212 70.041 \u00D7 2.255 + 36.76 \u2248 24.9%',
       ],
     },
     sourceUrl: 'https://www.nhs.uk/live-well/healthy-weight/bmi-calculator/',
@@ -1751,7 +1751,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.ons.gov.uk/economy/inflationandpriceindices',
-    sourceName: 'ONS - Inflation and Price Indices',
+    sourceName: 'ONS — Inflation and Price Indices',
     lastUpdated: 'April 2026',
   },
   'wedding-budget-calculator': {
@@ -1776,7 +1776,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.hitched.co.uk/wedding-planning/organising-and-planning/the-average-wedding-cost-in-the-uk/',
-    sourceName: 'Hitched - Average UK Wedding Cost Survey',
+    sourceName: 'Hitched — Average UK Wedding Cost Survey',
     lastUpdated: 'April 2026',
   },
   'visa-points-calculator': {
@@ -1784,8 +1784,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'The UK Skilled Worker visa uses a points-based system. You need 70 points to qualify. Mandatory requirements (50 points) are: a job offer from a licensed sponsor (20 points), a job at the appropriate skill level — RQF 3 or above (20 points), and English language ability at B1 level (10 points).',
       'The remaining 20 tradeable points come from salary. If your salary meets the going rate for the occupation, you get 20 points. If it is below the going rate but above the minimum threshold (£26,200 or the occupation-specific rate, whichever is higher), you may still qualify with tradeable points from a PhD, a shortage occupation, or being a new entrant.',
       'This calculator checks each requirement and tallies your points. It cross-references your occupation against the SOC code list and going rates, and tells you the minimum salary you need to qualify in your specific role.',
-      '<strong>UK Skilled Worker visa — the points system.</strong> Total 70 points required. Mandatory: 50 points for job at appropriate skill level (RQF Level 3 / A-level equivalent + sponsorship from licensed employer). Plus 20 \'tradeable\' points from salary OR shortage occupation OR PhD relevant to job OR new entrant (new graduate). Salary thresholds 2026: £41,500 general (up from £38,700 April 2024); Shortage Occupation list: £30,960. Skilled Worker visa replaced Tier 2 in December 2020.',
-      '<strong>Salary points breakdown.</strong> 0 points: salary below £30,960 (entry-level Shortage Occupation). 10 points: salary £30,960-£41,499 (Shortage Occupation only) OR new entrant salary. 20 points: salary £41,500+. Salary calculated as higher of: actual salary, going rate for the occupation (CESA codes), or £41,500. Multiple boost options: PhD in subject relevant to job = 10 points; PhD in STEM = 20 points (counts as Shortage Occupation equivalent). Education attribute uses RQF levels (Level 8 = PhD = highest).',
+      '<strong>UK Skilled Worker visa — the points system.</strong> Total 70 points required. Mandatory: 50 points for job at appropriate skill level (RQF Level 6 / degree level from 22 July 2025 + sponsorship from licensed employer). Plus 20 \'tradeable\' points from salary OR the Immigration Salary List OR a relevant PhD OR new entrant (new graduate). Salary thresholds (from 22 July 2025): £41,700 general (up from £38,700); reduced threshold £33,400 for ISL/new-entrant/PhD routes. Skilled Worker visa replaced Tier 2 in December 2020.',
+      '<strong>Salary points breakdown.</strong> 20 points: salary at or above £41,700 (the general threshold from 22 July 2025). Reduced £33,400 threshold available via the Immigration Salary List, new-entrant route (under 26, recent graduate, study-visa switcher) or a relevant PhD. Salary is taken as the higher of: actual salary, the going rate for the occupation, or the applicable threshold. A PhD relevant to the job can lower the required salary; education attributes use RQF levels (Level 8 = PhD = highest).',
       '<strong>English language requirement.</strong> B1 level minimum (CEFR — \'intermediate\'). Acceptable proofs: passed approved English test (IELTS Life Skills B1, Trinity GESE Grade 5, etc.); degree taught in English (verified by UK NARIC/ENIC); citizen of majority-English-speaking country (USA, Canada, Australia, NZ, Ireland, English-speaking Commonwealth). Test must be from approved provider — check gov.uk approved test centre list. Cost £150-£200. Some applicants miss this — make sure tests are valid for 2 years.',
       '<strong>Financial requirement.</strong> Maintenance funds: £1,270 held in personal bank account for 28 consecutive days (not just current balance). Some employers act as \'A-rated sponsor\' — covers maintenance funds for applicant. Dependants: additional £285 per partner, £315 per child, then further amounts per additional dependant. Cooling-off rule: bank statement must show £1,270 held for 28 days within 31 days of application. Documentation: original bank statements or stamped copies — HMRC-style standards.',
       '<strong>Visa duration and pathway to ILR.</strong> Skilled Worker visa typically issued for 3 or 5 years (matches employment contract length). Extensions possible if continuing eligibility. Indefinite Leave to Remain (ILR / settlement) available after 5 continuous years on Skilled Worker visa, subject to: passing Life in the UK test, English at B1+, continuous employment, no absence over 180 days in any 12 months. Settlement application £3,029 + £200 IHS for any remaining time. British citizenship application available 12 months after ILR.',
@@ -1829,7 +1829,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'probate-fee-calculator': {
     howItWorks: [
-      'A grant of probate (or letters of administration if there is no will) gives legal authority to deal with a deceased person\'s estate. The application fee is £300 for estates valued above £5,000. Estates valued at £5,000 or below pay no fee. Additional copies of the grant cost £1.50 each.',
+      'A grant of probate (or letters of administration if there is no will) gives legal authority to deal with a deceased person\'s estate. The application fee is £300 for estates valued above £5,000. Estates valued at £5,000 or below pay no fee. Additional sealed copies of the grant cost £16 each (raised from £1.50 on 17 November 2025).',
       'The fee applies to the gross value of the estate before debts are deducted. You need to estimate the total value of all assets — property, savings, investments, personal possessions — for the application. The executor or administrator is responsible for paying the fee, usually from estate funds.',
       'What is probate and when is it needed. Probate is the legal process of administering a deceased person\'s estate — proving the Will is valid, paying debts and taxes, distributing assets. Required when: estate has over £15,000-£50,000 in any single asset (banks have different thresholds), or owns property in sole name, or has investments held outside ISA. Not always needed for joint property (automatic right of survivorship) or small estates.',
       'Application fees 2026/27. Probate application fee: £273 (any value), or £0 for estates under £5,000. Government scrapped the controversial 2019 plan for tiered fees up to £6,000. Apply online at gov.uk/applying-for-probate — much faster than paper (4-8 weeks vs 12-16 weeks). Need: original Will, death certificate, estate inventory, IHT forms.',
@@ -1841,8 +1841,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       steps: [
         'Estate value: £350,000 (above £5,000 threshold)',
         'Probate application fee: £300',
-        'Extra copies (3 recommended): 3 × £1.50 = £4.50',
-        'Total probate cost: £304.50',
+        'Extra copies (3 recommended): 3 × £16 = £48',
+        'Total probate cost: £348',
       ],
     },
     sourceUrl: 'https://www.gov.uk/applying-for-probate',
@@ -2052,7 +2052,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'HMRC Approved Mileage Allowance Payments (AMAP) rates 2026/27. Cars and vans: 45p/mile first 10,000 business miles, 25p/mile thereafter. Motorcycles: 24p/mile. Bicycles: 20p/mile. Passenger payments: 5p/mile per additional passenger (also business). Rates unchanged since 2011 despite inflation — significantly undercompensates actual costs at 2026 fuel prices. Employers can pay LESS than AMAP rates but employee can claim tax relief on the difference.',
       'What counts as \'business mileage\'. Travel between offices (not home-to-office which is COMMUTE — NOT business mileage). Travel to client sites, training, meetings (excluding regular work location). Detours from commute for business: only the extra mileage above normal commute counts. Temporary workplace exception: assignments under 24 months to a single site count as business mileage if it\'s not your normal base.',
       'How to claim mileage. If employer pays AMAP rate or less: no further claim needed (already tax-relieved). If employer pays more than AMAP: excess is taxable as \'benefit in kind\' through P11D. If employer pays less than AMAP OR pays nothing for business mileage: claim relief on the shortfall via P87 form or Self Assessment. Self-employed: claim AMAP rates as business expense (simplified expenses method) OR claim actual costs proportional to business use.',
-      'Electric vehicle and pure-EV mileage rates. EVs use the same AMAP rates as petrol/diesel — 45p/mile first 10,000. Plus separate \'Advisory Electricity Rate\' (AER) for company-car electricity reimbursement: 8p/mile from December 2024. EV salary sacrifice schemes: employees usually claim AER (8p/mile) or HMRC\'s separate scale rates for personal recharging. Most efficient: AMAP at 45p/mile for first 10k business miles vs actual ~2p/mile EV running cost = massive surplus.',
+      'Electric vehicle and pure-EV mileage rates. EVs use the same AMAP rates as petrol/diesel — 45p/mile first 10,000. Plus separate \'Advisory Electricity Rate\' (AER) for company-car electricity reimbursement: from 1 June 2026 HMRC sets this at 7p/mile for home charging and 15p/mile for public charging (reviewed quarterly). EV salary sacrifice schemes: employees usually claim the AER or HMRC\'s separate scale rates for personal recharging. Most efficient: AMAP at 45p/mile for first 10k business miles vs actual ~2p/mile EV running cost = massive surplus.',
     ],
     example: {
       title: 'Mixed vehicle mileage allowance for a tax year',
@@ -2065,7 +2065,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/government/publications/rates-and-allowances-travel-mileage-and-fuel-allowances/travel-mileage-and-fuel-rates-and-allowances',
-    sourceName: 'HMRC - Travel Mileage and Fuel Rates',
+    sourceName: 'HMRC — Travel Mileage and Fuel Rates',
     lastUpdated: 'April 2026',
   },
   'radiator-btu-calculator': {
@@ -2276,7 +2276,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       '<strong>The savings goal formula.</strong> Required monthly = (target − starting balance) ÷ months, OR with interest: future value formula. FV = P × ((1+r)^n − 1)/r where P is monthly contribution, r is monthly rate, n is months. Example: save £20,000 in 5 years (60 months) at 4.5% AER = need £298/month if no starting balance. £400/month at 4.5% over 5 years = £26,800. Adjust by reverse calculation for any of: months, target, rate, starting amount.',
       '<strong>UK best savings rates 2026.</strong> Easy access: 4.0-5.0% (Chase, Marcus, Atom). Notice (35-90 days): 4.5-5.2%. 1-year fixed: 4.5-5.5%. 2-year fixed: 4.3-5.2%. 5-year fixed: 4.0-5.0%. ISAs: same as non-ISA rates currently. Premium Bonds: average 4.15% prize rate (variable, tax-free, plus chance of £1M monthly jackpot). Regular saver accounts: 6-8% headline (best UK rates) — limit £200-£300/month, available to existing bank customers. Use comparison sites: Moneyfacts, MoneySavingExpert, Which?.',
       '<strong>ISA vs taxable savings.</strong> Personal Savings Allowance: basic-rate taxpayers £1,000/year tax-free interest; higher rate £500; additional rate £0. ISA £20,000 annual allowance: ALL interest tax-free regardless of band. Strategy: use ISA wrapper if you\'ll generate £500+ interest annually OR you\'re additional-rate taxpayer. £20k at 4.5% = £900 interest — uses up PSA for higher-rate taxpayer. Cash ISA vs Stocks & Shares ISA: cash ISA for short-term goals (1-3 years); S&S for long-term (7+ years) — historic 5-7% real returns long-run.',
-      '<strong>Specific savings goals — typical targets.</strong> Emergency fund: 3-6 months expenses (UK avg £8,000-£15,000). House deposit (first-time buyer): £20,000-£60,000 typical (10% of £200k-£600k properties). Lifetime ISA (under 40): £4,000/year, 25% government bonus (max £1,000/year), first home or age 60. Wedding: £5,000-£25,000 depending on scale. Car: £3,000-£15,000. Holiday: £500-£3,000. Retirement top-up: state pension £230/week ≈ £12k/year — most need £20-£30k/year for comfortable retirement.',
+      '<strong>Specific savings goals — typical targets.</strong> Emergency fund: 3-6 months expenses (UK avg £8,000-£15,000). House deposit (first-time buyer): £20,000-£60,000 typical (10% of £200k-£600k properties). Lifetime ISA (under 40): £4,000/year, 25% government bonus (max £1,000/year), first home or age 60. Wedding: £5,000-£25,000 depending on scale. Car: £3,000-£15,000. Holiday: £500-£3,000. Retirement top-up: state pension £241/week ≈ £12.5k/year — most need £20-£30k/year for comfortable retirement.',
       '<strong>Compound growth — start early matters.</strong> £100/month at 5% for 30 years: £83,226 (you contributed £36,000, interest £47,226). £100/month at 5% for 40 years: £148,856 (contributed £48,000, interest £100,856). Delaying 10 years more than DOUBLES the interest cost of catching up. Stocks & Shares ISA historic returns 5-7% real (after inflation): same calculation gives £91,000 → £162,000. Rule of 72: years to double = 72 ÷ rate. 5% = 14.4 years; 7% = 10.3 years; 10% = 7.2 years.',
       '<strong>The savings goal formula explained.</strong> Future value = principal × (1+r/12)^(12×n) + monthly contribution × ((1+r/12)^(12×n) − 1) / (r/12). Where r = annual rate, n = years. To find required monthly: rearrange formula. Sample: target £20,000 in 5 years, 0 starting balance, 4.5% AER → need £298/month. £400/month at 4.5% over 5 years → £26,800. Starting balance £5,000 + £200/month at 4.5% over 5 years → £19,750.',
       '<strong>UK savings rates 2026.</strong> Easy access: 4.0-5.0% (Chase, Marcus, Atom). Notice (35-90 days): 4.5-5.2%. 1-year fixed: 4.5-5.5%. 2-year fixed: 4.3-5.2%. 5-year fixed: 4.0-5.0%. ISAs: same range as non-ISA currently. Regular savers (highest headline rates 6-8%): limited £200-£300/month max, available to existing bank customers. Premium Bonds: 4.15% average prize rate (tax-free, variable). Always check \'AER\' (Annual Equivalent Rate) — compares accounts fairly.',
@@ -2610,7 +2610,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/set-up-business',
-    sourceName: 'GOV.UK \u2013 Set Up a Business',
+    sourceName: 'GOV.UK \u2014 Set Up a Business',
     lastUpdated: 'April 2026',
   },
   'margin-calculator': {
@@ -2635,7 +2635,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/set-up-business',
-    sourceName: 'GOV.UK \u2013 Set Up a Business',
+    sourceName: 'GOV.UK \u2014 Set Up a Business',
     lastUpdated: 'April 2026',
   },
   'depreciation-calculator': {
@@ -2660,7 +2660,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/capital-allowances',
-    sourceName: 'GOV.UK \u2013 Capital Allowances',
+    sourceName: 'GOV.UK \u2014 Capital Allowances',
     lastUpdated: 'April 2026',
   },
   'visa-fee-calculator': {
@@ -2797,7 +2797,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'Both nations apply an Additional Dwelling Supplement for second homes and buy-to-let properties. In Scotland this is 8% on the total price; in Wales it is 4% on the total price. First-time buyer relief differs between the two nations.',
       'Scotland\'s LBTT (Land and Buildings Transaction Tax). Different bands and rates from England\'s SDLT. 2026/27 LBTT residential: 0% up to £145,000; 2% £145,001-£250,000; 5% £250,001-£325,000; 10% £325,001-£750,000; 12% above £750,000. First-time buyers: relief up to £175,000 (effectively 0% bottom band raised). Additional Dwelling Supplement (ADS): 8% surcharge on second/buy-to-let properties (raised from 6% Dec 2024). Revenue Scotland manages.',
       'Wales\'s LTT (Land Transaction Tax). 2026/27 LTT residential main rates: 0% up to £225,000; 6% £225,001-£400,000; 7.5% £400,001-£750,000; 10% £750,001-£1.5m; 12% above. No first-time buyer relief in Wales (raised threshold instead). Higher rates for additional properties: +4% on each band. Welsh Revenue Authority manages. Welsh thresholds are generally higher than English equivalents — Welsh property buyers often pay less tax than English buyers for same price.',
-      'Comparing across UK regions. £400,000 property: SDLT £10,000 (England); LBTT £14,350 (Scotland); LTT £15,950 (Wales). £250,000: SDLT £2,500; LBTT £2,100 (lower!); LTT £1,500 (lowest). Scotland and Wales have higher rates on expensive properties but lower on cheap ones. For most buyers under £325k, Wales is cheapest, then Scotland, then England. Above £400k, England is usually cheapest.',
+      'Comparing across UK regions. £400,000 property: SDLT £10,000 (England); LBTT £13,350 (Scotland); LTT £10,500 (Wales). £250,000: SDLT £2,500; LBTT £2,100 (lower!); LTT £1,500 (lowest). Scotland and Wales have higher rates on expensive properties but lower on cheap ones. For most buyers under £325k, Wales is cheapest, then Scotland, then England. Above £400k, England is usually cheapest.',
       'When LBTT/LTT applies vs SDLT. The location of the PROPERTY determines which tax applies (not where the buyer lives). Buying a flat in Edinburgh while living in London: LBTT applies. Buying a Welsh holiday home while living in Newcastle: LTT applies. Cross-border purchases: must register with appropriate revenue authority within 30 days. Failure to register: penalty £100, plus daily £10 from 3 months.',
     ],
     example: {
@@ -3100,7 +3100,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'This calculator itemises all potential moving costs. Select the services you plan to use, enter quotes or use typical estimates, and add any specific items. The output gives a total moving budget that you can use alongside the home buying cost calculator for a complete picture.',
       '<strong>How much does it cost to move home in the UK?</strong> Average total cost moving within UK 2026: £8,000-£15,000 (Which? survey). Breakdown: estate agent fees (sale) £2,000-£4,000 (1.0-1.5% + VAT typical); solicitor/conveyancing £1,200-£2,000; survey £400-£1,000; mortgage arrangement fee £999-£1,500; Stamp Duty (varies); removals £700-£1,800; EPC if needed £45-£120; new mortgage product/legal fees. London moves often £15-£25k+ due to higher property values and SDLT.',
       '<strong>Removals — how much to budget.</strong> 1-bed flat local move (within 20 miles): £500-£800. 2-bed local: £700-£1,200. 3-bed local: £900-£1,500. 4-bed local: £1,500-£2,500. Long distance (200+ miles): 30-60% more. Storage if needed: £15-£50/m³/month. Packing service: 20-40% extra. Cheaper alternatives: DIY van hire (£100-£200/day) + friends to help; man-and-van services for 1-2 bedroom moves (£40-£60/hour). Get 3-5 quotes minimum.',
-      '<strong>Stamp Duty Land Tax thresholds 2026.</strong> First-time buyers: 0% to £425,000; 5% £425,001-£625,000; nothing if property over £625,000 (full rates apply). Standard buyers: 0% to £125,000; 2% £125,001-£250,000; 5% £250,001-£925,000; 10% £925,001-£1.5M; 12% above £1.5M. Additional property (BTL, second home): standard rates + 5% surcharge (raised from 3% Oct 2024). Scotland (LBTT) and Wales (LTT) have different bands.',
+      '<strong>Stamp Duty Land Tax thresholds 2026.</strong> First-time buyers: 0% to £300,000; 5% £300,001-£500,000; no relief if property over £500,000 (full rates apply). Standard buyers: 0% to £125,000; 2% £125,001-£250,000; 5% £250,001-£925,000; 10% £925,001-£1.5M; 12% above £1.5M. Additional property (BTL, second home): standard rates + 5% surcharge (raised from 3% Oct 2024). Scotland (LBTT) and Wales (LTT) have different bands.',
       '<strong>Conveyancing — what does it actually involve?</strong> Solicitor/licensed conveyancer handles: title checks (Land Registry); searches (local authority, environmental, water, planning); Stamp Duty calculation and submission; exchange of contracts; completion (when money transfers, keys handed over). Timeline: average 12-16 weeks offer to completion. Common delays: lender mortgage approval, chain breaks, leasehold complications (longer for management company queries). Choose by recommendation — bad conveyancers cause months of delay and extra costs.',
       '<strong>Saving on moving costs — proven strategies.</strong> Declutter first — fewer boxes = lower removals quote. Sell unwanted items on Vinted, eBay, Facebook Marketplace = offsets some costs. Pack yourself (save 20-40% on removals). Move mid-week, mid-month (cheaper than Friday + month-end). Get estate agent multi-firm quotes — fees negotiable, especially for higher-value properties. Online conveyancers can be 30-50% cheaper than high-street solicitors. Mortgage broker: free or fee-charging — compare APRs, watch for early repayment charges. Total potential saving: £2,000-£5,000 vs casual approach.',
     ],
@@ -3124,7 +3124,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'Statutory Paternity Pay (SPP) is paid for up to 2 weeks at the lower of £194.32 per week or 90% of your average weekly earnings for 2026/27. From April 2024, the two weeks can be taken as two separate one-week blocks at any time within 52 weeks of the birth or adoption placement, rather than consecutively.',
       'To qualify, you must be the biological father, the mother\'s spouse or partner, or the intended parent in a surrogacy arrangement. You must have worked continuously for your employer for at least 26 weeks by the 15th week before the expected week of childbirth and earn at least £125 per week on average.',
       'SPP is subject to tax and National Insurance like normal earnings. Your employer can reclaim 92% of SPP from HMRC (or 103% for small employers). This calculator shows your weekly SPP amount and the net pay after deductions, plus a comparison with your normal weekly earnings.',
-      'Statutory Paternity Pay: 2 weeks at £194.32/week. Statutory Paternity Pay (SPP) is paid for up to 2 consecutive weeks at the lower of £194.32/week or 90% of average weekly earnings. Eligibility: 26 weeks continuous service by 15th week before due date, earn at least £125/week. Pay can be taken any time in the 8 weeks after birth (or placement for adoption). From April 2024, the 2 weeks can be split into two separate 1-week blocks — useful for handover periods.',
+      'Statutory Paternity Pay: 2 weeks at £194.32/week. Statutory Paternity Pay (SPP) is paid for up to 2 weeks at the lower of £194.32/week or 90% of average weekly earnings. Eligibility: 26 weeks continuous service by 15th week before due date, earn at least £125/week. Since April 2024, pay can be taken any time within 52 weeks of the birth (or placement for adoption) — previously the deadline was 56 days. The 2 weeks can also be split into two separate 1-week blocks — useful for handover periods.',
       'Shared Parental Leave — the more generous alternative. Where the mother gives up some maternity leave/pay, the father (or other parent) can take up to 50 weeks of leave and 37 weeks of pay (Shared Parental Pay at £194.32/week). Useful where: mother is the higher earner and wants to return to work faster; father wants more bonding time; you want flexibility to overlap or alternate. Notification rules complex — 8 weeks notice of each block, no more than 3 blocks per parent. Most employers run SPP at the same rate as SMP/SPP (£194.32) but some offer enhanced.',
       'Enhanced contractual paternity pay. About 30-40% of UK employers offer enhanced paternity pay (typically full pay for 2 weeks). Public sector (civil service, NHS, local government) typically pays full pay for the 2 statutory weeks. Some enlightened employers offer 4-6 weeks at full pay, or unlimited equality with maternity pay. Always check your contract and staff handbook — many enhanced policies aren\'t widely advertised. From April 2024, fathers and other parents have a day-one right to take 2 weeks paternity leave (no service requirement).',
       'Time off for antenatal appointments. Pregnant employees have a statutory right to paid time off for antenatal appointments. Their partners (married, civil partnered, cohabiting, intended parents of a surrogate child) have a right to UNPAID time off for up to two antenatal appointments per pregnancy (up to 6.5 hours each). This is in addition to paternity leave. Employers should accommodate without penalty — refusal can lead to discrimination claims.',
@@ -3271,8 +3271,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'Under the Late Payment of Commercial Debts (Interest) Act 1998, UK businesses have a statutory right to charge interest and claim compensation when another business pays an invoice late. The statutory interest rate is the Bank of England base rate plus 8 percentage points per annum. Interest accrues from the day after the agreed payment date (or 30 days after delivery of goods/services or receipt of invoice, whichever is later, if no payment terms were agreed).',
       'In addition to interest, you can claim a fixed compensation amount based on the size of the unpaid debt: \u00a340 for debts up to \u00a3999.99, \u00a370 for debts between \u00a31,000 and \u00a39,999.99, and \u00a3100 for debts of \u00a310,000 or more. You can also claim reasonable recovery costs\u2014such as the cost of sending reminder letters or instructing a debt collection agency\u2014if the fixed compensation does not cover them.',
       'Interest is calculated as: Debt amount \u00d7 (Base rate + 8%) \u00f7 365 \u00d7 Number of days overdue. Contract terms can specify a different interest rate, but it must be a substantial remedy\u2014if a contract sets an unreasonably low rate, the statutory rate can still be invoked. These rights apply to all business-to-business transactions and to public authority debts. They do not apply to consumer debts (business-to-consumer).',
-      'Statutory late payment interest under Late Payment of Commercial Debts (Interest) Act 1998. Businesses can charge statutory interest on late commercial invoices — 8% above Bank of England base rate (currently 8% + 4.5% = 12.5% in May 2026). Applies automatically to overdue B2B invoices, no need to specify in contract. Calculation: (overdue amount × 12.5%) ÷ 365 × days late.',
-      'Compensation fees on top of interest. Under the same Act, businesses can claim fixed compensation per overdue invoice: £40 for amounts up to £1,000; £70 for £1,000-£10,000; £100 for over £10,000. PLUS reasonable debt collection costs. So a £5,000 invoice 30 days overdue can charge: £5,000 × 12.5%/365 × 30 = £51 interest + £70 compensation = £121 in claimable charges.',
+      'Statutory late payment interest under Late Payment of Commercial Debts (Interest) Act 1998. Businesses can charge statutory interest on late commercial invoices — 8% above Bank of England base rate (currently 8% + 4.25% = 12.25% in 2026; check the current base rate). Applies automatically to overdue B2B invoices, no need to specify in contract. Calculation: (overdue amount × 12.25%) ÷ 365 × days late.',
+      'Compensation fees on top of interest. Under the same Act, businesses can claim fixed compensation per overdue invoice: £40 for amounts under £1,000; £70 for £1,000 to £9,999.99; £100 for £10,000 or more. PLUS reasonable debt collection costs. So a £5,000 invoice 30 days overdue can charge: £5,000 × 12.25%/365 × 30 = £50.34 interest + £70 compensation = £120.34 in claimable charges.',
       'Notice and demand process. (1) Send polite payment reminder 7-14 days past due. (2) Send formal demand citing the Late Payment Act — specify interest and compensation. (3) Send \'final demand before legal action\' 30 days later. (4) Money claim online (£35 court fee for under £300, scaling up). Most disputes settle at stage (3). UK businesses pay 30% of B2B invoices late on average — the Act is your protection.',
       'Personal/consumer debts — different rules. The Late Payment Act applies to B2B only. Consumer debt: interest can only be charged if specified in your terms and conditions (usually \'court interest\' rate of 8% under Judgments Act 1838 if you win court action). Late penalty: must be reasonable. Avoid \'unfair commercial practices\' (CPR 2008) which prohibits aggressive debt collection.',
     ],
@@ -3280,14 +3280,14 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       title: 'Late payment charges on a \u00a35,500 invoice overdue by 45 days',
       steps: [
         'Invoice amount: \u00a35,500. Payment was due 45 days ago.',
-        'Current BoE base rate: 4.5%. Statutory rate: 4.5% + 8% = 12.5%.',
-        'Daily interest: \u00a35,500 \u00d7 12.5% \u00f7 365 = \u00a31.883 per day.',
-        'Interest for 45 days: \u00a31.883 \u00d7 45 = \u00a384.75.',
-        'Fixed compensation (debt \u00a31,000\u2013\u00a39,999.99): \u00a370. Total claim: \u00a384.75 + \u00a370 = \u00a3154.75.'
+        'Current BoE base rate: 4.25%. Statutory rate: 4.25% + 8% = 12.25%.',
+        'Daily interest: \u00a35,500 \u00d7 12.25% \u00f7 365 = \u00a31.846 per day.',
+        'Interest for 45 days: \u00a31.846 \u00d7 45 = \u00a383.06.',
+        'Fixed compensation (debt \u00a31,000\u2013\u00a39,999.99): \u00a370. Total claim: \u00a383.06 + \u00a370 = \u00a3153.06.'
       ]
     },
     sourceUrl: 'https://www.gov.uk/late-commercial-payments-interest',
-    sourceName: 'GOV.UK \u2013 Late Commercial Payments Interest',
+    sourceName: 'GOV.UK \u2014 Late Commercial Payments Interest',
     lastUpdated: 'April 2026',
   },
   'overtime-calculator': {
@@ -3344,8 +3344,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'Tax-Free Childcare (TFC) is the main government scheme for working families. For every £8 you pay in, the government adds £2, up to a maximum of £2,000 per child per year (£4,000 for disabled children). Both parents must earn at least the equivalent of 16 hours at minimum wage and no more than £100,000 each.',
       'This calculator lets you compare the true cost of different childcare options after applying government support. It factors in Tax-Free Childcare, the childcare element of Universal Credit (which covers up to 85% of costs up to £1,014.63/month for one child), and the free hours entitlement for 2, 3 and 4-year-olds.',
       '<strong>UK childcare cost averages 2026.</strong> Day nursery full-time (under 2): London £1,800-£2,500/month; UK average £1,300-£1,800/month. Part-time (3 days): typically £700-£1,200/month. Childminder: £4-£8/hour (£700-£1,400/month full-time). Nursery for 3-4 year-olds: more affordable due to free hours scheme. After-school club: £80-£200/week. Holiday clubs: £150-£300/week. Average UK family with 2 under-5s pays £15,000-£30,000/year — second-biggest household expense after mortgage.',
-      '<strong>Free childcare hours — 2026 expansion.</strong> All children: 15 hours free (3-4 years, term-time, ~38 weeks). Working families (earning under £100k each, over £166/week): expanded scheme. From April 2024: 15 hours from 9 months. From September 2024: 15 hours from 9 months. From September 2025: 30 hours from 9 months. Significant childcare cost reduction for working parents. Stretching: 30 hours × 38 weeks = ~22 hours/week year-round. Most settings charge for extra hours, food, consumables.',
-      '<strong>Tax-Free Childcare scheme.</strong> Government top-up: pay £8, government adds £2 (20% top-up, max £2,000/year per child under 12, or £4,000 disabled child under 17). Eligible: working parents earning over £166/week, under £100,000/year each. Doesn\'t combine with workplace childcare vouchers (closed to new entrants since Oct 2018) or Universal Credit childcare element. Apply via Childcare Choices service (gov.uk). Use across multiple providers, multiple children. Annual application required.',
+      '<strong>Free childcare hours — 2026 expansion.</strong> All children: 15 hours free (3-4 years, term-time, ~38 weeks). Working families (earning under £100k each, over £203/week): expanded scheme. From April 2024: 15 hours for eligible 2-year-olds. From September 2024: 15 hours from 9 months. From September 2025: 30 hours from 9 months. Significant childcare cost reduction for working parents. Stretching: 30 hours × 38 weeks = ~22 hours/week year-round. Most settings charge for extra hours, food, consumables.',
+      '<strong>Tax-Free Childcare scheme.</strong> Government top-up: pay £8, government adds £2 (20% top-up, max £2,000/year per child under 12, or £4,000 disabled child under 17). Eligible: working parents earning over £203/week, under £100,000/year each. Doesn\'t combine with workplace childcare vouchers (closed to new entrants since Oct 2018) or Universal Credit childcare element. Apply via Childcare Choices service (gov.uk). Use across multiple providers, multiple children. Annual application required.',
       '<strong>Universal Credit childcare element.</strong> 85% of childcare costs reimbursed via UC, max £1,031/month for 1 child or £1,768/month for 2+. Reimbursement: paid in arrears (parent pays upfront then claims). \'Flexible Support Fund\' available to bridge upfront cost. Childminder or registered nursery only — informal arrangements (grandparents) don\'t qualify. Combine with: Free Hours (15-30 hours) → claim only on remaining paid hours. Cannot combine with Tax-Free Childcare in same year — choose one scheme.',
       '<strong>Strategies to manage UK childcare costs.</strong> Use ALL free hours entitlement first. Apply Tax-Free Childcare to remaining cost. Discuss with employer: workplace childcare vouchers (closed to new entrants but existing recipients can keep using); on-site nursery (often discounted); salary sacrifice childcare (limited new schemes since 2018). Grandparents informal childcare: free but informal — grandparents can claim NI credits for childcare under 12 (Specified Adult Childcare credits — boost own pension). Childminder vs nursery: childminders often 20-30% cheaper, more flexible, but no holiday cover.',
     ],
@@ -3592,7 +3592,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.rhs.org.uk/garden-features/greenhouses',
-    sourceName: 'RHS - Greenhouse Growing Guide',
+    sourceName: 'RHS — Greenhouse Growing Guide',
     lastUpdated: 'April 2026',
   },
   'pond-volume-calculator': {
@@ -3654,7 +3654,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'The compensatory award covers financial losses — loss of earnings, loss of pension contributions, loss of statutory rights and expenses. It is capped at the lower of 52 weeks\' pay or £115,115 (2026/27 figure). For discrimination claims, there is no cap on compensation and an award for injury to feelings (Vento bands) may apply.',
       'This calculator estimates both components based on your age, length of service, weekly pay and claim type. It includes the Vento bands for injury to feelings: lower band (£1,200–£11,200), middle band (£11,200–£33,700) and upper band (£33,700–£56,200).',
       'Unfair dismissal claims — qualifying conditions. Need 2 years\' continuous service to claim ordinary unfair dismissal (exception: automatic unfair dismissal reasons like trade union activity, pregnancy, whistleblowing — no service requirement). Claim within 3 months of dismissal (extended to 6 months for some reasons). ACAS Early Conciliation mandatory — first contact ACAS to attempt resolution before tribunal claim. Tribunal fees abolished July 2017 (Supreme Court ruled them unlawful).',
-      'Compensation limits 2026/27. Basic award (similar to statutory redundancy): up to 30 × £735 weekly cap = £22,050 max. Compensatory award (loss of earnings, future loss): capped at lower of £118,223 OR 52 weeks gross pay. Total typical award: £5,000-£25,000 for ordinary unfair dismissal. Discrimination claims (protected characteristics): NO cap on compensation — can exceed £100,000 for serious cases.',
+      'Compensation limits 2026/27. Basic award (similar to statutory redundancy): up to 30 × £751 weekly cap = £22,530 max. Compensatory award (loss of earnings, future loss): capped at lower of £123,785 OR 52 weeks gross pay. Total typical award: £5,000-£25,000 for ordinary unfair dismissal. Discrimination claims (protected characteristics): NO cap on compensation — can exceed £100,000 for serious cases.',
       'Discrimination claims — wider protections. Protected characteristics under Equality Act 2010: age, disability, gender reassignment, marriage/civil partnership, pregnancy/maternity, race, religion/belief, sex, sexual orientation. No service requirement for discrimination claims. Can include compensation for: financial loss (no cap), injury to feelings (Vento bands: £1,200-£60,000+), aggravated/exemplary damages in serious cases. Time limit: 3 months from act of discrimination.',
       'Pre-tribunal — settlement and Acas. Most claims settle without going to full tribunal. Settlement agreements: legally binding, requires independent legal advice for employee (typically employer pays £500-£1,500 toward advice). Settlement amounts: often equivalent to 3-12 months\' salary depending on prospects of success. Acas Early Conciliation: free, confidential mediation lasting 6 weeks. ~75% of claims resolve without going to tribunal hearing.',
     ],
@@ -3780,7 +3780,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'The 5% additional property surcharge — when it applies. If you own (or part-own) ANY other residential property anywhere in the world when you complete on a new purchase, a 5% surcharge applies on top of standard SDLT (raised from 3% in October 2024). Triggered for: buy-to-let, second homes, holiday homes, properties bought for relatives. Companies and trusts buying residential property face 5% surcharge from £40,000 (no nil-rate band).',
       'The 36-month main residence replacement rule. If you buy your new home BEFORE selling your old main residence, you pay the 5% surcharge upfront — but can reclaim it from HMRC if you sell the old property within 36 months. Apply for refund via gov.uk within 12 months of selling the old property. This is critical for chain breaks: many buyers complete on the new property a few weeks before selling the old one and reclaim the surcharge later.',
       'Cohabiting partners and the surcharge.  If you live with someone unmarried and they own a property: when YOU buy a home in your sole name, the surcharge does NOT apply to you (their ownership doesn\'t count). But if you buy jointly with them and they own elsewhere, surcharge applies on the full amount. Married couples and civil partners: spouses are treated as one unit — if either owns property, joint purchases attract surcharge.',
-      'How the surcharge stacks with FTB relief. First-time buyer relief is NOT available for additional property purchases — the 5% surcharge applies on top of standard SDLT bands. A £300,000 second home for someone who already owns a main home: standard SDLT = £2,500 (5% on £125k-£250k band only) + 5% surcharge = £15,000 + £2,500 = £17,500. Total tax 5.8% of property price — a significant deterrent to BTL relative to alternatives.',
+      'How the surcharge stacks with FTB relief. First-time buyer relief is NOT available for additional property purchases — the 5% surcharge applies on top of standard SDLT bands. A £300,000 second home for someone who already owns a main home: standard SDLT = £5,000 (2% on the £125k–£250k band = £2,500, plus 5% on the £250k–£300k slice = £2,500) + 5% surcharge on the full £300,000 = £15,000, giving £20,000 total. Total tax 6.7% of property price — a significant deterrent to BTL relative to alternatives.',
     ],
     example: {
       title: 'Example: £350,000 second home purchase',
@@ -4154,10 +4154,10 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'business-rates-calculator': {
     howItWorks: [
-      'Business rates are calculated by multiplying your property\'s rateable value (RV) by the applicable multiplier set annually by the government. For 2026/27, the standard multiplier is 51.2p in the pound for properties with an RV of \u00a351,000 or above, and the small business multiplier is 49.9p for properties below that threshold. The rateable value is an estimate of the open-market annual rent for the property as assessed by the Valuation Office Agency (VOA).',
+      'Business rates are calculated by multiplying your property\'s rateable value (RV) by the applicable multiplier set annually by the government. For 2026/27, the standard multiplier is 48p in the pound for properties with an RV of \u00a351,000 to \u00a3499,999, the small business multiplier is 43.2p for properties below \u00a351,000, and a higher 50.8p multiplier applies to properties with an RV of \u00a3500,000 or above. The rateable value is an estimate of the open-market annual rent for the property as assessed by the Valuation Office Agency (VOA).',
       'Small Business Rate Relief (SBRR) applies if your single property has an RV below \u00a315,000. Properties with an RV of \u00a312,000 or below receive 100% relief\u2014paying zero business rates. Between \u00a312,001 and \u00a315,000, the relief tapers on a sliding scale. If you occupy multiple properties, your eligibility is based on the combined RV, and SBRR may be reduced or unavailable.',
       'Additional reliefs may apply: rural rate relief for shops and post offices in designated rural areas, charitable relief at 80% for qualifying charities, and the retail/hospitality/leisure relief scheme which has provided up to 75% discount in recent years. Transitional relief caps annual increases or decreases following a revaluation to smooth bill changes. Your local council issues the bill and administers collection.',
-      'How business rates are calculated. Your annual rates bill = Rateable Value × the Uniform Business Rate (UBR) multiplier. For 2026/27, the standard multiplier is 49.9p and the small business multiplier (for properties with RV under £51,000) is 49.9p as of April 2026. Rateable Value is set by the Valuation Office Agency (VOA) based on what the property would let for on an open market on a specific \'valuation date\' — currently 1 April 2021 for the 2023 rating list. A £15,000 RV at the small business multiplier costs £7,485/year before reliefs.',
+      'How business rates are calculated. Your annual rates bill = Rateable Value × the Uniform Business Rate (UBR) multiplier. For 2026/27, the standard multiplier is 48p and the small business multiplier (for properties with RV under £51,000) is 43.2p as of April 2026. Rateable Value is set by the Valuation Office Agency (VOA) based on what the property would let for on an open market on a specific \'valuation date\' — 1 April 2024 for the 2026 rating list. A £15,000 RV at the small business multiplier costs £6,480/year before reliefs.',
       'Small Business Rate Relief (SBRR). If your property has a rateable value of £12,000 or less, you pay no business rates at all (100% relief). For RV between £12,001 and £15,000, relief tapers linearly from 100% to 0%. To qualify, you must occupy only one property OR additional properties must each have RV under £2,899 and total RV under £20,000 (£28,000 in London). SBRR is not automatic in some councils — check your bill and apply via your local council if missing. SBRR can save up to £6,000/year for a small business.',
       'Retail, Hospitality and Leisure (RHL) Relief. For 2026/27, eligible retail, hospitality and leisure properties receive 40% relief on bills (down from 75% in 2024/25), capped at £110,000 per business. Eligible properties include shops, restaurants, cafés, pubs, cinemas, music venues, hotels, gyms and similar. The relief is in addition to SBRR — a small shop can stack both. Apply via your local council; for some councils it is automatic.',
       'Revaluations and the transitional relief. The VOA revalues all 2 million rateable properties periodically (most recently 2023, next in 2026). When revaluation shifts your bill significantly, transitional relief caps the year-on-year increase: 5% in year 1, 7.5% in year 2, 10% in year 3 for small businesses; 15%, 25%, 40% for medium; 30%, 40%, 55% for large. There is no transitional downward limit — bill reductions take effect immediately. The 2026 revaluation may affect your rates significantly — check the VOA\'s online check service.',
@@ -4167,14 +4167,14 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       title: 'Business rates for a shop with \u00a320,000 rateable value',
       steps: [
         'Rateable value of the property: \u00a320,000.',
-        'Property RV is below \u00a351,000, so the small business multiplier applies: 49.9p.',
-        'Basic rates bill: \u00a320,000 \u00d7 0.499 = \u00a39,980 per year.',
+        'Property RV is below \u00a351,000, so the small business multiplier applies: 43.2p.',
+        'Basic rates bill: \u00a320,000 \u00d7 0.432 = \u00a38,640 per year.',
         'RV exceeds \u00a315,000, so no Small Business Rate Relief applies.',
-        'Annual business rates payable: \u00a39,980, typically paid in 10 monthly instalments of \u00a3998.'
+        'Annual business rates payable: \u00a38,640, typically paid in 10 monthly instalments of \u00a3864.'
       ]
     },
     sourceUrl: 'https://www.gov.uk/apply-for-business-rate-relief/small-business-rate-relief',
-    sourceName: 'GOV.UK \u2013 Business Rate Relief',
+    sourceName: 'GOV.UK \u2014 Business Rate Relief',
     lastUpdated: 'April 2026',
   },
   'rd-tax-credit-calculator': {
@@ -4199,7 +4199,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/guidance/corporation-tax-research-and-development-rd-relief',
-    sourceName: 'GOV.UK \u2013 R&D Tax Relief',
+    sourceName: 'GOV.UK \u2014 R&D Tax Relief',
     lastUpdated: 'April 2026',
   },
   'cis-calculator': {
@@ -4224,7 +4224,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/what-is-the-construction-industry-scheme',
-    sourceName: 'GOV.UK \u2013 Construction Industry Scheme',
+    sourceName: 'GOV.UK \u2014 Construction Industry Scheme',
     lastUpdated: 'April 2026',
   },
   'pet-insurance-calculator': {
@@ -4451,7 +4451,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/set-up-limited-company',
-    sourceName: 'GOV.UK \u2013 Set Up a Limited Company',
+    sourceName: 'GOV.UK \u2014 Set Up a Limited Company',
     lastUpdated: 'April 2026',
   },
   'pension-credit-calculator': {
@@ -4459,11 +4459,11 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'Pension Credit has two elements assessed independently. Guarantee Credit tops up weekly income to a minimum level: £218.15 for single claimants or £332.95 for couples in 2026/27. Your qualifying income includes State Pension, private pensions, earnings, and most benefits. If your assessed income falls below the appropriate minimum guarantee, the shortfall is paid as Guarantee Credit.',
       'Savings Credit rewards people who made modest provision for retirement beyond the basic State Pension. It is only available to those who reached State Pension age before 6 April 2016. The maximum Savings Credit is £17.01 per week for singles or £19.04 for couples. It is calculated by taking 60% of qualifying income above the Savings Credit threshold (£189.80 single, £301.22 couple), then reducing by 40% of any income above the Guarantee Credit minimum.',
       'Certain income is disregarded from the assessment: the first £10,000 of capital is ignored entirely, and each £500 (or part thereof) of capital between £10,000 and £99,999 counts as £1 per week of deemed income. Unlike means-tested benefits for working-age claimants, there is no upper capital limit that disqualifies you from Pension Credit entirely.',
-      'What is Pension Credit and who qualifies? Pension Credit tops up your weekly income to a guaranteed minimum if you\'ve reached State Pension age (66 in 2026, rising to 67 from 2028). Two parts: (1) Guarantee Credit tops you up to £227.10/week single or £346.60/week couple (2026/27); (2) Savings Credit (closed to new claimants since April 2016) rewards modest pension/savings above basic State Pension — still paid to existing recipients.',
+      'What is Pension Credit and who qualifies? Pension Credit tops up your weekly income to a guaranteed minimum if you\'ve reached State Pension age (66 in 2026, rising to 67 from 2028). Two parts: (1) Guarantee Credit tops you up to £238.00/week single or £363.25/week couple (2026/27); (2) Savings Credit (closed to new claimants since April 2016) rewards modest pension/savings above basic State Pension — still paid to existing recipients.',
       'Pension Credit unlocks much more than the top-up. Receiving even £1/week of Pension Credit triggers entitlement to: free TV licence (over 75), Council Tax Reduction, Housing Benefit, Cold Weather Payments, Warm Home Discount, free dental treatment, glasses vouchers, NHS prescription charges exemption, Carer\'s Allowance bonus, and Christmas Bonus £10. Total annual value can exceed £4,000-£8,000 — making the £52/week guarantee credit alone potentially worth £10k+ in combined benefits.',
       'Why 850,000 eligible pensioners don\'t claim. DWP estimates around 850,000 pensioners are eligible but not claiming Pension Credit — losing on average £2,500/year cash benefit plus access to all linked benefits. Reasons: don\'t realise they qualify (especially homeowners), shame around \'benefits\', complex application form, fear of capital limits (no upper limit on capital — but income from savings reduces credit). The DWP Money Champions initiative since 2023 has pushed take-up but coverage remains 60-65%.',
       'How to claim and what counts as income. Apply via gov.uk/pension-credit or 0800 99 1234. Required info: NI number, bank details, income (State Pension, private pensions, employment, savings), housing costs, partner details. Capital under £10,000 is ignored; £10,001-£16,000 generates \'tariff income\' (£1/week per £500 over £10k); savings ISA growth treated as income but not capital. Three-month backdating available — apply ASAP if eligibility goes back further.',
-      'What is Pension Credit and the guarantee amounts. Top-up benefit for pensioners with low income. 2026/27 guarantees: Single £227.10/week (£11,809/year); Couple £346.60/week (£18,023/year). If your total income (State Pension + private pension + benefits + savings income) is below these, Pension Credit tops you up. Savings credit (closed to new claimants since 2016) gives additional money for those with modest pensions/savings above basic State Pension.',
+      'What is Pension Credit and the guarantee amounts. Top-up benefit for pensioners with low income. 2026/27 guarantees: Single £238.00/week (£12,376/year); Couple £363.25/week (£18,889/year). If your total income (State Pension + private pension + benefits + savings income) is below these, Pension Credit tops you up. Savings credit (closed to new claimants since 2016) gives additional money for those with modest pensions/savings above basic State Pension.',
       'Why claim even tiny amounts. Receiving even £1/week of Pension Credit triggers entitlement to: free TV licence (over 75), Council Tax Reduction, Housing Benefit, Cold Weather Payments, Warm Home Discount, NHS prescription exemption, free dental treatment, glasses vouchers, Christmas Bonus £10. Total annual value of linked benefits: typically £4,000-£8,000. Single £1/week Pension Credit can unlock £8k of other benefits.',
       'Who\'s eligible — and the 850k missing out. Eligibility: reached State Pension age (66 rising to 67 from April 2028); income below thresholds. Capital under £10,000: ignored. £10,001-£16,000: tariff income £1/week per £500 over £10k. Capital over £16,000: NO Pension Credit (different from working-age UC). Around 850,000 eligible pensioners don\'t claim (DWP estimate) — average missed £2,500/year cash + linked benefits.',
       'How to apply and backdating. Online gov.uk/pension-credit or 0800 99 1234. Required: NI number, bank details, income breakdown, savings details, partner info. Application form approximately 60 pages but supportable. Three-month backdating available. Average claim takes 4-6 weeks for decision. If approved: paid weekly into bank account, weekly or 4-weekly cycles. Tax-free, doesn\'t count toward Universal Credit or working-age benefits limits.',
@@ -4479,7 +4479,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/pension-credit/eligibility',
-    sourceName: 'GOV.UK - Pension Credit',
+    sourceName: 'GOV.UK — Pension Credit',
     lastUpdated: 'April 2026',
   },
   'housing-benefit-calculator': {
@@ -4672,7 +4672,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/capital-allowances',
-    sourceName: 'GOV.UK \u2013 Capital Allowances',
+    sourceName: 'GOV.UK \u2014 Capital Allowances',
     lastUpdated: 'April 2026',
   },
   'cash-flow-calculator': {
@@ -4697,7 +4697,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/set-up-business',
-    sourceName: 'GOV.UK \u2013 Set Up a Business',
+    sourceName: 'GOV.UK \u2014 Set Up a Business',
     lastUpdated: 'April 2026',
   },
   'spouse-visa-calculator': {
@@ -4705,7 +4705,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'A UK spouse visa (Family visa as a partner) allows you to join your British or settled partner in the UK. The initial application is for 2 years and 9 months, followed by a further 2.5-year extension, then Indefinite Leave to Remain (ILR) after 5 years total. Each stage has separate fees.',
       'The minimum income requirement is £29,000 per year (as of April 2024, with planned increases). This can be met through the sponsor\'s employment income, savings, or a combination. Self-employment income is also accepted with additional evidence requirements.',
       'This calculator totals the costs across all stages from initial application to ILR, including application fees, IHS, biometrics, English language tests and the Life in the UK test. It shows the full financial commitment over the 5-year route.',
-      'UK Spouse Visa income requirement 2026. Minimum income £29,000/year (raised from £18,600 in April 2024). Sponsoring spouse (UK partner) must demonstrate this through: (1) Employment income — £29k+ gross for 6+ months, OR (2) Self-employment £29k+ profit, OR (3) Combination of income + savings (savings + 2.5 × income shortfall, e.g. £29k threshold and £20k income needs £22.5k savings), OR (4) Pure savings £88,500. From April 2025: rises to £34,500. From 2026: rises to £38,700.',
+      'UK Spouse Visa income requirement 2026. Minimum income £29,000/year (raised from £18,600 in April 2024). Sponsoring spouse (UK partner) must demonstrate this through: (1) Employment income — £29k+ gross for 6+ months, OR (2) Self-employment £29k+ profit, OR (3) Combination of income + savings (savings + 2.5 × income shortfall, e.g. £29k threshold and £20k income needs £22.5k savings), OR (4) Pure savings £88,500. The previously-planned rises to £34,500 (and later £38,700) were paused in 2024 pending a Migration Advisory Committee review, so the £29,000 requirement still applies in 2026.',
       'Additional financial requirements for children. Children joining: +£3,800 for first child + £2,400 each additional. So with one child: £32,800 total income required. Two children: £35,200. Three: £37,600. BUT: many children of UK citizens have right of abode without needing financial requirement met for them specifically. Check via gov.uk if your child needs visa or has automatic right.',
       'English language requirement. Applicant (the non-UK partner) must demonstrate English language at A1 CEFR level for initial entry, A2 for extension after 2.5 years, B1 for indefinite leave after 5 years. Approved tests: IELTS Life Skills, Trinity College London Graded Examinations in Spoken English. Exceptions: citizens of majority English-speaking countries (USA, Australia, Canada, etc.), or those with academic qualification taught in English.',
       'Visa stages and route to settlement. Initial visa: 2.5 years (called \'leave to remain\' or first visa). Extension: 2.5 more years (after meeting requirements again). Indefinite Leave to Remain (ILR/settlement): after 5 years total + Life in UK test + B1 English + £29,000+ income (or savings equivalent). British citizenship: 1 more year after ILR + Life in UK test (already done) + good character. Total typical timeline: 6 years from initial visa to citizenship.',
@@ -4901,13 +4901,13 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'teacher-pay-calculator': {
     howItWorks: [
-      'Teacher pay in England and Wales is set by the School Teachers\' Pay and Conditions Document (STPCD). The Main Pay Range (MPR) for classroom teachers in 2026/27 runs from M1 (approximately £31,650) to M6 (approximately £43,607) outside London. The Upper Pay Range (UPR) for experienced teachers runs from UPR1 to UPR3, topping out at approximately £49,084.',
+      'Teacher pay in England and Wales is set by the School Teachers\' Pay and Conditions Document (STPCD). The Main Pay Range (MPR) for classroom teachers in 2025/26 runs from M1 (approximately £32,916) to M6 (approximately £45,352) outside London. The Upper Pay Range (UPR) for experienced teachers runs from UPR1 to UPR3, topping out at approximately £51,048.',
       'London weighting applies in four zones: Inner London, Outer London, Fringe and Rest of England. Inner London attracts the highest premiums, with MPR starting approximately £5,000 higher. Leadership pay scales cover headteachers, deputy heads and assistant heads with separate spine points.',
       'This calculator shows your gross salary based on your pay range, spine point and location. It then deducts income tax, NI and Teachers\' Pension contributions (currently 7.4% to 11.7% of pensionable pay depending on salary band) to show your monthly and annual take-home pay.',
-      '<strong>UK teacher pay scales 2025/26.</strong> Main Scale England (M1-M6): M1 £31,650; M2 £33,483; M3 £35,402; M4 £37,409; M5 £39,503; M6 £43,607. Outer London +£1,500-£2,500; Inner London +£3,000-£6,000. Upper Pay Range (UPR — applied after Main Scale): U1 £45,646; U2 £47,295; U3 £49,084. Leadership Pay Scale (head of department, assistant head): £49,082-£85,810. Headteacher: £63,815-£139,891 depending on school size. Scotland/Wales/NI: separate pay scales, broadly similar.',
+      '<strong>UK teacher pay scales 2025/26 (4% award from 1 September 2025).</strong> Main Scale England (M1-M6): M1 £32,916; M2 £34,823; M3 £37,101; M4 £39,556; M5 £42,057; M6 £45,352. Outer London +£1,500-£2,500; Inner London +£3,000-£6,000. Upper Pay Range (UPR — applied after Main Scale): U1 £47,472; U2 £49,232; U3 £51,048. Leadership Pay Scale (head of department, assistant head): £51,045-£89,242. Headteacher: £66,368-£145,487 depending on school size. Scotland/Wales/NI: separate pay scales, broadly similar.',
       '<strong>Teacher pension scheme — Teachers\' Pension Scheme (TPS).</strong> Career Average Revalued Earnings (CARE): pension based on average career earnings, revalued each year. Accrual rate 1/57 per year. Sample: 35 years\' service at £50k average = 35/57 × £50,000 = £30,702/year pension. Plus State Pension £12k = £42,702 total annual income in retirement (very strong). Employee contribution: 7.4-11.7% (banded). Employer contribution: 28.68% (huge — equivalent to ~25% pay rise vs public sector employer). Defined benefit guarantees inflation-linked pension for life.',
       '<strong>Performance pay and progression.</strong> Annual pay progression NOT automatic since 2014 reforms — must show performance against teaching standards each year. Most teachers: M1 to M6 in 6 years (progressing one point each year if good performance). Promotion to UPR: needs Threshold application — show consistent good practice. Leadership progression: assistant head → deputy → head typically 5-10 years. Teaching and Learning Responsibility (TLR): payment for additional duties like head of department (£3,000-£15,000 on top).',
-      '<strong>Teacher take-home pay.</strong> M6 teacher (£43,607): tax £6,207; NI £2,483; pension contribution 9.8% = £4,274; total deductions £12,964. Net take-home £30,643/year (£2,554/month). Compare: same income private sector with 5% pension = £33k+ net. Teacher\'s much larger employer pension contribution offsets the lower current take-home — total comp package very strong. Plus: 13 weeks paid holiday; strong job security; defined benefit pension; sick pay (6 months full + 6 months half typical).',
+      '<strong>Teacher take-home pay.</strong> M6 teacher (£45,352): tax £5,776; NI £2,623; pension contribution 8.6% = £3,900; total deductions £12,299. Net take-home £33,053/year (£2,754/month). Compare: same income private sector with 5% pension = £33k+ net. Teacher\'s much larger employer pension contribution offsets the lower current take-home — total comp package very strong. Plus: 13 weeks paid holiday; strong job security; defined benefit pension; sick pay (6 months full + 6 months half typical).',
       '<strong>Teacher salary myths and realities.</strong> Lower starting salary than equivalent graduate roles (£31k vs £35-£40k in business/tech): TRUE. But: pension and holidays generous offset. Hours worked: classroom teaching 24-25 hours/week + extensive planning, marking, parent contact = typical 50-60 hour week (officially 1,265 \'directed time\' hours/year). Workload main reason for leaving — not pay. Career length: average UK teacher career 12-15 years. Teach in private/independent schools: 10-30% higher pay typically but smaller pension (workplace DC vs TPS).',
     ],
     example: {
@@ -4946,7 +4946,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/shared-parental-leave-and-pay',
-    sourceName: 'GOV.UK - Shared Parental Leave and Pay',
+    sourceName: 'GOV.UK — Shared Parental Leave and Pay',
     lastUpdated: 'April 2026',
   },
   'high-income-child-benefit-calculator': {
@@ -4982,7 +4982,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       '<strong>Exemptions from the Benefit Cap.</strong> Working: UC household earning over £793/month (around £200/week net). PIP recipient (any rate). DLA recipient. Industrial Injuries Disablement Benefit. Attendance Allowance. Carer\'s Allowance. War widow\'s/widower\'s pension. ESA support group. Universal Credit Limited Capability for Work and Work-Related Activity (LCWRA) element. Grace period: 39 weeks exempt after stopping work (if worked at least 50 of 52 weeks before). These exemptions exclude millions of UK households from cap effect.',
       '<strong>Which benefits count toward the cap?</strong> Universal Credit, Housing Benefit, Child Benefit, Bereavement Allowance, Jobseeker\'s Allowance, Maternity Allowance, ESA (work-related activity group only), Incapacity Benefit. NOT counted: PIP, DLA, AA, Council Tax Reduction, Free School Meals, Healthy Start vouchers, Support for Mortgage Interest. Important: state retirement pension EXEMPT — Pension Credit doesn\'t count.',
       '<strong>How the cap is applied.</strong> Capped amount is REDUCED, typically from Housing Benefit or UC housing element. Sample: total benefits without cap £450/week, cap £385 = £65/week reduction. UK affected households 2025: ~190,000 households (mostly larger families, high-rent areas). Single parents with multiple children worst-affected — common to lose £50-£150/week of housing support. Discretionary Housing Payment (DHP): apply to council for top-up if struggling. Move to lower-rent area: often only practical solution.',
-      '<strong>Avoiding the Benefit Cap — work options.</strong> Cap doesn\'t apply if household earns over £793/month from work (UC threshold 2026). Sample: 16 hours/week at £12.21 NLW = £782/month — too close to threshold. Take 18+ hours/week to clear safety margin. Self-employment income counts. Both partners\' incomes combined. Childcare costs reimbursable via UC childcare element (85% of costs) once working. Universal Credit work allowance: £404/month earnings disregarded before taper kicks in (for housing element claimants). Run numbers carefully — sometimes 1-2 extra hours/week unlocks £3,000-£5,000/year more income.',
+      '<strong>Avoiding the Benefit Cap — work options.</strong> Cap doesn\'t apply if household earns over £881/month from work (16 × NLW, UC threshold 2026/27). Sample: 16 hours/week at £12.71 NLW ≈ £881/month — right at the threshold. Take 18+ hours/week to clear a safety margin. Self-employment income counts. Both partners\' incomes combined. Childcare costs reimbursable via UC childcare element (85% of costs) once working. Universal Credit work allowance: £427/month earnings disregarded before taper kicks in (for housing element claimants). Run numbers carefully — sometimes 1-2 extra hours/week unlocks £3,000-£5,000/year more income.',
     ],
     example: {
       title: 'Example: Couple with 3 children, outside London, £26,000 in benefits',
@@ -5042,7 +5042,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/self-employed-national-insurance-rates',
-    sourceName: 'GOV.UK \u2013 Self-Employed National Insurance',
+    sourceName: 'GOV.UK \u2014 Self-Employed National Insurance',
     lastUpdated: 'April 2026',
   },
   'macro-calculator': {
@@ -5300,19 +5300,19 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'childcare-entitlement-calculator': {
     howItWorks: [
       'The UK government provides free childcare hours for children from age 9 months to school age, expanding significantly from 2024/25. From September 2025, working parents of children aged 9 months to 3 years are entitled to 30 hours per week of free childcare during term time (38 weeks per year), or the equivalent stretched over more weeks at fewer hours.',
-      'All 3 and 4-year-olds are entitled to 15 hours of free childcare per week (the universal entitlement), regardless of parents\' working status. Working parents of 3 and 4-year-olds receive an additional 15 hours (30 hours total). To qualify for the working parent entitlement, both parents must earn at least £8,670 per year and neither can earn more than £100,000.',
+      'All 3 and 4-year-olds are entitled to 15 hours of free childcare per week (the universal entitlement), regardless of parents\' working status. Working parents of 3 and 4-year-olds receive an additional 15 hours (30 hours total). To qualify for the working parent entitlement, each parent must earn at least £10,575 per year (16 hours/week at the National Living Wage) and neither can earn more than £100,000.',
       'Some 2-year-olds from disadvantaged backgrounds qualify for 15 hours of free childcare even if parents are not working. This includes families on certain benefits, looked-after children, and children with an Education Health and Care Plan. This calculator checks your eligibility for each scheme based on your child\'s age and circumstances.',
-      '<strong>UK free childcare hours — major expansion.</strong> Universal: 15 hours/week (38 weeks/year) for ALL 3-4 year-olds. Working families (both earning over £166/week, neither above £100k): 15 hours from 9 months (since April 2024); 30 hours from 9 months (from September 2025). 30 hours × 38 weeks = 1,140 free hours/year per child. £15,000+ savings per family/year for double-earner households with toddlers.',
-      '<strong>Eligibility for working family hours.</strong> Each parent must earn: at least £166/week (£8,632/year — equivalent to 16 hours at NMW); NOT more than £100,000/year. Both parents working in couple households. Single parent: just the one parent\'s earnings count. Self-employed: same income rules apply (must demonstrate via Self Assessment or accounts). Maternity/paternity leave: still eligible if returning to work. Apply via Childcare Choices (gov.uk) every 3 months — automatic eligibility check.',
-      '<strong>Tax-Free Childcare scheme.</strong> Pay £8, government adds £2 — total £10 toward childcare (20% top-up). Maximum £2,000/year per child under 12 (£4,000 for disabled child under 17). For working parents earning over £166/week, under £100,000/year each. Doesn\'t combine with: Universal Credit childcare element (choose one); workplace childcare vouchers (closed to new entrants since 2018). Apply via Childcare Choices. Spend at registered providers: nursery, childminder, school clubs.',
+      '<strong>UK free childcare hours — major expansion.</strong> Universal: 15 hours/week (38 weeks/year) for ALL 3-4 year-olds. Working families (each earning over £203/week, neither above £100k): 15 hours from 9 months (since September 2024); 30 hours from 9 months (from September 2025). 30 hours × 38 weeks = 1,140 free hours/year per child. £15,000+ savings per family/year for double-earner households with toddlers.',
+      '<strong>Eligibility for working family hours.</strong> Each parent must earn: at least £203/week (£10,575/year — equivalent to 16 hours at the National Living Wage); NOT more than £100,000/year. Both parents working in couple households. Single parent: just the one parent\'s earnings count. Self-employed: same income rules apply (must demonstrate via Self Assessment or accounts). Maternity/paternity leave: still eligible if returning to work. Apply via Childcare Choices (gov.uk) every 3 months — automatic eligibility check.',
+      '<strong>Tax-Free Childcare scheme.</strong> Pay £8, government adds £2 — total £10 toward childcare (20% top-up). Maximum £2,000/year per child under 12 (£4,000 for disabled child under 17). For working parents earning over £203/week, under £100,000/year each. Doesn\'t combine with: Universal Credit childcare element (choose one); workplace childcare vouchers (closed to new entrants since 2018). Apply via Childcare Choices. Spend at registered providers: nursery, childminder, school clubs.',
       '<strong>Universal Credit childcare element.</strong> 85% of childcare costs reimbursed (capped £1,031/month single child; £1,768/month for 2+). Reimbursement: in arrears — parent pays upfront, claims back. Flexible Support Fund: covers initial upfront cost. Registered providers only — informal arrangements (grandparents) don\'t qualify. UC childcare can combine with: free hours (15-30 hours). Cannot combine with Tax-Free Childcare same year. Lower-income families: UC element usually better; mid-income: Tax-Free Childcare often wins.',
       '<strong>Grandparents and Specified Adult Childcare credits.</strong> Grandparents (or other family) providing childcare for grandchild under 12: can claim NI credits toward own State Pension. Eligibility: child\'s parent receives Child Benefit; grandparent under State Pension age. One credit per family per week. Apply via CA9176 form, backdate to April 2011. Each credit year = ~£330/year extra State Pension for life. Massively underclaimed — only 19,000 claims vs estimated 100,000+ eligible UK grandparents.',
     ],
     example: {
       title: 'Example: Working couple, child aged 2',
       steps: [
-        'Parent 1 income: £28,000 (above £8,670 minimum)',
-        'Parent 2 income: £22,000 (above £8,670 minimum)',
+        'Parent 1 income: £28,000 (above £10,575 minimum)',
+        'Parent 2 income: £22,000 (above £10,575 minimum)',
         'Neither parent earns over £100,000',
         'Entitlement: 30 hours/week free childcare (term time)',
         'Annual value: ~£7,980 (based on average nursery rates)',
@@ -5344,7 +5344,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/guidance/rural-payments-service',
-    sourceName: 'Defra - Rural Payments and Stocking Guidance',
+    sourceName: 'Defra — Rural Payments and Stocking Guidance',
     lastUpdated: 'April 2026',
   },
   'agricultural-worker-wage-calculator': {
@@ -5723,7 +5723,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       '<strong>UK cost of living by city — index 100 = UK average.</strong> London 145; Edinburgh 117; Brighton 113; Oxford 112; Cambridge 110; Bristol 108; Manchester 92; Leeds 88; Birmingham 87; Liverpool 85; Newcastle 82; Sheffield 80; Hull 75; Sunderland 73. London 95% more expensive than Sunderland for equivalent lifestyle. Salary parity: £60k London ≈ £40-£45k Manchester ≈ £35k Newcastle in disposable income after housing.',
       '<strong>UK housing dominates cost differential.</strong> Rent 1-bed flat: London £1,800-£2,500/month; Manchester £900-£1,300; Newcastle £600-£900; Sunderland £450-£650. Property to buy 2-bed flat: London £450-£900k; Manchester £180-£280k; Newcastle £130-£200k; Sunderland £75-£140k. Single biggest cost difference between UK regions. Council Tax: variable too — Westminster Band D £980 vs Rutland £2,829 (massive city/borough variation).',
       '<strong>Daily costs that differ less.</strong> Tesco/Sainsbury\'s grocery prices similar within 5-10% nationally. Lidl/Aldi 25-30% cheaper but available nationwide. Petrol 4-5p/litre cheaper in North than South. Public transport varies 10-20%. Energy bills similar (Ofgem cap nationally). Streaming/Netflix/broadband: same nationally. Eating out: London 30-50% above regional cities — coffee £4 London vs £3 Manchester.',
-      '<strong>Tax-adjusted comparisons.</strong> Salary £50k London-paid: after income tax £37,486 net. Same £50k in Manchester: same net £37,486 (UK income tax uniform). BUT cost differences: London £40k/year living costs vs Manchester £24k/year = London disposable £-2,514 vs Manchester £+13,486 — astronomical difference. Scotland higher tax (£50k pays £11,407 vs £7,486 England) further widens gap. Cost-adjusted: Manchester typically 30-40% better lifestyle than London at same salary.',
+      '<strong>Tax-adjusted comparisons.</strong> Salary £50k London-paid: after income tax £37,486 net. Same £50k in Manchester: same net £37,486 (UK income tax uniform). BUT cost differences: London £40k/year living costs vs Manchester £24k/year = London disposable £-2,514 vs Manchester £+13,486 — astronomical difference. Scotland higher tax (£50k pays £9,014 vs £7,486 England) further widens gap. Cost-adjusted: Manchester typically 30-40% better lifestyle than London at same salary.',
       '<strong>Moving for cost of living — pros and cons.</strong> Move out of London (most common UK migration): typically save £20-£40k/year on equivalent lifestyle. Drawbacks: lower salaries (London +20-30% pay), career opportunities (especially finance, tech, creative), social network. Sweet-spot cities (high salaries + moderate cost): Cambridge (tech), Bristol, Edinburgh (finance), Manchester (tech, media). Remote work: best outcome — London salary + regional living (saves £15-£35k/year).',
     ],
     example: {
@@ -6265,7 +6265,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'Company car benefit is calculated by multiplying the car\'s P11D price (list price plus accessories, minus capital contributions up to £5,000) by the appropriate percentage based on CO2 emissions. For 2026/27, zero-emission vehicles attract a 2% rate, rising in 1% increments through to 37% for the highest polluters. The resulting cash equivalent is added to your taxable income.',
       'Private medical insurance benefit equals the cost your employer pays for the policy premium. Accommodation benefit uses the annual value or, if the property cost exceeds £75,000, adds a supplementary charge calculated as the excess multiplied by the official rate of interest (currently 2.25%).',
       '<strong>UK Benefits in Kind (BIK) 2026/27.</strong> Non-cash perks from employer treated as taxable income. Most common: company car (BIK based on CO2 emissions × list price); private medical insurance (taxable at full premium cost); accommodation (taxable at rental value); loans over £10,000 (taxable interest difference); gym membership; mobile phone (one mobile per employee tax-free; second mobile taxable). Reported on P11D form by 6 July following tax year.',
-      '<strong>Company car tax — the major BIK.</strong> Calculate: list price × CO2 emission percentage. EV (zero emissions): 3% 2025/26, 4% 2026/27, 5% 2027/28, rising 1pp/year. Petrol/diesel: 14-37% scale (highest CO2). Sample £40k EV: £40k × 3% = £1,200 BIK; tax 20%/40%/45% = £240/£480/£540 annual cost. Sample £40k petrol (180g/km): £40k × 30% = £12,000 BIK; tax £2,400/£4,800/£5,400. EV cost ~10× cheaper for company car.',
+      '<strong>Company car tax — the major BIK.</strong> Calculate: list price × CO2 emission percentage. EV (zero emissions): 3% 2025/26, 4% 2026/27, 5% 2027/28, then 7%/9%. Petrol/diesel: 14-37% scale (highest CO2). Sample £40k EV (2026/27): £40k × 4% = £1,600 BIK; tax 20%/40%/45% = £320/£640/£720 annual cost. Sample £40k petrol (180g/km): £40k × 30% = £12,000 BIK; tax £2,400/£4,800/£5,400. EV cost ~10× cheaper for company car.',
       '<strong>Salary sacrifice + benefits in kind.</strong> Salary sacrifice for: pension, cycle-to-work, EV company car — saves both income tax AND NI. Sample £40k earner sacrifices £6,000 into pension: saves £1,200 income tax + £480 NI = £1,680 effective cost £4,320. Cycle-to-work limited to £1,000 (some schemes £3,500). EV salary sacrifice particularly attractive — combined with low BIK rates, often 30-50% saving for higher-rate taxpayers. Check employer scheme.',
       '<strong>Tax-free benefits — UK list.</strong> Workplace pension contributions (employer); one mobile phone; £6/week working-from-home allowance; cycle-to-work scheme bike + accessories; some training and education; eye tests for VDU users; flu vaccinations; staff entertainment up to £150/head/year (annual events); long service awards over 20 years (£50/year length up to £1,000); workplace nursery (limited); car parking at workplace; staff suggestion scheme awards (limited). Most other employer-paid benefits ARE taxable.',
       '<strong>BIK reporting — P11D, P11D(b), Section 336.</strong> Employer files P11D for each employee receiving BIK; P11D(b) summary by 6 July following tax year. PAYE tax code adjusts following year to collect tax (or pay refund). Section 336 (post-2026): payroll PAYE collection of BIK in real time, ending lag-year tax adjustments. Employee can claim relief on business mileage exceeding HMRC rates (AMAP 45p/25p). Self Assessment usually triggered if BIK significant — even via payroll only, P11D records BIK for HMRC records.',
@@ -6281,7 +6281,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/tax-company-benefits',
-    sourceName: 'HMRC - Tax on Company Benefits',
+    sourceName: 'HMRC — Tax on Company Benefits',
     lastUpdated: 'April 2026',
   },
   'regular-savings-calculator': {
@@ -6330,7 +6330,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/expenses-and-benefits-business-travel-mileage/rules-for-tax',
-    sourceName: 'HMRC - Business Travel Mileage',
+    sourceName: 'HMRC — Business Travel Mileage',
     lastUpdated: 'April 2026',
   },
   'wealth-growth-calculator': {
@@ -6375,7 +6375,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Sale proceeds: 500 × £18 = £9,000',
         'Gain: £9,000 − £5,000 = £4,000',
         'Less annual exempt amount: −£3,000',
-        'Taxable gain: £1,000 at 20% (higher rate) = £200',
+        'Taxable gain: £1,000 at 24% (higher rate, from 30 Oct 2024) = £240',
       ],
     },
     sourceUrl: 'https://www.gov.uk/tax-sell-shares',
@@ -6454,7 +6454,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/capital-allowances/annual-investment-allowance',
-    sourceName: 'GOV.UK \u2013 Annual Investment Allowance',
+    sourceName: 'GOV.UK \u2014 Annual Investment Allowance',
     lastUpdated: 'April 2026',
   },
   'mortgage-interest-rate-calculator': {
@@ -6479,7 +6479,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.bankofengland.co.uk/statistics/mortgage-lenders-and-administrators/2026/2026-q1',
-    sourceName: 'Bank of England - Mortgage Statistics',
+    sourceName: 'Bank of England — Mortgage Statistics',
     lastUpdated: 'April 2026',
   },
   'first-home-buyer-calculator': {
@@ -6608,10 +6608,10 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'help-to-save-calculator': {
     howItWorks: [
-      'Help to Save is a government savings scheme for people receiving Working Tax Credit, Universal Credit (with minimum earnings equivalent to 16 hours at National Living Wage), or both. You can save between £1 and £50 per month for four years. The government pays a 50% bonus on the highest balance achieved, calculated at two points: after year 2 and again after year 4.',
+      'Help to Save is a government savings scheme for working people on Universal Credit who earn at least the equivalent of 16 hours a week at the National Living Wage (about £881/month). The older Working Tax Credit route closed when tax credits were migrated to Universal Credit in April 2025. You can save between £1 and £50 per month for four years. The government pays a 50% bonus on the highest balance achieved, calculated at two points: after year 2 and again after year 4.',
       'The first bonus at the end of year 2 is 50% of the highest balance reached in months 1-24. If you saved £50 every month, your highest balance would be £1,200, earning a £600 bonus. The second bonus at year 4 is 50% of the difference between the highest balance in months 25-48 and the highest balance at the time of the first bonus. If you continue saving £50/month, the year 4 highest balance is £2,400, and the second bonus is 50% x (£2,400 - £1,200) = £600.',
       'Maximum total bonus is £1,200 (£600 at year 2 + £600 at year 4) on total savings of £2,400. You can withdraw at any time without losing future eligibility, but withdrawals reduce the highest balance calculation. The bonus is equivalent to a 50% return on savings, far exceeding any savings account rate. The calculator models different monthly contribution amounts and shows the impact of withdrawals on bonus calculations.',
-      'Help to Save eligibility 2026. UK savings scheme paying 50% government bonus to low-income workers. Eligibility: receiving Working Tax Credit (or Child Tax Credit), OR receiving Universal Credit with earnings of at least £658.64/month (£152/week). Cannot claim if: state pension age reached, in prison, or have certain immigration restrictions. Scheme runs until at least 2028.',
+      'Help to Save eligibility 2026. UK savings scheme paying 50% government bonus to low-income workers. Eligibility: receiving Universal Credit with earnings of at least £881/month (£203/week — equivalent to 16 hours at the National Living Wage). The legacy Working Tax Credit / Child Tax Credit route closed with the migration to Universal Credit in April 2025. Cannot claim if: state pension age reached, in prison, or have certain immigration restrictions. Scheme runs until at least 2028.',
       'How the bonus works. Deposit up to £50/month for 48 months (4 years). Maximum total deposit: £2,400. Government adds bonuses at end of years 2 and 4: bonus = 50% of highest balance achieved during the period. Maximum total bonuses: £1,200. Combined account value after 4 years: up to £3,600 (£2,400 your money + £1,200 bonuses). No tax on bonuses or interest.',
       'How to use the account effectively. Save consistently £50/month for maximum bonus. Don\'t withdraw early — bonus calculated on highest balance achieved, but withdrawals before bonus payment reduce highest-balance figure for future bonus. After year 2 bonus paid (~£600), you CAN withdraw without affecting that bonus, but future bonuses still calculated against your highest remaining balance.',
       'After 4 years — what next. Account closes after 4 years. Move savings to: regular savings account, Cash ISA, Lifetime ISA (if under 40), or other home/retirement saving. Help to Save was particularly valuable when interest rates were low; with 4% Cash ISA rates in 2026, it\'s still better return than most savings — 50% bonus equates to ~30% annualised return on average balance over 4 years.',
@@ -6931,24 +6931,24 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'ev-salary-sacrifice-calculator': {
     howItWorks: [
-      'An EV salary sacrifice scheme lets you lease an electric car through your employer, paying from your gross salary before tax and National Insurance. The Benefit in Kind (BiK) rate for pure electric vehicles is just 2% for 2024/25, rising to 3% for 2026/27 and 4% for 2026/27. This makes salary sacrifice one of the cheapest ways to drive a new EV.',
+      'An EV salary sacrifice scheme lets you lease an electric car through your employer, paying from your gross salary before tax and National Insurance. The Benefit in Kind (BiK) rate for pure electric vehicles is just 2% for 2024/25, rising to 3% for 2025/26 and 4% for 2026/27. This makes salary sacrifice one of the cheapest ways to drive a new EV.',
       'The saving works because you avoid income tax and NI on the sacrificed salary, and the BiK tax on the EV is minimal. A higher-rate taxpayer can save 40-50% compared to leasing the same car personally. The scheme typically includes insurance, maintenance, breakdown cover and tyres in one monthly payment.',
       'This calculator compares the net cost of leasing an EV through salary sacrifice versus a personal lease or PCP deal. It shows the BiK tax payable, the tax and NI savings, and the effective monthly cost. Most schemes require a minimum contract of 2-4 years.',
-      'Why EV salary sacrifice is the best UK perk in 2026. BiK rate for pure electric vehicles: 3% in 2026/27 (was 2% to April 2025), rising 1% per year to 7% by 2030. On a £50,000 Tesla Model 3 at 3% BiK: £1,500 BiK value × 40% income tax = £600/year tax. Plus £255 employee NI (8% on first £24k of sacrifice, 2% above). Total annual tax cost: £855. The same £50k taken as salary would attract £25k+ in tax.',
+      'Why EV salary sacrifice is the best UK perk in 2026. BiK rate for pure electric vehicles: 4% in 2026/27 (was 2% to April 2025, 3% in 2025/26), rising to 5% in 2027/28 then 9% by 2029/30. On a £50,000 Tesla Model 3 at 4% BiK: £2,000 BiK value × 40% income tax = £800/year tax. Plus £255 employee NI (8% on first £24k of sacrifice, 2% above). Total annual tax cost: £1,055. The same £50k taken as salary would attract £25k+ in tax.',
       'How EV salary sacrifice works mechanically. You sacrifice gross salary in exchange for a fully insured, serviced, maintained EV. Typically 3-4 year lease. Monthly cost on payslip: list price ÷ months × (1 - tax_savings). On £50k EV, £700/month gross lease cost, but only £400-£500 net cost to higher-rate taxpayer after income tax + NI + BiK tax. Often cheaper than personal car finance for any similar vehicle.',
       'Compared to personal car ownership. Personal car finance on £50k EV: ~£800/month + insurance £700/year + servicing/MOT/breakdown £500/year + depreciation risk. Salary sacrifice: £400-£500/month all-in, no insurance/servicing/MOT/breakdown to pay (included), no depreciation risk (return at end). Catch: you don\'t own at end. Trade-off: cash + ownership vs perk + flexibility.',
-      'Things to watch in EV salary sacrifice. (1) Minimum Wage floor — sacrifice cannot take you below £12.71/hr × hours; (2) Termination — leaving employer typically requires paying off remaining lease (some employers cover); (3) Cars over £40k attract £410/year \'expensive car supplement\' for years 2-6 (now applies to EVs since April 2025); (4) Future BiK rises — rate will be 7% by 2030; (5) Family use — partner/family can drive the company car (becomes BiK for primary employee).',
+      'Things to watch in EV salary sacrifice. (1) Minimum Wage floor — sacrifice cannot take you below £12.71/hr × hours; (2) Termination — leaving employer typically requires paying off remaining lease (some employers cover); (3) Cars over £40k attract £440/year \'expensive car supplement\' for years 2-6 (EV threshold rose to £50k from April 2026); (4) Future BiK rises — rate will be 7% by 2030; (5) Family use — partner/family can drive the company car (becomes BiK for primary employee).',
     ],
     example: {
       title: 'Example: £45,000 salary, Tesla Model 3, £450/month lease',
       steps: [
         'Monthly salary sacrifice: £450 (from gross pay)',
         'P11D value: £42,000',
-        'BiK at 3% (2026/27): £42,000 x 3% = £1,260/year',
-        'BiK tax at 40%: £504/year (£42/month)',
+        'BiK at 4% (2026/27): £42,000 x 4% = £1,680/year',
+        'BiK tax at 40%: £672/year (£56/month)',
         'Income tax saving: £450 x 40% = £180/month',
         'NI saving: £450 x 8% = £36/month',
-        'Net monthly cost: £450 - £180 - £36 + £42 = £276',
+        'Net monthly cost: £450 - £180 - £36 + £56 = £290',
       ],
     },
     sourceUrl: 'https://www.gov.uk/tax-on-company-benefits/tax-on-benefit-in-kind',
@@ -7014,10 +7014,10 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   'road-trip-cost-calculator': {
     howItWorks: [
       'Planning a UK road trip budget means accounting for fuel, tolls, parking, accommodation and food. Fuel is usually the largest variable cost: divide your total distance by your car\'s MPG, convert to litres (multiply by 4.546) and multiply by the price per litre. A 500-mile trip in a 40 MPG car at £1.40/litre costs approximately £80 in fuel.',
-      'Major UK tolls include the M6 Toll (£8 for cars), Dartford Crossing (£2.50 online), Humber Bridge (£2.00), Severn Bridge (free since 2018) and the Mersey Gateway (£2.00). Parking costs vary hugely: free in rural areas, £5-£15/day in towns and £20-£50/day in city centres. National Trust and English Heritage car parks are free for members.',
+      'Major UK tolls include the M6 Toll (£8.40 car off-peak, up to £11.10 weekday peak), Dartford Crossing (£2.50 online), Humber Bridge (£1.50 for cars since 2012), Severn Bridge (free since 2018) and the Mersey Gateway (£2.30). Parking costs vary hugely: free in rural areas, £5-£15/day in towns and £20-£50/day in city centres. National Trust and English Heritage car parks are free for members.',
       'This calculator lets you plan your entire trip budget by entering your route, vehicle details, number of nights, accommodation budget and planned stops. It produces a complete cost breakdown and per-person split for shared trips.',
       '<strong>UK road trip cost components.</strong> Fuel: most variable cost. £1.45/litre × 4.546 = £6.59/gallon. 40 mpg car: 16.5p/mile fuel. 1,000-mile round trip = £165 fuel. Accommodation: B&B £80-£150/night; budget hotel £60-£100; mid-range £100-£200; premium £200-£500. Average UK road trip 5 days: £400-£1,000 accommodation. Food: £30-£60/day pp eating in pubs and cafés; £15-£30/day self-catering.',
-      '<strong>Toll roads and bridges UK 2026.</strong> M6 Toll (Birmingham bypass): £8.30 car (weekday peak). Dartford Crossing (London): £2.50 car. Severn Bridges (England-Wales): FREE since 2018 (was £6.70). Mersey Gateway (Liverpool-Runcorn): £2 (need to register or fine). Tyne Tunnel (Newcastle): £1.90. Skye Bridge (Scotland): FREE since 2004. UK has fewer tolls than France or Spain — most roads free. Congestion zones: London £15/day; Birmingham £8/day (Clean Air Zone); Bath/Manchester/Bristol similar.',
+      '<strong>Toll roads and bridges UK 2026.</strong> M6 Toll (Birmingham bypass): £8.40 car off-peak, up to £11.10 weekday peak. Dartford Crossing (London): £2.50 car. Humber Bridge: £1.50 car (cut from £3 in 2012). Severn Bridges (England-Wales): FREE since 2018 (was £6.70). Mersey Gateway (Liverpool-Runcorn): £2.30 (need to register or fine). Tyne Tunnel (Newcastle): £2.30. Skye Bridge (Scotland): FREE since 2004. UK has fewer tolls than France or Spain — most roads free. Congestion zones: London £18/day; Birmingham £8/day (Clean Air Zone); Bath/Manchester/Bristol similar.',
       '<strong>EV road trip considerations.</strong> Range 250-350 miles real-world for premium EVs (Tesla Model Y, Polestar 2). Rapid charging stops: 20-30 min for 80% (10-80%). Network reliability: BP Pulse 91%; Pod Point 88%; Ionity 95% (most reliable). Cost: rapid charging 60-80p/kWh = 15-20p/mile (similar to petrol). Network apps: Zap-Map (best UK), A Better Routeplanner (route optimiser for EVs). Plan ahead — rural Scotland/Wales sparse charging.',
       '<strong>Best UK road trip routes.</strong> North Coast 500 (Scotland Highlands): 516 miles, 5-7 days, world-famous. Cornwall coast (St Ives → Land\'s End → Tintagel): 250 miles, 4-5 days. Wales Coast Path drive: 1,400 miles full, popular sections Pembrokeshire + Snowdonia. Lake District loop: 100 miles, 2-3 days. Cotswolds: 80 miles, 2 days. Cost estimates: NC500 £600-£1,200 pp; Cornwall £400-£800 pp; weekend trips £150-£400 pp.',
       '<strong>Saving on UK road trips.</strong> Off-season: Sep-May 30-50% cheaper than peak summer. Mid-week: hotels 20-40% cheaper. Self-catering cottages: £200-£500 for week (cheaper than hotels for 4+). Pubs with rooms: £60-£100/night includes breakfast. National Trust + English Heritage membership: £80-£120/year, free entry 350+ properties. Petrol Apps: PetrolPrices.com, GasBuddy — save 5-10p/litre. Camping/wild camping (Scotland): from £15/night to free. Total budget UK road trip: £300-£500 pp for 5 days achievable.',
@@ -7070,7 +7070,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       '<strong>UK income tax brackets 2026/27 visualised.</strong> Personal Allowance: £0-£12,570 (0% tax). Basic rate: £12,571-£50,270 (20%). Higher rate: £50,271-£125,140 (40%). Additional rate: £125,141+ (45%). Personal Allowance tapered between £100,000-£125,140 (lose £1 per £2 earnings = effective 60% marginal rate). National Insurance Class 1: 8% on £12,570-£50,270; 2% above. Scotland: 6 bands instead of 4.',
       '<strong>Total tax burden by salary level.</strong> £20k: tax £1,486 + NI £595 = £2,081 (10.4%). £30k: tax £3,486 + NI £1,395 = £4,881 (16.3%). £50k: tax £7,486 + NI £3,000 = £10,486 (21.0%). £75k: tax £17,432 + NI £3,495 = £20,927 (27.9%). £100k: tax £27,432 + NI £4,000 = £31,432 (31.4%). £150k: tax £53,703 + NI £4,500 = £58,203 (38.8%). £200k: tax £76,203 + NI £5,500 = £81,703 (40.9%).',
       '<strong>Marginal rates — what your next £1 costs.</strong> £12,570-£50,270: 28% (20% IT + 8% NI). £50,270-£100,000: 42% (40% IT + 2% NI). £100,000-£125,140: 62% (40% IT + 2% NI + 20% effective from PA taper). £125,140-£150,000: 47% (45% IT + 2% NI). £150,000+: 47%. The £100k-£125,140 \'tax cliff\': 62% marginal rate makes pension contributions / Gift Aid hugely attractive.',
-      '<strong>Scottish income tax 2026/27.</strong> Personal Allowance £12,570 (UK-wide). Starter rate 19%: £12,571-£14,876. Basic 20%: £14,877-£26,561. Intermediate 21%: £26,562-£43,662. Higher 42%: £43,663-£75,000. Advanced 45%: £75,001-£125,140. Top 48%: above £125,140. Scottish 42% rate kicks in at £43,663 vs English £50,270 — middle-income Scots pay more. £50k earner: Scotland £11,407 vs England £7,486 — Scot pays £3,921 more.',
+      '<strong>Scottish income tax 2026/27.</strong> Personal Allowance £12,570 (UK-wide). Starter rate 19%: £12,571-£15,397. Basic 20%: £15,398-£27,491. Intermediate 21%: £27,492-£43,662. Higher 42%: £43,663-£75,000. Advanced 45%: £75,001-£125,140. Top 48%: above £125,140. Scottish 42% rate kicks in at £43,663 vs English £50,270 — middle-income Scots pay more. £50k earner: Scotland £9,014 vs England £7,486 — Scot pays £1,528 more.',
       '<strong>Effective vs marginal — when each matters.</strong> Effective rate: total tax ÷ total income. Use for: planning take-home budget, comparing job offers. Marginal rate: rate on next £1. Use for: pension contribution decisions, salary sacrifice, accepting overtime, claiming Marriage Allowance. Higher marginal rate = pension contribution more efficient. £100k earner (60% marginal): £1,000 pension contribution costs £400 net — save £600. £30k earner (28% marginal): £1,000 contribution costs £720 — save £280.',
     ],
     example: {
@@ -7095,7 +7095,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       '<strong>UK business mileage rates 2026/27.</strong> Approved Mileage Allowance Payments (AMAP): 45p/mile first 10,000 business miles per tax year; 25p/mile thereafter. Motorcycles: 24p/mile any distance. Bicycles: 20p/mile. Passenger supplement: 5p/mile for each colleague. Electric vehicles: same 45p/25p rates (despite cheaper running costs). Self-employed: claim AMAP via Self Assessment. Employees: claim difference if employer pays less.',
       '<strong>What counts as business mileage.</strong> Eligible: travel between client sites; visits to other office locations; meetings outside usual workplace; training courses; conferences. NOT eligible: commute from home to regular workplace (HMRC\'s \'ordinary commuting\'); private detours; lunch breaks. Site-based workers (no fixed office): all travel from home is business mileage. Temporary workplace (under 24 months): travel from home is business. Permanent workplace: home commute is private.',
       '<strong>Record-keeping requirements.</strong> Keep for 5 years after the tax year. For each trip record: date, start address/destination, business reason, miles travelled. HMRC accepts: paper logbook; smartphone app (MileIQ, TripLog, Hurdlr — UK-compatible); spreadsheet. Reconcile with MOT/service records (odometer readings). Failure to keep records: HMRC can disallow claim entirely. App auto-tracking via GPS: easiest method, ~£40-£80/year subscription.',
-      '<strong>HMRC mileage rules for company cars.</strong> Different from AMAP — Advisory Fuel Rates (AFR) used. Sample 2026 AFR: petrol up to 1400cc 14p/mile; 1401-2000cc 17p; over 2000cc 25p. Diesel: 13p/14p/17p. Electric vehicle: 8p/mile (reviewed quarterly — was 5p, raised Dec 2024 reflecting electricity costs). Reimburses fuel only, NOT full running costs. Company car drivers cannot use AMAP. Employer pays AFR; any shortfall is taxable BIK to employee.',
+      '<strong>HMRC mileage rules for company cars.</strong> Different from AMAP — Advisory Fuel Rates (AFR) used. Sample 2026 AFR: petrol up to 1400cc 14p/mile; 1401-2000cc 17p; over 2000cc 25p. Diesel: 13p/14p/17p. Electric vehicle: from 1 June 2026, 7p/mile for home charging and 15p/mile for public charging (reviewed quarterly — HMRC now splits home vs public rates). Reimburses fuel only, NOT full running costs. Company car drivers cannot use AMAP. Employer pays AFR; any shortfall is taxable BIK to employee.',
       '<strong>Claiming over AMAP — tax implications.</strong> Employer pays MORE than 45p/25p: excess is taxable income via PAYE. Employer pays LESS than AMAP: employee can claim difference via Self Assessment OR P87 form. Sample: employer pays 25p/mile from mile 1; employee did 5,000 miles. Claim relief on 5,000 × (45p − 25p) = £1,000. Higher-rate taxpayer saves £400 tax. Self-employed: claim full AMAP rates against profit before tax. Limit: HMRC scrutinises high mileage claims (>15,000/year) — expect investigation.',
     ],
     example: {
@@ -7109,7 +7109,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/expenses-and-benefits-business-travel-mileage/rules-for-tax',
-    sourceName: 'GOV.UK \u2013 Business Travel Mileage',
+    sourceName: 'GOV.UK \u2014 Business Travel Mileage',
     lastUpdated: 'April 2026',
   },
   'pension-sharing-divorce-calculator': {
@@ -7213,16 +7213,16 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/guidance/use-software-to-send-income-tax-updates',
-    sourceName: 'GOV.UK \u2013 Making Tax Digital for Income Tax',
+    sourceName: 'GOV.UK \u2014 Making Tax Digital for Income Tax',
     lastUpdated: 'April 2026',
   },
   'congestion-charge-calculator': {
     howItWorks: [
-      'The London Congestion Charge is £15 per day for driving within the Congestion Charge Zone in central London. The zone operates Monday to Friday, 7am-6pm, and weekends and bank holidays 12pm-6pm. Payment must be made by midnight on the day of travel or by midnight on the following charging day for a £17.50 late payment.',
+      'The London Congestion Charge is £18 per day (from 2 January 2026) for driving within the Congestion Charge Zone in central London. The zone operates Monday to Friday, 7am-6pm, and weekends and bank holidays 12pm-6pm. Pay in advance or by midnight on the day of travel for £18; paying by midnight of the third day after travel costs £21.',
       'Certain vehicles are exempt or receive discounts. Electric vehicles (zero-emission capable) registered with TfL are exempt through the Cleaner Vehicle Discount. Residents within the zone receive a 90% discount. Blue Badge holders, licensed taxis, buses and some hybrid vehicles also qualify for exemptions or discounts.',
       'Auto Pay can be set up to automatically charge your account each day your vehicle enters the zone, avoiding the risk of late payment penalties (£160, reduced to £80 if paid within 14 days). This calculator estimates your weekly and annual congestion charge costs based on how often you drive into the zone.',
-      'London Congestion Charge 2026. £15/day for vehicles entering the central London Congestion Charge Zone (CCZ) between 07:00-18:00 Monday-Friday, 12:00-18:00 Saturday-Sunday and bank holidays. Pay via TfL website (apps), at shops with PayPoint, or AutoPay (recommended — registers card, auto-charges monthly). Late payment penalties: £80 within 14 days, £160 if longer.',
-      'ULEZ vs Congestion Charge — different things. ULEZ: £12.50/day, ALL OF LONDON (since August 2023), 24/7 every day, for non-compliant vehicles only. Congestion Charge: £15/day, central London only, weekday/weekend daytime, ALL vehicles regardless of emissions (until 2026). If you enter central London in a non-compliant ICE car on weekday: pay BOTH £12.50 ULEZ + £15 Congestion = £27.50/day.',
+      'London Congestion Charge 2026. £18/day (from 2 January 2026) for vehicles entering the central London Congestion Charge Zone (CCZ) between 07:00-18:00 Monday-Friday, 12:00-18:00 Saturday-Sunday and bank holidays. Pay via TfL website (apps), at shops with PayPoint, or AutoPay (recommended — registers card, auto-charges monthly). Late payment penalties: £80 within 14 days, £160 if longer.',
+      'ULEZ vs Congestion Charge — different things. ULEZ: £12.50/day, ALL OF LONDON (since August 2023), 24/7 every day, for non-compliant vehicles only. Congestion Charge: £18/day (from 2 January 2026), central London only, weekday/weekend daytime, ALL vehicles regardless of emissions. If you enter central London in a non-compliant ICE car on weekday: pay BOTH £12.50 ULEZ + £18 Congestion = £30.50/day.',
       'Exempt vehicles. Fully exempt: licensed black taxis, vehicles for blue badge holders (registered), motorcycles, mopeds, electric vehicles (until December 2025 — exemption ending), some emergency vehicles. Auto Pay reduces cost to £14/day (saves £1/day for regular users). Resident discount: 90% off for 4-5 years for those living within CCZ (rare these days).',
       'Other UK Clean Air Zones with charges. Bath CAZ: £9/day private cars (Class D), £100/day HGVs. Birmingham CAZ: £8/day cars + commercial. Bristol, Sheffield, Portsmouth: various rates. Manchester CAZ: cancelled 2022. Most charge non-compliant vehicles only — check via local authority website + Vehicle Compliance Checker. Glasgow LEZ: ban non-compliant vehicles entirely (£60 fine), no daily charge option.',
     ],
@@ -7266,7 +7266,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'student-loan-plan4-calculator': {
     howItWorks: [
-      'Plan 4 applies to students who took out loans from the Student Awards Agency for Scotland (SAAS) or who started undergraduate courses in England or Wales before September 2012 and now live in Scotland. The repayment threshold for 2026/27 is £33,795 \u2014 the highest of all UK plan types.',
+      'Plan 4 applies to Scottish-domiciled students who took out loans from the Student Awards Agency for Scotland (SAAS). It was introduced in April 2021, when SAAS borrowers previously on Plan 1 were moved across to the higher Plan 4 threshold. Your plan is fixed by who lent you the money and when — moving home from England or Wales to Scotland does NOT switch you to Plan 4. The repayment threshold for 2026/27 is £33,795 \u2014 the highest of all UK plan types.',
       'You repay 9% of everything you earn above £33,795. The interest rate on Plan 4 is the lower of RPI or the Bank of England base rate plus 1%. Plan 4 loans are written off when you turn 65 (or 25 years after the April you were first eligible to repay, whichever comes first).',
       'Enter your salary to see monthly and annual repayments. If you are on Plan 4 plus a Postgraduate Loan, both are deducted separately. The higher threshold means Scottish graduates repay less per month than English graduates on the same salary.',
       'Plan 4 — Scotland-specific student loan. Plan 4 applies to Scottish students (lived in Scotland when course started). 2026/27 threshold £33,795 — higher than English Plan 2 (£29,385). 9% repayment on income above threshold. Plus loan interest cap RPI (much lower than Plan 2\'s RPI + up to 3%). Significantly more generous than English plans.',
@@ -7343,10 +7343,10 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'Fuel cost per mile depends on your car\'s MPG and the fuel price. At 40 MPG and £1.42/litre, fuel costs 16.1p per mile. Fixed costs (insurance, tax, MOT) should be divided by annual mileage — a car costing £2,000/year in fixed costs driven 10,000 miles adds 20p per mile, but only 10p per mile at 20,000 miles.',
       'This calculator breaks down your total per-mile cost across all categories. It is useful for comparing car choices, deciding whether to drive or take the train, calculating fair ride-share contributions, and understanding HMRC mileage allowance rates (45p/mile for the first 10,000 miles).',
       '<strong>UK Pay-Per-Mile proposals 2026.</strong> Government consultation 2024-2026: replace Vehicle Excise Duty (road tax) with per-mile road pricing. Drivers pay per mile driven, not flat annual fee. Rationale: EV revolution eliminates fuel duty revenue (£26 billion/year). Proposed rates: 2-5p/mile for EVs, 5-10p/mile for petrol/diesel. Implementation 2026-2030 expected. Combines with GPS tracking via vehicle telematics or smartphone apps.',
-      '<strong>Pay-per-mile vs current Vehicle Excise Duty.</strong> Current VED 2026: £180-£300/year typical petrol/diesel; £0 for EVs (until April 2025 when EV road tax begins £190/year). Pay-per-mile alternative: average UK driver 8,000-10,000 miles/year × 5p = £400-£500. Heavy users (15,000+ miles): £750+ — more expensive than VED. Low users (5,000 miles): £250 — cheaper. Equalises burden by use rather than ownership.',
+      '<strong>Pay-per-mile vs current Vehicle Excise Duty.</strong> Current VED 2026: £180-£300/year typical petrol/diesel; £0 for EVs (until April 2025 when EV road tax begins — £200/year standard rate in 2026/27). Pay-per-mile alternative: average UK driver 8,000-10,000 miles/year × 5p = £400-£500. Heavy users (15,000+ miles): £750+ — more expensive than VED. Low users (5,000 miles): £250 — cheaper. Equalises burden by use rather than ownership.',
       '<strong>Privacy concerns with road pricing.</strong> GPS tracking sparks concerns: government knowing where every car goes. Proposed alternatives: monthly self-declared mileage; MOT-reported odometer (annual settle-up); per-mile smart insurance integration. Pilot schemes (UK, Netherlands, Singapore) test various tracking methods. UK ICO and Information Commissioner involved in design. Public opposition to GPS tracking strong — 60%+ in YouGov polls. Likely outcome: monthly reading via smart meter equivalent for cars.',
-      '<strong>EV road pricing reform.</strong> Pre-April 2025: EVs paid £0 VED — major incentive. From April 2025: EVs pay £10 first year + £190/year standard rate (matching petrol). \'Expensive car supplement\' (over £40,000 new): additional £390/year for 5 years (applies to all cars including EVs from April 2025). Pay-per-mile would replace this — drives policy debate. EV owners argue: paid premium upfront for clean transport, now penalised. Government: must recover lost fuel duty somehow.',
-      '<strong>Plan for 2026+ vehicle taxation.</strong> Likely transition: VED retained through 2027-2028, replaced by per-mile pricing 2030+. Mileage thresholds for EVs lower than ICE: incentivises EV adoption. London Congestion Charge (£15/day) and ULEZ (£12.50/day) already form de facto per-mile system. Some boroughs trial \'workplace parking levy\' (Nottingham). Forecast: average UK driver £300-£500/year road taxation 2030, similar to current. Heavy users penalised; low users rewarded.',
+      '<strong>EV road pricing reform.</strong> Pre-April 2025: EVs paid £0 VED — major incentive. From April 2025: EVs pay £10 first year + standard rate from year two (£200/year in 2026/27, matching petrol). \'Expensive car supplement\': additional £440/year for 5 years — threshold £40,000 for petrol/diesel, raised to £50,000 for EVs from April 2026. Pay-per-mile would replace this — drives policy debate. EV owners argue: paid premium upfront for clean transport, now penalised. Government: must recover lost fuel duty somehow.',
+      '<strong>Plan for 2026+ vehicle taxation.</strong> Likely transition: VED retained through 2027-2028, replaced by per-mile pricing 2030+. Mileage thresholds for EVs lower than ICE: incentivises EV adoption. London Congestion Charge (£18/day) and ULEZ (£12.50/day) already form de facto per-mile system. Some boroughs trial \'workplace parking levy\' (Nottingham). Forecast: average UK driver £300-£500/year road taxation 2030, similar to current. Heavy users penalised; low users rewarded.',
     ],
     example: {
       title: 'Example: Ford Focus, 10,000 miles/year',
@@ -7385,7 +7385,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/council-tax-bands',
-    sourceName: 'GOV.UK - Council Tax Bands',
+    sourceName: 'GOV.UK — Council Tax Bands',
     lastUpdated: 'April 2026',
   },
 
@@ -7414,7 +7414,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/working-for-yourself',
-    sourceName: 'GOV.UK \u2013 Working for Yourself',
+    sourceName: 'GOV.UK \u2014 Working for Yourself',
     lastUpdated: 'April 2026',
   },
   'apprenticeship-levy-calculator': {
@@ -7438,7 +7438,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/guidance/pay-apprenticeship-levy',
-    sourceName: 'GOV.UK \u2013 Pay Apprenticeship Levy',
+    sourceName: 'GOV.UK \u2014 Pay Apprenticeship Levy',
     lastUpdated: 'April 2026',
   },
   'shared-parental-pay-calculator': {
@@ -7471,7 +7471,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'Moving costs include removal company (£500-£1,500), redirected mail (£50-£100), and potentially storage fees. Ongoing costs to budget for include buildings and contents insurance, council tax, utility setup fees and any immediate repairs or redecoration needed before moving in.',
       'This calculator totals all purchase, mortgage, legal and moving costs to show the full amount you need to have available beyond your deposit. Enter the property price, deposit, mortgage details and select which optional costs apply to get a comprehensive total.',
       '<strong>True cost of buying a UK home 2026.</strong> Sample £300,000 purchase. Deposit (10%): £30,000. Stamp Duty (FTB): £0. Solicitor/conveyancing: £1,500. Survey (HomeBuyer Report): £600. Mortgage arrangement fee: £999. Mortgage broker (if used): £0-£500. Removals: £900. EPC if missing: £80. Buildings insurance year 1: £300. Initial decoration/repairs: £1,000. Total upfront: £35,379 (£5,379 beyond deposit). Hidden monthly: mortgage + council tax + utilities + maintenance fund.',
-      '<strong>SDLT for first-time buyer 2026/27.</strong> 0% to £425,000 (no SDLT). 5% £425,001-£625,000. Above £625,000: full standard SDLT rates (no FTB relief). Sample: £400k FTB pays £0. £500k FTB pays £3,750 (5% × £75k). £700k FTB pays full SDLT £24,750 (no FTB relief). Standard buyer £300k: £2,500. Second home £300k: £20,000 (including 5% surcharge).',
+      '<strong>SDLT for first-time buyer 2026/27.</strong> 0% to £300,000 (no SDLT). 5% £300,001-£500,000. Above £500,000: full standard SDLT rates (no FTB relief). Sample: £400k FTB pays £5,000 (5% × £100k). £500k FTB pays £10,000 (5% × £200k). £700k FTB pays full standard SDLT £25,000 (no relief over £500k). Standard buyer £300k: £5,000. Second home £300k: £20,000 (including 5% surcharge).',
       '<strong>Monthly running costs to budget.</strong> Mortgage payment (£270k loan at 4.5% over 25 years): £1,500/month. Council tax: £100-£250/month depending on band. Buildings + contents insurance: £25-£50/month. Utilities (gas + electric): £150-£250/month. Water: £30-£50/month. Broadband: £25-£40/month. TV licence: £13/month. Maintenance fund (1% of property value/year): £250/month. Total: £2,100-£2,500/month for £300k property.',
       '<strong>Hidden costs beyond purchase.</strong> Sale of existing property: estate agent 1-1.5% + VAT = £3,000-£5,400 on £300k. Moving fees: £700-£1,800. Mortgage early repayment charge if switching during fix: 1-5% of balance. Major home repairs (boiler, roof, structural): £3,000-£15,000+ each. Service charge if leasehold: £1,000-£5,000/year. Ground rent (older leases): £100-£500/year. Reserve maintenance fund (sinking fund): contributes to major works.',
       '<strong>Help to buy / first-time buyer schemes 2026.</strong> Lifetime ISA: £4,000/year + 25% government bonus (max £1,000/year). First Homes: 30-50% discount on new builds, income cap £80k (£90k London). Shared Ownership: 25-75% share + rent. Mortgage Guarantee Scheme: 95% LTV mortgages with government insurance. Family Springboard / Deposit Boost: parent puts savings as security. Combined schemes save typical FTB £10,000-£30,000+ over standard purchase route.',
@@ -7500,7 +7500,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       '<strong>What is Council Tax Reduction (CTR)?</strong> Means-tested discount on Council Tax bill. Replaced former Council Tax Benefit in April 2013 — administered by each local council with own scheme (not national). Working-age scheme varies massively: some councils max 100% reduction, others cap at 80% or less. Pension-age: national scheme — full reduction if income at Pension Credit threshold. Don\'t confuse with: single person discount (25% — automatic), disabled band reduction (band below), or empty property exemption (separate scheme).',
       '<strong>Income and capital limits 2026.</strong> Capital (savings, investments excluding primary home): under £6,000 — full disregard; £6,000-£16,000 — partial disregard (£1/week per £250 above £6k); over £16,000 — no CTR (usually). Pension-age: same capital rules but if claiming Pension Credit Guarantee, capital ignored. Income limits vary by council scheme — typically allow some earned income, all of benefits, child maintenance often disregarded. Disability benefits (PIP, AA, DLA): usually disregarded (don\'t reduce CTR).',
       '<strong>How to apply for CTR.</strong> Apply via local council website (search \'[council name] council tax reduction\'). Need: NI numbers (you and partner), proof of income (payslips, benefit letters, pension statements), bank statements (last 2 months), proof of identity, council tax account number. Processing time: 4-8 weeks. Backdated 1 month standard (3 months if \'good cause\' — e.g. illness, missing info). Apply quickly after income drops — every week of delay loses money.',
-      '<strong>CTR with Universal Credit.</strong> Receiving UC doesn\'t automatically qualify for CTR — separate application required. Some councils auto-link via DWP data; others require manual application. UC income IS counted toward CTR calculation. Sample: single person receiving UC standard allowance £393.45/month = £91/week. Council may allow £30/week income disregard before tapering CTR. Result: typically 60-100% reduction depending on council. Working hours: UC taper (55% kept) interacts with CTR taper — combined effective marginal rate often 70-85%.',
+      '<strong>CTR with Universal Credit.</strong> Receiving UC doesn\'t automatically qualify for CTR — separate application required. Some councils auto-link via DWP data; others require manual application. UC income IS counted toward CTR calculation. Sample: single person receiving UC standard allowance £424.90/month = £98/week. Council may allow £30/week income disregard before tapering CTR. Result: typically 60-100% reduction depending on council. Working hours: UC taper (55% kept) interacts with CTR taper — combined effective marginal rate often 70-85%.',
       '<strong>Pensioner CTR — automatic for some.</strong> National scheme for pension-age (66+) more generous and consistent. Pension Credit recipients: 100% Council Tax reduction usually. Income above Pension Credit threshold but below £x (council-specific): tapered reduction. Pension Credit currently underclaimed — 1.3 million pensioners eligible don\'t claim. Apply for Pension Credit FIRST (DWP); CTR follows automatically in many councils. Worth checking entitlement at gov.uk/pension-credit-calculator — typical award £3,000-£4,000/year plus CTR plus Housing Benefit plus free TV licence.',
     ],
     example: {
@@ -7577,7 +7577,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'This calculator shows the purchase price after the discount, compares it with the market value, estimates your mortgage payments on the reduced price and calculates the stamp duty (first-time buyer relief usually applies). It also models future equity growth based on assumed house price appreciation.',
       '<strong>What is the First Homes scheme?</strong> Government-backed scheme launched 2021 — first-time buyers buy newly-built homes at 30-50% discount to open market value. Discount stays with the property forever (passed to next buyer). Income cap: £80,000 household (£90,000 in London). Maximum property values: £250,000 after discount (£420,000 London). Eligibility: first-time buyer, key worker priority in many areas, local connection preferred. Available only on new-build participating developments.',
       '<strong>How First Homes pricing works.</strong> Sample: open market value £280,000. 30% discount: buy at £196,000. Save £84,000 upfront. Future sale: must sell at 30% discount of NEW market value (e.g. £350,000 → sell at £245,000). Discount permanent. Mortgage: only on discount-price (£196,000), not market value — easier to afford. Deposit: still 5-10% of discounted price typical (£10k-£20k vs £14k-£28k market price).',
-      '<strong>First Homes vs other government schemes.</strong> Help to Buy: replaced by First Homes April 2023 (HTB equity loan ended). Shared Ownership: buy 25-75% share, pay rent on rest; First Homes 100% ownership at discount. Lifetime ISA: £4,000/year + 25% government bonus = £1,000/year toward first home. Stamp Duty: First-time buyer threshold £425,000 (no SDLT below). Mortgage Guarantee Scheme: government underwrites 95% LTV mortgages — separate from First Homes.',
+      '<strong>First Homes vs other government schemes.</strong> Help to Buy: replaced by First Homes April 2023 (HTB equity loan ended). Shared Ownership: buy 25-75% share, pay rent on rest; First Homes 100% ownership at discount. Lifetime ISA: £4,000/year + 25% government bonus = £1,000/year toward first home. Stamp Duty: First-time buyer threshold £300,000 (no SDLT below; reverted from the temporary £425,000 on 1 April 2025). Mortgage Guarantee Scheme: government underwrites 95% LTV mortgages — separate from First Homes.',
       '<strong>Local eligibility criteria.</strong> Each council sets local rules. Common requirements: live or work in local authority area 3+ years; key worker (NHS, teacher, police, armed forces); on housing waiting list; First Homes for first 3 months only available to local residents (then opens to wider area). London priority: typically lower income cap, higher discount (40-50%). Rural exceptions: smaller developments in villages (Section 106 housing).',
       '<strong>Hidden considerations and risks.</strong> First Homes are \'restricted resale\' — must always sell at original discount %. Limits future capital gain. Mortgage lenders accepting First Homes: Halifax, Barclays, Nationwide, Skipton — but lender choice narrower than full-price market. Some restrictions on letting (typically must be primary residence). Service charges on flats: same as full-price flats — can be £2-£5k/year. Build quality concerns: research developer (NHBC reviews, Trustpilot). Overall: strong scheme for first-time buyers without family help; less attractive if you expect to move within 5 years (limited capital gain).',
     ],
@@ -7641,7 +7641,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/invoicing-and-taking-payment-from-customers',
-    sourceName: 'GOV.UK \u2013 Invoicing and Taking Payment',
+    sourceName: 'GOV.UK \u2014 Invoicing and Taking Payment',
     lastUpdated: 'April 2026',
   },
   'employee-vs-contractor-calculator': {
@@ -7666,7 +7666,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/guidance/check-employment-status-for-tax',
-    sourceName: 'GOV.UK \u2013 Check Employment Status for Tax',
+    sourceName: 'GOV.UK \u2014 Check Employment Status for Tax',
     lastUpdated: 'April 2026',
   },
   'standing-charge-savings-calculator': {
@@ -7814,7 +7814,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/guidance/check-employment-status-for-tax',
-    sourceName: 'GOV.UK \u2013 Check Employment Status for Tax',
+    sourceName: 'GOV.UK \u2014 Check Employment Status for Tax',
     lastUpdated: 'April 2026',
   },
   'postgraduate-loan-cost-calculator': {
@@ -7960,7 +7960,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/annual-accounts',
-    sourceName: 'GOV.UK \u2013 Annual Accounts',
+    sourceName: 'GOV.UK \u2014 Annual Accounts',
     lastUpdated: 'April 2026',
   },
   'freelance-quote-calculator': {
@@ -7985,30 +7985,30 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ]
     },
     sourceUrl: 'https://www.gov.uk/set-up-sole-trader',
-    sourceName: 'GOV.UK \u2013 Set Up as a Sole Trader',
+    sourceName: 'GOV.UK \u2014 Set Up as a Sole Trader',
     lastUpdated: 'April 2026',
   },
   'car-tax-calculator': {
     howItWorks: [
       'Vehicle Excise Duty (VED), commonly called car tax or road tax, is charged annually and collected by the DVLA. The amount you pay depends on when your vehicle was first registered, its fuel type and CO2 emissions. From April 2025, electric vehicles are no longer exempt — they now pay the lowest first-year rate and the standard annual rate from year two.',
-      'For petrol and diesel cars registered after 1 April 2017, first-year rates are based on CO2 emissions and range from £0 (under 1g/km) to over £2,000 for the highest-emission vehicles. From year two, most cars pay the standard annual rate (£195 in 2026/27). Cars with a list price over £40,000 pay an additional £620 per year for the first five years on top of the standard rate.',
+      'For petrol and diesel cars registered after 1 April 2017, first-year rates are based on CO2 emissions and range from £10 (0g/km) to £5,690 for the highest-emission vehicles (2026/27 — rates doubled in April 2025 then uprated). From year two, most cars pay the standard annual rate (£200 in 2026/27). Cars with a list price over £40,000 pay an additional £440 per year for the first five years on top of the standard rate.',
       'Vehicles registered between 1 March 2001 and 31 March 2017 are taxed under the old banding system based on CO2 emissions, with Band A (up to 100g/km) paying nothing and higher bands paying up to £695.',
-      'How Vehicle Excise Duty (VED / car tax) works. For cars registered after April 2017: First-year rate depends on CO2 emissions (£0 for 0g, up to £2,755 for 255g+). Standard annual rate from year 2: £190 petrol/diesel, £180 alternative fuels. Plus £410 \'expensive car supplement\' for years 2-6 if list price exceeded £40,000. For cars registered before April 2017: based on CO2 emissions or engine size (older cars), with rates from £20 to £695/year.',
-      'Major change April 2025 — EVs now pay VED. Electric vehicles registered from April 2025 pay £10 first-year rate, then £190 standard. EVs from 2017-2025: £0 in year 1 + £190 from year 2 (effective April 2025). EVs before 2017: £20/year. The expensive car supplement ALSO applies to EVs from April 2025 — most premium EVs (Tesla Model 3, BMW i4, Polestar 2, Mercedes EQE) cost £40k+ list price and incur £410/year for 5 years.',
+      'How Vehicle Excise Duty (VED / car tax) works. For cars registered after April 2017: First-year rate depends on CO2 emissions (£10 for 0g, up to £5,690 for 255g+ in 2026/27 — rates doubled in April 2025 then uprated). Standard annual rate from year 2: £200 for all cars in 2026/27 (the £10 alternative-fuel discount was removed in April 2025). Plus £440 \'expensive car supplement\' for years 2-6 if list price exceeds £40,000 (£50,000 for EVs from April 2026). For cars registered before April 2017: based on CO2 emissions or engine size (older cars), with rates from £20 to £695/year.',
+      'Major change April 2025 — EVs now pay VED. Electric vehicles registered from April 2025 pay £10 first-year rate, then the standard rate from year two (£200 in 2026/27). EVs from 2017-2025: £0 in year 1 + £200 from year 2 (VED on EVs began April 2025). EVs before 2017: £20/year. The expensive car supplement also applies to EVs — but from April 2026 the EV threshold rose to £50,000 (from £40,000), so only premium EVs over £50k (e.g. Mercedes EQE) incur £440/year for 5 years.',
       'When and how to pay. Online via gov.uk/vehicle-tax — annual, 6-monthly (5% surcharge), or monthly Direct Debit (10% surcharge). DVLA sends reminder ~3 weeks before expiry. You must tax the vehicle even if exempt (£0 rate) — gov.uk records it as \'taxed\'. Untaxed vehicles are subject to £80 fine or vehicle clamping if seen on public roads (ANPR cameras detect untaxed cars in seconds).',
       'Exemptions and reductions. £0 rate categories: vehicles for disabled drivers (DLA/PIP higher rate mobility), historic vehicles (40+ years old, no commercial use), agricultural vehicles, mobility scooters/wheelchairs, electric vehicles registered before April 2017 (still £0 from April 2025). 50% reduction: disabled people getting PIP standard mobility component. SORN (Statutory Off-Road Notification): no VED required if not driven on public roads.',
     ],
     example: {
       title: 'Example: New petrol car, 120g/km CO2, list price £28,000',
       steps: [
-        'First-year rate (120g/km CO2): £220',
-        'Standard rate from year 2: £195/year',
+        'First-year rate (120g/km CO2): £455',
+        'Standard rate from year 2: £200/year',
         'List price under £40,000: no premium rate surcharge',
-        'Total cost over 3 years: £220 + £195 + £195 = £610',
+        'Total cost over 3 years: £455 + £200 + £200 = £855',
       ],
     },
     sourceUrl: 'https://www.gov.uk/vehicle-tax-rate-tables',
-    sourceName: 'DVLA – Vehicle tax rate tables',
+    sourceName: 'DVLA — Vehicle tax rate tables',
     lastUpdated: 'April 2026',
   },
 
@@ -8032,7 +8032,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ],
     },
     sourceUrl: 'https://www.gov.uk/tax-codes',
-    sourceName: 'HMRC – Understanding your tax code',
+    sourceName: 'HMRC — Understanding your tax code',
     lastUpdated: 'April 2026',
   },
 
@@ -8057,7 +8057,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ],
     },
     sourceUrl: 'https://www.gov.uk/buying-a-car',
-    sourceName: 'GOV.UK – Buying a car',
+    sourceName: 'GOV.UK — Buying a car',
     lastUpdated: 'April 2026',
   },
 
@@ -8082,20 +8082,20 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ],
     },
     sourceUrl: 'https://www.gov.uk/guidance/advisory-fuel-rates',
-    sourceName: 'HMRC – Advisory fuel rates',
+    sourceName: 'HMRC — Advisory fuel rates',
     lastUpdated: 'April 2026',
   },
 
   'carer-allowance-calculator': {
     howItWorks: [
-      "<a href='/calculator/carer-allowance-calculator/' class='text-primary underline'>Carer\'s Allowance</a> is the main state benefit for unpaid carers. For 2026/27 it pays £81.90 per week (£4,258.80 per year). To qualify you must care for someone for at least 35 hours per week who receives a qualifying disability benefit: PIP Daily Living (either rate), Attendance Allowance, or DLA care component at the middle or highest rate.",
-      "There is a weekly net earnings limit of £151. After deducting income tax, NI, pension contributions, and 50% of any qualifying pension premium costs, your net weekly earnings must not exceed this amount. If you earn more in any given week, <a href='/calculator/carer-allowance-calculator/' class='text-primary underline'>Carer\'s Allowance</a> is not payable for that week.",
-      "Claiming Carer's Allowance also entitles you to the Carer Element in Universal Credit (£198.31/month in 2026/27). If you already receive State Pension or another benefit at the same or higher rate, you may be 'underlying entitled' — you won't receive the cash payment but still qualify for the Carer Element in UC.",
-      '<strong>Carer\'s Allowance updated rate 2026/27.</strong> Rate raised from £81.90 to £83.30/week April 2026 (£4,331.60/year). Earnings limit raised from £151 to £196/week net. Many resources still quote old figures — official source is gov.uk/carers-allowance. Paid weekly or every 4 weeks via bank transfer. Counts as taxable income for HMRC but no NI required.',
+      "<a href='/calculator/carer-allowance-calculator/' class='text-primary underline'>Carer\'s Allowance</a> is the main state benefit for unpaid carers. For 2026/27 it pays £86.45 per week (£4,495.40 per year). To qualify you must care for someone for at least 35 hours per week who receives a qualifying disability benefit: PIP Daily Living (either rate), Attendance Allowance, or DLA care component at the middle or highest rate.",
+      "There is a weekly net earnings limit of £204. After deducting income tax, NI, pension contributions, and 50% of any qualifying pension premium costs, your net weekly earnings must not exceed this amount. If you earn more in any given week, <a href='/calculator/carer-allowance-calculator/' class='text-primary underline'>Carer\'s Allowance</a> is not payable for that week.",
+      "Claiming Carer's Allowance also entitles you to the Carer Element in Universal Credit (£209.34/month in 2026/27). If you already receive State Pension or another benefit at the same or higher rate, you may be 'underlying entitled' — you won't receive the cash payment but still qualify for the Carer Element in UC.",
+      '<strong>Carer\'s Allowance updated rate 2026/27.</strong> Rate raised from £83.30 to £86.45/week April 2026 (£4,495.40/year). Earnings limit raised from £196 to £204/week net. Many resources still quote old figures — official source is gov.uk/carers-allowance. Paid weekly or every 4 weeks via bank transfer. Counts as taxable income for HMRC but no NI required.',
       '<strong>Carer\'s Credit — protects State Pension if not eligible for CA.</strong> Care 20+ hours/week but cared-for person doesn\'t receive qualifying benefit? Apply for Carer\'s Credit (free Class 3 NI credits). Protects State Pension entitlement. Apply via gov.uk/carers-credit form CC1, backdate up to 1 tax year. Often missed — saves thousands in lost State Pension over working life.',
-      '<strong>How to maximise eligibility around the £196 limit.</strong> Pension contributions count as deductions — sacrifice 50% of net pay into pension to stay below £196 (and gain pension tax relief). Childcare costs (paid for during caring): deductible. Self-employed business expenses: deductible. \'Cliff edge\' at £197/week: losing £83.30/week CA — work around it. Restructure salary or self-employed invoicing if marginal.',
+      '<strong>How to maximise eligibility around the £204 limit.</strong> Pension contributions count as deductions — sacrifice 50% of net pay into pension to stay below £204 (and gain pension tax relief). Childcare costs (paid for during caring): deductible. Self-employed business expenses: deductible. \'Cliff edge\' at £205/week: losing £86.45/week CA — work around it. Restructure salary or self-employed invoicing if marginal.',
       '<strong>Other UK carer benefits 2026.</strong> Council Tax: 25% discount if only adult + disabled person. Carer\'s Leave Act 2024: 1 week unpaid leave/year (new right from April 2024). Free flu vaccine. Free needs assessment by local council (Carer\'s Assessment). Bereavement: CA continues 8 weeks after cared-for person\'s death. Respite/replacement care funding via council. Reduced prescriptions: PPC £33/3 months or £114/year. NHS Continuing Healthcare assessment for cared-for person.',
-      '<strong>State Pension and Carer\'s Allowance — overlapping benefits rule.</strong> Full State Pension £230.25/week (2026/27) exceeds CA £83.30/week. Receiving full SP: CA not paid as separate cash (overlapping benefits rule). BUT you have \'underlying entitlement\' — improves other benefit calculations (Pension Credit, Council Tax Reduction, etc.). Apply for CA even when on State Pension — gives access to Carer Premium/Element on other benefits.',
+      '<strong>State Pension and Carer\'s Allowance — overlapping benefits rule.</strong> Full State Pension £241.30/week (2026/27) exceeds CA £86.45/week. Receiving full SP: CA not paid as separate cash (overlapping benefits rule). BUT you have \'underlying entitlement\' — improves other benefit calculations (Pension Credit, Council Tax Reduction, etc.). Apply for CA even when on State Pension — gives access to Carer Premium/Element on other benefits.',
     ],
     example: {
       title: "Example: Part-time carer earning £200 gross per week",
@@ -8103,7 +8103,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Gross weekly pay: £200',
         'Less income tax and NI (approx £25): net £175',
         'Less 50% of £60/week pension contribution (£30): adjusted net £145',
-        '£145 < £151 limit → Carer’s Allowance of £81.90/week is payable',
+        '£145 < £204 limit → Carer’s Allowance of £86.45/week is payable',
       ],
     },
     sourceUrl: 'https://www.gov.uk/carers-allowance',
@@ -8116,9 +8116,9 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       "Employers' Liability (EL) insurance is a legal requirement for virtually all UK businesses with at least one employee, under the Employers' Liability (Compulsory Insurance) Act 1969. It covers compensation claims from employees injured or made ill through their work. The minimum required cover is £5 million, though most policies provide £10 million. Fines for non-compliance reach £2,500 per day.",
       'Premiums are set as a percentage of annual payroll, adjusted by sector risk. Low-risk sectors (professional services, office work) typically pay 0.3–0.8% of payroll. Medium-risk sectors (light manufacturing, logistics) pay 0.5–1.5%. High-risk industries (construction, demolition, chemical processing) pay 1.0–3.0% or more. A clean claims history earns significant discounts.',
       'This calculator provides indicative estimates only. Actual premiums are underwritten individually and depend on full disclosure of activities, employee roles, claims history and risk management measures in place.',
-      'Who qualifies for Carer\'s Allowance? Pay £83.30/week (2026/27) to anyone aged 16+ who spends 35+ hours/week caring for someone receiving a qualifying disability benefit: PIP Daily Living component (either rate), Attendance Allowance, DLA care component at middle or highest rate, Armed Forces Independence Payment, or Constant Attendance Allowance. The cared-for person must consent to you claiming. You can\'t claim if you\'re in full-time education (21+ hours/week study).',
-      'The £196/week earnings limit. You cannot earn more than £196/week (2026/27) after deductions for: income tax, NI, 50% of pension contributions, expenses related to your work (eg childcare while you work). If you earn over £196 in any single week, you lose ALL Carer\'s Allowance for that week — no taper. This is one of the harshest cliff edges in UK benefits and traps many carers in poverty. Always check before taking on extra hours.',
-      'How Carer\'s Allowance interacts with State Pension. Pre-State Pension age: you receive £83.30/week. State Pension age: if your State Pension is £83.30+/week, you cannot claim Carer\'s Allowance (it\'s a \'overlapping benefit\'). However, you can be \'underlying entitled\' — getting no cash but qualifying for the Carer Element of Universal Credit (£198.31/month if under State Pension age) or higher Pension Credit. Always apply for Carer\'s Allowance even if State Pension wipes out the cash payment.',
+      'Who qualifies for Carer\'s Allowance? Pay £86.45/week (2026/27) to anyone aged 16+ who spends 35+ hours/week caring for someone receiving a qualifying disability benefit: PIP Daily Living component (either rate), Attendance Allowance, DLA care component at middle or highest rate, Armed Forces Independence Payment, or Constant Attendance Allowance. The cared-for person must consent to you claiming. You can\'t claim if you\'re in full-time education (21+ hours/week study).',
+      'The £204/week earnings limit. You cannot earn more than £204/week (2026/27) after deductions for: income tax, NI, 50% of pension contributions, expenses related to your work (eg childcare while you work). If you earn over £204 in any single week, you lose ALL Carer\'s Allowance for that week — no taper. This is one of the harshest cliff edges in UK benefits and traps many carers in poverty. Always check before taking on extra hours.',
+      'How Carer\'s Allowance interacts with State Pension. Pre-State Pension age: you receive £86.45/week. State Pension age: if your State Pension is £86.45+/week, you cannot claim Carer\'s Allowance (it\'s a \'overlapping benefit\'). However, you can be \'underlying entitled\' — getting no cash but qualifying for the Carer Element of Universal Credit (£209.34/month if under State Pension age) or higher Pension Credit. Always apply for Carer\'s Allowance even if State Pension wipes out the cash payment.',
       'Carer\'s NI credits — crucial for State Pension. Receiving Carer\'s Allowance entitles you to Class 1 National Insurance credits — counting toward your State Pension qualifying years. Each year of CA = ~£328/year extra State Pension for life from age 67. If you don\'t qualify for CA (eg cared-for person\'s benefits insufficient), Carer\'s Credit gives the same NI credits — apply separately via gov.uk/carers-credit. Many carers miss this and end up with reduced State Pensions despite years of unpaid caring.',
     ],
     example: {
@@ -8166,7 +8166,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       'Member contributions are tiered by salary band. For 2026/27: 7.4% up to £32,135; 8.6% on £32,136–£43,259; 9.7% on £43,260–£51,292; 10.2% on £51,293–£67,431; 11.7% on £67,432–£92,297; 12.4% above £92,297. Employer contributions are 23.68% of pensionable pay. Both employer and employee contributions attract tax relief.',
       'Normal Pension Age is linked to State Pension Age (67, rising to 68). The pension is CPI-linked in payment. There is no automatic lump sum in the career average scheme, but you can commute pension at £12 lump sum for every £1/year of annual pension surrendered.',
       '<strong>Teachers\' Pension Scheme (TPS) 2026.</strong> Career Average Revalued Earnings (CARE) scheme since April 2015. Accrual rate 1/57 per year. Revaluation: CPI + 1.6% during career. Sample: 35 years\' service, £50k career average = 35/57 × £50,000 = £30,702/year pension. Plus State Pension £12,000 = £42,702 total retirement income (excellent). Lump sum option: commute up to 25% of pension for lump sum at 12:1 ratio. Normal Pension Age: equal to State Pension Age (66+).',
-      '<strong>Employee and employer contributions.</strong> Teacher contribution: 7.4-11.7% (banded by salary). Sample: M1 (£31,650): 7.4% = £2,342/year. M6 (£43,607): 9.6% = £4,186. UPR1 (£45,646): 9.6%. Leadership (£60,000): 10.4%. £100,000 head: 11.7%. Employer contribution: 28.68% of salary — paid by school/DfE. Equivalent of 25%+ effective pay rise vs typical private sector employer pension (5-8%). Defined-benefit pension is the single biggest financial advantage of UK teaching.',
+      '<strong>Employee and employer contributions.</strong> Teacher contribution: 7.4-11.7% (banded by salary). Sample: M1 (£32,916): 7.4% = £2,436/year. M6 (£45,352): 8.6% = £3,900. UPR1 (£47,472): 9.6%. Leadership (£60,000): 10.2%. £100,000 head: 11.7%. Employer contribution: 28.68% of salary — paid by school/DfE. Equivalent of 25%+ effective pay rise vs typical private sector employer pension (5-8%). Defined-benefit pension is the single biggest financial advantage of UK teaching.',
       '<strong>Career options — Final Salary vs CARE.</strong> Pre-2015 service: Final Salary scheme — pension based on best final years\' salary. Service 1995-2015: 80ths accrual rate (1/80 per year + 3/80 lump sum). 2015 onwards: CARE 1/57. Many teachers have hybrid — pre-2015 Final Salary preserved, post-2015 in CARE. Transitional protection (older teachers within 10 years of NPA in 2012) remained in Final Salary — McCloud judgment (2018) ruled this discriminatory — remedy ongoing 2024-2026.',
       '<strong>Retirement options for teachers.</strong> Normal Pension Age (NPA): matches State Pension Age (66+ currently). Early retirement: from age 55 (rising to 57 from April 2028) — actuarial reduction 3-5% per year early. Phased retirement: take portion of pension while still working part-time. Ill-health retirement: full pension with no reduction if permanently unable to teach. Death-in-service lump sum: 3× pensionable salary. Spouse pension: 37.5% of teacher\'s pension to surviving spouse.',
       '<strong>Pension projection — what to expect.</strong> 25-year teacher reaching M6 (£43k career average): annual pension ~£18,800 + State Pension £12k = £30,800/year. 35-year teacher mid-career headship (£60k average): annual pension ~£36,800 + SP = £48,800/year. Add personal AVC (Additional Voluntary Contributions) for more. Compare: private sector worker on £43k average with 5% pension contributions over 35 years: pot ~£200k = £8k/year drawdown — TPS gives £18,800 = 2.4× larger benefit despite same wages.',
@@ -8206,7 +8206,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ],
     },
     sourceUrl: 'https://www.gov.uk/repaying-your-student-loan',
-    sourceName: 'GOV.UK – Repaying your student loan',
+    sourceName: 'GOV.UK — Repaying your student loan',
     lastUpdated: 'April 2026',
   },
 
@@ -8231,7 +8231,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ],
     },
     sourceUrl: 'https://www.gov.uk/guidance/salary-sacrifice-for-employers',
-    sourceName: 'HMRC – Salary sacrifice for employers',
+    sourceName: 'HMRC — Salary sacrifice for employers',
     lastUpdated: 'April 2026',
   },
 
@@ -8255,7 +8255,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ],
     },
     sourceUrl: 'https://www.fca.org.uk/consumers/mortgages',
-    sourceName: 'FCA – Mortgage consumer information',
+    sourceName: 'FCA — Mortgage consumer information',
     lastUpdated: 'April 2026',
   },
 
@@ -8280,7 +8280,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       ],
     },
     sourceUrl: 'https://www.gov.uk/care-homes/paying-for-care-in-a-care-home',
-    sourceName: 'GOV.UK – Paying for care in a care home',
+    sourceName: 'GOV.UK — Paying for care in a care home',
     lastUpdated: 'April 2026',
   },
 }

@@ -4,8 +4,8 @@ import { formatCurrency } from '@/utils'
 // Simple mileage log with HMRC rates
 export default function BusinessMileageRecordCalculator() {
   const [trips, setTrips] = useState([
-    { date: '2025-04-10', from: 'Home', to: 'Client Office', miles: 25, return_trip: true },
-    { date: '2025-04-12', from: 'Home', to: 'Supplier', miles: 15, return_trip: true },
+    { date: '2026-04-10', from: 'Home', to: 'Client Office', miles: 25, return_trip: true },
+    { date: '2026-04-12', from: 'Home', to: 'Supplier', miles: 15, return_trip: true },
   ])
 
   const addTrip = () => setTrips([...trips, { date: new Date().toISOString().split('T')[0], from: '', to: '', miles: 0, return_trip: true }])

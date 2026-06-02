@@ -28,7 +28,7 @@ function calculate(targetIncome: number, yearsInRetirement: number, statePension
 export default function PensionPotCalculator() {
   const [target, setTarget] = useState('25000')
   const [years, setYears] = useState('25')
-  const [sp, setSp] = useState('230.25')
+  const [sp, setSp] = useState('241.30')
   const [growth, setGrowth] = useState('3')
 
   const t = parseFloat(target.replace(/,/g,'')) || 0

@@ -1,8 +1,14 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import { getWebPageSchema } from '@/utils/seo'
+import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
-const schemas = [getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-04-06')]
+const schemas = [
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-04-06'),
+  getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Updates', url: '/updates/' },
+  ]),
+]
 ---
 
 <Layout title="Updates" description="Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates." schemas={schemas}>

@@ -52,14 +52,14 @@ const schemas = [
           return (
             <a
               href={`/category/${catId}/`}
-              class="flex items-center gap-3 rounded-xl border border-border p-4 hover:bg-accent hover:border-primary/30 transition-all group"
+              class="flex items-center gap-2.5 sm:gap-3 rounded-xl border border-border p-3 sm:p-4 hover:bg-accent hover:border-primary/30 transition-all group"
             >
-              <div class={`flex h-10 w-10 items-center justify-center rounded-lg ${cat.color} ${cat.darkColor} shrink-0`}>
+              <div class={`flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg ${cat.color} ${cat.darkColor} shrink-0`} aria-hidden="true">
                 <span class={`text-sm font-bold ${cat.iconColor} ${cat.darkIconColor}`}>{cat.name.charAt(0)}</span>
               </div>
-              <div class="min-w-0">
-                <p class="text-sm font-semibold truncate group-hover:text-primary transition-colors">{cat.name}</p>
-                <p class="text-xs text-muted-foreground">{count} calculator{count !== 1 ? 's' : ''}</p>
+              <div class="min-w-0 flex-1">
+                <p class="text-sm font-semibold leading-tight group-hover:text-primary transition-colors">{cat.name}</p>
+                <p class="text-xs text-muted-foreground mt-0.5">{count} calculator{count !== 1 ? 's' : ''}</p>
               </div>
             </a>
           )

@@ -66,7 +66,7 @@ export default function SpouseVisaCalculator() {
           <p className="text-sm text-muted-foreground mt-1">Visa fee: £{VISA_FEE.toLocaleString()} + IHS: {formatCurrency(IHS_PER_YEAR * VISA_LENGTH)}{result.dependantFees > 0 ? ` + dependants: ${formatCurrency(result.dependantFees)}` : ''}</p>
         </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-          <p>Minimum income: <span className="font-medium text-foreground">£{MIN_INCOME.toLocaleString()}</span> (from April 2024, planned to rise to £38,700).</p>
+          <p>Minimum income: <span className="font-medium text-foreground">£{MIN_INCOME.toLocaleString()}</span> (from April 2024). Previously-planned rises to £34,500 and £38,700 were paused pending a Migration Advisory Committee review, so £29,000 still applies.</p>
           <p className="mt-1">Savings over £16,000 can supplement income (excess ÷ 2.5 added to income).</p>
         </div>
       </div>

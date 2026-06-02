@@ -1,7 +1,9 @@
 ---
 /**
  * Minimal GDPR/PECR cookie consent banner.
- * Only loads GA/AdSense scripts after user accepts.
+ * Google Analytics loads only after the user accepts (see Layout.astro).
+ * Google AdSense loads on every page; ad-personalisation consent for UK/EEA
+ * is handled by Google's own consent message (CMP) configured in the AdSense dashboard.
  * Consent stored in localStorage — no cookies set by the banner itself.
  */
 ---

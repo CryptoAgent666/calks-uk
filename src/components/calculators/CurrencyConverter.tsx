@@ -1,12 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-// Static rates (would be live in production)
-const RATES: Record<string, number> = {
+// Fallback rates (per £1 GBP) — used until the live feed loads, or if it's unreachable.
+const FALLBACK_RATES: Record<string, number> = {
   GBP: 1, EUR: 1.17, USD: 1.27, AUD: 1.93, CAD: 1.73, CHF: 1.12,
   JPY: 192.5, CNY: 9.21, INR: 107.5, PLN: 5.08, SEK: 13.2, NOK: 13.8,
   DKK: 8.73, NZD: 2.11, SGD: 1.71, HKD: 9.91, ZAR: 23.1, AED: 4.67,
   TRY: 41.2, BRL: 7.15, MXN: 21.8, KRW: 1685, THB: 44.2,
 }
+const CURRENCIES = Object.keys(FALLBACK_RATES)
 
 const NAMES: Record<string, string> = {
   GBP: 'British Pound', EUR: 'Euro', USD: 'US Dollar', AUD: 'Australian Dollar',
@@ -21,10 +22,35 @@ export default function CurrencyConverter() {
   const [amount, setAmount] = useState('100')
   const [from, setFrom] = useState('GBP')
   const [to, setTo] = useState('EUR')
+  const [rates, setRates] = useState<Record<string, number>>(FALLBACK_RATES)
+  const [status, setStatus] = useState<'loading' | 'live' | 'cached'>('loading')
+  const [updated, setUpdated] = useState('')
+
+  useEffect(() => {
+    const controller = new AbortController()
+    // Free, key-less, CORS-enabled daily FX feed (base GBP). Falls back to cached rates on any error.
+    fetch('https://open.er-api.com/v6/latest/GBP', { signal: controller.signal })
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
+      .then((data) => {
+        if (data?.result !== 'success' || !data.rates) throw new Error('bad payload')
+        const next: Record<string, number> = { ...FALLBACK_RATES }
+        for (const code of CURRENCIES) {
+          if (typeof data.rates[code] === 'number' && data.rates[code] > 0) next[code] = data.rates[code]
+        }
+        next.GBP = 1
+        setRates(next)
+        setStatus('live')
+        if (data.time_last_update_utc) {
+          setUpdated(new Date(data.time_last_update_utc).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }))
+        }
+      })
+      .catch(() => setStatus('cached'))
+    return () => controller.abort()
+  }, [])
 
   const a = parseFloat(amount) || 0
-  const fromRate = RATES[from] || 1
-  const toRate = RATES[to] || 1
+  const fromRate = rates[from] || 1
+  const toRate = rates[to] || 1
   const converted = (a / fromRate) * toRate
   const rate = toRate / fromRate
 
@@ -40,13 +66,13 @@ export default function CurrencyConverter() {
         <div>
           <label className="block text-sm font-medium mb-2">From</label>
           <select value={from} onChange={(e) => setFrom(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="From">
-            {Object.keys(RATES).map((c) => <option key={c} value={c}>{c} — {NAMES[c]}</option>)}
+            {CURRENCIES.map((c) => <option key={c} value={c}>{c} — {NAMES[c]}</option>)}
           </select>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">To</label>
           <select value={to} onChange={(e) => setTo(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="To">
-            {Object.keys(RATES).map((c) => <option key={c} value={c}>{c} — {NAMES[c]}</option>)}
+            {CURRENCIES.map((c) => <option key={c} value={c}>{c} — {NAMES[c]}</option>)}
           </select>
         </div>
       </div>
@@ -63,7 +89,13 @@ export default function CurrencyConverter() {
             <p className="text-3xl font-bold text-primary mt-1">{converted.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {to}</p>
             <p className="text-sm text-muted-foreground mt-2">1 {from} = {rate.toFixed(4)} {to}</p>
           </div>
-          <p className="text-xs text-center text-muted-foreground">Indicative rates only. For accurate rates, check with your bank or provider.</p>
+          <p className="text-xs text-center text-muted-foreground">
+            {status === 'live'
+              ? `Live mid-market rates${updated ? `, updated ${updated}` : ''}. Indicative — banks and providers add a margin on top.`
+              : status === 'loading'
+                ? 'Fetching the latest rates… showing recent cached rates meanwhile.'
+                : 'Showing recent cached rates (live feed unavailable). Indicative only — check with your bank or provider.'}
+          </p>
         </div>
       )}
     </div>

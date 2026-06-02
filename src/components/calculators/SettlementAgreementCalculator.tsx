@@ -3,7 +3,7 @@ import { formatCurrency } from '@/utils'
 
 function calculate(salary: number, yearsService: number, age: number, noticePeriod: number, outstandingHoliday: number, bonusOwed: number) {
   const weeklySalary = salary / 52
-  const cappedWeekly = Math.min(weeklySalary, 719) // 2026/27 statutory weekly pay cap
+  const cappedWeekly = Math.min(weeklySalary, 751) // 2026/27 statutory weekly pay cap (£751 from 6 April 2026, was £719 in 2025/26)
 
   // Statutory redundancy (min element)
   let redWeeks = 0

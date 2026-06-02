@@ -1,8 +1,33 @@
 ---
 interface Props {
   lastUpdated?: string
+  category?: string
 }
-const { lastUpdated = 'April 2026' } = Astro.props
+const { lastUpdated = 'April 2026', category } = Astro.props
+
+const VERIFICATION_BY_CATEGORY: Record<string, string> = {
+  tax: 'Verified against HMRC and GOV.UK 2026/27 rates',
+  pay: 'Verified against HMRC and GOV.UK 2026/27 rates',
+  pension: 'Verified against HMRC and GOV.UK 2026/27 rates',
+  benefits: 'Verified against GOV.UK 2026/27 thresholds',
+  business: 'Verified against HMRC and GOV.UK 2026/27 rates',
+  mortgage: 'Verified against UK lender and FCA 2026 guidance',
+  loans: 'Verified against UK lender and FCA 2026 guidance',
+  investment: 'Verified against HMRC and FCA 2026/27 limits',
+  auto: 'Verified against DVLA and GOV.UK 2026 figures',
+  health: 'Verified against NHS and PHE 2026 guidance',
+  building: 'Verified against UK building regulations 2026',
+  energy: 'Verified against Ofgem and Ofwat 2026 price caps and tariffs',
+  education: 'Verified against SLC, SAAS and GOV.UK 2026/27 figures',
+  immigration: 'Verified against GOV.UK and UKVI 2026 rules and fees',
+  insurance: 'Verified against ABI and FCA 2026 guidance',
+  legal: 'Verified against GOV.UK 2026 guidance',
+  farming: 'Verified against Defra and GOV.UK 2026 guidance',
+  gardening: 'Verified against RHS 2026 guidance',
+  tools: 'Methodology reviewed for 2026',
+  math: 'Methodology reviewed for 2026',
+}
+const verificationText = (category && VERIFICATION_BY_CATEGORY[category]) || 'Methodology reviewed for 2026'
 ---
 
 <div class="flex items-center gap-3 py-3 border-y border-border mb-6">
@@ -21,7 +46,7 @@ const { lastUpdated = 'April 2026' } = Astro.props
       <span class="text-muted-foreground"> · Founder, Calks.uk</span>
     </p>
     <p class="text-xs text-muted-foreground">
-      Last updated: <time>{lastUpdated}</time> · Verified against HMRC and GOV.UK 2026/27 rates
+      Last updated: <time>{lastUpdated}</time> · {verificationText}
     </p>
   </div>
   <a

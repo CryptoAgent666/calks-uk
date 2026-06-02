@@ -4,16 +4,18 @@ import { formatCurrency } from '@/utils'
 // Late payment interest (commercial debts) - Late Payment of Commercial Debts Act
 const BOE_BASE_RATE = 4.25 // Bank of England base rate (as of Q1 2026; check bankofengland.co.uk for current rate)
 const STATUTORY_RATE = BOE_BASE_RATE + 8 // base rate + 8%
+// Statutory fixed compensation bands: £40 for debt under £1,000;
+// £70 for £1,000–£9,999.99; £100 for £10,000 or more.
 const FIXED_COMPENSATION = [
-  { upTo: 1_000, amount: 40 },
-  { upTo: 10_000, amount: 70 },
-  { upTo: Infinity, amount: 100 },
+  { below: 1_000, amount: 40 },
+  { below: 10_000, amount: 70 },
+  { below: Infinity, amount: 100 },
 ]
 
 function calculate(invoiceAmount: number, daysLate: number) {
   let fixedComp = 0
   for (const band of FIXED_COMPENSATION) {
-    if (invoiceAmount <= band.upTo) { fixedComp = band.amount; break }
+    if (invoiceAmount < band.below) { fixedComp = band.amount; break }
   }
 
   const dailyRate = STATUTORY_RATE / 100 / 365

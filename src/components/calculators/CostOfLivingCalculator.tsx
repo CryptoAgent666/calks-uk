@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// UK average costs 2025
+// UK average costs 2026
 const AVERAGES: Record<string, { label: string; avg: number }> = {
   rent: { label: 'Rent / Mortgage', avg: 1200 },
   council_tax: { label: 'Council Tax', avg: 180 },
@@ -52,9 +52,9 @@ export default function CostOfLivingCalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {Object.entries(AVERAGES).map(([key, info]) => (
           <div key={key} className="flex items-center gap-2">
-            <span className="text-sm text-muted-foreground w-40 shrink-0">{info.label}</span>
+            <label htmlFor={`col-${key}`} className="text-sm text-muted-foreground w-40 shrink-0">{info.label}</label>
             <div className="relative flex-1"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-xs">£</span>
-              <input type="number" min="0" value={costs[key] || ''} onChange={(e) => update(key, parseFloat(e.target.value) || 0)} className="w-full rounded-lg border border-input bg-background pl-7 pr-2 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+              <input id={`col-${key}`} type="number" min="0" value={costs[key] || ''} onChange={(e) => update(key, parseFloat(e.target.value) || 0)} className="w-full rounded-lg border border-input bg-background pl-7 pr-2 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label={`${info.label} (monthly £)`} /></div>
           </div>
         ))}
       </div>

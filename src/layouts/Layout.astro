@@ -75,6 +75,9 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
     <!-- Theme color -->
     <meta name="theme-color" content="#1e3a5f" />
 
+    <!-- Google AdSense — site ownership verification (static, independent of cookie consent) -->
+    <meta name="google-adsense-account" content="ca-pub-4859241862365215" />
+
     <!-- Schema.org JSON-LD: per-page schemas + site-wide Person -->
     {schemas.map((schema) => (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
@@ -132,6 +135,17 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
         document.head.appendChild(s);
         gtag('js', new Date());
         gtag('config', 'G-7ZTS02YTBC');
+      }
+    </script>
+
+    <!-- Google AdSense Auto Ads — static tag so AdSense can verify ownership and the reviewer/crawler can see it. -->
+    <!-- GDPR/UK consent for ad personalisation is handled by Google's consent message (CMP), configured in the AdSense dashboard. -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4859241862365215" crossorigin="anonymous"></script>
+    <!-- AdSense web ads aren't permitted inside the native (Capacitor) app webview — remove the tag there before it runs. -->
+    <script is:inline>
+      if (window.__IS_CAPACITOR__) {
+        var __adsTag = document.querySelector('script[src*="adsbygoogle.js"]');
+        if (__adsTag) __adsTag.remove();
       }
     </script>
   </head>

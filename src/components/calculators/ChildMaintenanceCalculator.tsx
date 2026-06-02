@@ -1,43 +1,37 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// CMS rates 2025
+// CMS rates 2025/26 (gov.uk "Calculate child maintenance")
 function calculate(grossWeeklyIncome: number, children: number, nightsPerWeek: number, otherChildren: number) {
   let income = grossWeeklyIncome
 
-  // Deduction for other children living with paying parent
+  // Deduction for other children living with the paying parent
   const otherChildReduction = otherChildren === 1 ? 0.11 : otherChildren === 2 ? 0.14 : otherChildren >= 3 ? 0.16 : 0
   income = income * (1 - otherChildReduction)
 
-  // Basic rate based on number of children
-  let rate: number
-  if (children === 1) rate = 0.12
-  else if (children === 2) rate = 0.16
-  else rate = 0.19 // 3+
+  // Basic rate (gross weekly income £200.01–£800) by number of children
+  const rate = children === 1 ? 0.12 : children === 2 ? 0.16 : 0.19 // 3+
+  // Basic-plus rate applied to the slice of income above £800 (£800.01–£3,000)
+  const basicPlusRate = children === 1 ? 0.09 : children === 2 ? 0.12 : 0.15 // 3+
 
-  let weeklyAmount = income * rate
-
-  // Shared care reduction
-  if (nightsPerWeek >= 1) {
-    const reductions: Record<number, number> = { 1: 1/7, 2: 2/7, 3: 3/7 }
-    const reduction = reductions[Math.min(nightsPerWeek, 3)] || 3/7
-    weeklyAmount *= (1 - reduction)
-  }
-
-  // Income thresholds
+  let weeklyAmount: number
   if (grossWeeklyIncome < 7) {
     weeklyAmount = 0 // nil rate
   } else if (grossWeeklyIncome < 100) {
     weeklyAmount = 7 // flat rate
-  } else if (grossWeeklyIncome >= 800) {
-    // Reduced rate on income over £800/week
-    const basic = 800 * rate
-    const excess = (income - 800) * rate * 0.5 // reduced rate on excess
-    weeklyAmount = basic + excess
-    if (nightsPerWeek >= 1) {
-      const reduction = Math.min(nightsPerWeek, 3) / 7
-      weeklyAmount *= (1 - reduction)
-    }
+  } else if (income > 800) {
+    // Basic rate plus: basic rate on the first £800, then the lower basic-plus rate on the excess
+    weeklyAmount = 800 * rate + (income - 800) * basicPlusRate
+  } else {
+    // Basic rate (the reduced-rate £100–£200 band is approximated by the basic rate here)
+    weeklyAmount = income * rate
+  }
+
+  // Shared care reduction (does not apply to nil/flat rate)
+  if (nightsPerWeek >= 1 && weeklyAmount > 7) {
+    const reductions: Record<number, number> = { 1: 1/7, 2: 2/7, 3: 3/7 }
+    const reduction = reductions[Math.min(nightsPerWeek, 3)] || 3/7
+    weeklyAmount *= (1 - reduction)
   }
 
   return { weeklyAmount, monthlyAmount: weeklyAmount * 52 / 12, annualAmount: weeklyAmount * 52, rate: rate * 100 }
@@ -74,7 +68,7 @@ export default function ChildMaintenanceCalculator() {
         </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
           <p>Based on CMS basic rate ({result.rate}% for {c} child{c > 1 ? 'ren' : ''}).</p>
-          <p className="mt-1">Gross income under £7/week = nil rate. £7-£100 = flat rate (£7/week). Over £800/week = reduced rate on excess.</p>
+          <p className="mt-1">CMS rate bands (gross weekly income): under £7 = nil rate; £7–£100 = flat rate (£7/week); £100.01–£200 = reduced rate; £200.01–£800 = basic rate (12%/16%/19% for 1/2/3+ children); £800.01–£3,000 = basic-plus (the basic rate on the first £800, then 9%/12%/15% on the excess).</p>
         </div>
       </div>
     </div>

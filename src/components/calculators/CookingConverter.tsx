@@ -1,32 +1,35 @@
 import { useState, useMemo } from 'react'
 
-const CATEGORIES = {
+type Unit = { id: string; name: string; factor: number }
+
+// factor = base units per 1 of this unit (ml for volume, g for weight)
+const CATEGORIES: Record<'volume' | 'weight' | 'temperature', { name: string; units: Unit[] }> = {
   volume: {
     name: 'Volume',
     units: [
-      { id: 'ml', name: 'Millilitres (ml)', toMl: 1 },
-      { id: 'l', name: 'Litres (L)', toMl: 1000 },
-      { id: 'tsp', name: 'Teaspoons (tsp)', toMl: 5 },
-      { id: 'tbsp', name: 'Tablespoons (tbsp)', toMl: 15 },
-      { id: 'floz', name: 'Fluid Ounces (fl oz)', toMl: 28.4131 },
-      { id: 'cup_uk', name: 'Cups (UK)', toMl: 284.131 },
-      { id: 'cup_us', name: 'Cups (US)', toMl: 236.588 },
-      { id: 'pint', name: 'Pints (UK)', toMl: 568.261 },
-      { id: 'gill', name: 'Gills', toMl: 142.065 },
+      { id: 'ml', name: 'Millilitres (ml)', factor: 1 },
+      { id: 'l', name: 'Litres (L)', factor: 1000 },
+      { id: 'tsp', name: 'Teaspoons (tsp)', factor: 5 },
+      { id: 'tbsp', name: 'Tablespoons (tbsp)', factor: 15 },
+      { id: 'floz', name: 'Fluid Ounces (fl oz)', factor: 28.4131 },
+      { id: 'cup_uk', name: 'Cups (UK)', factor: 284.131 },
+      { id: 'cup_us', name: 'Cups (US)', factor: 236.588 },
+      { id: 'pint', name: 'Pints (UK)', factor: 568.261 },
+      { id: 'gill', name: 'Gills', factor: 142.065 },
     ],
   },
   weight: {
     name: 'Weight',
     units: [
-      { id: 'g', name: 'Grams (g)', toG: 1 },
-      { id: 'kg', name: 'Kilograms (kg)', toG: 1000 },
-      { id: 'oz', name: 'Ounces (oz)', toG: 28.3495 },
-      { id: 'lb', name: 'Pounds (lb)', toG: 453.592 },
+      { id: 'g', name: 'Grams (g)', factor: 1 },
+      { id: 'kg', name: 'Kilograms (kg)', factor: 1000 },
+      { id: 'oz', name: 'Ounces (oz)', factor: 28.3495 },
+      { id: 'lb', name: 'Pounds (lb)', factor: 453.592 },
     ],
   },
   temperature: {
     name: 'Oven Temperature',
-    units: [] as any[],
+    units: [],
   },
 }
 
@@ -51,10 +54,10 @@ export default function CookingConverter() {
     if (cat === 'temperature') return []
     const fromUnit = units.find(u => u.id === from)
     if (!fromUnit) return []
-    const base = cat === 'volume' ? v * (fromUnit as any).toMl : v * (fromUnit as any).toG
+    const base = v * fromUnit.factor
     return units.map(u => ({
       id: u.id, name: u.name,
-      value: base / ((cat === 'volume' ? (u as any).toMl : (u as any).toG) || 1),
+      value: base / (u.factor || 1),
     }))
   }, [cat, v, from, units])
 

@@ -14,7 +14,7 @@ function calculate(annualMiles: number, petrolMpg: number, petrolPriceP: number,
   const evCost = homeKwh * (homeElecP / 100) + publicKwh * (publicElecP / 100)
 
   // Other savings
-  const vedSaving = 50 // approx VED saving (petrol ~£245 vs EV £195 from April 2025 — EVs now pay standard rate)
+  const vedSaving = 0 // from April 2025 EVs pay the same £200 standard VED as petrol/diesel — no ongoing VED saving
   const servicingSaving = 200 // lower servicing costs
   const fuelSaving = petrolCost - evCost
   const totalAnnualSaving = fuelSaving + vedSaving + servicingSaving

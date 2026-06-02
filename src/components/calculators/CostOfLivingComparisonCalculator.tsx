@@ -26,7 +26,8 @@ function calculate(city1: string, city2: string, salary: number) {
   const difference = monthly2 - monthly1
   const pctDiff = monthly1 > 0 ? ((monthly2 - monthly1) / monthly1) * 100 : 0
 
-  const equivalentSalary = salary > 0 ? salary * (c2.index / c1.index) : 0
+  // Use the same itemised-cost basis as the headline "% cheaper" figure so the two agree
+  const equivalentSalary = salary > 0 && monthly1 > 0 ? salary * (monthly2 / monthly1) : 0
 
   return { c1, c2, monthly1, monthly2, difference, pctDiff, equivalentSalary, annual1: monthly1 * 12, annual2: monthly2 * 12 }
 }
