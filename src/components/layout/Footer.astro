@@ -27,13 +27,35 @@ const FOOTER_CATEGORIES: CategoryId[] = ['tax', 'pay', 'pension', 'mortgage', 'l
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           info@calks.uk
         </a>
-        <!-- Google Play Badge -->
+        {/* Store badges — App Store (iOS) + Google Play (Android), shown on web and on
+            the other native app. The whole block is hidden inside the iOS app via the
+            `is-ios-app` class (Layout.astro); the Google Play badge is additionally
+            omitted from the iOS binary entirely (PUBLIC_IS_IOS_BUILD). Guideline 2.3.10. */}
+        <div class="store-badges flex flex-wrap items-center gap-3">
+        <a
+          href="https://apps.apple.com/gb/app/calks-uk-uk-calculators/id6776149190"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Download Calks.UK on the App Store"
+          class="appstore-badge inline-block transition-opacity hover:opacity-80"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="160" height="48" viewBox="0 0 180 54" aria-hidden="true">
+            <rect width="180" height="54" rx="8" fill="#000000"/>
+            <rect x="0.5" y="0.5" width="179" height="53" rx="7.5" fill="none" stroke="#a6a6a6" stroke-width="1"/>
+            <!-- Apple logo -->
+            <path transform="translate(12, 10) scale(1.45)" fill="#ffffff" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.51 4.09l-.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+            <!-- Text -->
+            <text x="54" y="23" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="9" fill="#ffffff">Download on the</text>
+            <text x="53" y="42" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="600" fill="#ffffff">App Store</text>
+          </svg>
+        </a>
+        {import.meta.env.PUBLIC_IS_IOS_BUILD !== '1' && (
         <a
           href="https://play.google.com/store/apps/details?id=uk.calks.app"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Get it on Google Play"
-          class="inline-block transition-opacity hover:opacity-80"
+          class="gplay-badge inline-block transition-opacity hover:opacity-80"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="160" height="48" viewBox="0 0 180 54" aria-hidden="true">
             <rect width="180" height="54" rx="8" fill="#000000"/>
@@ -51,6 +73,8 @@ const FOOTER_CATEGORIES: CategoryId[] = ['tax', 'pay', 'pension', 'mortgage', 'l
             <text x="48" y="40" font-family="Roboto, Arial, sans-serif" font-size="17" font-weight="600" fill="#ffffff">Google Play</text>
           </svg>
         </a>
+        )}
+        </div>
       </div>
 
       <!-- Categories -->
@@ -120,3 +144,10 @@ const FOOTER_CATEGORIES: CategoryId[] = ['tax', 'pay', 'pension', 'mortgage', 'l
     </div>
   </div>
 </footer>
+
+<style is:global>
+  /* App Store guideline 2.3.10: shared OTA bundles still ship the store badges,
+     so the iOS app sets `is-ios-app` on <html> before paint to hide them.
+     The native binary also omits the Google Play badge via PUBLIC_IS_IOS_BUILD. */
+  html.is-ios-app .store-badges { display: none !important; }
+</style>
