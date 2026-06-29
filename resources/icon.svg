@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Full-bleed square background (iOS masks corners itself; no transparency allowed). -->
+  <rect width="1024" height="1024" fill="#1e3a5f"/>
+
+  <!-- Calculator glyph (brand mark), upper area -->
+  <g transform="translate(208,73) scale(19)">
+    <rect x="6" y="3" width="20" height="26" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+    <line x1="9" y1="8" x2="23" y2="8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="11" cy="14" r="1.2" fill="white"/>
+    <circle cx="16" cy="14" r="1.2" fill="white"/>
+    <circle cx="21" cy="14" r="1.2" fill="white"/>
+    <circle cx="11" cy="19" r="1.2" fill="white"/>
+    <circle cx="16" cy="19" r="1.2" fill="white"/>
+    <circle cx="21" cy="19" r="1.2" fill="white"/>
+    <circle cx="11" cy="24" r="1.2" fill="white"/>
+    <circle cx="16" cy="24" r="1.2" fill="white"/>
+    <rect x="19" y="18" width="4" height="8" rx="1" fill="white"/>
+  </g>
+
+  <!-- Brand name -->
+  <text x="512" y="855" font-family="Helvetica, Arial, sans-serif" font-size="165" font-weight="700" fill="white" text-anchor="middle" letter-spacing="-2">Calks.UK</text>
+</svg>
