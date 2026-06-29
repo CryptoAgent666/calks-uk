@@ -10,8 +10,8 @@ function calculate(hoursPerWeek: number, hourlyRate: number, isSingle: boolean, 
   const nmw = 12.71
 
   // 2026/27 UC earnings thresholds (uprated proportionally with NLW)
-  const aetSingleMonthly = 1_009 // Administrative Earnings Threshold, single (£952 in 2025/26)
-  const aetCoupleMonthly = 1_617 // Administrative Earnings Threshold, couple (£1,524 in 2025/26)
+  const aetSingleMonthly = 991 // Administrative Earnings Threshold, single = 18h x £12.71 NLW (£952 in 2025/26)
+  const aetCoupleMonthly = 1_597 // Administrative Earnings Threshold, couple = 29h x £12.71 NLW (£1,534 in 2025/26)
   const cetMonthly = nmw * 35 * 52 / 12 // Conditionality Earnings Threshold = 35h × NLW
 
   const aetThreshold = isSingle ? aetSingleMonthly : aetCoupleMonthly

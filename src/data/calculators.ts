@@ -129,11 +129,11 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'dividend-tax-calculator',
     title: 'Dividend Tax Calculator',
-    description: 'Calculate UK dividend tax for 2026/27. £500 allowance + 8.75% basic, 33.75% higher, 39.35% additional rates. Free company director calculator.',
+    description: 'Calculate UK dividend tax for 2026/27. £500 allowance + 10.75% basic, 35.75% higher, 39.35% additional rates. Free company director calculator.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['dividend tax', 'dividend allowance', 'dividend income'],
-    metaTitle: 'Dividend Tax Calculator UK 2026/27 — 8.75%/33.75%/39.35%',
+    metaTitle: 'Dividend Tax Calculator UK 2026/27 — 10.75%/35.75%/39.35%',
     priority: 2,
     financialYear: '2026-27',
   },
@@ -819,7 +819,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'legal',
     icon: 'Scale',
     keywords: ['probate', 'probate fees', 'grant of probate', 'estate administration'],
-    metaTitle: 'UK Probate Fee Calculator 2026 (£273)',
+    metaTitle: 'UK Probate Fee Calculator 2026 (£300)',
     priority: 2,
   },
 
@@ -1575,7 +1575,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // TAX (additional)
   { slug: 'side-hustle-tax-calculator', title: 'Side Hustle / Trading Allowance Calculator', description: 'Calculate tax on side hustle income. Use the £1,000 trading allowance or claim actual expenses.', category: 'tax', icon: 'Receipt', keywords: ['side hustle', 'trading allowance', 'extra income', 'freelance tax'], priority: 2 , metaTitle: 'Side Hustle Tax Calculator UK 2026 (£1,000 Allowance)' },
   // LEGAL (additional)
-  { slug: 'employment-tribunal-calculator', title: 'Employment Tribunal Award Calculator', description: 'Estimate unfair dismissal tribunal awards — basic award and compensatory award.', category: 'legal', icon: 'Scale', keywords: ['employment tribunal', 'unfair dismissal', 'tribunal award', 'compensation'], priority: 2 , metaTitle: 'Employment Tribunal Calculator UK 2026/27 (£123,785 Cap)' },
+  { slug: 'employment-tribunal-calculator', title: 'Employment Tribunal Award Calculator', description: 'Estimate unfair dismissal tribunal awards — basic award and compensatory award.', category: 'legal', icon: 'Scale', keywords: ['employment tribunal', 'unfair dismissal', 'tribunal award', 'compensation'], priority: 2 , metaTitle: 'Employment Tribunal Calculator UK 2026/27 (£123,543 Cap)' },
   // CONSTRUCTION (additional)
   { slug: 'roof-tiles-calculator', title: 'Roof Tiles Calculator', description: 'Calculate roof tiles, ridge tiles, batten and felt needed based on roof dimensions and pitch.', category: 'building', icon: 'Hammer', keywords: ['roof tiles', 'roofing', 'slate', 'ridge tiles', 'roof area'], priority: 2 , metaTitle: 'Roof Tiles Calculator UK' },
   // ENERGY (additional)
@@ -1627,7 +1627,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'sole-trader-vs-ltd-calculator', title: 'Sole Trader vs Limited Company Calculator', description: 'Compare take-home pay as a sole trader vs limited company director. See full tax breakdown for both.', category: 'business', icon: 'Briefcase', keywords: ['sole trader vs ltd', 'incorporate', 'limited company', 'self employed'], priority: 1 , metaTitle: 'Sole Trader vs Limited Company Calculator UK 2026/27' },
   // BENEFITS
   { slug: 'carer-allowance-calculator', title: "Carer's Allowance Calculator", description: "Check if you qualify for Carer's Allowance at £83.30/week and understand the eligibility rules.", category: 'benefits', icon: 'Shield', keywords: ['carer allowance', 'caring', 'disability benefit', 'carer'], priority: 2, metaTitle: "Carer's Allowance Calculator 2026/27" },
-  { slug: 'pension-credit-calculator', title: 'Pension Credit Calculator', description: 'Estimate Pension Credit Guarantee Credit entitlement based on income, pension and savings.', category: 'benefits', icon: 'Shield', keywords: ['pension credit', 'guarantee credit', 'retirement benefit', 'over 66'], priority: 2, metaTitle: 'Pension Credit Calculator UK 2026/27 — £227.10 Top-up' },
+  { slug: 'pension-credit-calculator', title: 'Pension Credit Calculator', description: 'Estimate Pension Credit Guarantee Credit entitlement based on income, pension and savings.', category: 'benefits', icon: 'Shield', keywords: ['pension credit', 'guarantee credit', 'retirement benefit', 'over 66'], priority: 2, metaTitle: 'Pension Credit Calculator UK 2026/27 — £238.00 Top-up' },
   { slug: 'housing-benefit-calculator', title: 'Housing Benefit Calculator', description: 'Estimate Housing Benefit based on rent, LHA rate and income. Includes taper calculation.', category: 'benefits', icon: 'Shield', keywords: ['housing benefit', 'LHA', 'rent help', 'housing element'], priority: 2, metaTitle: 'Housing Benefit Calculator UK 2026 — LHA Rates' },
   // BUSINESS
   { slug: 'vat-threshold-calculator', title: 'VAT Threshold Monitor', description: 'Track your rolling 12-month turnover against the £90,000 VAT registration threshold. See headroom remaining.', category: 'business', icon: 'Briefcase', keywords: ['VAT threshold', 'VAT registration', '£90000', 'turnover monitor'], priority: 2 , metaTitle: 'VAT Threshold Calculator UK (£90,000)' },
@@ -1659,7 +1659,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'shared-parental-leave-calculator', title: 'Shared Parental Leave Calculator', description: 'Split parental leave between parents. Calculate ShPP payments for mother and partner.', category: 'pay', icon: 'Banknote', keywords: ['shared parental leave', 'ShPL', 'ShPP', 'parental pay'], priority: 2, metaTitle: 'Shared Parental Leave Pay Calculator UK 2026/27' },
   // BENEFITS
   { slug: 'high-income-child-benefit-calculator', title: 'High Income Child Benefit Charge Calculator', description: 'Calculate HICBC clawback between £60K-£80K. See if you should still claim for NI credits.', category: 'benefits', icon: 'Shield', keywords: ['HICBC', 'high income', 'child benefit charge', 'clawback'], priority: 1, metaTitle: 'High Income Child Benefit Charge Calculator 2026/27 (Threshold £60k)' },
-  { slug: 'benefit-cap-calculator', title: 'Benefit Cap Calculator', description: 'Check if the benefit cap applies and how much your benefits will be reduced.', category: 'benefits', icon: 'Shield', keywords: ['benefit cap', 'cap limit', 'benefits limit', 'UC cap'], priority: 2, metaTitle: 'Benefit Cap Calculator UK 2026 — £15,010 / £22,394 Limits' },
+  { slug: 'benefit-cap-calculator', title: 'Benefit Cap Calculator', description: 'Check if the benefit cap applies and how much your benefits will be reduced.', category: 'benefits', icon: 'Shield', keywords: ['benefit cap', 'cap limit', 'benefits limit', 'UC cap'], priority: 2, metaTitle: 'Benefit Cap Calculator UK 2026 — £22,020 / £25,323 Limits' },
   // MATH
   { slug: 'trigonometry-calculator', title: 'Trigonometry Calculator', description: 'Calculate sin, cos, tan and inverse functions in degrees or radians. Includes sec, csc, cot.', category: 'math', icon: 'Calculator', keywords: ['trigonometry', 'sin cos tan', 'trig calculator', 'inverse trig', 'radians'], priority: 2 , metaTitle: 'Trigonometry Calculator — sin/cos/tan' },
   // PAY
@@ -1699,7 +1699,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // AUTO
   { slug: 'ev-savings-calculator', title: 'EV vs Petrol Running Cost Calculator', description: 'Compare annual running costs of an electric car vs petrol. See fuel, VED and servicing savings plus CO2 reduction.', category: 'auto', icon: 'Car', keywords: ['EV vs petrol', 'electric car savings', 'EV running cost', 'petrol vs electric'], priority: 1, isTrending: true , metaTitle: 'EV vs Petrol Running Cost Calculator UK 2026' },
   // TAX
-  { slug: 'blind-persons-allowance-calculator', title: "Blind Person's Allowance Calculator", description: "Calculate tax saving from Blind Person's Allowance (£3,070 extra tax-free income).", category: 'tax', icon: 'Receipt', keywords: ['blind person', 'BPA', 'sight impaired', 'disability allowance'], priority: 2 , metaTitle: 'Blind Person\'s Allowance Calculator UK 2026/27' },
+  { slug: 'blind-persons-allowance-calculator', title: "Blind Person's Allowance Calculator", description: "Calculate tax saving from Blind Person's Allowance (£3,250 extra tax-free income).", category: 'tax', icon: 'Receipt', keywords: ['blind person', 'BPA', 'sight impaired', 'disability allowance'], priority: 2 , metaTitle: 'Blind Person\'s Allowance Calculator UK 2026/27' },
   { slug: 'property-cgt-calculator', title: 'Capital Gains Tax on Property Calculator', description: 'Calculate CGT on residential property sales with PPR relief, costs and improvements deductions.', category: 'tax', icon: 'Receipt', keywords: ['property CGT', 'house sale tax', 'PPR relief', 'residential CGT'], priority: 1 , metaTitle: 'Property CGT Calculator UK 2026/27 (24% Higher Rate)' },
   // EDUCATION
   { slug: 'weighted-grade-calculator', title: 'Weighted Average Grade Calculator', description: 'Calculate weighted average from assessment components with different weightings. See UK degree classification.', category: 'education', icon: 'GraduationCap', keywords: ['weighted average', 'weighted grade', 'module grades', 'assessment weighting'], priority: 2 , metaTitle: 'Weighted Grade Calculator UK' },

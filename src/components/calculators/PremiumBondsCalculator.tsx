@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Premium Bonds prize fund rate ~4.0% (2025), distributed as prizes
-const PRIZE_RATE = 0.04
+// Premium Bonds prize fund rate 3.80% (2026), distributed as prizes
+const PRIZE_RATE = 0.038
 const MIN_HOLDING = 25
 const MAX_HOLDING = 50_000
 
@@ -17,7 +17,7 @@ const PRIZES = [
   { amount: 500, odds: 1 / 492_000_000, label: '£500' },
   { amount: 100, odds: 1 / 73_800_000, label: '£100' },
   { amount: 50, odds: 1 / 73_800_000, label: '£50' },
-  { amount: 25, odds: 1 / 21_000, label: '£25' },
+  { amount: 25, odds: 1 / 22_000, label: '£25' },
 ]
 
 function calculate(holding: number) {
@@ -26,8 +26,8 @@ function calculate(holding: number) {
   const expectedAnnual = holding * PRIZE_RATE
   const expectedMonthly = expectedAnnual / 12
 
-  // Odds of winning any prize per month (approximately 1 in 21,000 per bond)
-  const oddsPerBondPerMonth = 1 / 21_000
+  // Odds of winning any prize per month (approximately 1 in 22,000 per bond)
+  const oddsPerBondPerMonth = 1 / 22_000
   const expectedPrizesPerMonth = bonds * oddsPerBondPerMonth
   const expectedPrizesPerYear = expectedPrizesPerMonth * 12
 
@@ -67,7 +67,7 @@ export default function PremiumBondsCalculator() {
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Monthly Win Chance</p><p className="text-lg font-bold">{result.chanceOfWinning.toFixed(1)}%</p></div>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>Prize fund rate: {(PRIZE_RATE * 100)}% (tax-free). Most prizes are £25. Odds of winning per £1 bond per month: 1 in 21,000.</p>
+            <p>Prize fund rate: {(PRIZE_RATE * 100)}% (tax-free). Most prizes are £25. Odds of winning per £1 bond per month: 1 in 22,000.</p>
             <p className="mt-1">Returns are tax-free — equivalent to {(PRIZE_RATE * 100 / 0.80).toFixed(1)}% in a taxable account for basic rate taxpayers.</p>
           </div>
         </div>

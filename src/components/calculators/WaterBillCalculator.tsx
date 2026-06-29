@@ -8,7 +8,7 @@ const AVG_METERED_WATER = 2.15 // £/m³ (up from ~1.74 in 2024/25)
 const AVG_METERED_SEWERAGE = 2.42 // £/m³ (up from ~1.96 in 2024/25)
 const AVG_STANDING_WATER = 55 // £/year
 const AVG_STANDING_SEWERAGE = 68 // £/year
-const AVG_UNMETERED = 583 // £/year combined (up from ~472 in 2024/25, Ofwat avg)
+const AVG_UNMETERED = 639 // £/year combined (2026/27 avg, Discover Water; ~£583 in 2025/26)
 const LITRES_PER_PERSON_DAY = 145
 
 function calculate(billingType: BillingType, people: number, rateableValue: number) {

@@ -4,7 +4,7 @@ import { formatCurrency } from '@/utils'
 // Tribunal limits 2026/27 (effective 6 April 2026)
 const WEEKLY_PAY_CAP = 751 // £751/week from 6 April 2026
 const BASIC_AWARD_MAX = WEEKLY_PAY_CAP * 30 // max 30 weeks x cap
-const COMPENSATORY_AWARD_CAP = 123_785 // uprated for 2026/27 from 6 April 2026 (was £118,455 in 2025/26)
+const COMPENSATORY_AWARD_CAP = 123_543 // uprated for 2026/27 from 6 April 2026 (was £118,223 in 2025/26)
 
 function calculate(weeklyPay: number, age: number, yearsService: number, weeksLostPay: number) {
   const cappedPay = Math.min(weeklyPay, WEEKLY_PAY_CAP)

@@ -25,12 +25,12 @@ export default function HeatPumpCalculator() {
   const [fuel, setFuel] = useState('gas')
   const [boilerEff, setBoilerEff] = useState('85')
   const [cop, setCop] = useState('3.0')
-  const [elec, setElec] = useState('24.5')
-  const [gas, setGas] = useState('6.33')
+  const [elec, setElec] = useState('26.11')
+  const [gas, setGas] = useState('7.33')
   const [oil, setOil] = useState('5.5')
   const [installCost, setInstallCost] = useState('12000')
 
-  const result = useMemo(() => calculate(parseFloat(size)||0, fuel, parseFloat(boilerEff)||85, parseFloat(cop)||3, parseFloat(elec)||24.5, parseFloat(gas)||6.33, parseFloat(oil)||5.5, parseFloat(installCost.replace(/,/g,''))||0), [size, fuel, boilerEff, cop, elec, gas, oil, installCost])
+  const result = useMemo(() => calculate(parseFloat(size)||0, fuel, parseFloat(boilerEff)||85, parseFloat(cop)||3, parseFloat(elec)||26.11, parseFloat(gas)||7.33, parseFloat(oil)||5.5, parseFloat(installCost.replace(/,/g,''))||0), [size, fuel, boilerEff, cop, elec, gas, oil, installCost])
 
   return (
     <div className="space-y-6">

@@ -3,7 +3,7 @@ import { formatCurrency } from '@/utils'
 
 // UK Spouse Visa minimum income requirement 2025
 const MIN_INCOME = 29_000 // from April 2024, rising
-const VISA_FEE = 1_846
+const VISA_FEE = 2_064
 const IHS_PER_YEAR = 1_035
 const VISA_LENGTH = 2.5 // years (initial)
 

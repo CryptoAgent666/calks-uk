@@ -30,7 +30,7 @@ function calculate(targetTakeHome: number, workingDays: number, insideIR35: bool
   const dayRate = annualRevenue / workingDays
   const corpTax = (annualRevenue - optSalary) * 0.19
   const dividends = annualRevenue - optSalary - corpTax
-  const divTax = Math.max(0, dividends - 500) * 0.0875
+  const divTax = Math.max(0, dividends - 500) * 0.1075
   const takeHome = optSalary + dividends - divTax
 
   return { dayRate: Math.ceil(dayRate / 5) * 5, annualGross: annualRevenue, takeHome, corpTax, divTax }

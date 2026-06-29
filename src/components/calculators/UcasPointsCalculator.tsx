@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 
 const A_LEVEL_POINTS: Record<string, number> = { 'A*': 56, 'A': 48, 'B': 40, 'C': 32, 'D': 24, 'E': 16 }
 const BTEC_POINTS: Record<string, number> = { 'D*D*D*': 168, 'D*D*D': 160, 'D*DD': 152, 'DDD': 144, 'DDM': 128, 'DMM': 112, 'MMM': 96, 'MMP': 80, 'MPP': 64, 'PPP': 48 }
-const AS_LEVEL_POINTS: Record<string, number> = { 'A': 20, 'B': 16, 'C': 12, 'D': 8, 'E': 4 }
+const AS_LEVEL_POINTS: Record<string, number> = { 'A': 20, 'B': 16, 'C': 12, 'D': 10, 'E': 6 }
 const EPQ_POINTS: Record<string, number> = { 'A*': 28, 'A': 24, 'B': 20, 'C': 16, 'D': 12, 'E': 8 }
 
 export default function UcasPointsCalculator() {

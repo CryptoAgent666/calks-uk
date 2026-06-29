@@ -13,7 +13,7 @@ function calculate(profit: number) {
   const corpTaxableProfit = profit - optSalary - Math.max(0, (optSalary - 5_000) * 0.15)
   const corpTax = corpTaxableProfit <= 50_000 ? corpTaxableProfit * 0.19 : corpTaxableProfit * 0.25
   const availableDividends = corpTaxableProfit - corpTax
-  const divTax = Math.max(0, availableDividends - 500) * 0.0875
+  const divTax = Math.max(0, availableDividends - 500) * 0.1075
   const optTakeHome = optSalary + availableDividends - divTax
 
   // Option 3: Higher salary (£50,270) + dividends
@@ -24,7 +24,7 @@ function calculate(profit: number) {
   const highDividends = Math.max(0, highCorpProfit - highCorpTax)
   const highSalaryIT = calcIT(highSalary)
   const highSalaryNI = calcNI(highSalary)
-  const highDivTax = Math.max(0, highDividends - 500) * 0.0875
+  const highDivTax = Math.max(0, highDividends - 500) * 0.1075
   const highTakeHome = highSalary - highSalaryIT - highSalaryNI + highDividends - highDivTax
 
   return {

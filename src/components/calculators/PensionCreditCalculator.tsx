@@ -9,7 +9,7 @@ const COUPLE_GUARANTEE = 363.25 // weekly (was £346.60 in 2025/26)
 function calculate(isSingle: boolean, weeklyIncome: number, weeklyPension: number, hasSavings: boolean, savings: number, hasDisability: boolean, hasCarer: boolean) {
   const guarantee = isSingle ? SINGLE_GUARANTEE : COUPLE_GUARANTEE
   let additionalAmount = 0
-  if (hasDisability) additionalAmount += 87.87 // severe disability (was £84.65 in 2025/26, uprated 3.8% CPI)
+  if (hasDisability) additionalAmount += 86.05 // severe disability 2026/27 (gov.uk; was £82.90 in 2025/26, +3.8% CPI)
   if (hasCarer) additionalAmount += 48.16 // carer addition (was £46.40 in 2025/26, uprated 3.8% CPI)
 
   const totalGuarantee = guarantee + additionalAmount

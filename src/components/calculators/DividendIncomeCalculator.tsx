@@ -20,7 +20,7 @@ function calculate(investmentAmount: number, dividendYield: number, growthRate: 
   // Tax on dividends (simplified)
   const taxFreeDividend = 500
   const taxableDividend = Math.max(0, annualDividend - taxFreeDividend)
-  const dividendTax = taxableDividend * 0.0875 // basic rate
+  const dividendTax = taxableDividend * 0.1075 // basic rate
 
   return { balance, totalDividends, annualDividend, monthlyDividend, dividendTax, schedule: schedule.filter((_, i) => (i + 1) % 5 === 0 || i === 0 || i === years - 1) }
 }

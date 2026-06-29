@@ -2,10 +2,10 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // Ofgem price cap Q2 2026 (April–June 2026) — pence per kWh + daily standing charge
-const ELEC_UNIT = 24.50 // p/kWh
-const ELEC_STANDING = 61.64 // p/day
-const GAS_UNIT = 6.33 // p/kWh (reduced from 6.76 in Q2 2025)
-const GAS_STANDING = 31.65 // p/day
+const ELEC_UNIT = 26.11 // p/kWh
+const ELEC_STANDING = 57.19 // p/day
+const GAS_UNIT = 7.33 // p/kWh
+const GAS_STANDING = 29.04 // p/day
 
 function calculate(elecKwh: number, gasKwh: number) {
   const elecCost = (elecKwh * ELEC_UNIT / 100) + (ELEC_STANDING * 365 / 100)

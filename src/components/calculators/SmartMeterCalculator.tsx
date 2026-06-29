@@ -25,7 +25,7 @@ function calculate(appliances: { watts: number; hours: number }[], elecRate: num
 
 export default function SmartMeterCalculator() {
   const [items, setItems] = useState(APPLIANCES.map(a => ({ ...a })))
-  const [rate, setRate] = useState('24.5')
+  const [rate, setRate] = useState('26.11')
 
   const r = parseFloat(rate) || 0
   const result = useMemo(() => calculate(items, r), [items, r])

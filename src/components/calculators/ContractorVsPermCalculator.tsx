@@ -3,7 +3,7 @@ import { formatCurrency } from '@/utils'
 
 function calculate(permSalary: number, contractDayRate: number, daysPerYear: number) {
   // Perm benefits value
-  const permPension = permSalary * 0.05
+  const permPension = permSalary * 0.03
   const permHoliday = permSalary / 260 * 28 // 28 days
   const permSickPay = permSalary / 260 * 5 // ~5 days avg
   const permTotalPackage = permSalary + permPension + permHoliday + permSickPay

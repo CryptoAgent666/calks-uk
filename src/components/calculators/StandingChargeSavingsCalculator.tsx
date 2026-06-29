@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-const DEFAULT_ELEC_STANDING = 61.64 // p/day
-const DEFAULT_GAS_STANDING = 31.65
+const DEFAULT_ELEC_STANDING = 57.19 // p/day
+const DEFAULT_GAS_STANDING = 29.04
 
 function calculate(elecStanding: number, gasStanding: number, hasGas: boolean) {
   const dailyTotal = elecStanding + (hasGas ? gasStanding : 0)

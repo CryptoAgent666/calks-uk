@@ -20,7 +20,7 @@ function calculate() {
     const ltdProfit = profit - ltdSalary - ltdErNI
     const ltdCorpTax = ltdProfit <= 50_000 ? ltdProfit * 0.19 : ltdProfit * 0.25
     const ltdDividends = ltdProfit - ltdCorpTax
-    const ltdDivTax = Math.max(0, ltdDividends - 500) * 0.0875
+    const ltdDivTax = Math.max(0, ltdDividends - 500) * 0.1075
     const ltdTotal = ltdCorpTax + ltdDivTax + ltdErNI + 1200 // +accountancy
 
     return { profit, stTakeHome: profit - stTotal, ltdTakeHome: profit - ltdTotal, stTotal, ltdTotal, saving: (profit - ltdTotal) - (profit - stTotal) }

@@ -1,27 +1,30 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// SSP 2026/27
-const SSP_RATE = 123.25 // per week (2026/27)
-const SSP_WAITING_DAYS = 3
+// SSP 2026/27 — reformed from 6 April 2026 (Employment Rights Act 2025):
+// the Lower Earnings Limit is removed (all employees qualify) and the 3 waiting
+// days are abolished, so SSP is paid from the first qualifying day.
+const SSP_RATE = 123.25 // flat weekly rate (2026/27)
+const SSP_WAITING_DAYS = 0 // waiting days abolished from 6 April 2026
 const SSP_MAX_WEEKS = 28
-const SSP_LOWER_EARNINGS = 125 // weekly minimum to qualify
 
 function calculate(weeklyPay: number, daysSick: number, daysPerWeek: number) {
-  const qualifies = weeklyPay >= SSP_LOWER_EARNINGS && daysSick >= 4
-  if (!qualifies) return { qualifies, reason: daysSick < 4 ? 'Must be sick for 4+ consecutive days (including non-working days)' : `Weekly earnings must be at least £${SSP_LOWER_EARNINGS}` }
+  const qualifies = daysSick >= 1
+  if (!qualifies) return { qualifies, reason: 'Enter at least 1 day of sickness' }
 
-  // SSP is paid per "qualifying day" (a normal working day) after the first 3 waiting days.
+  // No Lower Earnings Limit from 6 April 2026. Low earners receive the lower of the
+  // flat rate or 80% of average weekly earnings; everyone else gets the flat rate.
+  const weeklyRate = Math.min(SSP_RATE, 0.80 * weeklyPay)
   // The input is consecutive *calendar* days, so convert to working days first.
   const dpw = Math.min(Math.max(daysPerWeek, 1), 7)
   const workingDaysSick = Math.round(daysSick * dpw / 7)
   const maxPaidDays = SSP_MAX_WEEKS * dpw
   const paidDays = Math.min(Math.max(0, workingDaysSick - SSP_WAITING_DAYS), maxPaidDays)
-  const dailyRate = SSP_RATE / dpw
+  const dailyRate = weeklyRate / dpw
   const totalSSP = paidDays * dailyRate
   const sickWeeks = Math.floor(paidDays / dpw)
 
-  return { qualifies, totalSSP, weeklyRate: SSP_RATE, dailyRate, paidDays, sickWeeks, waitingDays: SSP_WAITING_DAYS }
+  return { qualifies, totalSSP, weeklyRate, dailyRate, paidDays, sickWeeks, waitingDays: SSP_WAITING_DAYS }
 }
 
 export default function SickPayCalculator() {
@@ -44,11 +47,11 @@ export default function SickPayCalculator() {
           <div className="rounded-2xl bg-primary/10 p-6 text-center">
             <p className="text-sm text-muted-foreground">Total Statutory Sick Pay</p>
             <p className="text-3xl font-bold text-primary mt-1">{formatCurrency(result.totalSSP)}</p>
-            <p className="text-sm text-muted-foreground mt-1">£{SSP_RATE}/week for up to {SSP_MAX_WEEKS} weeks</p>
+            <p className="text-sm text-muted-foreground mt-1">{formatCurrency(result.weeklyRate)}/week for up to {SSP_MAX_WEEKS} weeks</p>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-1">
-            <p>SSP is paid after {SSP_WAITING_DAYS} waiting days (not paid for first 3 qualifying days).</p>
-            <p>Rate: <span className="font-medium text-foreground">£{SSP_RATE}/week</span> ({formatCurrency(result.dailyRate)}/day for {daysPerWeek}-day week)</p>
+            <p>SSP is paid from the first qualifying day — the 3 waiting days were abolished on 6 April 2026.</p>
+            <p>Rate: <span className="font-medium text-foreground">{formatCurrency(result.weeklyRate)}/week</span> ({formatCurrency(result.dailyRate)}/day for {daysPerWeek}-day week)</p>
             <p>Maximum: {SSP_MAX_WEEKS} weeks ({SSP_MAX_WEEKS * 7} days).</p>
           </div>
         </div>

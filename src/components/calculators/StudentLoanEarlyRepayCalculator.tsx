@@ -2,10 +2,10 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 const PLANS: Record<string, { threshold: number; rate: number; interestRate: number; writeOffYears: number }> = {
-  plan1: { threshold: 26_900, rate: 0.09, interestRate: 4.3, writeOffYears: 25 },
-  plan2: { threshold: 29_385, rate: 0.09, interestRate: 7.3, writeOffYears: 30 },
-  plan4: { threshold: 33_795, rate: 0.09, interestRate: 4.3, writeOffYears: 30 },
-  plan5: { threshold: 25_000, rate: 0.09, interestRate: 7.3, writeOffYears: 40 },
+  plan1: { threshold: 26_900, rate: 0.09, interestRate: 4.1, writeOffYears: 25 },
+  plan2: { threshold: 29_385, rate: 0.09, interestRate: 6.0, writeOffYears: 30 },
+  plan4: { threshold: 33_795, rate: 0.09, interestRate: 4.1, writeOffYears: 30 },
+  plan5: { threshold: 25_000, rate: 0.09, interestRate: 4.1, writeOffYears: 40 },
 }
 
 function calculate(planId: string, balance: number, salary: number, lumpSum: number) {

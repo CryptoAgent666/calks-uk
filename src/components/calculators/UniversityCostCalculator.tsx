@@ -1,15 +1,15 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-const TUITION_FEE = 9_535 // raised from £9,250 to £9,535 from September 2025 (Autumn Budget 2024)
+const TUITION_FEE = 9_790 // 2026/27 England undergraduate tuition fee cap (raised from £9,535)
 const MAINTENANCE_LOANS: Record<string, Record<string, number>> = {
-  home: { london: 13_762, other: 10_544, parents: 8_490 },
-  away: { london: 13_762, other: 10_544, parents: 8_490 },
+  home: { london: 14_135, other: 10_830, parents: 9_118 },
+  away: { london: 14_135, other: 10_830, parents: 9_118 },
 }
 
 function calculate(years: number, location: string, livingWith: string, monthlySpending: number) {
   const tuitionTotal = TUITION_FEE * years
-  const maintenanceLoan = MAINTENANCE_LOANS.away[location === 'london' ? 'london' : 'other'] || 10_544
+  const maintenanceLoan = MAINTENANCE_LOANS.away[location === 'london' ? 'london' : 'other'] || 10_830
   const totalMaintenanceLoan = maintenanceLoan * years
 
   const monthlyLiving = monthlySpending * 9 // ~9 months per academic year

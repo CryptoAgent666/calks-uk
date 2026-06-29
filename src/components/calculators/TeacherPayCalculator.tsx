@@ -5,9 +5,9 @@ import { formatCurrency } from '@/utils'
 const MAIN_SCALE = [32_916, 34_823, 37_101, 39_556, 42_057, 45_352]
 const UPPER_SCALE = [47_472, 49_232, 51_048]
 const LEADERSHIP: Record<string, { min: number; max: number }> = {
-  'Head (Group 1)': { min: 58_325, max: 76_449 },
-  'Head (Group 4)': { min: 69_596, max: 98_884 },
-  'Head (Group 8)': { min: 92_991, max: 136_298 },
+  'Head (Group 1)': { min: 58_569, max: 77_924 },
+  'Head (Group 4)': { min: 71_330, max: 97_136 },
+  'Head (Group 8)': { min: 100_540, max: 143_796 },
 }
 
 type Scale = 'main' | 'upper' | 'leadership'

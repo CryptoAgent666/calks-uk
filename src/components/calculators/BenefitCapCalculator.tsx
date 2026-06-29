@@ -1,13 +1,13 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Benefit cap 2026/27 (from April 2025, uprated 1.7% CPI from 2023/24 rates)
+// Benefit cap 2026/27 (uprated 3.8% CPI for general benefits; cap itself frozen at 2023/24 rates)
 // 2023/24 rates were: couple London £25,323, single London £16,967, couple outside £22,020, single outside £14,753
 const CAPS = {
-  single_london: 1_437.84 * 12, // £17,254/year (was £1,284.17/month pre-2023 freeze)
-  couple_london: 2_146.82 * 12, // £25,762/year
-  single_outside: 1_250.82 * 12, // £15,010/year
-  couple_outside: 1_866.15 * 12, // £22,394/year
+  single_london: 1_413.92 * 12, // £16,967/year
+  couple_london: 2_110.25 * 12, // £25,323/year
+  single_outside: 1_229.42 * 12, // £14,753/year
+  couple_outside: 1_835.00 * 12, // £22,020/year
 }
 
 function calculate(isLondon: boolean, isSingle: boolean, monthlyBenefits: number, isExempt: boolean) {

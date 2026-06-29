@@ -17,7 +17,7 @@ export default function LedSavingsCalculator() {
   const [newW, setNewW] = useState('8')
   const [bulbs, setBulbs] = useState('10')
   const [hours, setHours] = useState('5')
-  const [rate, setRate] = useState('24.5')
+  const [rate, setRate] = useState('26.11')
   const [cost, setCost] = useState('3')
 
   const result = useMemo(() => calculate(parseFloat(oldW)||0, parseFloat(newW)||0, parseInt(bulbs)||0, parseFloat(hours)||0, parseFloat(rate)||0, parseFloat(cost)||0), [oldW, newW, bulbs, hours, rate, cost])

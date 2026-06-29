@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 const AIA_LIMIT = 1_000_000
-const WRITING_DOWN_MAIN = 0.18
+const WRITING_DOWN_MAIN = 0.14
 const WRITING_DOWN_SPECIAL = 0.06
 const FULL_EXPENSING_RATE = 1.0 // 100% for qualifying plant/machinery
 

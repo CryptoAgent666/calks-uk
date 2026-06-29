@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-06-10'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-06-23'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -24,6 +24,35 @@ const schemas = [
     <p class="text-sm text-muted-foreground mb-8">Rate changes, new calculators and site improvements</p>
 
     <div class="space-y-8">
+      <!-- June 2026 — data accuracy review -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            June 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">2026/27 figures verified — accuracy corrections</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Every rate re-checked against official sources</strong> — all figures verified against GOV.UK, GOV.SCOT and Revenue Scotland, with ongoing weekly monitoring so changes are caught quickly</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Agricultural wages corrected</strong> — Scotland uses a single statutory rate (&pound;12.71/hr, plus a &pound;1.91/hr qualified-worker premium), not graded tiers; the Welsh grades A&ndash;E and the 2026 Seasonal Worker visa details (42,900-place quota, &pound;340 fee, no health surcharge) now match the current orders</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Farming payments updated</strong> — SFI winter cover-crop rate set to &pound;129/hectare and the delinked-payment (BPS) phase-out confirmed for 2027</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Motoring, benefits &amp; legal figures refreshed</strong> — 2026/27 car tax (VED) first-year rates, Universal Credit childcare caps and work thresholds, the Right to Buy discount-cap reform, the whiplash compensation tariff, teacher pay scales and the postgraduate Master&rsquo;s loan amount</span>
+          </li>
+        </ul>
+      </article>
+
       <!-- June 2026 — App Store launch -->
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>

@@ -4,14 +4,14 @@ import { formatCurrency } from '@/utils'
 // Simplified ELM/SFI payment rates 2025
 const ACTIONS = [
   { id: 'hedgerow', name: 'Hedgerow Management', unit: 'per 100m', rate: 13 },
-  { id: 'buffer_strip', name: 'Buffer Strips (6m)', unit: 'per ha', rate: 451 },
+  { id: 'buffer_strip', name: 'Buffer Strips (6m)', unit: 'per ha', rate: 515 },
   { id: 'cover_crop', name: 'Winter Cover Crop', unit: 'per ha', rate: 129 },
   { id: 'herbal_ley', name: 'Herbal Ley', unit: 'per ha', rate: 382 },
   { id: 'soil_assessment', name: 'Soil Assessment', unit: 'per agreement', rate: 97 },
-  { id: 'wildflower', name: 'Flower-Rich Margins', unit: 'per ha', rate: 739 },
+  { id: 'wildflower', name: 'Flower-Rich Margins', unit: 'per ha', rate: 798 },
   { id: 'no_insecticide', name: 'No Insecticide (arable)', unit: 'per ha', rate: 45 },
   { id: 'companion_crop', name: 'Companion Crop', unit: 'per ha', rate: 55 },
-  { id: 'pollen_nectar', name: 'Pollen & Nectar Mix', unit: 'per ha', rate: 614 },
+  { id: 'pollen_nectar', name: 'Pollen & Nectar Mix', unit: 'per ha', rate: 739 },
   { id: 'woodland', name: 'Woodland Management', unit: 'per ha', rate: 49 },
 ]
 

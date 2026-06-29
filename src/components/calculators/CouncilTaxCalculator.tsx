@@ -3,7 +3,7 @@ import { formatCurrency } from '@/utils'
 
 // Average Band D council tax 2026/27 by region (approximate)
 const REGIONS: Record<string, number> = {
-  'England Average': 2_171,
+  'England Average': 2_392,
   'London': 1_902,
   'South East': 2_151,
   'South West': 2_239,
@@ -25,7 +25,7 @@ const BAND_VALUES: Record<string, string> = {
 }
 
 function calculate(region: string, band: string, singlePerson: boolean) {
-  const bandD = REGIONS[region] || 2_171
+  const bandD = REGIONS[region] || 2_392
   const ratio = BAND_RATIOS[band] || 1
   const annual = bandD * ratio
   const discount = singlePerson ? annual * 0.25 : 0

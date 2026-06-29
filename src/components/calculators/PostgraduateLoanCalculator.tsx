@@ -3,7 +3,7 @@ import { formatCurrency } from '@/utils'
 
 const PG_THRESHOLD = 21_000
 const PG_RATE = 0.06
-const PG_INTEREST = 7.3
+const PG_INTEREST = 6
 
 function calculate(balance: number, salary: number) {
   const annualRepayment = salary > PG_THRESHOLD ? (salary - PG_THRESHOLD) * PG_RATE : 0

@@ -77,7 +77,7 @@ export default function EPCCalculator() {
       </div>
 
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p>Simplified estimate — actual EPC depends on property size, age, floor area and surveyor assessment. Minimum EPC for rental properties: Band E (Band C from 2028 for new tenancies).</p>
+        <p>Simplified estimate — actual EPC depends on property size, age, floor area and surveyor assessment. Minimum EPC for rental properties: Band E (rising to Band C from 1 October 2030 for all tenancies).</p>
       </div>
     </div>
   )

@@ -1,21 +1,21 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// NHS Agenda for Change pay bands 2026/27 (approximate, ~3.5% uplift from 2024/25)
-// Verify exact figures at nhsemployers.org — pay award effective April 2025
+// NHS Agenda for Change pay bands 2026/27 (verified vs nhsemployers.org)
+// Pay award effective April 2026; bands 2/3 restructured (some maxima lowered)
 const NHS_BANDS: Record<string, { min: number; max: number; description: string }> = {
-  '1': { min: 24_442, max: 24_442, description: 'Support staff' },
-  '2': { min: 24_442, max: 26_573, description: 'Healthcare assistants, porters' },
-  '3': { min: 26_573, max: 29_401, description: 'Senior HCA, admin' },
-  '4': { min: 27_459, max: 30_133, description: 'Associate practitioners' },
-  '5': { min: 31_019, max: 37_760, description: 'Newly qualified nurses, therapists' },
-  '6': { min: 38_645, max: 46_535, description: 'Senior nurses, specialists' },
-  '7': { min: 47_763, max: 54_657, description: 'Advanced practitioners, team leaders' },
-  '8a': { min: 55_637, max: 62_622, description: 'Consultant therapists, senior managers' },
-  '8b': { min: 64_393, max: 74_823, description: 'Principal specialists' },
-  '8c': { min: 76_890, max: 89_934, description: 'Senior managers' },
-  '8d': { min: 91_254, max: 105_984, description: 'Director level' },
-  '9': { min: 109_074, max: 125_515, description: 'Executive level' },
+  '1': { min: 25_272, max: 25_272, description: 'Support staff' },
+  '2': { min: 25_272, max: 25_272, description: 'Healthcare assistants, porters' },
+  '3': { min: 25_760, max: 27_476, description: 'Senior HCA, admin' },
+  '4': { min: 28_392, max: 31_157, description: 'Associate practitioners' },
+  '5': { min: 32_073, max: 39_043, description: 'Newly qualified nurses, therapists' },
+  '6': { min: 39_959, max: 48_117, description: 'Senior nurses, specialists' },
+  '7': { min: 49_387, max: 56_515, description: 'Advanced practitioners, team leaders' },
+  '8a': { min: 57_528, max: 64_750, description: 'Consultant therapists, senior managers' },
+  '8b': { min: 66_582, max: 77_368, description: 'Principal specialists' },
+  '8c': { min: 79_504, max: 91_609, description: 'Senior managers' },
+  '8d': { min: 94_356, max: 108_814, description: 'Director level' },
+  '9': { min: 112_782, max: 129_783, description: 'Executive level' },
 }
 
 // Explicit display order — object key iteration would put numeric '9' before string '8a'

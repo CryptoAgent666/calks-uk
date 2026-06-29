@@ -29,7 +29,7 @@ function calculate(watts: number, hoursPerDay: number, elecRate: number) {
 export default function ElectricityCostCalculator() {
   const [watts, setWatts] = useState('2000')
   const [hours, setHours] = useState('1')
-  const [rate, setRate] = useState('24.5')
+  const [rate, setRate] = useState('26.11')
 
   const w = parseFloat(watts) || 0
   const h = parseFloat(hours) || 0

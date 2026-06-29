@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-const CITIZENSHIP_FEE = 1_580
-const CEREMONY_FEE = 80
+const CITIZENSHIP_FEE = 1_709
+const CEREMONY_FEE = 130
 const LIFE_IN_UK_TEST = 50
 const ENGLISH_TEST = 150 // approx B1 IELTS/Trinity
 

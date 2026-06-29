@@ -15,7 +15,7 @@ function calculate(annualCost: number) {
   const contrCorpProfit = annualCost - contrSalary - Math.max(0, (contrSalary - 5_000) * 0.15)
   const contrCorpTax = contrCorpProfit * 0.19
   const contrDividends = contrCorpProfit - contrCorpTax
-  const contrDivTax = Math.max(0, contrDividends - 500) * 0.0875
+  const contrDivTax = Math.max(0, contrDividends - 500) * 0.1075
   const contrTakeHome = contrSalary + contrDividends - contrDivTax - 1200
 
   return { empSalary, empNI, empPension, empTotal, empTakeHome, dayRate, contrTakeHome, saving: contrTakeHome - empTakeHome }

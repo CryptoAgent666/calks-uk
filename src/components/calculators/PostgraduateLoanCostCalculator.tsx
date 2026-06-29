@@ -3,7 +3,7 @@ import { formatCurrency } from '@/utils'
 
 // Education: Postgraduate Loan Total Cost over lifetime
 function calculate(balance: number, startSalary: number, salaryGrowth: number) {
-  const threshold = 21_000; const rate = 0.06; const interest = 7.3; const writeOff = 30
+  const threshold = 21_000; const rate = 0.06; const interest = 6; const writeOff = 30
   let bal = balance; let salary = startSalary; let totalPaid = 0; let months = 0
 
   while (bal > 0 && months < writeOff * 12) {

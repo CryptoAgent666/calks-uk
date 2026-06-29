@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-const GAS_RATE = 6.33 // p/kWh Ofgem price cap Q2 2026
-const GAS_STANDING = 31.65 // p/day
+const GAS_RATE = 7.33 // p/kWh Ofgem price cap Q2 2026
+const GAS_STANDING = 29.04 // p/day
 
 function calculate(kwhPerYear: number, rate: number, standing: number) {
   const unitCost = kwhPerYear * (rate / 100)

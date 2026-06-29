@@ -6,7 +6,7 @@ const FLAT_RATES: Record<string, number> = {
   'Boarding/care of animals': 12, 'Business services': 12, 'Catering/takeaway': 12.5,
   'Computer/IT consultancy': 14.5, 'Computer repair': 10.5, 'Entertainment/journalism': 12.5,
   'Estate agency': 12, 'Farming/agriculture': 6.5, 'Film/TV/radio': 13,
-  'Financial services': 13.5, 'Freight transport': 10.5, 'General building': 9.5,
+  'Financial services': 13.5, 'Freight transport': 10, 'General building': 9.5,
   'Hairdressing/beauty': 13, 'Hiring goods': 9.5, 'Hotels/accommodation': 10.5,
   'Investigation/security': 12, 'Labour-only building': 14.5, 'Laundry/dry cleaning': 12,
   'Legal services': 14.5, 'Management consultancy': 14, 'Manufacturing': 9.5,

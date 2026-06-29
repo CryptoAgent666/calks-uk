@@ -17,7 +17,7 @@ function calculate(systemSize: number, installCost: number, elecRate: number, ex
 export default function SolarPanelCalculator() {
   const [size, setSize] = useState('4')
   const [cost, setCost] = useState('6000')
-  const [elecRate, setElecRate] = useState('24.5')
+  const [elecRate, setElecRate] = useState('26.11')
   const [exportRate, setExportRate] = useState('15')
   const [selfUse, setSelfUse] = useState('50')
 

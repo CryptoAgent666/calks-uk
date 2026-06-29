@@ -103,6 +103,16 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
         window.location.protocol === 'file:' ||
         !!window.Capacitor;
 
+      // On the iOS native app, hide the store badge in the footer (App Store guideline 2.3.10).
+      // Set a class on <html> before paint so the badge never flashes.
+      // Android and web keep the badge. Works for OTA bundles too (single shared bundle).
+      try {
+        if (window.Capacitor && typeof window.Capacitor.getPlatform === 'function'
+            && window.Capacitor.getPlatform() === 'ios') {
+          document.documentElement.classList.add('is-ios-app');
+        }
+      } catch (_) {}
+
       // In Capacitor WebView, trailing-slash URLs don't auto-resolve to index.html.
       // Rewrite <a href="/path/"> clicks to navigate to /path/index.html instead.
       if (window.__IS_CAPACITOR__) {
@@ -147,6 +157,12 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
         var __adsTag = document.querySelector('script[src*="adsbygoogle.js"]');
         if (__adsTag) __adsTag.remove();
       }
+    </script>
+
+    <!-- OTA live-updates: native app pulls new web bundles from Cloudflare (no-op on the website) -->
+    <script>
+      import { initOtaUpdates } from '../scripts/ota-update'
+      initOtaUpdates()
     </script>
   </head>
   <body class="min-h-screen flex flex-col antialiased bg-background text-foreground">

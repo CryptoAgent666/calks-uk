@@ -6,7 +6,7 @@ type MatterType = 'conveyancing_buy' | 'conveyancing_sell' | 'divorce' | 'will' 
 const MATTERS: Record<MatterType, { name: string; baseFee: number; description: string; disbursements: number }> = {
   conveyancing_buy: { name: 'Conveyancing (Buying)', baseFee: 1500, description: 'Legal fees for purchasing a property', disbursements: 400 },
   conveyancing_sell: { name: 'Conveyancing (Selling)', baseFee: 1200, description: 'Legal fees for selling a property', disbursements: 100 },
-  divorce: { name: 'Divorce (uncontested)', baseFee: 1000, description: 'No-fault divorce proceedings', disbursements: 593 },
+  divorce: { name: 'Divorce (uncontested)', baseFee: 1000, description: 'No-fault divorce proceedings', disbursements: 612 },
   will: { name: 'Simple Will', baseFee: 250, description: 'Standard single will', disbursements: 0 },
   probate: { name: 'Probate Application', baseFee: 2500, description: 'Grant of probate + estate administration', disbursements: 300 },
   employment: { name: 'Employment Tribunal', baseFee: 3000, description: 'Representation at employment tribunal', disbursements: 200 },

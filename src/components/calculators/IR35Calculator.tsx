@@ -12,7 +12,7 @@ function calculateOutside(dayRate: number, daysPerYear: number, expenses: number
   const salaryTax = 0 // within PA
   const salaryNI = 0
   const dividendIncome = afterCorpTax - optimalSalary
-  const dividendTax = Math.max(0, dividendIncome - 500) * 0.0875 // basic rate
+  const dividendTax = Math.max(0, dividendIncome - 500) * 0.1075 // basic rate
 
   const takeHome = optimalSalary + dividendIncome - dividendTax
 

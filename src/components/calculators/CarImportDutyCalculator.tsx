@@ -12,21 +12,21 @@ function calculate(carValue: number, shippingCost: number, co2: number, fuelType
   const vatableAmount = customsValue + importDuty
   const vat = vatableAmount * 0.20
 
-  // Registration: first year VED (2025/26 rates — doubled for 76g/km+ from April 2025, Budget Oct 2024)
+  // Registration: first year VED (2026/27 rates, gov.uk vehicle-tax-rate-tables; EV first-year stays £10)
   let ved = 0
   if (fuelType === 'electric') ved = 10
-  else if (co2 <= 50) ved = 10
-  else if (co2 <= 75) ved = 30
-  else if (co2 <= 90) ved = 270
-  else if (co2 <= 100) ved = 350
-  else if (co2 <= 110) ved = 390
-  else if (co2 <= 130) ved = 440
-  else if (co2 <= 150) ved = 540
-  else if (co2 <= 170) ved = 1_360
-  else if (co2 <= 190) ved = 2_190
-  else if (co2 <= 225) ved = 3_300
-  else if (co2 <= 255) ved = 4_680
-  else ved = 5_490
+  else if (co2 <= 50) ved = 115
+  else if (co2 <= 75) ved = 135
+  else if (co2 <= 90) ved = 280
+  else if (co2 <= 100) ved = 365
+  else if (co2 <= 110) ved = 405
+  else if (co2 <= 130) ved = 455
+  else if (co2 <= 150) ved = 560
+  else if (co2 <= 170) ved = 1_410
+  else if (co2 <= 190) ved = 2_270
+  else if (co2 <= 225) ved = 3_420
+  else if (co2 <= 255) ved = 4_850
+  else ved = 5_690
 
   const typeApproval = 300 // IVA or mutual recognition
   const totalCost = carValue + shippingCost + importDuty + vat + ved + typeApproval

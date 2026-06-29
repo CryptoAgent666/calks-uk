@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // Late payment interest (commercial debts) - Late Payment of Commercial Debts Act
-const BOE_BASE_RATE = 4.25 // Bank of England base rate (as of Q1 2026; check bankofengland.co.uk for current rate)
+const BOE_BASE_RATE = 3.75 // Bank of England base rate (as of Q2 2026; check bankofengland.co.uk for current rate)
 const STATUTORY_RATE = BOE_BASE_RATE + 8 // base rate + 8%
 // Statutory fixed compensation bands: £40 for debt under £1,000;
 // £70 for £1,000–£9,999.99; £100 for £10,000 or more.

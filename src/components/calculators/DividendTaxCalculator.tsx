@@ -4,7 +4,7 @@ import { formatCurrency, formatPercent } from '@/utils'
 const DIVIDEND_ALLOWANCE = 500
 const BASIC_LIMIT = 50_270
 const HIGHER_LIMIT = 125_140
-const RATES = { basic: 0.0875, higher: 0.3375, additional: 0.3935 }
+const RATES = { basic: 0.1075, higher: 0.3575, additional: 0.3935 }
 
 function calculate(dividends: number, otherIncome: number) {
   const taxableDividends = Math.max(0, dividends - DIVIDEND_ALLOWANCE)
@@ -22,14 +22,14 @@ function calculate(dividends: number, otherIncome: number) {
   if (basicRemaining > 0 && remaining > 0) {
     const amt = Math.min(remaining, basicRemaining)
     const t = amt * RATES.basic
-    breakdown.push({ band: 'Basic Rate (8.75%)', amount: amt, rate: RATES.basic, tax: t })
+    breakdown.push({ band: 'Basic Rate (10.75%)', amount: amt, rate: RATES.basic, tax: t })
     tax += t; remaining -= amt
   }
 
   if (higherRemaining > 0 && remaining > 0) {
     const amt = Math.min(remaining, higherRemaining)
     const t = amt * RATES.higher
-    breakdown.push({ band: 'Higher Rate (33.75%)', amount: amt, rate: RATES.higher, tax: t })
+    breakdown.push({ band: 'Higher Rate (35.75%)', amount: amt, rate: RATES.higher, tax: t })
     tax += t; remaining -= amt
   }
 

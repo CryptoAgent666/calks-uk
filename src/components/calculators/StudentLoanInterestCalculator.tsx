@@ -2,10 +2,10 @@ import { useState, useMemo } from 'react'
 import { formatCurrency, formatPercent } from '@/utils'
 
 const PLANS: Record<string, { name: string; baseRate: number; maxRate: number; incomeThresholdLow: number; incomeThresholdHigh: number }> = {
-  plan1: { name: 'Plan 1', baseRate: 4.3, maxRate: 4.3, incomeThresholdLow: 0, incomeThresholdHigh: 0 },
-  plan2: { name: 'Plan 2', baseRate: 4.3, maxRate: 7.3, incomeThresholdLow: 29_385, incomeThresholdHigh: 49_130 },
-  plan4: { name: 'Plan 4', baseRate: 4.3, maxRate: 4.3, incomeThresholdLow: 0, incomeThresholdHigh: 0 },
-  plan5: { name: 'Plan 5', baseRate: 4.3, maxRate: 7.3, incomeThresholdLow: 25_000, incomeThresholdHigh: 49_130 },
+  plan1: { name: 'Plan 1', baseRate: 4.1, maxRate: 4.1, incomeThresholdLow: 0, incomeThresholdHigh: 0 },
+  plan2: { name: 'Plan 2', baseRate: 4.1, maxRate: 6.0, incomeThresholdLow: 29_385, incomeThresholdHigh: 52_885 },
+  plan4: { name: 'Plan 4', baseRate: 4.1, maxRate: 4.1, incomeThresholdLow: 0, incomeThresholdHigh: 0 },
+  plan5: { name: 'Plan 5', baseRate: 4.1, maxRate: 4.1, incomeThresholdLow: 25_000, incomeThresholdHigh: 49_130 },
 }
 
 function calculate(planId: string, balance: number, salary: number) {

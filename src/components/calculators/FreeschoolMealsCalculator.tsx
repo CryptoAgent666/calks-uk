@@ -53,7 +53,7 @@ export default function FreeschoolMealsCalculator() {
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
         <p className="font-medium text-foreground">Also eligible:</p>
         <p>All children in Reception, Year 1 and Year 2 get Universal Infant Free School Meals regardless of income.</p>
-        <p className="mt-1">Registering for FSM also unlocks Pupil Premium funding (£1,480 per primary pupil) for your child's school.</p>
+        <p className="mt-1">Registering for FSM also unlocks Pupil Premium funding (£1,550 per primary pupil) for your child's school.</p>
       </div>
     </div>
   )

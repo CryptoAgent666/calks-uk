@@ -24,7 +24,7 @@ function calculate(profit: number) {
   const ltdCorpTax = ltdCorpProfit <= 50_000 ? ltdCorpProfit * 0.19 : ltdCorpProfit <= 250_000 ? ltdCorpProfit * 0.25 - (250_000 - ltdCorpProfit) * 3/200 : ltdCorpProfit * 0.25
   const ltdDividends = ltdCorpProfit - ltdCorpTax
   // Dividend tax stacks on top of the £12,570 salary (which uses the full Personal Allowance),
-  // across the £500 allowance then the 8.75% / 33.75% / 39.35% bands.
+  // across the £500 allowance then the 10.75% / 35.75% / 39.35% bands.
   const DIV_ALLOWANCE = 500
   const taxableDiv = Math.max(0, ltdDividends - DIV_ALLOWANCE)
   const basicBandForDiv = Math.max(0, 50_270 - ltdSalary - DIV_ALLOWANCE) // basic-rate room left after salary + allowance
@@ -32,7 +32,7 @@ function calculate(profit: number) {
   const divInBasic = Math.min(taxableDiv, basicBandForDiv)
   const divInHigher = Math.min(Math.max(0, taxableDiv - basicBandForDiv), higherBandForDiv)
   const divInAdditional = Math.max(0, taxableDiv - basicBandForDiv - higherBandForDiv)
-  const ltdDivTax = divInBasic * 0.0875 + divInHigher * 0.3375 + divInAdditional * 0.3935
+  const ltdDivTax = divInBasic * 0.1075 + divInHigher * 0.3575 + divInAdditional * 0.3935
   const ltdAccountancy = 1200
   const ltdTotal = ltdCorpTax + ltdDivTax + ltdEmployerNI + ltdAccountancy
   const ltdTakeHome = profit - ltdTotal

@@ -22,7 +22,7 @@ export default function EVChargingCalculator() {
   const [battery, setBattery] = useState('60')
   const [current, setCurrent] = useState('20')
   const [target, setTarget] = useState('80')
-  const [homeRate, setHomeRate] = useState('24.5')
+  const [homeRate, setHomeRate] = useState('26.11')
   const [publicRate, setPublicRate] = useState('70')
   const [efficiency, setEfficiency] = useState('3.5')
 

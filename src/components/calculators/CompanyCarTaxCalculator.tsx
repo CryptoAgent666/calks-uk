@@ -9,10 +9,10 @@ function getBikRate(co2: number, fuelType: string): number {
   // Petrol/diesel — 4% diesel supplement applies to non-RDE2 compliant diesel only
   const base = fuelType === 'diesel-nonrde2' ? 4 : 0
   if (co2 <= 50) return 5 + base
-  if (co2 <= 54) return 15 + base
+  if (co2 <= 54) return 17 + base
   // Each 5g above 55 adds 1%
   const extra = Math.floor((co2 - 55) / 5)
-  return Math.min(37, 16 + extra + base)
+  return Math.min(37, 18 + extra + base)
 }
 
 function calculate(listPrice: number, co2: number, fuelType: string, taxBand: string) {

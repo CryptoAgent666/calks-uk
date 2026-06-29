@@ -4,7 +4,7 @@ import { formatCurrency } from '@/utils'
 // Probate fees England & Wales 2025
 function calculate(estateValue: number) {
   // No probate needed if estate under £5,000 (generally)
-  // Fee: £300 if estate over £5,000 (solicitor application) or £273 (personal application)
+  // Fee: £300 if estate over £5,000 (same fee for personal and solicitor applications)
   const needsProbate = estateValue > 5_000
   const applicationFee = needsProbate ? 300 : 0
   const extraCopies = needsProbate ? 16 * 5 : 0 // 5 sealed copies at £16 each (raised from £1.50 on 17 November 2025)

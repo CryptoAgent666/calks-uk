@@ -25,7 +25,7 @@ function calculate(bandD: number, band: string, includeSurcharge: boolean) {
 }
 
 export default function HighCouncilTaxCalculator() {
-  const [bandD, setBandD] = useState('2171')
+  const [bandD, setBandD] = useState('2392')
   const [band, setBand] = useState('H')
   const [includeSurcharge, setIncludeSurcharge] = useState(false)
   const result = useMemo(() => calculate(parseFloat(bandD)||0, band, includeSurcharge), [bandD, band, includeSurcharge])

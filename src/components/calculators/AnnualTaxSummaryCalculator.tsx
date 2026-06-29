@@ -24,7 +24,7 @@ function calculate(salary: number, dividends: number, selfEmployment: number, re
   const remainingBasic = Math.max(0, extendedBasic - nonDivIncome)
   const divAtBasic = Math.min(taxableDividends, remainingBasic)
   const divAtHigher = taxableDividends - divAtBasic
-  const dividendTax = divAtBasic * 0.0875 + divAtHigher * 0.3375
+  const dividendTax = divAtBasic * 0.1075 + divAtHigher * 0.3575
 
   // NI
   let employeeNI = 0

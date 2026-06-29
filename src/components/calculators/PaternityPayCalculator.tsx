@@ -35,7 +35,7 @@ export default function PaternityPayCalculator() {
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-1">
             <p>SPP is paid for <span className="font-medium text-foreground">{SPP_WEEKS} weeks</span> (can be taken as 1 or 2 consecutive weeks).</p>
             <p>Rate: <span className="font-medium text-foreground">£{SPP_RATE}/week or 90% of AWE</span> (whichever is lower).</p>
-            <p>You must earn at least £125/week and give 15 weeks' notice before the due date.</p>
+            <p>You must earn at least £129/week and give 15 weeks' notice before the due date.</p>
             {result.is90pct && <p className="text-orange-600">Your 90% of AWE ({formatCurrency(w * 0.90)}/week) is lower than the statutory rate, so this applies.</p>}
           </div>
         </div>

@@ -3,9 +3,9 @@ import { formatCurrency } from '@/utils'
 
 // Maintenance loan 2026/27 (England)
 const RATES = {
-  home_parents: { min: 4_767, max: 8_490 },
-  home_away: { min: 4_767, max: 10_544 },
-  london: { min: 4_767, max: 13_762 },
+  home_parents: { min: 4_767, max: 9_118 },
+  home_away: { min: 4_767, max: 10_830 },
+  london: { min: 4_767, max: 14_135 },
 }
 
 type LivingSituation = 'home_parents' | 'home_away' | 'london'

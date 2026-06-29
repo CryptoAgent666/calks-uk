@@ -6,7 +6,7 @@ const AIA_LIMIT = 1_000_000
 function calculate(spending: number, corpTaxRate: number) {
   const aiaClaimable = Math.min(spending, AIA_LIMIT)
   const remainder = Math.max(0, spending - AIA_LIMIT)
-  const wdaOnRemainder = remainder * 0.18 // main pool WDA
+  const wdaOnRemainder = remainder * 0.14 // main pool WDA
 
   const totalRelief = aiaClaimable + wdaOnRemainder
   const taxSaving = totalRelief * (corpTaxRate / 100)
@@ -39,11 +39,11 @@ export default function AnnualInvestmentAllowanceCalculator() {
           </div>
           <div className="grid grid-cols-3 gap-3">
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">AIA Claimed (100%)</p><p className="text-lg font-bold">{formatCurrency(result.aiaClaimable)}</p></div>
-            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">WDA (18%)</p><p className="text-lg font-bold">{formatCurrency(result.wdaOnRemainder)}</p></div>
+            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">WDA (14%)</p><p className="text-lg font-bold">{formatCurrency(result.wdaOnRemainder)}</p></div>
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Total Relief</p><p className="text-lg font-bold">{formatCurrency(result.totalRelief)}</p></div>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>AIA gives 100% tax relief on the first £{AIA_LIMIT.toLocaleString()} of qualifying plant & machinery spending per year. Available to all businesses (sole traders and companies). Spending above £1M gets 18% WDA or Full Expensing (companies only).</p>
+            <p>AIA gives 100% tax relief on the first £{AIA_LIMIT.toLocaleString()} of qualifying plant & machinery spending per year. Available to all businesses (sole traders and companies). Spending above £1M gets 14% WDA or Full Expensing (companies only).</p>
           </div>
         </div>
       )}

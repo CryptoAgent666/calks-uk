@@ -4,11 +4,11 @@ import { formatCurrency } from '@/utils'
 // Fees from Home Office table effective 8 April 2026 (outside UK unless noted)
 const VISA_TYPES = [
   { id: 'skilled_worker', name: 'Skilled Worker Visa', fee3yr: 819, fee5yr: 1618, ihsFee: 1035, priority: 500, superPriority: 1000 },
-  { id: 'student', name: 'Student Visa', fee3yr: 558, fee5yr: 558, ihsFee: 776, priority: 500, superPriority: 800 },
+  { id: 'student', name: 'Student Visa', fee3yr: 558, fee5yr: 558, ihsFee: 776, priority: 500, superPriority: 1000 },
   { id: 'spouse', name: 'Spouse / Partner Visa', fee3yr: 2064, fee5yr: 2064, ihsFee: 1035, priority: 500, superPriority: 1000 },
-  { id: 'ilr', name: 'Indefinite Leave to Remain (ILR)', fee3yr: 3226, fee5yr: 3226, ihsFee: 0, priority: 500, superPriority: 800 },
+  { id: 'ilr', name: 'Indefinite Leave to Remain (ILR)', fee3yr: 3226, fee5yr: 3226, ihsFee: 0, priority: 500, superPriority: 1000 },
   { id: 'citizenship', name: 'British Citizenship', fee3yr: 1709, fee5yr: 1709, ihsFee: 0, priority: 0, superPriority: 0 },
-  { id: 'global_talent', name: 'Global Talent Visa', fee3yr: 766, fee5yr: 766, ihsFee: 1035, priority: 500, superPriority: 800 },
+  { id: 'global_talent', name: 'Global Talent Visa', fee3yr: 766, fee5yr: 766, ihsFee: 1035, priority: 500, superPriority: 1000 },
   { id: 'graduate', name: 'Graduate Visa', fee3yr: 937, fee5yr: 937, ihsFee: 1035, priority: 0, superPriority: 0 },
 ]
 

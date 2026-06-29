@@ -25,7 +25,7 @@ function calculate(monthlyDeposit: number, currentBalance: number, years: number
 
   // Tax savings vs taxable account
   const cgtSaved = totalGrowth * 0.18 // approx 18% CGT saved (basic rate, post-Oct 2024 Budget)
-  const dividendTaxSaved = totalDividends * 0.0875 // basic rate
+  const dividendTaxSaved = totalDividends * 0.1075 // basic rate
   const totalTaxSaved = cgtSaved + dividendTaxSaved
 
   return { balance, totalDeposited, totalGrowth, totalDividends, totalReturn: totalGrowth + totalDividends, totalTaxSaved }

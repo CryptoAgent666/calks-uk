@@ -1,12 +1,12 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Working Tax Credit 2026/27 (legacy - being replaced by UC but still exists for some)
-// Uprated by 1.7% CPI from April 2025
-const WTC_BASIC = 2_476        // was £2,435 in 2024/25
-const WTC_COUPLES = 2_543      // was £2,500 in 2024/25
-const WTC_30HR = 1_032         // was £1,015 in 2024/25
-const WTC_DISABILITY = 4_124   // was £4,055 in 2024/25
+// Working Tax Credit — scheme CLOSED to new claims 5 Apr 2025 (tax credits ended);
+// values frozen at their final 2024/25 levels, kept for legacy reference only.
+const WTC_BASIC = 2_435        // final WTC rate, frozen (scheme closed Apr 2025)
+const WTC_COUPLES = 2_500      // final WTC rate, frozen (scheme closed to new claims Apr 2025)
+const WTC_30HR = 1_015         // final WTC rate, frozen (scheme closed to new claims Apr 2025)
+const WTC_DISABILITY = 4_055   // final WTC rate, frozen (scheme closed Apr 2025)
 const WTC_CHILDCARE_70 = 0.70 // 70% of childcare costs
 const WTC_CHILDCARE_MAX_1 = 175 * 52 // max weekly for 1 child
 const WTC_CHILDCARE_MAX_2 = 300 * 52
