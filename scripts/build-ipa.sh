@@ -58,6 +58,18 @@ echo "✓ Profile: \"$PROFILE_NAME\"  (team $TEAM, cert Apple Distribution)"
 echo "→ building web bundle + syncing iOS…"
 npm run build:ios
 
+# 2b) guard: App Store guideline 2.3.10 — the iOS bundle must contain ZERO Google Play
+# references (Apple rejected build 1 for this on 2026-06-08). PUBLIC_IS_IOS_BUILD=1
+# should have stripped the footer badge; verify nothing leaked back in.
+GPLAY_HITS=$(grep -rl -i -e 'google play' -e 'play\.google' ios/App/App/public/ 2>/dev/null | head -5)
+if [ -n "$GPLAY_HITS" ]; then
+  echo "✗ Google Play references found in the iOS web bundle (guideline 2.3.10):"
+  echo "$GPLAY_HITS"
+  echo "  Check Footer.astro's PUBLIC_IS_IOS_BUILD conditional and any new page content."
+  exit 1
+fi
+echo "✓ iOS bundle clean: no Google Play references (guideline 2.3.10)"
+
 # 3) ExportOptions for a manually-signed App Store export
 mkdir -p "$BUILD"
 cat > "$BUILD/ExportOptions.plist" <<PLIST

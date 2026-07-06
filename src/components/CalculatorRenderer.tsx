@@ -463,6 +463,11 @@ const calculators: Record<string, React.LazyExoticComponent<() => JSX.Element>> 
   // Business
   'profit-and-loss-calculator': lazy(() => import('./calculators/ProfitAndLossCalculator')),
   'freelance-quote-calculator': lazy(() => import('./calculators/FreelanceQuoteCalculator')),
+  // Added July 2026
+  'winter-fuel-payment-calculator': lazy(() => import('./calculators/WinterFuelPaymentCalculator')),
+  'pro-rata-salary-calculator': lazy(() => import('./calculators/ProRataSalaryCalculator')),
+  'pension-emergency-tax-calculator': lazy(() => import('./calculators/PensionEmergencyTaxCalculator')),
+  'tax-refund-calculator': lazy(() => import('./calculators/TaxRefundCalculator')),
 }
 
 export default function CalculatorRenderer({ slug }: { slug: string }) {

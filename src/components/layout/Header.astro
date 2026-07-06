@@ -2,6 +2,7 @@
 import { CATEGORIES } from '@/data/categories'
 import type { CategoryId } from '@/data/types'
 import ThemeToggle from './ThemeToggle'
+import HeaderSearch from '@/components/HeaderSearch'
 
 const NAV_CATEGORIES: CategoryId[] = ['tax', 'pay', 'pension', 'mortgage', 'loans', 'business']
 const MORE_CATEGORIES: CategoryId[] = ['investment', 'benefits', 'auto', 'health', 'building', 'energy', 'education', 'farming', 'immigration', 'insurance', 'legal', 'tools', 'math', 'gardening']
@@ -64,6 +65,7 @@ const MORE_CATEGORIES: CategoryId[] = ['investment', 'benefits', 'auto', 'health
 
       <!-- Right side -->
       <div class="flex items-center gap-2">
+        <HeaderSearch client:load />
         <ThemeToggle client:load />
 
         <!-- Mobile menu button -->

@@ -131,7 +131,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     howItWorks: [
       'Your take-home pay is what remains after all statutory deductions are subtracted from your gross salary. In the UK, these deductions include income tax (based on your tax code and banding), employee National Insurance (8% and 2%), workplace pension contributions (typically 5% for auto-enrolment) and student loan repayments (if applicable).',
       'This calculator applies deductions in the correct order: pension contributions are deducted before tax if made via <a href="/calculator/salary-sacrifice-calculator/" class="text-primary underline">salary sacrifice</a>, or after tax if made via net-pay arrangement. Student loan repayments are calculated at 9% of income above the relevant plan threshold (6% for Postgraduate Loans).',
-      'The result shows your monthly and annual take-home pay, with a full breakdown of each deduction. You can toggle pension contributions, student loan plans, and bonus payments to see how they affect your net income.',
+      'The result shows your monthly and annual take-home pay, with a full breakdown of each deduction. You can toggle pension contributions (including salary sacrifice), student loan plans, bonus payments and Scottish tax bands to see how they affect your net income — or flip the calculator into reverse mode to find the gross salary you would need for a target take-home figure.',
       'How UK PAYE deductions stack. Your gross salary is reduced by, in order: salary sacrifice (pension, cycle-to-work, EV scheme), income tax via PAYE bands, employee NI at 8%/2%, student loan repayment if applicable, and any remaining pension RAS contributions. Salary sacrifice is most powerful because it reduces both income tax AND NI base — every £100 sacrificed saves £32 (basic rate) or £42 (higher rate) versus the £20-40 saved on RAS pension contributions.',
       'Why your first payslip of the year looks different. UK PAYE is cumulative across the tax year (6 April to 5 April). At the start of a new tax year, your tax-free allowance is fresh. Your monthly tax = (cumulative pay × tax band) - (cumulative tax already paid). This means a bonus in April attracts more apparent tax than the same bonus in March — but balances out over the year. The K-code (e.g. K500) means deductions exceed allowances; the L-code (e.g. 1257L) is standard.',
       'Common reasons for unexpected take-home variations. Pay rises mid-year change your tax code and may shift you into a higher band; bonus payments are taxed as one-off lump sums but adjusted through the year; pension contribution changes affect take-home immediately; student loan crossing the threshold adds 9% above £29,385 (Plan 2); High Income Child Benefit Charge starts kicking in above £60,000; childcare voucher schemes change PAYE; and a P11D benefit (company car, private health) increases your taxable income via your tax code.',
@@ -8282,5 +8282,108 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     sourceUrl: 'https://www.gov.uk/care-homes/paying-for-care-in-a-care-home',
     sourceName: 'GOV.UK — Paying for care in a care home',
     lastUpdated: 'April 2026',
+  },
+  'winter-fuel-payment-calculator': {
+    quickAnswer: `For winter 2026/27 the Winter Fuel Payment is <strong>£200</strong> per household (<strong>£300</strong> if someone is 80 or over), paid automatically in November–December to those who have reached State Pension age by the qualifying week (21–27 September 2026). If your individual taxable income is over <strong>£35,000</strong>, HMRC recovers the full payment through your tax code or Self Assessment — there is no taper.`,
+    rateTable: {
+      title: 'Winter Fuel Payment 2026/27 — amounts and income test',
+      html: `<table class="w-full text-sm"><thead><tr><th class="text-left py-2">Situation</th><th class="text-right py-2">You receive</th></tr></thead><tbody>
+<tr><td class="py-1.5">Live alone (or only you qualify), under 80</td><td class="text-right">£200</td></tr>
+<tr><td class="py-1.5">Live alone (or only you qualify), 80 or over</td><td class="text-right">£300</td></tr>
+<tr><td class="py-1.5">Couple, both qualify, each under 80</td><td class="text-right">£100 each</td></tr>
+<tr><td class="py-1.5">Couple, both qualify, aged 80+</td><td class="text-right">£150 each</td></tr>
+<tr><td class="py-1.5">Household on Pension Credit</td><td class="text-right">£200 / £300 in full</td></tr>
+<tr><td class="py-1.5">Individual taxable income over £35,000</td><td class="text-right">Full amount recovered by HMRC</td></tr>
+</tbody></table>`,
+    },
+    howItWorks: [
+      'The Winter Fuel Payment is an automatic annual payment to pensioner households in England, Wales and Northern Ireland (Scotland pays the equivalent Pension Age Winter Heating Payment under the same income rule). You qualify for winter 2026/27 if you have reached State Pension age by the end of the qualifying week — 21 to 27 September 2026. Because State Pension age is rising from 66 to 67 between April 2026 and March 2028, people born after roughly late June 1960 will not qualify this winter: this calculator works out your exact State Pension age date from the phasing table in the Pensions Act 2014.',
+      'The household amount is £200, or £300 where someone in the household is aged 80 or over during the qualifying week. Where two partners each qualify and neither receives an income-related benefit, the payment is split between them — £100 (or £150) each. Households receiving Pension Credit get the full amount with their benefit.',
+      'Since winter 2025/26 the payment is income-tested: if your <strong>individual</strong> taxable income exceeds £35,000, HMRC recovers your share in full. There is no taper — £1 over the limit means the whole payment is clawed back. The test looks at each partner separately: one partner can keep their half while the other repays theirs. Taxable income includes State and private pensions, earnings, rental profits and savings interest above allowances.',
+      'Recovery is automatic. PAYE taxpayers have their tax code adjusted for the following tax year, collecting roughly £17 a month for a £200 payment; Self Assessment filers have it added to their return. If you would rather not receive the payment at all, you can opt out before the annual deadline — for winter 2026/27, complete the opt-out form by 20 September 2026 or call the Winter Fuel Payment Centre (0800 731 0160) by 18 September.',
+      'You do not need to claim if you receive the State Pension or another DWP benefit — payment is automatic, normally landing in November or December with reference "DWP WFP" on your bank statement. A small number of people (for example those who deferred their State Pension and claim nothing else) need to claim by 31 March 2027.',
+    ],
+    example: {
+      title: 'Example: couple, both 72, incomes £28,000 and £41,000',
+      steps: [
+        'Both reached State Pension age before September 2026 → household qualifies for £200 (both under 80)',
+        'Neither receives Pension Credit → the payment is split: £100 each',
+        'Partner A: income £28,000 ≤ £35,000 → keeps their £100',
+        'Partner B: income £41,000 > £35,000 → HMRC recovers their £100 via the next year’s tax code (~£8/month)',
+        'Net result: household keeps £100 of the £200 paid',
+      ],
+    },
+    sourceUrl: 'https://www.gov.uk/winter-fuel-payment',
+    sourceName: 'GOV.UK — Winter Fuel Payment',
+    lastUpdated: 'July 2026',
+  },
+  'pro-rata-salary-calculator': {
+    quickAnswer: `Pro-rata salary = full-time salary × (your hours ÷ full-time hours). On a <strong>£35,000</strong> FTE salary, working 22.5 hours against a 37.5-hour week pays <strong>£21,000</strong> a year. Term-time-only roles are also scaled by paid weeks: weeks worked plus statutory holiday (5.6 ÷ 46.4 of worked weeks), divided by 52.14.`,
+    howItWorks: [
+      'Job adverts often quote a full-time-equivalent (FTE) salary — what the role would pay someone working full-time hours. If you work part-time, your actual salary is the FTE scaled by your hours: FTE × (your weekly hours ÷ full-time weekly hours). A "£35,000 pro rata" role at 3 days a week (22.5 of 37.5 hours) actually pays £21,000.',
+      'Your hourly rate does not change — part-time staff earn the same per hour as full-time colleagues in the same role. What changes is the number of paid hours. Holiday entitlement scales the same way: the statutory minimum is 5.6 weeks for everyone, so a part-timer on 22.5 hours accrues 5.6 × 22.5 = 126 hours of paid leave rather than fewer weeks.',
+      'Term-time-only (TTO) contracts — common for teaching assistants, school support staff and some childcare roles — add a second scaling factor: paid weeks. You are paid for the weeks you work (typically 38–39 school weeks) plus accrued statutory holiday, calculated as 5.6/46.4 of worked weeks (about 4.7 weeks on a 39-week year). Most local authorities then annualise: salary = FTE × hours ratio × (paid weeks ÷ 52.14), paid in 12 equal monthly instalments so income is steady across school holidays.',
+      'Employers’ exact TTO formulas vary slightly (some divide by 52, some pro-rate holiday above the statutory minimum from the full-time contract). The calculation here uses the most common statutory approach — always check your contract or the school’s pay policy for the divisor used.',
+      'Pro-rata pay is gross. Tax, National Insurance and pension deductions then apply as normal — because of the tax-free Personal Allowance, part-time take-home pay is proportionally <em>higher</em> than the salary ratio suggests. Check your net figure with the take-home pay calculator.',
+    ],
+    example: {
+      title: 'Example: £35,000 FTE, 22.5 hours, term-time only (39 weeks)',
+      steps: [
+        'Hours ratio: 22.5 ÷ 37.5 = 0.60',
+        'Holiday accrual: 39 × 5.6/46.4 = 4.71 weeks → paid weeks = 43.71',
+        'Weeks ratio: 43.71 ÷ 52.14 = 0.838',
+        'Salary: £35,000 × 0.60 × 0.838 = £17,603 a year',
+        'Paid monthly: £17,603 ÷ 12 = £1,467/month, including through school holidays',
+      ],
+    },
+    sourceUrl: 'https://www.gov.uk/holiday-entitlement-rights',
+    sourceName: 'GOV.UK — Holiday entitlement',
+    lastUpdated: 'July 2026',
+  },
+  'pension-emergency-tax-calculator': {
+    quickAnswer: `The first flexible withdrawal from a pension is usually taxed on an emergency <strong>Month-1 code</strong>: only 1/12 of your Personal Allowance and tax bands apply, so a £20,000 first withdrawal (with 25% tax-free) has roughly <strong>£4,000</strong> withheld even if little or no tax is actually due. Reclaim in ~30 days with form <strong>P55</strong> (partial withdrawal), <strong>P53Z</strong> (pot emptied, other income) or <strong>P50Z</strong> (pot emptied, no other income) — or wait for HMRC's automatic P800 after the tax year.`,
+    howItWorks: [
+      'When you take your first flexible payment from a defined-contribution pension (drawdown or UFPLS), your provider almost never holds your correct tax code — so HMRC rules require the emergency code (1257L) on a <strong>Month 1</strong> basis. Month 1 means the payment is taxed as if it were one month of a regular salary: you get 1/12 of the Personal Allowance (£1,047.50) at 0%, 1/12 of the basic-rate band at 20%, 1/12 of the higher-rate band at 40%, and anything beyond at 45%. A large one-off withdrawal therefore has far more tax withheld than you actually owe for the year.',
+      'Since the system began in 2015, over £1.37 billion has been repaid to people over-taxed on pension withdrawals. From April 2025 HMRC automatically moves people who keep withdrawing onto a cumulative code much faster, which fixes <em>repeat</em> withdrawals — but the very first payment of a new drawdown arrangement is still typically over-taxed under Month 1.',
+      'This calculator shows three numbers: the emergency tax your provider will withhold, the tax genuinely due on the withdrawal given your other income for the year (the taxable part simply stacks on top of your other income through the normal annual bands — Scottish bands if you are a Scottish taxpayer), and the refund you can reclaim.',
+      'To get the money back without waiting, use the right HMRC form: <strong>P55</strong> if you withdrew part of the pot and are not taking regular payments; <strong>P53Z</strong> if you emptied the pot and have other taxable income; <strong>P50Z</strong> if you emptied the pot and have no other income this tax year. File through your Personal Tax Account — refunds typically arrive within 30 days. Do nothing and HMRC still reconciles automatically after 5 April via a P800 letter.',
+      'Planning tip: taking a small first withdrawal (say £100) triggers the emergency code on a trivial amount; by the second, larger withdrawal HMRC has usually issued a cumulative code and the correct tax comes out in real time. Remember that only 75% of an UFPLS payment is taxable — the 25% tax-free part never enters the calculation.',
+    ],
+    example: {
+      title: 'Example: £20,000 first withdrawal (25% tax-free), £12,000 other income',
+      steps: [
+        'Tax-free part: 25% × £20,000 = £5,000 → taxable part £15,000',
+        'Month-1 code: £1,047.50 at 0%, £3,141.67 at 20% (£628), £6,239.17 at 40% (£2,496), £4,571.66 at 45% (£2,057) → ~£5,181 withheld',
+        'Actually due: £12,000 other income uses most of the Personal Allowance; £15,000 stacks at 20% (basic band) → ~£2,886',
+        'Overpaid: ~£2,295 → reclaim with P55 (pot not emptied)',
+        'Refund lands in around 30 days via your Personal Tax Account',
+      ],
+    },
+    sourceUrl: 'https://www.gov.uk/claim-tax-refund/you-get-a-pension',
+    sourceName: 'GOV.UK / HMRC — Claim a tax refund on your pension',
+    lastUpdated: 'July 2026',
+  },
+  'tax-refund-calculator': {
+    quickAnswer: `PAYE spreads your tax-free allowance across 12 months, assuming you work all year. Stop working mid-year — redundancy, career break, study, retirement — and you have usually <strong>overpaid</strong>: tax deducted so far exceeds tax due on what the year will actually total. Claim with form <strong>P50</strong> after 4 weeks out of work, or wait for HMRC's automatic <strong>P800</strong> reconciliation after 5 April. Refunds are claimable for this year plus <strong>4 previous tax years</strong>.`,
+    howItWorks: [
+      'Cumulative PAYE deducts tax each payday on the assumption that your current pay rate continues to 5 April. Each month you receive 1/12 of the Personal Allowance and 1/12 of each tax band. If your income stops part-way through the year, the allowance for the remaining months never gets used against your earlier pay — so the tax already deducted is too high.',
+      'Enter the "total pay to date" and "total tax to date" figures from your P45 (parts 1A) or your last payslip, plus any further taxable income you expect before 5 April (a new job, taxable benefits, pension income). The calculator works out the tax due on your true annual total — using Scottish bands if you select Scotland — and compares it with what has already been deducted.',
+      'How you claim depends on your situation. Out of work for 4+ weeks and not claiming taxable benefits: form <strong>P50</strong> gets the refund now. Claiming Jobseeker\'s Allowance or ESA: the refund comes through the benefit office at the year end or when you stop claiming. Started a new job: give your new employer the P45 and the cumulative code refunds the overpayment automatically in your first payslip. Otherwise HMRC\'s automatic reconciliation sends a P800 letter between June and November — claim online to your bank, or a cheque follows.',
+      'Beyond stopped-work refunds, several reliefs are commonly left unclaimed and can be backdated four years: flat-rate expenses for uniforms and tools (£60–£140/year by trade), business mileage paid below the 45p/25p approved rates, the £6/week working-from-home allowance where your contract requires it, Marriage Allowance (up to £252/year), and professional fees or subscriptions to HMRC-approved bodies. The checklist below the result links to the dedicated calculators.',
+      'Watch out for refund agencies charging 25–50% commission for filing these free forms. Every claim here can be made directly through your Personal Tax Account on GOV.UK at no cost.',
+    ],
+    example: {
+      title: 'Example: made redundant in September after earning £18,000',
+      steps: [
+        'P45 shows: taxable pay to date £18,000, tax deducted £2,200',
+        'No further work planned before 5 April → annual total stays £18,000',
+        'Tax due on £18,000: (£18,000 − £12,570) × 20% = £1,086',
+        'Refund: £2,200 − £1,086 = £1,114',
+        'Out of work 4+ weeks, no benefits claimed → file P50 now instead of waiting for the P800',
+      ],
+    },
+    sourceUrl: 'https://www.gov.uk/claim-tax-refund',
+    sourceName: 'GOV.UK — Claim a tax refund',
+    lastUpdated: 'July 2026',
   },
 }

@@ -1,9 +1,19 @@
 ---
+import { RATES_VERIFIED } from '@/data/site'
+
 interface Props {
   lastUpdated?: string
   category?: string
 }
 const { lastUpdated = 'April 2026', category } = Astro.props
+
+// Money/regulatory categories carry a dated verification badge; utility
+// categories (tools/math) have no government rates to verify.
+const DATED_BADGE_CATEGORIES = new Set([
+  'tax', 'pay', 'pension', 'mortgage', 'loans', 'business', 'investment',
+  'benefits', 'auto', 'energy', 'education', 'immigration', 'legal', 'farming',
+])
+const showDatedBadge = !!category && DATED_BADGE_CATEGORIES.has(category)
 
 const VERIFICATION_BY_CATEGORY: Record<string, string> = {
   tax: 'Verified against HMRC and GOV.UK 2026/27 rates',
@@ -48,6 +58,12 @@ const verificationText = (category && VERIFICATION_BY_CATEGORY[category]) || 'Me
     <p class="text-xs text-muted-foreground">
       Last updated: <time>{lastUpdated}</time> · {verificationText}
     </p>
+    {showDatedBadge && (
+      <p class="mt-1 inline-flex items-center gap-1 rounded-md bg-green-100 dark:bg-green-950 px-1.5 py-0.5 text-[11px] font-medium text-green-800 dark:text-green-400">
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        Rates verified: {RATES_VERIFIED}
+      </p>
+    )}
   </div>
   <a
     href="/methodology/"

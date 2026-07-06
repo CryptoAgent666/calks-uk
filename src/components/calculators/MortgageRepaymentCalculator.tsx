@@ -1,5 +1,6 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { formatCurrency } from '@/utils'
+import ShareRow, { useUrlParam } from '@/components/ShareRow'
 
 type MortgageType = 'repayment' | 'interest-only'
 
@@ -35,10 +36,14 @@ function calculateMortgage(principal: number, annualRate: number, termYears: num
 }
 
 export default function MortgageRepaymentCalculator() {
-  const [amount, setAmount] = useState('250000')
-  const [rate, setRate] = useState('4.5')
-  const [term, setTerm] = useState('25')
+  const [amount, setAmount] = useUrlParam('amount', '250000')
+  const [rate, setRate] = useUrlParam('rate', '4.5')
+  const [term, setTerm] = useUrlParam('term', '25')
   const [type, setType] = useState<MortgageType>('repayment')
+
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get('type') === 'interest-only') setType('interest-only')
+  }, [])
 
   const principal = parseFloat(amount.replace(/,/g, '')) || 0
   const annualRate = parseFloat(rate) || 0
@@ -133,6 +138,8 @@ export default function MortgageRepaymentCalculator() {
               <p className="text-lg font-bold">{formatCurrency(principal)}</p>
             </div>
           </div>
+
+          <ShareRow params={{ amount, rate, term, type }} />
         </div>
       )}
     </div>

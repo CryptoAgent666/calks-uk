@@ -44,7 +44,8 @@ The site hard-codes hundreds of government-set values. They are inventoried + fr
 - Monitored by DATA_HUB: Tier-1 weekly (`calks-uk-monitor-config.json`, 687 gov constants / 180 pages,
   gov-only: gov.uk/gov.scot/gov.wales/revenue.scot/legislation) + Tier-2 quarterly (next 8 Jul 2026).
   Dashboard «Полный пилот». Loop: alert → fix here (.tsx + content/faqs) → **if the change is
-  user-significant, add a brief note to the Updates page (`src/pages/updates.astro`)** → `npm run deploy`.
+  user-significant, add a brief note to the Updates page (`src/pages/updates.astro`)** → **bump
+  `RATES_VERIFIED` in `src/data/site.ts`** (per-page "Rates verified" trust badge) → `npm run deploy`.
 
 ## Key UK context
 - Income-tax thresholds **frozen to 2028** (PA £12,570, basic-rate limit £37,700, higher £50,270, additional £125,140).

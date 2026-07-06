@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
+import ShareRow, { useUrlParam } from '@/components/ShareRow'
 
 // Statutory redundancy pay 2026/27 (effective 6 April 2026)
 const WEEKLY_PAY_CAP = 751 // capped weekly pay (£751 from 6 April 2026, was £719 in 2025/26)
@@ -28,9 +29,9 @@ function calculate(age: number, yearsService: number, weeklyPay: number) {
 }
 
 export default function RedundancyPayCalculator() {
-  const [age, setAge] = useState('35')
-  const [years, setYears] = useState('5')
-  const [weeklyPay, setWeeklyPay] = useState('600')
+  const [age, setAge] = useUrlParam('age', '35')
+  const [years, setYears] = useUrlParam('years', '5')
+  const [weeklyPay, setWeeklyPay] = useUrlParam('pay', '600')
 
   const a = parseInt(age) || 0
   const y = parseInt(years) || 0
@@ -83,6 +84,8 @@ export default function RedundancyPayCalculator() {
             <p>41 and over: <span className="font-medium text-foreground">1.5 weeks</span> per year of service</p>
             <p>Weekly pay capped at <span className="font-medium text-foreground">£{WEEKLY_PAY_CAP}</span>. Maximum <span className="font-medium text-foreground">{MAX_YEARS} years</span> counted.</p>
           </div>
+
+          <ShareRow params={{ age, years, pay: weeklyPay }} />
         </div>
       )}
     </div>

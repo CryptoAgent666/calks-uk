@@ -1,5 +1,6 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { formatCurrency, formatPercent } from '@/utils'
+import ShareRow, { useUrlParam } from '@/components/ShareRow'
 
 type BuyerType = 'standard' | 'ftb' | 'additional'
 
@@ -63,8 +64,13 @@ function calculateBands(price: number, bands: { from: number; to: number; rate: 
 }
 
 export default function StampDutyCalculator() {
-  const [price, setPrice] = useState('')
+  const [price, setPrice] = useUrlParam('price', '')
   const [buyerType, setBuyerType] = useState<BuyerType>('standard')
+
+  useEffect(() => {
+    const b = new URLSearchParams(window.location.search).get('buyer')
+    if (b === 'ftb' || b === 'additional') setBuyerType(b)
+  }, [])
 
   const value = parseFloat(price.replace(/,/g, '')) || 0
   const result = useMemo(() => calculateSdlt(value, buyerType), [value, buyerType])
@@ -171,6 +177,8 @@ export default function StampDutyCalculator() {
               </table>
             </div>
           </div>
+
+          <ShareRow params={{ price, buyer: buyerType }} />
         </div>
       )}
     </div>

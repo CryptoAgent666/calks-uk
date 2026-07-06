@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, formatPercent } from '@/utils'
+import ShareRow, { useUrlParam } from '@/components/ShareRow'
 
 const PERSONAL_ALLOWANCE = 12_570
 const BASIC_RATE_LIMIT = 50_270
@@ -53,7 +54,7 @@ function calculateIncomeTax(gross: number) {
 }
 
 export default function IncomeTaxCalculator() {
-  const [income, setIncome] = useState('')
+  const [income, setIncome] = useUrlParam('salary', '')
 
   const gross = parseFloat(income.replace(/,/g, '')) || 0
   const result = useMemo(() => calculateIncomeTax(gross), [gross])
@@ -159,6 +160,8 @@ export default function IncomeTaxCalculator() {
               </table>
             </div>
           </div>
+
+          <ShareRow params={{ salary: income }} />
         </div>
       )}
     </div>
