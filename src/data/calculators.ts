@@ -926,11 +926,11 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'mileage-allowance-calculator',
     title: 'Mileage Allowance Calculator (HMRC)',
-    description: 'Calculate HMRC approved mileage allowance payments for car, motorcycle or bicycle. 45p/25p per mile rates.',
+    description: 'Calculate HMRC approved mileage allowance payments for car, motorcycle or bicycle. 55p/25p per mile rates.',
     category: 'pay',
     icon: 'Banknote',
-    keywords: ['mileage allowance', 'AMAP', 'HMRC mileage', '45p per mile', 'business mileage'],
-    metaTitle: 'UK Mileage Allowance Calculator 2026 — HMRC 45p/25p Rates',
+    keywords: ['mileage allowance', 'AMAP', 'HMRC mileage', '55p per mile', '45p per mile', 'business mileage'],
+    metaTitle: 'UK Mileage Allowance Calculator 2026 — HMRC 55p/25p Rates',
     priority: 2,
   },
 
@@ -1742,7 +1742,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // INVESTMENT
   { slug: 'regular-savings-calculator', title: 'Regular Savings Calculator', description: 'Calculate returns on a regular saver account with monthly deposits. See effective vs headline rate.', category: 'investment', icon: 'TrendingUp', keywords: ['regular saver', 'monthly savings', 'savings account', 'AER'], priority: 2 , metaTitle: 'Regular Savings Calculator UK 2026' },
   // PAY
-  { slug: 'business-mileage-calculator', title: 'Business Mileage Calculator', description: 'Compare HMRC mileage allowance vs actual fuel costs. See if you profit or lose from the 45p/25p rates.', category: 'pay', icon: 'Banknote', keywords: ['business mileage', 'HMRC mileage', 'mileage profit', '45p rate', 'fuel vs allowance'], priority: 2 , metaTitle: 'Business Mileage Calculator UK (HMRC 45p/25p)' },
+  { slug: 'business-mileage-calculator', title: 'Business Mileage Calculator', description: 'Compare HMRC mileage allowance vs actual fuel costs. See if you profit or lose from the 55p/25p rates.', category: 'pay', icon: 'Banknote', keywords: ['business mileage', 'HMRC mileage', 'mileage profit', '55p rate', 'fuel vs allowance'], priority: 2 , metaTitle: 'Business Mileage Calculator UK (HMRC 55p/25p)' },
   // INVESTMENT
   { slug: 'wealth-growth-calculator', title: 'Wealth Growth Projector', description: 'Project wealth growth over time with annual savings and compound returns. See milestones (£100K, £1M).', category: 'investment', icon: 'TrendingUp', keywords: ['wealth growth', 'wealth projector', 'net worth', 'millionaire calculator'], priority: 2 , metaTitle: 'Wealth Growth Calculator UK 2026' },
   { slug: 'cgt-on-shares-calculator', title: 'CGT on Shares Calculator', description: 'Calculate capital gains tax on share sales. Includes annual exempt amount, basic/higher rates and ISA tip.', category: 'investment', icon: 'TrendingUp', keywords: ['CGT shares', 'share tax', 'stock tax', 'investment tax', 'capital gains shares'], priority: 1 , metaTitle: 'CGT on Shares Calculator UK 2026/27' },

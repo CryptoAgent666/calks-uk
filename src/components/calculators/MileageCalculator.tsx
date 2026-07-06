@@ -4,7 +4,7 @@ import { formatCurrency } from '@/utils'
 // HMRC business mileage rates combined with fuel cost comparison
 function calculate(annualMiles: number, fuelPriceP: number, mpg: number) {
   // HMRC allowance
-  const hmrcFirst10k = Math.min(annualMiles, 10_000) * 0.45
+  const hmrcFirst10k = Math.min(annualMiles, 10_000) * 0.55 // 55p from 6 Apr 2026 (was 45p)
   const hmrcOver10k = Math.max(0, annualMiles - 10_000) * 0.25
   const hmrcTotal = hmrcFirst10k + hmrcOver10k
 

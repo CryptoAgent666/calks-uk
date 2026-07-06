@@ -35,9 +35,12 @@ The site hard-codes hundreds of government-set values. They are inventoried + fr
   (Budget 2025), **NHS AfC pay scales 2026/27**, court/visa/probate fees, maintenance loans, tuition
   £9,790, IR35 £15m, April-2026 benefits/pension-credit/statutory-pay, **Scottish** bands, student-loan
   interest, NI Class 2/3, **NLW prose £12.21→£12.71**.
-- ⚠️ **AMAP car mileage is 45p/25p (frozen since 2011)** — a freshness agent hallucinated "55p"; it was
-  rejected. Lesson: re-verify "frozen-but-suddenly-changed" against the live gov source (WDA & dividend
-  WERE real changes; AMAP was not).
+- ⚠️ **AMAP car/van rate is 55p/25p (2026/27)** — the first-10,000-mile rate rose **45p→55p** on 6 Apr 2026
+  (announced 21 May 2026), the first change since 2011; 25p over-10k, 24p motorcycle, 20p bicycle, 5p
+  passenger all unchanged. Applied 6 Jul 2026 (gov.uk EIM31240 + ATT confirmed). NB: a June freshness agent
+  was told 55p was a hallucination — that was correct THEN (pre-announcement), wrong now. Lesson: always
+  re-verify "frozen-but-suddenly-changed" against the LIVE gov source, never trust a stale "known-frozen"
+  note (WDA, dividend AND now AMAP were all real changes).
 - **Remaining (not stale):** 71 uncertain (Teachers' Pension tiers — live code has its own set, needs the
   official TPS factsheet; proposed High-Value Council Tax bands; per-region band-D; a few structural) +
   310 unverified (derived / non-numeric / council-tax local £) → Tier-2 quarterly + calendar.

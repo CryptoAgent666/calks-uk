@@ -2,8 +2,8 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // HMRC Approved Mileage Allowance Payments (AMAP) 2026/27
-const CAR_FIRST_10K = 0.45 // 45p/mile
-const CAR_OVER_10K = 0.25 // 25p/mile
+const CAR_FIRST_10K = 0.55 // 55p/mile — raised from 45p, announced 21 May 2026, backdated to 6 Apr 2026 (first change since 2011)
+const CAR_OVER_10K = 0.25 // 25p/mile (unchanged since 2001)
 const MOTORCYCLE = 0.24 // 24p/mile
 const BICYCLE = 0.20 // 20p/mile
 const PASSENGER = 0.05 // 5p/mile per passenger
@@ -43,7 +43,7 @@ export default function MileageAllowanceCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-3 gap-2">
-        {([{v:'car' as Vehicle,l:'Car/Van',r:'45p/25p'},{v:'motorcycle' as Vehicle,l:'Motorcycle',r:'24p'},{v:'bicycle' as Vehicle,l:'Bicycle',r:'20p'}]).map(o => (
+        {([{v:'car' as Vehicle,l:'Car/Van',r:'55p/25p'},{v:'motorcycle' as Vehicle,l:'Motorcycle',r:'24p'},{v:'bicycle' as Vehicle,l:'Bicycle',r:'20p'}]).map(o => (
           <button key={o.v} onClick={() => setVehicle(o.v)} className={`px-4 py-3 rounded-xl text-sm text-left transition-colors border ${vehicle === o.v ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border hover:bg-accent'}`}>
             <div className="font-medium">{o.l}</div>
             <div className={`text-xs ${vehicle === o.v ? 'text-primary-foreground/70' : 'text-muted-foreground'}`}>{o.r}/mile</div>
@@ -75,10 +75,10 @@ export default function MileageAllowanceCalculator() {
           {vehicle === 'car' && m > 0 && (
             <div className="rounded-xl border border-border p-4 text-sm space-y-1">
               {m <= 10_000 ? (
-                <p>{m.toLocaleString()} miles x 45p = {formatCurrency(result.mileagePayment)}</p>
+                <p>{m.toLocaleString()} miles x 55p = {formatCurrency(result.mileagePayment)}</p>
               ) : (
                 <>
-                  <p>First 10,000 miles x 45p = {formatCurrency(10_000 * CAR_FIRST_10K)}</p>
+                  <p>First 10,000 miles x 55p = {formatCurrency(10_000 * CAR_FIRST_10K)}</p>
                   <p>Remaining {(m - 10_000).toLocaleString()} miles x 25p = {formatCurrency((m - 10_000) * CAR_OVER_10K)}</p>
                 </>
               )}
