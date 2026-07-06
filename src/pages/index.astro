@@ -4,6 +4,7 @@ import { CATEGORIES, CATEGORY_IDS } from '@/data/categories'
 import { CALCULATORS } from '@/data/calculators'
 import { getOrganizationSchema, getWebSiteSchema, getWebPageSchema } from '@/utils/seo'
 import HomeSearch from '@/components/HomeSearch'
+import RecentsRow from '@/components/RecentsRow'
 
 const popularCalculators = CALCULATORS.filter((c) => c.priority === 1).slice(0, 12)
 
@@ -37,6 +38,11 @@ const schemas = [
       <!-- Search -->
       <div class="mt-8 max-w-xl mx-auto">
         <HomeSearch client:load calculators={CALCULATORS.map(c => ({ slug: c.slug, title: c.title, description: c.description, category: c.category }))} />
+      </div>
+
+      <!-- Favourites + recently used (renders nothing on first visit) -->
+      <div class="max-w-2xl mx-auto text-left">
+        <RecentsRow client:load />
       </div>
     </div>
   </section>

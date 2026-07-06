@@ -1,0 +1,62 @@
+---
+// Embeddable calculator widget for third-party sites:
+//   <iframe src="https://calks.uk/embed/<slug>/" …>
+// Minimal chrome: no header/footer/nav, just the calculator + a backlink.
+// noindex (duplicate of /calculator/<slug>/) and excluded from the sitemap;
+// /embed/* drops X-Frame-Options in public/_headers so it can be framed.
+import '@/styles/global.css'
+import CalculatorRenderer from '@/components/CalculatorRenderer'
+import { CALCULATORS, getCalculatorBySlug } from '@/data/calculators'
+import type { GetStaticPaths } from 'astro'
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return CALCULATORS.map((calc) => ({
+    params: { slug: calc.slug },
+  }))
+}
+
+const { slug } = Astro.params
+const calc = getCalculatorBySlug(slug as string)!
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{calc.title} — Calks.uk</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Match the embedding page's colour scheme where possible -->
+    <script is:inline>
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark')
+      }
+    </script>
+  </head>
+  <body class="min-h-screen bg-background text-foreground antialiased">
+    <div class="p-4 space-y-3">
+      <div class="flex items-baseline justify-between gap-3 flex-wrap">
+        <h1 class="text-lg font-bold tracking-tight">{calc.title}</h1>
+        {calc.financialYear && (
+          <span class="inline-flex items-center rounded-lg bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary">
+            {calc.financialYear}
+          </span>
+        )}
+      </div>
+
+      <CalculatorRenderer client:load slug={slug as string} />
+
+      <p class="pt-1 text-xs text-muted-foreground border-t border-border">
+        Powered by
+        <a
+          href={`https://calks.uk/calculator/${calc.slug}/?utm_source=embed&utm_medium=widget`}
+          target="_blank"
+          rel="noopener"
+          class="font-medium text-primary hover:underline"
+        >Calks.uk — Free UK Calculators</a>
+        · figures verified against official sources
+      </p>
+    </div>
+  </body>
+</html>

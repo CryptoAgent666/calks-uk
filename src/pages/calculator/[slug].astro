@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro'
 import Disclaimer from '@/components/Disclaimer.astro'
 import CalculatorRenderer from '@/components/CalculatorRenderer'
+import FavoriteButton from '@/components/FavoriteButton'
 import AuthorByline from '@/components/AuthorByline.astro'
 import QuickAnswer from '@/components/QuickAnswer.astro'
 import { CALCULATORS, getCalculatorBySlug, getRelatedCalculators } from '@/data/calculators'
@@ -57,7 +58,7 @@ const schemas = [
 >
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
     <!-- Breadcrumbs -->
-    <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
+    <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-6 print:hidden" aria-label="Breadcrumb">
       <a href="/" class="hover:text-foreground transition-colors py-2 inline-block">Home</a>
       <span>/</span>
       <a href={`/category/${calc.category}/`} class="hover:text-foreground transition-colors py-2 inline-block">{category.name}</a>
@@ -70,7 +71,8 @@ const schemas = [
       <div class="lg:col-span-2 space-y-6">
         <!-- Title -->
         <div>
-          <h1 class="text-3xl font-bold tracking-tight">
+          <h1 class="text-3xl font-bold tracking-tight flex items-start gap-3">
+            <FavoriteButton client:load slug={calc.slug} />
             {calc.title}
             {calc.financialYear && (
               <span class="ml-2 inline-flex items-center rounded-lg bg-primary/10 px-2.5 py-1 text-sm font-medium text-primary">
@@ -95,7 +97,7 @@ const schemas = [
         <AuthorByline lastUpdated={content?.lastUpdated} category={calc.category} />
 
         <!-- Quick Answer (AI citation block) -->
-        {content?.quickAnswer && <QuickAnswer answer={content.quickAnswer} />}
+        {content?.quickAnswer && <div class="print:hidden"><QuickAnswer answer={content.quickAnswer} /></div>}
 
         <!-- Calculator Component -->
         <div class="rounded-2xl border border-border bg-card p-6 shadow-sm">
@@ -115,7 +117,7 @@ const schemas = [
 
         <!-- How It Works Section -->
         {content && (
-          <section class="rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <section class="rounded-2xl border border-border bg-card p-6 shadow-sm print:hidden">
             <h2 class="text-xl font-semibold mb-4">How It Works</h2>
             <div class="space-y-3">
               {content.howItWorks.map((paragraph) => (
@@ -144,7 +146,7 @@ const schemas = [
 
         <!-- FAQ Section -->
         {faqs.length > 0 && (
-          <section class="rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <section class="rounded-2xl border border-border bg-card p-6 shadow-sm print:hidden">
             <h2 class="text-xl font-semibold mb-4">Frequently Asked Questions</h2>
             <dl class="space-y-4">
               {faqs.map((faq) => (
@@ -159,7 +161,7 @@ const schemas = [
       </div>
 
       <!-- Sidebar -->
-      <aside class="space-y-6">
+      <aside class="space-y-6 print:hidden">
         <!-- Related Calculators -->
         {related.length > 0 && (
           <div class="rounded-2xl border border-border bg-card p-5">

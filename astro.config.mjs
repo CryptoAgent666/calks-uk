@@ -15,10 +15,12 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      // Exclude pages that shouldn't be indexed: search endpoint, PWA offline fallback, 404
+      // Exclude pages that shouldn't be indexed: search endpoint, PWA offline
+      // fallback, 404, and /embed/ widgets (noindex duplicates of /calculator/)
       filter: (page) =>
         !page.includes('/offline/') &&
         !page.includes('/search/') &&
+        !page.includes('/embed/') &&
         !page.includes('/404'),
       // Segment sitemap into 200-URL chunks for better crawl monitoring per group
       entryLimit: 200,

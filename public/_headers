@@ -13,6 +13,11 @@
 /calculator/*
   Cache-Control: public, max-age=0, s-maxage=86400, stale-while-revalidate=604800
 
+# Embeddable widgets — allow framing by third-party sites (drop the global XFO)
+/embed/*
+  ! X-Frame-Options
+  Cache-Control: public, max-age=0, s-maxage=86400, stale-while-revalidate=604800
+
 /category/*
   Cache-Control: public, max-age=0, s-maxage=86400, stale-while-revalidate=604800
 

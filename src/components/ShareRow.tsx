@@ -62,8 +62,22 @@ export default function ShareRow({ params }: { params: Record<string, string> })
 
   const canShare = typeof navigator !== 'undefined' && !!navigator.share
 
+  const [embedCopied, setEmbedCopied] = useState(false)
+  const copyEmbed = async () => {
+    // /calculator/<slug>/ → /embed/<slug>/ with the current inputs baked in
+    const url = new URL(buildUrl(params))
+    url.pathname = url.pathname.replace('/calculator/', '/embed/')
+    const title = document.title.replace(/ \| Calks\.uk$/, '')
+    const code = `<iframe src="${url.toString()}" width="100%" height="640" style="border:1px solid #e2e8f0;border-radius:12px" title="${title} — Calks.uk" loading="lazy"></iframe>`
+    try {
+      await navigator.clipboard.writeText(code)
+      setEmbedCopied(true)
+      setTimeout(() => setEmbedCopied(false), 2000)
+    } catch { /* clipboard unavailable */ }
+  }
+
   return (
-    <div className="flex items-center justify-end gap-2 pt-1">
+    <div className="flex flex-wrap items-center justify-end gap-2 pt-1 print:hidden">
       <button
         onClick={copy}
         className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-muted px-3 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
@@ -91,6 +105,31 @@ export default function ShareRow({ params }: { params: Record<string, string> })
           Share
         </button>
       )}
+      <button
+        onClick={() => window.print()}
+        className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-muted px-3 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+        aria-label="Print or save this calculation as PDF"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 6 2 18 2 18 9" /><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" /><rect width="12" height="8" x="6" y="14" /></svg>
+        Print / PDF
+      </button>
+      <button
+        onClick={copyEmbed}
+        className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-muted px-3 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+        aria-label="Copy embed code for your website"
+      >
+        {embedCopied ? (
+          <>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+            Copied
+          </>
+        ) : (
+          <>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
+            Embed
+          </>
+        )}
+      </button>
     </div>
   )
 }

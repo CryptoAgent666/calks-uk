@@ -468,6 +468,10 @@ const calculators: Record<string, React.LazyExoticComponent<() => JSX.Element>> 
   'pro-rata-salary-calculator': lazy(() => import('./calculators/ProRataSalaryCalculator')),
   'pension-emergency-tax-calculator': lazy(() => import('./calculators/PensionEmergencyTaxCalculator')),
   'tax-refund-calculator': lazy(() => import('./calculators/TaxRefundCalculator')),
+  'tax-year-comparison-calculator': lazy(() => import('./calculators/TaxYearComparisonCalculator')),
+  'nhs-pension-calculator': lazy(() => import('./calculators/NhsPensionCalculator')),
+  'lgps-pension-calculator': lazy(() => import('./calculators/LgpsPensionCalculator')),
+  'adoption-pay-calculator': lazy(() => import('./calculators/AdoptionPayCalculator')),
 }
 
 export default function CalculatorRenderer({ slug }: { slug: string }) {
