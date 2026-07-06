@@ -164,6 +164,12 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
       import { initOtaUpdates } from '../scripts/ota-update'
       initOtaUpdates()
     </script>
+
+    <!-- Native-app extras: AdMob banner (UMP consent), in-app analytics, review prompt (no-op on the website) -->
+    <script>
+      import { initNativeExtras } from '../scripts/native-app'
+      initNativeExtras()
+    </script>
   </head>
   <body class="min-h-screen flex flex-col antialiased bg-background text-foreground">
     <Header />
