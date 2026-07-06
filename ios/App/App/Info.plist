@@ -24,11 +24,9 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-	<!-- AdMob. ⚠️ GADApplicationIdentifier below is Google's TEST App ID —
-	     replace with the real one from apps.admob.com before a monetised
-	     release (see src/scripts/native-app.ts for the full checklist). -->
+	<!-- AdMob App ID (real, from apps.admob.com — app "Calks.UK" iOS) -->
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<string>ca-app-pub-4859241862365215~9455832547</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>

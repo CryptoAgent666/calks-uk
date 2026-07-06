@@ -61,7 +61,9 @@ npm run build:ios
 # 2b) guard: App Store guideline 2.3.10 — the iOS bundle must contain ZERO Google Play
 # references (Apple rejected build 1 for this on 2026-06-08). PUBLIC_IS_IOS_BUILD=1
 # should have stripped the footer badge; verify nothing leaked back in.
-GPLAY_HITS=$(grep -rl -i -e 'google play' -e 'play\.google' ios/App/App/public/ 2>/dev/null | head -5)
+# NB: "|| true" — under set -e a matchless grep (exit 1) in a command
+# substitution would silently kill the whole script.
+GPLAY_HITS=$(grep -rl -i -e 'google play' -e 'play\.google' ios/App/App/public/ 2>/dev/null | head -5 || true)
 if [ -n "$GPLAY_HITS" ]; then
   echo "✗ Google Play references found in the iOS web bundle (guideline 2.3.10):"
   echo "$GPLAY_HITS"

@@ -5,21 +5,27 @@
  * dynamically imported only after the native guard passes, exactly like
  * src/scripts/ota-update.ts, so web visitors never download them.
  *
- * ⚠️ Ad unit IDs: while ADMOB_TESTING is true the code serves Google's demo
- * ads regardless of the IDs below. Before a monetised release: create both
- * apps in the AdMob console (apps.admob.com), paste the real BANNER ids
- * here, the real App IDs into ios/App/App/Info.plist (GADApplicationIdentifier)
- * and android/app/src/main/res/values/strings.xml (admob_app_id), then set
- * ADMOB_TESTING = false and rebuild the binaries.
+ * Ad unit IDs are the real ones (AdMob apps "Calks.UK" iOS + Android;
+ * App IDs live in Info.plist / strings.xml). Set ADMOB_TESTING = true to
+ * serve Google demo ads when debugging on a device.
  */
 
-export const ADMOB_TESTING = true
+export const ADMOB_TESTING = false
 
-// Google's official demo banner ad units (safe to ship while testing).
 const BANNER_AD_ID: Record<string, string> = {
-  ios: 'ca-app-pub-3940256099942544/2934735716',
-  android: 'ca-app-pub-3940256099942544/6300978111',
+  ios: 'ca-app-pub-4859241862365215/8596038839',
+  android: 'ca-app-pub-4859241862365215/4203543855',
 }
+
+// Interstitial: shown at most once per app session, on the 6th calculator
+// view of that session, so it never interrupts the first task.
+const INTERSTITIAL_AD_ID: Record<string, string> = {
+  ios: 'ca-app-pub-4859241862365215/5882245581',
+  android: 'ca-app-pub-4859241862365215/1181794693',
+}
+const INTERSTITIAL_AFTER_SESSION_VIEWS = 6
+const INTERSTITIAL_SHOWN_KEY = 'interstitial-shown'
+const SESSION_VIEWS_KEY = 'session-calc-views'
 
 const GA_ID = 'G-7ZTS02YTBC'
 const REVIEW_VISITS_KEY = 'calc-visit-count'
@@ -96,6 +102,22 @@ async function initAds(): Promise<void> {
     margin: 0,
     isTesting: ADMOB_TESTING,
   })
+
+  // Interstitial: once per session, on the Nth calculator view — never on
+  // the first task. Session counters survive page loads in this MPA.
+  if (!location.pathname.startsWith('/calculator/')) return
+  try {
+    if (sessionStorage.getItem(INTERSTITIAL_SHOWN_KEY)) return
+    const views = (Number(sessionStorage.getItem(SESSION_VIEWS_KEY)) || 0) + 1
+    sessionStorage.setItem(SESSION_VIEWS_KEY, String(views))
+    if (views !== INTERSTITIAL_AFTER_SESSION_VIEWS) return
+    sessionStorage.setItem(INTERSTITIAL_SHOWN_KEY, '1')
+  } catch { return }
+  await AdMob.prepareInterstitial({
+    adId: INTERSTITIAL_AD_ID[getPlatform()] ?? INTERSTITIAL_AD_ID.android,
+    isTesting: ADMOB_TESTING,
+  })
+  await AdMob.showInterstitial()
 }
 
 /** Ask for a store review once, after the 5th calculator visit. */
