@@ -8410,7 +8410,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     lastUpdated: 'July 2026',
   },
   'nhs-pension-calculator': {
-    quickAnswer: `The NHS 2015 Scheme is career-average: every year you bank <strong>1/54</strong> of your pensionable pay as annual pension, revalued at <strong>CPI + 1.5%</strong> while you keep working. A nurse on £38,000 banks ~£704 of yearly pension each year; over a 30-year career that compounds to a pension of roughly £27,000/year from State Pension age, inflation-protected for life.`,
+    quickAnswer: `The NHS 2015 Scheme is career-average: every year you bank <strong>1/54</strong> of your pensionable pay as annual pension, revalued at <strong>CPI + 1.5%</strong> while you keep working. A nurse on £38,000 banks ~£704 of yearly pension each year; over a 30-year career that compounds to a projected pension of roughly £34,000/year from State Pension age, inflation-protected for life.`,
     howItWorks: [
       'Since April 2022 all active NHS staff build pension in the 2015 Scheme, a career-average (CARE) arrangement. Each scheme year you earn a pension credit of 1/54 of that year\'s pensionable pay. The credit is then revalued every year you remain in service at CPI + 1.5% — deliberately faster than prices, so early-career earnings do not wither away.',
       'Member contributions are tiered by pay: from 5.2% on the lowest band to 12.5% at the top. Contributions are taken before tax, so the real cost is 20–45% lower than the headline rate. Your employer adds 23.7% — one reason the NHS pension is widely considered the best part of the AfC package.',
@@ -8423,7 +8423,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       steps: [
         'Each year banks £38,000 ÷ 54 = £703.70 of annual pension',
         'Already banked: ~£7,037 (10 years), revaluing at CPI + 1.5% while active',
-        'With 20 more years the projection reaches roughly £24,000–£25,000/year at State Pension age',
+        'With 20 more years the projection compounds to about £33,900/year at State Pension age',
         'Contribution tier at £38,000: 9.8% = £310/month gross, ~£248 after basic-rate tax relief',
         'Optional: swap 25% for a tax-free lump sum of ~£18,000 (£12 per £1 of pension)',
       ],
@@ -8446,7 +8446,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       steps: [
         'Each year banks £30,000 ÷ 49 = £612.24 of annual pension',
         'Already banked: ~£4,898 (8 years), revalued with CPI',
-        'With 25 more years the projection reaches roughly £22,000/year from State Pension age',
+        'With 25 more years the projection compounds to about £27,600/year from State Pension age',
         'Contribution band at £30,000: 6.5% = £162.50/month gross, £130 after tax relief',
         'In the 50/50 section that year would cost £81.25/month and bank £306/year instead',
       ],
