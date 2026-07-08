@@ -6581,10 +6581,12 @@
       "used_by": [
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://www.gov.uk/claim-employment-allowance",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/government/publications/changes-to-the-class-1-national-insurance-contributions-secondary-threshold-the-secondary-class-1-national-insurance-contributions-rate-and-the-empl",
+      "status": "historical",
       "change_frequency": "",
-      "note": "employer-ni-calculator: ineligible if employer Class 1 NI exceeded £100,000 in previous tax year"
+      "note": "employer-ni-calculator: the £100,000 prior-year employer-NI eligibility cap was ABOLISHED from 6 April 2025 — no longer applies. Prose updated to say so.",
+      "fixed": true,
+      "fixed_date": "2026-07-08"
     },
     {
       "key": "employment_allowance_eligibility_ni_bill_cap",
@@ -6598,10 +6600,12 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/government/publications/changes-to-the-class-1-national-insurance-contributions-secondary-threshold-the-secondary-class-1-national-insurance-contributions-rate-and-the-empl",
+      "status": "historical",
       "change_frequency": "",
-      "note": "Employment Allowance eligibility: prior-year employer NI bill must be under GBP100,000 (employer-ni-calculator)"
+      "note": "Employment Allowance eligibility: the £100,000 prior-year NI-bill cap was ABOLISHED from 6 April 2025 — no upper limit now. faqs.ts prose updated.",
+      "fixed": true,
+      "fixed_date": "2026-07-08"
     },
     {
       "key": "employment_tribunal_claim_window_months",
@@ -11545,7 +11549,7 @@
     },
     {
       "key": "maintenance_loan_away_home_min",
-      "value": "4767",
+      "value": "7739",
       "unit": "GBP",
       "law": "Student Finance England maintenance loan",
       "theme": "other",
@@ -11555,11 +11559,13 @@
       "used_by": [
         "src/components/calculators/StudentMaintenanceLoanCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/government/publications/student-finance-how-youre-assessed-and-paid/student-finance-how-youre-assessed-and-paid-2026-to-2027",
+      "status": "current",
       "change_frequency": "",
       "note": "StudentMaintenanceLoanCalculator: 2026/27 England min maintenance loan, away from home outside London (RATES.home_away.min)",
-      "resolve_note": "DRIFT: £4,767 belongs to the superseded 2025-26 outside-London schedule. gov.uk 2026-27 states the away/outside-London minimum is 46.6% of the full loan = 0.466"
+      "fixed": true,
+      "fixed_date": "2026-07-08",
+      "resolve_note": "FIXED 2026-07-08: gov.uk 2026-27 assessed-and-paid table gives the away/outside-London MINIMUM as £7,739 (published figure, not a derived ratio). Was a stale flat £4,767."
     },
     {
       "key": "maintenance_loan_away_london",
@@ -11656,7 +11662,7 @@
     },
     {
       "key": "maintenance_loan_home_parents_min",
-      "value": "4767",
+      "value": "6060",
       "unit": "GBP",
       "law": "Student Finance England maintenance loan",
       "theme": "other",
@@ -11666,11 +11672,13 @@
       "used_by": [
         "src/components/calculators/StudentMaintenanceLoanCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/government/publications/student-finance-how-youre-assessed-and-paid/student-finance-how-youre-assessed-and-paid-2026-to-2027",
+      "status": "current",
       "change_frequency": "",
       "note": "StudentMaintenanceLoanCalculator: 2026/27 England min maintenance loan, living with parents (RATES.home_parents.min)",
-      "resolve_note": "DRIFT: gov.uk 2026-27 gives the living-with-parents minimum as 44% of the full loan = 0.44 x £9,118 = approx £4,012. £4,767 is a stale flat figure (and does not"
+      "fixed": true,
+      "fixed_date": "2026-07-08",
+      "resolve_note": "FIXED 2026-07-08: gov.uk 2026-27 assessed-and-paid table gives the living-with-parents MINIMUM as £6,060 (published figure). Was a stale flat £4,767."
     },
     {
       "key": "maintenance_loan_household_income_threshold",
@@ -11746,7 +11754,7 @@
     },
     {
       "key": "maintenance_loan_london_min",
-      "value": "4767",
+      "value": "10991",
       "unit": "GBP",
       "law": "Student Finance England maintenance loan",
       "theme": "other",
@@ -11756,11 +11764,13 @@
       "used_by": [
         "src/components/calculators/StudentMaintenanceLoanCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/government/publications/student-finance-how-youre-assessed-and-paid/student-finance-how-youre-assessed-and-paid-2026-to-2027",
+      "status": "current",
       "change_frequency": "",
       "note": "StudentMaintenanceLoanCalculator: 2026/27 England min maintenance loan, living in London (RATES.london.min)",
-      "resolve_note": "DRIFT: gov.uk 2026-27 gives the London minimum as 49.8% of the full loan = 0.498 x £14,135 = approx £7,039. £4,767 is a stale flat figure far below the London m"
+      "fixed": true,
+      "fixed_date": "2026-07-08",
+      "resolve_note": "FIXED 2026-07-08: gov.uk 2026-27 assessed-and-paid table gives the London MINIMUM as the PUBLISHED figure £10,991 (max £14,135) — NOT the earlier derived guess 0.498 x £14,135 = £7,039, which understated it. Was a stale flat £4,767."
     },
     {
       "key": "maintenance_loan_max_outside_london",
@@ -11777,7 +11787,7 @@
       "source_url": "https://www.gov.uk/student-finance/new-fulltime-students",
       "status": "current",
       "change_frequency": "",
-      "note": "student-maintenance-loan-calculator: max £10,830 away outside London (2026/27), £13,022 London, £8,400 at home; full to £25,000 household income; min £4,767. NOTE prose section & other calcs cite 2025/",
+      "note": "student-maintenance-loan-calculator: 2026/27 max £10,830 away outside London, £14,135 London, £9,118 at home; full to £25,000 household income; min £7,739 / £10,991 / £6,060 respectively (gov.uk 2026-27).",
       "fixed": true,
       "fixed_date": "2026-06-16"
     },
@@ -18384,27 +18394,30 @@
     },
     {
       "key": "right_to_buy_max_discount_cap_london",
-      "value": "38400",
+      "value": "16000",
       "unit": "GBP",
-      "law": "Right to Buy (England)",
+      "law": "Housing (Right to Buy) (Limits on Discount) (England) Order 2024 (SI 2024/1073)",
       "theme": "other",
       "surfaces": [
+        "computed",
         "prose"
       ],
       "used_by": [
         "src/components/calculators/RightToBuyCalculator.tsx"
       ],
-      "source_url": "gov.uk",
-      "status": "uncertain",
+      "source_url": "https://www.legislation.gov.uk/uksi/2024/1073/made",
+      "status": "current",
       "change_frequency": "",
-      "note": "RightToBuyCalculator: London cash cap of £38,400 from October 2024, stated in the orange info banner ('£38,400 (London)') and the inline code comment.",
-      "resolve_note": "MHCLG RTB guide (April 2026): from 21 Nov 2024 max cash discounts are GBP16,000-GBP38,000 by region. London boroughs cap is GBP16,000 (two boroughs GBP38,000). "
+      "note": "RightToBuyCalculator: London regional cash cap £16,000 (SI 2024/1073, in force 21 Nov 2024). Calculator now has a region selector; banner corrected from the old '£38,400 (London)'.",
+      "fixed": true,
+      "fixed_date": "2026-07-08",
+      "resolve_note": "FIXED 2026-07-08: SI 2024/1073 sets London at £16,000 (lowest region); Barking & Dagenham and Havering are the £38,000 exception. Regional caps £16,000-£38,000 now modelled in code."
     },
     {
       "key": "right_to_buy_max_discount_cap_outside_london",
       "value": "34000",
       "unit": "GBP",
-      "law": "Right to Buy (England)",
+      "law": "Housing (Right to Buy) (Limits on Discount) (England) Order 2024 (SI 2024/1073)",
       "theme": "other",
       "surfaces": [
         "computed"
@@ -18412,11 +18425,13 @@
       "used_by": [
         "src/components/calculators/RightToBuyCalculator.tsx"
       ],
-      "source_url": "gov.uk",
-      "status": "uncertain",
+      "source_url": "https://www.legislation.gov.uk/uksi/2024/1073/made",
+      "status": "current",
       "change_frequency": "",
-      "note": "RightToBuyCalculator: maxDiscount = 34_000 — England cash cap outside London, reduced to ~£34K from Oct 2024. Used in compute and repeated in prose notice.",
-      "resolve_note": "MHCLG RTB guide (April 2026): from 21 Nov 2024 the old single GBP102,400 outside-London cap was replaced by regional caps in the GBP16,000-GBP38,000 range. GBP3"
+      "note": "RightToBuyCalculator: outside-London caps are now a REGION_CAPS map (SI 2024/1073): East of England £34,000, South East £38,000, South West £30,000, East/West Midlands £24k/£26k, North East £22,000, North West £26,000, Yorkshire £24,000. £34,000 is East of England.",
+      "fixed": true,
+      "fixed_date": "2026-07-08",
+      "resolve_note": "FIXED 2026-07-08: replaced the single £34,000 outside-London cap with per-region caps £16,000-£38,000 (SI 2024/1073). Region selector added to the calculator."
     },
     {
       "key": "right_to_buy_max_discount_london",
@@ -23880,7 +23895,7 @@
       "source_url": "https://www.teacherspensions.co.uk/members/faqs/planning-retirement/calculations.aspx",
       "status": "current",
       "change_frequency": "",
-      "note": "teachers-pension-calculator: CARE accrual 1/57 per year, revalued CPI+1.6%; employer contribution 28.68%; employee 7.4-12.4% tiered; commute 12:1",
+      "note": "teachers-pension-calculator: CARE accrual 1/57 per year, revalued CPI+1.6%; employer contribution 28.68%; employee 7.4-12% tiered (2026/27); commute 12:1",
       "official_value": "1/57",
       "confidence": "high",
       "freshness_note": "TPS career-average accrual rate is 1/57 of pensionable earnings per year; matches stored. (Note: the note's tier text '7.4-12.4%' should read 7.4-12%; employer 28.68% is correct.)",
@@ -23902,7 +23917,7 @@
       "source_url": "https://www.teacherspensions.co.uk/",
       "status": "current",
       "change_frequency": "",
-      "note": "teachers-pension-calculator: tiered employee contributions 7.4% (to £32,135) up to 12.4% (above £92,297)"
+      "note": "teachers-pension-calculator: tiered employee contributions 7.4% (to £36,199) up to 12% (above £104,414) for 2026/27"
     },
     {
       "key": "teachers_pension_employer_contribution",
@@ -23974,7 +23989,7 @@
     },
     {
       "key": "tps_contribution_band_tier1_ceiling",
-      "value": "34290",
+      "value": "36199",
       "unit": "GBP",
       "law": "Teachers' Pension Scheme member contributions",
       "theme": "pension",
@@ -24000,7 +24015,7 @@
     },
     {
       "key": "tps_contribution_band_tier2_ceiling",
-      "value": "46159",
+      "value": "48728",
       "unit": "GBP",
       "law": "Teachers' Pension Scheme member contributions",
       "theme": "pension",
@@ -24026,7 +24041,7 @@
     },
     {
       "key": "tps_contribution_band_tier3_ceiling",
-      "value": "54730",
+      "value": "57777",
       "unit": "GBP",
       "law": "Teachers' Pension Scheme member contributions",
       "theme": "pension",
@@ -24052,7 +24067,7 @@
     },
     {
       "key": "tps_contribution_band_tier4_ceiling",
-      "value": "72535",
+      "value": "76573",
       "unit": "GBP",
       "law": "Teachers' Pension Scheme member contributions",
       "theme": "pension",
@@ -24078,7 +24093,7 @@
     },
     {
       "key": "tps_contribution_band_tier5_ceiling",
-      "value": "98909",
+      "value": "104414",
       "unit": "GBP",
       "law": "Teachers' Pension Scheme member contributions",
       "theme": "pension",
@@ -24114,7 +24129,7 @@
     },
     {
       "key": "tps_contribution_rate_tier2",
-      "value": "8.6",
+      "value": "8.9",
       "unit": "%",
       "law": "Teachers' Pension Scheme member contributions",
       "theme": "pension",
@@ -24125,15 +24140,17 @@
         "src/components/calculators/TeacherPayCalculator.tsx",
         "src/components/calculators/TeachersPensionCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.teacherspensions.co.uk/",
+      "status": "current",
       "change_frequency": "",
-      "note": "TeacherPayCalculator: TPS contribution rate band 2 (34,290 to <46,159) = 0.086",
-      "resolve_note": "STALE. TPS member contribution percentages were restructured from 1 April 2025. Tier 2 is now 8.9% (band GBP 36,199.00 to GBP 48,727.99 for 2026-27), not 8.6%. "
+      "note": "TeacherPayCalculator/TeachersPensionCalculator: TPS contribution rate tier 2 (£36,199 to £48,727.99) = 0.089 (2026/27)",
+      "fixed": true,
+      "fixed_date": "2026-07-08",
+      "resolve_note": "FIXED 2026-07-08: tier 2 is 8.9% (band £36,199–£48,727.99 for 2026-27). Applied in both TPS components."
     },
     {
       "key": "tps_contribution_rate_tier3",
-      "value": "9.6",
+      "value": "9.9",
       "unit": "%",
       "law": "Teachers' Pension Scheme member contributions",
       "theme": "pension",
@@ -24147,12 +24164,14 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "TeacherPayCalculator: TPS contribution rate band 3 (46,159 to <54,730) = 0.096",
-      "resolve_note": "STALE. Tier 3 is now 9.9% (band GBP 48,728.00 to GBP 57,776.99 for 2026-27), not 9.6%. Rates revised from 1 April 2025 and held for 2026-27."
+      "note": "TeacherPayCalculator/TeachersPensionCalculator: TPS contribution rate tier 3 (£48,728 to £57,776.99) = 0.099 (2026/27)",
+      "fixed": true,
+      "fixed_date": "2026-07-08",
+      "resolve_note": "FIXED 2026-07-08: tier 3 is 9.9% (band £48,728–£57,776.99 for 2026-27). Applied in both TPS components."
     },
     {
       "key": "tps_contribution_rate_tier4",
-      "value": "10.2",
+      "value": "10.5",
       "unit": "%",
       "law": "Teachers' Pension Scheme member contributions",
       "theme": "pension",
@@ -24166,12 +24185,14 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "TeacherPayCalculator: TPS contribution rate band 4 (54,730 to <72,535) = 0.102",
-      "resolve_note": "STALE. Tier 4 is now 10.5% (band GBP 57,777.00 to GBP 76,572.99 for 2026-27), not 10.2%. Old pre-2025 value."
+      "note": "TeacherPayCalculator/TeachersPensionCalculator: TPS contribution rate tier 4 (£57,777 to £76,572.99) = 0.105 (2026/27)",
+      "fixed": true,
+      "fixed_date": "2026-07-08",
+      "resolve_note": "FIXED 2026-07-08: tier 4 is 10.5% (band £57,777–£76,572.99 for 2026-27). Applied in both TPS components."
     },
     {
       "key": "tps_contribution_rate_tier5",
-      "value": "11.3",
+      "value": "11.6",
       "unit": "%",
       "law": "Teachers' Pension Scheme member contributions",
       "theme": "pension",
@@ -24185,12 +24206,14 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "TeacherPayCalculator: TPS contribution rate band 5 (72,535 to <98,909) = 0.113",
-      "resolve_note": "STALE. Tier 5 is now 11.6% (band GBP 76,573.00 to GBP 104,413.99 for 2026-27), not 11.3%. Old pre-2025 value."
+      "note": "TeacherPayCalculator/TeachersPensionCalculator: TPS contribution rate tier 5 (£76,573 to £104,413.99) = 0.116 (2026/27)",
+      "fixed": true,
+      "fixed_date": "2026-07-08",
+      "resolve_note": "FIXED 2026-07-08: tier 5 is 11.6% (band £76,573–£104,413.99 for 2026-27). Applied in both TPS components."
     },
     {
       "key": "tps_contribution_rate_tier6",
-      "value": "11.7",
+      "value": "12",
       "unit": "%",
       "law": "Teachers' Pension Scheme member contributions",
       "theme": "pension",
@@ -24203,8 +24226,10 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "TeacherPayCalculator: TPS contribution top rate band (salary >= 98,909) = 0.117",
-      "resolve_note": "STALE. Top tier 6 is now 12% (salary GBP 104,414.00 and above for 2026-27), not 11.7%. Old pre-2025 value."
+      "note": "TeacherPayCalculator/TeachersPensionCalculator: TPS contribution top rate tier 6 (salary £104,414 and above) = 0.12 (2026/27)",
+      "fixed": true,
+      "fixed_date": "2026-07-08",
+      "resolve_note": "FIXED 2026-07-08: top tier 6 is 12% (£104,414 and above for 2026-27). Applied in both TPS components."
     },
     {
       "key": "tps_lump_sum_commutation_ratio",

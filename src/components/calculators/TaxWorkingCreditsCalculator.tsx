@@ -11,10 +11,10 @@ const WTC_CHILDCARE_70 = 0.70 // 70% of childcare costs
 const WTC_CHILDCARE_MAX_1 = 175 * 52 // max weekly for 1 child
 const WTC_CHILDCARE_MAX_2 = 300 * 52
 
-const CTC_PER_CHILD = 3_455    // child element per child (2026/27, uprated from 2024/25)
-const CTC_FAMILY = 545         // family element (frozen)
+const CTC_PER_CHILD = 3_455    // child element per child — final 2024/25 rate, frozen (scheme closed)
+const CTC_FAMILY = 545         // family element — final 2024/25 rate, frozen
 
-const INCOME_THRESHOLD = 7_582 // was £7,455 in 2024/25
+const INCOME_THRESHOLD = 7_455 // final 2024/25 threshold, frozen (no uprating after the scheme closed)
 const TAPER_RATE = 0.41
 
 function calculate(hoursPerWeek: number, isCouple: boolean, children: number, income: number, weeklyChildcare: number) {
@@ -52,6 +52,7 @@ export default function TaxWorkingCreditsCalculator() {
 
   return (
     <div className="space-y-6">
+      <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-3 text-sm text-orange-800 dark:text-orange-300"><strong>Tax Credits ended on 5 April 2025.</strong> You can no longer make or hold a Working/Child Tax Credit claim — all claimants have moved to Universal Credit (or Pension Credit). The figures below are the final 2024/25 rates, kept for reference and back-year checks only. For current support, use Universal Credit.</div>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         <div><label className="block text-sm font-medium mb-2">Hours/Week</label><input type="number" min="16" max="60" value={hours} onChange={(e) => setHours(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Hours/Week" /></div>
         <div><label className="block text-sm font-medium mb-2">Children</label><input type="number" min="0" max="10" value={children} onChange={(e) => setChildren(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Children" /></div>
@@ -77,7 +78,7 @@ export default function TaxWorkingCreditsCalculator() {
           </tbody>
         </table>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-          <p>Tax Credits are being replaced by Universal Credit. You can't make a new claim — this is for existing claimants only. If your circumstances change, you'll be moved to UC.</p>
+          <p>Tax Credits were fully replaced by Universal Credit and closed on 5 April 2025. This tool now serves as a historical reference (final 2024/25 rates) — for current entitlement, check Universal Credit.</p>
         </div>
       </div>
     </div>

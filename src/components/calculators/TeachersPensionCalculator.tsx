@@ -5,12 +5,15 @@ import { formatCurrency } from '@/utils'
 const ACCRUAL_RATE = 1 / 57
 const REVALUATION = 0.032 // CPI + 1.6% for active members
 
+// Member contribution tiers from 1 April 2026 (salary bands uprated 3.8% CPI).
+// Source: teacherspensions.co.uk — contribution tiers 2026/27.
 const CONTRIBUTION_RATES = [
-  { upTo: 32_947, rate: 7.4 },
-  { upTo: 46_525, rate: 8.6 },
-  { upTo: 57_790, rate: 9.6 },
-  { upTo: 79_573, rate: 10.2 },
-  { upTo: Infinity, rate: 11.3 },
+  { upTo: 36_198.99, rate: 7.4 },
+  { upTo: 48_727.99, rate: 8.9 },
+  { upTo: 57_776.99, rate: 9.9 },
+  { upTo: 76_572.99, rate: 10.5 },
+  { upTo: 104_413.99, rate: 11.6 },
+  { upTo: Infinity, rate: 12 },
 ]
 
 function calculate(salary: number, yearsService: number, yearsToRetirement: number) {

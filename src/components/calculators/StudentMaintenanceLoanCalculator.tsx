@@ -1,11 +1,12 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Maintenance loan 2026/27 (England)
+// Maintenance loan 2026/27 (England). Max = income under £25k; min = highest
+// household incomes. Source: gov.uk student finance 2026 to 2027.
 const RATES = {
-  home_parents: { min: 4_767, max: 9_118 },
-  home_away: { min: 4_767, max: 10_830 },
-  london: { min: 4_767, max: 14_135 },
+  home_parents: { min: 6_060, max: 9_118 },
+  home_away: { min: 7_739, max: 10_830 },
+  london: { min: 10_991, max: 14_135 },
 }
 
 type LivingSituation = 'home_parents' | 'home_away' | 'london'

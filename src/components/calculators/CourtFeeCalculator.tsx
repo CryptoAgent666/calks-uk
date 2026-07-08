@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Civil court fees England & Wales 2025
+// Civil court fees England & Wales (EX50, current from Nov 2025)
 const MONEY_CLAIM_FEES = [
   { upTo: 300, fee: 35 },
   { upTo: 500, fee: 50 },
@@ -14,18 +14,18 @@ const MONEY_CLAIM_FEES = [
   { upTo: Infinity, fee: 10_000 },
 ]
 
+// Hearing fees (EX50, current from Nov 2025). Small-claims track scaled by
+// claim value up to £10k; then the fast-track (£619) and multi/intermediate
+// (£1,334) hearing fees.
 const HEARING_FEES = [
   { upTo: 300, fee: 27 },
   { upTo: 500, fee: 59 },
-  { upTo: 1_000, fee: 119 },
-  { upTo: 1_500, fee: 181 },
-  { upTo: 3_000, fee: 346 },
-  { upTo: 10_000, fee: 335 },
-  { upTo: 25_000, fee: 545 },
-  { upTo: 50_000, fee: 1_090 },
-  { upTo: 100_000, fee: 1_635 },
-  { upTo: 200_000, fee: 2_180 },
-  { upTo: Infinity, fee: 2_180 },
+  { upTo: 1_000, fee: 85 },
+  { upTo: 1_500, fee: 123 },
+  { upTo: 3_000, fee: 181 },
+  { upTo: 10_000, fee: 346 },
+  { upTo: 25_000, fee: 619 },
+  { upTo: Infinity, fee: 1_334 },
 ]
 
 function calculate(claimAmount: number) {

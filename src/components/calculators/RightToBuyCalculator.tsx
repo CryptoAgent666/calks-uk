@@ -1,12 +1,26 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-function calculate(marketValue: number, yearsAsTenant: number, isHouse: boolean) {
+// Regional maximum cash discounts — Housing (Right to Buy) (Limits on Discount)
+// (England) Order 2024 (SI 2024/1073), in force 21 November 2024.
+const REGION_CAPS: Record<string, number> = {
+  'London': 16_000,
+  'East of England': 34_000,
+  'South East': 38_000,
+  'South West': 30_000,
+  'East Midlands': 24_000,
+  'West Midlands': 26_000,
+  'North East': 22_000,
+  'North West': 26_000,
+  'Yorkshire and the Humber': 24_000,
+}
+
+function calculate(marketValue: number, yearsAsTenant: number, isHouse: boolean, region: string) {
   const baseDiscount = isHouse ? 35 : 50 // houses 35%, flats 50% (for 3–5 years' tenancy)
   const additionalPerYear = isHouse ? 1 : 2 // +1%/yr (houses) / +2%/yr (flats) for each year ABOVE 5
   const minYears = 3 // 3 years minimum to qualify
   const incrementFromYear = 5 // base rate applies for 3–5 years; extra % only kicks in after year 5
-  const maxDiscount = 34_000 // England cap (outside London) — reduced to ~£34K from Oct 2024 (London ~£38.4K)
+  const maxDiscount = REGION_CAPS[region] ?? 16_000 // regional cash cap (SI 2024/1073)
 
   const qualifies = yearsAsTenant >= minYears
   const extraYears = Math.max(0, yearsAsTenant - incrementFromYear)
@@ -21,10 +35,11 @@ export default function RightToBuyCalculator() {
   const [value, setValue] = useState('200000')
   const [years, setYears] = useState('10')
   const [isHouse, setIsHouse] = useState(true)
+  const [region, setRegion] = useState('London')
 
   const v = parseFloat(value.replace(/,/g,'')) || 0
   const y = parseInt(years) || 0
-  const result = useMemo(() => calculate(v, y, isHouse), [v, y, isHouse])
+  const result = useMemo(() => calculate(v, y, isHouse, region), [v, y, isHouse, region])
 
   return (
     <div className="space-y-6">
@@ -32,8 +47,9 @@ export default function RightToBuyCalculator() {
         <div><label className="block text-sm font-medium mb-2">Market Value</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => setValue(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Market Value" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Years as Tenant</label><input type="number" min="0" max="50" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Years as Tenant" /></div>
         <div><label className="block text-sm font-medium mb-2">Property Type</label><div className="grid grid-cols-2 gap-2"><button onClick={() => setIsHouse(true)} className={`px-4 py-3 rounded-xl text-sm font-medium border ${isHouse ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border'}`}>House</button><button onClick={() => setIsHouse(false)} className={`px-4 py-3 rounded-xl text-sm font-medium border ${!isHouse ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border'}`}>Flat</button></div></div>
+        <div><label className="block text-sm font-medium mb-2">Region</label><select value={region} onChange={(e) => setRegion(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Region">{Object.keys(REGION_CAPS).map(r => <option key={r} value={r}>{r} — £{REGION_CAPS[r].toLocaleString()} cap</option>)}</select></div>
       </div>
-      <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-3 text-sm text-orange-800 dark:text-orange-300">Right to Buy discounts have been significantly reduced. Max discount £34,000 (outside London) or £38,400 (London) from October 2024. Check gov.uk for the latest caps — further changes are possible.</div>
+      <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-3 text-sm text-orange-800 dark:text-orange-300">Right to Buy discounts were sharply cut from 21 November 2024 (SI 2024/1073) to regional cash caps of £16,000–£38,000 — London is now the lowest at £16,000, down from £136,400. The discount is the lower of your regional cap or the percentage of value. Check gov.uk for the latest caps.</div>
       {!result.qualifies && y > 0 && <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-3 text-center text-sm text-orange-800 dark:text-orange-300">You need at least {result.minYears} years as a public sector tenant to qualify</div>}
       {v > 0 && result.qualifies && (
         <div className="space-y-4 animate-fade-in-up">

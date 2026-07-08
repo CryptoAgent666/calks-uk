@@ -26,12 +26,13 @@ function calculate(scale: Scale, point: number, leadershipGroup: string, isLondo
   salary += londonAdj[isLondon] || 0
 
   // Teachers' Pension Scheme — tiered member contribution rate by salary band
+  // (2026/27 bands, uprated 3.8% CPI from 1 April 2026). Source: teacherspensions.co.uk.
   const tpsRate =
-    salary < 34_290 ? 0.074 :
-    salary < 46_159 ? 0.086 :
-    salary < 54_730 ? 0.096 :
-    salary < 72_535 ? 0.102 :
-    salary < 98_909 ? 0.113 : 0.117
+    salary < 36_199 ? 0.074 :
+    salary < 48_728 ? 0.089 :
+    salary < 57_777 ? 0.099 :
+    salary < 76_573 ? 0.105 :
+    salary < 104_414 ? 0.116 : 0.12
   const pension = salary * tpsRate
 
   // TPS uses a net-pay arrangement: pension is deducted before income tax (automatic relief),
