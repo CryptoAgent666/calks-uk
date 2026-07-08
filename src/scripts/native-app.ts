@@ -1,9 +1,17 @@
 /**
  * Native-app extras for iOS/Android (Capacitor): AdMob banner with UMP
- * consent, in-app analytics (GA4, consent-gated) and an App Store / Play
- * review prompt. Nothing here runs on the website — all plugins are
+ * (GDPR) consent, in-app analytics (GA4, consent-gated) and an App Store /
+ * Play review prompt. Nothing here runs on the website — all plugins are
  * dynamically imported only after the native guard passes, exactly like
  * src/scripts/ota-update.ts, so web visitors never download them.
+ *
+ * NO App Tracking Transparency: we never request the iOS IDFA
+ * (initialize with requestTrackingAuthorization:false), so ads are served
+ * NON-PERSONALISED and the app declares no tracking in App Store Connect.
+ * This resolved Apple's Guideline 2.1 rejection of build 4 (the ATT prompt
+ * couldn't fire — it was requested during the WebView/splash load while the
+ * app was not yet `active`, which iOS silently no-ops). UMP GDPR consent is
+ * a separate mechanism (EEA/UK only) and still runs.
  *
  * Ad unit IDs are the real ones (AdMob apps "Calks.UK" iOS + Android;
  * App IDs live in Info.plist / strings.xml). Set ADMOB_TESTING = true to
@@ -62,23 +70,19 @@ function loadAnalytics(): void {
   gtag('config', GA_ID, { app_platform: getPlatform() })
 }
 
-/** UMP consent → ATT (iOS) → adaptive banner pinned to the bottom. */
+/** UMP (GDPR) consent → non-personalised adaptive banner pinned to the bottom. */
 async function initAds(): Promise<void> {
   const { AdMob, BannerAdSize, BannerAdPosition, BannerAdPluginEvents, AdmobConsentStatus } =
     await import('@capacitor-community/admob')
 
+  // We deliberately never call AdMob.requestTrackingAuthorization(), so the plugin
+  // never triggers the iOS ATT prompt and never reads the IDFA → Google serves
+  // non-personalised ads and the app is tracking-free (App Store guideline 2.1 /
+  // privacy nutrition labels). initialize() alone does NOT request ATT.
   await AdMob.initialize()
 
-  const [trackingInfo, consentInfoFirst] = await Promise.all([
-    AdMob.trackingAuthorizationStatus().catch(() => ({ status: 'notSupported' as const })),
-    AdMob.requestConsentInfo(),
-  ])
-  let consentInfo = consentInfoFirst
-
-  if (trackingInfo.status === 'notDetermined') {
-    await AdMob.requestTrackingAuthorization().catch(() => {})
-  }
-
+  // UMP GDPR consent (EEA/UK) is independent of ATT and still applies.
+  let consentInfo = await AdMob.requestConsentInfo()
   if (consentInfo.isConsentFormAvailable && consentInfo.status === AdmobConsentStatus.REQUIRED) {
     consentInfo = await AdMob.showConsentForm()
   }
