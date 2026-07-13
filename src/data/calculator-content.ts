@@ -1829,20 +1829,20 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'probate-fee-calculator': {
     howItWorks: [
-      'A grant of probate (or letters of administration if there is no will) gives legal authority to deal with a deceased person\'s estate. The application fee is £300 for estates valued above £5,000. Estates valued at £5,000 or below pay no fee. Additional sealed copies of the grant cost £16 each (raised from £1.50 on 17 November 2025).',
+      'A grant of probate (or letters of administration if there is no will) gives legal authority to deal with a deceased person\'s estate. The application fee is £526 for estates valued above £5,000. Estates valued at £5,000 or below pay no fee. Additional sealed copies of the grant cost £16 each (raised from £1.50 on 17 November 2025).',
       'The fee applies to the gross value of the estate before debts are deducted. You need to estimate the total value of all assets — property, savings, investments, personal possessions — for the application. The executor or administrator is responsible for paying the fee, usually from estate funds.',
       'What is probate and when is it needed. Probate is the legal process of administering a deceased person\'s estate — proving the Will is valid, paying debts and taxes, distributing assets. Required when: estate has over £15,000-£50,000 in any single asset (banks have different thresholds), or owns property in sole name, or has investments held outside ISA. Not always needed for joint property (automatic right of survivorship) or small estates.',
-      'Application fees 2026/27. Probate application fee: £300 (any value), or £0 for estates under £5,000. Government scrapped the controversial 2019 plan for tiered fees up to £6,000. Apply online at gov.uk/applying-for-probate — much faster than paper (4-8 weeks vs 12-16 weeks). Need: original Will, death certificate, estate inventory, IHT forms.',
-      'Solicitor fees and DIY probate. DIY probate: just the £300 application fee + your time (typically 20-50 hours of work). Solicitor probate: 1-5% of estate value + £300. £500k estate × 2% = £10,000. Worth using solicitor for: complex estates, IHT disputes, multiple properties, business assets, foreign assets, contentious Wills, missing/disputed Wills. DIY suitable for: simple estates, single property + savings, no IHT due.',
+      'Application fees 2026/27. Probate application fee: £526 (any value over £5,000), or £0 for estates under £5,000. Government scrapped the controversial 2019 plan for tiered fees up to £6,000. Apply online at gov.uk/applying-for-probate — much faster than paper (4-8 weeks vs 12-16 weeks). Need: original Will, death certificate, estate inventory, IHT forms.',
+      'Solicitor fees and DIY probate. DIY probate: just the £526 application fee + your time (typically 20-50 hours of work). Solicitor probate: 1-5% of estate value + £526. £500k estate × 2% = £10,000. Worth using solicitor for: complex estates, IHT disputes, multiple properties, business assets, foreign assets, contentious Wills, missing/disputed Wills. DIY suitable for: simple estates, single property + savings, no IHT due.',
       'Inheritance Tax considerations. IHT must be paid (or arrangements made) BEFORE probate granted. For estates above the Nil-Rate Band £325,000 + Residence NRB £175,000 (if applicable): pay 40% on excess. Strategies: arrange a \'grant on credit\' (HMRC accepts later payment from estate), use \'Direct Payment Scheme\' (banks pay IHT directly from deceased\'s accounts), or take out short-term bridging loan against estate. Specialist help essential for IHT estates.',
     ],
     example: {
       title: 'Example: Estate valued at £350,000',
       steps: [
         'Estate value: £350,000 (above £5,000 threshold)',
-        'Probate application fee: £300',
+        'Probate application fee: £526',
         'Extra copies (3 recommended): 3 × £16 = £48',
-        'Total probate cost: £348',
+        'Total probate cost: £574',
       ],
     },
     sourceUrl: 'https://www.gov.uk/applying-for-probate',

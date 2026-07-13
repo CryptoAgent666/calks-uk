@@ -1,12 +1,13 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Probate fees England & Wales 2025
+// Probate fees England & Wales (HMCTS). Application fee raised £300 → £526 for
+// estates over £5,000. Source: gov.uk/applying-for-probate/fees.
 function calculate(estateValue: number) {
   // No probate needed if estate under £5,000 (generally)
-  // Fee: £300 if estate over £5,000 (same fee for personal and solicitor applications)
+  // Fee: £526 if estate over £5,000 (same fee for personal and solicitor applications)
   const needsProbate = estateValue > 5_000
-  const applicationFee = needsProbate ? 300 : 0
+  const applicationFee = needsProbate ? 526 : 0
   const extraCopies = needsProbate ? 16 * 5 : 0 // 5 sealed copies at £16 each (raised from £1.50 on 17 November 2025)
 
   // Solicitor fees (approximate)

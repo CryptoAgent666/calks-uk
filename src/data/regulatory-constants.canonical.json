@@ -17621,7 +17621,7 @@
     },
     {
       "key": "probate_application_fee",
-      "value": "300",
+      "value": "526",
       "unit": "GBP",
       "law": "Probate fees England & Wales (HMCTS)",
       "theme": "other",
@@ -17638,19 +17638,16 @@
       "source_url": "https://www.gov.uk/applying-for-probate/fees",
       "status": "current",
       "change_frequency": "",
-      "note": "ProbateFeeCalculator: £300 probate application fee for estates over £5,000",
-      "conflict": true,
-      "conflict_values": [
-        300,
-        273
-      ],
-      "official_value": "300",
+      "note": "ProbateFeeCalculator: £526 probate application fee for estates over £5,000 (£0 for £5,000 or less)",
+      "official_value": "526",
       "confidence": "high",
-      "freshness_note": "HMCTS probate application fee in England & Wales is GBP 300 for estates over GBP 5,000 (no fee for estates of GBP 5,000 or less), in force since 27 January 2025 with no change for 2026-27. Our value 3"
+      "fixed": true,
+      "fixed_date": "2026-07-14",
+      "freshness_note": "FIXED 2026-07-14 (DataHub freshness verify, adversarially confirmed): HMCTS probate application fee for estates over GBP 5,000 rose GBP 300 -> GBP 526. gov.uk/applying-for-probate/fees states verbatim 'If the value of the estate is over £5,000, the application fee is £526.' Prior £300/£273 were superseded."
     },
     {
       "key": "probate_application_fee_personal",
-      "value": "300",
+      "value": "526",
       "unit": "GBP",
       "law": "Probate fees England & Wales (HMCTS)",
       "theme": "other",
@@ -17663,9 +17660,10 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "ProbateFeeCalculator: personal application fee £300 (same as solicitor application) for 2026/27 (was £273)",
+      "note": "ProbateFeeCalculator: personal application fee £526 (same as solicitor application), raised from £300; £273 before that",
+      "value_history": "273 -> 300 -> 526",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-07-14"
     },
     {
       "key": "probate_estate_threshold",

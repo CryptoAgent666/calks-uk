@@ -443,8 +443,8 @@ export const CALCULATOR_FAQS: Record<string, FAQ[]> = {
   ],
   'probate-fee-calculator': [
     { question: `What does the Probate Fee Calculator do?`,  answer: `Calculate probate application fees and estimated solicitor costs for administering an estate.` },
-    { question: `Probate fee structure 2026.`,  answer: `£300 standard probate application fee (any estate value), or £0 for estates under £5,000. Government scrapped 2019 plan for tiered fees up to £6,000. Apply online at gov.uk/applying-for-probate — much faster than paper (4-8 weeks vs 12-16 weeks).` },
-    { question: `Solicitor probate vs DIY.`,  answer: `DIY probate: just £300 fee + your time (20-50 hours work). Solicitor probate: 1-5% of estate value + £300. £500k estate × 2% = £10,000. Worth using solicitor for: complex estates, IHT disputes, multiple properties, business assets, contentious Wills, missing Wills. DIY for: simple estates, single property + savings, no IHT due.` },
+    { question: `Probate fee structure 2026.`,  answer: `£526 standard probate application fee (estates over £5,000), or £0 for estates of £5,000 or less. Government scrapped 2019 plan for tiered fees up to £6,000. Apply online at gov.uk/applying-for-probate — much faster than paper (4-8 weeks vs 12-16 weeks).` },
+    { question: `Solicitor probate vs DIY.`,  answer: `DIY probate: just £526 fee + your time (20-50 hours work). Solicitor probate: 1-5% of estate value + £526. £500k estate × 2% = £10,000. Worth using solicitor for: complex estates, IHT disputes, multiple properties, business assets, contentious Wills, missing Wills. DIY for: simple estates, single property + savings, no IHT due.` },
     { question: `Inheritance Tax payment before probate.`,  answer: `IHT must be paid (or arrangements made) BEFORE probate granted. Strategies: (1) 'Grant on credit' (HMRC accepts later payment from estate); (2) 'Direct Payment Scheme' (banks pay IHT directly from deceased's accounts); (3) Short-term bridging loan against estate. Specialist help essential for IHT estates above £325k NRB + £175k RNRB thresholds.` },
 
   ],
