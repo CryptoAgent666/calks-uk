@@ -7558,12 +7558,15 @@
         "computed"
       ],
       "used_by": [
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/components/calculators/FreeschoolMealsCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/apply-free-school-meals",
-      "status": "current",
+      "status": "historical",
       "change_frequency": "",
-      "note": "free-school-meals-calculator: UC income threshold £7,400/year; CTC £16,190; Pupil Premium £1,550 primary/£1,050 secondary; universal infant FSM Reception-Year 2"
+      "note": "free-school-meals-calculator: the £7,400/yr UC income test was ABOLISHED from academic year 2026/27 (Sept 2026) — any UC household in England now qualifies regardless of income (existing recipients protected during rollout). £7,400 applied only to applications up to Aug 2026. CTC £16,190; Pupil Premium £1,550 primary/£1,100 secondary; universal infant FSM Reception-Year 2.",
+      "fixed": true,
+      "fixed_date": "2026-07-20"
     },
     {
       "key": "free_tv_licence_age",
@@ -8236,7 +8239,7 @@
     },
     {
       "key": "hmrc_mileage_car_first_10k",
-      "value": "45",
+      "value": "55",
       "unit": "pence/mile",
       "law": "HMRC mileage allowance",
       "theme": "mileage",
@@ -8250,14 +8253,14 @@
       "status": "current",
       "change_frequency": "",
       "note": "HMRC approved mileage 55p/mile first 10,000 miles (mileage-allowance, fuel-cost, sole-trader, business-mileage)",
-      "official_value": "45",
+      "official_value": "55",
       "confidence": "high",
       "freshness_note": "Car/van AMAP first-10k rate raised 45p->55p, announced 21 May 2026, backdated 6 Apr 2026 (first change since 2011). gov.uk EIM31240 + ATT confirmed 2026-07-06. (Earlier '55p was WRONG' note was pre-announcement.)",
       "canonical_reconciled": true
     },
     {
       "key": "hmrc_mileage_rate_car_first_10k",
-      "value": "45",
+      "value": "55",
       "unit": "pence/mile",
       "law": "HMRC AMAP mileage allowance",
       "theme": "mileage",
@@ -8271,7 +8274,7 @@
       "status": "current",
       "change_frequency": "",
       "note": "mileage-allowance-calculator: '55p/25p per mile rates'; metaTitle 'HMRC 55p/25p Rates' — first 10,000 business miles (car/van)",
-      "official_value": "45",
+      "official_value": "55",
       "confidence": "high",
       "freshness_note": "Car/van AMAP first-10k rate raised 45p->55p, announced 21 May 2026, backdated 6 Apr 2026 (first change since 2011). gov.uk EIM31240 + ATT confirmed 2026-07-06. (Earlier '55p was WRONG' note was pre-announcement.)",
       "canonical_reconciled": true
@@ -12185,7 +12188,7 @@
     },
     {
       "key": "mileage_allowance_car_first_10k",
-      "value": "45",
+      "value": "55",
       "unit": "pence/mile",
       "law": "HMRC AMAP",
       "theme": "mileage",
@@ -12199,7 +12202,7 @@
       "status": "current",
       "change_frequency": "",
       "note": "mileage-allowance/business-mileage/fuel-cost: 55p/mile cars first 10,000 business miles (raised to 55p from 6 Apr 2026)",
-      "official_value": "45",
+      "official_value": "55",
       "confidence": "high",
       "freshness_note": "Car/van AMAP first-10k rate raised 45p->55p, announced 21 May 2026, backdated 6 Apr 2026 (first change since 2011). gov.uk EIM31240 + ATT confirmed 2026-07-06. (Earlier '55p was WRONG' note was pre-announcement.)",
       "canonical_reconciled": true
@@ -17784,9 +17787,9 @@
       "source_url": "https://www.gov.uk/apply-free-school-meals",
       "status": "current",
       "change_frequency": "",
-      "note": "FreeschoolMealsCalculator: Pupil Premium funding per eligible primary pupil ('£1,550 per primary pupil')",
+      "note": "FreeschoolMealsCalculator: Pupil Premium funding per eligible pupil 2026/27 — £1,550 primary (this key), £1,100 secondary (raised from £1,050; prose fixed calculator-content.ts)",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-07-20"
     },
     {
       "key": "rd_intensive_sme_threshold_pct",

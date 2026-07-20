@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 const QUALIFYING_BENEFITS = [
-  { id: 'uc', name: 'Universal Credit (net income under £7,400/yr)', qualifies: true },
+  { id: 'uc', name: 'Universal Credit (any income, from Sept 2026)', qualifies: true },
   { id: 'jsa', name: 'Income-based Jobseeker\'s Allowance', qualifies: true },
   { id: 'esa', name: 'Income-related Employment & Support Allowance', qualifies: true },
   { id: 'is', name: 'Income Support', qualifies: true },
@@ -53,7 +53,8 @@ export default function FreeschoolMealsCalculator() {
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
         <p className="font-medium text-foreground">Also eligible:</p>
         <p>All children in Reception, Year 1 and Year 2 get Universal Infant Free School Meals regardless of income.</p>
-        <p className="mt-1">Registering for FSM also unlocks Pupil Premium funding (£1,550 per primary pupil) for your child's school.</p>
+        <p className="mt-1"><strong className="text-foreground">From September 2026</strong> (academic year 2026/27) every child in a household getting Universal Credit qualifies in England — the old £7,400/yr income test only applied to applications up to August 2026, and existing recipients keep their meals during the rollout.</p>
+        <p className="mt-1">Registering for FSM also unlocks Pupil Premium funding (£1,550 per primary pupil, £1,100 per secondary pupil) for your child's school.</p>
       </div>
     </div>
   )
