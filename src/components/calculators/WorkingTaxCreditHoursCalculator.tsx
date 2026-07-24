@@ -28,8 +28,8 @@ function calculate(hoursPerWeek: number, hourlyRate: number, isSingle: boolean, 
 
   // Key UC earnings/hours thresholds (current rules, not legacy WTC)
   const thresholds = [
-    { hours: Math.ceil(aetSingleMonthly * 12 / 52 / nmw), label: `AET (single): £${aetSingleMonthly}/mo — escapes intensive work search`, met: monthlyPay >= aetSingleMonthly },
-    { hours: Math.ceil(aetCoupleMonthly * 12 / 52 / nmw), label: `AET (couple): £${aetCoupleMonthly}/mo joint — escapes intensive work search`, met: monthlyPay >= aetCoupleMonthly },
+    { hours: Math.ceil(aetSingleMonthly * 12 / 52 / nmw), label: `AET (single): £${aetSingleMonthly.toLocaleString('en-GB')}/mo — escapes intensive work search`, met: monthlyPay >= aetSingleMonthly },
+    { hours: Math.ceil(aetCoupleMonthly * 12 / 52 / nmw), label: `AET (couple): £${aetCoupleMonthly.toLocaleString('en-GB')}/mo joint — escapes intensive work search`, met: monthlyPay >= aetCoupleMonthly },
     { hours: 35, label: '35 hrs × NLW: CET — no work-related conditions', met: monthlyPay >= cetMonthly },
     { hours: 16, label: '16 hrs: legacy WTC threshold (closed to new claims April 2025)', met: hoursPerWeek >= 16 },
   ]
