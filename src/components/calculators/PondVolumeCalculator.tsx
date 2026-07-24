@@ -47,9 +47,9 @@ export default function PondVolumeCalculator() {
       {result.litres > 0 && (
         <div className="space-y-4 animate-fade-in-up">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div className="rounded-xl bg-blue-100 dark:bg-blue-950 p-4 text-center"><p className="text-xs text-muted-foreground">Volume</p><p className="text-xl font-bold text-blue-700 dark:text-blue-400">{result.litres.toFixed(0)} litres</p></div>
-            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Gallons</p><p className="text-lg font-bold">{result.gallons.toFixed(0)}</p></div>
-            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Pump Size</p><p className="text-lg font-bold">{result.pumpLph.toFixed(0)} LPH</p></div>
+            <div className="rounded-xl bg-blue-100 dark:bg-blue-950 p-4 text-center"><p className="text-xs text-muted-foreground">Volume</p><p className="text-xl font-bold text-blue-700 dark:text-blue-400">{Math.round(result.litres).toLocaleString('en-GB')} litres</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Gallons</p><p className="text-lg font-bold">{Math.round(result.gallons).toLocaleString('en-GB')}</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Pump Size</p><p className="text-lg font-bold">{Math.round(result.pumpLph).toLocaleString('en-GB')} LPH</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Liner Size</p><p className="text-lg font-bold">{result.linerLength.toFixed(1)} x {result.linerWidth.toFixed(1)}m</p></div>
           </div>
         </div>

@@ -40,7 +40,7 @@ export default function RaisedBedCalculator() {
 
       {l > 0 && w > 0 && d > 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 animate-fade-in-up">
-          <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Soil Needed</p><p className="text-xl font-bold text-primary">{result.litres.toFixed(0)} litres</p></div>
+          <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Soil Needed</p><p className="text-xl font-bold text-primary">{Math.round(result.litres).toLocaleString('en-GB')} litres</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">{bs}L Bags</p><p className="text-lg font-bold">{result.bags}</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Soil Cost</p><p className="text-lg font-bold">{formatCurrency(result.cost)}</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Sleepers (2.4m)</p><p className="text-lg font-bold">{result.sleepers}</p></div>

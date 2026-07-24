@@ -819,7 +819,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'legal',
     icon: 'Scale',
     keywords: ['probate', 'probate fees', 'grant of probate', 'estate administration'],
-    metaTitle: 'UK Probate Fee Calculator 2026 (£300)',
+    metaTitle: 'UK Probate Fee Calculator 2026 (£526)',
     priority: 2,
   },
 

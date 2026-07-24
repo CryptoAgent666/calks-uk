@@ -27,7 +27,7 @@ export default function MulchCalculator() {
       </div>
       {result.volumeM3 > 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 animate-fade-in-up">
-          <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Volume</p><p className="text-xl font-bold text-primary">{result.litres.toFixed(0)} litres</p></div>
+          <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Volume</p><p className="text-xl font-bold text-primary">{Math.round(result.litres).toLocaleString('en-GB')} litres</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">50L Bags</p><p className="text-lg font-bold">{result.bags50L}</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">100L Bags</p><p className="text-lg font-bold">{result.bags100L}</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Est. Cost</p><p className="text-lg font-bold">{formatCurrency(result.cost50)}</p></div>

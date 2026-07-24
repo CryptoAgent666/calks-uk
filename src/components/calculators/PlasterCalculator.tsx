@@ -45,7 +45,7 @@ export default function PlasterCalculator() {
       {result.totalArea > 0 && (
         <div className="grid grid-cols-3 gap-3 animate-fade-in-up">
           <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">25kg Bags</p><p className="text-xl font-bold text-primary">{result.bags25kg}</p></div>
-          <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Total Weight</p><p className="text-lg font-bold">{result.kgNeeded.toFixed(0)} kg</p></div>
+          <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Total Weight</p><p className="text-lg font-bold">{Math.round(result.kgNeeded).toLocaleString('en-GB')} kg</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Wall Area</p><p className="text-lg font-bold">{result.totalArea.toFixed(1)} m²</p></div>
         </div>
       )}
