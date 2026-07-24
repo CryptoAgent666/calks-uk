@@ -1,0 +1,55 @@
+[      73ms] [ERROR] Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep) @ http://localhost:4321/@id/astro/runtime/client/dev-toolbar/entrypoint.js:0
+[     174ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4321/node_modules/.vite/deps/chunk-QC7BOYLY.js?v=3b949d8b:20102
+[     239ms] [WARNING] Cannot download version in web {url: https://calks.uk/app/bundle-202607241344.zip, version: 202607241344} @ http://localhost:4321/node_modules/.vite/deps/web-C3OIT3T4.js?v=3b949d8b:30
+[     239ms] [WARNING] Cannot set next version in web {id: builtin} @ http://localhost:4321/node_modules/.vite/deps/web-C3OIT3T4.js?v=3b949d8b:34
+[     258ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  <CalculatorRenderer slug="redundancy...">
+    <Suspense fallback={<div>}>
+      <RedundancyPayCalculator>
+        <div className="space-y-6">
+          <div>
+          <div className="space-y-4 ...">
+            <div>
+            <div>
+            <div>
+            <ShareRow params={{age:"35",years:"5", ...}}>
+              <div className="flex flex-...">
+                <button>
+                <button
+                  onClick={function share}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-muted px-3 py-2 text-..."
++                 aria-label="Share this calculation"
+-                 aria-label="Print or save this calculation as PDF"
+                >
+                  <svg xmlns="http://www..." width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" ...>
++                   <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8">
+-                   <polyline points="6 9 6 2 18 2 18 9">
+                    ...
+                  ...
+                ...
+
+    at throwOnHydrationMismatch (http://localhost:4321/node_modules/.vite/deps/chunk-QC7BOYLY.js?v=3b949d8b:3920:13)
+    at beginWork (http://localhost:4321/node_modules/.vite/deps/chunk-QC7BOYLY.js?v=3b949d8b:8694:196)
+    at runWithFiberInDEV (http://localhost:4321/node_modules/.vite/deps/chunk-QC7BOYLY.js?v=3b949d8b:997:72)
+    at performUnitOfWork (http://localhost:4321/node_modules/.vite/deps/chunk-QC7BOYLY.js?v=3b949d8b:12561:98)
+    at workLoopConcurrentByScheduler (http://localhost:4321/node_modules/.vite/deps/chunk-QC7BOYLY.js?v=3b949d8b:12557:11)
+    at renderRootConcurrent (http://localhost:4321/node_modules/.vite/deps/chunk-QC7BOYLY.js?v=3b949d8b:12539:71)
+    at performWorkOnRoot (http://localhost:4321/node_modules/.vite/deps/chunk-QC7BOYLY.js?v=3b949d8b:11766:152)
+    at performWorkOnRootViaSchedulerTask (http://localhost:4321/node_modules/.vite/deps/chunk-QC7BOYLY.js?v=3b949d8b:13505:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:4321/node_modules/.vite/deps/chunk-QC7BOYLY.js?v=3b949d8b:36:50)
+[   85285ms] [ERROR] Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep) @ http://localhost:4321/@id/astro/runtime/client/dev-toolbar/entrypoint.js:0
+[   85308ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:4321/node_modules/.vite/deps/chunk-QC7BOYLY.js?v=3b949d8b:20102
+[  171214ms] [WARNING] Cannot download version in web {url: https://calks.uk/app/bundle-202607241344.zip, version: 202607241344} @ http://localhost:4322/_astro/web.BxT48GSm.js:0
+[  171214ms] [WARNING] Cannot set next version in web {id: builtin} @ http://localhost:4322/_astro/web.BxT48GSm.js:0
+[  182605ms] [WARNING] The resource http://localhost:4322/fonts/inter-variable-subset.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:4322/calculator/income-tax-calculator/:0
