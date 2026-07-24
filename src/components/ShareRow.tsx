@@ -9,6 +9,12 @@ import { useState, useEffect } from 'react'
  * SSR'd HTML and trigger a React hydration mismatch (#418) — always apply URL
  * state in an effect.
  *
+ * The same rule covers the "Share" button below: navigator.share exists on the
+ * client but not during SSR, so it is gated behind a post-mount `mounted` flag.
+ * Without it, the first client render adds a button the server HTML lacks,
+ * shifting the sibling buttons and re-triggering the #418 mismatch on any
+ * calculator whose result block (and thus ShareRow) renders on initial load.
+ *
  * <ShareRow params={{salary, pension}} /> — "Copy link" / native share buttons
  * that encode the CURRENT inputs into the page URL on click (no history spam
  * while typing).
@@ -35,6 +41,10 @@ function buildUrl(params: Record<string, string>): string {
 
 export default function ShareRow({ params }: { params: Record<string, string> }) {
   const [copied, setCopied] = useState(false)
+  // navigator.share is client-only; reveal the Share button after mount so the
+  // first client render matches the SSR HTML (see docblock — avoids React #418).
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
 
   const copy = async () => {
     const link = buildUrl(params)
@@ -60,7 +70,7 @@ export default function ShareRow({ params }: { params: Record<string, string> })
     }
   }
 
-  const canShare = typeof navigator !== 'undefined' && !!navigator.share
+  const canShare = mounted && typeof navigator !== 'undefined' && !!navigator.share
 
   const [embedCopied, setEmbedCopied] = useState(false)
   const copyEmbed = async () => {
