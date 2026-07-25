@@ -890,7 +890,7 @@ export const CALCULATOR_FAQS: Record<string, FAQ[]> = {
     { question: `Should I get professional debt advice?`,  answer: `If you are struggling with debt, free professional advice is available from StepChange (0800 138 1111), Citizens Advice, and the National Debtline (0808 808 4000). This calculator provides estimates only.` },
   ],
   'salary-sacrifice-pension-calculator': [
-    { question: `Is salary sacrifice really more tax-efficient than relief at source?`,  answer: `Where National Insurance applies it is, because sacrificing gross pay avoids both the 8% employee charge and the 13.8% employer charge, whereas relief at source only hands back income tax.` },
+    { question: `Is salary sacrifice really more tax-efficient than relief at source?`,  answer: `Where National Insurance applies it is, because sacrificing gross pay avoids both the 8% employee charge and the 15% employer charge, whereas relief at source only hands back income tax.` },
     { question: `Are these figures guaranteed?`,  answer: `No. Pension projections are estimates based on assumed growth rates and current contribution levels. Actual returns depend on investment performance, fees and future policy changes.` },
     { question: `What is the pension annual allowance?`,  answer: `The pension annual allowance for 2026/27 is £60,000. This is the maximum you can contribute (including employer contributions) and receive tax relief. The allowance is tapered for high earners.` },
   ],
