@@ -13,9 +13,18 @@ const TAPER_RATE = 0.55
 const WORK_ALLOWANCE_HOUSING = 427   // lower, with housing help (was £411 in 2025/26)
 const WORK_ALLOWANCE_NO_HOUSING = 710 // higher, no housing help (was £684 in 2025/26)
 
-type Status = 'single_under25' | 'single_25plus' | 'couple_under25' | 'couple_25plus'
+// Health element (formerly the LCWRA element). The Universal Credit Act 2025 split
+// it into two rates from 6 April 2026: a lower rate for people newly found to have
+// limited capability for work and work-related activity, and a protected higher rate
+// for pre-2026 claimants, those meeting the Severe Conditions Criteria, and the
+// terminally ill. Source: DWP ADM memo 04/26; SI 2026/113.
+const HEALTH_ELEMENT_NEW = 217.26      // new determinations from 6 Apr 2026
+const HEALTH_ELEMENT_PROTECTED = 429.80 // pre-2026, severe conditions, terminally ill
 
-function calculate(status: Status, children: number, earnings: number, rent: number, hasHousingCosts: boolean) {
+type Status = 'single_under25' | 'single_25plus' | 'couple_under25' | 'couple_25plus'
+type Health = 'none' | 'new' | 'protected'
+
+function calculate(status: Status, children: number, earnings: number, rent: number, hasHousingCosts: boolean, health: Health) {
   const standardRates: Record<Status, number> = {
     single_under25: STANDARD_SINGLE_UNDER25, single_25plus: STANDARD_SINGLE_25PLUS,
     couple_under25: STANDARD_COUPLE_UNDER25, couple_25plus: STANDARD_COUPLE_25PLUS,
@@ -25,18 +34,26 @@ function calculate(status: Status, children: number, earnings: number, rent: num
   // Child element
   if (children >= 1) maxUC += CHILD_FIRST
   if (children >= 2) maxUC += CHILD_ADDITIONAL * (children - 1)
+  // Health element
+  const healthElement = health === 'protected' ? HEALTH_ELEMENT_PROTECTED : health === 'new' ? HEALTH_ELEMENT_NEW : 0
+  maxUC += healthElement
   // Housing element
   const housingElement = hasHousingCosts ? Math.min(rent, HOUSING_ELEMENT_MAX) : 0
   maxUC += housingElement
 
-  // Work allowance & taper
-  const workAllowance = hasHousingCosts ? WORK_ALLOWANCE_HOUSING : (children > 0 ? WORK_ALLOWANCE_NO_HOUSING : 0)
+  // Work allowance & taper. A work allowance is only available to claimants with
+  // children or with limited capability for work, and is the lower rate when UC
+  // also covers housing costs.
+  const qualifiesForWorkAllowance = children > 0 || health !== 'none'
+  const workAllowance = qualifiesForWorkAllowance
+    ? (hasHousingCosts ? WORK_ALLOWANCE_HOUSING : WORK_ALLOWANCE_NO_HOUSING)
+    : 0
   const excessEarnings = Math.max(0, earnings - workAllowance)
   const deduction = excessEarnings * TAPER_RATE
 
   const ucPayment = Math.max(0, maxUC - deduction)
 
-  return { maxUC, workAllowance, deduction, ucPayment, housingElement, annualUC: ucPayment * 12 }
+  return { maxUC, workAllowance, deduction, ucPayment, housingElement, healthElement, annualUC: ucPayment * 12 }
 }
 
 export default function UniversalCreditCalculator() {
@@ -45,11 +62,12 @@ export default function UniversalCreditCalculator() {
   const [earnings, setEarnings] = useState('')
   const [rent, setRent] = useState('800')
   const [housing, setHousing] = useState(true)
+  const [health, setHealth] = useState<Health>('none')
 
   const e = parseFloat(earnings.replace(/,/g, '')) || 0
   const r = parseFloat(rent.replace(/,/g, '')) || 0
   const c = parseInt(children) || 0
-  const result = useMemo(() => calculate(status, c, e, r, housing), [status, c, e, r, housing])
+  const result = useMemo(() => calculate(status, c, e, r, housing, health), [status, c, e, r, housing, health])
 
   return (
     <div className="space-y-6">
@@ -70,6 +88,15 @@ export default function UniversalCreditCalculator() {
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
             <input type="text" inputMode="numeric" value={rent} onChange={(e) => setRent(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Monthly Rent" /></div></div>
       </div>
+      <div>
+        <label className="block text-sm font-medium mb-2">Health element (limited capability for work)</label>
+        <select value={health} onChange={(e) => setHealth(e.target.value as Health)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Health element">
+          <option value="none">Not applicable</option>
+          <option value="new">New award from 6 April 2026 (£217.26/month)</option>
+          <option value="protected">Protected rate: award before April 2026, severe conditions or terminally ill (£429.80/month)</option>
+        </select>
+        <p className="text-xs text-muted-foreground mt-1">The Universal Credit Act 2025 split this element into two rates from 6 April 2026. Qualifying for it also unlocks a work allowance.</p>
+      </div>
       <label className="flex items-center gap-3 cursor-pointer">
         <input type="checkbox" checked={housing} onChange={(e) => setHousing(e.target.checked)} className="h-5 w-5 rounded border-border" />
         <span className="text-sm">Include housing costs element</span>
@@ -84,6 +111,7 @@ export default function UniversalCreditCalculator() {
         <table className="w-full text-sm">
           <tbody>
             <tr className="border-b border-border/50"><td className="py-2">Maximum UC entitlement</td><td className="text-right tabular-nums font-medium">{formatCurrency(result.maxUC)}</td></tr>
+            {result.healthElement > 0 && <tr className="border-b border-border/50"><td className="py-2 text-muted-foreground">(includes health element)</td><td className="text-right tabular-nums text-muted-foreground">{formatCurrency(result.healthElement)}</td></tr>}
             {result.housingElement > 0 && <tr className="border-b border-border/50"><td className="py-2 text-muted-foreground">(includes housing element)</td><td className="text-right tabular-nums text-muted-foreground">{formatCurrency(result.housingElement)}</td></tr>}
             {e > 0 && <tr className="border-b border-border/50"><td className="py-2">Work allowance</td><td className="text-right tabular-nums">{formatCurrency(result.workAllowance)}</td></tr>}
             {result.deduction > 0 && <tr className="border-b border-border/50"><td className="py-2 text-destructive">Earnings deduction (55%)</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.deduction)}</td></tr>}

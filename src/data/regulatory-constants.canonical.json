@@ -28178,6 +28178,50 @@
       "note": "Doctoral Loan max for courses starting on/after 1 Aug 2026 (£30,301 for 2025/26, £29,390 for 2024/25). Site prose was two years stale at £29,390 until 2026-07-28.",
       "fixed": true,
       "fixed_date": "2026-07-28"
+    },
+    {
+      "key": "uc_health_element_new_claim",
+      "value": "217.26",
+      "unit": "GBP/month",
+      "law": "Universal Credit Act 2025 / UC Regulations",
+      "theme": "benefits",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/UniversalCreditCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/universal-credit-what-you-could-get-if-you-have-a-health-condition-or-disability",
+      "status": "current",
+      "change_frequency": "annual",
+      "note": "Universal Credit health element (LCWRA), lower rate for determinations made on/after 6 Apr 2026. Universal Credit Act 2025; DWP ADM memo 04/26; SI 2026/113.",
+      "fixed": true,
+      "fixed_date": "2026-07-28"
+    },
+    {
+      "key": "uc_health_element_protected",
+      "value": "429.80",
+      "unit": "GBP/month",
+      "law": "Universal Credit Act 2025 / UC Regulations",
+      "theme": "benefits",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/UniversalCreditCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/universal-credit-what-you-could-get-if-you-have-a-health-condition-or-disability",
+      "status": "current",
+      "change_frequency": "annual",
+      "note": "Universal Credit health element protected rate: pre-2026 claimants, Severe Conditions Criteria, terminally ill. Was a single £423.27 in 2025/26.",
+      "fixed": true,
+      "fixed_date": "2026-07-28"
     }
   ],
   "status_summary": {
