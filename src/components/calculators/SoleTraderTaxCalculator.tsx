@@ -19,7 +19,7 @@ function calculate(revenue: number, expenses: number) {
   }
 
   // Class 2 NI was abolished from 6 April 2024.
-  // Self-employed get NI credit automatically if profits >= £6,725 (Small Profits Threshold).
+  // Self-employed get NI credit automatically if profits >= £7,105 (Small Profits Threshold).
 
   // Class 4 NI (6%/2% from April 2024 onwards)
   let class4 = 0

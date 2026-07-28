@@ -7,7 +7,7 @@ const HIGHER_LIMIT = 125_140
 const PA_TAPER = 100_000
 
 // Class 2 NI was abolished from 6 April 2024. Self-employed people with profits
-// at or above the Small Profits Threshold (£6,725) automatically receive NI credit
+// at or above the Small Profits Threshold (£7,105) automatically receive NI credit
 // without having to pay anything.
 
 // Class 4 NI (2026/27 — main rate 6% from April 2024 onwards)

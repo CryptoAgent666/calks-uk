@@ -10,7 +10,7 @@ function calculate(isSingle: boolean, weeklyIncome: number, weeklyPension: numbe
   const guarantee = isSingle ? SINGLE_GUARANTEE : COUPLE_GUARANTEE
   let additionalAmount = 0
   if (hasDisability) additionalAmount += 86.05 // severe disability 2026/27 (gov.uk; was £82.90 in 2025/26, +3.8% CPI)
-  if (hasCarer) additionalAmount += 48.16 // carer addition (was £46.40 in 2025/26, uprated 3.8% CPI)
+  if (hasCarer) additionalAmount += 48.15 // carer addition 2026/27 (was £46.40; DWP rounds these premiums to the nearest 5p)
 
   const totalGuarantee = guarantee + additionalAmount
   const totalIncome = weeklyIncome + weeklyPension

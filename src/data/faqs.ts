@@ -436,7 +436,7 @@ export const CALCULATOR_FAQS: Record<string, FAQ[]> = {
   ],
   'court-fee-calculator': [
     { question: `What does it cost to issue a money claim in court?`,  answer: `Fees start at £35 for claims up to £300 and rise to 5% of the claim value for anything over £10,000, with that percentage capped at £10,000. Filing online through Money Claim Online (MCOL) comes in slightly cheaper than a paper claim.` },
-    { question: `Civil court fees 2026.`,  answer: `Money claims: £35 (under £300) scaling to £10,000 (over £200k). Possession claims £404. Application fees £121-£313. Family court: divorce £612, financial orders £313. Tribunal fees abolished for employment tribunals (2017) and most civil claims under £10,000.` },
+    { question: `Civil court fees 2026.`,  answer: `Money claims: £35 (under £300) scaling to £10,000 (over £200k). Possession claims £415. Application fees £126-£321. Family court: divorce £628, financial orders £321 (fees uprated 13 July 2026). Tribunal fees abolished for employment tribunals (2017) and most civil claims under £10,000.` },
     { question: `Help with Fees scheme.`,  answer: `Income-based fee remission. Maximum monthly income: £1,420 single, £2,050 couple. Plus capital under £3,000-£16,000 depending on age. Apply via EX160 form when starting court action. Successful applicants pay reduced or zero fees. Success rate 40-50%.` },
     { question: `Small Claims Track (under £10,000).`,  answer: `Designed for litigants in person, no solicitor required typically. Court fee scaled by amount. No 'loser pays' on legal costs (only own fixed costs typically). Hearing usually within 6 months. Decision binding. Use Money Claim Online for fastest results.` },
 

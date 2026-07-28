@@ -2346,7 +2346,7 @@
       "source_url": "https://assets.publishing.service.gov.uk/media/69931706ceeaa48d377f6bd5/Benefit-and-pension-rates-2026-2027.pdf",
       "status": "current",
       "change_frequency": "",
-      "note": "Carer's Allowance calc: CA_WEEKLY = 86.45 (2026/27, was 83.30 in 2025/26, +3.8% CPI); also in prose",
+      "note": "2026/27 Carer’s Allowance; stale £83.30 removed from the calculators.ts card description.",
       "conflict": true,
       "conflict_values": [
         86.45,
@@ -2354,7 +2354,9 @@
       ],
       "official_value": "86.45",
       "confidence": "high",
-      "freshness_note": "conflict=true. DWP rates 2026-27: Carer's Allowance 83.30 (2025-26) -> 86.45 (2026-27). 86.45 is the current value; conflict value 83.30 is the prior-year (stale) figure."
+      "freshness_note": "conflict=true. DWP rates 2026-27: Carer's Allowance 83.30 (2025-26) -> 86.45 (2026-27). 86.45 is the current value; conflict value 83.30 is the prior-year (stale) figure.",
+      "fixed": true,
+      "fixed_date": "2026-07-28"
     },
     {
       "key": "carers_leave_unpaid_weeks",
@@ -5412,7 +5414,7 @@
     },
     {
       "key": "court_fee_divorce",
-      "value": "612",
+      "value": "628",
       "unit": "GBP",
       "law": "HMCTS court fees",
       "theme": "other",
@@ -5426,13 +5428,13 @@
       "source_url": "https://www.gov.uk/court-fees-what-they-are",
       "status": "current",
       "change_frequency": "",
-      "note": "court-fee-calculator: divorce application fee £612 (2026/27; was £593)",
+      "note": "Divorce/nullity/dissolution application fee, uprated £612 -> £628 on 13 July 2026 (HMCTS +2.6% uprating of 170 fees).",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-07-28"
     },
     {
       "key": "court_fee_financial_orders",
-      "value": "313",
+      "value": "321",
       "unit": "GBP",
       "law": "MoJ court fees",
       "theme": "other",
@@ -5445,9 +5447,9 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "Family court financial orders fee GBP313 (court-fee-calculator; was GBP303)",
+      "note": "Family application for a financial order (not by consent): £313 -> £321 (13 July 2026).",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-07-28"
     },
     {
       "key": "court_fee_money_claim_min",
@@ -5468,7 +5470,7 @@
     },
     {
       "key": "court_fee_possession_claim",
-      "value": "404",
+      "value": "415",
       "unit": "GBP",
       "law": "MoJ court fees",
       "theme": "other",
@@ -5481,13 +5483,13 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "Possession claim court fee GBP404 (court-fee-calculator; was GBP391)",
+      "note": "Recovery of land, county court: £404 -> £415 (13 July 2026). High Court equivalent £559.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-07-28"
     },
     {
       "key": "court_hearing_fee_up_to_1000",
-      "value": "119",
+      "value": "85",
       "unit": "GBP",
       "law": "Civil Proceedings Fees Order (England & Wales)",
       "theme": "other",
@@ -5498,14 +5500,16 @@
         "src/components/calculators/CourtFeeCalculator.tsx"
       ],
       "source_url": "",
-      "status": "uncertain",
+      "status": "current",
       "change_frequency": "",
-      "note": "Court Fee calculator: small claims hearing fee for claims £500.01–£1,000",
-      "resolve_note": "Value 335 is from the old (pre-2021) graduated detailed-assessment-of-costs hearing fee scale (Civil Proceedings Fees Order fee 5.2/8.x), not the current small-"
+      "note": "Corrected to the real EX50 small-claims/fast-track hearing fee used by CourtFeeCalculator; previous ledger value was a phantom band not present in code or on gov.uk.",
+      "resolve_note": "Value 335 is from the old (pre-2021) graduated detailed-assessment-of-costs hearing fee scale (Civil Proceedings Fees Order fee 5.2/8.x), not the current small-",
+      "fixed": true,
+      "fixed_date": "2026-07-28"
     },
     {
       "key": "court_hearing_fee_up_to_10000",
-      "value": "335",
+      "value": "346",
       "unit": "GBP",
       "law": "Civil Proceedings Fees Order (England & Wales)",
       "theme": "other",
@@ -5516,28 +5520,12 @@
         "src/components/calculators/CourtFeeCalculator.tsx"
       ],
       "source_url": "",
-      "status": "uncertain",
+      "status": "current",
       "change_frequency": "",
-      "note": "Court Fee calculator: small claims hearing fee for claims £3,000.01–£10,000",
-      "resolve_note": "Old assessment-of-costs scale value £335 (sum to be assessed up to ~£15,000), now £398 under the current Civil Proceedings Fees Order. Superseded. Stale."
-    },
-    {
-      "key": "court_hearing_fee_up_to_100000",
-      "value": "1635",
-      "unit": "GBP",
-      "law": "Civil Proceedings Fees Order (England & Wales)",
-      "theme": "other",
-      "surfaces": [
-        "computed"
-      ],
-      "used_by": [
-        "src/components/calculators/CourtFeeCalculator.tsx"
-      ],
-      "source_url": "",
-      "status": "uncertain",
-      "change_frequency": "",
-      "note": "Court Fee calculator: hearing fee for claims £50,000.01–£100,000",
-      "resolve_note": "Old detailed-assessment scale: £1,635 for sum-to-be-assessed in the £100k-£150k band. The current Civil Proceedings Fees Order figures are £1,192 (£50k-£100k) /"
+      "note": "Corrected to the real EX50 small-claims/fast-track hearing fee used by CourtFeeCalculator; previous ledger value was a phantom band not present in code or on gov.uk.",
+      "resolve_note": "Old assessment-of-costs scale value £335 (sum to be assessed up to ~£15,000), now £398 under the current Civil Proceedings Fees Order. Superseded. Stale.",
+      "fixed": true,
+      "fixed_date": "2026-07-28"
     },
     {
       "key": "court_hearing_fee_up_to_1500",
@@ -5559,26 +5547,8 @@
       "fixed_date": "2026-06-16"
     },
     {
-      "key": "court_hearing_fee_up_to_200000_and_above",
-      "value": "2180",
-      "unit": "GBP",
-      "law": "Civil Proceedings Fees Order (England & Wales)",
-      "theme": "other",
-      "surfaces": [
-        "computed"
-      ],
-      "used_by": [
-        "src/components/calculators/CourtFeeCalculator.tsx"
-      ],
-      "source_url": "",
-      "status": "uncertain",
-      "change_frequency": "",
-      "note": "Court Fee calculator: hearing fee for claims £100,000.01 and above (max band £2,180)",
-      "resolve_note": "Old detailed-assessment scale: £2,180 for the £200k-£300k sum-assessed band. Current Civil Proceedings Fees Order: £1,992 (£150k-£200k) / £2,988 (£200k-£300k) /"
-    },
-    {
       "key": "court_hearing_fee_up_to_25000",
-      "value": "545",
+      "value": "619",
       "unit": "GBP",
       "law": "Civil Proceedings Fees Order (England & Wales)",
       "theme": "other",
@@ -5589,10 +5559,12 @@
         "src/components/calculators/CourtFeeCalculator.tsx"
       ],
       "source_url": "",
-      "status": "uncertain",
+      "status": "current",
       "change_frequency": "",
-      "note": "Court Fee calculator: fast/multi-track hearing fee for claims £10,000.01–£25,000",
-      "resolve_note": "£545 matches the old assessment scale (sum assessed £15k-£50k) and also the old fast-track trial fee. Current assessment fee for £15k-£50k is £801 (fast-track t"
+      "note": "Corrected to the real EX50 small-claims/fast-track hearing fee used by CourtFeeCalculator; previous ledger value was a phantom band not present in code or on gov.uk.",
+      "resolve_note": "£545 matches the old assessment scale (sum assessed £15k-£50k) and also the old fast-track trial fee. Current assessment fee for £15k-£50k is £801 (fast-track t",
+      "fixed": true,
+      "fixed_date": "2026-07-28"
     },
     {
       "key": "court_hearing_fee_up_to_300",
@@ -5646,24 +5618,6 @@
       "status": "current",
       "change_frequency": "",
       "note": "Court Fee calculator: small claims hearing fee for claims £300.01–£500"
-    },
-    {
-      "key": "court_hearing_fee_up_to_50000",
-      "value": "1090",
-      "unit": "GBP",
-      "law": "Civil Proceedings Fees Order (England & Wales)",
-      "theme": "other",
-      "surfaces": [
-        "computed"
-      ],
-      "used_by": [
-        "src/components/calculators/CourtFeeCalculator.tsx"
-      ],
-      "source_url": "",
-      "status": "uncertain",
-      "change_frequency": "",
-      "note": "Court Fee calculator: hearing fee for claims £25,000.01–£50,000",
-      "resolve_note": "£1,090 matches the old assessment scale (sum assessed £50k-£100k) and the old multi-track trial fee. Current assessment fee for £50k-£100k is £1,192 (multi-trac"
     },
     {
       "key": "court_money_claim_fee_cap_above_200000",
@@ -5980,12 +5934,12 @@
       "source_url": "https://www.gov.uk/government/publications/tuition-fees-and-student-support-2026-to-2027-academic-year/support-with-living-and-other-costs-2026-to-2027-academic-year",
       "status": "current",
       "change_frequency": "",
-      "note": "Student Allowance Calculator: max Disabled Students' Allowance GBP26,291",
+      "note": "2026/27 single combined DSA; two prose copies corrected from a stale £25,000.",
       "official_value": "27783",
       "confidence": "high",
       "freshness_note": "The single combined non-means-tested DSA maximum for full-time AND part-time undergraduate and postgraduate students is GBP 27,783 for the 2026-27 academic year. The site's 26,291 is an earlier-year f",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-07-28"
     },
     {
       "key": "dividend_additional_rate",
@@ -6109,7 +6063,7 @@
     },
     {
       "key": "divorce_court_fee",
-      "value": "612",
+      "value": "628",
       "unit": "GBP",
       "law": "HMCTS divorce application fee",
       "theme": "other",
@@ -6122,9 +6076,9 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "SolicitorFeeCalculator: divorce matter 'disbursements: 612' — the statutory court fee for a divorce application (incl. in disbursements; was 593)",
+      "note": "SolicitorFeeCalculator disbursements for uncontested divorce; £612 -> £628 (13 July 2026 uprating).",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-07-28"
     },
     {
       "key": "driving_practical_test_fee_weekday",
@@ -13917,12 +13871,12 @@
       "source_url": "https://www.gov.uk/self-employed-national-insurance-rates",
       "status": "current",
       "change_frequency": "",
-      "note": "Self Assessment calc: comment — Small Profits Threshold £6,725; Class 2 abolished from 6 Apr 2024, NI credit auto-granted at/above SPT",
+      "note": "2026/27 SPT; residual £6,725 code comments corrected.",
       "official_value": "7105",
       "confidence": "high",
       "freshness_note": "gov.uk self-employed NI page states the small profits threshold for 2026/27 is GBP 7,105 ('If your profits are less than 7,105 a year'). 6,725 was the 2024/25 figure (2025/26 was 6,845). Stale.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-07-28"
     },
     {
       "key": "ni_class2_threshold",
@@ -13961,7 +13915,7 @@
       "source_url": "https://www.gov.uk/self-employed-national-insurance-rates",
       "status": "current",
       "change_frequency": "",
-      "note": "Class 2 NI flat weekly rate (3.50 * 52) charged when profit >= £12,570. NB: this calculator still charges Class 2 (a sibling calc notes it was abolished from Apr 2024).",
+      "note": "Voluntary Class 2 2026/27. Mandatory Class 2 abolished 6 Apr 2024 — removed a phantom £182/yr charge from SoleTraderVsLtdCalculator.",
       "conflict": true,
       "conflict_values": [
         3.5,
@@ -13971,7 +13925,7 @@
       "confidence": "high",
       "freshness_note": "conflict=true; conflict_values [3.5, 3.45] are BOTH stale. gov.uk states verbatim 'The Class 2 rate for tax year 2026 to 2027 is 3.65 a week.' 3.45 = 2024/25, 3.50 = 2025/26, 3.65 = 2026/27. Correct v",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-07-28"
     },
     {
       "key": "ni_class3_voluntary_weekly_rate",
@@ -15079,7 +15033,7 @@
     },
     {
       "key": "pension_credit_carer_addition",
-      "value": "48.16",
+      "value": "48.15",
       "unit": "GBP/week",
       "law": "DWP Pension Credit",
       "theme": "pension",
@@ -15092,11 +15046,13 @@
       "source_url": "https://assets.publishing.service.gov.uk/media/69285a30ce50d215cae96148/proposed-benefit-and-pension-rates-2026-2027.pdf",
       "status": "current",
       "change_frequency": "",
-      "note": "PensionCreditCalculator: carer additional amount £48.16/week 2026/27 (was £46.40, uprated 3.8% CPI)",
+      "note": "DWP rounds these weekly premiums to the nearest 5p; compute corrected from 48.16.",
       "official_value": "48.15",
       "confidence": "high",
       "freshness_note": "DWP 2026/27 Pension Credit additional amount for carers is GBP 48.15/week (up from 46.40). Our 48.16 is off by 1p (rounding error); correct value is 48.15.",
-      "resolve_note": "48.16 ~ 48.15 (penny rounding) - current"
+      "resolve_note": "48.16 ~ 48.15 (penny rounding) - current",
+      "fixed": true,
+      "fixed_date": "2026-07-28"
     },
     {
       "key": "pension_credit_couple_guarantee",
@@ -28203,6 +28159,25 @@
       "freshness_note": "16h/week was a correct legacy WTC minimum (for lone parents, couples with children, or disabled workers); scheme closed to new claims and ended 5 Apr 2025.",
       "verified_date": "2026-06-28",
       "verify_method": "tier2-tail"
+    },
+    {
+      "key": "postgraduate_doctoral_loan_max",
+      "value": "31122",
+      "unit": "GBP",
+      "law": "Postgraduate Doctoral Loan (SFE)",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/doctoral-loan/what-you-get",
+      "status": "current",
+      "change_frequency": "annual",
+      "note": "Doctoral Loan max for courses starting on/after 1 Aug 2026 (£30,301 for 2025/26, £29,390 for 2024/25). Site prose was two years stale at £29,390 until 2026-07-28.",
+      "fixed": true,
+      "fixed_date": "2026-07-28"
     }
   ],
   "status_summary": {

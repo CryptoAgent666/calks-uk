@@ -13,7 +13,10 @@ function calculate(profit: number) {
   }
   let stClass4 = 0
   if (profit > 12_570) { if (profit <= 50_270) stClass4 = (profit - 12_570) * 0.06; else stClass4 = (50_270 - 12_570) * 0.06 + (profit - 50_270) * 0.02 }
-  const stClass2 = profit >= 12_570 ? 3.50 * 52 : 0
+  // Mandatory Class 2 NI was abolished from 6 April 2024. Self-employed profits
+  // at or above the Small Profits Threshold (£7,105) are treated as paid, so no
+  // charge applies; voluntary Class 2 (£3.65/wk) is opt-in and not modelled here.
+  const stClass2 = 0
   const stTotal = stTax + stClass4 + stClass2
   const stTakeHome = profit - stTotal
 
