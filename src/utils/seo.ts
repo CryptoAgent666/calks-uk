@@ -31,6 +31,7 @@ export function getPersonSchema() {
       'https://calk.nz',
       'https://calk-au.com',
       'https://calk.kz',
+      'https://calk24.de',
     ],
     knowsAbout: [
       'UK taxation',
@@ -74,6 +75,7 @@ export function getOrganizationSchema() {
       'https://calk.nz',
       'https://calk-au.com',
       'https://calk.kz',
+      'https://calk24.de',
     ],
   }
 }
