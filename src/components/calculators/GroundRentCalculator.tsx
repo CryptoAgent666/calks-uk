@@ -42,7 +42,7 @@ export default function GroundRentCalculator() {
         {(escalation === 'rpi' || escalation === 'percentage') && <div><label className="block text-sm font-medium mb-2">Annual Increase (%)</label><input type="number" min="0" max="10" step="0.5" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Increase (%)" /></div>}
         <div><label className="block text-sm font-medium mb-2">Years Remaining</label><input type="number" min="1" max="999" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Years Remaining" /></div>
       </div>
-      {result.isOnerous && <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-3 text-center text-sm text-orange-800 dark:text-orange-300">Warning: This may be considered an onerous ground rent. The Leasehold Reform Act 2022 caps new lease ground rent at a peppercorn (zero).</div>}
+      {result.isOnerous && <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-3 text-center text-sm text-orange-800 dark:text-orange-300">Warning: This may be considered an onerous ground rent. The Leasehold Reform (Ground Rent) Act 2022 caps new lease ground rent at a peppercorn (zero).</div>}
       {result.schedule.length > 0 && (
         <div className="space-y-4 animate-fade-in-up">
           <div className="rounded-2xl bg-destructive/10 p-6 text-center">
