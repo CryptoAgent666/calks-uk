@@ -28243,6 +28243,291 @@
       "note": "Welsh MDR minimum tax rate rose 1% -> 3% in force 13 Feb 2026 (transitional protection for contracts before that date). NB SDLT MDR was abolished in England/NI on 1 June 2024.",
       "fixed": true,
       "fixed_date": "2026-08-03"
+    },
+    {
+      "key": "ltt_higher_band1_rate",
+      "value": "5",
+      "unit": "%",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Welsh LTT higher residential rate, portion up to £180,000. Effective 11 Dec 2024; separate band table charged from the first pound, no nil-rate band.",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_higher_band2_rate",
+      "value": "8.5",
+      "unit": "%",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Welsh LTT higher residential rate, £180,001-£250,000. Effective 11 Dec 2024; separate band table charged from the first pound, no nil-rate band.",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_higher_band3_rate",
+      "value": "10",
+      "unit": "%",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Welsh LTT higher residential rate, £250,001-£400,000. Effective 11 Dec 2024; separate band table charged from the first pound, no nil-rate band.",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_higher_band4_rate",
+      "value": "12.5",
+      "unit": "%",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Welsh LTT higher residential rate, £400,001-£750,000. Effective 11 Dec 2024; separate band table charged from the first pound, no nil-rate band.",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_higher_band5_rate",
+      "value": "15",
+      "unit": "%",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Welsh LTT higher residential rate, £750,001-£1,500,000. Effective 11 Dec 2024; separate band table charged from the first pound, no nil-rate band.",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_higher_band6_rate",
+      "value": "17",
+      "unit": "%",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Welsh LTT higher residential rate, over £1,500,000. Effective 11 Dec 2024; separate band table charged from the first pound, no nil-rate band.",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_higher_rates_entry_threshold",
+      "value": "40000",
+      "unit": "GBP",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Higher rates apply once the consideration reaches £40,000 and you already own a dwelling.",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_nonres_nil_rate_upper",
+      "value": "225000",
+      "unit": "GBP",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Welsh LTT non-residential/mixed-use freehold or lease premium, nil-rate upper bound. Effective 22 Dec 2020 (NB gov.wales also shows a superseded £150,000 table).",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_nonres_band2_rate",
+      "value": "1",
+      "unit": "%",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Welsh LTT non-residential/mixed-use freehold or lease premium, £225,001-£250,000. Effective 22 Dec 2020 (NB gov.wales also shows a superseded £150,000 table).",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_nonres_band3_rate",
+      "value": "5",
+      "unit": "%",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Welsh LTT non-residential/mixed-use freehold or lease premium, £250,001-£1,000,000. Effective 22 Dec 2020 (NB gov.wales also shows a superseded £150,000 table).",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_nonres_band4_rate",
+      "value": "6",
+      "unit": "%",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Welsh LTT non-residential/mixed-use freehold or lease premium, over £1,000,000. Effective 22 Dec 2020 (NB gov.wales also shows a superseded £150,000 table).",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_lease_npv_nil_rate_upper",
+      "value": "225000",
+      "unit": "GBP",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Welsh LTT non-residential lease rent NPV, nil-rate upper bound. Effective 22 Dec 2020.",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_lease_npv_band2_rate",
+      "value": "1",
+      "unit": "%",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Welsh LTT non-residential lease rent NPV, £225,001-£2,000,000. Effective 22 Dec 2020.",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_lease_npv_band3_rate",
+      "value": "2",
+      "unit": "%",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Welsh LTT non-residential lease rent NPV, over £2,000,000. Effective 22 Dec 2020.",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
+    },
+    {
+      "key": "ltt_relevant_rent_threshold",
+      "value": "13500",
+      "unit": "GBP",
+      "law": "Land Transaction Tax (Wales)",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LandTransactionTaxCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.wales/land-transaction-tax-rates-and-bands",
+      "status": "current",
+      "change_frequency": "ad hoc",
+      "note": "Where annual rent reaches this, the 0% band is disapplied for the lease premium. From 4 Feb 2021 (was £9,000).",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
     }
   ],
   "status_summary": {
