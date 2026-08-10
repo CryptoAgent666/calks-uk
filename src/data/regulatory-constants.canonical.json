@@ -8038,9 +8038,11 @@
         "src/data/faqs.ts"
       ],
       "source_url": "",
-      "status": "current",
+      "status": "historical",
       "change_frequency": "",
-      "note": "Self Assessment required for high income GBP150k+ (self-assessment-tax-calculator)"
+      "note": "ABOLISHED. The Self Assessment income threshold rose £100,000 -> £150,000 for 2023-24 and was removed entirely from 2024-25: a high PAYE salary alone no longer requires a return. Three prose copies corrected.",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
     },
     {
       "key": "high_value_council_tax_proposed_year",
@@ -20324,10 +20326,12 @@
         "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/self-assessment-tax-returns",
-      "status": "uncertain",
+      "status": "historical",
       "change_frequency": "",
-      "note": "self-assessment-calculator: SA mandatory for income over £150,000 (raised from £100k 2024)",
-      "resolve_note": "The PAYE high-income Self Assessment filing threshold (raised GBP100k->GBP150k for 2023-24) was REMOVED entirely from 2024-25. For 2026-27 there is no income le"
+      "note": "ABOLISHED. The Self Assessment income threshold rose £100,000 -> £150,000 for 2023-24 and was removed entirely from 2024-25: a high PAYE salary alone no longer requires a return. Three prose copies corrected.",
+      "resolve_note": "The PAYE high-income Self Assessment filing threshold (raised GBP100k->GBP150k for 2023-24) was REMOVED entirely from 2024-25. For 2026-27 there is no income le",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
     },
     {
       "key": "self_assessment_late_filing_immediate_penalty",
@@ -20497,7 +20501,7 @@
     },
     {
       "key": "sfi_buffer_strip_rate",
-      "value": "451",
+      "value": "515",
       "unit": "GBP/ha",
       "law": "Defra SFI/ELM",
       "theme": "other",
@@ -20510,9 +20514,9 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "ELM/SFI Payment Calculator: Buffer Strips (6m) rate £451 per ha",
+      "note": "CAHL4 4-12m grass buffer strip, SFI26. Code was correct at 515; ledger held 451 and prose held a mislabelled 382.",
       "fixed": true,
-      "fixed_date": "2026-06-16",
+      "fixed_date": "2026-08-04",
       "volatile": true,
       "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)"
     },
@@ -20535,7 +20539,7 @@
     },
     {
       "key": "sfi_flower_rich_margins_rate",
-      "value": "739",
+      "value": "798",
       "unit": "GBP/ha",
       "law": "Defra SFI/ELM",
       "theme": "other",
@@ -20548,9 +20552,9 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "ELM/SFI Payment Calculator: Flower-Rich Margins (wildflower) rate £739 per ha",
+      "note": "CIPM2 flower-rich grass margins/blocks/in-field strips, SFI26. Ledger was stale; code correct.",
       "fixed": true,
-      "fixed_date": "2026-06-16",
+      "fixed_date": "2026-08-04",
       "volatile": true,
       "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)"
     },
@@ -20569,11 +20573,13 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "ELM/SFI Payment Calculator: Hedgerow Management rate £13 per 100m (England SFI scheme rate)"
+      "note": "CHRW2 manage hedgerows: £13 per 100m for one side per year, SFI26. Prose had drifted to £24/100m.",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
     },
     {
       "key": "sfi_herbal_ley_rate",
-      "value": "382",
+      "value": "224",
       "unit": "GBP/ha",
       "law": "Defra SFI/ELM",
       "theme": "other",
@@ -20584,9 +20590,11 @@
         "src/components/calculators/ELMPaymentCalculator.tsx"
       ],
       "source_url": "",
-      "status": "uncertain",
+      "status": "current",
       "change_frequency": "",
-      "note": "ELM/SFI Payment Calculator: Herbal Ley rate £382 per ha"
+      "note": "CSAM3 herbal leys re-rated for SFI26 (was £382 under SFI 2024). Compute + prose corrected.",
+      "fixed": true,
+      "fixed_date": "2026-08-04"
     },
     {
       "key": "sfi_no_insecticide_arable_rate",
@@ -20607,7 +20615,7 @@
     },
     {
       "key": "sfi_pollen_nectar_mix_rate",
-      "value": "614",
+      "value": "739",
       "unit": "GBP/ha",
       "law": "Defra SFI/ELM",
       "theme": "other",
@@ -20620,9 +20628,9 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "ELM/SFI Payment Calculator: Pollen & Nectar Mix rate £614 per ha",
+      "note": "CAHL1 pollen and nectar flower mix, SFI26. Ledger was 614 while the code was already correct.",
       "fixed": true,
-      "fixed_date": "2026-06-16",
+      "fixed_date": "2026-08-04",
       "volatile": true,
       "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)"
     },

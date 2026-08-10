@@ -6,7 +6,7 @@ const ACTIONS = [
   { id: 'hedgerow', name: 'Hedgerow Management', unit: 'per 100m', rate: 13 },
   { id: 'buffer_strip', name: 'Buffer Strips (6m)', unit: 'per ha', rate: 515 },
   { id: 'cover_crop', name: 'Winter Cover Crop', unit: 'per ha', rate: 129 },
-  { id: 'herbal_ley', name: 'Herbal Ley', unit: 'per ha', rate: 382 },
+  { id: 'herbal_ley', name: 'Herbal Ley', unit: 'per ha', rate: 224 }, // CSAM3, re-rated for SFI26 (was £382 under SFI 2024)
   { id: 'soil_assessment', name: 'Soil Assessment', unit: 'per agreement', rate: 97 },
   { id: 'wildflower', name: 'Flower-Rich Margins', unit: 'per ha', rate: 798 },
   { id: 'no_insecticide', name: 'No Insecticide (arable)', unit: 'per ha', rate: 45 },
