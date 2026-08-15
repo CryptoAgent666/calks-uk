@@ -43,8 +43,8 @@ function rukTax(taxBase: number): number {
   const pa = taperedPA(taxBase)
   if (taxBase <= pa) return 0
   if (taxBase <= BASIC_LIMIT) return (taxBase - pa) * 0.20
-  if (taxBase <= HIGHER_LIMIT) return (BASIC_LIMIT - pa) * 0.20 + (taxBase - BASIC_LIMIT) * 0.40
-  return (BASIC_LIMIT - pa) * 0.20 + (HIGHER_LIMIT - BASIC_LIMIT) * 0.40 + (taxBase - HIGHER_LIMIT) * 0.45
+  if (taxBase <= HIGHER_LIMIT) return 37_700 * 0.20 + (taxBase - pa - 37_700) * 0.40
+  return 37_700 * 0.20 + (HIGHER_LIMIT - 37_700) * 0.40 + (taxBase - HIGHER_LIMIT) * 0.45
 }
 
 function scottishTax(taxBase: number): number {

@@ -26,8 +26,8 @@ function calculateInside(dayRate: number, daysPerYear: number) {
   let tax = 0
   if (gross > pa) {
     if (gross <= 50_270) tax = (gross - pa) * 0.20
-    else if (gross <= 125_140) tax = (50_270 - pa) * 0.20 + (gross - 50_270) * 0.40
-    else tax = (50_270 - pa) * 0.20 + (125_140 - 50_270) * 0.40 + (gross - 125_140) * 0.45
+    else if (gross <= 125_140) tax = 37_700 * 0.20 + (gross - pa - 37_700) * 0.40
+    else tax = 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (gross - 125_140) * 0.45
   }
   let ni = 0
   if (gross > 12_570) {

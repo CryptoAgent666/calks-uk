@@ -43,8 +43,8 @@ function calcIT(income: number) {
   let tax = 0
   if (income > pa) {
     if (income <= 50_270) tax = (income - pa) * 0.20
-    else if (income <= 125_140) tax = (50_270 - pa) * 0.20 + (income - 50_270) * 0.40
-    else tax = (50_270 - pa) * 0.20 + (125_140 - 50_270) * 0.40 + (income - 125_140) * 0.45
+    else if (income <= 125_140) tax = 37_700 * 0.20 + (income - pa - 37_700) * 0.40
+    else tax = 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (income - 125_140) * 0.45
   }
   return tax
 }

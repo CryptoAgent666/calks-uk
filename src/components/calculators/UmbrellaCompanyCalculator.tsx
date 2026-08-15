@@ -15,8 +15,8 @@ function calculate(dayRate: number, daysPerYear: number, umbrellaMargin: number,
   let tax = 0
   if (grossSalary > pa) {
     if (grossSalary <= 50_270) tax = (grossSalary - pa) * 0.20
-    else if (grossSalary <= 125_140) tax = (50_270 - pa) * 0.20 + (grossSalary - 50_270) * 0.40
-    else tax = (50_270 - pa) * 0.20 + (125_140 - 50_270) * 0.40 + (grossSalary - 125_140) * 0.45
+    else if (grossSalary <= 125_140) tax = 37_700 * 0.20 + (grossSalary - pa - 37_700) * 0.40
+    else tax = 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (grossSalary - 125_140) * 0.45
   }
 
   let ni = 0

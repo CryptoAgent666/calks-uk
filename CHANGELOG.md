@@ -1,5 +1,28 @@
 # CHANGELOG — Calks.uk
 
+## 2026-08-15 — income tax over £100,000 was understated on 17 calculators
+
+Found by a CALC-10 marginal-scale check during a `/calkcheck` audit, and fixed.
+
+The Personal Allowance tapers away above £100,000, but the calculators kept the
+top of the 20% band pinned at £50,270 instead of treating the band as a fixed
+£37,700 of taxable income. As the allowance shrank the 20% band silently
+stretched, so income that should have been taxed at 40% was taxed at 20%.
+
+- Understated by a growing amount from £100,000 up to **£2,514** at £125,140,
+  and by a flat £2,514 for every income above that (£12,570 taxed at 20%
+  instead of 40%).
+- It also hid the well-known **60% effective marginal rate** between £100,000
+  and £125,140 — the calculators implied 50%.
+- Examples now correct: £110,000 → £33,432 (was £32,432); £150,000 → £53,703
+  (was £51,189). Incomes under £100,000 were never affected.
+
+Affected 17 calculators including the flagship **Take-Home Pay**, plus Income
+Tax, Self Assessment, Sole Trader, Landlord, Freelance, IR35, Umbrella, Bonus,
+Salary Sacrifice, Payroll and the tax-year comparison. The band logic now lives
+in one shared, documented helper (`ukIncomeTax` / `ukPersonalAllowance` in
+`src/utils`) rather than sixteen hand-rolled copies.
+
 ## v1.6.0 — 2026-06-03 (iOS app + OTA live-updates)
 
 ### iOS app (Capacitor 8, SPM) — offline-first with over-the-air updates

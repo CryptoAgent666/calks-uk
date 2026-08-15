@@ -13,8 +13,8 @@ function calculate(ukIncome: number, foreignIncome: number, yearsResident: numbe
   let ukTax = 0
   if (ukIncome > pa) {
     if (ukIncome <= 50_270) ukTax = (ukIncome - pa) * 0.20
-    else if (ukIncome <= 125_140) ukTax = (50_270 - pa) * 0.20 + (ukIncome - 50_270) * 0.40
-    else ukTax = (50_270 - pa) * 0.20 + (125_140 - 50_270) * 0.40 + (ukIncome - 125_140) * 0.45
+    else if (ukIncome <= 125_140) ukTax = 37_700 * 0.20 + (ukIncome - pa - 37_700) * 0.40
+    else ukTax = 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (ukIncome - 125_140) * 0.45
   }
 
   // Tax on foreign income

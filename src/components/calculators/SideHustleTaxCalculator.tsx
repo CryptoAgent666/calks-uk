@@ -15,15 +15,15 @@ function calculate(income: number, employmentIncome: number, expenses: number, u
   let empTax = 0
   if (employmentIncome > pa) {
     if (employmentIncome <= 50_270) empTax = (employmentIncome - pa) * 0.20
-    else empTax = (50_270 - pa) * 0.20 + (employmentIncome - 50_270) * 0.40
+    else empTax = 37_700 * 0.20 + (employmentIncome - pa - 37_700) * 0.40
   }
 
   // Tax on total
   let totalTax = 0
   if (totalIncome > pa) {
     if (totalIncome <= 50_270) totalTax = (totalIncome - pa) * 0.20
-    else if (totalIncome <= 125_140) totalTax = (50_270 - pa) * 0.20 + (totalIncome - 50_270) * 0.40
-    else totalTax = (50_270 - pa) * 0.20 + (125_140 - 50_270) * 0.40 + (totalIncome - 125_140) * 0.45
+    else if (totalIncome <= 125_140) totalTax = 37_700 * 0.20 + (totalIncome - pa - 37_700) * 0.40
+    else totalTax = 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (totalIncome - 125_140) * 0.45
   }
 
   const extraTax = totalTax - empTax

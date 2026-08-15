@@ -3,8 +3,9 @@ import { formatCurrency, formatPercent } from '@/utils'
 import ShareRow, { useUrlParam } from '@/components/ShareRow'
 
 const PERSONAL_ALLOWANCE = 12_570
-const BASIC_RATE_LIMIT = 50_270
-const HIGHER_RATE_LIMIT = 125_140
+const BASIC_RATE_LIMIT = 50_270      // gross income where 40% starts on a full allowance
+const BASIC_RATE_BAND = 37_700       // width of the 20% band in taxable income
+const HIGHER_RATE_LIMIT = 125_140    // taxable income where 45% starts
 const PA_TAPER_START = 100_000
 
 const TAX_BANDS = [
@@ -22,11 +23,19 @@ function calculateIncomeTax(gross: number) {
     personalAllowance = Math.max(0, PERSONAL_ALLOWANCE - reduction)
   }
 
+  // The basic-rate band is a fixed WIDTH of taxable income (£37,700), not a fixed
+  // upper limit. When the Personal Allowance is tapered away the band moves down
+  // with it, so the 40% rate starts earlier in gross terms. Keeping the upper
+  // bound pinned at £50,270 would widen the 20% band and understate the tax for
+  // everyone over £100,000 (and hide the 60% effective marginal rate in the
+  // taper zone). Anyone at or above £125,140 has no allowance left, so the 45%
+  // threshold stays at £125,140 of taxable income.
+  const basicBandTop = personalAllowance + BASIC_RATE_BAND
   const bands = [
     { name: 'Personal Allowance', rate: 0, from: 0, to: personalAllowance },
-    { name: 'Basic Rate (20%)', rate: 0.20, from: personalAllowance, to: BASIC_RATE_LIMIT },
-    { name: 'Higher Rate (40%)', rate: 0.40, from: BASIC_RATE_LIMIT, to: HIGHER_RATE_LIMIT },
-    { name: 'Additional Rate (45%)', rate: 0.45, from: HIGHER_RATE_LIMIT, to: Infinity },
+    { name: 'Basic Rate (20%)', rate: 0.20, from: personalAllowance, to: basicBandTop },
+    { name: 'Higher Rate (40%)', rate: 0.40, from: basicBandTop, to: personalAllowance + HIGHER_RATE_LIMIT },
+    { name: 'Additional Rate (45%)', rate: 0.45, from: personalAllowance + HIGHER_RATE_LIMIT, to: Infinity },
   ]
 
   let totalTax = 0

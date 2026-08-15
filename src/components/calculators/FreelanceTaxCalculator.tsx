@@ -11,8 +11,8 @@ function calculate(dayRate: number, daysPerMonth: number, monthsPerYear: number,
   let tax = 0
   if (netProfit > pa) {
     if (netProfit <= 50_270) tax = (netProfit - pa) * 0.20
-    else if (netProfit <= 125_140) tax = (50_270 - pa) * 0.20 + (netProfit - 50_270) * 0.40
-    else tax = (50_270 - pa) * 0.20 + (125_140 - 50_270) * 0.40 + (netProfit - 125_140) * 0.45
+    else if (netProfit <= 125_140) tax = 37_700 * 0.20 + (netProfit - pa - 37_700) * 0.40
+    else tax = 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (netProfit - 125_140) * 0.45
   }
 
   let class4 = 0

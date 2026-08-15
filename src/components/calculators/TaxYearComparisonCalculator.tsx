@@ -76,8 +76,8 @@ function rukTax(gross: number): number {
   const pa = taperedPA(gross)
   if (gross <= pa) return 0
   if (gross <= 50_270) return (gross - pa) * 0.20
-  if (gross <= 125_140) return (50_270 - pa) * 0.20 + (gross - 50_270) * 0.40
-  return (50_270 - pa) * 0.20 + (125_140 - 50_270) * 0.40 + (gross - 125_140) * 0.45
+  if (gross <= 125_140) return 37_700 * 0.20 + (gross - pa - 37_700) * 0.40
+  return 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (gross - 125_140) * 0.45
 }
 
 function scotTax(gross: number, bands: YearParams['scotBands']): number {

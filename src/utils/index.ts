@@ -60,3 +60,34 @@ export function getFinancialYear(date: Date = new Date()): string {
   }
   return `${year - 1}-${year.toString().slice(-2)}`
 }
+
+/**
+ * Personal Allowance for 2026/27, tapered by £1 for every £2 of income over
+ * £100,000 (so it reaches zero at £125,140).
+ */
+export function ukPersonalAllowance(gross: number, base = 12_570): number {
+  if (gross <= 100_000) return base
+  return Math.max(0, base - Math.floor((gross - 100_000) / 2))
+}
+
+/**
+ * UK income tax (England, Wales, NI) for 2026/27.
+ *
+ * The basic-rate band is a fixed WIDTH of taxable income (£37,700), not a fixed
+ * upper limit of £50,270. When the Personal Allowance tapers away above
+ * £100,000 the band moves down with it, so the 40% rate starts earlier in gross
+ * terms. Computing the band as (£50,270 − reduced allowance) widens it and
+ * understates the tax for every income over £100,000 — by up to £2,514 — and
+ * hides the 60% effective marginal rate in the taper zone.
+ *
+ * Pass `pa` explicitly when the caller has already adjusted the allowance
+ * (salary sacrifice, blind person's allowance, and so on).
+ */
+export function ukIncomeTax(gross: number, pa: number = ukPersonalAllowance(gross)): number {
+  const taxable = Math.max(0, gross - pa)
+  return (
+    Math.min(taxable, 37_700) * 0.20 +
+    Math.max(0, Math.min(taxable, 125_140) - 37_700) * 0.40 +
+    Math.max(0, taxable - 125_140) * 0.45
+  )
+}

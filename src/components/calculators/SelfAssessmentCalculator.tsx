@@ -24,8 +24,8 @@ function calculate(profit: number) {
   let incomeTax = 0
   if (profit > pa) {
     if (profit <= BASIC_LIMIT) incomeTax = (profit - pa) * 0.20
-    else if (profit <= HIGHER_LIMIT) incomeTax = (BASIC_LIMIT - pa) * 0.20 + (profit - BASIC_LIMIT) * 0.40
-    else incomeTax = (BASIC_LIMIT - pa) * 0.20 + (HIGHER_LIMIT - BASIC_LIMIT) * 0.40 + (profit - HIGHER_LIMIT) * 0.45
+    else if (profit <= HIGHER_LIMIT) incomeTax = 37_700 * 0.20 + (profit - pa - 37_700) * 0.40
+    else incomeTax = 37_700 * 0.20 + (HIGHER_LIMIT - 37_700) * 0.40 + (profit - HIGHER_LIMIT) * 0.45
   }
 
   // Class 4 NI

@@ -32,8 +32,8 @@ function calcTax(income: number) {
   let tax = 0
   if (income > pa) {
     if (income <= BASIC) tax = (income - pa) * 0.20
-    else if (income <= HIGHER) tax = (BASIC - pa) * 0.20 + (income - BASIC) * 0.40
-    else tax = (BASIC - pa) * 0.20 + (HIGHER - BASIC) * 0.40 + (income - HIGHER) * 0.45
+    else if (income <= HIGHER) tax = 37_700 * 0.20 + (income - pa - 37_700) * 0.40
+    else tax = 37_700 * 0.20 + (HIGHER - 37_700) * 0.40 + (income - HIGHER) * 0.45
   }
   return tax
 }

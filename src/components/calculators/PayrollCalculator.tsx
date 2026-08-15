@@ -13,10 +13,13 @@ function calculate(grossSalary: number, taxCode: string, pensionPct: number, stu
   // Income Tax (monthly)
   let monthlyTax = 0
   const monthlyTaxable = Math.max(0, monthlyGross - monthlyPA)
-  const basicMonthly = (50_270 - pa) / 12
+  // The 20% band is a fixed width of taxable income (£37,700/yr), so it does not
+  // stretch when the Personal Allowance tapers away above £100,000.
+  const basicMonthly = 37_700 / 12
+  const higherTopMonthly = 125_140 / 12
   if (monthlyTaxable <= basicMonthly) monthlyTax = monthlyTaxable * 0.20
-  else if (monthlyTaxable <= (125_140 - pa) / 12) monthlyTax = basicMonthly * 0.20 + (monthlyTaxable - basicMonthly) * 0.40
-  else monthlyTax = basicMonthly * 0.20 + ((125_140 - pa) / 12 - basicMonthly) * 0.40 + (monthlyTaxable - (125_140 - pa) / 12) * 0.45
+  else if (monthlyTaxable <= higherTopMonthly) monthlyTax = basicMonthly * 0.20 + (monthlyTaxable - basicMonthly) * 0.40
+  else monthlyTax = basicMonthly * 0.20 + (higherTopMonthly - basicMonthly) * 0.40 + (monthlyTaxable - higherTopMonthly) * 0.45
 
   // Employee NI (monthly)
   const monthlyNIPT = 12_570 / 12

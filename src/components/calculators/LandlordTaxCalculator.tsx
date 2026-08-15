@@ -12,16 +12,16 @@ function calculate(rentalIncome: number, mortgageInterest: number, expenses: num
   let totalTax = 0
   if (totalIncome > pa) {
     if (totalIncome <= 50_270) totalTax = (totalIncome - pa) * 0.20
-    else if (totalIncome <= 125_140) totalTax = (50_270 - pa) * 0.20 + (totalIncome - 50_270) * 0.40
-    else totalTax = (50_270 - pa) * 0.20 + (125_140 - 50_270) * 0.40 + (totalIncome - 125_140) * 0.45
+    else if (totalIncome <= 125_140) totalTax = 37_700 * 0.20 + (totalIncome - pa - 37_700) * 0.40
+    else totalTax = 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (totalIncome - 125_140) * 0.45
   }
 
   // Tax without rental
   let taxWithout = 0
   if (otherIncome > pa) {
     if (otherIncome <= 50_270) taxWithout = (otherIncome - pa) * 0.20
-    else if (otherIncome <= 125_140) taxWithout = (50_270 - pa) * 0.20 + (otherIncome - 50_270) * 0.40
-    else taxWithout = (50_270 - pa) * 0.20 + (125_140 - 50_270) * 0.40 + (otherIncome - 125_140) * 0.45
+    else if (otherIncome <= 125_140) taxWithout = 37_700 * 0.20 + (otherIncome - pa - 37_700) * 0.40
+    else taxWithout = 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (otherIncome - 125_140) * 0.45
   }
 
   const taxOnRental = totalTax - taxWithout
