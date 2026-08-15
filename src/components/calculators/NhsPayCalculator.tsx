@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency } from '@/utils'
+import { formatCurrency, ukIncomeTax } from '@/utils'
 
 // NHS Agenda for Change pay bands 2026/27 (verified vs nhsemployers.org)
 // Pay award effective April 2026; bands 2/3 restructured (some maxima lowered)
@@ -31,11 +31,7 @@ function calculate(band: string, point: number) {
   const hourly = salary / (37.5 * 52)
 
   // After tax/NI (simplified)
-  let tax = 0
-  if (salary > 12_570) {
-    if (salary <= 50_270) tax = (salary - 12_570) * 0.20
-    else tax = (50_270 - 12_570) * 0.20 + (salary - 50_270) * 0.40
-  }
+  const tax = ukIncomeTax(salary)
   let ni = 0
   if (salary > 12_570) {
     if (salary <= 50_270) ni = (salary - 12_570) * 0.08

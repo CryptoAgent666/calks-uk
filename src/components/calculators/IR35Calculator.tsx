@@ -1,18 +1,19 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency, formatPercent } from '@/utils'
+import { formatCurrency, formatPercent, ukIncomeTax, ukCorporationTax, ukDividendTax } from '@/utils'
 
 function calculateOutside(dayRate: number, daysPerYear: number, expenses: number) {
   const revenue = dayRate * daysPerYear
   const profit = revenue - expenses
-  const optimalSalary = 12_570
-  const dividends = Math.max(0, profit - optimalSalary - profit * 0.25) // rough: corp tax then dividends
-
-  const corpTax = profit <= 50_000 ? profit * 0.19 : profit * 0.25
-  const afterCorpTax = profit - corpTax
-  const salaryTax = 0 // within PA
-  const salaryNI = 0
-  const dividendIncome = afterCorpTax - optimalSalary
-  const dividendTax = Math.max(0, dividendIncome - 500) * 0.1075 // basic rate
+  // The £12,570 salary and the employer NI on it are deductible expenses, so
+  // corporation tax is charged on what is left, not on the full profit. It also
+  // needs marginal relief between £50k and £250k, and the dividends drawn at a
+  // typical contractor day rate run past the basic band into 35.75%.
+  const optimalSalary = Math.min(12_570, Math.max(0, profit))
+  const employerNI = Math.max(0, (optimalSalary - 5_000) * 0.15)
+  const corpProfit = Math.max(0, profit - optimalSalary - employerNI)
+  const corpTax = ukCorporationTax(corpProfit)
+  const dividendIncome = corpProfit - corpTax
+  const dividendTax = ukDividendTax(dividendIncome, optimalSalary)
 
   const takeHome = optimalSalary + dividendIncome - dividendTax
 
@@ -21,21 +22,20 @@ function calculateOutside(dayRate: number, daysPerYear: number, expenses: number
 
 function calculateInside(dayRate: number, daysPerYear: number) {
   const gross = dayRate * daysPerYear
-  let pa = 12_570
-  if (gross > 100_000) pa = Math.max(0, 12_570 - Math.floor((gross - 100_000) / 2))
-  let tax = 0
-  if (gross > pa) {
-    if (gross <= 50_270) tax = (gross - pa) * 0.20
-    else if (gross <= 125_140) tax = 37_700 * 0.20 + (gross - pa - 37_700) * 0.40
-    else tax = 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (gross - 125_140) * 0.45
-  }
+  // Inside IR35 the fee-payer or umbrella settles employer NI out of the
+  // assignment rate before paying the deemed salary, so it comes off the top:
+  // salary + (salary − £5,000) × 15% = the rate. Computing employer NI but not
+  // deducting it flattered the inside figure enough to make inside IR35 look
+  // better paid than outside, which inverted the whole point of the page.
+  const salary = gross > 0 ? Math.min(gross, (gross + 5_000 * 0.15) / 1.15) : 0
+  const employerNI = Math.max(0, (salary - 5_000) * 0.15)
+  const tax = ukIncomeTax(salary)
   let ni = 0
-  if (gross > 12_570) {
-    if (gross <= 50_270) ni = (gross - 12_570) * 0.08
-    else ni = (50_270 - 12_570) * 0.08 + (gross - 50_270) * 0.02
+  if (salary > 12_570) {
+    if (salary <= 50_270) ni = (salary - 12_570) * 0.08
+    else ni = (50_270 - 12_570) * 0.08 + (salary - 50_270) * 0.02
   }
-  const employerNI = gross > 5_000 ? (gross - 5_000) * 0.15 : 0
-  const takeHome = gross - tax - ni
+  const takeHome = salary - tax - ni
   return { gross, tax, ni, employerNI, takeHome, effectiveRate: gross > 0 ? ((gross - takeHome) / gross) * 100 : 0 }
 }
 
@@ -87,8 +87,8 @@ export default function IR35Calculator() {
 
           <div className="rounded-xl bg-primary/10 p-4 text-center">
             <p className="text-sm text-muted-foreground">Annual Difference</p>
-            <p className="text-2xl font-bold text-primary">{formatCurrency(outside.takeHome - inside.takeHome)}</p>
-            <p className="text-xs text-muted-foreground">more per year outside IR35</p>
+            <p className="text-2xl font-bold text-primary">{formatCurrency(Math.abs(outside.takeHome - inside.takeHome))}</p>
+            <p className="text-xs text-muted-foreground">more per year {outside.takeHome >= inside.takeHome ? 'outside' : 'inside'} IR35</p>
           </div>
 
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-1">

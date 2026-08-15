@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency } from '@/utils'
+import { formatCurrency, ukIncomeTax } from '@/utils'
 
 function calculate(hourlyRate: number, avgHoursWeek: number, weeksPerYear: number) {
   const weeklyPay = hourlyRate * avgHoursWeek
@@ -12,11 +12,7 @@ function calculate(hourlyRate: number, avgHoursWeek: number, weeksPerYear: numbe
   const meetsNMW = hourlyRate >= nmw
 
   // Tax & NI (simplified)
-  let tax = 0
-  if (annualPay > 12_570) {
-    if (annualPay <= 50_270) tax = (annualPay - 12_570) * 0.20
-    else tax = (50_270 - 12_570) * 0.20 + (annualPay - 50_270) * 0.40
-  }
+  const tax = ukIncomeTax(annualPay)
   let ni = 0
   if (annualPay > 12_570) {
     if (annualPay <= 50_270) ni = (annualPay - 12_570) * 0.08

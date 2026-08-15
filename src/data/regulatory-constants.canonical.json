@@ -1408,17 +1408,15 @@
       "source_url": "https://www.gov.uk/blind-persons-allowance/what-youll-get",
       "status": "current",
       "change_frequency": "",
-      "note": "Blind Person's Allowance 2026/27 = £3,130 (uprated from £3,070 by 1.7% CPI). BlindPersonsAllowanceCalculator const BPA",
-      "conflict": true,
-      "conflict_values": [
-        3130,
-        3070
-      ],
+      "note": "Blind Person's Allowance 2026/27 = £3,250 (2025/26 was £3,130). BlindPersonsAllowanceCalculator const BPA. Ledger held 3250 from an earlier freshness pass but the .tsx still had 3,130 until 2026-08-15 — applied to code then.",
+      "conflict": false,
       "official_value": "3250",
       "confidence": "high",
       "freshness_note": "gov.uk states Blind Person's Allowance is GBP 3,250 for the 2026-27 tax year (uprated from GBP 3,130 in 2025-26). Our value 3070 is two years out of date (2024-25). Neither conflict value (3130 = 2025",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified": "2026-08-15",
+      "verified_source": "https://www.gov.uk/blind-persons-allowance/what-youll-get"
     },
     {
       "key": "blind_persons_allowance_plus_pa_total",
@@ -1441,7 +1439,7 @@
     },
     {
       "key": "blind_persons_allowance_prior_year",
-      "value": "3070",
+      "value": "3130",
       "unit": "GBP",
       "law": "HMRC blind person's allowance",
       "theme": "other",
@@ -1452,10 +1450,12 @@
         "src/components/calculators/BlindPersonsAllowanceCalculator.tsx"
       ],
       "source_url": "",
-      "status": "uncertain",
+      "status": "current",
       "change_frequency": "",
-      "note": "Prior-year (2025/26) BPA £3,070 referenced in uprating comment. BlindPersonsAllowanceCalculator code comment",
-      "resolve_note": "STALE. GBP3,070 was the 2024-25 BPA. Current 2026-27 BPA = GBP3,250 (2025-26 was GBP3,130). gov.uk confirms GBP3,250 for the current year."
+      "note": "Prior-year (2025/26) BPA £3,130, referenced in the BlindPersonsAllowanceCalculator code comment and content prose.",
+      "resolve_note": "RESOLVED 2026-08-15: was 3070 (2024-25). Correct prior year is £3,130; code + prose updated.",
+      "verified": "2026-08-15",
+      "verified_source": "https://www.gov.uk/blind-persons-allowance/what-youll-get"
     },
     {
       "key": "blind_persons_allowance_uprating_cpi",
@@ -1470,10 +1470,11 @@
         "src/components/calculators/BlindPersonsAllowanceCalculator.tsx"
       ],
       "source_url": "",
-      "status": "uncertain",
+      "status": "historical",
       "change_frequency": "",
-      "note": "BPA uprated by 1.7% CPI. BlindPersonsAllowanceCalculator code comment",
-      "resolve_note": "STALE. 1.7% was the Sep-2024 CPI used to uprate the 2025-26 BPA. The 2026-27 BPA was uprated by the Sep-2025 CPI = 3.8% (GBP3,130 -> GBP3,250, +3.83%)."
+      "note": "No longer present in code: the BPA comment now cites gov.uk directly instead of deriving the figure from a CPI rate.",
+      "resolve_note": "RETIRED 2026-08-15. 1.7% was the Sep-2024 CPI (2025-26 uprating); deriving 2026-27 from it produced the wrong £3,130.",
+      "verified": "2026-08-15"
     },
     {
       "key": "boe_base_rate",
@@ -28539,10 +28540,9 @@
     }
   ],
   "status_summary": {
-    "current": 1289,
-    "stale_confirmed": 0,
-    "uncertain": 92,
-    "historical": 1
+    "current": 1317,
+    "historical": 7,
+    "uncertain": 74
   },
   "theme_counts": {
     "minimum_wage": 18,
@@ -28567,7 +28567,7 @@
     "student_loan": 56,
     "sdlt": 42
   },
-  "conflicts_flagged": 33,
+  "conflicts_flagged": 31,
   "freshness_verified": "2026-06-16",
   "tail_verified": "2026-06-28",
   "tail_verify_method": "tier2-tail"

@@ -8,11 +8,7 @@ function calculate(chargeRate: number, hoursPerWeek: number, weeksPerYear: numbe
   const grossPay = annualCharge - agencyMargin
 
   // PAYE deductions
-  let tax = 0
-  if (grossPay > 12_570) {
-    if (grossPay <= 50_270) tax = (grossPay - 12_570) * 0.20
-    else tax = (50_270 - 12_570) * 0.20 + (grossPay - 50_270) * 0.40
-  }
+  const tax = ukIncomeTax(grossPay)
   let ni = 0
   if (grossPay > 12_570) {
     if (grossPay <= 50_270) ni = (grossPay - 12_570) * 0.08

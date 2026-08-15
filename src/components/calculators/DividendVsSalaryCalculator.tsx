@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency } from '@/utils'
+import { formatCurrency, ukCorporationTax, ukDividendTax } from '@/utils'
 
 function calculate(profit: number) {
   // Option 1: All salary
@@ -11,20 +11,20 @@ function calculate(profit: number) {
   // Option 2: Optimal salary (£12,570) + dividends
   const optSalary = 12_570
   const corpTaxableProfit = profit - optSalary - Math.max(0, (optSalary - 5_000) * 0.15)
-  const corpTax = corpTaxableProfit <= 50_000 ? corpTaxableProfit * 0.19 : corpTaxableProfit * 0.25
+  const corpTax = ukCorporationTax(corpTaxableProfit)
   const availableDividends = corpTaxableProfit - corpTax
-  const divTax = Math.max(0, availableDividends - 500) * 0.1075
+  const divTax = ukDividendTax(availableDividends, optSalary)
   const optTakeHome = optSalary + availableDividends - divTax
 
   // Option 3: Higher salary (£50,270) + dividends
   const highSalary = Math.min(50_270, profit / 1.15)
   const highEmployerNI = Math.max(0, (highSalary - 5_000) * 0.15)
   const highCorpProfit = profit - highSalary - highEmployerNI
-  const highCorpTax = highCorpProfit > 0 ? (highCorpProfit <= 50_000 ? highCorpProfit * 0.19 : highCorpProfit * 0.25) : 0
+  const highCorpTax = ukCorporationTax(highCorpProfit)
   const highDividends = Math.max(0, highCorpProfit - highCorpTax)
   const highSalaryIT = calcIT(highSalary)
   const highSalaryNI = calcNI(highSalary)
-  const highDivTax = Math.max(0, highDividends - 500) * 0.1075
+  const highDivTax = ukDividendTax(highDividends, highSalary)
   const highTakeHome = highSalary - highSalaryIT - highSalaryNI + highDividends - highDivTax
 
   return {

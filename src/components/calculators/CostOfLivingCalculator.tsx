@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency } from '@/utils'
+import { formatCurrency, ukIncomeTax } from '@/utils'
 
 // UK average costs 2026
 const AVERAGES: Record<string, { label: string; avg: number }> = {
@@ -32,8 +32,7 @@ export default function CostOfLivingCalculator() {
 
   const s = parseFloat(salary.replace(/,/g, '')) || 0
   // After tax take-home (simplified)
-  let tax = 0
-  if (s > 12_570) { if (s <= 50_270) tax = (s - 12_570) * 0.20; else tax = (50_270 - 12_570) * 0.20 + (s - 50_270) * 0.40 }
+  const tax = ukIncomeTax(s)
   let ni = 0
   if (s > 12_570) { if (s <= 50_270) ni = (s - 12_570) * 0.08; else ni = (50_270 - 12_570) * 0.08 + (s - 50_270) * 0.02 }
   const monthlyTakeHome = (s - tax - ni) / 12

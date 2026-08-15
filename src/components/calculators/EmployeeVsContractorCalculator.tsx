@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency } from '@/utils'
+import { formatCurrency, ukCorporationTax, ukDividendTax } from '@/utils'
 
 function calculate(annualCost: number) {
   // As employee
@@ -13,9 +13,9 @@ function calculate(annualCost: number) {
   const dayRate = annualCost / 220
   const contrSalary = 12_570
   const contrCorpProfit = annualCost - contrSalary - Math.max(0, (contrSalary - 5_000) * 0.15)
-  const contrCorpTax = contrCorpProfit * 0.19
+  const contrCorpTax = ukCorporationTax(contrCorpProfit)
   const contrDividends = contrCorpProfit - contrCorpTax
-  const contrDivTax = Math.max(0, contrDividends - 500) * 0.1075
+  const contrDivTax = ukDividendTax(contrDividends, contrSalary)
   const contrTakeHome = contrSalary + contrDividends - contrDivTax - 1200
 
   return { empSalary, empNI, empPension, empTotal, empTakeHome, dayRate, contrTakeHome, saving: contrTakeHome - empTakeHome }

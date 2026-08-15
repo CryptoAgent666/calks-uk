@@ -27,8 +27,8 @@ function calculate(ukIncome: number, foreignIncome: number, yearsResident: numbe
     if (totalIncome > 100_000) adjustedPA = Math.max(0, 12_570 - Math.floor((totalIncome - 100_000) / 2))
     if (totalIncome > adjustedPA) {
       if (totalIncome <= 50_270) totalTax = (totalIncome - adjustedPA) * 0.20
-      else if (totalIncome <= 125_140) totalTax = (50_270 - adjustedPA) * 0.20 + (totalIncome - 50_270) * 0.40
-      else totalTax = (50_270 - adjustedPA) * 0.20 + (125_140 - 50_270) * 0.40 + (totalIncome - 125_140) * 0.45
+      else if (totalIncome <= 125_140) totalTax = 37_700 * 0.20 + (totalIncome - adjustedPA - 37_700) * 0.40
+      else totalTax = 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (totalIncome - 125_140) * 0.45
     }
     foreignTax = totalTax - ukTax
   }

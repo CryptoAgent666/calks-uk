@@ -1,26 +1,28 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency } from '@/utils'
+import { formatCurrency, ukIncomeTax, ukCorporationTax, ukDividendTax } from '@/utils'
 
 // Simplified comparison at different profit levels
 function calculate() {
   const profits = [20_000, 30_000, 40_000, 50_000, 60_000, 75_000, 100_000]
   return profits.map(profit => {
     // Sole trader
-    let stPA = 12_570; if (profit > 100_000) stPA = Math.max(0, 12_570 - Math.floor((profit - 100_000) / 2))
-    let stTax = 0
-    if (profit > stPA) { if (profit <= 50_270) stTax = (profit - stPA) * 0.20; else stTax = (50_270 - stPA) * 0.20 + (profit - 50_270) * 0.40 }
+    const stTax = ukIncomeTax(profit)
     let stNI = 0
     if (profit > 12_570) { if (profit <= 50_270) stNI = (profit - 12_570) * 0.06; else stNI = (50_270 - 12_570) * 0.06 + (profit - 50_270) * 0.02 }
     // Class 2 NI abolished from 6 April 2024 — no longer payable
     const stTotal = stTax + stNI
 
-    // Ltd (salary £12,570 + dividends)
+    // Ltd (salary £12,570 + dividends). Corporation tax needs marginal relief
+    // across £50k–£250k, and the dividends drawn at these profit levels run well
+    // past the basic band — charging a flat 25% and a flat 10.75% overstated the
+    // tax bill at the low end and understated it at the high end, which is the
+    // difference this whole table exists to show.
     const ltdSalary = 12_570
     const ltdErNI = Math.max(0, (ltdSalary - 5_000) * 0.15)
     const ltdProfit = profit - ltdSalary - ltdErNI
-    const ltdCorpTax = ltdProfit <= 50_000 ? ltdProfit * 0.19 : ltdProfit * 0.25
+    const ltdCorpTax = ukCorporationTax(ltdProfit)
     const ltdDividends = ltdProfit - ltdCorpTax
-    const ltdDivTax = Math.max(0, ltdDividends - 500) * 0.1075
+    const ltdDivTax = ukDividendTax(ltdDividends, ltdSalary)
     const ltdTotal = ltdCorpTax + ltdDivTax + ltdErNI + 1200 // +accountancy
 
     return { profit, stTakeHome: profit - stTotal, ltdTakeHome: profit - ltdTotal, stTotal, ltdTotal, saving: (profit - ltdTotal) - (profit - stTotal) }

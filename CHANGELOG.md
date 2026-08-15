@@ -1,5 +1,52 @@
 # CHANGELOG — Calks.uk
 
+## 2026-08-15 — Blind Person's Allowance, and the owner-manager comparisons
+
+Second pass of the same `/calkcheck` audit, extending the CALC-10 marginal-scale
+check beyond plain income tax to allowances, dividends and Corporation Tax.
+
+**Blind Person's Allowance.** The rate was **£3,130 — last year's figure**; for
+2026/27 it is **£3,250** (gov.uk). The constants ledger had already recorded
+£3,250 from an earlier freshness pass, but the fix was never applied to the
+component, so the ledger and the live site disagreed for months. Separately, the
+calculator capped the 20% band at (£50,270 − allowance), which shrank the
+basic-rate band by exactly the allowance and handed back only 20% of it. An
+allowance lifts the whole band structure rather than compressing it, so a
+higher-rate taxpayer was shown **£626 instead of £1,300** — half the real saving.
+The page's own prose already said £1,228 and £614, themselves still derived from
+the older £3,070. All now consistent at £650 / £1,300 / £1,462.50.
+
+**Sole trader vs limited company.** Both tools charged a flat 25% Corporation Tax
+with no marginal relief across £50k–£250k, and taxed every dividend at the basic
+10.75% with no higher-rate band. With both corrected the conclusion moves: at
+£100,000 of profit the sole trader is **£5,302 ahead**, where the tools had
+implied roughly break-even. The supporting prose — a comparison table using a
+stale Class 4 rate and charging Corporation Tax on profit before deducting the
+salary — concluded the opposite of the calculator and has been rewritten to
+match. Guidance that incorporating pays "above ~£40–50K" no longer holds for an
+owner who draws everything out.
+
+**Contractor day rate.** The outside-IR35 branch assumed a flat 25% uplift over
+the target take-home rather than solving for it. To net £60,000 over 220 days the
+rate needed is **£405/day, not £345** — a 15% under-quote. It now solves for the
+target and lands on it exactly.
+
+**IR35.** The inside-IR35 side computed employer NI and then never deducted it,
+while the outside side did. Once the outside branch was corrected this inverted
+the page, reporting "−£4,786 more per year outside IR35". Both sides are now
+like-for-like: outside is ahead by £1,157 on the default figures.
+
+**Emergency pension tax and tax refunds.** The 40% band was sized as
+(£125,140 − £50,270) — a difference of two *gross* thresholds — inside an array
+of *taxable* income widths. That started the 45% rate £12,570 early, overstating
+tax by £628.50 (and £377.10 in Scotland, where the top rate started early too).
+
+Corporation Tax with marginal relief and correctly banded dividend tax now live
+alongside `ukIncomeTax` as shared helpers in `src/utils`, and the nine
+calculators that had hand-rolled them use those instead. Also corrected: the
+Companies House incorporation fee, quoted as "£12–£100" (the £12 was superseded
+in May 2024) — it is £100 online, £124 by post.
+
 ## 2026-08-15 — income tax over £100,000 was understated on 17 calculators
 
 Found by a CALC-10 marginal-scale check during a `/calkcheck` audit, and fixed.

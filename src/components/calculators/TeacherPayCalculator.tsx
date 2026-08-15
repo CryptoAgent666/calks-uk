@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency } from '@/utils'
+import { formatCurrency, ukIncomeTax } from '@/utils'
 
 // Teacher pay scales 2025/26 (England, outside London) — STPCD 2025, 4% award from 1 September 2025
 const MAIN_SCALE = [32_916, 34_823, 37_101, 39_556, 42_057, 45_352]
@@ -38,11 +38,7 @@ function calculate(scale: Scale, point: number, leadershipGroup: string, isLondo
   // TPS uses a net-pay arrangement: pension is deducted before income tax (automatic relief),
   // so income tax is charged on salary minus pension. NI is still charged on full salary.
   const taxablePay = Math.max(0, salary - pension)
-  let tax = 0
-  if (taxablePay > 12_570) {
-    if (taxablePay <= 50_270) tax = (taxablePay - 12_570) * 0.20
-    else tax = (50_270 - 12_570) * 0.20 + (taxablePay - 50_270) * 0.40
-  }
+  const tax = ukIncomeTax(taxablePay)
   let ni = 0
   if (salary > 12_570) {
     if (salary <= 50_270) ni = (salary - 12_570) * 0.08

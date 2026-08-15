@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency } from '@/utils'
+import { formatCurrency, ukIncomeTax, ukCorporationTax, ukDividendTax } from '@/utils'
 
 function calculate(targetTakeHome: number, workingDays: number, insideIR35: boolean) {
   if (insideIR35) {
@@ -24,29 +24,38 @@ function calculate(targetTakeHome: number, workingDays: number, insideIR35: bool
     return { dayRate: Math.ceil(dayRate / 5) * 5, annualGross: gross, tax, ni, employerNI, takeHome: netGross - tax - ni }
   }
 
-  // Outside IR35: Ltd company, salary + dividends
-  const optSalary = 12570
-  const annualRevenue = targetTakeHome * 1.25 // rough 25% overhead
-  const dayRate = annualRevenue / workingDays
-  const corpTax = (annualRevenue - optSalary) * 0.19
-  const dividends = annualRevenue - optSalary - corpTax
-  const divTax = Math.max(0, dividends - 500) * 0.1075
-  const takeHome = optSalary + dividends - divTax
-
-  return { dayRate: Math.ceil(dayRate / 5) * 5, annualGross: annualRevenue, takeHome, corpTax, divTax }
-}
-
-function calcTax(income: number) {
-  let pa = 12570
-  if (income > 100000) pa = Math.max(0, 12570 - Math.floor((income - 100000) / 2))
-  let t = 0
-  if (income > pa) {
-    if (income <= 50270) t = (income - pa) * 0.20
-    else if (income <= 125140) t = (50270 - pa) * 0.20 + (income - 50270) * 0.40
-    else t = (50270 - pa) * 0.20 + (125140 - 50270) * 0.40 + (income - 125140) * 0.45
+  // Outside IR35: Ltd company on the usual £12,570 salary (covered by the
+  // Personal Allowance, so no income tax or employee NI) plus dividends.
+  // Solve for the revenue that actually delivers the target take-home instead
+  // of assuming a flat 25% uplift: corporation tax has marginal relief between
+  // £50k and £250k and dividends cross into the 35.75% band, so the required
+  // uplift is not a constant. Employer NI on the salary is a real company cost
+  // and was previously omitted.
+  const optSalary = 12_570
+  const ltdAt = (revenue: number) => {
+    const employerNI = Math.max(0, (optSalary - 5_000) * 0.15)
+    const corpProfit = Math.max(0, revenue - optSalary - employerNI)
+    const corpTax = ukCorporationTax(corpProfit)
+    const dividends = corpProfit - corpTax
+    const divTax = ukDividendTax(dividends, optSalary)
+    return { corpTax, divTax, takeHome: optSalary + dividends - divTax }
   }
-  return t
+  // Take-home rises monotonically with revenue, so bisect rather than iterate.
+  let lo = 0
+  let hi = Math.max(targetTakeHome * 5, 10_000)
+  for (let i = 0; i < 60; i++) {
+    const mid = (lo + hi) / 2
+    if (ltdAt(mid).takeHome < targetTakeHome) lo = mid
+    else hi = mid
+  }
+  const annualRevenue = hi
+  const out = ltdAt(annualRevenue)
+  const dayRate = annualRevenue / workingDays
+
+  return { dayRate: Math.ceil(dayRate / 5) * 5, annualGross: annualRevenue, takeHome: out.takeHome, corpTax: out.corpTax, divTax: out.divTax }
 }
+
+const calcTax = ukIncomeTax
 
 function calcNI(income: number) {
   if (income <= 12570) return 0

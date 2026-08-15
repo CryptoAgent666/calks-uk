@@ -1,25 +1,22 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency } from '@/utils'
+import { formatCurrency, ukIncomeTax, ukPersonalAllowance } from '@/utils'
 
-const BPA = 3_130 // 2026/27 (uprated from £3,070 by 1.7% CPI)
+const BPA = 3_250 // 2026/27 (gov.uk; 2025/26 was £3,130)
 const PA = 12_570
 
 function calculate(income: number, isRegistered: boolean) {
-  const totalAllowance = PA + (isRegistered ? BPA : 0)
+  // Blind Person's Allowance is added to the Personal Allowance, so it lifts the
+  // whole band structure by £3,250 — the 40% rate starts at £53,520 instead of
+  // £50,270. It does NOT shrink the £37,700 basic-rate band, which is what
+  // capping the 20% band at (£50,270 − allowance) used to do: that handed back
+  // only 20% of the allowance, halving the saving a higher-rate taxpayer sees.
+  // The BPA itself is not income-restricted; only the Personal Allowance tapers.
+  const basePA = ukPersonalAllowance(income)
+  const totalAllowance = basePA + (isRegistered ? BPA : 0)
   const taxableIncome = Math.max(0, income - totalAllowance)
 
-  let taxWithBPA = 0
-  if (taxableIncome > 0) {
-    if (income <= 50_270) taxWithBPA = taxableIncome * 0.20
-    else taxWithBPA = Math.min(taxableIncome, 50_270 - totalAllowance) * 0.20 + Math.max(0, income - 50_270) * 0.40
-  }
-
-  let taxWithout = 0
-  const taxableWithout = Math.max(0, income - PA)
-  if (taxableWithout > 0) {
-    if (income <= 50_270) taxWithout = taxableWithout * 0.20
-    else taxWithout = (50_270 - PA) * 0.20 + (income - 50_270) * 0.40
-  }
+  const taxWithBPA = ukIncomeTax(income, totalAllowance)
+  const taxWithout = ukIncomeTax(income, basePA)
 
   const saving = taxWithout - taxWithBPA
 

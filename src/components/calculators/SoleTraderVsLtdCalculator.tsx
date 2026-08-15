@@ -1,16 +1,9 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency } from '@/utils'
+import { formatCurrency, ukIncomeTax, ukCorporationTax, ukDividendTax } from '@/utils'
 
 function calculate(profit: number) {
   // SOLE TRADER
-  let stPA = 12_570
-  if (profit > 100_000) stPA = Math.max(0, 12_570 - Math.floor((profit - 100_000) / 2))
-  let stTax = 0
-  if (profit > stPA) {
-    if (profit <= 50_270) stTax = (profit - stPA) * 0.20
-    else if (profit <= 125_140) stTax = (50_270 - stPA) * 0.20 + (profit - 50_270) * 0.40
-    else stTax = (50_270 - stPA) * 0.20 + (125_140 - 50_270) * 0.40 + (profit - 125_140) * 0.45
-  }
+  const stTax = ukIncomeTax(profit)
   let stClass4 = 0
   if (profit > 12_570) { if (profit <= 50_270) stClass4 = (profit - 12_570) * 0.06; else stClass4 = (50_270 - 12_570) * 0.06 + (profit - 50_270) * 0.02 }
   // Mandatory Class 2 NI was abolished from 6 April 2024. Self-employed profits
@@ -24,18 +17,12 @@ function calculate(profit: number) {
   const ltdSalary = 12_570
   const ltdEmployerNI = Math.max(0, (ltdSalary - 5_000) * 0.15)
   const ltdCorpProfit = profit - ltdSalary - ltdEmployerNI
-  const ltdCorpTax = ltdCorpProfit <= 50_000 ? ltdCorpProfit * 0.19 : ltdCorpProfit <= 250_000 ? ltdCorpProfit * 0.25 - (250_000 - ltdCorpProfit) * 3/200 : ltdCorpProfit * 0.25
+  const ltdCorpTax = ukCorporationTax(ltdCorpProfit)
   const ltdDividends = ltdCorpProfit - ltdCorpTax
-  // Dividend tax stacks on top of the £12,570 salary (which uses the full Personal Allowance),
-  // across the £500 allowance then the 10.75% / 35.75% / 39.35% bands.
-  const DIV_ALLOWANCE = 500
-  const taxableDiv = Math.max(0, ltdDividends - DIV_ALLOWANCE)
-  const basicBandForDiv = Math.max(0, 50_270 - ltdSalary - DIV_ALLOWANCE) // basic-rate room left after salary + allowance
-  const higherBandForDiv = 125_140 - 50_270
-  const divInBasic = Math.min(taxableDiv, basicBandForDiv)
-  const divInHigher = Math.min(Math.max(0, taxableDiv - basicBandForDiv), higherBandForDiv)
-  const divInAdditional = Math.max(0, taxableDiv - basicBandForDiv - higherBandForDiv)
-  const ltdDivTax = divInBasic * 0.1075 + divInHigher * 0.3575 + divInAdditional * 0.3935
+  // Dividends stack on top of the £12,570 salary across the £500 allowance and the
+  // 10.75% / 35.75% / 39.35% bands. Shared with the side-by-side comparison page so
+  // the two cannot drift apart.
+  const ltdDivTax = ukDividendTax(ltdDividends, ltdSalary)
   const ltdAccountancy = 1200
   const ltdTotal = ltdCorpTax + ltdDivTax + ltdEmployerNI + ltdAccountancy
   const ltdTakeHome = profit - ltdTotal
@@ -95,7 +82,7 @@ export default function SoleTraderVsLtdCalculator() {
           </div>
 
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>Ltd assumes: £12,570 salary + dividends, ~£1,200 accountancy. Below ~£35K profit, sole trader is usually simpler and cheaper. Above ~£40-50K, Ltd often saves tax. Consider IR35, admin burden and mortgage implications.</p>
+            <p>Ltd assumes: £12,570 salary + dividends, ~£1,200 accountancy, and that you draw all the profit each year. On 2026/27 rates that leaves the sole trader ahead across this range — the 2pp dividend rise, 15% employer NI from £5,000 and the accountancy fee outweigh the Corporation Tax saving. A company still wins on limited liability, retained profits, timing dividends across tax years, splitting shares with a spouse and employer pension contributions. Consider IR35, admin burden and mortgage implications.</p>
           </div>
         </div>
       )}

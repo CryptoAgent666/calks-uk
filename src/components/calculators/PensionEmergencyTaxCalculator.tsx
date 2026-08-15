@@ -10,9 +10,14 @@ import { formatCurrency } from '@/utils'
 const PERSONAL_ALLOWANCE = 12_570
 const PA_TAPER = 100_000
 
+// Widths are slices of TAXABLE income, so each gross threshold has the £12,570
+// allowance stripped out — except £125,140, where the allowance is already
+// tapered to zero and the gross figure is already the taxable one. Subtracting
+// two gross thresholds (125,140 − 50,270) makes the 40% band 12,570 too narrow
+// and starts the 45% rate that much early.
 const RUK_BANDS = [
   { rate: 0.20, width: 37_700 },
-  { rate: 0.40, width: 125_140 - 50_270 },
+  { rate: 0.40, width: 125_140 - 37_700 },
   { rate: 0.45, width: Infinity },
 ]
 const SCOT_BANDS = [
@@ -20,7 +25,7 @@ const SCOT_BANDS = [
   { rate: 0.20, width: 29_526 - 16_537 },
   { rate: 0.21, width: 43_662 - 29_526 },
   { rate: 0.42, width: 75_000 - 43_662 },
-  { rate: 0.45, width: 125_140 - 75_000 },
+  { rate: 0.45, width: 125_140 - (75_000 - 12_570) },
   { rate: 0.48, width: Infinity },
 ]
 
