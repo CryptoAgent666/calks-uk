@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-06-23'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-08-19'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -45,6 +45,10 @@ const schemas = [
           <li class="flex items-start gap-2">
             <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
             <span><strong class="text-foreground">Contractor day rates were coming out about 15% too low.</strong> The <a href="/calculator/contractor-day-rate-calculator/" class="text-primary hover:underline">day rate calculator</a> assumed a flat 25% uplift over your target take-home instead of solving for it. To take home £60,000 over 220 days you need <strong class="text-foreground">£405</strong> a day, not the £345 we were quoting. The <a href="/calculator/ir35-calculator/" class="text-primary hover:underline">IR35 calculator</a> now also deducts employer NI from the inside-IR35 side, which it had been leaving out.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Our Building Regulations U-value summary mixed up two different Part L targets.</strong> The <a href="/calculator/insulation-calculator/" class="text-primary hover:underline">insulation calculator</a> quoted 0.30 W/m&sup2;K for cavity wall insulation and 0.18 for a floor. Those are the standards for building a <em>new</em> element, such as an extension. When you upgrade something the house already has, Approved Document L asks for <strong class="text-foreground">0.55</strong> for a filled cavity wall and <strong class="text-foreground">0.25</strong> for a floor. The loft figure (0.16) and the replacement window figure (1.4, or a Window Energy Rating of Band B) were right and stay as they are &mdash; including under the 2026 edition of Approved Document L, which takes effect on 24 March 2027.</span>
           </li>
           <li class="flex items-start gap-2">
             <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>

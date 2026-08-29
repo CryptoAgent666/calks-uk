@@ -1662,12 +1662,78 @@
       "source_url": "https://www.gov.uk/government/publications/conservation-of-fuel-and-power-approved-document-l",
       "status": "current",
       "change_frequency": "",
-      "note": "insulation-calculator: Part L 2022 U-value targets - loft 0.16, cavity/solid walls 0.30, floor 0.18, windows 1.4 W/m²K (double-glazing-calculator)",
+      "note": "insulation-calculator: Approved Document L Vol 1 Table 4.3 'improved' U-value for a renovated/retained roof = 0.16 W/m2K. Same figure in the 2026 edition (Table 3.3, takes effect 24 Mar 2027). Sibling retrofit values in the same prose block: cavity wall 0.55, solid wall 0.30, floor 0.25.",
       "official_value": "0.16 W/m²K",
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19. Approved Document L Vol 1, Table 4.3 (2021 ed. incl. 2023 amendments, in force) roof \"improved\" U-value = 0.16 W/m2K; the NEW 2026 edition (published on the monitored page, takes effect 24 Mar 2027) carries the identical figure in its Table 3.3. Correct for a retrofit/loft-upgrade calculator. NB a NEW roof element in an existing dwelling is 0.15 (Table 4.2/3.2).",
       "verified_date": "2026-08-19",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+    },
+    {
+      "key": "building_regs_cavity_wall_u",
+      "value": "0.55",
+      "unit": "W/m²K",
+      "law": "Building Regulations Part L",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/conservation-of-fuel-and-power-approved-document-l",
+      "status": "current",
+      "change_frequency": "",
+      "confidence": "high",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "note": "insulation-calculator: Approved Document L Vol 1 Table 4.3 'improved' U-value for a retained cavity wall that is being filled = 0.55 W/m2K. Identical in the 2026 edition (Table 3.3). Trigger threshold is 0.70.",
+      "official_value": "0.55",
+      "freshness_note": "Verified 2026-08-19 in the official PDFs of both the in-force 2021 edition (incl. 2023 amendments) and the new 2026 edition. Site prose said 0.30 until 2026-08-19; 0.30 is the solid-wall value, not the cavity-fill value."
+    },
+    {
+      "key": "building_regs_solid_wall_u",
+      "value": "0.30",
+      "unit": "W/m²K",
+      "law": "Building Regulations Part L",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/conservation-of-fuel-and-power-approved-document-l",
+      "status": "current",
+      "change_frequency": "",
+      "confidence": "high",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "note": "insulation-calculator + brickwork prose: Approved Document L Vol 1 Table 4.3 'improved' U-value for a retained wall upgraded with internal or external insulation = 0.30 W/m2K. Identical in the 2026 edition (Table 3.3).",
+      "official_value": "0.30",
+      "freshness_note": "Verified 2026-08-19 in the official PDFs of the 2021 (in force) and 2026 editions. A lesser standard is allowed where meeting it would cut the room's floor area by more than 5%."
+    },
+    {
+      "key": "building_regs_floor_u",
+      "value": "0.25",
+      "unit": "W/m²K",
+      "law": "Building Regulations Part L",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/conservation-of-fuel-and-power-approved-document-l",
+      "status": "current",
+      "change_frequency": "",
+      "confidence": "high",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "note": "insulation-calculator: Approved Document L Vol 1 Table 4.3 'improved' U-value for a renovated/retained floor = 0.25 W/m2K. Identical in the 2026 edition (Table 3.3). NB a NEW floor in an existing dwelling is 0.18 (Table 4.2).",
+      "official_value": "0.25",
+      "freshness_note": "Verified 2026-08-19 in the official PDFs of the 2021 (in force) and 2026 editions. Site prose said 0.18 until 2026-08-19, which is the Table 4.2 new-element value, not the renovation value."
     },
     {
       "key": "building_regs_max_pitch",
@@ -1750,7 +1816,7 @@
       "source_url": "https://www.gov.uk/government/publications/conservation-of-fuel-and-power-approved-document-l",
       "status": "current",
       "change_frequency": "",
-      "note": "double-glazing-calculator/insulation: Part L 2022 max U-value 1.4 W/m²K for new windows; FENSA/CERTASS certification required since 2002",
+      "note": "double-glazing-calculator/insulation: Approved Document L Vol 1 Table 4.2 - a REPLACEMENT window in an existing dwelling must meet 1.4 W/m2K or Window Energy Rating Band B. Same in the 2026 edition (Table 3.2). FENSA/CERTASS self-certification required since 2002. New-dwelling limiting value is 1.6.",
       "official_value": "1.4 W/m²K",
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19. Approved Document L Vol 1, Table 4.2 (2021 ed., in force): replacement window = 1.4 W/m2K OR Window Energy Rating Band B minimum; the NEW 2026 edition (takes effect 24 Mar 2027) keeps 1.4 in Table 3.2. Unchanged. Limiting value for a window in a brand-new dwelling remains 1.6.",
@@ -28496,7 +28562,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "3"
     },
     {
       "key": "ltt_higher_band1_rate",
@@ -28519,7 +28586,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "5"
     },
     {
       "key": "ltt_higher_band2_rate",
@@ -28542,7 +28610,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "8.5"
     },
     {
       "key": "ltt_higher_band3_rate",
@@ -28565,7 +28634,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "10"
     },
     {
       "key": "ltt_higher_band4_rate",
@@ -28588,7 +28658,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "12.5"
     },
     {
       "key": "ltt_higher_band5_rate",
@@ -28611,7 +28682,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "15"
     },
     {
       "key": "ltt_higher_band6_rate",
@@ -28634,7 +28706,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "17"
     },
     {
       "key": "ltt_higher_rates_entry_threshold",
@@ -28657,7 +28730,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "40000"
     },
     {
       "key": "ltt_nonres_nil_rate_upper",
@@ -28680,7 +28754,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "225000"
     },
     {
       "key": "ltt_nonres_band2_rate",
@@ -28703,7 +28778,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "1"
     },
     {
       "key": "ltt_nonres_band3_rate",
@@ -28726,7 +28802,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "5"
     },
     {
       "key": "ltt_nonres_band4_rate",
@@ -28749,7 +28826,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "6"
     },
     {
       "key": "ltt_lease_npv_nil_rate_upper",
@@ -28772,7 +28850,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "225000"
     },
     {
       "key": "ltt_lease_npv_band2_rate",
@@ -28795,7 +28874,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "1"
     },
     {
       "key": "ltt_lease_npv_band3_rate",
@@ -28818,7 +28898,8 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "2"
     },
     {
       "key": "ltt_relevant_rent_threshold",
@@ -28841,11 +28922,12 @@
       "confidence": "high",
       "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
       "verified_date": "2026-08-19",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "official_value": "13500"
     }
   ],
   "status_summary": {
-    "current": 1317,
+    "current": 1320,
     "uncertain": 74,
     "historical": 7
   },
