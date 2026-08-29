@@ -1,32 +1,37 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Maintenance loan 2026/27 (England). Max = income under £25k; min = highest
-// household incomes. Source: gov.uk student finance 2026 to 2027.
+// Maintenance loan 2026/27 (England), dependent full-year student not entitled
+// to benefits. Source: gov.uk "Student finance: how you're assessed and paid
+// 2026 to 2027". Above £25,000 the loan is cut by £1 for every `taperPer` of
+// household income, until a fixed basic rate is left — that floor is a
+// percentage of the maximum (49.8% London, 46.6% elsewhere, 44% at home) and
+// is reached at a different income for each living situation.
+const FULL_AWARD_CEILING = 25_000
 const RATES = {
-  home_parents: { min: 6_060, max: 9_118 },
-  home_away: { min: 7_739, max: 10_830 },
-  london: { min: 10_991, max: 14_135 },
+  home_parents: { max: 9_118, taperPer: 6.54, min: 4_013, minFrom: 58_347 },
+  home_away: { max: 10_830, taperPer: 6.47, min: 5_048, minFrom: 62_410 },
+  london: { max: 14_135, taperPer: 6.36, min: 7_039, minFrom: 70_131 },
 }
 
 type LivingSituation = 'home_parents' | 'home_away' | 'london'
 
 function calculate(householdIncome: number, living: LivingSituation) {
-  const { min, max } = RATES[living]
+  const { min, max, taperPer, minFrom } = RATES[living]
 
-  // Simplified taper: full loan up to £25,000, reduces to min at ~£62,000+
+  // The published tables round the income assessment down to whole pounds;
+  // doing the same here reproduces them exactly.
   let loan: number
-  if (householdIncome <= 25_000) loan = max
-  else if (householdIncome >= 62_875) loan = min
+  if (householdIncome <= FULL_AWARD_CEILING) loan = max
   else {
-    const taper = (householdIncome - 25_000) * ((max - min) / (62_875 - 25_000))
-    loan = max - taper
+    const assessment = Math.floor((householdIncome - FULL_AWARD_CEILING) / taperPer)
+    loan = Math.max(min, max - assessment)
   }
 
   const termlyLoan = loan / 3
   const weeklyLoan = loan / 39 // ~39 weeks
 
-  return { loan, termlyLoan, weeklyLoan, min, max }
+  return { loan, termlyLoan, weeklyLoan, min, max, minFrom }
 }
 
 export default function StudentMaintenanceLoanCalculator() {
@@ -51,10 +56,10 @@ export default function StudentMaintenanceLoanCalculator() {
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Maximum Loan</p><p className="text-lg font-bold">{formatCurrency(result.max)}</p><p className="text-xs text-muted-foreground">Income under £25K</p></div>
-          <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Minimum Loan</p><p className="text-lg font-bold">{formatCurrency(result.min)}</p><p className="text-xs text-muted-foreground">Income over £62K</p></div>
+          <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Minimum Loan</p><p className="text-lg font-bold">{formatCurrency(result.min)}</p><p className="text-xs text-muted-foreground">Income over {formatCurrency(result.minFrom)}</p></div>
         </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-          <p>England rates 2026/27. Scotland, Wales and NI have different rates. Loan reduces as household income rises above £25,000. Apply via Student Finance England.</p>
+          <p>England rates 2026/27, for a dependent full-year student who is not entitled to benefits. Scotland, Wales and NI have different rates. Above £25,000 the loan falls by £1 for roughly every £6.36 to £6.54 of household income, then stops falling at the basic rate shown. Final-year students and students entitled to benefits are assessed on different figures. Apply via Student Finance England.</p>
         </div>
       </div>
     </div>

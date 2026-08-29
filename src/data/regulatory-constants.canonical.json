@@ -11711,7 +11711,7 @@
     },
     {
       "key": "maintenance_loan_away_home_min",
-      "value": "7739",
+      "value": "5048",
       "unit": "GBP",
       "law": "Student Finance England maintenance loan",
       "theme": "other",
@@ -11728,10 +11728,12 @@
       "fixed": true,
       "fixed_date": "2026-07-08",
       "resolve_note": "FIXED 2026-07-08: gov.uk 2026-27 assessed-and-paid table gives the away/outside-London MINIMUM as £7,739 (published figure, not a derived ratio). Was a stale flat £4,767.",
-      "official_value": "~5047 (0.466 × £10,830 max)",
+      "official_value": "5048",
       "official_source": "https://www.practitioners.slc.co.uk/products/full-time-undergraduate-education/full-time-maintenance-loan/whats-available/",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-08-29",
+      "verify_method": "full gov.uk assessment table read from DATA_HUB (server-readable, 200)",
+      "confidence": "high",
+      "freshness_note": "Outside London: £10,830 max − £5,782 assessment at £62,410 = £5,048 (46.6% of max). Basic-rate (income-independent) Maintenance Loan floor for 2026/27, dependent full-year student not entitled to benefits. Derived from the gov.uk assessment table: maximum minus the income assessment at the household income where the taper stops. Corrected 2026-08-29 — the site previously used the table's £45,000 row as if it were the floor."
     },
     {
       "key": "maintenance_loan_away_london",
@@ -11828,7 +11830,7 @@
     },
     {
       "key": "maintenance_loan_home_parents_min",
-      "value": "6060",
+      "value": "4013",
       "unit": "GBP",
       "law": "Student Finance England maintenance loan",
       "theme": "other",
@@ -11845,10 +11847,12 @@
       "fixed": true,
       "fixed_date": "2026-07-08",
       "resolve_note": "FIXED 2026-07-08: gov.uk 2026-27 assessed-and-paid table gives the living-with-parents MINIMUM as £6,060 (published figure). Was a stale flat £4,767.",
-      "official_value": "~4012 (0.44 × £9,118 max)",
+      "official_value": "4013",
       "official_source": "https://www.practitioners.slc.co.uk/products/full-time-undergraduate-education/full-time-maintenance-loan/whats-available/",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-08-29",
+      "verify_method": "full gov.uk assessment table read from DATA_HUB (server-readable, 200)",
+      "confidence": "high",
+      "freshness_note": "Living with parents: £9,118 max − £5,105 assessment at £58,347 = £4,013 (44% of max). Basic-rate (income-independent) Maintenance Loan floor for 2026/27, dependent full-year student not entitled to benefits. Derived from the gov.uk assessment table: maximum minus the income assessment at the household income where the taper stops. Corrected 2026-08-29 — the site previously used the table's £45,000 row as if it were the floor."
     },
     {
       "key": "maintenance_loan_household_income_threshold",
@@ -11924,7 +11928,7 @@
     },
     {
       "key": "maintenance_loan_london_min",
-      "value": "10991",
+      "value": "7039",
       "unit": "GBP",
       "law": "Student Finance England maintenance loan",
       "theme": "other",
@@ -11941,12 +11945,144 @@
       "fixed": true,
       "fixed_date": "2026-07-08",
       "resolve_note": "FIXED 2026-07-08: gov.uk 2026-27 assessed-and-paid table gives the London MINIMUM as the PUBLISHED figure £10,991 (max £14,135) — NOT the earlier derived guess 0.498 x £14,135 = £7,039, which understated it. Was a stale flat £4,767.",
-      "official_value": "10991",
+      "official_value": "7039",
       "official_source": "https://www.gov.uk/government/publications/tuition-fees-and-student-support-2026-to-2027-academic-year/support-with-living-and-other-costs-2026-to-2027-academic-year",
       "verified_date": "2026-08-29",
-      "verify_method": "loop-closer inconsistency resolved against live gov source",
+      "verify_method": "full gov.uk assessment table read from DATA_HUB (server-readable, 200)",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-29 against the gov.uk 2026-to-2027 assessment guidance: London, living away from home, minimum Maintenance Loan is £10,991 (reached at £45,000 household income) against a £14,135 maximum. official_value had been left at 7039, a pre-2026/27 figure."
+      "freshness_note": "London: £14,135 max − £7,096 assessment at £70,131 = £7,039 (49.8% of max). Basic-rate (income-independent) Maintenance Loan floor for 2026/27, dependent full-year student not entitled to benefits. Derived from the gov.uk assessment table: maximum minus the income assessment at the household income where the taper stops. Corrected 2026-08-29 — the site previously used the table's £45,000 row as if it were the floor."
+    },
+    {
+      "key": "maintenance_loan_taper_per_pound_london",
+      "value": "6.36",
+      "unit": "GBP",
+      "law": "Student Finance England",
+      "theme": "student_finance",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/StudentMaintenanceLoanCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/student-finance-how-youre-assessed-and-paid/student-finance-how-youre-assessed-and-paid-2026-to-2027",
+      "status": "current",
+      "change_frequency": "annual",
+      "confidence": "high",
+      "verified_date": "2026-08-29",
+      "verify_method": "full gov.uk assessment table read from DATA_HUB (server-readable, 200)",
+      "note": "£1 of loan withdrawn per £6.36 of household income above £25,000 (London).",
+      "official_value": "6.36",
+      "freshness_note": "Hardcoded in the calculator from 2026-08-29 when the real gov.uk taper replaced a linear approximation."
+    },
+    {
+      "key": "maintenance_loan_taper_per_pound_outside_london",
+      "value": "6.47",
+      "unit": "GBP",
+      "law": "Student Finance England",
+      "theme": "student_finance",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/StudentMaintenanceLoanCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/student-finance-how-youre-assessed-and-paid/student-finance-how-youre-assessed-and-paid-2026-to-2027",
+      "status": "current",
+      "change_frequency": "annual",
+      "confidence": "high",
+      "verified_date": "2026-08-29",
+      "verify_method": "full gov.uk assessment table read from DATA_HUB (server-readable, 200)",
+      "note": "£1 of loan withdrawn per £6.47 of household income above £25,000 (away from home, outside London).",
+      "official_value": "6.47",
+      "freshness_note": "Hardcoded in the calculator from 2026-08-29 when the real gov.uk taper replaced a linear approximation."
+    },
+    {
+      "key": "maintenance_loan_taper_per_pound_at_home",
+      "value": "6.54",
+      "unit": "GBP",
+      "law": "Student Finance England",
+      "theme": "student_finance",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/StudentMaintenanceLoanCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/student-finance-how-youre-assessed-and-paid/student-finance-how-youre-assessed-and-paid-2026-to-2027",
+      "status": "current",
+      "change_frequency": "annual",
+      "confidence": "high",
+      "verified_date": "2026-08-29",
+      "verify_method": "full gov.uk assessment table read from DATA_HUB (server-readable, 200)",
+      "note": "£1 of loan withdrawn per £6.54 of household income above £25,000 (living with parents).",
+      "official_value": "6.54",
+      "freshness_note": "Hardcoded in the calculator from 2026-08-29 when the real gov.uk taper replaced a linear approximation."
+    },
+    {
+      "key": "maintenance_loan_min_income_london",
+      "value": "70131",
+      "unit": "GBP",
+      "law": "Student Finance England",
+      "theme": "student_finance",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/StudentMaintenanceLoanCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/student-finance-how-youre-assessed-and-paid/student-finance-how-youre-assessed-and-paid-2026-to-2027",
+      "status": "current",
+      "change_frequency": "annual",
+      "confidence": "high",
+      "verified_date": "2026-08-29",
+      "verify_method": "full gov.uk assessment table read from DATA_HUB (server-readable, 200)",
+      "note": "Household income at which the London loan reaches its basic rate of £7,039.",
+      "official_value": "70131",
+      "freshness_note": "Hardcoded in the calculator from 2026-08-29 when the real gov.uk taper replaced a linear approximation."
+    },
+    {
+      "key": "maintenance_loan_min_income_outside_london",
+      "value": "62410",
+      "unit": "GBP",
+      "law": "Student Finance England",
+      "theme": "student_finance",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/StudentMaintenanceLoanCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/student-finance-how-youre-assessed-and-paid/student-finance-how-youre-assessed-and-paid-2026-to-2027",
+      "status": "current",
+      "change_frequency": "annual",
+      "confidence": "high",
+      "verified_date": "2026-08-29",
+      "verify_method": "full gov.uk assessment table read from DATA_HUB (server-readable, 200)",
+      "note": "Household income at which the outside-London loan reaches its basic rate of £5,048.",
+      "official_value": "62410",
+      "freshness_note": "Hardcoded in the calculator from 2026-08-29 when the real gov.uk taper replaced a linear approximation."
+    },
+    {
+      "key": "maintenance_loan_min_income_at_home",
+      "value": "58347",
+      "unit": "GBP",
+      "law": "Student Finance England",
+      "theme": "student_finance",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/StudentMaintenanceLoanCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/student-finance-how-youre-assessed-and-paid/student-finance-how-youre-assessed-and-paid-2026-to-2027",
+      "status": "current",
+      "change_frequency": "annual",
+      "confidence": "high",
+      "verified_date": "2026-08-29",
+      "verify_method": "full gov.uk assessment table read from DATA_HUB (server-readable, 200)",
+      "note": "Household income at which the living-at-home loan reaches its basic rate of £4,013.",
+      "official_value": "58347",
+      "freshness_note": "Hardcoded in the calculator from 2026-08-29 when the real gov.uk taper replaced a linear approximation."
     },
     {
       "key": "maintenance_loan_max_outside_london",
@@ -11969,7 +12105,7 @@
     },
     {
       "key": "maintenance_loan_min_award_income_floor",
-      "value": "62875",
+      "value": "62410",
       "unit": "GBP",
       "law": "Student Finance England maintenance loan",
       "theme": "other",
@@ -11980,14 +12116,16 @@
         "src/components/calculators/StudentMaintenanceLoanCalculator.tsx"
       ],
       "source_url": "",
-      "status": "uncertain",
+      "status": "current",
       "change_frequency": "",
       "note": "StudentMaintenanceLoanCalculator: household income at/above which only minimum maintenance loan is payable (taper end)",
       "resolve_note": "For 2026-27 the household income at which the maintenance loan falls to its minimum is GBP 62,410 (student living away from home, outside London) — also 58,347 ",
-      "official_value": "62875",
+      "official_value": "62410",
       "official_source": "https://www.gov.uk/government/publications/student-finance-how-youre-assessed-and-paid/student-finance-how-youre-assessed-and-paid-2026-to-2027",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-08-29",
+      "verify_method": "full gov.uk assessment table read from DATA_HUB",
+      "confidence": "high",
+      "freshness_note": "There is no single floor income: the taper stops at £70,131 (London), £62,410 (away, outside London) and £58,347 (living with parents). This row now carries the outside-London figure, the calculator's default. The old 62875 came from a simplified taper that no longer exists."
     },
     {
       "key": "marriage_allowance_annual_saving",
@@ -28933,8 +29071,8 @@
     }
   ],
   "status_summary": {
-    "current": 1320,
-    "uncertain": 74,
+    "current": 1327,
+    "uncertain": 73,
     "historical": 7
   },
   "theme_counts": {
