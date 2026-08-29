@@ -1485,7 +1485,7 @@
     },
     {
       "key": "blind_persons_allowance_uprating_cpi",
-      "value": "1.7",
+      "value": "3.8",
       "unit": "%",
       "law": "HMRC blind person's allowance",
       "theme": "other",
@@ -1496,7 +1496,7 @@
         "src/components/calculators/BlindPersonsAllowanceCalculator.tsx"
       ],
       "source_url": "",
-      "status": "historical",
+      "status": "retired",
       "change_frequency": "",
       "note": "No longer present in code: the BPA comment now cites gov.uk directly instead of deriving the figure from a CPI rate.",
       "resolve_note": "RETIRED 2026-08-15. 1.7% was the Sep-2024 CPI (2025-26 uprating); deriving 2026-27 from it produced the wrong £3,130.",
@@ -1505,7 +1505,7 @@
       "official_source": "litrg.org.uk (BPA £3,130→£3,250 for 2026/27)",
       "verified_date": "2026-08-29",
       "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
-      "freshness_note": "Re-checked 2026-08-29: the code and prose already reflect the change, so this row is correctly historical. It will never satisfy the dashboard loop-closer, which only closes items whose ledger entry is current."
+      "freshness_note": "Set to 3.8 on 2026-08-29. The 2026/27 Blind Person's Allowance uprating used the Sept-2025 CPI of 3.8% (£3,130 -> £3,250, already applied); 1.7% was the previous year's figure. The row is retired because no surface displays the CPI rate itself, only the resulting allowance."
     },
     {
       "key": "boe_base_rate",
@@ -4018,7 +4018,7 @@
         "src/components/calculators/CompanyCarTaxCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/guidance/company-car-benefit-the-appropriate-percentage-480-appendix-2",
-      "status": "historical",
+      "status": "superseded_by_component",
       "change_frequency": "",
       "note": "CompanyCarTaxCalculator getBikRate(): petrol/diesel BiK percentage for CO2 <=50 g/km, 2026/27",
       "resolve_note": "For 2026-27 the 1-50 g/km band is electric-range dependent: 4% (130+ mi), 7%, 10%, 14%, 16% (<30 mi). No band equals 5%; the lowest is 4%. A flat 5% does not ma",
@@ -4027,7 +4027,7 @@
       "verified_date": "2026-08-29",
       "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
       "confidence": "high",
-      "freshness_note": "Retired 2026-08-29. There is no single appropriate percentage for 1-50 g/km: HMRC bands those cars by ZERO-EMISSION MILEAGE (4/7/10/14/16%), not by CO2. The old flat 5% matched no band. CompanyCarTaxCalculator now asks for electric range; see the company_car_bik_1_50_* rows."
+      "freshness_note": "Retired 2026-08-29. There is no single appropriate percentage for 1-50 g/km: HMRC bands those cars by ZERO-EMISSION MILEAGE (4/7/10/14/16%), not by CO2. The old flat 5% matched no band. CompanyCarTaxCalculator now asks for electric range; see the company_car_bik_1_50_* rows. Status is `superseded_by_component`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever."
     },
     {
       "key": "company_car_bik_1_50_range_130_plus",
@@ -4204,6 +4204,66 @@
       "note": "EX50 intermediate/multi-track hearing fee, flat for all claims above £25,000 (replaced the old £1,090/£1,635/£2,180 tiers).",
       "official_value": "1334",
       "freshness_note": "Inventoried 2026-08-29. Code already used £1,334; the three old tiered keys the audit still referenced no longer exist."
+    },
+    {
+      "key": "court_hearing_fee_up_to_50000",
+      "value": "1090",
+      "unit": "GBP",
+      "law": "Civil Proceedings Fees Order (EX50)",
+      "theme": "legal",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [],
+      "source_url": "https://www.gov.uk/government/publications/fees-in-the-civil-and-family-courts-main-fees-ex50/civil-court-fees-ex50",
+      "status": "superseded",
+      "change_frequency": "",
+      "confidence": "high",
+      "official_value": "1090",
+      "verified_date": "2026-08-29",
+      "verify_method": "phase4 apply session",
+      "note": "Former tiered multi-track hearing fee, no longer in EX50.",
+      "freshness_note": "Re-inventoried 2026-08-29 as superseded. EX50 replaced the tiered £1,090/£1,635/£2,180 hearing fees with a single £1,334 for all claims above £25,000 (see court_hearing_fee_multi_track). A past pass deleted these rows outright, which left the quarterly audit pointing at keys that no longer existed and could never be closed."
+    },
+    {
+      "key": "court_hearing_fee_up_to_100000",
+      "value": "1635",
+      "unit": "GBP",
+      "law": "Civil Proceedings Fees Order (EX50)",
+      "theme": "legal",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [],
+      "source_url": "https://www.gov.uk/government/publications/fees-in-the-civil-and-family-courts-main-fees-ex50/civil-court-fees-ex50",
+      "status": "superseded",
+      "change_frequency": "",
+      "confidence": "high",
+      "official_value": "1635",
+      "verified_date": "2026-08-29",
+      "verify_method": "phase4 apply session",
+      "note": "Former tiered multi-track hearing fee, no longer in EX50.",
+      "freshness_note": "Re-inventoried 2026-08-29 as superseded. EX50 replaced the tiered £1,090/£1,635/£2,180 hearing fees with a single £1,334 for all claims above £25,000 (see court_hearing_fee_multi_track). A past pass deleted these rows outright, which left the quarterly audit pointing at keys that no longer existed and could never be closed."
+    },
+    {
+      "key": "court_hearing_fee_up_to_200000_and_above",
+      "value": "2180",
+      "unit": "GBP",
+      "law": "Civil Proceedings Fees Order (EX50)",
+      "theme": "legal",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [],
+      "source_url": "https://www.gov.uk/government/publications/fees-in-the-civil-and-family-courts-main-fees-ex50/civil-court-fees-ex50",
+      "status": "superseded",
+      "change_frequency": "",
+      "confidence": "high",
+      "official_value": "2180",
+      "verified_date": "2026-08-29",
+      "verify_method": "phase4 apply session",
+      "note": "Former tiered multi-track hearing fee, no longer in EX50.",
+      "freshness_note": "Re-inventoried 2026-08-29 as superseded. EX50 replaced the tiered £1,090/£1,635/£2,180 hearing fees with a single £1,334 for all claims above £25,000 (see court_hearing_fee_multi_track). A past pass deleted these rows outright, which left the quarterly audit pointing at keys that no longer existed and could never be closed."
     },
     {
       "key": "company_car_fuel_benefit_multiplier",
@@ -5723,16 +5783,16 @@
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
-      "status": "historical",
+      "status": "superseded",
       "change_frequency": "",
       "note": "High-value Council Tax calculator: proposed £100 surcharge applied to existing Band H (over £320K); takes effect proposed April 2028",
       "resolve_note": "The actual proposed surcharge (Nov 2025 Budget, from Apr 2028) hits residential property worth £2m+, in 4 bands £2,500 (£2m-£2.5m) up to £7,500 (£5m+), CPI-upra",
-      "official_value": "2500",
+      "official_value": null,
       "official_source": "gov.uk High Value Council Tax Surcharge consultation; commonslibrary.parliament.uk CBP-10934",
       "verified_date": "2026-08-29",
       "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
       "confidence": "high",
-      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows."
+      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows. Status is `superseded`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever."
     },
     {
       "key": "council_tax_proposed_band_i_ratio",
@@ -5747,12 +5807,12 @@
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
-      "status": "historical",
+      "status": "superseded",
       "change_frequency": "",
       "note": "High-value Council Tax calculator: proposed Band I* ratio 2.5 of Band D (proposed)",
       "resolve_note": "The High Value Council Tax Surcharge is structured as flat annual £ amounts (£2,500-£7,500) on £2m+ homes, NOT as new band ratio multipliers. A '2.5 ratio' band",
       "confidence": "high",
-      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows.",
+      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows. Status is `superseded`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever.",
       "verified_date": "2026-08-29",
       "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled"
     },
@@ -5769,16 +5829,16 @@
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
-      "status": "historical",
+      "status": "superseded",
       "change_frequency": "",
       "note": "High-value Council Tax calculator: proposed annual surcharge of £100 for Band H (over £320K) and £200/£500 for proposed I*/J*; Band H surcharge shown as 100",
       "resolve_note": "Lowest surcharge band is £2,500/yr (£2m-£2.5m), not £100. Code value does not match the announced scheme.",
-      "official_value": "2500 (lowest HVCTS band, £2m–£2.5m)",
+      "official_value": null,
       "official_source": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
       "verified_date": "2026-08-29",
       "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
       "confidence": "high",
-      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows."
+      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows. Status is `superseded`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever."
     },
     {
       "key": "council_tax_proposed_band_i_value_threshold",
@@ -5793,16 +5853,16 @@
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
-      "status": "historical",
+      "status": "superseded",
       "change_frequency": "",
       "note": "High-value Council Tax calculator: proposed new Band I* (over £500K) ratio 2.5 — proposed from April 2028",
       "resolve_note": "Surcharge entry threshold is £2,000,000, not £500,000. Code value does not match the announced scheme.",
-      "official_value": "2000000",
+      "official_value": null,
       "official_source": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
       "verified_date": "2026-08-29",
       "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
       "confidence": "high",
-      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows."
+      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows. Status is `superseded`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever."
     },
     {
       "key": "council_tax_proposed_band_j_ratio",
@@ -5817,12 +5877,12 @@
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
-      "status": "historical",
+      "status": "superseded",
       "change_frequency": "",
       "note": "High-value Council Tax calculator: proposed Band J* ratio 3 of Band D (proposed)",
       "resolve_note": "No band-ratio multipliers in the policy; surcharge is flat £ amounts. A '3 ratio' band J does not exist. Code value does not match.",
       "confidence": "high",
-      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows.",
+      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows. Status is `superseded`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever.",
       "verified_date": "2026-08-29",
       "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled"
     },
@@ -5839,16 +5899,16 @@
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
-      "status": "historical",
+      "status": "superseded",
       "change_frequency": "",
       "note": "High-value Council Tax calculator: proposed annual surcharge of £500 for Band J* (over £1M) — proposed from April 2028",
       "resolve_note": "Top surcharge band is £7,500/yr (£5m+); intermediate bands sit between £2,500 and £7,500. Not £500. Code value does not match the announced scheme.",
-      "official_value": "7500 (top HVCTS band, £5m+)",
+      "official_value": null,
       "official_source": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
       "verified_date": "2026-08-29",
       "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
       "confidence": "high",
-      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows."
+      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows. Status is `superseded`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever."
     },
     {
       "key": "council_tax_proposed_band_j_value_threshold",
@@ -5863,16 +5923,16 @@
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
-      "status": "historical",
+      "status": "superseded",
       "change_frequency": "",
       "note": "High-value Council Tax calculator: proposed new Band J* (over £1M) ratio 3 — proposed from April 2028",
       "resolve_note": "The surcharge bands are pegged at property values of £2m, £2.5m, £3.5m and £5m. No £1,000,000 threshold exists in the policy. Code value does not match the anno",
-      "official_value": "HVCTS value bands are £2m/£2.5m/£3.5m/£5m",
+      "official_value": null,
       "official_source": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
       "verified_date": "2026-08-29",
       "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
       "confidence": "high",
-      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows."
+      "freshness_note": "Retired 2026-08-29. This row models the high-value council tax proposal as extra bands with a Band-D ratio and a £100-£500 surcharge. The confirmed policy (Budget 2025, from Apr 2028) is a flat annual surcharge of £2,500/£3,500/£5,000/£7,500 on homes worth £2m/£2.5m/£3.5m/£5m+. HighCouncilTaxCalculator.tsx already implements the real design; see the hvcts_* rows. Status is `superseded`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever."
     },
     {
       "key": "council_tax_second_home_premium",
@@ -7097,14 +7157,14 @@
         "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/changes-to-the-class-1-national-insurance-contributions-secondary-threshold-the-secondary-class-1-national-insurance-contributions-rate-and-the-empl",
-      "status": "historical",
+      "status": "retired",
       "change_frequency": "",
       "note": "employer-ni-calculator: the £100,000 prior-year employer-NI eligibility cap was ABOLISHED from 6 April 2025 — no longer applies. Prose updated to say so.",
       "fixed": true,
       "fixed_date": "2026-07-08",
       "verified_date": "2026-08-29",
       "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
-      "freshness_note": "Re-checked 2026-08-29: the code and prose already reflect the change, so this row is correctly historical. It will never satisfy the dashboard loop-closer, which only closes items whose ledger entry is current."
+      "freshness_note": "Re-checked 2026-08-29: the code and prose already reflect the change, so this row is correctly historical. It will never satisfy the dashboard loop-closer, which only closes items whose ledger entry is current. Status is `retired`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever."
     },
     {
       "key": "employment_allowance_eligibility_ni_bill_cap",
@@ -7119,14 +7179,14 @@
         "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/changes-to-the-class-1-national-insurance-contributions-secondary-threshold-the-secondary-class-1-national-insurance-contributions-rate-and-the-empl",
-      "status": "historical",
+      "status": "retired",
       "change_frequency": "",
       "note": "Employment Allowance eligibility: the £100,000 prior-year NI-bill cap was ABOLISHED from 6 April 2025 — no upper limit now. faqs.ts prose updated.",
       "fixed": true,
       "fixed_date": "2026-07-08",
       "verified_date": "2026-08-29",
       "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
-      "freshness_note": "Re-checked 2026-08-29: the code and prose already reflect the change, so this row is correctly historical. It will never satisfy the dashboard loop-closer, which only closes items whose ledger entry is current."
+      "freshness_note": "Re-checked 2026-08-29: the code and prose already reflect the change, so this row is correctly historical. It will never satisfy the dashboard loop-closer, which only closes items whose ledger entry is current. Status is `retired`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever."
     },
     {
       "key": "employment_tribunal_claim_window_months",
@@ -18957,13 +19017,13 @@
         "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/budget-2025-retail-hospitality-and-leisure-factsheet/budget-2025-retail-hospitality-and-leisure-factsheet",
-      "status": "historical",
+      "status": "retired",
       "change_frequency": "",
       "note": "business-rates-calculator: RHL relief 40% 2026/27 (down from 75%), capped £110,000 per business",
       "resolve_note": "The 40% Retail/Hospitality/Leisure relief (2025-26, cap GBP110k) does NOT apply from 1 Apr 2026. For 2026-27 it is replaced by two permanently lower RHL busines",
       "official_value": "0",
       "confidence": "high",
-      "freshness_note": "Retired 2026-08-29. The 40% RHL relief (capped £110,000 per business) ran in 2025/26 and ended 31 March 2026. From April 2026 it is replaced by permanently lower RHL multipliers, set 5p below the national multipliers and funded by a higher multiplier on rateable values of £500,000+. The prose claimed the 40% relief still applied in 2026/27 and has been rewritten.",
+      "freshness_note": "Retired 2026-08-29. The 40% RHL relief (capped £110,000 per business) ran in 2025/26 and ended 31 March 2026. From April 2026 it is replaced by permanently lower RHL multipliers, set 5p below the national multipliers and funded by a higher multiplier on rateable values of £500,000+. The prose claimed the 40% relief still applied in 2026/27 and has been rewritten. Status is `retired`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever.",
       "verified_date": "2026-08-29",
       "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled"
     },
@@ -21101,7 +21161,7 @@
         "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/self-assessment-tax-returns",
-      "status": "historical",
+      "status": "retired",
       "change_frequency": "",
       "note": "ABOLISHED. The Self Assessment income threshold rose £100,000 -> £150,000 for 2023-24 and was removed entirely from 2024-25: a high PAYE salary alone no longer requires a return. Three prose copies corrected.",
       "resolve_note": "The PAYE high-income Self Assessment filing threshold (raised GBP100k->GBP150k for 2023-24) was REMOVED entirely from 2024-25. For 2026-27 there is no income le",
@@ -21109,7 +21169,7 @@
       "fixed_date": "2026-08-04",
       "verified_date": "2026-08-29",
       "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
-      "freshness_note": "Re-checked 2026-08-29: the code and prose already reflect the change, so this row is correctly historical. It will never satisfy the dashboard loop-closer, which only closes items whose ledger entry is current."
+      "freshness_note": "Re-checked 2026-08-29: the code and prose already reflect the change, so this row is correctly historical. It will never satisfy the dashboard loop-closer, which only closes items whose ledger entry is current. Status is `retired`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever."
     },
     {
       "key": "self_assessment_late_filing_immediate_penalty",
@@ -29479,7 +29539,10 @@
   "status_summary": {
     "current": 1353,
     "uncertain": 52,
-    "historical": 18
+    "retired": 5,
+    "superseded_by_component": 1,
+    "historical": 5,
+    "superseded": 10
   },
   "theme_counts": {
     "minimum_wage": 18,
