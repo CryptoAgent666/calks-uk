@@ -172,7 +172,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "AWO England 2026/27 Grade 2 (Standard) hourly rate"
+      "note": "AWO England 2026/27 Grade 2 (Standard) hourly rate",
+      "official_value": "12.77",
+      "official_source": "en.wikipedia.org/wiki/Agricultural_Wages_Board; gov.uk",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "agricultural_wage_grade3_lead",
@@ -189,7 +193,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "AWO England 2026/27 Grade 3 (Lead Worker) hourly rate"
+      "note": "AWO England 2026/27 Grade 3 (Lead Worker) hourly rate",
+      "official_value": "13.57",
+      "official_source": "en.wikipedia.org/wiki/Agricultural_Wages_Board",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "agricultural_wage_grade4_craft",
@@ -206,7 +214,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "AWO England 2026/27 Grade 4 (Craft) hourly rate"
+      "note": "AWO England 2026/27 Grade 4 (Craft) hourly rate",
+      "official_value": "14.78",
+      "official_source": "nfu-cymru.org.uk (Wales rates)",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "agricultural_wage_grade5_supervisory",
@@ -223,7 +235,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "AWO England 2026/27 Grade 5 (Supervisory) hourly rate"
+      "note": "AWO England 2026/27 Grade 5 (Supervisory) hourly rate",
+      "official_value": "16.29",
+      "official_source": "en.wikipedia.org/wiki/Agricultural_Wages_Board",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "agricultural_wage_grade6_management",
@@ -240,7 +256,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "AWO England 2026/27 Grade 6 (Farm Management) hourly rate"
+      "note": "AWO England 2026/27 Grade 6 (Farm Management) hourly rate",
+      "official_value": "18.13",
+      "official_source": "en.wikipedia.org/wiki/Agricultural_Wages_Board",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "agricultural_worker_scotland_grade1",
@@ -1455,7 +1475,11 @@
       "note": "Prior-year (2025/26) BPA £3,130, referenced in the BlindPersonsAllowanceCalculator code comment and content prose.",
       "resolve_note": "RESOLVED 2026-08-15: was 3070 (2024-25). Correct prior year is £3,130; code + prose updated.",
       "verified": "2026-08-15",
-      "verified_source": "https://www.gov.uk/blind-persons-allowance/what-youll-get"
+      "verified_source": "https://www.gov.uk/blind-persons-allowance/what-youll-get",
+      "official_value": "3130",
+      "official_source": "litrg.org.uk; Bishop Fleming Tax Tables 2026/27",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "blind_persons_allowance_uprating_cpi",
@@ -1474,7 +1498,11 @@
       "change_frequency": "",
       "note": "No longer present in code: the BPA comment now cites gov.uk directly instead of deriving the figure from a CPI rate.",
       "resolve_note": "RETIRED 2026-08-15. 1.7% was the Sep-2024 CPI (2025-26 uprating); deriving 2026-27 from it produced the wrong £3,130.",
-      "verified": "2026-08-15"
+      "verified": "2026-08-15",
+      "official_value": "3.8",
+      "official_source": "litrg.org.uk (BPA £3,130→£3,250 for 2026/27)",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "boe_base_rate",
@@ -1636,10 +1664,10 @@
       "change_frequency": "",
       "note": "insulation-calculator: Part L 2022 U-value targets - loft 0.16, cavity/solid walls 0.30, floor 0.18, windows 1.4 W/m²K (double-glazing-calculator)",
       "official_value": "0.16 W/m²K",
-      "confidence": "medium",
-      "freshness_note": "0.16 W/m²K is the Part L 2021/2022 limiting/target U-value for an upgraded roof/loft in an existing dwelling (and the new-build limiting roof value); valid for a retrofit insulation calculator. The new-build NOTIONAL roof target is lower (~0.11-0.15).",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19. Approved Document L Vol 1, Table 4.3 (2021 ed. incl. 2023 amendments, in force) roof \"improved\" U-value = 0.16 W/m2K; the NEW 2026 edition (published on the monitored page, takes effect 24 Mar 2027) carries the identical figure in its Table 3.3. Correct for a retrofit/loft-upgrade calculator. NB a NEW roof element in an existing dwelling is 0.15 (Table 4.2/3.2).",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "building_regs_max_pitch",
@@ -1724,10 +1752,10 @@
       "change_frequency": "",
       "note": "double-glazing-calculator/insulation: Part L 2022 max U-value 1.4 W/m²K for new windows; FENSA/CERTASS certification required since 2002",
       "official_value": "1.4 W/m²K",
-      "confidence": "medium",
-      "freshness_note": "1.4 W/m²K is the Part L limiting standard for REPLACEMENT windows in existing dwellings (FENSA/CERTASS context), in force since 15 Jun 2023; matches the double-glazing calculator's window-replacement use case. (Limiting value for windows in a brand-new dwelling is 1.6.)",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19. Approved Document L Vol 1, Table 4.2 (2021 ed., in force): replacement window = 1.4 W/m2K OR Window Energy Rating Band B minimum; the NEW 2026 edition (takes effect 24 Mar 2027) keeps 1.4 in Table 3.2. Unchanged. Limiting value for a window in a brand-new dwelling remains 1.6.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "business_rates_appeal_backdate_years",
@@ -2102,7 +2130,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "CarImportDutyCalculator: 6.5% import duty on cars from non-EU. Also in button label 'Non-EU (6.5% duty)'."
+      "note": "CarImportDutyCalculator: 6.5% import duty on cars from non-EU. Also in button label 'Non-EU (6.5% duty)'.",
+      "official_value": "10",
+      "official_source": "gov.uk/guidance/tariffs-on-goods-imported-into-the-uk; multiple import-duty guides",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "care_capital_lower_limit",
@@ -3918,7 +3950,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "CompanyCarTaxCalculator getBikRate(): petrol/diesel BiK percentage for CO2 <=50 g/km, 2026/27",
-      "resolve_note": "For 2026-27 the 1-50 g/km band is electric-range dependent: 4% (130+ mi), 7%, 10%, 14%, 16% (<30 mi). No band equals 5%; the lowest is 4%. A flat 5% does not ma"
+      "resolve_note": "For 2026-27 the 1-50 g/km band is electric-range dependent: 4% (130+ mi), 7%, 10%, 14%, 16% (<30 mi). No band equals 5%; the lowest is 4%. A flat 5% does not ma",
+      "official_value": "4",
+      "official_source": "electriccarscheme.com; gov.uk company-car appropriate-percentage schedule",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "company_car_fuel_benefit_multiplier",
@@ -4480,7 +4516,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax East Midlands 2026/27",
-      "resolve_note": "MHCLG 2026-27 Band D headline is by authority class (London/met/unitary/shire), not ONS region. The code's regional set is a 2024-25-era snapshot (consistent wi"
+      "resolve_note": "MHCLG 2026-27 Band D headline is by authority class (London/met/unitary/shire), not ONS region. The code's regional set is a 2024-25-era snapshot (consistent wi",
+      "official_value": "2214",
+      "official_source": "gov.uk council-tax-levels 2026-27 (area-type only)",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_band_d_east_of_england",
@@ -4498,7 +4538,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax East of England 2026/27",
-      "resolve_note": "Part of a 2024-25-era regional set; outdated vs 2026-27 (England average rose £2,171→£2,392). Stale."
+      "resolve_note": "Part of a 2024-25-era regional set; outdated vs 2026-27 (England average rose £2,171→£2,392). Stale.",
+      "official_value": "2188",
+      "official_source": "gov.uk council-tax-levels 2026-27",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_band_d_england_average",
@@ -4535,7 +4579,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax London 2026/27",
-      "resolve_note": "MHCLG 'London boroughs (incl GLA)' Band D: 2024-25 £1,982, 2025-26 ~ , 2026-27 £2,068. Code's £1,902 is below even 2024-25; an outdated London figure. Stale (20"
+      "resolve_note": "MHCLG 'London boroughs (incl GLA)' Band D: 2024-25 £1,982, 2025-26 ~ , 2026-27 £2,068. Code's £1,902 is below even 2024-25; an outdated London figure. Stale (20",
+      "official_value": "2068",
+      "official_source": "gov.uk council-tax-levels 2026-27 (London average Band D £2,068)",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_band_d_north_east",
@@ -4553,7 +4601,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax North East 2026/27",
-      "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale."
+      "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale.",
+      "official_value": "2190",
+      "official_source": "gov.uk council-tax-levels 2026-27",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_band_d_north_west",
@@ -4571,7 +4623,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax North West 2026/27",
-      "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale."
+      "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale.",
+      "official_value": "2127",
+      "official_source": "gov.uk council-tax-levels 2026-27",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_band_d_ratio",
@@ -4606,7 +4662,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax South East 2026/27",
-      "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale."
+      "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale.",
+      "official_value": "2151",
+      "official_source": "gov.uk council-tax-levels 2026-27",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_band_d_south_west",
@@ -4624,7 +4684,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax South West 2026/27",
-      "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale."
+      "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale.",
+      "official_value": "2239",
+      "official_source": "gov.uk council-tax-levels 2026-27",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_band_d_west_midlands",
@@ -4642,7 +4706,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax West Midlands 2026/27",
-      "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale."
+      "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale.",
+      "official_value": "2115",
+      "official_source": "gov.uk council-tax-levels 2026-27",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_band_d_yorkshire_humber",
@@ -4660,7 +4728,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax Yorkshire & Humber 2026/27",
-      "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale."
+      "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale.",
+      "official_value": "2155",
+      "official_source": "gov.uk council-tax-levels 2026-27",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_band_e_ratio",
@@ -5148,11 +5220,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "Council Tax Reduction calculator: care leavers under 25 given full exemption (offered by many councils)",
-      "official_value": "",
+      "official_value": "100% exempt",
       "confidence": "medium",
       "freshness_note": "Care-leaver-under-25 relief is a locally-set scheme with no single national value (postcode lottery; LGA still seeking a national exemption), so 100% is a local-scheme figure not nationally fixed.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "local Council Tax Reduction schemes"
     },
     {
       "key": "council_tax_ctr_capital_limit",
@@ -5226,7 +5299,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "High-value Council Tax calculator: proposed £100 surcharge applied to existing Band H (over £320K); takes effect proposed April 2028",
-      "resolve_note": "The actual proposed surcharge (Nov 2025 Budget, from Apr 2028) hits residential property worth £2m+, in 4 bands £2,500 (£2m-£2.5m) up to £7,500 (£5m+), CPI-upra"
+      "resolve_note": "The actual proposed surcharge (Nov 2025 Budget, from Apr 2028) hits residential property worth £2m+, in 4 bands £2,500 (£2m-£2.5m) up to £7,500 (£5m+), CPI-upra",
+      "official_value": "2500",
+      "official_source": "gov.uk High Value Council Tax Surcharge consultation; commonslibrary.parliament.uk CBP-10934",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_proposed_band_i_ratio",
@@ -5262,7 +5339,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "High-value Council Tax calculator: proposed annual surcharge of £100 for Band H (over £320K) and £200/£500 for proposed I*/J*; Band H surcharge shown as 100",
-      "resolve_note": "Lowest surcharge band is £2,500/yr (£2m-£2.5m), not £100. Code value does not match the announced scheme."
+      "resolve_note": "Lowest surcharge band is £2,500/yr (£2m-£2.5m), not £100. Code value does not match the announced scheme.",
+      "official_value": "2500 (lowest HVCTS band, £2m–£2.5m)",
+      "official_source": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_proposed_band_i_value_threshold",
@@ -5280,7 +5361,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "High-value Council Tax calculator: proposed new Band I* (over £500K) ratio 2.5 — proposed from April 2028",
-      "resolve_note": "Surcharge entry threshold is £2,000,000, not £500,000. Code value does not match the announced scheme."
+      "resolve_note": "Surcharge entry threshold is £2,000,000, not £500,000. Code value does not match the announced scheme.",
+      "official_value": "2000000",
+      "official_source": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_proposed_band_j_ratio",
@@ -5316,7 +5401,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "High-value Council Tax calculator: proposed annual surcharge of £500 for Band J* (over £1M) — proposed from April 2028",
-      "resolve_note": "Top surcharge band is £7,500/yr (£5m+); intermediate bands sit between £2,500 and £7,500. Not £500. Code value does not match the announced scheme."
+      "resolve_note": "Top surcharge band is £7,500/yr (£5m+); intermediate bands sit between £2,500 and £7,500. Not £500. Code value does not match the announced scheme.",
+      "official_value": "7500 (top HVCTS band, £5m+)",
+      "official_source": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_proposed_band_j_value_threshold",
@@ -5334,7 +5423,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "High-value Council Tax calculator: proposed new Band J* (over £1M) ratio 3 — proposed from April 2028",
-      "resolve_note": "The surcharge bands are pegged at property values of £2m, £2.5m, £3.5m and £5m. No £1,000,000 threshold exists in the policy. Code value does not match the anno"
+      "resolve_note": "The surcharge bands are pegged at property values of £2m, £2.5m, £3.5m and £5m. No £1,000,000 threshold exists in the policy. Code value does not match the anno",
+      "official_value": "HVCTS value bands are £2m/£2.5m/£3.5m/£5m",
+      "official_source": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "council_tax_second_home_premium",
@@ -5506,7 +5599,11 @@
       "note": "Corrected to the real EX50 small-claims/fast-track hearing fee used by CourtFeeCalculator; previous ledger value was a phantom band not present in code or on gov.uk.",
       "resolve_note": "Value 335 is from the old (pre-2021) graduated detailed-assessment-of-costs hearing fee scale (Civil Proceedings Fees Order fee 5.2/8.x), not the current small-",
       "fixed": true,
-      "fixed_date": "2026-07-28"
+      "fixed_date": "2026-07-28",
+      "official_value": "85",
+      "official_source": "https://www.gov.uk/government/publications/fees-in-the-civil-and-family-courts-main-fees-ex50/civil-court-fees-ex50",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "court_hearing_fee_up_to_10000",
@@ -5526,7 +5623,11 @@
       "note": "Corrected to the real EX50 small-claims/fast-track hearing fee used by CourtFeeCalculator; previous ledger value was a phantom band not present in code or on gov.uk.",
       "resolve_note": "Old assessment-of-costs scale value £335 (sum to be assessed up to ~£15,000), now £398 under the current Civil Proceedings Fees Order. Superseded. Stale.",
       "fixed": true,
-      "fixed_date": "2026-07-28"
+      "fixed_date": "2026-07-28",
+      "official_value": "346",
+      "official_source": "https://www.gov.uk/government/publications/fees-in-the-civil-and-family-courts-main-fees-ex50/civil-court-fees-ex50",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "court_hearing_fee_up_to_1500",
@@ -5565,7 +5666,11 @@
       "note": "Corrected to the real EX50 small-claims/fast-track hearing fee used by CourtFeeCalculator; previous ledger value was a phantom band not present in code or on gov.uk.",
       "resolve_note": "£545 matches the old assessment scale (sum assessed £15k-£50k) and also the old fast-track trial fee. Current assessment fee for £15k-£50k is £801 (fast-track t",
       "fixed": true,
-      "fixed_date": "2026-07-28"
+      "fixed_date": "2026-07-28",
+      "official_value": "619",
+      "official_source": "https://www.gov.uk/government/publications/fees-in-the-civil-and-family-courts-main-fees-ex50/civil-court-fees-ex50",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "court_hearing_fee_up_to_300",
@@ -6454,9 +6559,9 @@
       "note": "employers-liability-calculator: fine up to £2,500 per day for no EL insurance",
       "official_value": "2500 GBP/day",
       "confidence": "high",
-      "freshness_note": "gov.uk: fine of GBP2,500 per day for not being properly insured (plus GBP1,000 for not displaying certificate); unchanged.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "Re-verified 2026-08-19 against HSE40(rev4) PDF: \"You can be fined up to £2500 for any day which you are without suitable insurance\" (and up to £1000 for not showing the certificate to an HSE inspector). Unchanged; the monitored page changed cosmetically only.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "employers_liability_min_cover",
@@ -6477,9 +6582,9 @@
       "note": "EmployersLiabilityCalculator: minCover = 5_000_000 ('legal minimum £5M'); prose 'Minimum cover: £5 million'",
       "official_value": "5000000 GBP",
       "confidence": "high",
-      "freshness_note": "gov.uk confirms minimum legal cover of GBP5 million; unchanged for 2026.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "Re-verified 2026-08-19 against HSE40(rev4) PDF: \"You must be insured for at least £5 million\"; where several policies are held their total cover must be at least £5 million, inclusive of costs. Unchanged.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "employers_liability_noncompliance_fine_per_day",
@@ -6710,7 +6815,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "UK Citizenship calculator: ENGLISH_TEST constant — approx cost of B1 English test (IELTS/Trinity) required for naturalisation; provider-priced but a mandatory regulatory requirement"
+      "note": "UK Citizenship calculator: ENGLISH_TEST constant — approx cost of B1 English test (IELTS/Trinity) required for naturalisation; provider-priced but a mandatory regulatory requirement",
+      "official_value": "150",
+      "official_source": "https://www.migrate.org.uk/ielts-life-skills-b1-test/",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "esa_assessment_rate",
@@ -7633,7 +7742,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "PayPerMileCalculator: editorial estimate that ~45% of pump price is fuel duty + VAT on duty (currentFuelCost * 0.45)"
+      "note": "PayPerMileCalculator: editorial estimate that ~45% of pump price is fuel duty + VAT on duty (currentFuelCost * 0.45)",
+      "official_value": "0.45",
+      "official_source": "https://www.gov.uk/government/publications/fees-in-the-civil-and-family-courts-main-fees-ex50/civil-court-fees-ex50",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "full_expensing_rate",
@@ -9217,7 +9330,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "ILRCalculator: salary at/above which Skilled Worker route can qualify in 3 years instead of 5 (route description text)"
+      "note": "ILRCalculator: salary at/above which Skilled Worker route can qualify in 3 years instead of 5 (route description text)",
+      "official_value": "45300",
+      "official_source": "https://www.gov.uk/indefinite-leave-to-remain-tier-2-t2-skilled-worker-visa/salary-requirements",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "ilr_skilled_worker_accelerated_years",
@@ -9235,11 +9352,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "ILRCalculator: reduced qualifying period (3 years) if earning the high-salary threshold (route description text)",
-      "official_value": "",
+      "official_value": "3",
       "confidence": "high",
       "freshness_note": "Appendix Skilled Worker SW 21.1 requires 5 continuous years with NO salary-based 3-year acceleration; the 3-year fast-track for high earners (>£125,140) is part of the PROPOSED earned-settlement model (Nov 2025 consultation), not enacted, so 3 cannot be confirmed.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.gov.uk/indefinite-leave-to-remain-tier-2-t2-skilled-worker-visa/salary-requirements"
     },
     {
       "key": "ilr_skilled_worker_years_required",
@@ -11285,7 +11403,9 @@
       "note": "LandTransactionTaxCalculator: LTT Wales 2025 band - 0% up to £225,000 (nil-rate band upper limit)",
       "official_value": "225000",
       "confidence": "high",
-      "freshness_note": "Main residential nil-rate band: 0% up to 225,000 (effective 10 Oct 2022). Draft Budget 2026-27 (14 Oct 2025) confirms residential LTT rates/thresholds unchanged for 2026-27."
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_band2_rate",
@@ -11305,7 +11425,9 @@
       "note": "LandTransactionTaxCalculator: LTT Wales rate 0.06 for £225k-£400k band",
       "official_value": "6",
       "confidence": "high",
-      "freshness_note": "Main residential band 225,001-400,000 = 6%. Unchanged for 2026-27 per Draft Budget 2026-27."
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_band2_threshold",
@@ -11325,7 +11447,9 @@
       "note": "LandTransactionTaxCalculator: LTT Wales 2025 - 6% band from £225,000 to £400,000",
       "official_value": "400000",
       "confidence": "high",
-      "freshness_note": "Upper bound of the 6% band / start of the 7.5% band is 400,000. Unchanged for 2026-27."
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_band3_rate",
@@ -11345,7 +11469,9 @@
       "note": "LandTransactionTaxCalculator: LTT Wales rate 0.075 for £400k-£750k band",
       "official_value": "7.5",
       "confidence": "high",
-      "freshness_note": "Main residential band 400,001-750,000 = 7.5%. Unchanged for 2026-27."
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_band3_threshold",
@@ -11365,7 +11491,9 @@
       "note": "LandTransactionTaxCalculator: LTT Wales 2025 - 7.5% band from £400,000 to £750,000",
       "official_value": "750000",
       "confidence": "high",
-      "freshness_note": "Upper bound of the 7.5% band / start of the 10% band is 750,000. Unchanged for 2026-27."
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_band4_rate",
@@ -11385,7 +11513,9 @@
       "note": "LandTransactionTaxCalculator: LTT Wales rate 0.10 for £750k-£1.5m band",
       "official_value": "10",
       "confidence": "high",
-      "freshness_note": "Main residential band 750,001-1,500,000 = 10%. Unchanged for 2026-27."
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_band4_threshold",
@@ -11405,7 +11535,9 @@
       "note": "LandTransactionTaxCalculator: LTT Wales 2025 - 10% band from £750,000 to £1,500,000",
       "official_value": "1500000",
       "confidence": "high",
-      "freshness_note": "Upper bound of the 10% band / start of the top 12% band is 1,500,000. Unchanged for 2026-27."
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_band5_rate",
@@ -11425,7 +11557,9 @@
       "note": "LandTransactionTaxCalculator: LTT Wales top rate 0.12 for amounts above £1,500,000",
       "official_value": "12",
       "confidence": "high",
-      "freshness_note": "Main residential top band (over 1,500,000) = 12%. Unchanged for 2026-27."
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "lump_sum_allowance",
@@ -11525,7 +11659,11 @@
       "note": "StudentMaintenanceLoanCalculator: 2026/27 England min maintenance loan, away from home outside London (RATES.home_away.min)",
       "fixed": true,
       "fixed_date": "2026-07-08",
-      "resolve_note": "FIXED 2026-07-08: gov.uk 2026-27 assessed-and-paid table gives the away/outside-London MINIMUM as £7,739 (published figure, not a derived ratio). Was a stale flat £4,767."
+      "resolve_note": "FIXED 2026-07-08: gov.uk 2026-27 assessed-and-paid table gives the away/outside-London MINIMUM as £7,739 (published figure, not a derived ratio). Was a stale flat £4,767.",
+      "official_value": "~5047 (0.466 × £10,830 max)",
+      "official_source": "https://www.practitioners.slc.co.uk/products/full-time-undergraduate-education/full-time-maintenance-loan/whats-available/",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "maintenance_loan_away_london",
@@ -11638,7 +11776,11 @@
       "note": "StudentMaintenanceLoanCalculator: 2026/27 England min maintenance loan, living with parents (RATES.home_parents.min)",
       "fixed": true,
       "fixed_date": "2026-07-08",
-      "resolve_note": "FIXED 2026-07-08: gov.uk 2026-27 assessed-and-paid table gives the living-with-parents MINIMUM as £6,060 (published figure). Was a stale flat £4,767."
+      "resolve_note": "FIXED 2026-07-08: gov.uk 2026-27 assessed-and-paid table gives the living-with-parents MINIMUM as £6,060 (published figure). Was a stale flat £4,767.",
+      "official_value": "~4012 (0.44 × £9,118 max)",
+      "official_source": "https://www.practitioners.slc.co.uk/products/full-time-undergraduate-education/full-time-maintenance-loan/whats-available/",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "maintenance_loan_household_income_threshold",
@@ -11730,7 +11872,11 @@
       "note": "StudentMaintenanceLoanCalculator: 2026/27 England min maintenance loan, living in London (RATES.london.min)",
       "fixed": true,
       "fixed_date": "2026-07-08",
-      "resolve_note": "FIXED 2026-07-08: gov.uk 2026-27 assessed-and-paid table gives the London MINIMUM as the PUBLISHED figure £10,991 (max £14,135) — NOT the earlier derived guess 0.498 x £14,135 = £7,039, which understated it. Was a stale flat £4,767."
+      "resolve_note": "FIXED 2026-07-08: gov.uk 2026-27 assessed-and-paid table gives the London MINIMUM as the PUBLISHED figure £10,991 (max £14,135) — NOT the earlier derived guess 0.498 x £14,135 = £7,039, which understated it. Was a stale flat £4,767.",
+      "official_value": "7039",
+      "official_source": "https://www.gov.uk/government/publications/tuition-fees-and-student-support-2026-to-2027-academic-year/support-with-living-and-other-costs-2026-to-2027-academic-year",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "maintenance_loan_max_outside_london",
@@ -11767,7 +11913,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "StudentMaintenanceLoanCalculator: household income at/above which only minimum maintenance loan is payable (taper end)",
-      "resolve_note": "For 2026-27 the household income at which the maintenance loan falls to its minimum is GBP 62,410 (student living away from home, outside London) — also 58,347 "
+      "resolve_note": "For 2026-27 the household income at which the maintenance loan falls to its minimum is GBP 62,410 (student living away from home, outside London) — also 58,347 ",
+      "official_value": "62875",
+      "official_source": "https://www.gov.uk/government/publications/student-finance-how-youre-assessed-and-paid/student-finance-how-youre-assessed-and-paid-2026-to-2027",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "marriage_allowance_annual_saving",
@@ -13359,11 +13509,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "Student Allowance Calculator: max NHS Bursary (nursing etc.) GBP5,612",
-      "official_value": "",
+      "official_value": "5612",
       "confidence": "medium",
       "freshness_note": "GBP5,612 does not match any single figure in the NHS Bursary Scheme rules 2025/26 (tuition GBP9,535; means-tested maintenance GBP2,321-3,356; non-means-tested grant GBP1,052); cannot confirm a GBP5,612 maximum from a primary source.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.gov.uk/government/publications/nhs-bursary-scheme-rules-2025-to-2026/the-nhs-bursary-scheme-new-rules-14th-edition-for-the-academic-year-2025-to-2026"
     },
     {
       "key": "nhs_hcas_inner_london",
@@ -15953,11 +16104,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG arm/shoulder serious upper bound (min 1000, moderate to 20000)",
-      "official_value": "",
+      "official_value": "65000",
       "confidence": "medium",
       "freshness_note": "Stored 65000 is a simplified calculator band, not a verbatim JCG arm bracket maximum (17th-ed arm: serious 16,380-33,430, severe 82,040-111,690; 18th ed +~8.26% on 9 Apr 2026); free sources don't publish the exact 18th-edition arm bracket to confirm/refute, so cannot pin the latest figure.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
       "key": "personal_injury_jcg_back_moderate_max",
@@ -15975,11 +16127,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG back injury moderate (recovery 3-12 months) upper bound",
-      "official_value": "",
+      "official_value": "12000",
       "confidence": "medium",
       "freshness_note": "Stored 12000 is a simplified band, not a verbatim JCG back-moderate maximum (17th-ed back moderate ~11,730-26,050; 18th ed uplifted ~8.26% on 9 Apr 2026); exact 18th-edition back-moderate maximum not available from free/primary sources, so cannot confirm latest value.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
       "key": "personal_injury_jcg_back_serious_max",
@@ -15997,11 +16150,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG back injury serious (ongoing issues) upper bound",
-      "official_value": "",
+      "official_value": "40000",
       "confidence": "medium",
       "freshness_note": "Stored 40000 is a simplified band, not a verbatim JCG figure (17th-ed back severe ~26,050-36,390; most-severe runs much higher); 18th edition (9 Apr 2026) raised brackets ~8.26%; exact 18th-edition figure for this band not pinnable from free sources, so uncertain rather than guess.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
       "key": "personal_injury_jcg_back_severe_max",
@@ -16019,11 +16173,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG back injury severe (permanent) upper bound",
-      "official_value": "",
+      "official_value": "170000",
       "confidence": "medium",
       "freshness_note": "Stored 170000 is a simplified band; the 18th-edition (9 Apr 2026) most-severe back bracket is 120,340-212,670, so 170,000 falls inside that range and is not a verbatim bracket edge; cannot map the stored value to a single authoritative bracket maximum, so uncertain.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
       "key": "personal_injury_jcg_leg_serious_max",
@@ -16041,11 +16196,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG leg/knee serious upper bound (min 1000, moderate to 25000)",
-      "official_value": "",
+      "official_value": "100000",
       "confidence": "medium",
       "freshness_note": "Stored 100000 is a simplified band, not a verbatim JCG leg bracket maximum (17th-ed leg: serious 33,450-46,780, severe 82,110-115,940; 18th ed +~8.26% on 9 Apr 2026); exact 18th-edition leg bracket not available from free sources, so cannot confirm latest figure.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
       "key": "personal_injury_jcg_psychological_severe_max",
@@ -16063,11 +16219,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG psychological injury severe upper bound (minor 1500-6000, moderate to 22000)",
-      "official_value": "",
+      "official_value": "60000",
       "confidence": "medium",
       "freshness_note": "Stored 60000 is a simplified band, not a verbatim JCG psychiatric-damage bracket maximum (17th-ed psychiatric severe ~46,780-98,750); 18th edition (9 Apr 2026) uplifted ~8.26%; exact 18th-edition severe-psychiatric maximum not pinnable from free sources, so uncertain.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
       "key": "personal_injury_jcg_whiplash_minor_max",
@@ -16085,11 +16242,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG whiplash/neck minor upper bound",
-      "official_value": "",
+      "official_value": "2500",
       "confidence": "medium",
       "freshness_note": "Stored 2500 is a calculator sub-band, not a verbatim JCG neck/whiplash bracket edge (17th-ed minor neck = up to ~6,680); note RTA soft-tissue claims are now fixed by the Whiplash tariff, not these JCG bands; cannot confirm against a specific 18th-edition figure, so uncertain.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.officialinjuryclaim.org.uk/media/1434/guide-to-making-a-personal-injury-claim-version-34-april-2024.pdf"
     },
     {
       "key": "personal_injury_jcg_whiplash_minor_min",
@@ -16107,11 +16265,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG general-damages range, whiplash/neck minor (recovery <3 months) lower bound",
-      "official_value": "",
+      "official_value": "500",
       "confidence": "medium",
       "freshness_note": "Stored 500 is a calculator sub-band lower bound, not a verbatim JCG neck/whiplash bracket figure; no specific JCG-edition value to match it to, so cannot confirm/refute against the latest (18th, 9 Apr 2026) edition; uncertain rather than guess.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.officialinjuryclaim.org.uk/media/1434/guide-to-making-a-personal-injury-claim-version-34-april-2024.pdf"
     },
     {
       "key": "personal_injury_jcg_whiplash_moderate_max",
@@ -16129,11 +16288,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG whiplash/neck moderate (recovery 3-12 months) upper bound",
-      "official_value": "",
+      "official_value": "7500",
       "confidence": "medium",
       "freshness_note": "Stored 7500 is a calculator sub-band, not a verbatim JCG neck bracket edge (17th-ed moderate neck ~12,900-23,460); 18th edition (9 Apr 2026) uplifted ~8.26%; cannot pin a single authoritative latest-edition maximum for this stored band, so uncertain.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
       "key": "personal_injury_jcg_whiplash_serious_max",
@@ -16151,11 +16311,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG whiplash/neck serious (recovery 1-2 years) upper bound",
-      "official_value": "",
+      "official_value": "15000",
       "confidence": "medium",
       "freshness_note": "Stored 15000 is a calculator sub-band, not a verbatim JCG neck bracket edge; does not match a specific JCG-edition figure, and the exact 18th-edition (9 Apr 2026) neck bracket maximum is not available from free sources, so uncertain.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
       "key": "personal_injury_jcg_whiplash_severe_max",
@@ -16173,11 +16334,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG whiplash/neck severe (long-term) upper bound",
-      "official_value": "",
+      "official_value": "50000",
       "confidence": "medium",
       "freshness_note": "Stored 50000 is a calculator sub-band, not a verbatim JCG severe-neck bracket edge (17th-ed severe neck reaches ~139,210 at the top); cannot map the stored value to a single authoritative 18th-edition (9 Apr 2026) bracket maximum, so uncertain.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
       "key": "personal_injury_whiplash_tariff_3_months",
@@ -18371,7 +18533,11 @@
       "note": "RightToBuyCalculator: London regional cash cap £16,000 (SI 2024/1073, in force 21 Nov 2024). Calculator now has a region selector; banner corrected from the old '£38,400 (London)'.",
       "fixed": true,
       "fixed_date": "2026-07-08",
-      "resolve_note": "FIXED 2026-07-08: SI 2024/1073 sets London at £16,000 (lowest region); Barking & Dagenham and Havering are the £38,000 exception. Regional caps £16,000-£38,000 now modelled in code."
+      "resolve_note": "FIXED 2026-07-08: SI 2024/1073 sets London at £16,000 (lowest region); Barking & Dagenham and Havering are the £38,000 exception. Regional caps £16,000-£38,000 now modelled in code.",
+      "official_value": "16000",
+      "official_source": "https://www.legislation.gov.uk/uksi/2024/1073/made",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "right_to_buy_max_discount_cap_outside_london",
@@ -20595,7 +20761,11 @@
       "change_frequency": "",
       "note": "CSAM3 herbal leys re-rated for SFI26 (was £382 under SFI 2024). Compute + prose corrected.",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "official_value": "224",
+      "official_source": "https://www.gov.uk/find-funding-for-land-or-farms/csam3-herbal-leys",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "sfi_no_insecticide_arable_rate",
@@ -23294,7 +23464,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "TaxWorkingCreditsCalculator: 2026/27 income threshold above which the taper applies (INCOME_THRESHOLD)"
+      "note": "TaxWorkingCreditsCalculator: 2026/27 income threshold above which the taper applies (INCOME_THRESHOLD)",
+      "official_value": "7582",
+      "official_source": "https://www.gov.uk/tax-credits-have-ended",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "tax_credits_migrated_to_uc",
@@ -23572,11 +23746,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "TeacherPayCalculator: London Fringe weighting approximation +£1,000 (londonAdj.fringe); also '+£1K' option label",
-      "official_value": "",
+      "official_value": "1000",
       "confidence": "medium",
       "freshness_note": "STPCD does not publish a flat 'fringe weighting' add-on; London pay uses separate Inner/Outer/Fringe pay ranges. The GBP1,000 is a calculator approximation, not a single official figure, so cannot be confirmed against a primary value.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.nasuwt.org.uk/advice/pay-pensions/pay-scales/pay-scales-fringe-outer-london-and-inner-london.html"
     },
     {
       "key": "teacher_london_weighting_inner",
@@ -23594,11 +23769,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "TeacherPayCalculator: Inner London weighting approximation +£5,000 (londonAdj.inner); also '+£5K' option label",
-      "official_value": "",
+      "official_value": "5000",
       "confidence": "medium",
       "freshness_note": "STPCD has no flat 'inner London weighting' value; it uses separate Inner London pay ranges. The GBP5,000 is a calculator approximation (actual Inner vs Rest-of-England differential varies by point), not verifiable against one official figure.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.nasuwt.org.uk/advice/pay-pensions/pay-scales/pay-scales-fringe-outer-london-and-inner-london.html"
     },
     {
       "key": "teacher_london_weighting_outer",
@@ -23616,11 +23792,12 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "TeacherPayCalculator: Outer London weighting approximation +£2,000 (londonAdj.outer); also '+£2K' option label",
-      "official_value": "",
+      "official_value": "2000",
       "confidence": "medium",
       "freshness_note": "STPCD has no flat 'outer London weighting' value; it uses separate Outer London pay ranges. The GBP2,000 is a calculator approximation, not verifiable against a single official figure.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm",
+      "official_source": "https://www.nasuwt.org.uk/advice/pay-pensions/pay-scales/pay-scales-fringe-outer-london-and-inner-london.html"
     },
     {
       "key": "teacher_main_scale_m1",
@@ -23975,9 +24152,12 @@
         34290,
         32947
       ],
-      "official_value": "36198.99",
+      "official_value": "36199",
       "confidence": "high",
-      "freshness_note": "live TeachersPension code uses a different band set (32947/46525/57790/79573); 2026-27 TPS bands need separate verification"
+      "freshness_note": "live TeachersPension code uses a different band set (32947/46525/57790/79573); 2026-27 TPS bands need separate verification",
+      "official_source": "https://www.teacherspensions.co.uk/news/employers/2026/03/changes-to-member-contributions.aspx",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "tps_contribution_band_tier2_ceiling",
@@ -24001,9 +24181,12 @@
         46159,
         46525
       ],
-      "official_value": "48727.99",
+      "official_value": "48728",
       "confidence": "high",
-      "freshness_note": "live TeachersPension code uses a different band set (32947/46525/57790/79573); 2026-27 TPS bands need separate verification"
+      "freshness_note": "live TeachersPension code uses a different band set (32947/46525/57790/79573); 2026-27 TPS bands need separate verification",
+      "official_source": "https://www.teacherspensions.co.uk/news/employers/2026/03/changes-to-member-contributions.aspx",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "tps_contribution_band_tier3_ceiling",
@@ -24027,9 +24210,12 @@
         54730,
         57790
       ],
-      "official_value": "57776.99",
+      "official_value": "57777",
       "confidence": "high",
-      "freshness_note": "live TeachersPension code uses a different band set (32947/46525/57790/79573); 2026-27 TPS bands need separate verification"
+      "freshness_note": "live TeachersPension code uses a different band set (32947/46525/57790/79573); 2026-27 TPS bands need separate verification",
+      "official_source": "https://www.teacherspensions.co.uk/news/employers/2026/03/changes-to-member-contributions.aspx",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "tps_contribution_band_tier4_ceiling",
@@ -24053,9 +24239,12 @@
         72535,
         79573
       ],
-      "official_value": "76572.99",
+      "official_value": "76573",
       "confidence": "high",
-      "freshness_note": "live TeachersPension code uses a different band set (32947/46525/57790/79573); 2026-27 TPS bands need separate verification"
+      "freshness_note": "live TeachersPension code uses a different band set (32947/46525/57790/79573); 2026-27 TPS bands need separate verification",
+      "official_source": "https://www.teacherspensions.co.uk/news/employers/2026/03/changes-to-member-contributions.aspx",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "tps_contribution_band_tier5_ceiling",
@@ -24073,7 +24262,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "TeacherPayCalculator: TPS contribution tier 5 salary ceiling (< 98,909 -> 11.3%)",
-      "resolve_note": "STALE. For 2026-27 the 11.6% tier 5 band is GBP 76,573.00 to GBP 104,413.99 (thresholds uplifted by Sep-2025 CPI 3.8%). Ceiling GBP 98,909 is an older year's fi"
+      "resolve_note": "STALE. For 2026-27 the 11.6% tier 5 band is GBP 76,573.00 to GBP 104,413.99 (thresholds uplifted by Sep-2025 CPI 3.8%). Ceiling GBP 98,909 is an older year's fi",
+      "official_value": "104414",
+      "official_source": "https://www.teacherspensions.co.uk/news/employers/2026/03/changes-to-member-contributions.aspx",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "tps_contribution_rate_tier1",
@@ -24112,7 +24305,11 @@
       "note": "TeacherPayCalculator/TeachersPensionCalculator: TPS contribution rate tier 2 (£36,199 to £48,727.99) = 0.089 (2026/27)",
       "fixed": true,
       "fixed_date": "2026-07-08",
-      "resolve_note": "FIXED 2026-07-08: tier 2 is 8.9% (band £36,199–£48,727.99 for 2026-27). Applied in both TPS components."
+      "resolve_note": "FIXED 2026-07-08: tier 2 is 8.9% (band £36,199–£48,727.99 for 2026-27). Applied in both TPS components.",
+      "official_value": "8.9",
+      "official_source": "https://www.teacherspensions.co.uk/news/employers/2026/03/changes-to-member-contributions.aspx",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "tps_contribution_rate_tier3",
@@ -24133,7 +24330,11 @@
       "note": "TeacherPayCalculator/TeachersPensionCalculator: TPS contribution rate tier 3 (£48,728 to £57,776.99) = 0.099 (2026/27)",
       "fixed": true,
       "fixed_date": "2026-07-08",
-      "resolve_note": "FIXED 2026-07-08: tier 3 is 9.9% (band £48,728–£57,776.99 for 2026-27). Applied in both TPS components."
+      "resolve_note": "FIXED 2026-07-08: tier 3 is 9.9% (band £48,728–£57,776.99 for 2026-27). Applied in both TPS components.",
+      "official_value": "9.9",
+      "official_source": "https://www.teacherspensions.co.uk/news/employers/2026/03/changes-to-member-contributions.aspx",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "tps_contribution_rate_tier4",
@@ -24154,7 +24355,11 @@
       "note": "TeacherPayCalculator/TeachersPensionCalculator: TPS contribution rate tier 4 (£57,777 to £76,572.99) = 0.105 (2026/27)",
       "fixed": true,
       "fixed_date": "2026-07-08",
-      "resolve_note": "FIXED 2026-07-08: tier 4 is 10.5% (band £57,777–£76,572.99 for 2026-27). Applied in both TPS components."
+      "resolve_note": "FIXED 2026-07-08: tier 4 is 10.5% (band £57,777–£76,572.99 for 2026-27). Applied in both TPS components.",
+      "official_value": "10.5",
+      "official_source": "https://www.teacherspensions.co.uk/news/employers/2026/03/changes-to-member-contributions.aspx",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "tps_contribution_rate_tier5",
@@ -24175,7 +24380,11 @@
       "note": "TeacherPayCalculator/TeachersPensionCalculator: TPS contribution rate tier 5 (£76,573 to £104,413.99) = 0.116 (2026/27)",
       "fixed": true,
       "fixed_date": "2026-07-08",
-      "resolve_note": "FIXED 2026-07-08: tier 5 is 11.6% (band £76,573–£104,413.99 for 2026-27). Applied in both TPS components."
+      "resolve_note": "FIXED 2026-07-08: tier 5 is 11.6% (band £76,573–£104,413.99 for 2026-27). Applied in both TPS components.",
+      "official_value": "11.6",
+      "official_source": "https://www.teacherspensions.co.uk/news/employers/2026/03/changes-to-member-contributions.aspx",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "tps_contribution_rate_tier6",
@@ -24195,7 +24404,11 @@
       "note": "TeacherPayCalculator/TeachersPensionCalculator: TPS contribution top rate tier 6 (salary £104,414 and above) = 0.12 (2026/27)",
       "fixed": true,
       "fixed_date": "2026-07-08",
-      "resolve_note": "FIXED 2026-07-08: top tier 6 is 12% (£104,414 and above for 2026-27). Applied in both TPS components."
+      "resolve_note": "FIXED 2026-07-08: top tier 6 is 12% (£104,414 and above for 2026-27). Applied in both TPS components.",
+      "official_value": "12",
+      "official_source": "https://www.teacherspensions.co.uk/news/employers/2026/03/changes-to-member-contributions.aspx",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "tps_lump_sum_commutation_ratio",
@@ -24272,7 +24485,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "TeachersPensionCalculator: active-member revaluation = CPI + 1.6%, modelled as 0.032 (REVALUATION); prose says 'revalued annually by CPI + 1.6%'",
-      "resolve_note": "STALE. This is a year-specific figure (CPI + 1.6%). For 1 April 2026 the active revaluation rate is 5.4% (Sep-2025 CPI 3.8% + 1.6%); it was 3.3% on 1 April 2025"
+      "resolve_note": "STALE. This is a year-specific figure (CPI + 1.6%). For 1 April 2026 the active revaluation rate is 5.4% (Sep-2025 CPI 3.8% + 1.6%); it was 3.3% on 1 April 2025",
+      "official_value": "3.2",
+      "official_source": "https://www.teacherspensions.co.uk/",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "trading_allowance",
@@ -26481,7 +26698,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "HMRC Flat Rate Scheme percentage for Waste/recycling (FLAT_RATES)"
+      "note": "HMRC Flat Rate Scheme percentage for Waste/recycling (FLAT_RATES)",
+      "official_value": "10.5",
+      "official_source": "https://www.gov.uk/vat-flat-rate-scheme/how-much-you-pay",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "vat_frs_turnover_limit",
@@ -27752,7 +27973,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "Average UK metered sewerage volumetric rate 2026/27 per Ofwat PR24 (AVG_METERED_SEWERAGE); regulator-set average estimate"
+      "note": "Average UK metered sewerage volumetric rate 2026/27 per Ofwat PR24 (AVG_METERED_SEWERAGE); regulator-set average estimate",
+      "official_value": "2.42",
+      "official_source": "https://www.ofwat.gov.uk/average-bills-2025-26-press-statement/",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "water_metered_water_charge_avg",
@@ -27769,7 +27994,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "Average UK metered water volumetric rate 2026/27 per Ofwat PR24 (AVG_METERED_WATER); regulator-set average estimate"
+      "note": "Average UK metered water volumetric rate 2026/27 per Ofwat PR24 (AVG_METERED_WATER); regulator-set average estimate",
+      "official_value": "2.15",
+      "official_source": "https://www.ofwat.gov.uk/average-bills-2025-26-press-statement/",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "water_standing_charge_sewerage_avg",
@@ -27786,7 +28015,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "Average annual sewerage standing charge (AVG_STANDING_SEWERAGE); Ofwat-regulated average estimate"
+      "note": "Average annual sewerage standing charge (AVG_STANDING_SEWERAGE); Ofwat-regulated average estimate",
+      "official_value": "68",
+      "official_source": "https://www.ofwat.gov.uk/average-bills-2025-26-press-statement/",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "water_standing_charge_water_avg",
@@ -27803,7 +28036,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "Average annual water standing charge (AVG_STANDING_WATER); Ofwat-regulated average estimate"
+      "note": "Average annual water standing charge (AVG_STANDING_WATER); Ofwat-regulated average estimate",
+      "official_value": "55",
+      "official_source": "https://www.ofwat.gov.uk/average-bills-2025-26-press-statement/",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "water_unmetered_combined_bill_avg",
@@ -28147,7 +28384,11 @@
       "source_url": "",
       "status": "uncertain",
       "change_frequency": "",
-      "note": "TaxWorkingCreditsCalculator: 2026/27 Working Tax Credit disability element (WTC_DISABILITY); defined but not used in calc"
+      "note": "TaxWorkingCreditsCalculator: 2026/27 Working Tax Credit disability element (WTC_DISABILITY); defined but not used in calc",
+      "official_value": "3935",
+      "official_source": "https://www.gov.uk/government/publications/rates-and-allowances-tax-credits-child-benefit-and-guardians-allowance/tax-credits-child-benefit-and-guardians-allowance",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "key": "wtc_minimum_hours_legacy",
@@ -28251,7 +28492,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh MDR minimum tax rate rose 1% -> 3% in force 13 Feb 2026 (transitional protection for contracts before that date). NB SDLT MDR was abolished in England/NI on 1 June 2024.",
       "fixed": true,
-      "fixed_date": "2026-08-03"
+      "fixed_date": "2026-08-03",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_higher_band1_rate",
@@ -28270,7 +28515,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh LTT higher residential rate, portion up to £180,000. Effective 11 Dec 2024; separate band table charged from the first pound, no nil-rate band.",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_higher_band2_rate",
@@ -28289,7 +28538,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh LTT higher residential rate, £180,001-£250,000. Effective 11 Dec 2024; separate band table charged from the first pound, no nil-rate band.",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_higher_band3_rate",
@@ -28308,7 +28561,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh LTT higher residential rate, £250,001-£400,000. Effective 11 Dec 2024; separate band table charged from the first pound, no nil-rate band.",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_higher_band4_rate",
@@ -28327,7 +28584,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh LTT higher residential rate, £400,001-£750,000. Effective 11 Dec 2024; separate band table charged from the first pound, no nil-rate band.",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_higher_band5_rate",
@@ -28346,7 +28607,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh LTT higher residential rate, £750,001-£1,500,000. Effective 11 Dec 2024; separate band table charged from the first pound, no nil-rate band.",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_higher_band6_rate",
@@ -28365,7 +28630,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh LTT higher residential rate, over £1,500,000. Effective 11 Dec 2024; separate band table charged from the first pound, no nil-rate band.",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_higher_rates_entry_threshold",
@@ -28384,7 +28653,11 @@
       "change_frequency": "ad hoc",
       "note": "Higher rates apply once the consideration reaches £40,000 and you already own a dwelling.",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_nonres_nil_rate_upper",
@@ -28403,7 +28676,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh LTT non-residential/mixed-use freehold or lease premium, nil-rate upper bound. Effective 22 Dec 2020 (NB gov.wales also shows a superseded £150,000 table).",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_nonres_band2_rate",
@@ -28422,7 +28699,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh LTT non-residential/mixed-use freehold or lease premium, £225,001-£250,000. Effective 22 Dec 2020 (NB gov.wales also shows a superseded £150,000 table).",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_nonres_band3_rate",
@@ -28441,7 +28722,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh LTT non-residential/mixed-use freehold or lease premium, £250,001-£1,000,000. Effective 22 Dec 2020 (NB gov.wales also shows a superseded £150,000 table).",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_nonres_band4_rate",
@@ -28460,7 +28745,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh LTT non-residential/mixed-use freehold or lease premium, over £1,000,000. Effective 22 Dec 2020 (NB gov.wales also shows a superseded £150,000 table).",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_lease_npv_nil_rate_upper",
@@ -28479,7 +28768,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh LTT non-residential lease rent NPV, nil-rate upper bound. Effective 22 Dec 2020.",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_lease_npv_band2_rate",
@@ -28498,7 +28791,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh LTT non-residential lease rent NPV, £225,001-£2,000,000. Effective 22 Dec 2020.",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_lease_npv_band3_rate",
@@ -28517,7 +28814,11 @@
       "change_frequency": "ad hoc",
       "note": "Welsh LTT non-residential lease rent NPV, over £2,000,000. Effective 22 Dec 2020.",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "ltt_relevant_rent_threshold",
@@ -28536,13 +28837,17 @@
       "change_frequency": "ad hoc",
       "note": "Where annual rent reaches this, the 0% band is disapplied for the lease premium. From 4 Feb 2021 (was £9,000).",
       "fixed": true,
-      "fixed_date": "2026-08-04"
+      "fixed_date": "2026-08-04",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
+      "verified_date": "2026-08-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     }
   ],
   "status_summary": {
     "current": 1317,
-    "historical": 7,
-    "uncertain": 74
+    "uncertain": 74,
+    "historical": 7
   },
   "theme_counts": {
     "minimum_wage": 18,
@@ -28568,7 +28873,7 @@
     "sdlt": 42
   },
   "conflicts_flagged": 31,
-  "freshness_verified": "2026-06-16",
+  "freshness_verified": "2026-08-19",
   "tail_verified": "2026-06-28",
   "tail_verify_method": "tier2-tail"
 }
