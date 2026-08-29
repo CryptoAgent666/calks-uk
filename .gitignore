@@ -44,6 +44,7 @@ android/.gradle/
 *.mobileprovision
 
 # Transient backups, OTA bundle zips, and macOS duplicate files
-*.bak-tail
+*.bak
+*.bak-*
 .bundle-*.zip
 *[[:space:]]2.*
