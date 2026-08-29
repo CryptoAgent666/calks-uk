@@ -12,6 +12,8 @@
     "astro": "astro",
     "build:android": "PUBLIC_BUILD_ID=$(date +%Y%m%d%H%M) astro build && npx cap sync android",
     "build:ios": "PUBLIC_IS_IOS_BUILD=1 PUBLIC_BUILD_ID=$(date +%Y%m%d%H%M) astro build && npx cap sync ios",
+    "check:stale": "node scripts/check-stale-values.mjs",
+    "predeploy": "npm run check:stale",
     "deploy": "node scripts/deploy.mjs",
     "postinstall": "patch-package"
   },

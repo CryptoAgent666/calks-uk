@@ -1,0 +1,95 @@
+{
+ "generated": "2026-08-29",
+ "roots": [
+  "src"
+ ],
+ "extensions": [
+  ".ts",
+  ".tsx",
+  ".astro",
+  ".md",
+  ".mdx",
+  ".json"
+ ],
+ "skip": [
+  "updates.ts",
+  ".bak",
+  "node_modules",
+  "regulatory-constants.canonical.json",
+  "stale-values.json",
+  ".next",
+  "dist",
+  "build"
+ ],
+ "entries": [
+  {
+   "was": "3070",
+   "now": "3130",
+   "what": "blind_persons_allowance_prior_year"
+  },
+  {
+   "was": "1902",
+   "now": "2068",
+   "what": "council_tax_band_d_london",
+   "pending_fix": true,
+   "hits": [
+    "src/components/calculators/CouncilTaxCalculator.tsx"
+   ]
+  },
+  {
+   "was": "1635",
+   "now": "1334",
+   "what": "court_hearing_fee_up_to_100000"
+  },
+  {
+   "was": "2180",
+   "now": "1334",
+   "what": "court_hearing_fee_up_to_200000_and_above"
+  },
+  {
+   "was": "1090",
+   "now": "1334",
+   "what": "court_hearing_fee_up_to_50000"
+  },
+  {
+   "was": "4767",
+   "now": "~5047 (0.466 × £10,830 max)",
+   "what": "maintenance_loan_away_home_min"
+  },
+  {
+   "was": "38400",
+   "now": "16000",
+   "what": "right_to_buy_max_discount_cap_london"
+  },
+  {
+   "was": "34290",
+   "now": "36199",
+   "what": "tps_contribution_band_tier1_ceiling"
+  },
+  {
+   "was": "46159",
+   "now": "48728",
+   "what": "tps_contribution_band_tier2_ceiling"
+  },
+  {
+   "was": "54730",
+   "now": "57777",
+   "what": "tps_contribution_band_tier3_ceiling"
+  },
+  {
+   "was": "72535",
+   "now": "76573",
+   "what": "tps_contribution_band_tier4_ceiling"
+  },
+  {
+   "was": "98909",
+   "now": "104414",
+   "what": "tps_contribution_band_tier5_ceiling"
+  },
+  {
+   "was": "4124",
+   "now": "3935",
+   "what": "wtc_disability_element"
+  }
+ ]
+}
