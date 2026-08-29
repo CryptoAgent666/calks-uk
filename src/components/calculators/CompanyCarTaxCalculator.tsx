@@ -1,22 +1,36 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// BiK rates 2026/27 by CO2 (simplified brackets). Pure-EV rate is 4% for 2026/27
-// (2% to 2024/25, 3% in 2025/26, 4% in 2026/27, 5% in 2027/28, then 7%/9%).
-function getBikRate(co2: number, fuelType: string): number {
-  if (fuelType === 'electric') return 4
-  if (fuelType === 'hybrid' && co2 <= 50) return 4 + Math.ceil(co2 / 5)
-  // Petrol/diesel — 4% diesel supplement applies to non-RDE2 compliant diesel only
+// Appropriate percentages for 2026/27, from HMRC 480 Appendix 2. Pure EVs are 4%
+// (3% in 2025/26, 5% in 2027/28). Cars at 1-50 g/km are banded by ZERO-EMISSION
+// MILEAGE, not by CO2. Above 54 g/km the table rises 1pp per 5 g/km but pauses at
+// 21% across 70-79 g/km, then resumes from 22% at 80 g/km and caps at 37%.
+const EV_RANGE_BANDS = [
+  { key: '130+', label: '130 miles or more', rate: 4 },
+  { key: '70-129', label: '70 to 129 miles', rate: 7 },
+  { key: '40-69', label: '40 to 69 miles', rate: 10 },
+  { key: '30-39', label: '30 to 39 miles', rate: 14 },
+  { key: 'under30', label: 'Under 30 miles', rate: 16 },
+]
+
+function getBikRate(co2: number, fuelType: string, evRange: string): number {
+  if (fuelType === 'electric' || co2 === 0) return 4
+  // 4% diesel supplement, non-RDE2 diesel only; the 37% ceiling still applies.
   const base = fuelType === 'diesel-nonrde2' ? 4 : 0
-  if (co2 <= 50) return 5 + base
-  if (co2 <= 54) return 17 + base
-  // Each 5g above 55 adds 1%
-  const extra = Math.floor((co2 - 55) / 5)
-  return Math.min(37, 18 + extra + base)
+  if (co2 <= 50) {
+    const band = EV_RANGE_BANDS.find(b => b.key === evRange) ?? EV_RANGE_BANDS[EV_RANGE_BANDS.length - 1]
+    return Math.min(37, band.rate + base)
+  }
+  if (co2 <= 54) return Math.min(37, 17 + base)
+  if (co2 <= 59) return Math.min(37, 18 + base)
+  if (co2 <= 64) return Math.min(37, 19 + base)
+  if (co2 <= 69) return Math.min(37, 20 + base)
+  if (co2 <= 79) return Math.min(37, 21 + base)
+  return Math.min(37, 22 + Math.floor((co2 - 80) / 5) + base)
 }
 
-function calculate(listPrice: number, co2: number, fuelType: string, taxBand: string) {
-  const bikRate = getBikRate(co2, fuelType)
+function calculate(listPrice: number, co2: number, fuelType: string, taxBand: string, evRange: string) {
+  const bikRate = getBikRate(co2, fuelType, evRange)
   const bikValue = listPrice * (bikRate / 100)
   const taxRate = taxBand === 'higher' ? 0.40 : taxBand === 'additional' ? 0.45 : 0.20
   const annualTax = bikValue * taxRate
@@ -30,10 +44,13 @@ export default function CompanyCarTaxCalculator() {
   const [co2, setCo2] = useState('120')
   const [fuelType, setFuelType] = useState('petrol')
   const [taxBand, setTaxBand] = useState('basic')
+  const [evRange, setEvRange] = useState('40-69')
 
   const lp = parseFloat(listPrice.replace(/,/g, '')) || 0
   const c = parseInt(co2) || 0
-  const result = useMemo(() => calculate(lp, c, fuelType, taxBand), [lp, c, fuelType, taxBand])
+  const result = useMemo(() => calculate(lp, c, fuelType, taxBand, evRange), [lp, c, fuelType, taxBand, evRange])
+  // 1-50 g/km cars are banded by electric range, so ask for it only when it matters.
+  const needsRange = fuelType !== 'electric' && c > 0 && c <= 50
 
   return (
     <div className="space-y-6">
@@ -57,6 +74,14 @@ export default function CompanyCarTaxCalculator() {
             <option value="electric">Electric (0g CO2)</option>
           </select>
         </div>
+        {needsRange && (
+          <div>
+            <label className="block text-sm font-medium mb-2">Electric-only Range</label>
+            <select value={evRange} onChange={(e) => setEvRange(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Electric-only Range">
+              {EV_RANGE_BANDS.map(b => <option key={b.key} value={b.key}>{b.label}</option>)}
+            </select>
+          </div>
+        )}
         <div>
           <label className="block text-sm font-medium mb-2">Your Tax Band</label>
           <select value={taxBand} onChange={(e) => setTaxBand(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Your Tax Band">

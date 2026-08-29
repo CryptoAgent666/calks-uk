@@ -4,7 +4,7 @@ import { formatCurrency } from '@/utils'
 // Average Band D council tax 2026/27 by region (approximate)
 const REGIONS: Record<string, number> = {
   'England Average': 2_392,
-  'London': 1_902,
+  'London': 2_068,
   'South East': 2_151,
   'South West': 2_239,
   'East of England': 2_188,

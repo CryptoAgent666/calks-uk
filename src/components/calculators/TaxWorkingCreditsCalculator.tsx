@@ -6,7 +6,7 @@ import { formatCurrency } from '@/utils'
 const WTC_BASIC = 2_435        // final WTC rate, frozen (scheme closed Apr 2025)
 const WTC_COUPLES = 2_500      // final WTC rate, frozen (scheme closed to new claims Apr 2025)
 const WTC_30HR = 1_015         // final WTC rate, frozen (scheme closed to new claims Apr 2025)
-const WTC_DISABILITY = 4_055   // final WTC rate, frozen (scheme closed Apr 2025)
+const WTC_DISABILITY = 3_935   // final WTC rate, frozen (scheme closed Apr 2025)
 const WTC_CHILDCARE_70 = 0.70 // 70% of childcare costs
 const WTC_CHILDCARE_MAX_1 = 175 * 52 // max weekly for 1 child
 const WTC_CHILDCARE_MAX_2 = 300 * 52
@@ -14,7 +14,7 @@ const WTC_CHILDCARE_MAX_2 = 300 * 52
 const CTC_PER_CHILD = 3_455    // child element per child — final 2024/25 rate, frozen (scheme closed)
 const CTC_FAMILY = 545         // family element — final 2024/25 rate, frozen
 
-const INCOME_THRESHOLD = 7_455 // final 2024/25 threshold, frozen (no uprating after the scheme closed)
+const INCOME_THRESHOLD = 7_955 // final 2024/25 threshold, frozen (no uprating after the scheme closed)
 const TAPER_RATE = 0.41
 
 function calculate(hoursPerWeek: number, isCouple: boolean, children: number, income: number, weeklyChildcare: number) {

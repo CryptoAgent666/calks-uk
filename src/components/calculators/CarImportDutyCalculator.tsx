@@ -4,8 +4,10 @@ import { formatCurrency } from '@/utils'
 function calculate(carValue: number, shippingCost: number, co2: number, fuelType: string, isEU: boolean) {
   const customsValue = carValue + shippingCost
 
-  // Import duty: 0% from EU (Trade and Cooperation Agreement), 6.5% from non-EU
-  const dutyRate = isEU ? 0 : 0.065
+  // Import duty: 0% from EU (Trade and Cooperation Agreement), 10% from non-EU.
+  // 10% is the UK MFN rate for passenger cars (HS 8703). NB motor caravans, a
+  // separate 8703 subheading, are 6.5% — this calculator covers cars.
+  const dutyRate = isEU ? 0 : 0.10
   const importDuty = customsValue * dutyRate
 
   // VAT at 20% on (customs value + duty)
