@@ -1,0 +1,139 @@
+---
+/**
+ * Mobile-web prompt for the native app.
+ *
+ * Shown only to phone/tablet visitors on the WEBSITE, and only for the store
+ * that matches their device: iOS visitors get the App Store, Android visitors
+ * get Google Play. Desktop visitors never see it.
+ *
+ * Deliberately does NOT appear:
+ *   - inside the Capacitor app itself (`__IS_CAPACITOR__`) — the OTA bundle is
+ *     the same build as the website, so without this guard the app would
+ *     advertise itself to its own users;
+ *   - while the cookie banner is still undecided, so two overlays never stack;
+ *   - when the site is already running as an installed PWA;
+ *   - for 60 days after the visitor dismisses it.
+ *
+ * App Store guideline 2.3.10: the Google Play URL is omitted from the iOS
+ * binary entirely (PUBLIC_IS_IOS_BUILD), exactly as the footer badges are.
+ */
+const IOS_URL = 'https://apps.apple.com/gb/app/calks-uk-uk-calculators/id6776149190'
+const ANDROID_URL = 'https://play.google.com/store/apps/details?id=uk.calks.app'
+const isIosBuild = import.meta.env.PUBLIC_IS_IOS_BUILD === '1'
+---
+
+<div
+  id="app-promo"
+  class="fixed bottom-0 inset-x-0 z-[99] hidden print:hidden"
+  role="dialog"
+  aria-label="Get the Calks.uk app"
+  data-ios={IOS_URL}
+  data-android={isIosBuild ? '' : ANDROID_URL}
+>
+  <div class="mx-auto max-w-lg px-3 pb-3" style="padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));">
+    <div class="animate-fade-in-up rounded-2xl border border-border bg-popover p-4 shadow-2xl shadow-black/25">
+      <div class="flex items-start gap-3">
+        <!-- Same mark as the header/footer: crisp at any size, nothing to download. -->
+        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-700 to-blue-900 shadow-lg shadow-blue-600/20">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+        </div>
+        <div class="min-w-0 flex-1 pt-0.5">
+          <p class="text-sm font-semibold leading-tight">Get the Calks.uk app</p>
+          <p id="app-promo-sub" class="text-xs text-muted-foreground mt-1 leading-snug">
+            Every calculator, working offline.
+          </p>
+        </div>
+        <button
+          id="app-promo-close"
+          type="button"
+          aria-label="Dismiss app suggestion"
+          class="shrink-0 -mt-1 -mr-2 h-11 w-11 inline-flex items-center justify-center rounded-lg text-muted-foreground hover:bg-accent hover:text-foreground transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <a
+        id="app-promo-cta"
+        href={IOS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-3 w-full rounded-lg bg-primary px-4 min-h-[44px] inline-flex items-center justify-center text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+      >
+        Get the app
+      </a>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    // Never advertise the app to someone already inside it.
+    if (window.__IS_CAPACITOR__) return;
+
+    var el = document.getElementById('app-promo');
+    if (!el) return;
+
+    var DISMISS_KEY = 'app-promo-dismissed-until';
+    var DISMISS_DAYS = 60;
+
+    try {
+      if (Number(localStorage.getItem(DISMISS_KEY) || 0) > Date.now()) return;
+    } catch (_) {
+      return; // storage blocked — stay quiet rather than nag on every page
+    }
+
+    // Already installed as a PWA — the app suggestion is redundant.
+    try {
+      if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) return;
+    } catch (_) {}
+
+    var ua = navigator.userAgent || '';
+    // Android first: the iPadOS fallback below keys off a Mac platform string,
+    // which a device-emulating desktop browser still reports, and that would
+    // otherwise send an Android visitor to the App Store.
+    var isAndroid = /Android/.test(ua) && !/Windows Phone/.test(ua);
+    // iPadOS 13+ reports a Mac UA, so fall back to the touch-point check.
+    var isIOS = !isAndroid && (/iPad|iPhone|iPod/.test(ua) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
+    if (!isIOS && !isAndroid) return;
+
+    var url = isIOS ? el.dataset.ios : el.dataset.android;
+    if (!url) return; // Play URL is stripped from the iOS binary (guideline 2.3.10)
+
+    var cta = document.getElementById('app-promo-cta');
+    var sub = document.getElementById('app-promo-sub');
+    cta.href = url;
+    cta.textContent = isIOS ? 'Free on the App Store' : 'Free on Google Play';
+    cta.setAttribute('aria-label', isIOS ? 'Get Calks.uk on the App Store' : 'Get Calks.uk on Google Play');
+    sub.textContent = isIOS
+      ? 'Every calculator, working offline on your iPhone.'
+      : 'Every calculator, working offline on your phone.';
+
+    function dismiss() {
+      try { localStorage.setItem(DISMISS_KEY, String(Date.now() + DISMISS_DAYS * 864e5)); } catch (_) {}
+      el.classList.add('hidden');
+    }
+
+    function show() {
+      el.classList.remove('hidden');
+      document.getElementById('app-promo-close').addEventListener('click', dismiss);
+      // Tapping through to the store counts as answered; don't ask again soon.
+      cta.addEventListener('click', dismiss);
+    }
+
+    // One overlay at a time: if the cookie banner still needs an answer, wait
+    // for it rather than covering it.
+    var consent = null;
+    try { consent = localStorage.getItem('cookie-consent'); } catch (_) {}
+    if (!consent && document.getElementById('cookie-banner')) {
+      ['cookie-accept', 'cookie-reject'].forEach(function (id) {
+        var b = document.getElementById(id);
+        if (b) b.addEventListener('click', function () { setTimeout(show, 800); });
+      });
+      return;
+    }
+
+    // Let the page settle first so this never competes with LCP.
+    setTimeout(show, 1500);
+  })();
+</script>
