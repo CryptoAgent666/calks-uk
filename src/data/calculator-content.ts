@@ -2296,8 +2296,6 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Without interest (simple division): £15,000 / 36 = £417/month, interest saves £24/month'
       ]
     },
-    sourceUrl: 'https://www.gov.uk/government/publications/state-of-the-nation-report',
-    sourceName: 'GOV.UK',
     lastUpdated: 'April 2026',
   },
   'number-to-words-calculator': {
@@ -2363,8 +2361,6 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Foot length: approx. 27.5 cm',
       ],
     },
-    sourceUrl: 'https://www.nhs.uk/live-well/healthy-body/choosing-shoes-for-your-child/',
-    sourceName: 'NHS. Choosing the right shoes',
     lastUpdated: 'April 2026',
   },
   'ratio-calculator': {
@@ -5512,8 +5508,6 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Waist: approx. 73 cm (29 in)',
       ],
     },
-    sourceUrl: 'https://www.gov.uk/government/publications/clothing-and-textiles-labelling-requirements',
-    sourceName: 'GOV.UK — Clothing labelling requirements',
     lastUpdated: 'April 2026',
   },
   'volume-converter': {
