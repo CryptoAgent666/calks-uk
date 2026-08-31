@@ -2834,8 +2834,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Effective rate on total rental income: 23.1%',
       ],
     },
-    sourceUrl: 'https://www.gov.uk/guidance/changes-to-tax-relief-for-residential-landlords',
-    sourceName: 'GOV.UK, Tax relief for residential landlords',
+    sourceUrl: 'https://www.gov.uk/guidance/changes-to-tax-relief-for-residential-landlords-how-its-worked-out-including-case-studies',
+    sourceName: 'GOV.UK — Tax relief for residential landlords: how it is worked out',
     lastUpdated: 'April 2026',
   },
   'sick-pay-calculator': {
@@ -3741,8 +3741,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Cash ROI on £55,000 invested: (£1,570 − £3,120 + £1,200) ÷ £55,000 = −0.64%',
       ],
     },
-    sourceUrl: 'https://www.gov.uk/guidance/changes-to-tax-relief-for-residential-landlords',
-    sourceName: 'GOV.UK — Tax relief for residential landlords',
+    sourceUrl: 'https://www.gov.uk/guidance/changes-to-tax-relief-for-residential-landlords-how-its-worked-out-including-case-studies',
+    sourceName: 'GOV.UK — Tax relief for residential landlords: how it is worked out',
     lastUpdated: 'April 2026',
   },
   'ltv-calculator': {
@@ -8230,8 +8230,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Annual NI saving lost: £750/year per employee',
       ],
     },
-    sourceUrl: 'https://www.gov.uk/guidance/salary-sacrifice-for-employers',
-    sourceName: 'HMRC. Salary sacrifice for employers',
+    sourceUrl: 'https://www.gov.uk/government/publications/salary-sacrifice-reform-for-pension-contributions-effective-from-6-april-2029/salary-sacrifice-reform-for-pension-contributions',
+    sourceName: 'GOV.UK — Salary sacrifice reform for pension contributions from 6 April 2029',
     lastUpdated: 'April 2026',
   },
 
@@ -8279,8 +8279,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'After approx 14 weeks, assets fall to £23,250 and local authority funding begins',
       ],
     },
-    sourceUrl: 'https://www.gov.uk/care-homes/paying-for-care-in-a-care-home',
-    sourceName: 'GOV.UK, Paying for care in a care home',
+    sourceUrl: 'https://www.gov.uk/government/publications/social-care-charging-for-local-authorities-2026-to-2027',
+    sourceName: 'GOV.UK — Social care: charging for care and support 2026 to 2027',
     lastUpdated: 'April 2026',
   },
   'winter-fuel-payment-calculator': {
