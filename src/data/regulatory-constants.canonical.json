@@ -18344,7 +18344,7 @@
     },
     {
       "key": "premium_bonds_odds_per_bond_per_month",
-      "value": "1 in 22,000",
+      "value": "1 in 21,000",
       "unit": "odds",
       "law": "NS&I Premium Bonds",
       "theme": "other",
@@ -18357,16 +18357,16 @@
       "source_url": "https://www.nsandi.com/products/premium-bonds",
       "status": "current",
       "change_frequency": "",
-      "note": "PremiumBondsCalculator: oddsPerBondPerMonth = 1/21000 (official NS&I odds of any prize per £1 bond per month); also in prose",
-      "official_value": "22,000 to 1 (from July 2026 draw; 23,000 to 1 until June 2026)",
+      "note": "PremiumBondsCalculator: oddsPerBondPerMonth = 1/21000 and the £25 prize tier odds.",
+      "official_value": "1 in 21,000",
       "confidence": "high",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). Stored 1 in 21,000 is wrong: NS&I odds are 23,000 to 1 until the June 2026 draw and 22,000 to 1 from July 2026 (21,000 -> 22,000).",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "Shortened from 22,000 to 1 for the September 2026 draw. The ledger row said 22,000 while its own note quoted 1/21000 — the row contradicted itself.",
+      "verified_date": "2026-08-31",
+      "verify_method": "NS&I product page + press release PR260818"
     },
     {
       "key": "premium_bonds_prize_fund_rate",
-      "value": "4.0",
+      "value": "4.35",
       "unit": "%",
       "law": "NS&I Premium Bonds",
       "theme": "other",
@@ -18376,18 +18376,23 @@
       "used_by": [
         "src/components/calculators/PremiumBondsCalculator.tsx"
       ],
-      "source_url": "",
+      "source_url": "https://www.nsandi.com/products/premium-bonds",
       "status": "current",
       "change_frequency": "",
-      "note": "PremiumBondsCalculator: PRIZE_RATE = 0.04, annual prize fund rate (tax-free); also in prose 'Prize fund rate: 4%'",
+      "note": "PremiumBondsCalculator: PRIZE_RATE = 0.0435, annual prize fund rate (tax-free), September 2026 draw onward.",
       "fixed": true,
       "fixed_date": "2026-06-16",
       "volatile": true,
-      "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)"
+      "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)",
+      "official_value": "4.35",
+      "confidence": "high",
+      "verified_date": "2026-08-31",
+      "verify_method": "NS&I product page + press release PR260818",
+      "freshness_note": "Corrected 2026-08-29..31: NS&I raised the prize fund rate to 4.35% and shortened the odds to 21,000 to 1 for the SEPTEMBER 2026 draw (PR260818, 18 Aug 2026), up from 3.80% / 22,000 in July. Found by diffing duplicate ledger rows against each other and then against the live component — the technique calk-uz-2c described. Before the fix four surfaces disagreed: code 3.80%, ledger 4.0, a duplicate ledger row 4.15, and prose 4.00%."
     },
     {
       "key": "premium_bonds_prize_rate",
-      "value": "4.15",
+      "value": "4.35",
       "unit": "%",
       "law": "NS&I Premium Bonds",
       "theme": "other",
@@ -18397,14 +18402,19 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "",
-      "status": "current",
+      "source_url": "https://www.nsandi.com/products/premium-bonds",
+      "status": "superseded",
       "change_frequency": "",
       "note": "Premium Bonds prize rate 4.15% expected (2026) (premium-bonds-calculator)",
       "fixed": true,
       "fixed_date": "2026-06-16",
       "volatile": true,
-      "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)"
+      "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)",
+      "official_value": "4.35",
+      "confidence": "high",
+      "verified_date": "2026-08-31",
+      "verify_method": "NS&I product page + press release PR260818",
+      "freshness_note": "Duplicate row for the same fact as premium_bonds_prize_fund_rate, and the two had silently diverged (4.15 vs 4.0, neither correct). Retired in favour of that row. A duplicate that disagrees with its twin is free evidence that at least one is wrong — no source lookup needed."
     },
     {
       "key": "probate_application_fee",
@@ -29537,12 +29547,12 @@
     }
   ],
   "status_summary": {
-    "current": 1353,
+    "current": 1352,
     "uncertain": 52,
     "retired": 5,
     "superseded_by_component": 1,
     "historical": 5,
-    "superseded": 10
+    "superseded": 11
   },
   "theme_counts": {
     "minimum_wage": 18,
