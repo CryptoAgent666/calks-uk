@@ -12,10 +12,12 @@ export interface CalculatorContent {
   howItWorks: string[]
   /** A worked example with specific numbers */
   example: { title: string; steps: string[] }
-  /** Official source URL */
-  sourceUrl: string
+  /** Official source URL. Optional: omit BOTH this and sourceName when no genuine
+   *  authority backs the figures — a paint-coverage estimate has no regulator to cite,
+   *  and a decorative link is worse than none. The page hides the Source line when absent. */
+  sourceUrl?: string
   /** Source display name */
-  sourceName: string
+  sourceName?: string
   /** Last verified date */
   lastUpdated: string
 }
@@ -2438,8 +2440,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Meets typical requirements: 112 points (yes), 128 points (yes), 144 points (no)',
       ],
     },
-    sourceUrl: 'https://www.ucas.com/undergraduate/what-and-where-to-study/entry-requirements/ucas-tariff-points',
-    sourceName: 'UCAS \u2014 UCAS tariff points',
+    sourceUrl: 'https://www.ucas.com/undergraduate/what-and-where-study/entry-requirements/ucas-tariff-points',
+    sourceName: 'UCAS — Tariff points',
     lastUpdated: 'April 2026',
   },
   'speed-fine-calculator': {
@@ -3591,8 +3593,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Total growing capacity: 14 large plants at ground level plus propagation space for 500+ seedlings on staging'
       ]
     },
-    sourceUrl: 'https://www.rhs.org.uk/garden-features/greenhouses',
-    sourceName: 'RHS — Greenhouse Growing Guide',
+    sourceUrl: 'https://www.rhs.org.uk/garden-features/choosing-greenhouses',
+    sourceName: 'RHS — Greenhouses: choosing the right one',
     lastUpdated: 'April 2026',
   },
   'pond-volume-calculator': {
@@ -3717,8 +3719,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Total metered bill: £472/year',
       ],
     },
-    sourceUrl: 'https://www.gov.uk/check-your-water-bill',
-    sourceName: 'GOV.UK, Check your water bill',
+    sourceUrl: 'https://www.ofwat.gov.uk/households/your-water-bill/',
+    sourceName: 'Ofwat — Your water bill',
     lastUpdated: 'April 2026',
   },
   'buy-to-let-yield-calculator': {
@@ -5489,8 +5491,6 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Litres needed: 56.6 \u00F7 5 = 11.3 L \u2014 buy 2 \u00D7 5 L + 1 \u00D7 2.5 L or 1 \u00D7 9 L + 1 \u00D7 5 L',
       ],
     },
-    sourceUrl: 'https://www.rhs.org.uk/garden-features/fences',
-    sourceName: 'RHS \u2014 Fences',
     lastUpdated: 'April 2026',
   },
   'clothing-size-converter': {
@@ -8056,8 +8056,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'After 3 years: 51% of original value retained; total loss £14,640',
       ],
     },
-    sourceUrl: 'https://www.gov.uk/buying-a-car',
-    sourceName: 'GOV.UK, Buying a car',
+    sourceUrl: 'https://www.gov.uk/buy-a-vehicle',
+    sourceName: 'GOV.UK — Buying a vehicle',
     lastUpdated: 'April 2026',
   },
 

@@ -86,7 +86,7 @@ const schemas = [
             )}
           </h1>
           <p class="mt-2 text-muted-foreground">{calc.description}</p>
-          {content && (
+          {content?.sourceUrl && content?.sourceName && (
             <p class="mt-1.5 text-xs text-muted-foreground/70">
               Source: <a href={content.sourceUrl} target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">{content.sourceName}</a>
             </p>
@@ -116,7 +116,7 @@ const schemas = [
         )}
 
         <!-- How It Works Section -->
-        {content && (
+        {content?.sourceUrl && content?.sourceName && (
           <section class="rounded-2xl border border-border bg-card p-6 shadow-sm print:hidden">
             <h2 class="text-xl font-semibold mb-4">How It Works</h2>
             <div class="space-y-3">
