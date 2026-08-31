@@ -440,8 +440,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Stress-tested at 7.5%: monthly payment £1,789 on £225,000',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/mortgages',
-    sourceName: 'FCA, Mortgages guidance',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/homes/buying-a-home',
+    sourceName: 'MoneyHelper — Buying a home',
     lastUpdated: 'April 2026',
   },
 
@@ -934,7 +934,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Net bonus received: £5,000 − £1,650 = £3,350',
       ],
     },
-    sourceUrl: 'https://www.gov.uk/tax-on-bonus',
+    sourceUrl: 'https://www.gov.uk/expenses-and-benefits-bonuses',
     sourceName: 'GOV.UK, Tax on bonuses',
     lastUpdated: 'April 2026',
   },
@@ -962,8 +962,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Check: £200 × 12 = £2,400/year, within 10% of £200,000',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/mortgages-overview',
-    sourceName: 'FCA. Mortgages overview',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/homes/buying-a-home',
+    sourceName: 'MoneyHelper — Buying a home',
     lastUpdated: 'April 2026',
   },
   'rental-yield-calculator': {
@@ -1114,8 +1114,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Total interest paid: £1,852.40',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/credit-loans',
-    sourceName: 'FCA; Credit and loans',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/everyday-money/credit-and-purchases',
+    sourceName: 'MoneyHelper — Credit and purchases',
     lastUpdated: 'April 2026',
   },
   'credit-card-repayment-calculator': {
@@ -1139,8 +1139,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'With fixed £150/month: 3 years 3 months to clear, total interest: £1,356 (saving £4,535)'
       ]
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/credit-cards',
-    sourceName: 'FCA — Credit Cards Consumer Information',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/everyday-money/credit-and-purchases',
+    sourceName: 'MoneyHelper — Credit and purchases',
     lastUpdated: 'April 2026',
   },
   'sole-trader-tax-calculator': {
@@ -2186,8 +2186,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Annual cost if balance remains at £1,000: approx. £399',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/overdrafts',
-    sourceName: 'FCA; Overdrafts',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/everyday-money/banking',
+    sourceName: 'MoneyHelper — Banking',
     lastUpdated: 'April 2026',
   },
   'debt-free-calculator': {
@@ -2239,8 +2239,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Loan is cheapest overall total cost',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/car-finance',
-    sourceName: 'FCA, Car finance',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/everyday-money/credit-and-purchases',
+    sourceName: 'MoneyHelper — Credit and purchases',
     lastUpdated: 'April 2026',
   },
   'heat-pump-calculator': {
@@ -3089,8 +3089,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Remaining equity (20 years, assuming 2% house price growth): £520,700 − £256,600 = £264,100',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/equity-release',
-    sourceName: 'FCA; Equity release',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/homes/buying-a-home',
+    sourceName: 'MoneyHelper — Buying a home',
     lastUpdated: 'April 2026',
   },
   'moving-cost-calculator': {
@@ -3768,8 +3768,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Extra deposit for 75% tier: £33,750',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/mortgages-overview',
-    sourceName: 'FCA, Mortgages overview',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/homes/buying-a-home',
+    sourceName: 'MoneyHelper — Buying a home',
     lastUpdated: 'April 2026',
   },
   'stamp-duty-additional-property-calculator': {
@@ -3817,8 +3817,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Break-even: £1,500 ÷ £122 = 12.3 months, saving £1,422 over 2-year fix',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/mortgages-overview',
-    sourceName: 'FCA, Mortgages overview',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/homes/buying-a-home',
+    sourceName: 'MoneyHelper — Buying a home',
     lastUpdated: 'April 2026',
   },
   'debt-to-income-calculator': {
@@ -3865,8 +3865,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'True APR (calculated): approx. 9.4%. Nearly double the flat rate',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/understanding-interest-rates',
-    sourceName: 'FCA; Understanding interest rates',
+    sourceUrl: 'https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate',
+    sourceName: 'Bank of England — Bank Rate',
     lastUpdated: 'April 2026',
   },
   'bnpl-calculator': {
@@ -4249,8 +4249,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Monthly cost: £29-£42',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/pet-insurance',
-    sourceName: 'FCA; Pet insurance',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/everyday-money/insurance',
+    sourceName: 'MoneyHelper — Insurance',
     lastUpdated: 'April 2026',
   },
   'student-maintenance-loan-calculator': {
@@ -4425,8 +4425,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Leasing costs £4,180 more over 3 years (but includes maintenance)',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/car-finance',
-    sourceName: 'FCA, Car finance guidance',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/everyday-money/credit-and-purchases',
+    sourceName: 'MoneyHelper — Credit and purchases',
     lastUpdated: 'April 2026',
   },
   'sole-trader-vs-ltd-calculator': {
@@ -5343,7 +5343,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Stocking density: 94.5 LU / 65 hectares = 1.45 LU/ha (within typical grassland range)'
       ]
     },
-    sourceUrl: 'https://www.gov.uk/guidance/rural-payments-service',
+    sourceUrl: 'https://www.gov.uk/government/collections/rural-payments-and-grants',
     sourceName: 'Defra — Rural Payments and Stocking Guidance',
     lastUpdated: 'April 2026',
   },
@@ -5584,8 +5584,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Monthly (with interest): ~£25/month',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/car-insurance',
-    sourceName: 'FCA, Car insurance',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/everyday-money/insurance',
+    sourceName: 'MoneyHelper — Insurance',
     lastUpdated: 'April 2026',
   },
   'home-insurance-calculator': {
@@ -5957,8 +5957,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Warning: below 145% threshold, some lenders may decline',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/mortgages-overview',
-    sourceName: 'FCA, Mortgages overview',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/homes/buying-a-home',
+    sourceName: 'MoneyHelper — Buying a home',
     lastUpdated: 'April 2026',
   },
   'house-price-sqft-calculator': {
@@ -6700,8 +6700,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Term reduction: approx. 4 years 6 months on a 25-year term',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/mortgages-overview',
-    sourceName: 'FCA. Mortgages overview',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/homes/buying-a-home',
+    sourceName: 'MoneyHelper — Buying a home',
     lastUpdated: 'April 2026',
   },
   'ground-rent-calculator': {
@@ -8254,8 +8254,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Early repayment worthwhile here, always verify your lender\'s exact ERC schedule',
       ],
     },
-    sourceUrl: 'https://www.fca.org.uk/consumers/mortgages',
-    sourceName: 'FCA, Mortgage consumer information',
+    sourceUrl: 'https://www.moneyhelper.org.uk/en/homes/buying-a-home',
+    sourceName: 'MoneyHelper — Buying a home',
     lastUpdated: 'April 2026',
   },
 
