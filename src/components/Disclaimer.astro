@@ -1,17 +1,55 @@
 ---
 interface Props {
-  source?: string
+  category?: string
 }
 
-const { source = 'HMRC and GOV.UK' } = Astro.props
+const { category = '' } = Astro.props
+
+// Where the figures behind each category actually come from. Categories with
+// no government rates (tools, math) get no sourcing sentence at all.
+const SOURCE_BY_CATEGORY: Record<string, string> = {
+  tax: 'HMRC and GOV.UK',
+  pay: 'HMRC and GOV.UK',
+  pension: 'HMRC, GOV.UK and The Pensions Regulator',
+  business: 'HMRC and GOV.UK',
+  benefits: 'GOV.UK and the DWP',
+  mortgage: "lenders' published rates and FCA guidance",
+  loans: "lenders' published rates and FCA guidance",
+  investment: 'HMRC limits and FCA guidance',
+  insurance: 'ABI and FCA guidance',
+  auto: 'DVLA and GOV.UK',
+  energy: 'Ofgem and Ofwat',
+  education: 'Student Finance England, SAAS and GOV.UK',
+  immigration: 'GOV.UK and UKVI',
+  legal: 'GOV.UK and HM Courts & Tribunals Service',
+  farming: 'Defra and GOV.UK',
+  health: 'NHS guidance',
+  building: 'manufacturer coverage data and UK building regulations',
+  gardening: 'RHS guidance and manufacturer coverage data',
+}
+
+const TAX_YEAR_CATEGORIES = new Set(['tax', 'pay', 'pension', 'business', 'benefits', 'investment', 'education'])
+
+const ADVICE_BY_CATEGORY: Record<string, string> = {
+  health: 'It is not medical advice: talk to your GP or a registered dietitian before acting on the numbers.',
+  building: 'Confirm quantities with your supplier before ordering, and use a qualified tradesperson for structural work.',
+  gardening: 'Confirm quantities with your supplier before ordering.',
+  tools: 'Double-check any result you rely on.',
+  math: 'Double-check any result you rely on.',
+}
+
+const source = SOURCE_BY_CATEGORY[category]
+const period = TAX_YEAR_CATEGORIES.has(category) ? 'the 2026/27 tax year' : '2026'
+const advice =
+  ADVICE_BY_CATEGORY[category] ??
+  'It is not financial or tax advice: check anything you rely on against the official source or a qualified adviser.'
 ---
 
 <div class="mt-8 p-4 rounded-xl bg-muted/50 border border-border text-sm text-muted-foreground">
   <p class="font-medium text-foreground mb-1">Disclaimer</p>
   <p>
-    This calculator is provided for informational purposes only and should not be considered as financial or tax advice.
-    All calculations are performed locally in your browser — no personal data is collected or sent to our servers.
-    Rates and thresholds are sourced from {source} and are updated for the current tax year.
-    Always verify results with HMRC or consult a qualified professional before making financial decisions.
+    This calculator is for guidance only. {advice}
+    {source && ` Rates and figures come from ${source} and are reviewed for ${period}.`}
+    Everything is calculated in your browser; nothing you enter is sent to our servers.
   </p>
 </div>

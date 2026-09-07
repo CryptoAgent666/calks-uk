@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro'
 import { CATEGORIES, CATEGORY_IDS } from '@/data/categories'
 import { getCalculatorsByCategory } from '@/data/calculators'
+import { CATEGORY_INTROS } from '@/data/category-intros'
 import { getCollectionPageSchema, getBreadcrumbSchema, getItemListSchema } from '@/utils/seo'
 import type { GetStaticPaths } from 'astro'
 
@@ -80,8 +81,10 @@ const schemas = [
       </div>
     </div>
 
-    <!-- Category intro text (visible content for SEO / thin-content fix) -->
-    <p class="mb-8 text-muted-foreground max-w-3xl leading-relaxed">{metaDesc}</p>
+    <!-- Category intro text -->
+    <div class="mb-8 max-w-3xl space-y-3 text-muted-foreground leading-relaxed">
+      {(CATEGORY_INTROS[id as string] ?? [metaDesc]).map((para) => <p>{para}</p>)}
+    </div>
 
     <!-- Calculator Grid -->
     {calculators.length > 0 ? (

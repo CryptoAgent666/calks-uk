@@ -105,7 +105,7 @@ const schemas = [
         </div>
 
         <!-- Disclaimer -->
-        <Disclaimer />
+        <Disclaimer category={calc.category} />
 
         <!-- Rate Table (citation-worthy structured data for LLMs) -->
         {content?.rateTable && (
@@ -116,7 +116,7 @@ const schemas = [
         )}
 
         <!-- How It Works Section -->
-        {content?.sourceUrl && content?.sourceName && (
+        {(content?.howItWorks?.length ?? 0) > 0 && (
           <section class="rounded-2xl border border-border bg-card p-6 shadow-sm print:hidden">
             <h2 class="text-xl font-semibold mb-4">How It Works</h2>
             <div class="space-y-3">
@@ -126,21 +126,25 @@ const schemas = [
             </div>
 
             <!-- Worked Example -->
-            <div class="mt-5 rounded-xl bg-muted/50 border border-border p-4">
-              <h3 class="text-sm font-semibold mb-2">{content.example.title}</h3>
-              <ol class="space-y-1">
-                {content.example.steps.map((step) => (
-                  <li class="text-sm text-muted-foreground flex items-start gap-2">
-                    <span class="mt-1.5 h-1 w-1 rounded-full bg-primary shrink-0"></span>
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
+            {content.example && (
+              <div class="mt-5 rounded-xl bg-muted/50 border border-border p-4">
+                <h3 class="text-sm font-semibold mb-2">{content.example.title}</h3>
+                <ol class="space-y-1">
+                  {content.example.steps.map((step) => (
+                    <li class="text-sm text-muted-foreground flex items-start gap-2">
+                      <span class="mt-1.5 h-1 w-1 rounded-full bg-primary shrink-0"></span>
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
 
-            <p class="mt-4 text-xs text-muted-foreground/70">
-              Source: <a href={content.sourceUrl} target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">{content.sourceName}</a>
-            </p>
+            {content.sourceUrl && content.sourceName && (
+              <p class="mt-4 text-xs text-muted-foreground/70">
+                Source: <a href={content.sourceUrl} target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">{content.sourceName}</a>
+              </p>
+            )}
           </section>
         )}
 

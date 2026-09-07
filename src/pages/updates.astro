@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-08-19'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-09-08'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -24,6 +24,51 @@ const schemas = [
     <p class="text-sm text-muted-foreground mb-8">Rate changes, new calculators and site improvements</p>
 
     <div class="space-y-8">
+      <!-- September 2026 — explainer rewrite, category intros, disclaimers -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            September 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Every explainer rewritten as proper prose, and disclaimers that name the real source</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">The &ldquo;How It Works&rdquo; section on 339 calculators has been rewritten</strong> from note-style fragments into full explanatory text. The maths behind each tool is unchanged; the figures were kept, repeated statements were merged, and a handful of internal contradictions between the opening paragraphs and the notes beneath them were resolved in favour of the verified figure.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">FAQs now ask real questions about each calculator.</strong> Generic filler such as &ldquo;Is this based on 2026/27 rates?&rdquo; and headings posing as questions have been replaced with the questions people actually search for, answered from the page&rsquo;s own figures.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Disclaimers name the source behind each category.</strong> A gardening or health calculator no longer claims its figures come from HMRC; each page now cites the body that actually publishes them (Ofgem and Ofwat for energy, the NHS for health, the RHS and manufacturer coverage data for gardening, and so on).</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Category pages have a proper introduction</strong> explaining what the group of tools covers and which calculator answers which question.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Corrected: five worked examples were still using last year&rsquo;s rates.</strong> The <a href="/calculator/state-pension-calculator/" class="text-primary hover:underline">State Pension</a> example divided the current £241.30 a week by 35 years but printed the old answer, £176.96 instead of <strong class="text-foreground">£193.04</strong>. <a href="/calculator/sick-pay-calculator/" class="text-primary hover:underline">Statutory Sick Pay</a> showed £23.35 a day rather than <strong class="text-foreground">£24.65</strong>, and still deducted three waiting days that were abolished on 6 April 2026. The <a href="/calculator/high-income-child-benefit-calculator/" class="text-primary hover:underline">High Income Child Benefit Charge</a> added £27.05 and £17.90 to £43.30 instead of <strong class="text-foreground">£44.95</strong>. <a href="/calculator/shared-parental-pay-calculator/" class="text-primary hover:underline">Shared Parental Pay</a> multiplied by an old weekly rate, and the <a href="/calculator/congestion-charge-calculator/" class="text-primary hover:underline">Congestion Charge</a> example still ran on £15 a day rather than the <strong class="text-foreground">£18</strong> charged since 2 January 2026. The calculators themselves were right throughout; only the illustrations were stale.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Corrected: Capital Gains Tax rates in prose.</strong> Three pages still described the pre-Budget 10% and 20% rates as current. Since 30 October 2024 every asset class is taxed at <strong class="text-foreground">18% or 24%</strong>, which is what the calculators have always applied. <a href="/calculator/pension-credit-calculator/" class="text-primary hover:underline">Pension Credit</a> also quoted last year&rsquo;s guarantee of £218.15 a week; it is <strong class="text-foreground">£238.00</strong> for a single person and £363.25 for a couple.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Removed: text that belonged on another page.</strong> The <a href="/calculator/stock-unit-calculator/" class="text-primary hover:underline">livestock unit calculator</a> carried five paragraphs explaining share options and EMI schemes, and the <a href="/calculator/employers-liability-calculator/" class="text-primary hover:underline">employers&rsquo; liability</a> page had four paragraphs about Carer&rsquo;s Allowance. Both were pasted in by mistake and are gone.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Fixed:</strong> the <a href="/calculator/fence-paint-calculator/" class="text-primary hover:underline">fence paint</a>, <a href="/calculator/shoe-size-converter/" class="text-primary hover:underline">shoe size</a>, <a href="/calculator/clothing-size-converter/" class="text-primary hover:underline">clothing size</a> and <a href="/calculator/savings-goal-calculator/" class="text-primary hover:underline">savings goal</a> pages lost their explanatory text and worked example on 1 September, when their outdated source links were removed. The text is back.</span>
+          </li>
+        </ul>
+      </article>
+
       <!-- August 2026 — Blind Person's Allowance + owner-manager comparisons -->
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>

@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro'
 import { CATEGORIES, CATEGORY_IDS } from '@/data/categories'
 import { CALCULATORS } from '@/data/calculators'
+import { RATES_VERIFIED } from '@/data/site'
 import { getOrganizationSchema, getWebSiteSchema, getWebPageSchema } from '@/utils/seo'
 import HomeSearch from '@/components/HomeSearch'
 import RecentsRow from '@/components/RecentsRow'
@@ -110,6 +111,38 @@ const schemas = [
             </a>
           )
         })}
+      </div>
+    </div>
+  </section>
+
+  <!-- What this site is, and how the numbers are kept current -->
+  <section class="pb-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-4 text-muted-foreground leading-relaxed">
+        <h2 class="text-2xl font-bold text-foreground">About Calks.uk</h2>
+        <p>
+          Calks.uk is a set of {CALCULATORS.length} calculators for money questions that come up in the UK,
+          built and maintained by <a href="/about/" class="text-primary hover:underline">Konstantin Iakovlev</a>.
+          Every tool runs entirely in your browser. Nothing you type is sent to a server, there is no sign-up,
+          and there is no limit on how often you use one.
+        </p>
+        <p>
+          The figures behind each calculator come from the body that publishes them: HMRC and GOV.UK for tax,
+          National Insurance and statutory pay, the DWP for benefits, Ofgem and Ofwat for energy and water,
+          the DVLA for vehicle tax, and Student Finance England and SAAS for student loans. A calculator names the
+          official source behind its figures wherever there is one to name, and the tools that rely on
+          government-set rates carry the date those rates were last checked, most recently {RATES_VERIFIED}.
+          Where the rules differ across the UK, Scottish income tax bands and the Welsh and Scottish property
+          taxes are handled separately rather than approximated from the England figures.
+        </p>
+        <p>
+          Rates change, and when they do the calculator, the worked example and the surrounding explanation are
+          corrected together. Corrections are logged on the <a href="/updates/" class="text-primary hover:underline">updates page</a>,
+          including the ones where we got something wrong, and the
+          <a href="/methodology/" class="text-primary hover:underline">methodology page</a> sets out how each
+          tool is built and checked. If a result looks wrong to you, please
+          <a href="/contact/" class="text-primary hover:underline">tell us</a>.
+        </p>
       </div>
     </div>
   </section>
