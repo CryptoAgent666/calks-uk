@@ -11924,8 +11924,8 @@
       "note": "LandTransactionTaxCalculator: LTT Wales 2025 band - 0% up to £225,000 (nil-rate band upper limit)",
       "official_value": "225000",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
@@ -11946,8 +11946,8 @@
       "note": "LandTransactionTaxCalculator: LTT Wales rate 0.06 for £225k-£400k band",
       "official_value": "6",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
@@ -11968,8 +11968,8 @@
       "note": "LandTransactionTaxCalculator: LTT Wales 2025 - 6% band from £225,000 to £400,000",
       "official_value": "400000",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
@@ -11990,8 +11990,8 @@
       "note": "LandTransactionTaxCalculator: LTT Wales rate 0.075 for £400k-£750k band",
       "official_value": "7.5",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
@@ -12012,8 +12012,8 @@
       "note": "LandTransactionTaxCalculator: LTT Wales 2025 - 7.5% band from £400,000 to £750,000",
       "official_value": "750000",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
@@ -12034,8 +12034,8 @@
       "note": "LandTransactionTaxCalculator: LTT Wales rate 0.10 for £750k-£1.5m band",
       "official_value": "10",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
@@ -12056,8 +12056,8 @@
       "note": "LandTransactionTaxCalculator: LTT Wales 2025 - 10% band from £750,000 to £1,500,000",
       "official_value": "1500000",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
@@ -12078,8 +12078,8 @@
       "note": "LandTransactionTaxCalculator: LTT Wales top rate 0.12 for amounts above £1,500,000",
       "official_value": "12",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
@@ -17094,15 +17094,17 @@
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx",
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Early Repay Calculator: Plan 1 interest rate 4.3%",
       "official_value": "4.1",
       "confidence": "high",
-      "freshness_note": "Plan 1 interest = lower of (March RPI) or (1% above highest bank base rate). March 2026 RPI = 4.1% (ONS, published 22 Apr 2026) and is below base+1%, so the Plan 1 rate from 1 Sep 2026 to 31 Aug 2027 ",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan1_repayment_rate",
@@ -17138,13 +17140,15 @@
         "src/components/calculators/StudentLoanCalculator.tsx",
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Calculator: Plan 1 (pre-2012) annual repayment threshold GBP26,900",
       "official_value": "26900",
       "confidence": "high",
-      "freshness_note": "Plan 1 annual repayment threshold for 2026-27 is GBP 26,900 (uprated from GBP 26,065 in 2025-26). Confirmed on gov.uk T&C 2026-27 and gov.uk/repaying-your-student-loan."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan1_student_loan_interest_rate",
@@ -17158,15 +17162,17 @@
       "used_by": [
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "StudentLoanTotalCostCalculator: Plan 1 interest rate (plans.plan1.interest = 4.3)",
       "official_value": "4.1",
       "confidence": "high",
-      "freshness_note": "Duplicate of plan1_interest_rate. 2026-27 Plan 1 interest = 4.1% (March 2026 RPI, below base+1% cap). 4.3% is the stale 2024-25 figure.",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan1_student_loan_rate",
@@ -17208,13 +17214,15 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "PayrollCalculator: Plan 1 student loan repayment threshold £26,900/yr",
       "official_value": "26900",
       "confidence": "high",
-      "freshness_note": "Duplicate of plan1_repayment_threshold. GBP 26,900 for 2026-27. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan1_student_loan_writeoff_years",
@@ -17230,13 +17238,15 @@
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "StudentLoanTotalCostCalculator: Plan 1 write-off period 25 years",
       "official_value": "25",
       "confidence": "high",
-      "freshness_note": "Plan 1 cancelled 25 years after the first repayment was due (England/Wales 1998-2011 cohort). Unchanged."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan1_write_off_years",
@@ -17250,13 +17260,15 @@
       "used_by": [
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Early Repay Calculator: Plan 1 written off after 25 years",
       "official_value": "25",
       "confidence": "high",
-      "freshness_note": "Duplicate of plan1_student_loan_writeoff_years. 25 years. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan2_interest_income_threshold_high",
@@ -17270,15 +17282,17 @@
       "used_by": [
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator: Plan 2 upper income threshold for variable interest GBP49,130 (RPI + 3% above)",
       "official_value": "52885",
       "confidence": "high",
-      "freshness_note": "Plan 2 upper interest-variation threshold (where interest reaches RPI+3%) is GBP 52,885 for 2026-27 (confirmed by DfE 26 Nov 2025 and gov.uk T&C 2026-27). Held value 49,130 is an old figure and is sta",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan2_interest_income_threshold_low",
@@ -17292,13 +17306,15 @@
       "used_by": [
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator: Plan 2 lower income threshold for variable interest GBP29,385 (RPI only below)",
       "official_value": "29385",
       "confidence": "high",
-      "freshness_note": "Plan 2 lower interest threshold equals the repayment threshold = GBP 29,385 for 2026-27 (below this, interest = RPI only). Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan2_interest_rate",
@@ -17312,15 +17328,17 @@
       "used_by": [
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://hansard.parliament.uk/commons/2026-04-13/debates/26041332000018/StudentLoanInterestRatesAcademicYear2026-27",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Early Repay Calculator: Plan 2 max interest rate 7.3%",
       "official_value": "6.0",
       "confidence": "high",
-      "freshness_note": "Plan 2 maximum interest from 1 Sep 2026 to 31 Aug 2027 is capped at 6.0% (Hansard written statement HCWS1489, 13 Apr 2026; gov.uk news). Uncapped would be RPI+3% = 7.1% (RPI 4.1%). Held value 7.3% is ",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan2_interest_rate_base",
@@ -17334,15 +17352,17 @@
       "used_by": [
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator: Plan 2 base interest rate (RPI) 4.3%",
       "official_value": "4.1",
       "confidence": "high",
-      "freshness_note": "Plan 2 base/minimum interest (at or below the lower threshold, and during study post-2026 it tracks RPI) = RPI = 4.1% for 2026-27. Held value 4.3% is the stale 2024-25 RPI.",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan2_interest_rate_max",
@@ -17356,15 +17376,17 @@
       "used_by": [
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://hansard.parliament.uk/commons/2026-04-13/debates/26041332000018/StudentLoanInterestRatesAcademicYear2026-27",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator: Plan 2 max interest rate (RPI + 3%) 7.3%",
       "official_value": "6.0",
       "confidence": "high",
-      "freshness_note": "Plan 2 maximum interest for 2026-27 is capped at 6.0% (would otherwise be RPI+3% = 7.1%). Hansard HCWS1489 (13 Apr 2026) confirms the 6% cap for Plan 2 and Plan 3. Held value 7.3% (2024-25 max) is sta",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan2_repayment_rate",
@@ -17400,13 +17422,15 @@
         "src/components/calculators/StudentLoanCalculator.tsx",
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Calculator: Plan 2 (post-2012) annual repayment threshold GBP29,385",
       "official_value": "29385",
       "confidence": "high",
-      "freshness_note": "Plan 2 threshold uprated to GBP 29,385 for 2026-27 (was frozen at GBP 27,295). Confirmed gov.uk T&C and DfE announcement. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan2_student_loan_interest_rate",
@@ -17420,15 +17444,17 @@
       "used_by": [
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx"
       ],
-      "source_url": "https://hansard.parliament.uk/commons/2026-04-13/debates/26041332000018/StudentLoanInterestRatesAcademicYear2026-27",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "StudentLoanTotalCostCalculator: Plan 2 interest rate (plans.plan2.interest = 7.3)",
       "official_value": "6.0",
       "confidence": "high",
-      "freshness_note": "Duplicate of plan2_interest_rate_max. 2026-27 Plan 2 max interest capped at 6.0%; base 4.1%. Held value 7.3% is stale (2024-25).",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan2_student_loan_rate",
@@ -17470,13 +17496,15 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "PayrollCalculator: Plan 2 student loan repayment threshold £29,385/yr",
       "official_value": "29385",
       "confidence": "high",
-      "freshness_note": "Duplicate of plan2_repayment_threshold. GBP 29,385 for 2026-27. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan2_student_loan_writeoff_years",
@@ -17492,13 +17520,15 @@
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "StudentLoanTotalCostCalculator: Plan 2 write-off period 30 years",
       "official_value": "30",
       "confidence": "high",
-      "freshness_note": "Plan 2 cancelled 30 years after first repayment due. Unchanged."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan2_write_off_years",
@@ -17512,13 +17542,15 @@
       "used_by": [
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Early Repay Calculator: Plan 2 written off after 30 years",
       "official_value": "30",
       "confidence": "high",
-      "freshness_note": "Duplicate of plan2_student_loan_writeoff_years. 30 years. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan4_interest_rate",
@@ -17539,9 +17571,11 @@
       "note": "Student Loan Early Repay Calculator: Plan 4 (Scotland) interest rate 4.3%",
       "official_value": "4.1",
       "confidence": "high",
-      "freshness_note": "Plan 4 (Scotland) uses the same Plan 1-type interest formula = lower of March RPI or base+1%. For 2026-27 this is 4.1% (March 2026 RPI). Held value 4.3% is the stale 2024-25 figure.",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan4_repayment_rate",
@@ -17583,7 +17617,9 @@
       "note": "Student Loan Calculator: Plan 4 (Scotland) annual repayment threshold GBP33,795",
       "official_value": "33795",
       "confidence": "high",
-      "freshness_note": "Plan 4 (Scotland) annual threshold for 2026-27 is GBP 33,795 (uprated from GBP 32,745 in 2025-26). Confirmed gov.uk/repaying-your-student-loan. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan4_student_loan_rate",
@@ -17629,7 +17665,9 @@
       "note": "PayrollCalculator: Plan 4 (Scotland) student loan repayment threshold £33,795/yr",
       "official_value": "33795",
       "confidence": "high",
-      "freshness_note": "Duplicate of plan4_repayment_threshold. GBP 33,795 for 2026-27. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan4_student_loan_writeoff_years",
@@ -17649,7 +17687,9 @@
       "note": "Plan 4 write-off after 30 years (student-loan-repayment-calculator)",
       "official_value": "30",
       "confidence": "high",
-      "freshness_note": "Plan 4 (Scotland) cancelled 30 years after first repayment due. Unchanged."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan4_write_off_years",
@@ -17669,7 +17709,9 @@
       "note": "Student Loan Early Repay Calculator: Plan 4 (Scotland) written off after 30 years",
       "official_value": "30",
       "confidence": "high",
-      "freshness_note": "Duplicate of plan4_student_loan_writeoff_years. 30 years. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan5_interest_income_threshold_high",
@@ -17724,15 +17766,17 @@
       "used_by": [
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Early Repay Calculator: Plan 5 max interest rate 7.3%",
       "official_value": "4.1",
       "confidence": "high",
-      "freshness_note": "Plan 5 interest = RPI only = 4.1% for 2026-27 (March 2026 RPI). It is NOT RPI+3% and there is no 7.3% Plan 5 rate. Held value 7.3% is wrong and stale.",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan5_interest_rate_base",
@@ -17746,15 +17790,17 @@
       "used_by": [
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator: Plan 5 base interest rate (RPI) 4.3%",
       "official_value": "4.1",
       "confidence": "high",
-      "freshness_note": "Plan 5 interest = RPI only = 4.1% for 2026-27. Held value 4.3% is the stale 2024-25 RPI. (For Plan 5 base and max are identical since there is no income variation.)",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan5_interest_rate_max",
@@ -17768,15 +17814,17 @@
       "used_by": [
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator: Plan 5 max interest rate (RPI + 3%) 7.3%",
       "official_value": "4.1",
       "confidence": "high",
-      "freshness_note": "Plan 5 has no RPI+3% maximum; interest is flat RPI only = 4.1% for 2026-27. Held value 7.3% is wrong (that is a Plan 2-style max) and stale.",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan5_repayment_rate",
@@ -17812,13 +17860,15 @@
         "src/components/calculators/StudentLoanCalculator.tsx",
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Calculator: Plan 5 (post-2023) annual repayment threshold GBP25,000",
       "official_value": "25000",
       "confidence": "high",
-      "freshness_note": "Plan 5 threshold remains GBP 25,000 (frozen up to and including 2026-27). Confirmed gov.uk T&C 2026-27. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan5_student_loan_interest_rate",
@@ -17834,20 +17884,21 @@
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx",
         "src/components/calculators/UniversityCostCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "StudentLoanTotalCostCalculator: Plan 5 interest rate (plans.plan5.interest = 7.3)",
-      "conflict": true,
       "conflict_values": [
         7.3,
         "RPI + up to 3%"
       ],
       "official_value": "4.1",
       "confidence": "high",
-      "freshness_note": "conflict=true with conflict_values [7.3, 'RPI + up to 3%']. NEITHER is correct: Plan 5 interest is RPI ONLY (not RPI+3%, which is Plan 2/postgrad), and the numeric rate for 2026-27 is 4.1% (not 7.3%).",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan5_student_loan_rate",
@@ -17904,13 +17955,15 @@
       "used_by": [
         "src/components/calculators/UniversityCostCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Plan 5 student loan repayment threshold (repaymentThreshold = 25_000); also stated in prose '9% of earnings above £25,000'",
       "official_value": "25000",
       "confidence": "high",
-      "freshness_note": "Duplicate of plan5_repayment_threshold. GBP 25,000 (frozen) for 2026-27. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan5_student_loan_threshold",
@@ -17928,13 +17981,15 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "StudentLoanTotalCostCalculator: Plan 5 annual repayment threshold (plans.plan5.threshold)",
       "official_value": "25000",
       "confidence": "high",
-      "freshness_note": "Duplicate of plan5_repayment_threshold. GBP 25,000 for 2026-27. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan5_student_loan_writeoff_years",
@@ -17951,13 +18006,15 @@
         "src/components/calculators/UniversityCostCalculator.tsx",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "StudentLoanTotalCostCalculator: Plan 5 write-off period 40 years",
       "official_value": "40",
       "confidence": "high",
-      "freshness_note": "Plan 5 cancelled 40 years after the borrower is due to start repaying. Confirmed gov.uk T&C 2026-27. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "plan5_write_off_years",
@@ -17971,13 +18028,15 @@
       "used_by": [
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Early Repay Calculator: Plan 5 written off after 40 years",
       "official_value": "40",
       "confidence": "high",
-      "freshness_note": "Duplicate of plan5_student_loan_writeoff_years. 40 years. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "platform_reporting_sales_trigger",
@@ -18055,13 +18114,15 @@
       "used_by": [
         "src/components/calculators/StudentLoanCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Calculator: Postgraduate Loan annual repayment threshold GBP21,000",
       "official_value": "21000",
       "confidence": "high",
-      "freshness_note": "Postgraduate loan threshold remains GBP 21,000 for 2026-27. Confirmed gov.uk T&C and gov.uk/repaying-your-student-loan. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "postgrad_student_loan_rate",
@@ -18095,13 +18156,15 @@
       "used_by": [
         "src/components/calculators/TakeHomePayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "TakeHomePayCalculator: Postgraduate loan repayment threshold (STUDENT_LOAN_PLANS.postgrad.threshold)",
       "official_value": "21000",
       "confidence": "high",
-      "freshness_note": "Duplicate of postgrad_loan_repayment_threshold. GBP 21,000 for 2026-27. Current."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "postgraduate_loan_interest_rate",
@@ -18116,15 +18179,17 @@
         "src/components/calculators/PostgraduateLoanCalculator.tsx",
         "src/components/calculators/PostgraduateLoanCostCalculator.tsx"
       ],
-      "source_url": "https://questions-statements.parliament.uk/written-statements/detail/2026-04-13/hcws1489",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "PostgraduateLoanCalculator: PG_INTEREST = 7.3 (RPI + 3%); stated in prose as 'RPI + 3% (7.3%)'",
       "official_value": "6",
       "confidence": "high",
-      "freshness_note": "7.3% is NOT the 2026-27 postgraduate rate. 7.3% was the forecast/cap rate for 1 Mar-31 Aug 2023 (gov.uk 2022/23 announcement). For 2026-27 the postgraduate (Plan 3) interest rate is a flat RPI+3%; wit",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "postgraduate_loan_rate",
@@ -18183,13 +18248,15 @@
         "src/components/calculators/PostgraduateLoanCalculator.tsx",
         "src/components/calculators/PostgraduateLoanCostCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/news/student-loans-interest-and-repayment-threshold-announcement-for-plan-2-and-plan-3-loans",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "PostgraduateLoanCalculator: PG_THRESHOLD = 21000, repay 6% of income above this; also in prose",
       "official_value": "21000",
       "confidence": "high",
-      "freshness_note": "Postgraduate (Plan 3) income threshold = GBP 21,000/yr for 2026-27 (from 6 Apr 2026). Confirmed by gov.uk announcement and HMRC special-rules guidance. Threshold has been frozen at GBP 21,000 since in"
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "postgraduate_loan_threshold",
@@ -18206,13 +18273,15 @@
         "src/data/calculators.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/guidance/special-rules-for-student-loans",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "student-loan-repayment-calculator: Postgraduate (Master's/PhD) threshold, 6% rate",
       "official_value": "21000",
       "confidence": "high",
-      "freshness_note": "Postgraduate (Plan 3) repayment threshold GBP 21,000/yr for 2026-27. Confirmed by HMRC PAYE special-rules guidance and gov.uk announcement."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "postgraduate_loan_writeoff_years",
@@ -18228,13 +18297,15 @@
         "src/components/calculators/PostgraduateLoanCalculator.tsx",
         "src/components/calculators/PostgraduateLoanCostCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/when-your-student-loan-gets-written-off-or-cancelled",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "PostgraduateLoanCalculator: written off 30 years after the April first due to repay (UI '30 years' and prose); loop cap months < 360",
       "official_value": "30",
       "confidence": "high",
-      "freshness_note": "Postgraduate Loan is written off 30 years after the April you were first due to repay. Directly confirmed on gov.uk write-off page."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "postgraduate_masters_loan_max",
@@ -19513,13 +19584,15 @@
       "used_by": [
         "src/components/calculators/PostgraduateLoanRepaymentCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "PostgraduateLoanRepaymentCalculator (mislabeled; actually Plan 4 Scotland): PLAN4_THRESHOLD = 33795, repay 9% above; also in prose",
       "official_value": "33795",
       "confidence": "high",
-      "freshness_note": "HMRC 2026-27 rates confirm Plan 4 annual repayment threshold GBP 33,795 (up from GBP 32,745 in 2025-26). Current figure."
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "scotland_plan4_writeoff_years",
@@ -19533,13 +19606,15 @@
       "used_by": [
         "src/components/calculators/PostgraduateLoanRepaymentCalculator.tsx"
       ],
-      "source_url": "https://www.saas.gov.uk/full-time/undergraduates/repaying-the-student-loan",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
-      "note": "PostgraduateLoanRepaymentCalculator prose: Plan 4 written off 30 years after first repayment due",
+      "note": "PostgraduateLoanRepaymentCalculator prose: Plan 4 written off 30 years after first repayment due. gov.uk 2026-09-10: loans from 1 Aug 2007 written off 30 years after the April first due to repay; pre-Aug-2007 loans at 65 or 30 years, whichever is first. Corrected a '25 years' claim in src/data/calculator-content.ts (plan-4 prose) in the same pass.",
       "official_value": "30",
-      "confidence": "medium",
-      "freshness_note": "Plan 4 (Scotland/SAAS) loans are written off 30 years after the April the borrower first became liable to repay (or at age 65 for some older loans). Long-standing rule, not subject to annual uprating;"
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "scottish_advanced_band_top",
@@ -24004,13 +24079,15 @@
       "used_by": [
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://questions-statements.parliament.uk/written-statements/detail/2026-04-13/hcws1489",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator prose: income-based interest is RPI + up to 3% (Plan 2/5)",
       "official_value": "3",
       "confidence": "high",
-      "freshness_note": "The maximum interest premium above RPI for Plan 2 (and Plan 3) loans remains RPI+3%. The 13 Apr 2026 written ministerial statement explicitly states Plan 2 borrowers 'may be charged interest of up to "
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "student_loan_plan4_repayment_rate",
@@ -24044,13 +24121,15 @@
       "used_by": [
         "src/data/calculators.ts"
       ],
-      "source_url": "https://www.gov.uk/guidance/special-rules-for-student-loans",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "student-loan-plan4-calculator: '9% above the £33,795 threshold for 2026/27'",
       "official_value": "33795",
       "confidence": "high",
-      "freshness_note": "Plan 4 (Scotland) repayment threshold = GBP 33,795/yr for 2026-27 (from 6 Apr 2026), up from GBP 32,745 in 2025-26. Confirmed by HMRC special-rules guidance; Scottish Plan 4 threshold for Apr 2026 als"
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "student_loan_repayment_rate",
@@ -24085,13 +24164,15 @@
       "used_by": [
         "src/data/calculators.ts"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/when-your-student-loan-gets-written-off-or-cancelled",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
       "note": "postgraduate-loan-cost-calculator: 'total postgraduate loan repayment over 30 years'",
       "official_value": "30",
       "confidence": "high",
-      "freshness_note": "Constant is labelled 'Postgraduate/student loan write-off term'. Postgraduate Loan AND Plan 2 are both written off 30 years after the April first due to repay (confirmed gov.uk). Correct for postgradu"
+      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "tax_code_personal_allowance_multiplier",
@@ -28577,7 +28658,9 @@
       "note": "lbtt-ltt-calculator: Wales 0% up to £225,000; 6% to £400k; 7.5% to £750k; 10% to £1.5M; 12% above",
       "official_value": "225000",
       "confidence": "high",
-      "freshness_note": "Duplicate of ltt_band1_threshold_nil_rate_upper. Main residential nil-rate upper threshold 225,000. Current for 2026-27."
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "wales_ltt_band2_rate",
@@ -28597,7 +28680,9 @@
       "note": "lbtt-ltt-calculator: Wales 6% on £225,001-£400,000",
       "official_value": "6",
       "confidence": "high",
-      "freshness_note": "Duplicate of ltt_band2_rate. Main residential band 225,001-400,000 = 6%. Current for 2026-27."
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "wales_ltt_band2_threshold",
@@ -28617,7 +28702,9 @@
       "note": "lbtt-ltt-calculator: Wales 6% band ends £400,000; 7.5% to £750k",
       "official_value": "400000",
       "confidence": "high",
-      "freshness_note": "Duplicate of ltt_band2_threshold. 400,000 boundary. Current for 2026-27."
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "wales_ltt_higher_rate_surcharge",
@@ -28637,10 +28724,12 @@
       "note": "Wales does NOT use a flat higher-rate surcharge (unlike Scotland's 8% ADS). It charges a separate higher-residential band table from the first pound, with no nil-rate band: 5% to £180,000; 8.5% £180,001-£250,000; 10% £250,001-£400,000; 12.5% £400,001-£750,000; 15% £750,001-£1,500,000; 17% over £1,500,000 (effective 11 Dec 2024). Entry threshold £40,000. Prose on 3 surfaces previously claimed 4% on total price / +4% per band / a 5% surcharge.",
       "official_value": "no flat surcharge; standalone higher-rate band table 5%/8.5%/10%/12.5%/15%/17% (uplift +4pp in first taxable band, +5pp above 400,000)",
       "confidence": "high",
-      "freshness_note": "A flat 4% higher-rate surcharge applied only from 22 Dec 2020 to 10 Dec 2024. From 11 Dec 2024 (current for 2026-27, confirmed unchanged in Draft Budget 2026-27) higher rates are an independent schedu",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
       "resolve_note": "Wales LTT calc uses a band table (not a flat 4% surcharge) - structurally correct; verify LTT band values separately",
       "fixed": true,
-      "fixed_date": "2026-08-03"
+      "fixed_date": "2026-08-03",
+      "verified_date": "2026-09-10",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "water_metered_sewerage_charge_avg",
@@ -29180,8 +29269,8 @@
       "fixed": true,
       "fixed_date": "2026-08-03",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "3"
     },
@@ -29204,8 +29293,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "5"
     },
@@ -29228,8 +29317,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "8.5"
     },
@@ -29252,8 +29341,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "10"
     },
@@ -29276,8 +29365,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "12.5"
     },
@@ -29300,8 +29389,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "15"
     },
@@ -29324,8 +29413,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "17"
     },
@@ -29348,8 +29437,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "40000"
     },
@@ -29372,8 +29461,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "225000"
     },
@@ -29396,8 +29485,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "1"
     },
@@ -29420,8 +29509,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "5"
     },
@@ -29444,8 +29533,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "6"
     },
@@ -29468,8 +29557,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "225000"
     },
@@ -29492,8 +29581,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "1"
     },
@@ -29516,8 +29605,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "2"
     },
@@ -29540,8 +29629,8 @@
       "fixed": true,
       "fixed_date": "2026-08-04",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-08-19 against gov.wales LTT rates and bands. Residential and non-residential rates and thresholds are unchanged for 2026-27 (Draft Budget 2026-27, 14 Oct 2025). The 2026 activity on this page is relief-side only: MDR minimum tax rate 1%->3% and the new MDR equalisation rule (WSI 2026/40, in force 13 Feb 2026) and a new higher-rates refund for Leasing Scheme Wales. No band or rate moved.",
-      "verified_date": "2026-08-19",
+      "freshness_note": "Re-verified 2026-09-10 against gov.wales LTT rates and bands after a Tier-1 hash flag. The page's own 'Last updated' stamp is still 10 December 2024 and every band, threshold and rate matches src/components/calculators/LandTransactionTaxCalculator.tsx and the Welsh prose. Second consecutive false positive on this URL (previous: 2026-08-19) - the source diff is page furniture, not tax content.",
+      "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "13500"
     }
@@ -29578,7 +29667,7 @@
     "sdlt": 42
   },
   "conflicts_flagged": 31,
-  "freshness_verified": "2026-08-29",
+  "freshness_verified": "2026-09-10",
   "tail_verified": "2026-06-28",
   "tail_verify_method": "tier2-tail"
 }

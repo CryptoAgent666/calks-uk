@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-09-08'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-09-10'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -24,6 +24,35 @@ const schemas = [
     <p class="text-sm text-muted-foreground mb-8">Rate changes, new calculators and site improvements</p>
 
     <div class="space-y-8">
+      <!-- September 2026 — student loan interest rate 3.2% -> 4.1% -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            September 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Student loan interest rose to 4.1% on 1 September</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">The RPI rate that sets student loan interest is 4.1% for the year to 31 August 2027</strong>, up from 3.2%. Plan 1, Plan 4 and Plan 5 charge that rate flat. Plan 2 runs from 4.1% on income of £29,385 or less up to the 6% ceiling at £52,885 and above, and Postgraduate loans sit at the capped 6%. Repayment thresholds are unchanged: £26,900 on Plan 1, £29,385 on Plan 2, £33,795 on Plan 4, £25,000 on Plan 5 and £21,000 on a Postgraduate Loan.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Corrected: eight calculators still described the old rate in their explanatory text.</strong> The <a href="/calculator/student-loan-interest-calculator/" class="text-primary hover:underline">Student Loan Interest</a> page put Plan 5 at &ldquo;roughly 3.0%&rdquo; and Plan 1 at &ldquo;6-7%&rdquo;; both are <strong class="text-foreground">4.1%</strong>. The <a href="/calculator/postgraduate-loan-calculator/" class="text-primary hover:underline">Postgraduate Loan</a> and <a href="/calculator/postgraduate-loan-cost-calculator/" class="text-primary hover:underline">Postgraduate Loan Cost</a> pages described interest as &ldquo;RPI, around 3-4%&rdquo; when the calculators were correctly applying <strong class="text-foreground">6%</strong>. The calculators themselves were right in every case.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Corrected: two worked examples were built on an old repayment threshold.</strong> The Plan 2 illustration on a £35,000 salary showed a deduction of £57.79 a month, which is 9% above £27,295 &mdash; the threshold from three years ago. Against the current £29,385 it is <strong class="text-foreground">£42.11 a month, or £505.35 a year</strong>. With interest recalculated at 4.55% for that salary, the balance on £45,000 grows by about <strong class="text-foreground">£1,542</strong> a year rather than £1,197.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Corrected: Plan 4 write-off is 30 years, not 25.</strong> The <a href="/calculator/student-loan-plan4-calculator/" class="text-primary hover:underline">Plan 4 (Scotland)</a> explainer said those loans clear 25 years after the April you were first due to repay. It is <strong class="text-foreground">30 years</strong>, or age 65 for loans taken before 1 August 2007, whichever comes first.</span>
+          </li>
+        </ul>
+      </article>
+
       <!-- September 2026 — explainer rewrite, category intros, disclaimers -->
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
