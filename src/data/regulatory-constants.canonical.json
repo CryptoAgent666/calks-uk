@@ -17094,7 +17094,7 @@
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx",
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Early Repay Calculator: Plan 1 interest rate 4.3%",
@@ -17140,7 +17140,7 @@
         "src/components/calculators/StudentLoanCalculator.tsx",
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Calculator: Plan 1 (pre-2012) annual repayment threshold GBP26,900",
@@ -17162,7 +17162,7 @@
       "used_by": [
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "StudentLoanTotalCostCalculator: Plan 1 interest rate (plans.plan1.interest = 4.3)",
@@ -17214,7 +17214,7 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "PayrollCalculator: Plan 1 student loan repayment threshold £26,900/yr",
@@ -17238,7 +17238,7 @@
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "StudentLoanTotalCostCalculator: Plan 1 write-off period 25 years",
@@ -17260,7 +17260,7 @@
       "used_by": [
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Early Repay Calculator: Plan 1 written off after 25 years",
@@ -17282,7 +17282,7 @@
       "used_by": [
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator: Plan 2 upper income threshold for variable interest GBP49,130 (RPI + 3% above)",
@@ -17306,7 +17306,7 @@
       "used_by": [
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator: Plan 2 lower income threshold for variable interest GBP29,385 (RPI only below)",
@@ -17352,7 +17352,7 @@
       "used_by": [
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator: Plan 2 base interest rate (RPI) 4.3%",
@@ -17422,7 +17422,7 @@
         "src/components/calculators/StudentLoanCalculator.tsx",
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Calculator: Plan 2 (post-2012) annual repayment threshold GBP29,385",
@@ -17496,7 +17496,7 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "PayrollCalculator: Plan 2 student loan repayment threshold £29,385/yr",
@@ -17520,7 +17520,7 @@
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "StudentLoanTotalCostCalculator: Plan 2 write-off period 30 years",
@@ -17542,7 +17542,7 @@
       "used_by": [
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Early Repay Calculator: Plan 2 written off after 30 years",
@@ -17766,7 +17766,7 @@
       "used_by": [
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Early Repay Calculator: Plan 5 max interest rate 7.3%",
@@ -17790,7 +17790,7 @@
       "used_by": [
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator: Plan 5 base interest rate (RPI) 4.3%",
@@ -17814,7 +17814,7 @@
       "used_by": [
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator: Plan 5 max interest rate (RPI + 3%) 7.3%",
@@ -17860,7 +17860,7 @@
         "src/components/calculators/StudentLoanCalculator.tsx",
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Calculator: Plan 5 (post-2023) annual repayment threshold GBP25,000",
@@ -17884,7 +17884,7 @@
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx",
         "src/components/calculators/UniversityCostCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "StudentLoanTotalCostCalculator: Plan 5 interest rate (plans.plan5.interest = 7.3)",
@@ -17955,7 +17955,7 @@
       "used_by": [
         "src/components/calculators/UniversityCostCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Plan 5 student loan repayment threshold (repaymentThreshold = 25_000); also stated in prose '9% of earnings above £25,000'",
@@ -17981,7 +17981,7 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "StudentLoanTotalCostCalculator: Plan 5 annual repayment threshold (plans.plan5.threshold)",
@@ -18006,7 +18006,7 @@
         "src/components/calculators/UniversityCostCalculator.tsx",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "StudentLoanTotalCostCalculator: Plan 5 write-off period 40 years",
@@ -18028,7 +18028,7 @@
       "used_by": [
         "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Early Repay Calculator: Plan 5 written off after 40 years",
@@ -18114,7 +18114,7 @@
       "used_by": [
         "src/components/calculators/StudentLoanCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "Student Loan Calculator: Postgraduate Loan annual repayment threshold GBP21,000",
@@ -18156,7 +18156,7 @@
       "used_by": [
         "src/components/calculators/TakeHomePayCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "TakeHomePayCalculator: Postgraduate loan repayment threshold (STUDENT_LOAN_PLANS.postgrad.threshold)",
@@ -18248,7 +18248,7 @@
         "src/components/calculators/PostgraduateLoanCalculator.tsx",
         "src/components/calculators/PostgraduateLoanCostCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/government/news/student-loans-interest-and-repayment-threshold-announcement-for-plan-2-and-plan-3-loans",
       "status": "current",
       "change_frequency": "",
       "note": "PostgraduateLoanCalculator: PG_THRESHOLD = 21000, repay 6% of income above this; also in prose",
@@ -18273,7 +18273,7 @@
         "src/data/calculators.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/guidance/special-rules-for-student-loans",
       "status": "current",
       "change_frequency": "",
       "note": "student-loan-repayment-calculator: Postgraduate (Master's/PhD) threshold, 6% rate",
@@ -18297,7 +18297,7 @@
         "src/components/calculators/PostgraduateLoanCalculator.tsx",
         "src/components/calculators/PostgraduateLoanCostCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/when-your-student-loan-gets-written-off-or-cancelled",
       "status": "current",
       "change_frequency": "",
       "note": "PostgraduateLoanCalculator: written off 30 years after the April first due to repay (UI '30 years' and prose); loop cap months < 360",
@@ -19584,7 +19584,7 @@
       "used_by": [
         "src/components/calculators/PostgraduateLoanRepaymentCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
       "status": "current",
       "change_frequency": "",
       "note": "PostgraduateLoanRepaymentCalculator (mislabeled; actually Plan 4 Scotland): PLAN4_THRESHOLD = 33795, repay 9% above; also in prose",
@@ -19606,7 +19606,7 @@
       "used_by": [
         "src/components/calculators/PostgraduateLoanRepaymentCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/when-your-student-loan-gets-written-off-or-cancelled",
       "status": "current",
       "change_frequency": "",
       "note": "PostgraduateLoanRepaymentCalculator prose: Plan 4 written off 30 years after first repayment due. gov.uk 2026-09-10: loans from 1 Aug 2007 written off 30 years after the April first due to repay; pre-Aug-2007 loans at 65 or 30 years, whichever is first. Corrected a '25 years' claim in src/data/calculator-content.ts (plan-4 prose) in the same pass.",
@@ -24121,7 +24121,7 @@
       "used_by": [
         "src/data/calculators.ts"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/guidance/special-rules-for-student-loans",
       "status": "current",
       "change_frequency": "",
       "note": "student-loan-plan4-calculator: '9% above the £33,795 threshold for 2026/27'",
@@ -24164,7 +24164,7 @@
       "used_by": [
         "src/data/calculators.ts"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/when-your-student-loan-gets-written-off-or-cancelled",
       "status": "current",
       "change_frequency": "",
       "note": "postgraduate-loan-cost-calculator: 'total postgraduate loan repayment over 30 years'",
