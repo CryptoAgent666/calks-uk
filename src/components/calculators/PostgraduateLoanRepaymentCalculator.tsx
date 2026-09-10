@@ -4,13 +4,17 @@ import { formatCurrency } from '@/utils'
 // Plan 4 Scotland specific
 const PLAN4_THRESHOLD = 33_795
 const PLAN4_RATE = 0.09
+// Plan 4 balances are cancelled 30 years after the April repayment first fell
+// due, so a repayment term longer than that never actually happens.
+const PLAN4_WRITE_OFF_YEARS = 30
 
 function calculate(salary: number, balance: number) {
   const annual = salary > PLAN4_THRESHOLD ? (salary - PLAN4_THRESHOLD) * PLAN4_RATE : 0
   const monthly = annual / 12
   const yearsToRepay = annual > 0 ? Math.ceil(balance / annual) : 0
+  const writtenOff = annual === 0 || yearsToRepay > PLAN4_WRITE_OFF_YEARS
 
-  return { annual, monthly, yearsToRepay, threshold: PLAN4_THRESHOLD }
+  return { annual, monthly, yearsToRepay, writtenOff, threshold: PLAN4_THRESHOLD }
 }
 
 export default function PostgraduateLoanRepaymentCalculator() {
@@ -32,10 +36,12 @@ export default function PostgraduateLoanRepaymentCalculator() {
         <p className="text-sm text-muted-foreground">Monthly Repayment (Plan 4 Scotland)</p>
         <p className="text-3xl font-bold text-primary mt-1">{formatCurrency(result.monthly)}</p>
         <p className="text-sm text-muted-foreground mt-1">{formatCurrency(result.annual)}/year &middot; 9% above £{PLAN4_THRESHOLD.toLocaleString()}</p>
-        {result.yearsToRepay > 0 && <p className="text-sm text-muted-foreground">~{result.yearsToRepay} years to repay (without interest)</p>}
+        {result.writtenOff
+          ? <p className="text-sm text-muted-foreground">At this salary the balance is written off after {PLAN4_WRITE_OFF_YEARS} years before it is cleared</p>
+          : result.yearsToRepay > 0 && <p className="text-sm text-muted-foreground">~{result.yearsToRepay} years to repay (without interest)</p>}
       </div>
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p>Plan 4 (Scotland): 9% of income above £{PLAN4_THRESHOLD.toLocaleString()}. Written off 30 years after first repayment due. If you also have a Plan 2 loan, you repay both simultaneously.</p>
+        <p>Plan 4 (Scotland): 9% of income above £{PLAN4_THRESHOLD.toLocaleString()}. Interest is the lower of RPI or the Bank of England base rate plus 1%, currently 4.1%. Written off 30 years after first repayment due. If you also have a Plan 2 loan, you repay both simultaneously.</p>
       </div>
     </div>
   )

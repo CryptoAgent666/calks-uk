@@ -5,6 +5,7 @@ function calculate(startBalance: number, startSalary: number, salaryGrowth: numb
   const plans: Record<string, { threshold: number; rate: number; interest: number; writeOff: number }> = {
     plan1: { threshold: 26_900, rate: 0.09, interest: 4.1, writeOff: 25 },
     plan2: { threshold: 29_385, rate: 0.09, interest: 6.0, writeOff: 30 },
+    plan4: { threshold: 33_795, rate: 0.09, interest: 4.1, writeOff: 30 },
     plan5: { threshold: 25_000, rate: 0.09, interest: 4.1, writeOff: 40 },
   }
 
@@ -50,7 +51,7 @@ export default function StudentLoanTotalCostCalculator() {
         <div><label className="block text-sm font-medium mb-2">Starting Balance</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={balance} onChange={(e) => setBalance(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Starting Balance" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Starting Salary</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={salary} onChange={(e) => setSalary(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Starting Salary" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Salary Growth (%/yr)</label><input type="number" min="0" max="10" step="0.5" value={growth} onChange={(e) => setGrowth(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Salary Growth (%/yr)" /></div>
-        <div><label className="block text-sm font-medium mb-2">Plan</label><select value={plan} onChange={(e) => setPlan(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Plan"><option value="plan1">Plan 1 (pre-2012)</option><option value="plan2">Plan 2 (post-2012)</option><option value="plan5">Plan 5 (post-2023)</option></select></div>
+        <div><label className="block text-sm font-medium mb-2">Plan</label><select value={plan} onChange={(e) => setPlan(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Plan"><option value="plan1">Plan 1 (pre-2012)</option><option value="plan2">Plan 2 (post-2012)</option><option value="plan4">Plan 4 (Scotland)</option><option value="plan5">Plan 5 (post-2023)</option></select></div>
       </div>
 
       {b > 0 && s > 0 && (
@@ -66,7 +67,11 @@ export default function StudentLoanTotalCostCalculator() {
             {result.writtenOff > 0 && <div className="rounded-xl bg-green-100 dark:bg-green-950 p-3 text-center"><p className="text-xs text-muted-foreground">Written Off</p><p className="text-lg font-bold text-green-700 dark:text-green-400">{formatCurrency(result.writtenOff)}</p></div>}
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>{result.repaidInFull ? 'You\'ll repay in full before the write-off date.' : `Most of your loan will be written off — you'll only pay ${((result.totalPaid / b) * 100).toFixed(0)}% of the original amount. Think of it as a graduate tax, not a traditional loan.`}</p>
+            <p>{result.repaidInFull
+              ? 'You\'ll repay in full before the write-off date.'
+              : result.totalPaid < b
+                ? `${formatCurrency(result.writtenOff)} is written off, so you pay back only ${((result.totalPaid / b) * 100).toFixed(0)}% of what you borrowed. Think of it as a graduate tax, not a traditional loan.`
+                : `${formatCurrency(result.writtenOff)} is written off, but interest means you still hand over ${formatCurrency(result.totalPaid)} — ${((result.totalPaid / b) * 100).toFixed(0)}% of what you borrowed — before that happens. Think of it as a graduate tax, not a traditional loan.`}</p>
           </div>
         </div>
       )}

@@ -56,7 +56,7 @@ export default function UniversityCostCalculator() {
           </tbody>
         </table>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-          <p>Plan 5 repayment: 9% of earnings above £{result.repaymentThreshold.toLocaleString()}. Wiped after 40 years. Interest: RPI + up to 3%.</p>
+          <p>Plan 5 repayment: 9% of earnings above £{result.repaymentThreshold.toLocaleString()}. Wiped after 40 years. Interest: RPI only, currently 4.1%, with no income-based margin.</p>
           <p className="mt-1">Most graduates won't repay in full — treat it like a graduate tax, not a traditional loan.</p>
         </div>
       </div>

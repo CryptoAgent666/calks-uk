@@ -63,7 +63,7 @@ export default function StudentLoanInterestCalculator() {
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
             <p className="font-medium text-foreground">{result.plan.name} interest:</p>
             {result.plan.incomeThresholdHigh > 0 ? (
-              <><p>Below £{result.plan.incomeThresholdLow.toLocaleString()}: RPI ({result.plan.baseRate}%)</p><p>£{result.plan.incomeThresholdLow.toLocaleString()}–£{result.plan.incomeThresholdHigh.toLocaleString()}: RPI + up to 3%</p><p>Above £{result.plan.incomeThresholdHigh.toLocaleString()}: RPI + 3% ({result.plan.maxRate}%)</p></>
+              <><p>Below £{result.plan.incomeThresholdLow.toLocaleString()}: RPI ({result.plan.baseRate}%)</p><p>£{result.plan.incomeThresholdLow.toLocaleString()}–£{result.plan.incomeThresholdHigh.toLocaleString()}: RPI plus a sliding margin</p><p>Above £{result.plan.incomeThresholdHigh.toLocaleString()}: RPI + 3%, capped at {result.plan.maxRate}%</p></>
             ) : (
               <p>Fixed at RPI or Bank of England base rate + 1% (whichever is lower): {result.plan.baseRate}%</p>
             )}

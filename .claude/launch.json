@@ -4,14 +4,32 @@
     {
       "name": "calks-uk",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
       "port": 4321
     },
     {
       "name": "calks-uk-preview",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["astro", "preview", "--port", "4322"],
+      "runtimeArgs": [
+        "astro",
+        "preview",
+        "--port",
+        "4322"
+      ],
       "port": 4322
+    },
+    {
+      "name": "calks-uk-preview-qa",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "astro",
+        "preview"
+      ],
+      "port": 4321,
+      "autoPort": true
     }
   ]
 }

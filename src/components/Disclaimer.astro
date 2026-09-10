@@ -1,9 +1,10 @@
 ---
 interface Props {
   category?: string
+  slug?: string
 }
 
-const { category = '' } = Astro.props
+const { category = '', slug = '' } = Astro.props
 
 // Where the figures behind each category actually come from. Categories with
 // no government rates (tools, math) get no sourcing sentence at all.
@@ -28,6 +29,27 @@ const SOURCE_BY_CATEGORY: Record<string, string> = {
   gardening: 'RHS guidance and manufacturer coverage data',
 }
 
+// A handful of calculators sit in a category whose default source is wrong for
+// them: student loan rates are set by the SLC, not by lenders and the FCA, and
+// the devolved property taxes are nothing to do with HMRC.
+const SOURCE_BY_SLUG: Record<string, string> = {
+  'student-loan-repayment-calculator': 'Student Finance England, SAAS and GOV.UK',
+  'student-loan-early-repay-calculator': 'Student Finance England, SAAS and GOV.UK',
+  'student-loan-interest-calculator': 'Student Finance England, SAAS and GOV.UK',
+  'postgraduate-loan-calculator': 'Student Finance England, SAAS and GOV.UK',
+  'student-loan-plan4-calculator': 'SAAS, the Student Loans Company and GOV.UK',
+  'lbtt-ltt-calculator': 'Revenue Scotland and the Welsh Revenue Authority',
+  'scottish-income-tax-calculator': 'the Scottish Government and GOV.UK',
+}
+
+const TAX_YEAR_SLUGS = new Set([
+  'student-loan-repayment-calculator',
+  'student-loan-early-repay-calculator',
+  'student-loan-interest-calculator',
+  'postgraduate-loan-calculator',
+  'student-loan-plan4-calculator',
+])
+
 const TAX_YEAR_CATEGORIES = new Set(['tax', 'pay', 'pension', 'business', 'benefits', 'investment', 'education'])
 
 const ADVICE_BY_CATEGORY: Record<string, string> = {
@@ -38,8 +60,9 @@ const ADVICE_BY_CATEGORY: Record<string, string> = {
   math: 'Double-check any result you rely on.',
 }
 
-const source = SOURCE_BY_CATEGORY[category]
-const period = TAX_YEAR_CATEGORIES.has(category) ? 'the 2026/27 tax year' : '2026'
+const source = SOURCE_BY_SLUG[slug] ?? SOURCE_BY_CATEGORY[category]
+const period =
+  TAX_YEAR_CATEGORIES.has(category) || TAX_YEAR_SLUGS.has(slug) ? 'the 2026/27 tax year' : '2026'
 const advice =
   ADVICE_BY_CATEGORY[category] ??
   'It is not financial or tax advice: check anything you rely on against the official source or a qualified adviser.'
