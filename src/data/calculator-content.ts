@@ -4207,8 +4207,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Weekly State Pension income: £185.50',
         'Savings of £18,000: first £10,000 ignored, remaining £8,000 = 16 x £1 = £16/week deemed income',
         'Total assessed weekly income: £185.50 + £16.00 = £201.50',
-        'Guarantee Credit minimum for single person: £218.15',
-        'Guarantee Credit payable: £218.15 - £201.50 = £16.65 per week (£866 per year)'
+        'Guarantee Credit minimum for single person (2026/27): £238.00',
+        'Guarantee Credit payable: £238.00 - £201.50 = £36.50 per week (£1,898 per year)'
       ]
     },
     sourceUrl: 'https://www.gov.uk/pension-credit/eligibility',
