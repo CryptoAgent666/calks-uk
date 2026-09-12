@@ -1757,7 +1757,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // PENSION
   { slug: 'sipp-calculator', title: 'SIPP Calculator — Self-Invested Pension', description: 'Project your Self-Invested Personal Pension with tax relief, employer contributions and growth.', category: 'pension', icon: 'PiggyBank', keywords: ['SIPP', 'self invested pension', 'personal pension', 'pension pot'], priority: 2, metaTitle: 'SIPP Calculator UK 2026/27 — Self-Invested Pension Pot' },
   // BENEFITS
-  { slug: 'tax-credits-calculator', title: 'Tax Credits Calculator (Legacy)', description: 'Calculate Working Tax Credit and Child Tax Credit for existing claimants. Includes childcare element.', category: 'benefits', icon: 'Shield', keywords: ['tax credits', 'working tax credit', 'child tax credit', 'WTC', 'CTC'], priority: 2, metaTitle: 'Tax Credits Calculator UK 2026/27 — Migrated to UC' },
+  { slug: 'tax-credits-calculator', title: 'Tax Credits Calculator (Legacy)', description: 'Legacy calculator for Working Tax Credit and Child Tax Credit, which ended in April 2025. Check an old award on the final 2024/25 rules.', category: 'benefits', icon: 'Shield', keywords: ['tax credits', 'working tax credit', 'child tax credit', 'WTC', 'CTC'], priority: 2, metaTitle: 'Tax Credits Calculator UK 2026/27 — Migrated to UC' },
   // INVESTMENT
   { slug: 'stocks-shares-isa-calculator', title: 'Stocks & Shares ISA Calculator', description: 'Project Stocks & Shares ISA growth with capital appreciation and dividends. See tax saved vs taxable account.', category: 'investment', icon: 'TrendingUp', keywords: ['stocks and shares ISA', 'S&S ISA', 'equity ISA', 'investment ISA'], priority: 1 , metaTitle: 'Stocks & Shares ISA Calculator UK 2026/27' },
   // ENERGY

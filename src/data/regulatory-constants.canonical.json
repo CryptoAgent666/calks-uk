@@ -3350,12 +3350,12 @@
       "source_url": "https://www.gov.uk/government/publications/form-an-guidance/form-an-guidance-accessible",
       "status": "current",
       "change_frequency": "",
-      "note": "UK Citizenship calculator: maximum 270 days absent from the UK over the 3-year qualifying period (statutory residency rule); used in computed eligibility and shown in prose",
+      "note": "UK Citizenship calculator: maximum 270 days absent from the UK over the 3-year qualifying period (statutory residency rule); used in computed eligibility and shown in prose | 2026-09-13: this is the spouse-of-British-citizen limit (3-year route); the standard route is 450 days in 5 years. UKCitizenshipCalculator now offers both routes.",
       "official_value": "270",
       "confidence": "high",
       "freshness_note": "Confirmed: for the 3-year route (spouse/civil partner of a British citizen) total absences must not exceed 270 days over the qualifying period.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-09-13",
+      "verify_method": "browser-qa 2026-09-13 (gov.uk / Home Office fees table)"
     },
     {
       "key": "citizenship_max_absence_days_last_12m",

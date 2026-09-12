@@ -46,7 +46,7 @@ function annualTax(income: number, region: Region): number {
 const REBATE_CHECKLIST = [
   { label: 'Uniform / work clothing flat-rate allowance', detail: '£60–£140/year depending on trade — claim 4 back years', href: null },
   { label: 'Business mileage paid below 55p/mile', detail: 'Claim relief on the shortfall vs HMRC approved rates', href: '/calculator/mileage-allowance-calculator/' },
-  { label: 'Working-from-home relief', detail: '£6/week if required to work from home', href: '/calculator/work-from-home-tax-relief-calculator/' },
+  { label: 'Working-from-home relief', detail: '£6/week for 2022/23 to 2025/26 if required to work from home (ended April 2026)', href: '/calculator/work-from-home-tax-relief-calculator/' },
   { label: 'Marriage Allowance not claimed', detail: 'Up to £252/year, backdatable 4 years', href: '/calculator/marriage-allowance-calculator/' },
   { label: 'Professional fees & subscriptions', detail: 'HMRC-approved bodies (e.g. NMC, UNISON sections)', href: null },
   { label: 'Emergency tax on a pension withdrawal', detail: 'Month-1 code over-taxes one-off withdrawals', href: '/calculator/pension-emergency-tax-calculator/' },
