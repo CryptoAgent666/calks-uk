@@ -3,7 +3,8 @@ import { formatCurrency } from '@/utils'
 
 // Special Support Grant / Disabled Students' Allowance info
 const BURSARIES: Record<string, { name: string; maxAmount: number; incomeLimit: number }> = {
-  nhs: { name: 'NHS Bursary (nursing etc.)', maxAmount: 5_612, incomeLimit: 0 },
+  nhs: { name: 'NHS Learning Support Fund training grant (nursing, midwifery, AHP)', maxAmount: 5_000, incomeLimit: 0 },
+  nhs_bursary: { name: 'NHS Bursary (medicine or dentistry, later years, London)', maxAmount: 4_528, incomeLimit: 0 },
   teacher: { name: 'Teacher Training Bursary', maxAmount: 29_000, incomeLimit: 0 },
   social: { name: 'Social Work Bursary', maxAmount: 4_862, incomeLimit: 0 },
   dsa: { name: "Disabled Students' Allowance", maxAmount: 27_783, incomeLimit: 0 },

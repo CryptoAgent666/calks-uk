@@ -1,18 +1,18 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Simplified ELM/SFI payment rates 2025
+// SFI26 payment rates (gov.uk SFI26 actions, 2026). CSAM1 soil assessment was dropped
+// for SFI26, and the old £49/ha woodland rate belonged to the closed 2021 pilot.
 const ACTIONS = [
-  { id: 'hedgerow', name: 'Hedgerow Management', unit: 'per 100m', rate: 13 },
-  { id: 'buffer_strip', name: 'Buffer Strips (6m)', unit: 'per ha', rate: 515 },
-  { id: 'cover_crop', name: 'Winter Cover Crop', unit: 'per ha', rate: 129 },
-  { id: 'herbal_ley', name: 'Herbal Ley', unit: 'per ha', rate: 224 }, // CSAM3, re-rated for SFI26 (was £382 under SFI 2024)
-  { id: 'soil_assessment', name: 'Soil Assessment', unit: 'per agreement', rate: 97 },
-  { id: 'wildflower', name: 'Flower-Rich Margins', unit: 'per ha', rate: 798 },
-  { id: 'no_insecticide', name: 'No Insecticide (arable)', unit: 'per ha', rate: 45 },
-  { id: 'companion_crop', name: 'Companion Crop', unit: 'per ha', rate: 55 },
-  { id: 'pollen_nectar', name: 'Pollen & Nectar Mix', unit: 'per ha', rate: 739 },
-  { id: 'woodland', name: 'Woodland Management', unit: 'per ha', rate: 49 },
+  { id: 'hedgerow', name: 'Manage hedgerows (CHRW2)', unit: 'per 100m, one side', rate: 13 },
+  { id: 'buffer_strip', name: '4m-12m grass buffer strip, arable (CAHL4)', unit: 'per ha', rate: 515 },
+  { id: 'cover_crop', name: 'Multi-species winter cover crop (CSAM2)', unit: 'per ha', rate: 129 },
+  { id: 'herbal_ley', name: 'Herbal leys (CSAM3)', unit: 'per ha', rate: 224 }, // was £382 under SFI 2024
+  { id: 'wildflower', name: 'Flower-rich grass margins or strips (CIPM2)', unit: 'per ha', rate: 798 },
+  { id: 'no_insecticide', name: 'No insecticide on arable or permanent crops (CIPM4)', unit: 'per ha', rate: 45 },
+  { id: 'companion_crop', name: 'Companion crop, arable (CIPM3)', unit: 'per ha', rate: 55 },
+  { id: 'pollen_nectar', name: 'Pollen and nectar flower mix (CAHL1)', unit: 'per ha', rate: 739 },
+  { id: 'winter_bird_food', name: 'Winter bird food, arable (CAHL2)', unit: 'per ha', rate: 648 },
 ]
 
 export default function ELMPaymentCalculator() {
@@ -45,7 +45,7 @@ export default function ELMPaymentCalculator() {
         </div>
       )}
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p>Sustainable Farming Incentive (SFI) and Environmental Land Management (ELM) rates for England 2025. Apply via Rural Payments Agency. Rates are indicative.</p>
+        <p>Sustainable Farming Incentive 2026 (SFI26) rates for England. SFI26 has no management payment and caps each agreement at £100,000 a year. Apply through the Rural Payments service.</p>
       </div>
     </div>
   )

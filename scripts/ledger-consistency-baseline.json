@@ -1,35 +1,10 @@
 {
  "generated": "2026-08-31",
  "note": "Расхождения value vs official_value, существовавшие на момент внедрения гарда. Печатаются предупреждением и деплой НЕ блокируют. Разобрал запись — удали ключ отсюда, дальше она охраняется блокирующе. НОВЫЕ расхождения блокируют сразу.",
- "known_mismatches": [
-  "council_tax_band_d_east_midlands",
-  "council_tax_band_d_east_of_england",
-  "council_tax_band_d_north_east",
-  "council_tax_band_d_north_west",
-  "council_tax_band_d_south_east",
-  "council_tax_band_d_south_west",
-  "council_tax_band_d_west_midlands",
-  "council_tax_band_d_yorkshire_humber",
-  "esa_support_group_weekly",
-  "help_to_save_eligibility_min_hours_nlw",
-  "home_office_simplified_weekly",
-  "personal_injury_jcg_back_moderate_max",
-  "personal_injury_jcg_back_severe_max",
-  "personal_injury_jcg_leg_serious_max",
-  "rd_loss_making_cash_credit_cap_rate",
-  "spouse_visa_initial_length_years",
-  "ssp_lower_earnings_limit",
-  "ssp_qualifying_earnings_weekly",
-  "ssp_waiting_days",
-  "teacher_london_weighting_fringe",
-  "teacher_london_weighting_inner",
-  "teacher_london_weighting_outer",
-  "wfh_flat_rate_weekly",
-  "wfh_tax_relief_flat_weekly"
- ],
- "tier2_2026_09_13": {
-  "note": "Verified stale by the 2026-09-13 tier2 sweep and recorded as stale_confirmed. The site still holds the old value until phase4 applies the fix; each key must be removed from known_mismatches in the same commit that fixes it.",
-  "added": [
+ "known_mismatches": [],
+ "phase4_2026_09_13": {
+  "note": "All tier2 2026-09-13 stale_confirmed entries applied to the site and synced (value = official_value); their keys were removed from known_mismatches so the gate guards them again.",
+  "removed": [
    "council_tax_band_d_east_midlands",
    "council_tax_band_d_east_of_england",
    "council_tax_band_d_north_east",
@@ -39,21 +14,21 @@
    "council_tax_band_d_west_midlands",
    "council_tax_band_d_yorkshire_humber",
    "esa_support_group_weekly",
+   "help_to_save_eligibility_min_hours_nlw",
    "home_office_simplified_weekly",
    "personal_injury_jcg_back_moderate_max",
    "personal_injury_jcg_back_severe_max",
    "personal_injury_jcg_leg_serious_max",
    "rd_loss_making_cash_credit_cap_rate",
+   "spouse_visa_initial_length_years",
+   "ssp_lower_earnings_limit",
+   "ssp_qualifying_earnings_weekly",
+   "ssp_waiting_days",
    "teacher_london_weighting_fringe",
    "teacher_london_weighting_inner",
    "teacher_london_weighting_outer",
    "wfh_flat_rate_weekly",
    "wfh_tax_relief_flat_weekly"
-  ],
-  "resolved_and_removed": [
-   "rhl_relief_rate",
-   "sdlt_band1_rate",
-   "wtc_basic_element"
   ]
  }
 }

@@ -1291,7 +1291,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'sick-pay-calculator',
     title: 'Statutory Sick Pay Calculator',
-    description: 'Calculate SSP entitlement at £123.25/week. Includes waiting days and maximum 28-week limit.',
+    description: 'Calculate SSP at £123.25/week or 80% of earnings, paid from the first day since April 2026, up to the 28-week limit.',
     category: 'pay',
     icon: 'Banknote',
     keywords: ['sick pay', 'SSP', 'statutory sick pay', 'illness pay'],
@@ -1429,7 +1429,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'work-from-home-tax-relief-calculator',
     title: 'Working from Home Tax Relief Calculator',
-    description: 'Calculate tax relief for working from home. £6/week flat rate or actual costs claim.',
+    description: 'Employee WFH tax relief ended in April 2026. See what you can still claim for 2022/23 to 2025/26 and the £6/week employer allowance.',
     category: 'pay',
     icon: 'Banknote',
     keywords: ['work from home', 'WFH', 'tax relief', 'home office', 'P87'],
@@ -1678,7 +1678,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'extension-cost-calculator', title: 'Extension Cost Calculator', description: 'Estimate home extension costs per m² for single/double storey, side return and wrap-around extensions.', category: 'building', icon: 'Hammer', keywords: ['extension cost', 'house extension', 'rear extension', 'building costs'], priority: 2 , metaTitle: 'House Extension Cost Calculator UK 2026' },
   { slug: 'childcare-entitlement-calculator', title: '30 Hours Free Childcare Calculator', description: 'Check free childcare entitlement by age (15/30 hours). See savings with Tax-Free Childcare.', category: 'benefits', icon: 'Shield', keywords: ['30 hours', 'free childcare', 'childcare entitlement', '15 hours', 'working parents'], priority: 1 , metaTitle: 'Childcare Entitlement Calculator UK 2026 (30 Hrs)' },
   { slug: 'stock-unit-calculator', title: 'Livestock Stock Unit Calculator', description: 'Calculate total livestock units for cattle, sheep, pigs and horses. See land requirement at 2 SU/ha.', category: 'farming', icon: 'Wheat', keywords: ['stock units', 'livestock units', 'stocking rate', 'cattle sheep'], priority: 2 , metaTitle: 'Stock Unit Calculator — Inventory' },
-  { slug: 'agricultural-worker-wage-calculator', title: 'Agricultural Worker Minimum Wage Calculator', description: 'Calculate agricultural wages by AWO grade (1-6). Includes overtime at 1.5x and holiday entitlement.', category: 'farming', icon: 'Wheat', keywords: ['agricultural wages', 'AWO', 'farm worker pay', 'agricultural minimum wage'], priority: 2 , metaTitle: 'Agricultural Worker Wage Calculator UK 2026' },
+  { slug: 'agricultural-worker-wage-calculator', title: 'Agricultural Worker Minimum Wage Calculator', description: 'Calculate farm worker pay in England (minimum wage), Wales (grades A-E) and Scotland, with overtime and holiday entitlement.', category: 'farming', icon: 'Wheat', keywords: ['agricultural wages', 'AWO', 'farm worker pay', 'agricultural minimum wage'], priority: 2 , metaTitle: 'Agricultural Worker Wage Calculator UK 2026' },
   // MATH
   { slug: 'mean-median-mode-calculator', title: 'Mean, Median & Mode Calculator', description: 'Calculate mean, median, mode, range, sum, min and max from a set of numbers. Shows sorted data.', category: 'math', icon: 'Calculator', keywords: ['mean', 'median', 'mode', 'average', 'statistics'], priority: 1 , metaTitle: 'Mean Median Mode Calculator — Free Online' },
   { slug: 'prime-number-calculator', title: 'Prime Number Checker', description: 'Check if a number is prime, find prime factorisation, and list primes up to N.', category: 'math', icon: 'Calculator', keywords: ['prime number', 'prime checker', 'factorisation', 'prime factor'], priority: 2 , metaTitle: 'Prime Number Calculator — Check & List' },
@@ -1780,7 +1780,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // PENSION
   { slug: 'pension-lump-sum-calculator', title: 'Pension Lump Sum Calculator (PCLS)', description: 'Compare taking 0-100% as lump sum. See tax-free portion, tax on excess and remaining pot for drawdown.', category: 'pension', icon: 'PiggyBank', keywords: ['pension lump sum', 'PCLS', 'tax free cash', '25% pension', 'pension withdrawal'], priority: 2 , metaTitle: 'Pension Lump Sum Calculator UK 2026/27 (25% Tax-Free)' },
   // FARMING
-  { slug: 'elm-payment-calculator', title: 'BPS/ELM Payment Calculator', description: 'Calculate Sustainable Farming Incentive and ELM payments for 10+ environmental actions.', category: 'farming', icon: 'Wheat', keywords: ['ELM', 'SFI', 'environmental land management', 'farming payments', 'BPS'], priority: 1 , metaTitle: 'ELM Payment Calculator UK 2026 — DEFRA' },
+  { slug: 'elm-payment-calculator', title: 'BPS/ELM Payment Calculator', description: 'Calculate Sustainable Farming Incentive (SFI26) payments for common environmental actions.', category: 'farming', icon: 'Wheat', keywords: ['ELM', 'SFI', 'environmental land management', 'farming payments', 'BPS'], priority: 1 , metaTitle: 'ELM Payment Calculator UK 2026 — DEFRA' },
   { slug: 'farm-tenancy-calculator', title: 'Farm Tenancy Rent Review Calculator', description: 'Compare your farm rent to market rates. See rent as percentage of revenue for rent review preparation.', category: 'farming', icon: 'Wheat', keywords: ['farm tenancy', 'rent review', 'agricultural rent', 'farm rent'], priority: 2 , metaTitle: 'Farm Tenancy Calculator UK 2026' },
   // EDUCATION
   { slug: 'student-loan-total-cost-calculator', title: 'Student Loan Total Cost Calculator', description: 'Calculate total amount you\'ll actually repay over the loan lifetime with salary growth projections.', category: 'education', icon: 'GraduationCap', keywords: ['student loan cost', 'total repaid', 'loan lifetime', 'write off'], priority: 1 , metaTitle: 'Student Loan Total Cost Calculator UK 2026' },

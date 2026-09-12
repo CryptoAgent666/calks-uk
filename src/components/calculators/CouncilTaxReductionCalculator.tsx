@@ -7,7 +7,7 @@ function calculate(annualCT: number, isSingle: boolean, isStudent: boolean, isDi
   let reason = ''
 
   if (isStudent) { exempt = true; reason = 'Full-time students are exempt from council tax' }
-  else if (isCareLeaverUnder25) { discount = annualCT; reason = 'Care leavers under 25 — full exemption (many councils)' }
+  else if (isCareLeaverUnder25) { discount = annualCT; reason = 'Care leaver under 25: full exemption assumed. In England this is a local scheme, so check your council. Wales (under 25) and Scotland (under 26) exempt nationally.' }
   else {
     if (isSingle) { discount += annualCT * 0.25; reason = 'Single person discount (25%)' }
     if (isDisabled) { discount += annualCT * (1/9); reason += (reason ? ' + ' : '') + 'Disabled reduction (one band lower)' }

@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-09-10'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-09-13'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -24,6 +24,47 @@ const schemas = [
     <p class="text-sm text-muted-foreground mb-8">Rate changes, new calculators and site improvements</p>
 
     <div class="space-y-8">
+      <!-- September 2026 — tier2 sweep: calculators rebuilt where the rules had moved -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            September 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Six calculators rebuilt where the rules had moved on</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Working from home tax relief ended for employees on 6 April 2026.</strong> The <a href="/calculator/work-from-home-tax-relief-calculator/" class="text-primary hover:underline">working from home calculator</a> was still offering a £6 a week claim for 2026/27. It now shows <strong class="text-foreground">£0 for 2026/27</strong>, still values backdated claims for 2022/23 to 2025/26 where your employer required you to work at home, and explains the £6 a week your employer can still pay tax-free.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Corrected: the ILR calculator offered a route that does not exist.</strong> It told Skilled Workers they could settle after 3 years on £45,300 or more; the rule is <strong class="text-foreground">5 years</strong> with no salary shortcut. The <a href="/calculator/ilr-calculator/" class="text-primary hover:underline">ILR calculator</a> now checks the real absence rule, no more than <strong class="text-foreground">180 days in any 12 months</strong>, instead of a 450-day total, and uses the £3,226 fee from 8 April 2026.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Corrected: there is no Agricultural Wages Order for England.</strong> Our <a href="/calculator/agricultural-worker-wage-calculator/" class="text-primary hover:underline">farm worker pay calculator</a> showed English grades 1 to 6 at up to £18.13 an hour. England abolished its order in 2013, so farm workers there are on the minimum wage. The calculator now covers England, the Welsh grades A to E and the Scottish rate separately.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Personal injury figures rebuilt.</strong> The <a href="/calculator/personal-injury-calculator/" class="text-primary hover:underline">personal injury calculator</a> put whiplash at up to £50,000. Road traffic whiplash lasting up to 2 years is paid on a fixed tariff of <strong class="text-foreground">£275 to £4,975</strong>, and every other injury now uses the brackets from the 18th edition of the Judicial College Guidelines (April 2026), with shoulder, knee and PTSD added.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Council tax regional averages updated to 2026/27.</strong> The <a href="/calculator/council-tax-calculator/" class="text-primary hover:underline">council tax calculator</a> held figures about two years old for eight English regions, between £206 and £352 too low. The North West average Band D is now <strong class="text-foreground">£2,479</strong>, not £2,127.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">London teacher pay uses the real pay ranges.</strong> The <a href="/calculator/teacher-pay-calculator/" class="text-primary hover:underline">teacher pay calculator</a> added a flat £5,000, £2,000 or £1,000 for London. Inner London M1 is actually <strong class="text-foreground">£40,317</strong> against £32,916 elsewhere, and the gap passes £10,000 on the Upper Pay Range.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Also corrected:</strong> <a href="/calculator/sick-pay-calculator/" class="text-primary hover:underline">Statutory Sick Pay</a> explainers still described waiting days and a £129 earnings test, both abolished in April 2026. The <a href="/calculator/spouse-visa-calculator/" class="text-primary hover:underline">spouse visa</a> first grant is 2 years 9 months, charged as three years of health surcharge, and children no longer raise the £29,000 income requirement. <a href="/calculator/help-to-save-calculator/" class="text-primary hover:underline">Help to Save</a> needs only £1 of take-home pay on Universal Credit. The <a href="/calculator/rd-tax-credit-calculator/" class="text-primary hover:underline">R&amp;D calculator</a> now pays loss-makers 16.2% under the merged scheme or about 27% under ERIS. The <a href="/calculator/elm-payment-calculator/" class="text-primary hover:underline">SFI calculator</a> is on SFI26 rates, and the ESA support group is £145.90 a week.</span>
+          </li>
+        </ul>
+      </article>
+
       <!-- September 2026 — student loan interest rate 3.2% -> 4.1% -->
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>

@@ -27,7 +27,7 @@ export default function HelpToSaveCalculator() {
         <p className="text-sm text-muted-foreground mt-1">You save {formatCurrency(result.totalSaved)} + 50% govt bonus {formatCurrency(result.bonus)}</p>
       </div>
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p>Help to Save: 50% government bonus on savings up to £50/month for 4 years. From April 2025 it is open to any working Universal Credit claimant earning at least the equivalent of 16 hours/week at the National Living Wage (the older Working Tax Credit route closed with the migration to UC). Max bonus: £1,200.</p>
+        <p>Help to Save: 50% government bonus on savings up to £50/month for 4 years. Since 6 April 2025 anyone on Universal Credit with take-home pay of £1 or more in their last monthly assessment period can open an account, and the scheme runs on these terms until April 2027. Max bonus: £1,200.</p>
       </div>
     </div>
   )

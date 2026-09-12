@@ -5,7 +5,7 @@ const PLANS: Record<string, { name: string; baseRate: number; maxRate: number; i
   plan1: { name: 'Plan 1', baseRate: 4.1, maxRate: 4.1, incomeThresholdLow: 0, incomeThresholdHigh: 0 },
   plan2: { name: 'Plan 2', baseRate: 4.1, maxRate: 6.0, incomeThresholdLow: 29_385, incomeThresholdHigh: 52_885 },
   plan4: { name: 'Plan 4', baseRate: 4.1, maxRate: 4.1, incomeThresholdLow: 0, incomeThresholdHigh: 0 },
-  plan5: { name: 'Plan 5', baseRate: 4.1, maxRate: 4.1, incomeThresholdLow: 25_000, incomeThresholdHigh: 49_130 },
+  plan5: { name: 'Plan 5', baseRate: 4.1, maxRate: 4.1, incomeThresholdLow: 0, incomeThresholdHigh: 0 }, // RPI only, no income band
 }
 
 function calculate(planId: string, balance: number, salary: number) {
@@ -65,7 +65,7 @@ export default function StudentLoanInterestCalculator() {
             {result.plan.incomeThresholdHigh > 0 ? (
               <><p>Below £{result.plan.incomeThresholdLow.toLocaleString()}: RPI ({result.plan.baseRate}%)</p><p>£{result.plan.incomeThresholdLow.toLocaleString()}–£{result.plan.incomeThresholdHigh.toLocaleString()}: RPI plus a sliding margin</p><p>Above £{result.plan.incomeThresholdHigh.toLocaleString()}: RPI + 3%, capped at {result.plan.maxRate}%</p></>
             ) : (
-              <p>Fixed at RPI or Bank of England base rate + 1% (whichever is lower): {result.plan.baseRate}%</p>
+              <p>{result.plan.name === 'Plan 5' ? 'RPI only, with no income-based margin' : 'Fixed at RPI or Bank of England base rate + 1% (whichever is lower)'}: {result.plan.baseRate}%</p>
             )}
           </div>
         </div>

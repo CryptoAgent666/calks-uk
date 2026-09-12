@@ -1,11 +1,19 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// UK Spouse Visa minimum income requirement 2025
-const MIN_INCOME = 29_000 // from April 2024, rising
-const VISA_FEE = 2_064
-const IHS_PER_YEAR = 1_035
-const VISA_LENGTH = 2.5 // years (initial)
+// UK Spouse Visa minimum income requirement
+const MIN_INCOME = 29_000 // from April 2024; the planned rises are paused
+const VISA_FEE = 2_064 // family 'Route to Settlement' entry clearance from 8 April 2026, partner or child
+const IHS_ADULT = 1_035
+const IHS_CHILD = 776 // under-18 rate
+const VISA_LENGTH = 2.75 // first grant from outside the UK: up to 2 years 9 months
+// The surcharge is charged per whole year, plus half a year for a remainder of 6 months
+// or less and a full year for anything longer, so 2 years 9 months is charged as 3 years.
+const ihsYears = (years: number) => {
+  const whole = Math.floor(years)
+  const rest = years - whole
+  return whole + (rest === 0 ? 0 : rest <= 0.5 ? 0.5 : 1)
+}
 
 function calculate(applicantIncome: number, partnerIncome: number, savings: number, hasChildren: boolean, numChildren: number) {
   const totalIncome = applicantIncome + partnerIncome
@@ -21,12 +29,12 @@ function calculate(applicantIncome: number, partnerIncome: number, savings: numb
   const savingsNeeded = shortfall > 0 ? shortfall * 2.5 + 16_000 : 0
 
   // Costs
-  const ihsTotal = IHS_PER_YEAR * VISA_LENGTH
+  const ihsTotal = IHS_ADULT * ihsYears(VISA_LENGTH)
   const totalCost = VISA_FEE + ihsTotal
-  const dependantFees = hasChildren ? numChildren * (VISA_FEE * 0.5 + ihsTotal) : 0
+  const dependantFees = hasChildren ? numChildren * (VISA_FEE + IHS_CHILD * ihsYears(VISA_LENGTH)) : 0
   const grandTotal = totalCost + dependantFees
 
-  return { totalIncome, effectiveIncome, meetsIncome, meetsWithSavings, shortfall, savingsNeeded, savingsAsIncome, totalCost, dependantFees, grandTotal }
+  return { totalIncome, effectiveIncome, meetsIncome, meetsWithSavings, shortfall, savingsNeeded, savingsAsIncome, ihsTotal, totalCost, dependantFees, grandTotal }
 }
 
 export default function SpouseVisaCalculator() {
@@ -63,7 +71,7 @@ export default function SpouseVisaCalculator() {
         <div className="rounded-2xl bg-destructive/10 p-6 text-center">
           <p className="text-sm text-muted-foreground">Total Visa Cost</p>
           <p className="text-3xl font-bold text-destructive mt-1">{formatCurrency(result.grandTotal)}</p>
-          <p className="text-sm text-muted-foreground mt-1">Visa fee: £{VISA_FEE.toLocaleString()} + IHS: {formatCurrency(IHS_PER_YEAR * VISA_LENGTH)}{result.dependantFees > 0 ? ` + dependants: ${formatCurrency(result.dependantFees)}` : ''}</p>
+          <p className="text-sm text-muted-foreground mt-1">Visa fee: £{VISA_FEE.toLocaleString()} + IHS: {formatCurrency(result.ihsTotal)}{result.dependantFees > 0 ? ` + dependants: ${formatCurrency(result.dependantFees)}` : ''}</p>
         </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
           <p>Minimum income: <span className="font-medium text-foreground">£{MIN_INCOME.toLocaleString()}</span> (from April 2024). Previously-planned rises to £34,500 and £38,700 were paused pending a Migration Advisory Committee review, so £29,000 still applies.</p>

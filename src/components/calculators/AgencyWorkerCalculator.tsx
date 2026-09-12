@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency, formatPercent } from '@/utils'
+import { formatCurrency, formatPercent, ukIncomeTax } from '@/utils'
 
 function calculate(chargeRate: number, hoursPerWeek: number, weeksPerYear: number, agencyMarginPct: number, isLtd: boolean) {
   const weeklyCharge = chargeRate * hoursPerWeek

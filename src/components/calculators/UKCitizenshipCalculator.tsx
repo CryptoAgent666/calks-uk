@@ -4,7 +4,7 @@ import { formatCurrency } from '@/utils'
 const CITIZENSHIP_FEE = 1_709
 const CEREMONY_FEE = 130
 const LIFE_IN_UK_TEST = 50
-const ENGLISH_TEST = 150 // approx B1 IELTS/Trinity
+const ENGLISH_TEST = 160 // cheapest approved B1 SELT (Trinity GESE Grade 5); IELTS Life Skills B1 is £182
 
 function calculate(hasILR: boolean, ilrDate: string, absenceDays: number, hasLifeInUK: boolean, hasEnglish: boolean) {
   const now = new Date()
@@ -67,7 +67,7 @@ export default function UKCitizenshipCalculator() {
               <tr className="border-b border-border/50"><td className="py-2">Citizenship Application</td><td className="text-right tabular-nums">{formatCurrency(CITIZENSHIP_FEE)}</td></tr>
               <tr className="border-b border-border/50"><td className="py-2">Citizenship Ceremony</td><td className="text-right tabular-nums">{formatCurrency(CEREMONY_FEE)}</td></tr>
               {!lifeInUK && <tr className="border-b border-border/50"><td className="py-2">Life in the UK Test</td><td className="text-right tabular-nums">{formatCurrency(LIFE_IN_UK_TEST)}</td></tr>}
-              {!english && <tr className="border-b border-border/50"><td className="py-2">English Test (B1)</td><td className="text-right tabular-nums">{formatCurrency(ENGLISH_TEST)}</td></tr>}
+              {!english && <tr className="border-b border-border/50"><td className="py-2">English Test (B1, from)</td><td className="text-right tabular-nums">{formatCurrency(ENGLISH_TEST)}</td></tr>}
             </tbody>
           </table>
 

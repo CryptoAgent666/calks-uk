@@ -1,18 +1,20 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Average Band D council tax 2026/27 by region (approximate)
+// Average area Band D council tax 2026/27 (incl. adult social care and parish precepts).
+// England and London are MHCLG's published figures. MHCLG publishes no other regional
+// averages, so these are tax-base-weighted means of Table 10 (line 17) by region.
 const REGIONS: Record<string, number> = {
   'England Average': 2_392,
   'London': 2_068,
-  'South East': 2_151,
-  'South West': 2_239,
-  'East of England': 2_188,
-  'East Midlands': 2_214,
-  'West Midlands': 2_115,
-  'North West': 2_127,
-  'North East': 2_190,
-  'Yorkshire & Humber': 2_155,
+  'South East': 2_472,
+  'South West': 2_550,
+  'East of England': 2_394,
+  'East Midlands': 2_460,
+  'West Midlands': 2_393,
+  'North West': 2_479,
+  'North East': 2_535,
+  'Yorkshire & Humber': 2_390,
 }
 
 const BAND_RATIOS: Record<string, number> = {

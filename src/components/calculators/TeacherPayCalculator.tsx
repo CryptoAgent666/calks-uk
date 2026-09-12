@@ -4,6 +4,18 @@ import { formatCurrency, ukIncomeTax } from '@/utils'
 // Teacher pay scales 2025/26 (England, outside London) — STPCD 2025, 4% award from 1 September 2025
 const MAIN_SCALE = [32_916, 34_823, 37_101, 39_556, 42_057, 45_352]
 const UPPER_SCALE = [47_472, 49_232, 51_048]
+// London pay ranges, STPCD 2025. M1/M6 and U1/U3 are the statutory range limits; the
+// points between are the advisory scales.
+const LONDON_MAIN: Record<string, number[]> = {
+  inner: [40_317, 42_234, 44_238, 46_339, 48_952, 52_300],
+  outer: [37_870, 39_851, 41_935, 44_128, 46_800, 50_474],
+  fringe: [34_398, 36_373, 38_627, 41_075, 43_545, 46_839],
+}
+const LONDON_UPPER: Record<string, number[]> = {
+  inner: [57_632, 60_464, 62_496],
+  outer: [52_219, 54_151, 56_154],
+  fringe: [48_913, 50_668, 52_490],
+}
 const LEADERSHIP: Record<string, { min: number; max: number }> = {
   'Head (Group 1)': { min: 58_569, max: 77_924 },
   'Head (Group 4)': { min: 71_330, max: 97_136 },
@@ -13,17 +25,17 @@ const LEADERSHIP: Record<string, { min: number; max: number }> = {
 type Scale = 'main' | 'upper' | 'leadership'
 
 function calculate(scale: Scale, point: number, leadershipGroup: string, isLondon: string) {
+  // London teachers are paid on separate ranges rather than a flat add-on.
+  const main = LONDON_MAIN[isLondon] ?? MAIN_SCALE
+  const upper = LONDON_UPPER[isLondon] ?? UPPER_SCALE
   let salary: number
-  if (scale === 'main') salary = MAIN_SCALE[Math.min(point, MAIN_SCALE.length - 1)] || MAIN_SCALE[0]
-  else if (scale === 'upper') salary = UPPER_SCALE[Math.min(point, UPPER_SCALE.length - 1)] || UPPER_SCALE[0]
+  if (scale === 'main') salary = main[Math.min(point, main.length - 1)] || main[0]
+  else if (scale === 'upper') salary = upper[Math.min(point, upper.length - 1)] || upper[0]
   else {
+    // Leadership is shown at England (excluding London) rates.
     const group = LEADERSHIP[leadershipGroup] || LEADERSHIP['Head (Group 1)']
     salary = group.min + (group.max - group.min) * (point / 100)
   }
-
-  // London weighting
-  const londonAdj: Record<string, number> = { none: 0, inner: 5_000, outer: 2_000, fringe: 1_000 }
-  salary += londonAdj[isLondon] || 0
 
   // Teachers' Pension Scheme — tiered member contribution rate by salary band
   // (2026/27 bands, uprated 3.8% CPI from 1 April 2026). Source: teacherspensions.co.uk.
@@ -67,7 +79,7 @@ export default function TeacherPayCalculator() {
           <><div><label className="block text-sm font-medium mb-2">Leadership Group</label><select value={leadership} onChange={(e) => setLeadership(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Leadership Group">{Object.keys(LEADERSHIP).map(k => <option key={k} value={k}>{k}</option>)}</select></div>
           <div><label className="block text-sm font-medium mb-2">Point in Range (%)</label><input type="range" min="0" max="100" value={point} onChange={(e) => setPoint(parseInt(e.target.value))} className="w-full mt-3"  aria-label="Point in Range (%)" /></div></>
         )}
-        <div><label className="block text-sm font-medium mb-2">London</label><select value={london} onChange={(e) => setLondon(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="London"><option value="none">Rest of England</option><option value="inner">Inner London (+£5K)</option><option value="outer">Outer London (+£2K)</option><option value="fringe">London Fringe (+£1K)</option></select></div>
+        <div><label className="block text-sm font-medium mb-2">London</label><select value={london} disabled={scale === 'leadership'} onChange={(e) => setLondon(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="London"><option value="none">Rest of England</option><option value="inner">Inner London</option><option value="outer">Outer London</option><option value="fringe">London Fringe</option></select></div>
       </div>
 
       <div className="space-y-4 animate-fade-in-up">

@@ -3,7 +3,7 @@ import { formatCurrency } from '@/utils'
 
 // Teachers' Pension Scheme (career average, 1/57th accrual)
 const ACCRUAL_RATE = 1 / 57
-const REVALUATION = 0.032 // CPI + 1.6% for active members
+const REVALUATION = 0.032 // projection assumption: CPI 1.6% + 1.6%. Actual active revaluation was 5.4% (April 2026) and 3.3% (April 2025).
 
 // Member contribution tiers from 1 April 2026 (salary bands uprated 3.8% CPI).
 // Source: teacherspensions.co.uk — contribution tiers 2026/27.
@@ -75,7 +75,7 @@ export default function TeachersPensionCalculator() {
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Max Lump Sum (optional)</p><p className="text-lg font-bold">{formatCurrency(result.lumpSum)}</p></div>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>Career average scheme: 1/57th of pensionable salary accrued each year, revalued annually by CPI + 1.6%. Normal pension age is linked to State Pension age. This is a simplified projection.</p>
+            <p>Career average scheme: 1/57th of pensionable salary accrued each year, revalued annually by CPI + 1.6% (5.4% in April 2026); this projection assumes 3.2% a year. Normal pension age is linked to State Pension age. This is a simplified projection.</p>
           </div>
         </div>
       )}
