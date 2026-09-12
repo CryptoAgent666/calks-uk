@@ -169,14 +169,15 @@
       "used_by": [
         "src/components/calculators/AgricultureWorkerWageCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/agricultural-workers-rights/pay-and-overtime",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "AWO England 2026/27 Grade 2 (Standard) hourly rate",
-      "official_value": "12.77",
+      "official_value": "n/a - no England agricultural wages order since 1 Oct 2013; NMW/NLW applies (£12.71 21+)",
       "official_source": "en.wikipedia.org/wiki/Agricultural_Wages_Board; gov.uk",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "gov.uk (checked main thread): \"Agricultural workers in England must be paid at least the National Minimum Wage.\" AMW survives only \"if it says so in their contract\" for workers employed before 1 Oct 2013. AWB abolished by ERRA 2013 s.72. None of 12.77/13.57/14.78/16.29/18.13 appears in any official, NFU or union document. Statutory orders exist only in Wales (A-E), Scotland (single rate) and NI."
     },
     {
       "key": "agricultural_wage_grade3_lead",
@@ -190,14 +191,15 @@
       "used_by": [
         "src/components/calculators/AgricultureWorkerWageCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/agricultural-workers-rights/pay-and-overtime",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "AWO England 2026/27 Grade 3 (Lead Worker) hourly rate",
-      "official_value": "13.57",
+      "official_value": "n/a - no England agricultural wages order since 1 Oct 2013; NMW/NLW applies (£12.71 21+)",
       "official_source": "en.wikipedia.org/wiki/Agricultural_Wages_Board",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "gov.uk (checked main thread): \"Agricultural workers in England must be paid at least the National Minimum Wage.\" AMW survives only \"if it says so in their contract\" for workers employed before 1 Oct 2013. AWB abolished by ERRA 2013 s.72. None of 12.77/13.57/14.78/16.29/18.13 appears in any official, NFU or union document. Statutory orders exist only in Wales (A-E), Scotland (single rate) and NI."
     },
     {
       "key": "agricultural_wage_grade4_craft",
@@ -211,14 +213,15 @@
       "used_by": [
         "src/components/calculators/AgricultureWorkerWageCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/agricultural-workers-rights/pay-and-overtime",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "AWO England 2026/27 Grade 4 (Craft) hourly rate",
-      "official_value": "14.78",
+      "official_value": "n/a - no England agricultural wages order since 1 Oct 2013; NMW/NLW applies (£12.71 21+)",
       "official_source": "nfu-cymru.org.uk (Wales rates)",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "gov.uk (checked main thread): \"Agricultural workers in England must be paid at least the National Minimum Wage.\" AMW survives only \"if it says so in their contract\" for workers employed before 1 Oct 2013. AWB abolished by ERRA 2013 s.72. None of 12.77/13.57/14.78/16.29/18.13 appears in any official, NFU or union document. Statutory orders exist only in Wales (A-E), Scotland (single rate) and NI."
     },
     {
       "key": "agricultural_wage_grade5_supervisory",
@@ -232,14 +235,15 @@
       "used_by": [
         "src/components/calculators/AgricultureWorkerWageCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/agricultural-workers-rights/pay-and-overtime",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "AWO England 2026/27 Grade 5 (Supervisory) hourly rate",
-      "official_value": "16.29",
+      "official_value": "n/a - no England agricultural wages order since 1 Oct 2013; NMW/NLW applies (£12.71 21+)",
       "official_source": "en.wikipedia.org/wiki/Agricultural_Wages_Board",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "gov.uk (checked main thread): \"Agricultural workers in England must be paid at least the National Minimum Wage.\" AMW survives only \"if it says so in their contract\" for workers employed before 1 Oct 2013. AWB abolished by ERRA 2013 s.72. None of 12.77/13.57/14.78/16.29/18.13 appears in any official, NFU or union document. Statutory orders exist only in Wales (A-E), Scotland (single rate) and NI."
     },
     {
       "key": "agricultural_wage_grade6_management",
@@ -253,14 +257,15 @@
       "used_by": [
         "src/components/calculators/AgricultureWorkerWageCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/agricultural-workers-rights/pay-and-overtime",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "AWO England 2026/27 Grade 6 (Farm Management) hourly rate",
-      "official_value": "18.13",
+      "official_value": "n/a - no England agricultural wages order since 1 Oct 2013; NMW/NLW applies (£12.71 21+)",
       "official_source": "en.wikipedia.org/wiki/Agricultural_Wages_Board",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "gov.uk (checked main thread): \"Agricultural workers in England must be paid at least the National Minimum Wage.\" AMW survives only \"if it says so in their contract\" for workers employed before 1 Oct 2013. AWB abolished by ERRA 2013 s.72. None of 12.77/13.57/14.78/16.29/18.13 appears in any official, NFU or union document. Statutory orders exist only in Wales (A-E), Scotland (single rate) and NI."
     },
     {
       "key": "agricultural_worker_scotland_grade1",
@@ -1618,15 +1623,15 @@
       "used_by": [
         "src/components/calculators/StaircaseCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/protection-from-falling-collision-and-impact-approved-document-k",
-      "status": "uncertain",
+      "source_url": "https://assets.publishing.service.gov.uk/media/60d5bdcde90e07716f516cfd/Approved_Document_K.pdf",
+      "status": "current",
       "change_frequency": "",
       "note": "StaircaseCalculator: maximum step going (tread depth) (Part K), also shown in prose",
-      "official_value": "",
+      "official_value": "300",
       "confidence": "medium",
-      "freshness_note": "Approved Document K specifies only a MINIMUM going (220mm) for private stairs and the 2R+G range; a 300mm maximum going is a common design convention, not a stated Part K regulatory limit.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "Approved Document K Table 1.1 private stair: rise 150-220mm, going 220-300mm, 2R+G 550-700mm, max pitch 42°.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "building_regs_going_min",
@@ -1794,15 +1799,15 @@
       "used_by": [
         "src/components/calculators/StaircaseCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/protection-from-falling-collision-and-impact-approved-document-k",
-      "status": "uncertain",
+      "source_url": "https://assets.publishing.service.gov.uk/media/60d5bdcde90e07716f516cfd/Approved_Document_K.pdf",
+      "status": "current",
       "change_frequency": "",
       "note": "StaircaseCalculator: minimum step riser height (Part K), also shown in prose",
-      "official_value": "",
+      "official_value": "150",
       "confidence": "medium",
-      "freshness_note": "Approved Document K specifies only a MAXIMUM rise (220mm) for private stairs; a 150mm minimum rise is a common design convention, not a stated Part K regulatory minimum.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "Approved Document K Table 1.1 private stair: rise 150-220mm, going 220-300mm, 2R+G 550-700mm, max pitch 42°. ADK does set a min rise and max going.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "building_regs_window_u",
@@ -4821,15 +4826,16 @@
       "used_by": [
         "src/components/calculators/CouncilTaxCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a02eeeccd2e0e8b5b20b449/Table_10_2026-27.ods",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax East Midlands 2026/27",
       "resolve_note": "MHCLG 2026-27 Band D headline is by authority class (London/met/unitary/shire), not ONS region. The code's regional set is a 2024-25-era snapshot (consistent wi",
-      "official_value": "2214",
+      "official_value": "2460",
       "official_source": "gov.uk council-tax-levels 2026-27 (area-type only)",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "MHCLG publishes no 2026-27 regional averages; computed as tax-base-weighted mean of Table 10 Data_Billing line 17 (area Band D incl. major + parish precepts) over billing authorities in the region. Method reproduces England £2,391.52 (official £2,392) and London £2,068.47 (official £2,068). Site value looks like 2024-25 level (England then £2,171)."
     },
     {
       "key": "council_tax_band_d_east_of_england",
@@ -4843,15 +4849,16 @@
       "used_by": [
         "src/components/calculators/CouncilTaxCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a02eeeccd2e0e8b5b20b449/Table_10_2026-27.ods",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax East of England 2026/27",
       "resolve_note": "Part of a 2024-25-era regional set; outdated vs 2026-27 (England average rose £2,171→£2,392). Stale.",
-      "official_value": "2188",
+      "official_value": "2394",
       "official_source": "gov.uk council-tax-levels 2026-27",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "MHCLG publishes no 2026-27 regional averages; computed as tax-base-weighted mean of Table 10 Data_Billing line 17 (area Band D incl. major + parish precepts) over billing authorities in the region. Method reproduces England £2,391.52 (official £2,392) and London £2,068.47 (official £2,068). Site value looks like 2024-25 level (England then £2,171)."
     },
     {
       "key": "council_tax_band_d_england_average",
@@ -4908,15 +4915,16 @@
       "used_by": [
         "src/components/calculators/CouncilTaxCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a02eeeccd2e0e8b5b20b449/Table_10_2026-27.ods",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax North East 2026/27",
       "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale.",
-      "official_value": "2190",
+      "official_value": "2535",
       "official_source": "gov.uk council-tax-levels 2026-27",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "MHCLG publishes no 2026-27 regional averages; computed as tax-base-weighted mean of Table 10 Data_Billing line 17 (area Band D incl. major + parish precepts) over billing authorities in the region. Method reproduces England £2,391.52 (official £2,392) and London £2,068.47 (official £2,068). Site value looks like 2024-25 level (England then £2,171)."
     },
     {
       "key": "council_tax_band_d_north_west",
@@ -4930,15 +4938,16 @@
       "used_by": [
         "src/components/calculators/CouncilTaxCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a02eeeccd2e0e8b5b20b449/Table_10_2026-27.ods",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax North West 2026/27",
       "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale.",
-      "official_value": "2127",
+      "official_value": "2479",
       "official_source": "gov.uk council-tax-levels 2026-27",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "MHCLG publishes no 2026-27 regional averages; computed as tax-base-weighted mean of Table 10 Data_Billing line 17 (area Band D incl. major + parish precepts) over billing authorities in the region. Method reproduces England £2,391.52 (official £2,392) and London £2,068.47 (official £2,068). Site value looks like 2024-25 level (England then £2,171)."
     },
     {
       "key": "council_tax_band_d_ratio",
@@ -4969,15 +4978,16 @@
       "used_by": [
         "src/components/calculators/CouncilTaxCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a02eeeccd2e0e8b5b20b449/Table_10_2026-27.ods",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax South East 2026/27",
       "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale.",
-      "official_value": "2151",
+      "official_value": "2472",
       "official_source": "gov.uk council-tax-levels 2026-27",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "MHCLG publishes no 2026-27 regional averages; computed as tax-base-weighted mean of Table 10 Data_Billing line 17 (area Band D incl. major + parish precepts) over billing authorities in the region. Method reproduces England £2,391.52 (official £2,392) and London £2,068.47 (official £2,068). Site value looks like 2024-25 level (England then £2,171)."
     },
     {
       "key": "council_tax_band_d_south_west",
@@ -4991,15 +5001,16 @@
       "used_by": [
         "src/components/calculators/CouncilTaxCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a02eeeccd2e0e8b5b20b449/Table_10_2026-27.ods",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax South West 2026/27",
       "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale.",
-      "official_value": "2239",
+      "official_value": "2550",
       "official_source": "gov.uk council-tax-levels 2026-27",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "MHCLG publishes no 2026-27 regional averages; computed as tax-base-weighted mean of Table 10 Data_Billing line 17 (area Band D incl. major + parish precepts) over billing authorities in the region. Method reproduces England £2,391.52 (official £2,392) and London £2,068.47 (official £2,068). Site value looks like 2024-25 level (England then £2,171)."
     },
     {
       "key": "council_tax_band_d_west_midlands",
@@ -5013,15 +5024,16 @@
       "used_by": [
         "src/components/calculators/CouncilTaxCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a02eeeccd2e0e8b5b20b449/Table_10_2026-27.ods",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax West Midlands 2026/27",
       "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale.",
-      "official_value": "2115",
+      "official_value": "2393",
       "official_source": "gov.uk council-tax-levels 2026-27",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "MHCLG publishes no 2026-27 regional averages; computed as tax-base-weighted mean of Table 10 Data_Billing line 17 (area Band D incl. major + parish precepts) over billing authorities in the region. Method reproduces England £2,391.52 (official £2,392) and London £2,068.47 (official £2,068). Site value looks like 2024-25 level (England then £2,171)."
     },
     {
       "key": "council_tax_band_d_yorkshire_humber",
@@ -5035,15 +5047,16 @@
       "used_by": [
         "src/components/calculators/CouncilTaxCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a02eeeccd2e0e8b5b20b449/Table_10_2026-27.ods",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "CouncilTaxCalculator REGIONS: average Band D council tax Yorkshire & Humber 2026/27",
       "resolve_note": "2024-25-era regional snapshot; outdated vs 2026-27. Stale.",
-      "official_value": "2155",
+      "official_value": "2390",
       "official_source": "gov.uk council-tax-levels 2026-27",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "MHCLG publishes no 2026-27 regional averages; computed as tax-base-weighted mean of Table 10 Data_Billing line 17 (area Band D incl. major + parish precepts) over billing authorities in the region. Method reproduces England £2,391.52 (official £2,392) and London £2,068.47 (official £2,068). Site value looks like 2024-25 level (England then £2,171)."
     },
     {
       "key": "council_tax_band_e_ratio",
@@ -5531,11 +5544,11 @@
       "status": "uncertain",
       "change_frequency": "",
       "note": "Council Tax Reduction calculator: care leavers under 25 given full exemption (offered by many councils)",
-      "official_value": "100% exempt",
+      "official_value": "England: local discretionary; Wales national <25 (2019); Scotland national <26 (2018)",
       "confidence": "medium",
-      "freshness_note": "Care-leaver-under-25 relief is a locally-set scheme with no single national value (postcode lottery; LGA still seeking a national exemption), so 100% is a local-scheme figure not nationally fixed.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "England has no national statutory exemption (DfE local offer guidance eff. 30 Sep 2026: councils 'may wish to consider'). CouncilTaxReductionCalculator.tsx:10 applies 100% to anyone ticking the box with only a '(many councils)' label - needs a check-your-council caveat.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "local Council Tax Reduction schemes"
     },
     {
@@ -7333,14 +7346,15 @@
       "used_by": [
         "src/components/calculators/UKCitizenshipCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/guidance/prove-your-english-language-abilities-with-a-secure-english-language-test-selt",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "UK Citizenship calculator: ENGLISH_TEST constant — approx cost of B1 English test (IELTS/Trinity) required for naturalisation; provider-priced but a mandatory regulatory requirement",
-      "official_value": "150",
+      "official_value": "160-182",
       "official_source": "https://www.migrate.org.uk/ielts-life-skills-b1-test/",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "Provider prices Sep 2026: Trinity GESE Grade 5 (B1) £160; IELTS Life Skills B1 £182 (British Council). PSI Skills for English no longer approved for in-UK SELT (gov.uk list updated 28 Aug 2026). Not a government-set fee."
     },
     {
       "key": "esa_assessment_rate",
@@ -7354,12 +7368,16 @@
       "used_by": [
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://www.gov.uk/employment-support-allowance",
+      "source_url": "https://www.gov.uk/employment-support-allowance/what-youll-get",
       "status": "current",
       "change_frequency": "",
       "note": "sick-pay-calculator: ESA £95.55/week assessment phase, up to £142.25 support component",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "official_value": "95.55",
+      "freshness_note": "gov.uk: assessment phase up to £75.65 (under 25) / £95.55 (25+); WRAG £95.55; support group up to £145.90. Income-related ESA: no new claims, existing continue."
     },
     {
       "key": "ev_bik_rate",
@@ -8260,14 +8278,15 @@
       "used_by": [
         "src/components/calculators/PayPerMileCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/government/publications/amended-fuel-duty-rates-for-2026-to-2027/amended-fuel-duty-rates-2026-to-2027",
+      "status": "current",
       "change_frequency": "",
       "note": "PayPerMileCalculator: editorial estimate that ~45% of pump price is fuel duty + VAT on duty (currentFuelCost * 0.45)",
       "official_value": "0.45",
       "official_source": "https://www.gov.uk/government/publications/fees-in-the-civil-and-family-courts-main-fees-ex50/civil-court-fees-ex50",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "Editorial estimate, fair. Duty 52.95p/l to 31 Dec 2026 (then 55.95p, 57.95p from 1 Mar 2027). DESNZ 7 Sep 2026: petrol 164.40p, diesel 186.36p -> duty + all VAT = 48.9% petrol / 45.1% diesel. Matches the 'duty plus all VAT' definition; rises from 1 Jan 2027."
     },
     {
       "key": "full_expensing_rate",
@@ -8402,13 +8421,15 @@
         "src/components/calculators/HelpToSaveCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/get-help-savings-low-income/eligibility",
-      "status": "current",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "Help to Save calculator prose: from April 2025 open to any working Universal Credit claimant earning at least the equivalent of 16 hours/week at the National Living Wage",
       "official_value": "0",
       "confidence": "high",
-      "freshness_note": "There is NO 16-hours-per-week / National Living Wage earnings requirement. Since April 2025 the scheme covers all working Universal Credit claimants: eligibility is now simply receiving Universal Cred",
-      "resolve_note": "HelpToSave prose already describes Apr-2025 reform (UC + 16h-NLW-equiv); minor threshold nuance only"
+      "freshness_note": "gov.uk eligibility: UC claimant with \"take-home pay of £1 or more in your last monthly assessment period\" (from 6 Apr 2025). Scheme extended on current terms to April 2027; from April 2028 extended to UC child/caring element. Site still says 16 hours at NLW / £881 a month / £203 a week in HelpToSaveCalculator.tsx:30, faqs 1596, content 6234.",
+      "resolve_note": "HelpToSave prose already describes Apr-2025 reform (UC + 16h-NLW-equiv); minor threshold nuance only",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "help_to_save_max_bonus",
@@ -9041,14 +9062,14 @@
         "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/tax-relief-for-employees/working-at-home",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "Sole-trader home-as-office GBP6/week simplified method (sole-trader-tax-calculator)",
-      "official_value": "",
+      "official_value": "0",
       "confidence": "high",
-      "freshness_note": "GBP6/week is the EMPLOYEE working-from-home easement (not the sole-trader rate); gov.uk states no WFH tax relief can be claimed for 2026-27, so the figure is no longer claimable for the current year (backdated prior-year claims still use GBP6/wk).",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "gov.uk (checked main thread): \"From the tax year 6 April 2026 to 5 April 2027, you will not be able to claim tax relief for working from home.\" Removed by new s360B ITEPA (Budget 26 Nov 2025). Past 4 years still claimable. Employer may still pay £6/week tax-free under s316A. Self-employed simplified WFH flat rates £10/£18/£26 per month unchanged.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "housing_benefit_applicable_amount_couple",
@@ -9738,15 +9759,15 @@
       "used_by": [
         "src/components/calculators/ILRCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/indefinite-leave-to-remain-calculating-continuous-period-in-uk/indefinite-leave-to-remain-calculating-continuous-period-in-uk-accessible",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-continuous-residence",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "ILRCalculator: maximum total days absent for 5-year routes (~15 months)",
-      "official_value": "",
+      "official_value": "n/a - max 180 days outside UK in any 12-month period (CR 3.1)",
       "confidence": "high",
-      "freshness_note": "No 450-day cumulative cap exists for 5-year routes; official guidance applies only the 180-days-per-rolling-12-months test with no separate total-absence limit, so the stored 450 cannot be confirmed from a primary source.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "Appendix Continuous Residence CR 3.1: \"must not have been outside the UK for more than 180 days in any 12-month period\". No 450-day total cap. Long residence 548-day total / 184-day single absence applies only where reached or begun before 11 Apr 2024 (CR 3.3); otherwise 180/12 rule.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "ilr_max_absence_days_rolling_12m",
@@ -9848,14 +9869,15 @@
       "used_by": [
         "src/components/calculators/ILRCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-skilled-worker",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "ILRCalculator: salary at/above which Skilled Worker route can qualify in 3 years instead of 5 (route description text)",
-      "official_value": "45300",
+      "official_value": "n/a",
       "official_source": "https://www.gov.uk/indefinite-leave-to-remain-tier-2-t2-skilled-worker-visa/salary-requirements",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "No £45,300 accelerated-settlement threshold exists in current rules or in the earned-settlement proposal."
     },
     {
       "key": "ilr_skilled_worker_accelerated_years",
@@ -9870,14 +9892,14 @@
         "src/components/calculators/ILRCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-skilled-worker",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "ILRCalculator: reduced qualifying period (3 years) if earning the high-salary threshold (route description text)",
-      "official_value": "3",
+      "official_value": "n/a - SW 21.1 requires 5 years; no salary-based accelerated route",
       "confidence": "high",
-      "freshness_note": "Appendix Skilled Worker SW 21.1 requires 5 continuous years with NO salary-based 3-year acceleration; the 3-year fast-track for high earners (>£125,140) is part of the PROPOSED earned-settlement model (Nov 2025 consultation), not enacted, so 3 cannot be confirmed.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "\"SW 21.1. The applicant must have spent a continuous period of 5 years in the UK.\" Earned settlement (10-year baseline with income reductions: -5y over £50,270, -7y over £125,140) is a consultation only; no rules laid as of 13 Sep 2026 (HC 259, HC 584 contain none). HC 1691 only adds B2 English for ILR from 26 Mar 2027.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.gov.uk/indefinite-leave-to-remain-tier-2-t2-skilled-worker-visa/salary-requirements"
     },
     {
@@ -14168,15 +14190,15 @@
       "used_by": [
         "src/components/calculators/StudentAllowanceCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/nhs-bursary-scheme-rules-2025-to-2026/the-nhs-bursary-scheme-new-rules-14th-edition-for-the-academic-year-2025-to-2026",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/government/publications/nhs-bursary-scheme-rules-2026-to-2027/the-nhs-bursary-scheme-new-rules-15th-edition-for-the-academic-year-2026-to-2027",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "Student Allowance Calculator: max NHS Bursary (nursing etc.) GBP5,612",
-      "official_value": "5612",
+      "official_value": "none - NHS Bursary means-tested basic max £3,447 London (+£1,081 grant); LSF training grant £5,000",
       "confidence": "medium",
-      "freshness_note": "GBP5,612 does not match any single figure in the NHS Bursary Scheme rules 2025/26 (tuition GBP9,535; means-tested maintenance GBP2,321-3,356; non-means-tested grant GBP1,052); cannot confirm a GBP5,612 maximum from a primary source.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "£5,612 matches no figure in NHS Bursary Scheme Rules 15th ed. 2026-27 or Learning Support Fund 10th ed. 2026-27. Code labels it 'NHS Bursary (nursing etc.)' but English nursing/midwifery/AHP students get the LSF (£5,000 training grant, +£1,000 specialist subject, +£2,000 parental, up to £3,000 exceptional), not the NHS Bursary. Related prose 'NHS Bursary up to £4,000' (faqs 666/1507, content 2527/5859) also matches nothing.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.gov.uk/government/publications/nhs-bursary-scheme-rules-2025-to-2026/the-nhs-bursary-scheme-new-rules-14th-edition-for-the-academic-year-2025-to-2026"
     },
     {
@@ -16764,14 +16786,14 @@
         "src/components/calculators/PersonalInjuryCalculator.tsx"
       ],
       "source_url": "https://www.quittance.co.uk/personal-injury/glossary/judicial-college-guidelines-for-personal-injury-compensation",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG arm/shoulder serious upper bound (min 1000, moderate to 20000)",
-      "official_value": "65000",
+      "official_value": "n/a - no serious arm bracket; permanent & substantial disablement £51,750-£79,080",
       "confidence": "medium",
-      "freshness_note": "Stored 65000 is a simplified calculator band, not a verbatim JCG arm bracket maximum (17th-ed arm: serious 16,380-33,430, severe 82,040-111,690; 18th ed +~8.26% on 9 Apr 2026); free sources don't publish the exact 18th-edition arm bracket to confirm/refute, so cannot pin the latest figure.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "JCG 18th edition (9 Apr 2026, ~8.26% uplift on 17th). Book is paywalled; figures from law-firm summaries cross-checked against 17th-ed x uplift (confidence medium). Arm brackets: severe £127,050-£172,970; substantial disablement £51,750-£79,080; less severe £25,370-£51,750.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
@@ -16787,14 +16809,14 @@
         "src/components/calculators/PersonalInjuryCalculator.tsx"
       ],
       "source_url": "https://www.quittance.co.uk/personal-injury/glossary/judicial-college-guidelines-for-personal-injury-compensation",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG back injury moderate (recovery 3-12 months) upper bound",
-      "official_value": "12000",
+      "official_value": "51230",
       "confidence": "medium",
-      "freshness_note": "Stored 12000 is a simplified band, not a verbatim JCG back-moderate maximum (17th-ed back moderate ~11,730-26,050; 18th ed uplifted ~8.26% on 9 Apr 2026); exact 18th-edition back-moderate maximum not available from free/primary sources, so cannot confirm latest value.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "JCG 18th edition (9 Apr 2026, ~8.26% uplift on 17th). Book is paywalled; figures from law-firm summaries cross-checked against 17th-ed x uplift (confidence medium). Moderate (i) £36,680-£51,230, (ii) £16,520-£36,680. Site moderate MAX £12k is below the JCG moderate MIN.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
@@ -16810,14 +16832,14 @@
         "src/components/calculators/PersonalInjuryCalculator.tsx"
       ],
       "source_url": "https://www.quittance.co.uk/personal-injury/glossary/judicial-college-guidelines-for-personal-injury-compensation",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG back injury serious (ongoing issues) upper bound",
-      "official_value": "40000",
+      "official_value": "n/a - no serious back bracket; severe (iii) £51,230-£92,130",
       "confidence": "medium",
-      "freshness_note": "Stored 40000 is a simplified band, not a verbatim JCG figure (17th-ed back severe ~26,050-36,390; most-severe runs much higher); 18th edition (9 Apr 2026) raised brackets ~8.26%; exact 18th-edition figure for this band not pinnable from free sources, so uncertain rather than guess.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "JCG 18th edition (9 Apr 2026, ~8.26% uplift on 17th). Book is paywalled; figures from law-firm summaries cross-checked against 17th-ed x uplift (confidence medium). Severe (ii) £97,980-£116,820.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
@@ -16833,14 +16855,14 @@
         "src/components/calculators/PersonalInjuryCalculator.tsx"
       ],
       "source_url": "https://www.mfmac.com/insights/personal-injury/judicial-college-guidelines-in-personal-injury-claims-2026/",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG back injury severe (permanent) upper bound",
-      "official_value": "170000",
+      "official_value": "212670",
       "confidence": "medium",
-      "freshness_note": "Stored 170000 is a simplified band; the 18th-edition (9 Apr 2026) most-severe back bracket is 120,340-212,670, so 170,000 falls inside that range and is not a verbatim bracket edge; cannot map the stored value to a single authoritative bracket maximum, so uncertain.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "JCG 18th edition (9 Apr 2026, ~8.26% uplift on 17th). Book is paywalled; figures from law-firm summaries cross-checked against 17th-ed x uplift (confidence medium). Severe (i) £120,340-£212,670.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
@@ -16856,14 +16878,14 @@
         "src/components/calculators/PersonalInjuryCalculator.tsx"
       ],
       "source_url": "https://www.quittance.co.uk/personal-injury/glossary/judicial-college-guidelines-for-personal-injury-compensation",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG leg/knee serious upper bound (min 1000, moderate to 25000)",
-      "official_value": "100000",
+      "official_value": "72440",
       "confidence": "medium",
-      "freshness_note": "Stored 100000 is a simplified band, not a verbatim JCG leg bracket maximum (17th-ed leg: serious 33,450-46,780, severe 82,110-115,940; 18th ed +~8.26% on 9 Apr 2026); exact 18th-edition leg bracket not available from free sources, so cannot confirm latest figure.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "JCG 18th edition (9 Apr 2026, ~8.26% uplift on 17th). Book is paywalled; figures from law-firm summaries cross-checked against 17th-ed x uplift (confidence medium). Serious £51,790-£72,440; very serious £72,440-£117,210; severe short of amputation £127,160-£179,560.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
@@ -16879,14 +16901,14 @@
         "src/components/calculators/PersonalInjuryCalculator.tsx"
       ],
       "source_url": "https://www.quittance.co.uk/personal-injury/glossary/judicial-college-guidelines-for-personal-injury-compensation",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG psychological injury severe upper bound (minor 1500-6000, moderate to 22000)",
-      "official_value": "60000",
+      "official_value": "~152,910 (17th ed £141,240 x ~8.26%; verbatim 18th not found)",
       "confidence": "medium",
-      "freshness_note": "Stored 60000 is a simplified band, not a verbatim JCG psychiatric-damage bracket maximum (17th-ed psychiatric severe ~46,780-98,750); 18th edition (9 Apr 2026) uplifted ~8.26%; exact 18th-edition severe-psychiatric maximum not pinnable from free sources, so uncertain.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "JCG 18th edition (9 Apr 2026, ~8.26% uplift on 17th). Book is paywalled; figures from law-firm summaries cross-checked against 17th-ed x uplift (confidence medium). 17th ed severe £66,920-£141,240; site MAX £60k is below even the 17th-ed severe MIN.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
@@ -16901,15 +16923,15 @@
       "used_by": [
         "src/components/calculators/PersonalInjuryCalculator.tsx"
       ],
-      "source_url": "https://www.quittance.co.uk/personal-injury/glossary/judicial-college-guidelines-for-personal-injury-compensation",
-      "status": "uncertain",
+      "source_url": "https://www.legislation.gov.uk/uksi/2025/615/made",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG whiplash/neck minor upper bound",
-      "official_value": "2500",
+      "official_value": "n/a - use SI 2025/615 tariff (£275-£4,975) for RTA whiplash <=2y",
       "confidence": "medium",
-      "freshness_note": "Stored 2500 is a calculator sub-band, not a verbatim JCG neck/whiplash bracket edge (17th-ed minor neck = up to ~6,680); note RTA soft-tissue claims are now fixed by the Whiplash tariff, not these JCG bands; cannot confirm against a specific 18th-edition figure, so uncertain.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "Statutory RTA whiplash tariff (SI 2025/615, cause of action on/after 31 May 2025), 7 duration bands up to 2 years: £275/£300 (<=3m) ... £4,830/£4,975 (18-24m). Non-tariff neck (JCG 18th): minor up to £10,420; moderate £10,420-£50,850; severe £60,080-£195,970. Site sub-bands 500/2,500/7,500/15,000/50,000 match neither.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.officialinjuryclaim.org.uk/media/1434/guide-to-making-a-personal-injury-claim-version-34-april-2024.pdf"
     },
     {
@@ -16924,15 +16946,15 @@
       "used_by": [
         "src/components/calculators/PersonalInjuryCalculator.tsx"
       ],
-      "source_url": "https://www.quittance.co.uk/personal-injury/glossary/judicial-college-guidelines-for-personal-injury-compensation",
-      "status": "uncertain",
+      "source_url": "https://www.legislation.gov.uk/uksi/2025/615/made",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG general-damages range, whiplash/neck minor (recovery <3 months) lower bound",
-      "official_value": "500",
+      "official_value": "n/a - use SI 2025/615 tariff (£275-£4,975) for RTA whiplash <=2y",
       "confidence": "medium",
-      "freshness_note": "Stored 500 is a calculator sub-band lower bound, not a verbatim JCG neck/whiplash bracket figure; no specific JCG-edition value to match it to, so cannot confirm/refute against the latest (18th, 9 Apr 2026) edition; uncertain rather than guess.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "Statutory RTA whiplash tariff (SI 2025/615, cause of action on/after 31 May 2025), 7 duration bands up to 2 years: £275/£300 (<=3m) ... £4,830/£4,975 (18-24m). Non-tariff neck (JCG 18th): minor up to £10,420; moderate £10,420-£50,850; severe £60,080-£195,970. Site sub-bands 500/2,500/7,500/15,000/50,000 match neither.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.officialinjuryclaim.org.uk/media/1434/guide-to-making-a-personal-injury-claim-version-34-april-2024.pdf"
     },
     {
@@ -16947,15 +16969,15 @@
       "used_by": [
         "src/components/calculators/PersonalInjuryCalculator.tsx"
       ],
-      "source_url": "https://www.quittance.co.uk/personal-injury/glossary/judicial-college-guidelines-for-personal-injury-compensation",
-      "status": "uncertain",
+      "source_url": "https://www.legislation.gov.uk/uksi/2025/615/made",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG whiplash/neck moderate (recovery 3-12 months) upper bound",
-      "official_value": "7500",
+      "official_value": "n/a - use SI 2025/615 tariff (£275-£4,975) for RTA whiplash <=2y",
       "confidence": "medium",
-      "freshness_note": "Stored 7500 is a calculator sub-band, not a verbatim JCG neck bracket edge (17th-ed moderate neck ~12,900-23,460); 18th edition (9 Apr 2026) uplifted ~8.26%; cannot pin a single authoritative latest-edition maximum for this stored band, so uncertain.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "Statutory RTA whiplash tariff (SI 2025/615, cause of action on/after 31 May 2025), 7 duration bands up to 2 years: £275/£300 (<=3m) ... £4,830/£4,975 (18-24m). Non-tariff neck (JCG 18th): minor up to £10,420; moderate £10,420-£50,850; severe £60,080-£195,970. Site sub-bands 500/2,500/7,500/15,000/50,000 match neither.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
@@ -16970,15 +16992,15 @@
       "used_by": [
         "src/components/calculators/PersonalInjuryCalculator.tsx"
       ],
-      "source_url": "https://www.quittance.co.uk/personal-injury/glossary/judicial-college-guidelines-for-personal-injury-compensation",
-      "status": "uncertain",
+      "source_url": "https://www.legislation.gov.uk/uksi/2025/615/made",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG whiplash/neck serious (recovery 1-2 years) upper bound",
-      "official_value": "15000",
+      "official_value": "n/a - use SI 2025/615 tariff (£275-£4,975) for RTA whiplash <=2y",
       "confidence": "medium",
-      "freshness_note": "Stored 15000 is a calculator sub-band, not a verbatim JCG neck bracket edge; does not match a specific JCG-edition figure, and the exact 18th-edition (9 Apr 2026) neck bracket maximum is not available from free sources, so uncertain.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "Statutory RTA whiplash tariff (SI 2025/615, cause of action on/after 31 May 2025), 7 duration bands up to 2 years: £275/£300 (<=3m) ... £4,830/£4,975 (18-24m). Non-tariff neck (JCG 18th): minor up to £10,420; moderate £10,420-£50,850; severe £60,080-£195,970. Site sub-bands 500/2,500/7,500/15,000/50,000 match neither.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
@@ -16993,15 +17015,15 @@
       "used_by": [
         "src/components/calculators/PersonalInjuryCalculator.tsx"
       ],
-      "source_url": "https://www.quittance.co.uk/personal-injury/glossary/judicial-college-guidelines-for-personal-injury-compensation",
-      "status": "uncertain",
+      "source_url": "https://www.legislation.gov.uk/uksi/2025/615/made",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "PersonalInjuryCalculator: JCG whiplash/neck severe (long-term) upper bound",
-      "official_value": "50000",
+      "official_value": "n/a - use SI 2025/615 tariff (£275-£4,975) for RTA whiplash <=2y",
       "confidence": "medium",
-      "freshness_note": "Stored 50000 is a calculator sub-band, not a verbatim JCG severe-neck bracket edge (17th-ed severe neck reaches ~139,210 at the top); cannot map the stored value to a single authoritative 18th-edition (9 Apr 2026) bracket maximum, so uncertain.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "Statutory RTA whiplash tariff (SI 2025/615, cause of action on/after 31 May 2025), 7 duration bands up to 2 years: £275/£300 (<=3m) ... £4,830/£4,975 (18-24m). Non-tariff neck (JCG 18th): minor up to £10,420; moderate £10,420-£50,850; severe £60,080-£195,970. Site sub-bands 500/2,500/7,500/15,000/50,000 match neither.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.mrhsolicitors.co.uk/judicial-college-guidelines-injuries-2024/"
     },
     {
@@ -17726,13 +17748,15 @@
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
-      "status": "current",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator: Plan 5 upper income threshold for variable interest GBP49,130",
-      "official_value": "n/a (Plan 5 interest is RPI only, no income variation)",
+      "official_value": "n/a - Plan 5 interest is RPI only, no income band",
       "confidence": "high",
-      "freshness_note": "Plan 5 interest is set at RPI only with NO income-based variation, so there is no upper interest threshold for Plan 5. The held value 49,130 is both wrong as a number and not an applicable Plan 5 para",
-      "resolve_note": "Plan 5 student-loan interest is RPI-only (no income variation) - constant N/A"
+      "freshness_note": "StudentLoanInterestCalculator.tsx plan5 sets incomeThresholdLow 25_000 / High 49_130, so the UI renders a Plan 2-style sliding margin and 'RPI + 3%, capped at 4.1%' for Plan 5. Flat-branch text ('lower of RPI or base rate + 1%') is the Plan 1/4 rule and is wrong for Plan 5 too.",
+      "resolve_note": "Plan 5 student-loan interest is RPI-only (no income variation) - constant N/A",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "plan5_interest_income_threshold_low",
@@ -17747,12 +17771,14 @@
         "src/components/calculators/StudentLoanInterestCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "Student Loan Interest Calculator: Plan 5 lower income threshold for variable interest GBP25,000",
-      "official_value": "n/a (Plan 5 interest is RPI only; 25000 is the repayment threshold, not an interest band)",
+      "official_value": "n/a - Plan 5 interest is RPI only, no income band",
       "confidence": "medium",
-      "freshness_note": "Plan 5 has no variable-interest income band, so a 'low interest threshold' is not a real Plan 5 parameter. The number 25,000 coincidentally equals the Plan 5 REPAYMENT threshold (which is correct), bu"
+      "freshness_note": "StudentLoanInterestCalculator.tsx plan5 sets incomeThresholdLow 25_000 / High 49_130, so the UI renders a Plan 2-style sliding margin and 'RPI + 3%, capped at 4.1%' for Plan 5. Flat-branch text ('lower of RPI or base rate + 1%') is the Plan 1/4 rule and is wrong for Plan 5 too.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "plan5_interest_rate",
@@ -18685,11 +18711,15 @@
       "used_by": [
         "src/components/calculators/RDTaxCreditCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/guidance/research-and-development-rd-tax-relief-the-merged-scheme-and-enhanced-rd-intensive-support",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "RDTaxCreditCalculator: 18.6% effective cash-credit cap on qualifying spend for loss-making companies (qualifyingSpend * 0.186)",
-      "resolve_note": "18.6% was the net cash value for loss-making SMEs under the OLD SME R&D scheme (expenditure before 1 Apr 2024). The merged R&D scheme (accounting periods beginn"
+      "resolve_note": "18.6% was the net cash value for loss-making SMEs under the OLD SME R&D scheme (expenditure before 1 Apr 2024). The merged R&D scheme (accounting periods beginn",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "official_value": "16.2",
+      "freshness_note": "18.6% = old SME payable credit (10% x 186%), APs before 1 Apr 2024 only. Merged scheme from 1 Apr 2024: RDEC 20% with loss-makers' notional tax at 19% -> ~16.2% net. ERIS (loss-making R&D-intensive SMEs, >=30% R&D): 14.5% of surrenderable loss up to 186% -> ~26.97%."
     },
     {
       "key": "rd_merged_scheme_credit_rate",
@@ -19087,7 +19117,7 @@
     },
     {
       "key": "rhl_relief_rate",
-      "value": "40",
+      "value": "0",
       "unit": "%",
       "law": "Retail Hospitality Leisure relief",
       "theme": "other",
@@ -19104,9 +19134,9 @@
       "resolve_note": "The 40% Retail/Hospitality/Leisure relief (2025-26, cap GBP110k) does NOT apply from 1 Apr 2026. For 2026-27 it is replaced by two permanently lower RHL busines",
       "official_value": "0",
       "confidence": "high",
-      "freshness_note": "Retired 2026-08-29. The 40% RHL relief (capped £110,000 per business) ran in 2025/26 and ended 31 March 2026. From April 2026 it is replaced by permanently lower RHL multipliers, set 5p below the national multipliers and funded by a higher multiplier on rateable values of £500,000+. The prose claimed the 40% relief still applied in 2026/27 and has been rewritten. Status is `retired`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever.",
-      "verified_date": "2026-08-29",
-      "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled"
+      "freshness_note": "Retired 2026-08-29. The 40% RHL relief (capped £110,000 per business) ran in 2025/26 and ended 31 March 2026. From April 2026 it is replaced by permanently lower RHL multipliers, set 5p below the national multipliers and funded by a higher multiplier on rateable values of £500,000+. The prose claimed the 40% relief still applied in 2026/27 and has been rewritten. Status is `retired`, not `historical`: the rule itself no longer exists, rather than a prior-year figure being kept on display. loop_closer treats retired/superseded as a resolved audit item; `historical` is deliberately excluded there and would have left this pending forever. | 2026-09-13: no site surface presents 40% as current any more (updates.astro:133 is historical changelog) - value set to 0 to close the gate flag.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "right_to_buy_flat_additional_per_year",
@@ -20316,7 +20346,7 @@
     },
     {
       "key": "sdlt_band1_rate",
-      "value": "2",
+      "value": "0",
       "unit": "%",
       "law": "SDLT (England & NI)",
       "theme": "sdlt",
@@ -20333,15 +20363,16 @@
       "status": "current",
       "change_frequency": "",
       "note": "Home Buying Total Cost calculator: SDLT 2% on portion £125,001–£250,000",
-      "conflict": true,
       "conflict_values": [
         2,
         0
       ],
       "official_value": "0",
       "confidence": "high",
-      "freshness_note": "Band 1 (0-125,000) is the NIL rate = 0%, not 2%. conflict_values [2,0]: correct value is 0. The 2% rate applies to band 2 (125,001-250,000). our_value=2 is incorrect for band 1.",
-      "resolve_note": "SDLT band table already correct in code (0% to 125k, 2% 125-250k); canonical artifact"
+      "freshness_note": "Ledger lag. Band 1 (£0-£125,000) is the nil rate; all four calculators hold rate 0 for it and 2% for £125,001-£250,000.",
+      "resolve_note": "SDLT band table already correct in code (0% to 125k, 2% 125-250k); canonical artifact",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "sdlt_band1_threshold",
@@ -21573,10 +21604,14 @@
       "used_by": [
         "src/components/calculators/ELMPaymentCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/government/publications/sustainable-farming-incentive-2026-sfi26/sfi26-scheme-rules-and-guidance",
+      "status": "stale_confirmed",
       "change_frequency": "",
-      "note": "ELM/SFI Payment Calculator: Soil Assessment rate £97 per agreement"
+      "note": "ELM/SFI Payment Calculator: Soil Assessment rate £97 per agreement",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "official_value": "legacy SFI 2024 only: £6/ha + £97 per agreement; removed in SFI26",
+      "freshness_note": "CSAM1 paid £6/ha/yr plus £97 per agreement under SFI 2024; removed in SFI26 (gov.uk action page 410). SFI26 open: 71 actions, no management payment, £100k/yr cap; several rates cut (e.g. CSAM3 herbal leys £382->£224/ha). Whole ELM calculator needs an SFI26 review."
     },
     {
       "key": "sfi_winter_cover_crop_rate",
@@ -21607,10 +21642,14 @@
       "used_by": [
         "src/components/calculators/ELMPaymentCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/find-funding-for-land-or-farms/cwd2-woodland-improvement",
+      "status": "stale_confirmed",
       "change_frequency": "",
-      "note": "ELM/SFI Payment Calculator: Woodland Management rate £49 per ha"
+      "note": "ELM/SFI Payment Calculator: Woodland Management rate £49 per ha",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "official_value": "n/a - £49/ha was the 2021 SFI pilot; nearest current CWD2 £127/ha (CS Higher Tier, min £500)",
+      "freshness_note": "£49/ha 'Farm woodland standard' belonged to the closed 2021 SFI pilot. Not an SFI 2024 or SFI26 action."
     },
     {
       "key": "shared_ownership_income_cap",
@@ -23024,12 +23063,14 @@
         "src/components/calculators/SpouseVisaCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/uk-family-visa/partner-spouse",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "SpouseVisaCalculator: VISA_LENGTH initial grant of 2.5 years (used for IHS total and savings calc)",
       "official_value": "2.75",
       "confidence": "medium",
-      "freshness_note": "gov.uk states a partner applying from OUTSIDE the UK (entry clearance) is granted 2 years and 9 months (33 months / 2.75 years). The 2.5-year (30-month) figure the site holds is the grant length when "
+      "freshness_note": "gov.uk: \"You can stay in the UK for up to 2 years and 9 months.\" First grant 33 months; extension/in-UK switch gives a further 2 years 6 months. 2.5 is correct only for extensions.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "spouse_visa_min_income",
@@ -23294,14 +23335,16 @@
       "used_by": [
         "src/components/calculators/SickPayCalculator.tsx"
       ],
-      "source_url": "https://www.acas.org.uk/statutory-sick-pay-changes-2026",
-      "status": "current",
+      "source_url": "https://www.gov.uk/statutory-sick-pay/eligibility",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "SSP_LOWER_EARNINGS constant - minimum average weekly earnings to qualify for SSP (Lower Earnings Limit); shown in qualification message.",
       "official_value": "0",
       "confidence": "high",
-      "freshness_note": "From 6 April 2026 the Lower Earnings Limit / minimum earnings threshold for SSP eligibility is REMOVED (Employment Rights Act 2025) - all employees qualify regardless of earnings. Held value £125 (the",
-      "resolve_note": "SSP reform 6 Apr 2026: LEL removed; calculator updated"
+      "freshness_note": "gov.uk: eligibility requires having \"been ill for at least one full working day\"; pay is \"£123.25 a week ... or 80% of your normal weekly earnings - whichever is lower\" (Employment Rights Act 2025, from 6 Apr 2026). SickPayCalculator.tsx already correct. Stale prose: content 2664-2667 and 3234, faqs 695, calculators.ts:1294 meta - 4 consecutive days, £129 LEL, 3 waiting days. NB £129 LEL still valid for SMP/SPP/ShPP.",
+      "resolve_note": "SSP reform 6 Apr 2026: LEL removed; calculator updated",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "ssp_max_total",
@@ -23359,14 +23402,16 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.acas.org.uk/statutory-sick-pay-changes-2026",
-      "status": "current",
+      "source_url": "https://www.gov.uk/statutory-sick-pay/eligibility",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "SSP eligibility: earn at least GBP125/week (sick-pay-calculator)",
       "official_value": "0",
       "confidence": "high",
-      "freshness_note": "From 6 April 2026 there is no minimum earnings threshold to qualify for SSP (LEL removed); lower earners receive the lower of 80% of AWE or £123.25. Held value £125 (old qualifying-earnings threshold)",
-      "resolve_note": "SSP reform: no earnings test from 6 Apr 2026"
+      "freshness_note": "gov.uk: eligibility requires having \"been ill for at least one full working day\"; pay is \"£123.25 a week ... or 80% of your normal weekly earnings - whichever is lower\" (Employment Rights Act 2025, from 6 Apr 2026). SickPayCalculator.tsx already correct. Stale prose: content 2664-2667 and 3234, faqs 695, calculators.ts:1294 meta - 4 consecutive days, £129 LEL, 3 waiting days. NB £129 LEL still valid for SMP/SPP/ShPP.",
+      "resolve_note": "SSP reform: no earnings test from 6 Apr 2026",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "ssp_waiting_days",
@@ -23382,14 +23427,16 @@
         "src/components/calculators/SickPayCalculator.tsx",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.acas.org.uk/statutory-sick-pay-changes-2026",
-      "status": "current",
+      "source_url": "https://www.gov.uk/statutory-sick-pay/eligibility",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "SSP_WAITING_DAYS constant - first 3 qualifying days are unpaid waiting days; stated in code and prose.",
       "official_value": "0",
       "confidence": "high",
-      "freshness_note": "From 6 April 2026 the 3 unpaid waiting days are ABOLISHED (Employment Rights Act 2025) - SSP is payable from the first qualifying day of sickness. Held value 3 is stale; should be 0.",
-      "resolve_note": "SSP reform: 3 waiting days abolished 6 Apr 2026; SickPayCalculator set to 0"
+      "freshness_note": "gov.uk: eligibility requires having \"been ill for at least one full working day\"; pay is \"£123.25 a week ... or 80% of your normal weekly earnings - whichever is lower\" (Employment Rights Act 2025, from 6 Apr 2026). SickPayCalculator.tsx already correct. Stale prose: content 2664-2667 and 3234, faqs 695, calculators.ts:1294 meta - 4 consecutive days, £129 LEL, 3 waiting days. NB £129 LEL still valid for SMP/SPP/ShPP.",
+      "resolve_note": "SSP reform: 3 waiting days abolished 6 Apr 2026; SickPayCalculator set to 0",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "ssp_weekly_rate",
@@ -24213,7 +24260,7 @@
     },
     {
       "key": "tax_credits_income_threshold",
-      "value": "7582",
+      "value": "7955",
       "unit": "GBP",
       "law": "HMRC tax credits",
       "theme": "benefits",
@@ -24223,14 +24270,15 @@
       "used_by": [
         "src/components/calculators/TaxWorkingCreditsCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/government/publications/rates-and-allowances-tax-credits-child-benefit-and-guardians-allowance/tax-credits-child-benefit-and-guardians-allowance",
+      "status": "historical",
       "change_frequency": "",
       "note": "TaxWorkingCreditsCalculator: 2026/27 income threshold above which the taper applies (INCOME_THRESHOLD)",
-      "official_value": "7582",
+      "official_value": "7955",
       "official_source": "https://www.gov.uk/tax-credits-have-ended",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "Ledger lag. Tax credits closed 5 Apr 2025. Final WTC income threshold £7,955 (2024/25), 41% taper; 2023/24 £7,455. £7,582 never existed. Code already holds INCOME_THRESHOLD = 7_955 labelled final 2024/25."
     },
     {
       "key": "tax_credits_migrated_to_uc",
@@ -24505,14 +24553,14 @@
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
       "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "TeacherPayCalculator: London Fringe weighting approximation +£1,000 (londonAdj.fringe); also '+£1K' option label",
-      "official_value": "1000",
+      "official_value": "1482",
       "confidence": "medium",
-      "freshness_note": "STPCD does not publish a flat 'fringe weighting' add-on; London pay uses separate Inner/Outer/Fringe pay ranges. The GBP1,000 is a calculator approximation, not a single official figure, so cannot be confirmed against a primary value.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "STPCD has separate London pay ranges, not flat add-ons. STPCD 2025 (in force 1 Sep 2025-31 Aug 2026) main pay range minimum gap vs England excl. London = £1,482 (max gap £1,487). 2026 award 3.5% from 1 Sep 2026 accepted 1 Jul 2026; STPCD 2026 due mid-Oct, indicative gaps inner £7,660 / outer £5,127 / fringe £1,533.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.nasuwt.org.uk/advice/pay-pensions/pay-scales/pay-scales-fringe-outer-london-and-inner-london.html"
     },
     {
@@ -24528,14 +24576,14 @@
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
       "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "TeacherPayCalculator: Inner London weighting approximation +£5,000 (londonAdj.inner); also '+£5K' option label",
-      "official_value": "5000",
+      "official_value": "7401",
       "confidence": "medium",
-      "freshness_note": "STPCD has no flat 'inner London weighting' value; it uses separate Inner London pay ranges. The GBP5,000 is a calculator approximation (actual Inner vs Rest-of-England differential varies by point), not verifiable against one official figure.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "STPCD has separate London pay ranges, not flat add-ons. STPCD 2025 (in force 1 Sep 2025-31 Aug 2026) main pay range minimum gap vs England excl. London = £7,401 (max gap £6,948; UPR gap ~£10.2-11.4k). 2026 award 3.5% from 1 Sep 2026 accepted 1 Jul 2026; STPCD 2026 due mid-Oct, indicative gaps inner £7,660 / outer £5,127 / fringe £1,533.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.nasuwt.org.uk/advice/pay-pensions/pay-scales/pay-scales-fringe-outer-london-and-inner-london.html"
     },
     {
@@ -24551,14 +24599,14 @@
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
       "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "TeacherPayCalculator: Outer London weighting approximation +£2,000 (londonAdj.outer); also '+£2K' option label",
-      "official_value": "2000",
+      "official_value": "4954",
       "confidence": "medium",
-      "freshness_note": "STPCD has no flat 'outer London weighting' value; it uses separate Outer London pay ranges. The GBP2,000 is a calculator approximation, not verifiable against a single official figure.",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm",
+      "freshness_note": "STPCD has separate London pay ranges, not flat add-ons. STPCD 2025 (in force 1 Sep 2025-31 Aug 2026) main pay range minimum gap vs England excl. London = £4,954 (max gap £5,122). 2026 award 3.5% from 1 Sep 2026 accepted 1 Jul 2026; STPCD 2026 due mid-Oct, indicative gaps inner £7,660 / outer £5,127 / fringe £1,533.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
       "official_source": "https://www.nasuwt.org.uk/advice/pay-pensions/pay-scales/pay-scales-fringe-outer-london-and-inner-london.html"
     },
     {
@@ -25246,15 +25294,16 @@
       "used_by": [
         "src/components/calculators/TeachersPensionCalculator.tsx"
       ],
-      "source_url": "",
+      "source_url": "https://www.teacherspensions.co.uk/members/resources/forms/updates.aspx",
       "status": "uncertain",
       "change_frequency": "",
       "note": "TeachersPensionCalculator: active-member revaluation = CPI + 1.6%, modelled as 0.032 (REVALUATION); prose says 'revalued annually by CPI + 1.6%'",
       "resolve_note": "STALE. This is a year-specific figure (CPI + 1.6%). For 1 April 2026 the active revaluation rate is 5.4% (Sep-2025 CPI 3.8% + 1.6%); it was 3.3% on 1 April 2025",
       "official_value": "3.2",
       "official_source": "https://www.teacherspensions.co.uk/",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "Projection assumption, not a set rate. Actual active revaluation: Apr 2026 5.4% (CPI 3.8% + 1.6%), Apr 2025 3.3%. Flat 3.2% implies CPI 1.6%; BoE 2% target gives 3.6%. Page should label it an assumption."
     },
     {
       "key": "trading_allowance",
@@ -27460,14 +27509,15 @@
       "used_by": [
         "src/components/calculators/VatFlatRateCalculator.tsx"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.legislation.gov.uk/uksi/1995/2518/regulation/55K",
+      "status": "current",
       "change_frequency": "",
       "note": "HMRC Flat Rate Scheme percentage for Waste/recycling (FLAT_RATES)",
       "official_value": "10.5",
       "official_source": "https://www.gov.uk/vat-flat-rate-scheme/how-much-you-pay",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "SI 1995/2518 reg 55K table: \"Dealing in waste or scrap 10.5\" (since 4 Jan 2011). gov.uk summary table omits this category - cite the regulation."
     },
     {
       "key": "vat_frs_turnover_limit",
@@ -28630,15 +28680,15 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/hmrc-internal-manuals/compliance-handbook/ch82470",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/government/publications/compliance-checks-penalties-for-failure-to-notify-ccfs11/compliance-checks-penalties-for-failure-to-notify-ccfs11",
+      "status": "stale_confirmed",
       "change_frequency": "",
       "note": "Voluntary disclosure penalties 10-30% vs 30-100% if HMRC contacts first (crypto-tax, side-hustle)",
-      "official_value": "",
-      "confidence": "medium",
-      "freshness_note": "HMRC penalty minimums vary by behaviour: an unprompted careless disclosure can be reduced to 0%, deliberate unprompted to 20%/30%. No single fixed '10%' minimum; the value depends on case, so cannot confirm.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "official_value": "failure to notify, non-deliberate: unprompted 0-30% (<12m) / 10-30% (12m+), prompted 10-30% / 20-30%; deliberate 20-70% / 35-70%; deliberate+concealed 30-100% / 50-100%",
+      "confidence": "high",
+      "freshness_note": "HMRC CC/FS11 tables (checked main thread). The 10-30% 'voluntary' figure is right for a non-deliberate unprompted disclosure made 12+ months late, which fits undeclared earlier-year gains. The comparison figure is wrong: a prompted non-deliberate case is 20-30%, not 30-100% (that is unprompted deliberate-and-concealed) or 50-100% (prompted deliberate-and-concealed only). Three surfaces disagree with each other: faqs 200 (vs 30-100%), faqs 863 (vs 50-100%), content 789 (calls the 10-30% case 'prompted').",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "wales_ltt_band1_threshold",
@@ -28743,14 +28793,15 @@
       "used_by": [
         "src/components/calculators/WaterBillCalculator.tsx"
       ],
-      "source_url": "",
+      "source_url": "https://www.water.org.uk/annual-average-bill-changes-2026-27",
       "status": "uncertain",
       "change_frequency": "",
       "note": "Average UK metered sewerage volumetric rate 2026/27 per Ofwat PR24 (AVG_METERED_SEWERAGE); regulator-set average estimate",
       "official_value": "2.42",
       "official_source": "https://www.ofwat.gov.uk/average-bills-2025-26-press-statement/",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "No official average. Thames £1.4721, UU £2.275 (primary); Severn Trent ~£1.50, Anglian ~£2.34. Site £2.42 at/above top of range. Water UK 2026/27 average combined bill £639 (+5.4%)."
     },
     {
       "key": "water_metered_water_charge_avg",
@@ -28764,14 +28815,15 @@
       "used_by": [
         "src/components/calculators/WaterBillCalculator.tsx"
       ],
-      "source_url": "",
+      "source_url": "https://www.water.org.uk/annual-average-bill-changes-2026-27",
       "status": "uncertain",
       "change_frequency": "",
       "note": "Average UK metered water volumetric rate 2026/27 per Ofwat PR24 (AVG_METERED_WATER); regulator-set average estimate",
       "official_value": "2.15",
       "official_source": "https://www.ofwat.gov.uk/average-bills-2025-26-press-statement/",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "No official average. Sampled 2026/27: Thames £2.7346/m3, United Utilities £3.235 (primary); Severn Trent ~£2.61, Anglian ~£2.69 (secondary). Site £2.15 below every company sampled. Water UK 2026/27 average combined bill £639 (+5.4%)."
     },
     {
       "key": "water_standing_charge_sewerage_avg",
@@ -28785,14 +28837,15 @@
       "used_by": [
         "src/components/calculators/WaterBillCalculator.tsx"
       ],
-      "source_url": "",
+      "source_url": "https://www.water.org.uk/annual-average-bill-changes-2026-27",
       "status": "uncertain",
       "change_frequency": "",
       "note": "Average annual sewerage standing charge (AVG_STANDING_SEWERAGE); Ofwat-regulated average estimate",
       "official_value": "68",
       "official_source": "https://www.ofwat.gov.uk/average-bills-2025-26-press-statement/",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "No official average. Thames £128.13 fixed; UU £153.93 incl. surface water + highway drainage; Anglian ~£116.25. Site £68 about half once drainage counted. Water UK 2026/27 average combined bill £639 (+5.4%)."
     },
     {
       "key": "water_standing_charge_water_avg",
@@ -28806,14 +28859,15 @@
       "used_by": [
         "src/components/calculators/WaterBillCalculator.tsx"
       ],
-      "source_url": "",
+      "source_url": "https://www.water.org.uk/annual-average-bill-changes-2026-27",
       "status": "uncertain",
       "change_frequency": "",
       "note": "Average annual water standing charge (AVG_STANDING_WATER); Ofwat-regulated average estimate",
       "official_value": "55",
       "official_source": "https://www.ofwat.gov.uk/average-bills-2025-26-press-statement/",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "freshness_note": "No official average. Thames £66.87, UU £23.66, Anglian ~£52.25. Site £55 within range. Water UK 2026/27 average combined bill £639 (+5.4%)."
     },
     {
       "key": "water_unmetered_combined_bill_avg",
@@ -28925,9 +28979,13 @@
         "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/tax-relief-for-employees/working-at-home",
-      "status": "uncertain",
+      "status": "stale_confirmed",
       "change_frequency": "",
-      "note": "WorkFromHomeTaxReliefCalculator: FLAT_RATE_WEEKLY = 6, HMRC flat-rate working-from-home tax relief without evidence (2026/27)"
+      "note": "WorkFromHomeTaxReliefCalculator: FLAT_RATE_WEEKLY = 6, HMRC flat-rate working-from-home tax relief without evidence (2026/27)",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "official_value": "0",
+      "freshness_note": "gov.uk (checked main thread): \"From the tax year 6 April 2026 to 5 April 2027, you will not be able to claim tax relief for working from home.\" Removed by new s360B ITEPA (Budget 26 Nov 2025). Past 4 years still claimable. Employer may still pay £6/week tax-free under s316A. Self-employed simplified WFH flat rates £10/£18/£26 per month unchanged."
     },
     {
       "key": "wfh_flat_rate_weeks_per_year",
@@ -28958,10 +29016,14 @@
       "used_by": [
         "src/data/calculators.ts"
       ],
-      "source_url": "",
-      "status": "uncertain",
+      "source_url": "https://www.gov.uk/tax-relief-for-employees/working-at-home",
+      "status": "stale_confirmed",
       "change_frequency": "",
-      "note": "work-from-home-tax-relief-calculator: '£6/week flat rate or actual costs claim'"
+      "note": "work-from-home-tax-relief-calculator: '£6/week flat rate or actual costs claim'",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
+      "official_value": "0",
+      "freshness_note": "gov.uk (checked main thread): \"From the tax year 6 April 2026 to 5 April 2027, you will not be able to claim tax relief for working from home.\" Removed by new s360B ITEPA (Budget 26 Nov 2025). Past 4 years still claimable. Employer may still pay £6/week tax-free under s316A. Self-employed simplified WFH flat rates £10/£18/£26 per month unchanged."
     },
     {
       "key": "working_time_max_weekly_hours",
@@ -29029,7 +29091,7 @@
     },
     {
       "key": "wtc_basic_element",
-      "value": "2476",
+      "value": "2435",
       "unit": "GBP",
       "law": "HMRC Working Tax Credit",
       "theme": "benefits",
@@ -29040,19 +29102,20 @@
         "src/components/calculators/TaxWorkingCreditsCalculator.tsx",
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/tax-credits-income-thresholds-and-withdrawal-rates",
+      "source_url": "https://www.gov.uk/government/publications/rates-and-allowances-tax-credits-child-benefit-and-guardians-allowance/tax-credits-child-benefit-and-guardians-allowance",
       "status": "historical",
       "change_frequency": "",
       "note": "TaxWorkingCreditsCalculator: 2026/27 Working Tax Credit basic element (WTC_BASIC)",
-      "conflict": true,
       "conflict_values": [
         2476,
         2435
       ],
       "official_value": "2435",
       "confidence": "high",
-      "freshness_note": "Working Tax Credit was ABOLISHED on 5 April 2025; no WTC awards or rates exist for 2025-26 or 2026-27 (all claimants migrated to Universal Credit). There is therefore no current 2026-27 value. The fin",
-      "resolve_note": "Working Tax Credit / tax credits CLOSED 5 Apr 2025 (migrated to UC) - scheme defunct"
+      "freshness_note": "Ledger lag. Code WTC_BASIC = 2_435 (final rate, scheme closed 5 Apr 2025). NB prose faqs 1577/1731 and content 6162/6740 still describe WTC as claimable in 2026 - stale.",
+      "resolve_note": "Working Tax Credit / tax credits CLOSED 5 Apr 2025 (migrated to UC) - scheme defunct",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     },
     {
       "key": "wtc_childcare_element_percent",
@@ -29633,15 +29696,39 @@
       "verified_date": "2026-09-10",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
       "official_value": "13500"
+    },
+    {
+      "key": "esa_support_group_weekly",
+      "value": "142.25",
+      "unit": "GBP/week",
+      "law": "New style ESA support group rate",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/employment-support-allowance/what-youll-get",
+      "status": "stale_confirmed",
+      "change_frequency": "annual (April)",
+      "note": "sick-pay-calculator prose (content 2668, faqs 696): ESA 'up to £142.25 a week with the support component'",
+      "official_value": "145.90",
+      "confidence": "high",
+      "freshness_note": "gov.uk: \"up to £145.90 a week if you're in the support group\". Added to inventory by tier2 sweep 2026-09-13.",
+      "verified_date": "2026-09-13",
+      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)"
     }
   ],
   "status_summary": {
-    "current": 1352,
-    "uncertain": 52,
+    "current": 1351,
+    "stale_confirmed": 47,
     "retired": 5,
     "superseded_by_component": 1,
-    "historical": 5,
-    "superseded": 11
+    "historical": 6,
+    "superseded": 11,
+    "uncertain": 6
   },
   "theme_counts": {
     "minimum_wage": 18,
@@ -29667,7 +29754,7 @@
     "sdlt": 42
   },
   "conflicts_flagged": 31,
-  "freshness_verified": "2026-09-10",
+  "freshness_verified": "2026-09-13",
   "tail_verified": "2026-06-28",
   "tail_verify_method": "tier2-tail"
 }
