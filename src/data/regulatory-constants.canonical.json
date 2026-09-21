@@ -1927,9 +1927,9 @@
       "note": "Rateable Value based on 1 April 2021 valuation (2023 rating list) (business-rates-calculator)",
       "official_value": "1 April 2024",
       "confidence": "high",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). The 2026 rating list took effect 1 April 2026 with rateable values based on antecedent valuation date 1 April 2024; the 2023 list (valued at 1 April 2021) is now superseded. Old 1 April 2021 -> new 1 April 2024.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). The 2026 rating list took effect 1 April 2026 with rateable values based on antecedent valuation date 1 April 2024; the 2023 list (valued at 1 April 2021) is now superseded. Old 1 April 2021 -> new 1 April 2024. Re-verified 2026-09-21 after a DataHub source-changed alert: the VOA news page (published 1 Apr 2026, no change history) still says the 2026 revaluation used a valuation date of 1 April 2024 and the list runs to 31 March 2029. Page-furniture change only.",
+      "verified_date": "2026-09-21",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
       "key": "business_rates_rhl_small_multiplier",
@@ -11826,8 +11826,13 @@
       ],
       "source_url": "https://www.gov.uk/government/publications/permitted-development-rights-for-householders-technical-guidance",
       "status": "current",
-      "change_frequency": "",
-      "note": "loft-conversion-calculator: PD limits 40m³ terraced / 50m³ detached/semi; Building Regs min 2.0m headroom over staircase, 2.3m over 50% floor"
+      "change_frequency": "occasional",
+      "note": "loft-conversion-calculator: PD limits 40m³ terraced / 50m³ detached/semi; Building Regs min 2.0m headroom over staircase, 2.3m over 50% floor",
+      "official_value": "40",
+      "confidence": "high",
+      "freshness_note": "Re-verified 2026-09-21 after a DataHub source-changed alert. The limit lives in the GPDO 2015 (SI 2015/596) Sch 2 Pt 1 Class B, para B.1(d): 40 cubic metres for a terrace house, 50 in any other case; legislation.gov.uk reports no outstanding effects on Class B. The monitored gov.uk technical-guidance page was last updated 10 Sep 2019 (no new change-history entry), so the alert was a page-furniture change, not a legal one. Proposals to relax roof-enlargement PD have been consulted on but not made.",
+      "verified_date": "2026-09-21",
+      "verify_method": "tier2 monitor-alert re-verify (legislation.gov.uk + gov.uk page history)"
     },
     {
       "key": "london_congestion_charge_daily",
@@ -15396,7 +15401,7 @@
     },
     {
       "key": "ofgem_price_cap_electricity_standing_charge",
-      "value": "61.64",
+      "value": "57.19",
       "unit": "p/day",
       "law": "Ofgem energy price cap",
       "theme": "other",
@@ -15405,20 +15410,26 @@
       ],
       "used_by": [
         "src/components/calculators/EnergyBillCalculator.tsx",
-        "src/components/calculators/StandingChargeSavingsCalculator.tsx"
+        "src/components/calculators/StandingChargeSavingsCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap-unit-rates-and-standing-charges",
       "status": "current",
-      "change_frequency": "",
-      "note": "ELEC_STANDING — Ofgem price cap electricity daily standing charge, Q2 2026. Also shown in prose.",
+      "change_frequency": "quarterly",
+      "note": "ELEC_STANDING: Ofgem price cap, 1 Jul-30 Sep 2026, Direct Debit GB average incl. 5% VAT. Also the default in the other energy calculators and in prose.",
       "fixed": true,
       "fixed_date": "2026-06-16",
       "volatile": true,
-      "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)"
+      "official_value": "57.19",
+      "confidence": "high",
+      "freshness_note": "Ledger lag fixed 2026-09-21: the ledger still held 24.5/61.64/6.33/31.65 while the site had carried the Jul-Sep 2026 cap (26.11/57.19/7.33/29.04, Ofgem 27 May 2026) since the June pass. Ofgem rates page shows both periods side by side. Next: 1 Oct-31 Dec 2026 = 26.32/54.83 elec (no VAT on electricity 1 Oct 2026-31 Mar 2027), 7.97/29.68 gas (5% VAT). TDCV revised from 1 Jul 2026 to 2,500 kWh elec / 9,500 kWh gas.",
+      "verified_date": "2026-09-21",
+      "verify_method": "tier2 calendar re-verify (Ofgem rates page + Oct-Dec summary PDF)"
     },
     {
       "key": "ofgem_price_cap_electricity_unit_rate",
-      "value": "24.5",
+      "value": "26.11",
       "unit": "p/kWh",
       "law": "Ofgem energy price cap",
       "theme": "other",
@@ -15426,20 +15437,33 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/EnergyBillCalculator.tsx"
+        "src/components/calculators/EVChargingCalculator.tsx",
+        "src/components/calculators/EVSavingsCalculator.tsx",
+        "src/components/calculators/ElectricityCostCalculator.tsx",
+        "src/components/calculators/EnergyBillCalculator.tsx",
+        "src/components/calculators/HeatPumpCalculator.tsx",
+        "src/components/calculators/LedSavingsCalculator.tsx",
+        "src/components/calculators/SmartMeterCalculator.tsx",
+        "src/components/calculators/SolarPanelCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap-unit-rates-and-standing-charges",
       "status": "current",
-      "change_frequency": "",
-      "note": "ELEC_UNIT — Ofgem price cap electricity unit rate, Q2 2026 (Apr-Jun 2026). Regulator-set max tariff. Also shown in prose.",
+      "change_frequency": "quarterly",
+      "note": "ELEC_UNIT: Ofgem price cap, 1 Jul-30 Sep 2026, Direct Debit GB average incl. 5% VAT. Also the default in the other energy calculators and in prose.",
       "fixed": true,
       "fixed_date": "2026-06-16",
       "volatile": true,
-      "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)"
+      "official_value": "26.11",
+      "confidence": "high",
+      "freshness_note": "Ledger lag fixed 2026-09-21: the ledger still held 24.5/61.64/6.33/31.65 while the site had carried the Jul-Sep 2026 cap (26.11/57.19/7.33/29.04, Ofgem 27 May 2026) since the June pass. Ofgem rates page shows both periods side by side. Next: 1 Oct-31 Dec 2026 = 26.32/54.83 elec (no VAT on electricity 1 Oct 2026-31 Mar 2027), 7.97/29.68 gas (5% VAT). TDCV revised from 1 Jul 2026 to 2,500 kWh elec / 9,500 kWh gas.",
+      "verified_date": "2026-09-21",
+      "verify_method": "tier2 calendar re-verify (Ofgem rates page + Oct-Dec summary PDF)"
     },
     {
       "key": "ofgem_price_cap_gas_standing_charge",
-      "value": "31.65",
+      "value": "29.04",
       "unit": "p/day",
       "law": "Ofgem energy price cap",
       "theme": "other",
@@ -15449,20 +15473,26 @@
       "used_by": [
         "src/components/calculators/EnergyBillCalculator.tsx",
         "src/components/calculators/GasCostCalculator.tsx",
-        "src/components/calculators/StandingChargeSavingsCalculator.tsx"
+        "src/components/calculators/StandingChargeSavingsCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap-unit-rates-and-standing-charges",
       "status": "current",
-      "change_frequency": "",
-      "note": "GAS_STANDING — Ofgem price cap gas daily standing charge, Q2 2026. Also shown in prose.",
+      "change_frequency": "quarterly",
+      "note": "GAS_STANDING: Ofgem price cap, 1 Jul-30 Sep 2026, Direct Debit GB average incl. 5% VAT. Also the default in the other energy calculators and in prose.",
       "fixed": true,
       "fixed_date": "2026-06-16",
       "volatile": true,
-      "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)"
+      "official_value": "29.04",
+      "confidence": "high",
+      "freshness_note": "Ledger lag fixed 2026-09-21: the ledger still held 24.5/61.64/6.33/31.65 while the site had carried the Jul-Sep 2026 cap (26.11/57.19/7.33/29.04, Ofgem 27 May 2026) since the June pass. Ofgem rates page shows both periods side by side. Next: 1 Oct-31 Dec 2026 = 26.32/54.83 elec (no VAT on electricity 1 Oct 2026-31 Mar 2027), 7.97/29.68 gas (5% VAT). TDCV revised from 1 Jul 2026 to 2,500 kWh elec / 9,500 kWh gas.",
+      "verified_date": "2026-09-21",
+      "verify_method": "tier2 calendar re-verify (Ofgem rates page + Oct-Dec summary PDF)"
     },
     {
       "key": "ofgem_price_cap_gas_unit_rate",
-      "value": "6.33",
+      "value": "7.33",
       "unit": "p/kWh",
       "law": "Ofgem energy price cap",
       "theme": "other",
@@ -15471,16 +15501,23 @@
       ],
       "used_by": [
         "src/components/calculators/EnergyBillCalculator.tsx",
-        "src/components/calculators/GasCostCalculator.tsx"
+        "src/components/calculators/GasCostCalculator.tsx",
+        "src/components/calculators/HeatPumpCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap-unit-rates-and-standing-charges",
       "status": "current",
-      "change_frequency": "",
-      "note": "GAS_UNIT — Ofgem price cap gas unit rate, Q2 2026 (reduced from 6.76 in Q2 2025). Also shown in prose.",
+      "change_frequency": "quarterly",
+      "note": "GAS_UNIT: Ofgem price cap, 1 Jul-30 Sep 2026, Direct Debit GB average incl. 5% VAT. Also the default in the other energy calculators and in prose.",
       "fixed": true,
       "fixed_date": "2026-06-16",
       "volatile": true,
-      "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)"
+      "official_value": "7.33",
+      "confidence": "high",
+      "freshness_note": "Ledger lag fixed 2026-09-21: the ledger still held 24.5/61.64/6.33/31.65 while the site had carried the Jul-Sep 2026 cap (26.11/57.19/7.33/29.04, Ofgem 27 May 2026) since the June pass. Ofgem rates page shows both periods side by side. Next: 1 Oct-31 Dec 2026 = 26.32/54.83 elec (no VAT on electricity 1 Oct 2026-31 Mar 2027), 7.97/29.68 gas (5% VAT). TDCV revised from 1 Jul 2026 to 2,500 kWh elec / 9,500 kWh gas.",
+      "verified_date": "2026-09-21",
+      "verify_method": "tier2 calendar re-verify (Ofgem rates page + Oct-Dec summary PDF)"
     },
     {
       "key": "onerous_ground_rent_threshold",
