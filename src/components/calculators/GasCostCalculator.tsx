@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-const GAS_RATE = 7.33 // p/kWh Ofgem price cap Q2 2026
-const GAS_STANDING = 29.04 // p/day
+const GAS_RATE = 7.97 // p/kWh Ofgem price cap 1 Oct–31 Dec 2026, incl. 5% VAT
+const GAS_STANDING = 29.68 // p/day
 
 function calculate(kwhPerYear: number, rate: number, standing: number) {
   const unitCost = kwhPerYear * (rate / 100)
@@ -12,7 +12,7 @@ function calculate(kwhPerYear: number, rate: number, standing: number) {
 }
 
 export default function GasCostCalculator() {
-  const [kwh, setKwh] = useState('11500')
+  const [kwh, setKwh] = useState('9500')
   const [rate, setRate] = useState(GAS_RATE.toString())
   const [standing, setStanding] = useState(GAS_STANDING.toString())
 
@@ -24,7 +24,7 @@ export default function GasCostCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Annual Gas Usage (kWh)</label><input type="number" min="0" max="50000" value={kwh} onChange={(e) => setKwh(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Gas Usage (kWh)" /><p className="text-xs text-muted-foreground mt-1">UK avg: 11,500 kWh</p></div>
+        <div><label className="block text-sm font-medium mb-2">Annual Gas Usage (kWh)</label><input type="number" min="0" max="50000" value={kwh} onChange={(e) => setKwh(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Gas Usage (kWh)" /><p className="text-xs text-muted-foreground mt-1">Ofgem typical: 9,500 kWh</p></div>
         <div><label className="block text-sm font-medium mb-2">Unit Rate (p/kWh)</label><input type="number" min="0" max="20" step="0.01" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Unit Rate (p/kWh)" /></div>
         <div><label className="block text-sm font-medium mb-2">Standing Charge (p/day)</label><input type="number" min="0" max="100" step="0.01" value={standing} onChange={(e) => setStanding(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Standing Charge (p/day)" /></div>
       </div>
