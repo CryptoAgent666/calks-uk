@@ -6,8 +6,8 @@
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <text x="600" y="260" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="800" fill="white" text-anchor="middle">Calks.uk</text>
-  <text x="600" y="340" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="400" fill="#94a3b8" text-anchor="middle">Free UK Calculators</text>
-  <text x="600" y="400" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400" fill="#64748b" text-anchor="middle">Tax · Salary · Mortgage · Pension · VAT · NI</text>
-  <text x="600" y="460" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="500" fill="#3b82f6" text-anchor="middle">Updated for 2025/26 Tax Year</text>
+  <text x="600" y="260" font-family="Inter, Helvetica, Arial, sans-serif" font-size="72" font-weight="800" fill="white" text-anchor="middle">Calks.uk</text>
+  <text x="600" y="340" font-family="Inter, Helvetica, Arial, sans-serif" font-size="32" font-weight="400" fill="#94a3b8" text-anchor="middle">Free UK Calculators</text>
+  <text x="600" y="400" font-family="Inter, Helvetica, Arial, sans-serif" font-size="24" font-weight="400" fill="#64748b" text-anchor="middle">Tax · Salary · Mortgage · Pension · VAT · NI</text>
+  <text x="600" y="460" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="500" fill="#3b82f6" text-anchor="middle">Updated for 2026/27 Tax Year</text>
 </svg>
