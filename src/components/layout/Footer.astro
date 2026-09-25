@@ -120,6 +120,7 @@ const FOOTER_CATEGORIES: CategoryId[] = ['tax', 'pay', 'pension', 'mortgage', 'l
           <li><a href="/calculators/" class="text-sm font-medium text-foreground hover:text-primary transition-colors py-1.5 inline-block">All Calculators (A–Z)</a></li>
           <li><a href="/about/" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 inline-block">About</a></li>
           <li><a href="/privacy/" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 inline-block">Privacy Policy</a></li>
+          <li id="privacy-settings-item" class="hidden"><button type="button" id="privacy-settings-link" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 inline-block text-left">Privacy and cookie settings</button></li>
           <li><a href="/terms/" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 inline-block">Terms of Use</a></li>
           <li><a href="/methodology/" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 inline-block">Methodology</a></li>
           <li><a href="/contact/" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 inline-block">Contact</a></li>
@@ -151,3 +152,29 @@ const FOOTER_CATEGORIES: CategoryId[] = ['tax', 'pay', 'pension', 'mortgage', 'l
      The native binary also omits the Google Play badge via PUBLIC_IS_IOS_BUILD. */
   html.is-ios-app .store-badges { display: none !important; }
 </style>
+
+<script is:inline>
+  // "Privacy and cookie settings" reopens Google's consent message (AdSense Privacy & messaging),
+  // which only applies in the UK, EEA and Switzerland, so the link only appears where it does.
+  (function () {
+    if (window.__IS_CAPACITOR__) return;
+    var item = document.getElementById('privacy-settings-item');
+    var link = document.getElementById('privacy-settings-link');
+    if (!item || !link) return;
+    var tries = 0;
+    (function waitForCmp() {
+      if (typeof window.__tcfapi === 'function') {
+        window.__tcfapi('addEventListener', 2, function (tcData, ok) {
+          if (ok && tcData && tcData.gdprApplies) item.classList.remove('hidden');
+        });
+        return;
+      }
+      if (++tries <= 20) setTimeout(waitForCmp, 500);
+    })();
+    link.addEventListener('click', function () {
+      window.googlefc = window.googlefc || {};
+      window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+      window.googlefc.callbackQueue.push(function () { window.googlefc.showRevocationMessage(); });
+    });
+  })();
+</script>
