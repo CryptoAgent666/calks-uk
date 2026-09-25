@@ -1,10 +1,14 @@
+# CSP note. AdSense and Google's consent message (Privacy and messaging) load from a changing set of
+# Google domains (country TLDs, fundingchoicesmessages, adtrafficquality). Google supports only a nonce
+# CSP, never an allowlist, so script, connect and frame sources are opened to any https origin.
+# script-src already had unsafe-inline, so this costs almost nothing.
 /*
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.adsbygoogle.com https://*.g.doubleclick.net https://adservice.google.com https://*.adtrafficquality.google https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.g.doubleclick.net https://*.adtrafficquality.google https://*.gstatic.com https://api.indexnow.org https://open.er-api.com https://cloudflareinsights.com; frame-src https://googleads.g.doubleclick.net https://*.g.doubleclick.net https://*.googlesyndication.com https://*.adtrafficquality.google https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https:; frame-src https:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
 
 # HTML pages — edge-cacheable, revalidate on deploy
 /
