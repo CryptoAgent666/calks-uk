@@ -41,7 +41,7 @@ export default function PostgraduateLoanRepaymentCalculator() {
           : result.yearsToRepay > 0 && <p className="text-sm text-muted-foreground">~{result.yearsToRepay} years to repay (without interest)</p>}
       </div>
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p>Plan 4 (Scotland): 9% of income above £{PLAN4_THRESHOLD.toLocaleString()}. Interest is the lower of RPI or the Bank of England base rate plus 1%, currently 4.1%. Written off 30 years after first repayment due. If you also have a Plan 2 loan, you repay both simultaneously.</p>
+        <p>Plan 4 (Scotland): 9% of income above £{PLAN4_THRESHOLD.toLocaleString()}. Interest is the lower of RPI or the Bank of England base rate plus 1%, currently 4.1%. Written off 30 years after first repayment due. If you also have a Plan 1 or Plan 2 loan, you repay 9% of income over the lowest of your plan thresholds, not 9% for each; a Postgraduate Loan is repaid separately at 6% over £21,000.</p>
       </div>
     </div>
   )

@@ -3,7 +3,7 @@ import { useState, useMemo } from 'react'
 // UC work allowance / conditionality thresholds (2026/27)
 // Working Tax Credit closed to new claims and existing claimants were migrated to Universal Credit by April 2025,
 // so all thresholds below are UC-based.
-function calculate(hoursPerWeek: number, hourlyRate: number, isSingle: boolean, hasChildren: boolean) {
+function calculate(hoursPerWeek: number, hourlyRate: number, isSingle: boolean) {
   const weeklyPay = hoursPerWeek * hourlyRate
   const annualPay = weeklyPay * 52
   const monthlyPay = annualPay / 12
@@ -31,7 +31,6 @@ function calculate(hoursPerWeek: number, hourlyRate: number, isSingle: boolean, 
     { hours: Math.ceil(aetSingleMonthly * 12 / 52 / nmw), label: `AET (single): £${aetSingleMonthly.toLocaleString('en-GB')}/mo — escapes intensive work search`, met: monthlyPay >= aetSingleMonthly },
     { hours: Math.ceil(aetCoupleMonthly * 12 / 52 / nmw), label: `AET (couple): £${aetCoupleMonthly.toLocaleString('en-GB')}/mo joint — escapes intensive work search`, met: monthlyPay >= aetCoupleMonthly },
     { hours: 35, label: '35 hrs × NLW: CET — no work-related conditions', met: monthlyPay >= cetMonthly },
-    { hours: 16, label: '16 hrs: legacy WTC threshold (closed to new claims April 2025)', met: hoursPerWeek >= 16 },
   ]
 
   return { weeklyPay, annualPay, meetsNMW, isFullTime, conditionality, thresholds }
@@ -41,11 +40,10 @@ export default function WorkingTaxCreditHoursCalculator() {
   const [hours, setHours] = useState('20')
   const [rate, setRate] = useState('12.71')
   const [single, setSingle] = useState(true)
-  const [children, setChildren] = useState(true)
 
   const h = parseFloat(hours) || 0
   const r = parseFloat(rate) || 0
-  const result = useMemo(() => calculate(h, r, single, children), [h, r, single, children])
+  const result = useMemo(() => calculate(h, r, single), [h, r, single])
 
   return (
     <div className="space-y-6">
@@ -57,7 +55,6 @@ export default function WorkingTaxCreditHoursCalculator() {
         <button onClick={() => setSingle(true)} className={`px-4 py-2.5 rounded-xl text-sm font-medium border ${single ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border'}`}>Single</button>
         <button onClick={() => setSingle(false)} className={`px-4 py-2.5 rounded-xl text-sm font-medium border ${!single ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border'}`}>Couple</button>
       </div>
-      <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={children} onChange={(e) => setChildren(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Dependent children</span></label>
 
       <div className="space-y-4 animate-fade-in-up">
         <div className="rounded-xl bg-primary/10 p-4 text-center">
@@ -76,7 +73,7 @@ export default function WorkingTaxCreditHoursCalculator() {
 
         <div className="grid grid-cols-2 gap-3">
           <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Weekly Pay</p><p className="text-lg font-bold">{`£${result.weeklyPay.toFixed(2)}`}</p></div>
-          <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Annual Pay</p><p className="text-lg font-bold">{`£${result.annualPay.toLocaleString()}`}</p></div>
+          <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Annual Pay</p><p className="text-lg font-bold">{`£${result.annualPay.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}</p></div>
         </div>
       </div>
     </div>

@@ -1,53 +1,61 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// EV pay-per-mile road pricing — future calculator
-function calculate(annualMiles: number, ratePerMile: number, currentVED: number, currentFuelDuty: number, mpg: number) {
-  const payPerMileCost = annualMiles * (ratePerMile / 100)
-  const currentFuelCost = (annualMiles / mpg) * 4.54609 * 1.35 // petrol
-  const currentFuelDutyPaid = currentFuelCost * 0.45 // ~45% of pump price is duty+VAT on duty
-  const currentVEDPaid = currentVED
+// Electric Vehicle Excise Duty (eVED), confirmed in the July 2026 consultation response:
+// from April 2028, 3p a mile for battery EVs and 1.5p for plug-in hybrids, uprated by CPI
+// from 2029-30, charged ON TOP of normal VED. Mileage is declared at VED renewal and
+// checked against MOT odometer readings. Vans, buses and HGVs are out of scope at launch.
+const EVED_PENCE: Record<'bev' | 'phev', number> = { bev: 3, phev: 1.5 }
+const FUEL_DUTY_PENCE = 52.95 // petrol/diesel duty per litre, 2026/27
+const VAT = 0.2
+const LITRES_PER_GALLON = 4.54609
 
-  const currentTotal = currentFuelDutyPaid + currentVEDPaid
-  const difference = payPerMileCost - currentTotal
+function calculate(annualMiles: number, vehicle: 'bev' | 'phev', ved: number, mpg: number) {
+  const eved = annualMiles * (EVED_PENCE[vehicle] / 100)
+  const evTotal = eved + ved
 
-  return { payPerMileCost, currentFuelDutyPaid, currentVEDPaid, currentTotal, difference, monthlyPPM: payPerMileCost / 12 }
+  // A petrol car covering the same miles: fuel duty plus the VAT charged on that duty, plus VED
+  const litres = mpg > 0 ? (annualMiles / mpg) * LITRES_PER_GALLON : 0
+  const petrolDuty = litres * (FUEL_DUTY_PENCE / 100) * (1 + VAT)
+  const petrolTotal = petrolDuty + ved
+
+  return { eved, evTotal, petrolDuty, petrolTotal, difference: evTotal - petrolTotal, monthlyEved: eved / 12 }
 }
 
 export default function PayPerMileCalculator() {
   const [miles, setMiles] = useState('8000')
-  const [rate, setRate] = useState('5')
+  const [vehicle, setVehicle] = useState<'bev' | 'phev'>('bev')
   const [ved, setVed] = useState('200') // standard VED rate 2026/27 (£200 from 1 April 2026)
   const [mpg, setMpg] = useState('40')
 
-  const m = parseFloat(miles.replace(/,/g,'')) || 0
-  const r = parseFloat(rate) || 0
+  const m = parseFloat(miles.replace(/,/g, '')) || 0
   const v = parseFloat(ved) || 0
   const g = parseFloat(mpg) || 40
-  const result = useMemo(() => calculate(m, r, v, 0, g), [m, r, v, g])
+  const result = useMemo(() => calculate(m, vehicle, v, g), [m, vehicle, v, g])
 
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Annual Miles</label><input type="text" inputMode="numeric" value={miles} onChange={(e) => setMiles(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Miles" /></div>
-        <div><label className="block text-sm font-medium mb-2">Rate (p/mile)</label><input type="number" min="1" max="20" step="0.5" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Rate (p/mile)" /><p className="text-xs text-muted-foreground mt-1">Estimated: 4-8p/mile</p></div>
-        <div><label className="block text-sm font-medium mb-2">Current VED (£/yr)</label><input type="number" min="0" max="2000" value={ved} onChange={(e) => setVed(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Current VED (£/yr)" /></div>
-        <div><label className="block text-sm font-medium mb-2">Your MPG</label><input type="number" min="10" max="70" value={mpg} onChange={(e) => setMpg(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Your MPG" /></div>
+        <div><label className="block text-sm font-medium mb-2">Annual Miles</label><input type="text" inputMode="numeric" value={miles} onChange={(e) => setMiles(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Annual Miles" /></div>
+        <div><label className="block text-sm font-medium mb-2">Vehicle</label><select value={vehicle} onChange={(e) => setVehicle(e.target.value as 'bev' | 'phev')} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Vehicle"><option value="bev">Battery electric (3p/mile)</option><option value="phev">Plug-in hybrid (1.5p/mile)</option></select></div>
+        <div><label className="block text-sm font-medium mb-2">VED (£/yr)</label><input type="number" min="0" max="2000" value={ved} onChange={(e) => setVed(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="VED per year" /></div>
+        <div><label className="block text-sm font-medium mb-2">Petrol car MPG (to compare)</label><input type="number" min="10" max="70" value={mpg} onChange={(e) => setMpg(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Petrol car MPG for comparison" /></div>
       </div>
 
       {m > 0 && (
         <div className="space-y-4 animate-fade-in-up">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-xl bg-muted/50 p-5 text-center"><p className="text-sm font-medium">Current System</p><p className="text-2xl font-bold mt-1">{formatCurrency(result.currentTotal)}/yr</p><p className="text-xs text-muted-foreground">VED + fuel duty</p></div>
-            <div className={`rounded-xl p-5 text-center ${result.difference > 0 ? 'bg-destructive/10' : 'bg-green-100 dark:bg-green-950'}`}><p className="text-sm font-medium">Pay-Per-Mile ({r}p/mi)</p><p className="text-2xl font-bold mt-1">{formatCurrency(result.payPerMileCost)}/yr</p><p className="text-xs text-muted-foreground">{formatCurrency(result.monthlyPPM)}/month</p></div>
+          <div className="rounded-2xl bg-primary/10 p-6 text-center">
+            <p className="text-sm text-muted-foreground">eVED from April 2028</p>
+            <p className="text-3xl font-bold text-primary mt-1">{formatCurrency(result.eved)}/yr</p>
+            <p className="text-sm text-muted-foreground mt-1">{formatCurrency(result.monthlyEved)}/month, on top of {formatCurrency(v)} VED</p>
           </div>
-          <div className={`rounded-xl p-4 text-center ${result.difference > 0 ? 'bg-destructive/10' : 'bg-green-100 dark:bg-green-950'}`}>
-            <p className="text-sm text-muted-foreground">Pay-per-mile would cost you</p>
-            <p className={`text-xl font-bold ${result.difference > 0 ? 'text-destructive' : 'text-green-700 dark:text-green-400'}`}>{result.difference > 0 ? '+' : ''}{formatCurrency(result.difference)}/year {result.difference > 0 ? 'more' : 'less'}</p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="rounded-xl bg-muted/50 p-5 text-center"><p className="text-sm font-medium">Your {vehicle === 'bev' ? 'EV' : 'plug-in hybrid'}</p><p className="text-2xl font-bold mt-1">{formatCurrency(result.evTotal)}/yr</p><p className="text-xs text-muted-foreground">eVED + VED</p></div>
+            <div className="rounded-xl bg-muted/50 p-5 text-center"><p className="text-sm font-medium">{g} mpg petrol car</p><p className="text-2xl font-bold mt-1">{formatCurrency(result.petrolTotal)}/yr</p><p className="text-xs text-muted-foreground">fuel duty (+ VAT on it) + VED</p></div>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p className="font-medium text-foreground">What is pay-per-mile?</p>
-            <p>As EVs pay no fuel duty, the government is expected to introduce road pricing. Low-mileage drivers would pay less than now; high-mileage drivers more. No firm date yet, but widely expected by 2030.</p>
+            <p className="font-medium text-foreground">How eVED works</p>
+            <p>From April 2028 battery electric cars pay 3p a mile and plug-in hybrids 1.5p, rising with CPI from 2029-30, on top of normal VED. You declare your expected mileage when you renew your vehicle tax, and it is checked against MOT odometer readings; there is no GPS tracking. Petrol and diesel cars keep paying fuel duty instead ({FUEL_DUTY_PENCE}p a litre in 2026/27), and vans are outside the scheme at launch. {vehicle === 'phev' ? 'A plug-in hybrid also pays fuel duty on the petrol it burns, which this comparison leaves out.' : ''}</p>
           </div>
         </div>
       )}

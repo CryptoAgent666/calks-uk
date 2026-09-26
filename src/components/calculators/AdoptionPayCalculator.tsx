@@ -6,6 +6,7 @@ import { formatCurrency } from '@/utils'
 // rate (or 90% of AWE if lower). Adoption leave runs up to 52 weeks
 // (the final 13 unpaid).
 const SAP_RATE = 194.32
+const LOWER_EARNINGS_LIMIT = 129 // weekly, 2026/27: below this there is no SAP
 const HIGHER_WEEKS = 6
 const LOWER_WEEKS = 33
 
@@ -20,7 +21,7 @@ function calculate(monthlyPay: number) {
   const next33 = lowerWeekly * LOWER_WEEKS
   const total = first6 + next33
 
-  return { awe, higherWeekly, lowerWeekly, first6, next33, total }
+  return { awe, higherWeekly, lowerWeekly, first6, next33, total, belowLEL: awe < LOWER_EARNINGS_LIMIT }
 }
 
 export default function AdoptionPayCalculator() {
@@ -40,7 +41,13 @@ export default function AdoptionPayCalculator() {
         <p className="text-xs text-muted-foreground mt-1">Average pay in the 8 weeks before the matching week</p>
       </div>
 
-      {result && (
+      {result && result.belowLEL && (
+        <div className="rounded-xl bg-destructive/10 p-4 text-sm text-destructive">
+          Average weekly earnings of {formatCurrency(result.awe)} are below the £{LOWER_EARNINGS_LIMIT} Lower Earnings Limit, so Statutory Adoption Pay is not due. You may be able to get help through Universal Credit instead.
+        </div>
+      )}
+
+      {result && !result.belowLEL && (
         <div className="space-y-4 animate-fade-in-up">
           <div className="rounded-2xl bg-primary/10 p-6 text-center">
             <p className="text-sm text-muted-foreground">Total Statutory Adoption Pay (39 weeks)</p>

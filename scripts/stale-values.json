@@ -257,6 +257,79 @@
    "ctx": "(Business Asset Disposal|BADR)[^.]*14%[^.]{0,40}(April 2026|2026/27|2026-27)"
   },
   {
+   "was": "£8,605",
+   "now": "£6,205",
+   "what": "plan4 example (2024/25 threshold arithmetic)"
+  },
+  {
+   "was": "£774.45",
+   "now": "£558.45",
+   "what": "plan4 annual repayment on £40k"
+  },
+  {
+   "was": "£1,143.45",
+   "now": "£955.35",
+   "what": "plan2 repayment on £40k (old £27,295 threshold)"
+  },
+  {
+   "was": "£2,829",
+   "now": "£2,765",
+   "what": "council tax: Rutland shown as highest Band D (2026/27 highest is Dorset)",
+   "ctx": "Band D|Rutland"
+  },
+  {
+   "was": "£934",
+   "now": "£1,028",
+   "what": "council tax: Wandsworth Band D 2026/27",
+   "ctx": "Wandsworth"
+  },
+  {
+   "was": "2 to 5p a mile",
+   "now": "eVED 3p/mile from April 2028",
+   "what": "pay-per-mile speculative rates"
+  },
+  {
+   "was": "Great British Insulation Scheme offers",
+   "now": "closed on 31 March 2026",
+   "what": "gbis_status"
+  },
+  {
+   "was": "£200k to £1.8M",
+   "now": "£0 to £1.5M",
+   "what": "farm IHT extra tax from the old £1m APR/BPR cap"
+  },
+  {
+   "was": "two-year fix at 3.8%",
+   "now": "average two-year fix 5.73% (Moneyfacts 15 Sep 2026)",
+   "what": "mortgage rates presented as current"
+  },
+  {
+   "was": "£12,698.40",
+   "now": "£13,218.40",
+   "what": "zero-hours example at the old £12.21 NLW"
+  },
+  {
+   "was": "roughly £17 a month",
+   "now": "tax code changes from January 2027",
+   "what": "winter fuel payment recovery timing"
+  },
+  {
+   "was": "£10.00 for ages 21-24",
+   "now": "£10.85 for 18-20",
+   "what": "NMW age bands (21-24 band abolished)"
+  },
+  {
+   "was": "negative real yields",
+   "now": "positive real yields since 2022",
+   "what": "index-linked gilt real yields"
+  },
+  {
+   "was": "£980",
+   "now": "£1,028",
+   "what": "council tax: Westminster Band D shown as lowest (2026/27 lowest is Wandsworth £1,028)",
+   "ctx": "Band D"
+  },
+  {
    "was": "£160",
    "now": "TfL penalty charge of one hundred and eighty pounds (halved if paid within 14 days) since January 2025",
    "what": "tfl_pcn_ulez_congestion (browser-qa 2026-09-26)",
