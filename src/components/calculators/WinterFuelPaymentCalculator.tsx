@@ -25,33 +25,35 @@ function spaDate(dob: Date): Date {
 
 type Household = 'alone' | 'couple' | 'pension-credit'
 
-function calculate(dobStr: string, household: Household, income: number) {
+function calculate(dobStr: string, household: Household, income: number, partner80: boolean) {
   const dob = new Date(dobStr)
   if (isNaN(dob.getTime())) return null
 
   const spa = spaDate(dob)
   const eligible = spa <= QUALIFYING_WEEK_END
   const is80 = dob <= AGE_80_CUTOFF
-  const householdAmount = is80 ? 300 : 200
+  const anyone80 = is80 || (household !== 'alone' && partner80)
+  const householdAmount = anyone80 ? 300 : 200
 
-  // Not on Pension Credit and both partners qualify → the payment is split.
+  // Not on Pension Credit and both partners qualify: each gets their own share.
+  // Both under 80: £100 each. Both 80+: £150 each. Mixed ages: the partner born
+  // before 28 Sep 1946 gets £200 and the younger one £100 (gov.uk, 2026/27).
   let yourShare = householdAmount
-  if (household === 'couple') yourShare = is80 ? 150 : 100
+  if (household === 'couple') yourShare = is80 ? (partner80 ? 150 : 200) : 100
 
   // The £35,000 test is per person, on your own taxable income — no taper.
   const recovered = household !== 'pension-credit' && income > INCOME_LIMIT
-  const monthlyClawback = yourShare / 12
-
-  return { eligible, spa, is80, householdAmount, yourShare, recovered, monthlyClawback }
+  return { eligible, spa, is80, householdAmount, yourShare, recovered }
 }
 
 export default function WinterFuelPaymentCalculator() {
   const [dob, setDob] = useState('1957-06-15')
   const [household, setHousehold] = useState<Household>('alone')
   const [income, setIncome] = useState('18,000')
+  const [partner80, setPartner80] = useState(false)
 
   const inc = parseFloat(income.replace(/,/g, '')) || 0
-  const result = useMemo(() => calculate(dob, household, inc), [dob, household, inc])
+  const result = useMemo(() => calculate(dob, household, inc, partner80), [dob, household, inc, partner80])
 
   return (
     <div className="space-y-6">
@@ -75,6 +77,9 @@ export default function WinterFuelPaymentCalculator() {
         <button onClick={() => setHousehold('couple')} className={`px-4 py-2.5 rounded-xl text-sm font-medium border ${household === 'couple' ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border'}`}>Partner qualifies too</button>
         <button onClick={() => setHousehold('pension-credit')} className={`px-4 py-2.5 rounded-xl text-sm font-medium border ${household === 'pension-credit' ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border'}`}>We get Pension Credit</button>
       </div>
+      {household !== 'alone' && (
+        <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={partner80} onChange={(e) => setPartner80(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">My partner was born before 28 September 1946 (80 or over)</span></label>
+      )}
 
       {result && (
         <div className="space-y-4 animate-fade-in-up">
@@ -97,7 +102,7 @@ export default function WinterFuelPaymentCalculator() {
                   {household === 'pension-credit'
                     ? `Paid in full to the household (${formatCurrency(result.householdAmount)}) with your Pension Credit`
                     : household === 'couple'
-                      ? `Half of the ${formatCurrency(result.householdAmount)} household payment — your partner gets the other half`
+                      ? `Your share of the ${formatCurrency(result.householdAmount)} household payment; your partner gets ${formatCurrency(result.householdAmount - result.yourShare)}`
                       : `Full household payment${result.is80 ? ' (higher rate, 80+)' : ''}`}
                   {' '}· paid automatically in November–December 2026
                 </p>
@@ -108,11 +113,11 @@ export default function WinterFuelPaymentCalculator() {
                   <p className="font-semibold">HMRC will take it back — your income is over {formatCurrency(INCOME_LIMIT)}</p>
                   <p className="mt-1">
                     There is no taper: even £1 over the limit means the whole {formatCurrency(result.yourShare)} is recovered.
-                    PAYE: your tax code collects roughly {formatCurrency(result.monthlyClawback)}/month over the following tax year.
+                    PAYE: your tax code changes in January 2027 to start collecting it, and again in April 2027, when HMRC also starts collecting the 2027 payment in advance.
                     Self Assessment: it is added to your return instead.
                   </p>
                   <p className="mt-1">
-                    If you would rather not receive it at all, opt out before <strong>20 September 2026</strong> (or by phone on 0800 731 0160 by 18 September).
+                    It is too late to opt out for winter 2026/27. Opting out for 2027/28 opens on <strong>21 December 2026</strong>.
                   </p>
                 </div>
               ) : (

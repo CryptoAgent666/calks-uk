@@ -1,5 +1,25 @@
 # CHANGELOG — Calks.uk
 
+## 2026-09-26 (round 2) — Mortgage rates, Winter Fuel Payment, inheritance tax on pensions, eVED
+
+Second `/calkcheck` data-currency pass, 20 more calculators (report: `AUDIT-2026-09-26-b.md`).
+
+**Mortgage rates** across the mortgage pages were a year out of date: fixes rose again in 2026 and the average
+two-year fix was 5.73% in mid-September (Moneyfacts), not 3.8-4.5%.
+
+**Calculators corrected:** employer NI rise (Employment Allowance offset: 10 staff on £30k cost £3,158 more,
+not nothing), inheritance tax on pensions (now law; personal representatives pay; residence band tapers above
+£2m), pension lump sum (Lump Sum Allowance cap, tax through the bands), Winter Fuel Payment (mixed-age couples
+£200/£100), capital allowances (AIA on integral features, new 40% first-year allowance, zero-emission cars),
+remortgage (saving over the deal), pay-per-mile (rebuilt for eVED: 3p/mile from April 2028), EPC (upgrades
+that apply to you), adoption pay (Lower Earnings Limit), pension sharing on divorce.
+
+**Figures corrected:** Plan 4 student loan examples (£558.45 on £40k) and write-off, zero-hours example at
+£12.71 and the 2027 Employment Rights Act timing, minimum wage age bands, council tax 2026/27 (England £2,392,
+London £2,068, Wandsworth £1,028 to Dorset £2,765), second-home premium, EPC Band C by 1 October 2030 and the
+grants still open, farm inheritance tax at the £2.5M allowance, Farm Business Survey 2024/25, index-linked gilt
+yields, and the High Value Council Tax Surcharge.
+
 ## 2026-09-26 — Children's BMI on real centiles, Bank Rate, MTD deadlines, tolls
 
 `/calkcheck` data-currency pass over 20 calculators (report: `AUDIT-2026-09-26.md`).
