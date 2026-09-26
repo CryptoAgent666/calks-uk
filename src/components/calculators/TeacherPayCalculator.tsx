@@ -1,25 +1,26 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, ukIncomeTax } from '@/utils'
 
-// Teacher pay scales 2025/26 (England, outside London) — STPCD 2025, 4% award from 1 September 2025
-const MAIN_SCALE = [32_916, 34_823, 37_101, 39_556, 42_057, 45_352]
-const UPPER_SCALE = [47_472, 49_232, 51_048]
-// London pay ranges, STPCD 2025. M1/M6 and U1/U3 are the statutory range limits; the
-// points between are the advisory scales.
+// Teacher pay scales 2026/27 (England, outside London): STRB 36th report Appendix F, 3.5% award from
+// 1 September 2026, accepted in full on 1 July 2026. STPCD 2026 is due mid-October 2026, backdated.
+const MAIN_SCALE = [34_069, 36_042, 38_400, 40_941, 43_529, 46_940]
+const UPPER_SCALE = [49_134, 50_956, 52_835]
+// London pay ranges from 1 September 2026 (same source). M1/M6 and U1/U3 are the statutory range
+// limits; the points between are the advisory scales.
 const LONDON_MAIN: Record<string, number[]> = {
-  inner: [40_317, 42_234, 44_238, 46_339, 48_952, 52_300],
-  outer: [37_870, 39_851, 41_935, 44_128, 46_800, 50_474],
-  fringe: [34_398, 36_373, 38_627, 41_075, 43_545, 46_839],
+  inner: [41_729, 43_713, 45_787, 47_961, 50_666, 54_131],
+  outer: [39_196, 41_246, 43_403, 45_673, 48_438, 52_241],
+  fringe: [35_602, 37_647, 39_979, 42_513, 45_070, 48_479],
 }
 const LONDON_UPPER: Record<string, number[]> = {
-  inner: [57_632, 60_464, 62_496],
-  outer: [52_219, 54_151, 56_154],
-  fringe: [48_913, 50_668, 52_490],
+  inner: [59_650, 62_581, 64_684],
+  outer: [54_047, 56_047, 58_120],
+  fringe: [50_625, 52_442, 54_328],
 }
 const LEADERSHIP: Record<string, { min: number; max: number }> = {
-  'Head (Group 1)': { min: 58_569, max: 77_924 },
-  'Head (Group 4)': { min: 71_330, max: 97_136 },
-  'Head (Group 8)': { min: 100_540, max: 143_796 },
+  'Head (Group 1)': { min: 60_619, max: 80_652 },
+  'Head (Group 4)': { min: 73_827, max: 100_536 },
+  'Head (Group 8)': { min: 104_059, max: 148_829 },
 }
 
 type Scale = 'main' | 'upper' | 'leadership'
