@@ -12,7 +12,8 @@ export default function ALevelGradeCalculator() {
   const totalPoints = grades.reduce((s, g) => s + (UCAS_POINTS[g] || 0), 0)
   const avgPoints = grades.length > 0 ? totalPoints / grades.length : 0
 
-  let tariffSummary = grades.length >= 3 ? grades.slice(0, 3).sort((a, b) => (UCAS_POINTS[b] || 0) - (UCAS_POINTS[a] || 0)).join('') : ''
+  // Best three grades, the usual basis for offers
+  const tariffSummary = grades.length >= 3 ? [...grades].sort((a, b) => (UCAS_POINTS[b] || 0) - (UCAS_POINTS[a] || 0)).slice(0, 3).join('') : ''
 
   let uniLevel = ''
   if (totalPoints >= 144) uniLevel = 'Russell Group / Top universities'
@@ -27,10 +28,10 @@ export default function ALevelGradeCalculator() {
       <div className="flex flex-wrap gap-2">
         {grades.map((g, i) => (
           <div key={i} className="flex items-center gap-1">
-            <select value={g} onChange={(e) => updateGrade(i, e.target.value)} className="rounded-lg border border-input bg-background px-3 py-2 font-medium focus:outline-none focus:ring-2 focus:ring-ring">
+            <select value={g} onChange={(e) => updateGrade(i, e.target.value)} aria-label={`A-level ${i + 1} grade`} className="rounded-lg border border-input bg-background px-3 py-2 font-medium focus:outline-none focus:ring-2 focus:ring-ring">
               {Object.entries(UCAS_POINTS).map(([gr, pts]) => <option key={gr} value={gr}>{gr} ({pts} pts)</option>)}
             </select>
-            <button onClick={() => removeGrade(i)} className="px-1.5 py-2 rounded-lg bg-muted hover:bg-destructive/10 text-xs">x</button>
+            <button onClick={() => removeGrade(i)} aria-label={`Remove A-level ${i + 1}`} className="px-1.5 py-2 rounded-lg bg-muted hover:bg-destructive/10 text-xs">x</button>
           </div>
         ))}
       </div>

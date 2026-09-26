@@ -255,6 +255,36 @@
    "now": "18% (BADR from 6 Apr 2026)",
    "what": "cgt_badr_rate_2026_27",
    "ctx": "(Business Asset Disposal|BADR)[^.]*14%[^.]{0,40}(April 2026|2026/27|2026-27)"
+  },
+  {
+   "was": "£160",
+   "now": "TfL penalty charge of one hundred and eighty pounds (halved if paid within 14 days) since January 2025",
+   "what": "tfl_pcn_ulez_congestion (browser-qa 2026-09-26)",
+   "ctx": "penalt|PCN"
+  },
+  {
+   "was": "£80 if",
+   "now": "TfL reduced penalty of ninety pounds within 14 days",
+   "what": "tfl_pcn_reduced (browser-qa 2026-09-26)",
+   "ctx": "penalt|PCN|14 days"
+  },
+  {
+   "was": "8500",
+   "now": "EWCO up to ten thousand two hundred pounds per hectare",
+   "what": "ewco_establishment_max_per_ha (browser-qa 2026-09-26)",
+   "ctx": "Woodland|EWCO"
+  },
+  {
+   "was": "£330 a year",
+   "now": "about three hundred and sixty pounds a year of State Pension per NI year",
+   "what": "state_pension_value_per_ni_year (browser-qa 2026-09-26)",
+   "ctx": "State Pension"
+  },
+  {
+   "was": "6.32",
+   "now": "State Pension per NI year (six pounds eighty-nine a week in 2026/27)",
+   "what": "state_pension_weekly_per_ni_year (browser-qa 2026-09-26)",
+   "ctx": "State Pension|NI year"
   }
  ]
 }

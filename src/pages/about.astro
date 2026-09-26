@@ -80,13 +80,13 @@ const schemas = [
         <h2 class="text-xl font-semibold mt-8 mb-3">Privacy First</h2>
         <p>Every calculation on Calks.uk runs entirely in your browser using JavaScript. <strong>No personal data is collected, stored or sent to our servers.</strong> We do not track what you calculate, and we never will. There are no accounts, no logins, and no personal data to breach.</p>
         <p>This is a deliberate architectural decision. Financial calculations are inherently sensitive — your salary, mortgage balance, tax situation and pension savings are private. By running everything client-side, we eliminate the risk of data leaks entirely. Your numbers never leave your device.</p>
-        <p>We use minimal, privacy-respecting analytics to understand which calculators are most popular (so we can prioritise improvements), but we do not use fingerprinting, tracking pixels or cross-site advertising profiles. See our <a href="/privacy/" class="text-primary hover:underline">Privacy Policy</a> for full details.</p>
+        <p>We use minimal, privacy-respecting analytics to understand which calculators are most popular (so we can prioritise improvements), and we do not use fingerprinting. The site is funded by Google AdSense ads; in the UK, EEA and Switzerland personalised ads are shown only with your consent, which you can change at any time through Privacy and cookie settings at the foot of every page. See our <a href="/privacy/" class="text-primary hover:underline">Privacy Policy</a> for full details.</p>
       </section>
 
       <section>
         <h2 class="text-xl font-semibold mt-8 mb-3">Accuracy & Sources</h2>
         <p>Every rate, threshold and allowance used in our calculators comes from official UK government sources — primarily <a href="https://www.gov.uk/government/organisations/hm-revenue-customs" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">HMRC</a>, <a href="https://www.gov.uk" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">GOV.UK</a>, the <a href="https://www.bankofengland.co.uk" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Bank of England</a> and the <a href="https://www.ons.gov.uk" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Office for National Statistics</a>.</p>
-        <p>We update all tax-related calculators at the start of each UK financial year (6 April) and whenever mid-year changes are announced. Every calculator displays the tax year it applies to, so you always know which rates are being used. Our full verification process is described on the <a href="/methodology/" class="text-primary hover:underline">Methodology</a> page.</p>
+        <p>We update all tax-related calculators at the start of each UK financial year (6 April) and whenever mid-year changes are announced. Tax calculators show the tax year they apply to, and rate-based calculators show when their rates were last verified, so you always know which rates are being used. Our full verification process is described on the <a href="/methodology/" class="text-primary hover:underline">Methodology</a> page.</p>
         <p>That said, our calculators provide <strong>estimates for guidance only</strong>. Individual circumstances vary, and we always recommend verifying results with HMRC or consulting a qualified accountant, financial adviser or solicitor before making important decisions.</p>
       </section>
 
@@ -94,7 +94,7 @@ const schemas = [
         <h2 class="text-xl font-semibold mt-8 mb-3">How We Are Built</h2>
         <p>Calks.uk is engineered for speed, reliability and accessibility:</p>
         <ul class="list-disc pl-6 space-y-1">
-          <li><strong>Astro 5</strong> — every page is pre-rendered as static HTML at build time, delivering near-instant load times</li>
+          <li><strong>Astro 6</strong> — every page is pre-rendered as static HTML at build time, delivering near-instant load times</li>
           <li><strong>React</strong> — interactive calculator components load on demand using the "islands" architecture, keeping initial page weight minimal</li>
           <li><strong>Tailwind CSS 4</strong> — responsive design that works seamlessly on phones, tablets and desktops, with full dark-mode support</li>
           <li><strong>Cloudflare Pages</strong> — global edge network ensures fast delivery from the nearest data centre, anywhere in the world</li>

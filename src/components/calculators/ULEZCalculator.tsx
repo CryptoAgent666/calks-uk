@@ -2,7 +2,9 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 const ULEZ_DAILY = 12.50
-const CC_DAILY = 18.00 // London Congestion Charge from 2 January 2026 (was £15)
+const CC_DAILY = 18.00 // London Congestion Charge from 2 January 2026 (was £15); £21 if paid up to 3 days late
+// Cleaner Vehicle Discount from 2 Jan 2026: electric cars on Auto Pay pay 25% less (12.5% from 4 Mar 2030)
+const CC_EV_DISCOUNT = 0.25
 
 function calculate(euroStandard: string, fuelType: string, daysInULEZ: number, inCongestionZone: boolean, daysInCC: number) {
   const petrolCompliant = parseInt(euroStandard) >= 4
@@ -10,15 +12,13 @@ function calculate(euroStandard: string, fuelType: string, daysInULEZ: number, i
   const isCompliant = fuelType === 'electric' ? true : fuelType === 'petrol' ? petrolCompliant : dieselCompliant
 
   const ulezAnnual = isCompliant ? 0 : daysInULEZ * ULEZ_DAILY * 52
-  const ccAnnual = inCongestionZone ? daysInCC * CC_DAILY * 52 : 0
-
-  // Congestion charge discount for EVs removed from Dec 2025
-  const evCCDiscount = fuelType === 'electric' ? 0 : 0
+  const ccDaily = fuelType === 'electric' ? CC_DAILY * (1 - CC_EV_DISCOUNT) : CC_DAILY
+  const ccAnnual = inCongestionZone ? daysInCC * ccDaily * 52 : 0
 
   const totalAnnual = ulezAnnual + ccAnnual
   const weeklyTotal = totalAnnual / 52
 
-  return { isCompliant, ulezAnnual, ccAnnual, totalAnnual, weeklyTotal, ulezDaily: isCompliant ? 0 : ULEZ_DAILY }
+  return { isCompliant, ulezAnnual, ccAnnual, totalAnnual, weeklyTotal, ulezDaily: isCompliant ? 0 : ULEZ_DAILY, ccDaily }
 }
 
 export default function ULEZCalculator() {
@@ -39,12 +39,12 @@ export default function ULEZCalculator() {
         <div><label className="block text-sm font-medium mb-2">Euro Standard</label><select value={euro} onChange={(e) => setEuro(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Euro Standard"><option value="3">Euro 3 (pre-2006)</option><option value="4">Euro 4 (2006-2011)</option><option value="5">Euro 5 (2011-2015)</option><option value="6">Euro 6 (2015+)</option></select></div>
         <div><label className="block text-sm font-medium mb-2">Days/Week in ULEZ</label><input type="number" min="0" max="7" value={days} onChange={(e) => setDays(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Days/Week in ULEZ" /></div>
       </div>
-      <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={cc} onChange={(e) => setCc(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Also enter Congestion Charge zone (£{CC_DAILY}/day)</span></label>
+      <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={cc} onChange={(e) => setCc(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Also enter Congestion Charge zone (£{result.ccDaily % 1 ? result.ccDaily.toFixed(2) : result.ccDaily}/day{fuel === 'electric' ? ' with the EV discount' : ''})</span></label>
       {cc && <div><label className="block text-sm font-medium mb-2">Days/Week in CC Zone</label><input type="number" min="0" max="7" value={ccDays} onChange={(e) => setCcDays(e.target.value)} className="w-32 rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Days/Week in CC Zone" /></div>}
 
       <div className="space-y-4 animate-fade-in-up">
         <div className={`rounded-xl p-3 text-center text-sm font-medium ${result.isCompliant ? 'bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-400' : 'bg-destructive/10 text-destructive'}`}>
-          {result.isCompliant ? 'Your vehicle is ULEZ compliant — no daily charge' : `Not ULEZ compliant — £${ULEZ_DAILY}/day charge applies`}
+          {result.isCompliant ? 'Your vehicle is ULEZ compliant — no daily charge' : `Not ULEZ compliant — £${ULEZ_DAILY.toFixed(2)}/day charge applies`}
         </div>
         <div className="rounded-2xl bg-destructive/10 p-6 text-center">
           <p className="text-sm text-muted-foreground">Annual ULEZ + CC Cost</p>
@@ -58,7 +58,7 @@ export default function ULEZCalculator() {
           </div>
         )}
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-          <p>ULEZ: £{ULEZ_DAILY}/day for non-compliant vehicles (petrol pre-Euro 4, diesel pre-Euro 6). Covers all of Greater London 24/7. Congestion Charge: £{CC_DAILY}/day, Mon-Fri 7am-6pm and Sat-Sun/bank holidays 12pm-6pm, central London.</p>
+          <p>ULEZ: £{ULEZ_DAILY.toFixed(2)}/day for non-compliant vehicles (petrol pre-Euro 4, diesel pre-Euro 6). Covers all of Greater London 24/7, every day except Christmas Day. Congestion Charge: £{CC_DAILY}/day (£21 if paid up to 3 days late), Mon-Fri 7am-6pm and Sat-Sun/bank holidays 12pm-6pm, central London. Electric cars registered for Auto Pay get a 25% discount (£{(CC_DAILY * (1 - CC_EV_DISCOUNT)).toFixed(2)}/day).</p>
         </div>
       </div>
     </div>

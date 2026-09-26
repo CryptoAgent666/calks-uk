@@ -8,12 +8,15 @@ const MAX_YEARS = 20
 
 function calculate(age: number, yearsService: number, weeklyPay: number) {
   const cappedPay = Math.min(weeklyPay, WEEKLY_PAY_CAP)
-  const years = Math.min(yearsService, MAX_YEARS)
+  // Statutory redundancy pay needs at least 2 full years' service
+  const years = yearsService >= 2 ? Math.min(yearsService, MAX_YEARS) : 0
 
   let totalWeeks = 0
 
   for (let y = 0; y < years; y++) {
-    const ageAtYear = age - (years - y - 1)
+    // A year counts at the higher rate only if you were that age throughout it (ERA 1996 s162/s119),
+    // so each year is judged by your age at its start
+    const ageAtYear = age - (years - y)
     if (ageAtYear < 22) totalWeeks += 0.5
     else if (ageAtYear < 41) totalWeeks += 1
     else totalWeeks += 1.5
@@ -64,6 +67,7 @@ export default function RedundancyPayCalculator() {
             <p className="text-sm text-muted-foreground">Statutory Redundancy Pay</p>
             <p className="text-3xl font-bold text-primary mt-1">{formatCurrency(result.statutoryPay)}</p>
             <p className="text-sm text-muted-foreground mt-1">{result.totalWeeks} weeks' pay</p>
+            {y < 2 && <p className="text-sm text-muted-foreground mt-1">You need at least 2 years' continuous service to qualify for statutory redundancy pay.</p>}
           </div>
 
           <div className="grid grid-cols-2 gap-3">

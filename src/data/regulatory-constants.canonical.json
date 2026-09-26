@@ -4692,7 +4692,8 @@
         "prose"
       ],
       "used_by": [
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/ULEZCalculator.tsx"
       ],
       "source_url": "",
       "status": "current",
@@ -4720,7 +4721,7 @@
     },
     {
       "key": "congestion_charge_late_penalty",
-      "value": "160",
+      "value": "180",
       "unit": "GBP",
       "law": "TfL Congestion Charge",
       "theme": "other",
@@ -4730,10 +4731,15 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://tfl.gov.uk/modes/driving/congestion-charge/penalties-and-enforcement",
       "status": "current",
       "change_frequency": "",
-      "note": "Congestion Charge late penalty GBP80 within 14 days, GBP160 longer (congestion-charge-calculator)"
+      "note": "Congestion Charge late penalty GBP80 within 14 days, GBP160 longer (congestion-charge-calculator)",
+      "official_value": "180",
+      "verified_date": "2026-09-26",
+      "verify_method": "browser-qa 2026-09-26: primary source read",
+      "confidence": "high",
+      "freshness_note": "FIXED 2026-09-26: TfL PCN is £180, £90 if paid within 14 days, £270 charge certificate (tfl.gov.uk penalties page). Prose said £160/£80."
     },
     {
       "key": "consumer_cooling_off_days",
@@ -17524,7 +17530,8 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/SavingsInterestTaxCalculator.tsx"
+        "src/components/calculators/SavingsInterestTaxCalculator.tsx",
+        "src/components/calculators/IsaCalculator.tsx"
       ],
       "source_url": "",
       "status": "current",
@@ -17544,7 +17551,8 @@
       "used_by": [
         "src/components/calculators/SavingsInterestTaxCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/IsaCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/apply-tax-free-interest-on-savings",
       "status": "current",
@@ -17562,7 +17570,8 @@
       ],
       "used_by": [
         "src/components/calculators/SavingsInterestTaxCalculator.tsx",
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/components/calculators/IsaCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/apply-tax-free-interest-on-savings",
       "status": "current",
@@ -30620,10 +30629,213 @@
       "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
       "verified_date": "2026-09-26",
       "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "ulez_penalty_charge",
+      "value": "180",
+      "unit": "GBP",
+      "law": "TfL ULEZ penalty charge",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://tfl.gov.uk/modes/driving/ultra-low-emission-zone/penalty-charges-for-ulez",
+      "status": "current",
+      "change_frequency": "",
+      "note": "ULEZ PCN £180, reduced to £90 within 14 days (ulez-calculator prose)",
+      "official_value": "180",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
+      "verified_date": "2026-09-26",
+      "verify_method": "browser-qa 2026-09-26: primary source read"
+    },
+    {
+      "key": "savings_basic_rate_from_2027",
+      "value": "22",
+      "unit": "percent",
+      "law": "Savings basic rate from 6 Apr 2027 (Budget 2025)",
+      "theme": "income_tax",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/IsaCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income/change-to-tax-rates-for-property-savings-and-dividend-income-technical-note",
+      "status": "current",
+      "change_frequency": "",
+      "note": "IsaCalculator TAX_BANDS.basic.from2027 (tax saved vs a taxed account from year 2)",
+      "official_value": "22",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
+      "verified_date": "2026-09-26",
+      "verify_method": "browser-qa 2026-09-26: primary source read"
+    },
+    {
+      "key": "savings_higher_rate_from_2027",
+      "value": "42",
+      "unit": "percent",
+      "law": "Savings higher rate from 6 Apr 2027 (Budget 2025)",
+      "theme": "income_tax",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/IsaCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income/change-to-tax-rates-for-property-savings-and-dividend-income-technical-note",
+      "status": "current",
+      "change_frequency": "",
+      "note": "IsaCalculator TAX_BANDS.higher.from2027",
+      "official_value": "42",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
+      "verified_date": "2026-09-26",
+      "verify_method": "browser-qa 2026-09-26: primary source read"
+    },
+    {
+      "key": "savings_additional_rate_from_2027",
+      "value": "47",
+      "unit": "percent",
+      "law": "Savings additional rate from 6 Apr 2027 (Budget 2025)",
+      "theme": "income_tax",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/IsaCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income/change-to-tax-rates-for-property-savings-and-dividend-income-technical-note",
+      "status": "current",
+      "change_frequency": "",
+      "note": "IsaCalculator TAX_BANDS.additional.from2027",
+      "official_value": "47",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
+      "verified_date": "2026-09-26",
+      "verify_method": "browser-qa 2026-09-26: primary source read"
+    },
+    {
+      "key": "cash_isa_limit_under_65_from_2027",
+      "value": "12000",
+      "unit": "GBP",
+      "law": "Cash ISA limit for under-65s from 6 Apr 2027",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/IsaCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/reduction-in-the-cash-individual-savings-account-isa-limit/cash-individual-savings-account-isa-limit-reduction",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Cash ISA cap within the £20,000 allowance (ISA input hint + prose)",
+      "official_value": "12000",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
+      "verified_date": "2026-09-26",
+      "verify_method": "browser-qa 2026-09-26: primary source read"
+    },
+    {
+      "key": "spouse_visa_in_uk_extension_fee",
+      "value": "1407",
+      "unit": "GBP",
+      "law": "Home Office fee, family leave to remain in the UK (8 Apr 2026)",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/SpouseVisaCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/visa-regulations-revised-table/home-office-immigration-and-nationality-fees-8-april-2026",
+      "status": "current",
+      "change_frequency": "",
+      "note": "SpouseVisaCalculator ROUTES.inside.fee",
+      "official_value": "1407",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
+      "verified_date": "2026-09-26",
+      "verify_method": "browser-qa 2026-09-26: primary source read"
+    },
+    {
+      "key": "spouse_visa_extension_length_years",
+      "value": "2.5",
+      "unit": "years",
+      "law": "Appendix FM: leave to remain as a partner granted for 30 months",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/SpouseVisaCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-fm-family-members",
+      "status": "current",
+      "change_frequency": "",
+      "note": "SpouseVisaCalculator ROUTES.inside.years",
+      "official_value": "2.5",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
+      "verified_date": "2026-09-26",
+      "verify_method": "browser-qa 2026-09-26: primary source read"
+    },
+    {
+      "key": "ewco_establishment_max_per_ha",
+      "value": "10200",
+      "unit": "GBP/ha",
+      "law": "England Woodland Creation Offer",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/england-woodland-creation-offer",
+      "status": "current",
+      "change_frequency": "",
+      "note": "EWCO up to £10,200/ha establishment (elm-payment-calculator prose)",
+      "official_value": "10200",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
+      "verified_date": "2026-09-26",
+      "verify_method": "browser-qa 2026-09-26: primary source read"
+    },
+    {
+      "key": "ewco_maintenance_per_ha_year",
+      "value": "400",
+      "unit": "GBP/ha/year",
+      "law": "England Woodland Creation Offer",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/england-woodland-creation-offer",
+      "status": "current",
+      "change_frequency": "",
+      "note": "EWCO £400/ha a year for 15 years (elm-payment-calculator prose)",
+      "official_value": "400",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
+      "verified_date": "2026-09-26",
+      "verify_method": "browser-qa 2026-09-26: primary source read"
     }
   ],
   "status_summary": {
-    "current": 1380,
+    "current": 1389,
     "retired": 23,
     "superseded_by_component": 4,
     "historical": 15,
