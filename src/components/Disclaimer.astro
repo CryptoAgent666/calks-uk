@@ -40,7 +40,15 @@ const SOURCE_BY_SLUG: Record<string, string> = {
   'student-loan-plan4-calculator': 'SAAS, the Student Loans Company and GOV.UK',
   'lbtt-ltt-calculator': 'Revenue Scotland and the Welsh Revenue Authority',
   'scottish-income-tax-calculator': 'the Scottish Government and GOV.UK',
+  // grade and exam tools: no student-finance figures behind them
+  'gcse-grade-calculator': 'Ofqual',
+  'a-level-grade-calculator': 'Ofqual and UCAS',
+  'gpa-calculator': 'UK degree classification conventions and UK ENIC',
+  'exam-score-calculator': '',
+  'weighted-grade-calculator': '',
 }
+
+const GRADE_SLUGS = new Set(['gcse-grade-calculator', 'a-level-grade-calculator', 'gpa-calculator', 'exam-score-calculator', 'weighted-grade-calculator'])
 
 const TAX_YEAR_SLUGS = new Set([
   'student-loan-repayment-calculator',
@@ -62,8 +70,9 @@ const ADVICE_BY_CATEGORY: Record<string, string> = {
 
 const source = SOURCE_BY_SLUG[slug] ?? SOURCE_BY_CATEGORY[category]
 const period =
-  TAX_YEAR_CATEGORIES.has(category) || TAX_YEAR_SLUGS.has(slug) ? 'the 2026/27 tax year' : '2026'
+  !GRADE_SLUGS.has(slug) && (TAX_YEAR_CATEGORIES.has(category) || TAX_YEAR_SLUGS.has(slug)) ? 'the 2026/27 tax year' : '2026'
 const advice =
+  (GRADE_SLUGS.has(slug) ? 'It is not an official result: check grade boundaries with your exam board or university.' : undefined) ??
   ADVICE_BY_CATEGORY[category] ??
   'It is not financial or tax advice: check anything you rely on against the official source or a qualified adviser.'
 ---
@@ -72,7 +81,9 @@ const advice =
   <p class="font-medium text-foreground mb-1">Disclaimer</p>
   <p>
     This calculator is for guidance only. {advice}
-    {source && ` Rates and figures come from ${source} and are reviewed for ${period}.`}
+    {source && (GRADE_SLUGS.has(slug)
+      ? ` Grade boundaries and conversions follow ${source} and are reviewed for ${period}.`
+      : ` Rates and figures come from ${source} and are reviewed for ${period}.`)}
     Everything is calculated in your browser; nothing you enter is sent to our servers.
   </p>
 </div>

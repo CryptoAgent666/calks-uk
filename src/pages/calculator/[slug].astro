@@ -94,7 +94,7 @@ const schemas = [
         </div>
 
         <!-- Author byline (E-E-A-T) -->
-        <AuthorByline lastUpdated={content?.lastUpdated} category={calc.category} />
+        <AuthorByline lastUpdated={content?.lastUpdated} category={calc.category} slug={calc.slug} />
 
         <!-- Quick Answer (AI citation block) -->
         {content?.quickAnswer && <div class="print:hidden"><QuickAnswer answer={content.quickAnswer} /></div>}

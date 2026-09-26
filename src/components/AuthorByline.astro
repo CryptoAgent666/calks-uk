@@ -4,8 +4,19 @@ import { RATES_VERIFIED } from '@/data/site'
 interface Props {
   lastUpdated?: string
   category?: string
+  slug?: string
 }
-const { lastUpdated = 'April 2026', category } = Astro.props
+const { lastUpdated = 'April 2026', category, slug = '' } = Astro.props
+
+// Grade and exam tools sit in the education category but have no student-finance
+// figures behind them, so they get their own line and no dated rates badge.
+const VERIFICATION_BY_SLUG: Record<string, string> = {
+  'gcse-grade-calculator': 'Checked against Ofqual 9 to 1 grading, 2026',
+  'a-level-grade-calculator': 'Checked against Ofqual and UCAS 2026 guidance',
+  'gpa-calculator': 'Checked against UK degree classifications and UK ENIC guidance',
+  'exam-score-calculator': 'Methodology reviewed for 2026',
+  'weighted-grade-calculator': 'Methodology reviewed for 2026',
+}
 
 // Money/regulatory categories carry a dated verification badge; utility
 // categories (tools/math) have no government rates to verify.
@@ -13,7 +24,7 @@ const DATED_BADGE_CATEGORIES = new Set([
   'tax', 'pay', 'pension', 'mortgage', 'loans', 'business', 'investment',
   'benefits', 'auto', 'energy', 'education', 'immigration', 'legal', 'farming',
 ])
-const showDatedBadge = !!category && DATED_BADGE_CATEGORIES.has(category)
+const showDatedBadge = !!category && DATED_BADGE_CATEGORIES.has(category) && !(slug in VERIFICATION_BY_SLUG)
 
 const VERIFICATION_BY_CATEGORY: Record<string, string> = {
   tax: 'Verified against HMRC and GOV.UK 2026/27 rates',
@@ -37,7 +48,7 @@ const VERIFICATION_BY_CATEGORY: Record<string, string> = {
   tools: 'Methodology reviewed for 2026',
   math: 'Methodology reviewed for 2026',
 }
-const verificationText = (category && VERIFICATION_BY_CATEGORY[category]) || 'Methodology reviewed for 2026'
+const verificationText = VERIFICATION_BY_SLUG[slug] || (category && VERIFICATION_BY_CATEGORY[category]) || 'Methodology reviewed for 2026'
 ---
 
 <div class="flex items-center gap-3 py-3 border-y border-border mb-6">
