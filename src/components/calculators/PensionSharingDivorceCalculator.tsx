@@ -9,8 +9,9 @@ function calculate(pension1: number, pension2: number, statePension1: number, st
   const person1Share = totalPension * (sharingPct / 100)
   const person2Share = totalPension * ((100 - sharingPct) / 100)
 
-  const person1Total = person1Share + statePension1 * 52
-  const person2Total = person2Share + statePension2 * 52
+  // State Pension is income, not capital, so it is shown alongside the pot rather than added to it
+  const person1Total = statePension1 * 52
+  const person2Total = statePension2 * 52
 
   const equalSplit = totalPension / 2
   const transferNeeded = Math.abs(pension1 - equalSplit)
@@ -22,7 +23,7 @@ function calculate(pension1: number, pension2: number, statePension1: number, st
 export default function PensionSharingDivorceCalculator() {
   const [p1, setP1] = useState('200000')
   const [p2, setP2] = useState('50000')
-  const [sp1, setSp1] = useState('230')
+  const [sp1, setSp1] = useState('241.30') // full new State Pension 2026/27
   const [sp2, setSp2] = useState('180')
   const [share, setShare] = useState('50')
 
@@ -40,12 +41,12 @@ export default function PensionSharingDivorceCalculator() {
 
       <div className="space-y-4 animate-fade-in-up">
         <div className="grid grid-cols-2 gap-4">
-          <div className="rounded-xl bg-primary/10 p-5 text-center"><p className="text-sm font-medium">Person 1</p><p className="text-2xl font-bold text-primary mt-1">{formatCurrency(result.person1Share)}</p><p className="text-xs text-muted-foreground">+ SP: {formatCurrency(result.person1Total)} total</p></div>
-          <div className="rounded-xl bg-muted/50 p-5 text-center"><p className="text-sm font-medium">Person 2</p><p className="text-2xl font-bold mt-1">{formatCurrency(result.person2Share)}</p><p className="text-xs text-muted-foreground">+ SP: {formatCurrency(result.person2Total)} total</p></div>
+          <div className="rounded-xl bg-primary/10 p-5 text-center"><p className="text-sm font-medium">Person 1</p><p className="text-2xl font-bold text-primary mt-1">{formatCurrency(result.person1Share)}</p><p className="text-xs text-muted-foreground">pension pot, plus State Pension of {formatCurrency(result.person1Total)} a year</p></div>
+          <div className="rounded-xl bg-muted/50 p-5 text-center"><p className="text-sm font-medium">Person 2</p><p className="text-2xl font-bold mt-1">{formatCurrency(result.person2Share)}</p><p className="text-xs text-muted-foreground">pension pot, plus State Pension of {formatCurrency(result.person2Total)} a year</p></div>
         </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
           <p>Combined pensions: {formatCurrency(result.totalPension)}. For equal split: {result.whoTransfers} transfers {formatCurrency(result.transferNeeded)}.</p>
-          <p className="mt-1">Pension Sharing Order (PSO) is a court order. Pension Offsetting (keeping pensions, adjusting other assets) is an alternative. State Pension cannot be shared but can be considered for offsetting.</p>
+          <p className="mt-1">Pension Sharing Order (PSO) is a court order. Pension Offsetting (keeping pensions, adjusting other assets) is an alternative. The new State Pension itself cannot be shared, though a pension sharing order can share any Additional State Pension or protected payment, and State Pension can be taken into account when offsetting.</p>
         </div>
       </div>
     </div>

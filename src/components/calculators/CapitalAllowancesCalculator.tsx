@@ -2,45 +2,68 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 const AIA_LIMIT = 1_000_000
-const WRITING_DOWN_MAIN = 0.14
+const WRITING_DOWN_MAIN = 0.14 // from April 2026 (was 18%)
 const WRITING_DOWN_SPECIAL = 0.06
-const FULL_EXPENSING_RATE = 1.0 // 100% for qualifying plant/machinery
 
-type AssetType = 'plant' | 'car_low' | 'car_high' | 'special' | 'integral'
+type AssetType = 'plant' | 'integral' | 'special' | 'car_zero' | 'car_low' | 'car_high'
 
 const ASSET_INFO: Record<AssetType, { name: string; pool: string; rate: number }> = {
-  plant: { name: 'Plant & Machinery', pool: 'Main pool or AIA/Full Expensing', rate: WRITING_DOWN_MAIN },
-  car_low: { name: 'Car (CO2 ≤50g/km)', pool: 'Main pool', rate: WRITING_DOWN_MAIN },
-  car_high: { name: 'Car (CO2 >50g/km)', pool: 'Special rate pool', rate: WRITING_DOWN_SPECIAL },
-  special: { name: 'Special Rate (long-life)', pool: 'Special rate pool', rate: WRITING_DOWN_SPECIAL },
+  plant: { name: 'Plant & Machinery', pool: 'Main pool', rate: WRITING_DOWN_MAIN },
   integral: { name: 'Integral Features', pool: 'Special rate pool', rate: WRITING_DOWN_SPECIAL },
+  special: { name: 'Special Rate (long-life)', pool: 'Special rate pool', rate: WRITING_DOWN_SPECIAL },
+  car_zero: { name: 'New zero-emission car', pool: '100% first-year allowance', rate: WRITING_DOWN_MAIN },
+  car_low: { name: 'Car (CO2 1-50g/km)', pool: 'Main pool', rate: WRITING_DOWN_MAIN },
+  car_high: { name: 'Car (CO2 >50g/km)', pool: 'Special rate pool', rate: WRITING_DOWN_SPECIAL },
 }
 
+const wdaSchedule = (amount: number, rate: number, firstYear: number) => {
+  const rows: { year: number; wda: number; remaining: number }[] = []
+  let remaining = amount
+  for (let y = firstYear; y <= 10; y++) {
+    const wda = remaining * rate
+    remaining -= wda
+    rows.push({ year: y, wda, remaining })
+  }
+  return rows
+}
+
+// Year-1 relief on a new asset. AIA (£1m) covers plant including integral features and
+// long-life assets, never cars. Above the AIA: companies get full expensing (100%) on main-rate
+// plant and a 50% FYA on special-rate assets; other businesses get the 40% FYA on main-rate plant
+// (from 1 January 2026) and the 6% WDA on special-rate assets. The balance goes into the pool.
 function calculate(cost: number, assetType: AssetType, useAIA: boolean, isCompany: boolean) {
   const info = ASSET_INFO[assetType]
-  const corpTaxRate = 0.25
+  const taxRate = isCompany ? 0.25 : 0.40
 
-  if (useAIA && assetType === 'plant' && cost <= AIA_LIMIT) {
-    const relief = cost
-    const taxSaving = relief * corpTaxRate
-    return { method: 'Annual Investment Allowance (100%)', year1Relief: relief, taxSaving, fullReliefYear1: true, schedule: [] }
+  if (assetType === 'car_zero') {
+    return { method: '100% first-year allowance (to 31 March 2027 for companies, 5 April 2027 otherwise)', year1Relief: cost, taxSaving: cost * taxRate, taxRate, schedule: [] }
+  }
+  if (assetType === 'car_low' || assetType === 'car_high') {
+    const schedule = wdaSchedule(cost, info.rate, 1)
+    return { method: `Writing Down Allowance (${info.rate * 100}%), cars get no AIA`, year1Relief: schedule[0].wda, taxSaving: schedule[0].wda * taxRate, taxRate, schedule }
   }
 
-  if (isCompany && assetType === 'plant') {
-    const relief = cost * FULL_EXPENSING_RATE
-    return { method: 'Full Expensing (100%)', year1Relief: relief, taxSaving: relief * corpTaxRate, fullReliefYear1: true, schedule: [] }
+  const isMain = assetType === 'plant'
+  const aiaPart = useAIA ? Math.min(cost, AIA_LIMIT) : 0
+  const rest = cost - aiaPart
+  const parts: string[] = []
+  if (aiaPart > 0) parts.push('Annual Investment Allowance')
+  let restRelief = 0
+  let pool = 0
+  let schedule: { year: number; wda: number; remaining: number }[] = []
+  if (rest > 0) {
+    if (isMain && isCompany) { restRelief = rest; parts.push('Full Expensing (100%)') }
+    else if (isMain) { restRelief = rest * 0.40; pool = rest - restRelief; parts.push('40% first-year allowance') }
+    else if (isCompany) { restRelief = rest * 0.50; pool = rest - restRelief; parts.push('50% first-year allowance') }
+    else {
+      schedule = wdaSchedule(rest, info.rate, 1)
+      restRelief = schedule[0].wda
+      parts.push(`Writing Down Allowance (${info.rate * 100}%)`)
+    }
+    if (pool > 0) schedule = wdaSchedule(pool, info.rate, 2)
   }
-
-  // Writing down allowance
-  const schedule: { year: number; wda: number; remaining: number }[] = []
-  let remaining = cost
-  for (let y = 1; y <= 10; y++) {
-    const wda = remaining * info.rate
-    remaining -= wda
-    schedule.push({ year: y, wda, remaining })
-  }
-
-  return { method: `Writing Down Allowance (${(info.rate * 100)}%)`, year1Relief: schedule[0]?.wda || 0, taxSaving: (schedule[0]?.wda || 0) * corpTaxRate, fullReliefYear1: false, schedule }
+  const year1Relief = aiaPart + restRelief
+  return { method: parts.join(' + '), year1Relief, taxSaving: year1Relief * taxRate, taxRate, schedule }
 }
 
 export default function CapitalAllowancesCalculator() {
@@ -68,7 +91,7 @@ export default function CapitalAllowancesCalculator() {
           <div className="rounded-2xl bg-green-100 dark:bg-green-950 p-6 text-center">
             <p className="text-sm text-muted-foreground">{result.method}</p>
             <p className="text-3xl font-bold text-green-700 dark:text-green-400 mt-1">{formatCurrency(result.year1Relief)}</p>
-            <p className="text-sm text-muted-foreground mt-1">Year 1 tax relief &middot; Tax saving: {formatCurrency(result.taxSaving)}</p>
+            <p className="text-sm text-muted-foreground mt-1">Year 1 tax relief &middot; Tax saving: {formatCurrency(result.taxSaving)} (at {result.taxRate * 100}% {company ? 'Corporation Tax' : 'income tax'})</p>
           </div>
           {result.schedule.length > 0 && (
             <table className="w-full text-sm">

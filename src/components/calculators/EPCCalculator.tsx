@@ -9,14 +9,19 @@ const WALL_SCORES: Record<WallType, number> = { cavity_insulated: 90, cavity_uni
 const GLAZING_SCORES: Record<GlazingType, number> = { single: 30, double: 70, triple: 90 }
 const HEATING_SCORES: Record<HeatingType, number> = { gas_new: 80, gas_old: 55, oil: 45, electric: 35, heat_pump: 95 }
 
-const UPGRADES = [
-  { name: 'Loft insulation (270mm)', points: 8, cost: 400, saving: 355 },
-  { name: 'Cavity wall insulation', points: 12, cost: 700, saving: 310 },
-  { name: 'Double glazing', points: 10, cost: 5000, saving: 120 },
-  { name: 'Smart thermostat', points: 3, cost: 200, saving: 75 },
-  { name: 'LED lighting', points: 2, cost: 100, saving: 40 },
-  { name: 'Solar panels (4kWp)', points: 15, cost: 6000, saving: 500 },
-]
+// Upgrades that apply to the answers given, with the points each adds under this calculator's own
+// weighting (walls 30%, heating 35%, glazing 20%, loft 10%, solar 5%). Thermostat and LED lighting
+// sit outside the weighting, so their points are indicative only.
+function upgradesFor(walls: WallType, glazing: GlazingType, hasLoftInsulation: boolean, hasSolar: boolean) {
+  const list: { name: string; points: number; cost: number; saving: number }[] = []
+  if (!hasLoftInsulation) list.push({ name: 'Loft insulation (270mm)', points: (90 - 40) * 0.1, cost: 400, saving: 355 })
+  if (walls === 'cavity_uninsulated') list.push({ name: 'Cavity wall insulation', points: (WALL_SCORES.cavity_insulated - WALL_SCORES.cavity_uninsulated) * 0.3, cost: 700, saving: 310 })
+  if (glazing === 'single') list.push({ name: 'Double glazing', points: (GLAZING_SCORES.double - GLAZING_SCORES.single) * 0.2, cost: 5000, saving: 120 })
+  list.push({ name: 'Smart thermostat', points: 3, cost: 200, saving: 75 })
+  list.push({ name: 'LED lighting', points: 2, cost: 100, saving: 40 })
+  if (!hasSolar) list.push({ name: 'Solar panels (4kWp)', points: (95 - 50) * 0.05, cost: 6000, saving: 500 })
+  return list
+}
 
 function calculate(walls: WallType, glazing: GlazingType, heating: HeatingType, hasLoftInsulation: boolean, hasSolar: boolean) {
   let score = (WALL_SCORES[walls] * 0.3 + GLAZING_SCORES[glazing] * 0.2 + HEATING_SCORES[heating] * 0.35 + (hasLoftInsulation ? 90 : 40) * 0.1 + (hasSolar ? 95 : 50) * 0.05)
@@ -32,7 +37,7 @@ function calculate(walls: WallType, glazing: GlazingType, heating: HeatingType, 
 
   const bandColors: Record<string, string> = { A: 'bg-green-600', B: 'bg-green-500', C: 'bg-lime-500', D: 'bg-yellow-500', E: 'bg-orange-500', F: 'bg-orange-600', G: 'bg-red-600' }
 
-  return { score: Math.round(score), band, color: bandColors[band] || 'bg-gray-500' }
+  return { score: Math.round(score), band, color: bandColors[band] || 'bg-gray-500', upgrades: upgradesFor(walls, glazing, hasLoftInsulation, hasSolar) }
 }
 
 export default function EPCCalculator() {
@@ -67,9 +72,9 @@ export default function EPCCalculator() {
       <div>
         <h3 className="text-sm font-semibold mb-3">Potential Upgrades</h3>
         <div className="space-y-2">
-          {UPGRADES.map(u => (
+          {result.upgrades.map(u => (
             <div key={u.name} className="flex items-center justify-between rounded-xl border border-border p-3">
-              <div><p className="text-sm font-medium">{u.name}</p><p className="text-xs text-muted-foreground">+{u.points} EPC points &middot; Saves ~{formatCurrency(u.saving)}/yr</p></div>
+              <div><p className="text-sm font-medium">{u.name}</p><p className="text-xs text-muted-foreground">+{Number.isInteger(u.points) ? u.points : u.points.toFixed(1)} EPC points &middot; Saves ~{formatCurrency(u.saving)}/yr</p></div>
               <p className="text-sm font-bold">{formatCurrency(u.cost)}</p>
             </div>
           ))}

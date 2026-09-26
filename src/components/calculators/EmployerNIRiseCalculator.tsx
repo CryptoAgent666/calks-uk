@@ -18,9 +18,14 @@ function calculate(employees: number, avgSalary: number) {
   const increasePerEmp = newNIPerEmp - oldNIPerEmp
   const totalIncrease = newTotal - oldTotal
 
-  // Employment Allowance (£10,500 from April 2025)
-  const EA = 10_500
-  const netIncreaseAfterEA = Math.max(0, totalIncrease - (EA > 0 ? EA : 0))
+  // Employment Allowance: £5,000 before April 2025 (only if the previous year's employer NI
+  // bill was under £100,000), £10,500 since, with the £100k cap removed. Only the difference
+  // offsets the rise for a firm that already claimed; the allowance cannot exceed the bill.
+  const oldEA = oldTotal < 100_000 ? 5_000 : 0
+  const newEA = 10_500
+  const oldNet = Math.max(0, oldTotal - oldEA)
+  const newNet = Math.max(0, newTotal - newEA)
+  const netIncreaseAfterEA = newNet - oldNet
 
   return { oldNIPerEmp, newNIPerEmp, increasePerEmp, oldTotal, newTotal, totalIncrease, netIncreaseAfterEA, monthlyIncrease: totalIncrease / 12 }
 }
@@ -52,7 +57,7 @@ export default function EmployerNIRiseCalculator() {
             <div className="rounded-xl bg-destructive/10 p-4 text-center"><p className="text-sm font-medium">After (15%, £5,000 threshold)</p><p className="text-xl font-bold text-destructive mt-1">{formatCurrency(result.newTotal)}/yr</p><p className="text-xs text-muted-foreground">{formatCurrency(result.newNIPerEmp)}/employee</p></div>
           </div>
           <div className="rounded-xl bg-green-100 dark:bg-green-950 p-4 text-center">
-            <p className="text-xs text-muted-foreground">After Employment Allowance (£10,500)</p>
+            <p className="text-xs text-muted-foreground">After Employment Allowance (£5,000 then, £10,500 now)</p>
             <p className="text-lg font-bold text-green-700 dark:text-green-400">Net increase: {formatCurrency(result.netIncreaseAfterEA)}/year</p>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">

@@ -16,9 +16,9 @@ function calculate(hectares: number, rent: number, seed: number, fertiliser: num
 export default function FarmOperatingCostCalculator() {
   const [ha, setHa] = useState('100')
   const [rent, setRent] = useState('200')
-  const [seed, setSeed] = useState('80')
-  const [fert, setFert] = useState('150')
-  const [spray, setSpray] = useState('100')
+  const [seed, setSeed] = useState('70')
+  const [fert, setFert] = useState('280')
+  const [spray, setSpray] = useState('200')
   const [fuel, setFuel] = useState('60')
   const [labour, setLabour] = useState('50')
   const [machinery, setMachinery] = useState('120')

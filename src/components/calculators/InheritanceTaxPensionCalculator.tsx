@@ -1,26 +1,33 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// From April 2027 pensions will be subject to IHT
+// Finance Act 2026: unused pension funds count towards the estate for deaths from 6 April 2027
+// (death-in-service benefits and dependants' scheme pensions excluded).
+// The residence nil-rate band tapers by £1 for every £2 the estate exceeds £2m, so adding the
+// pension can also cost some or all of the RNRB.
+const rnrbFor = (hasRNRB: boolean, estateValue: number) =>
+  hasRNRB ? Math.max(0, 175_000 - Math.max(0, estateValue - 2_000_000) / 2) : 0
+
 function calculate(estate: number, pensionPot: number, hasSpouse: boolean, spouseInherits: number, hasRNRB: boolean) {
   const NRB = 325_000
-  const RNRB = hasRNRB ? 175_000 : 0
   const spouseExempt = hasSpouse ? spouseInherits : 0
 
   // Current rules (pre-April 2027): pension outside estate
+  const RNRB = rnrbFor(hasRNRB, estate)
   const currentTaxableEstate = Math.max(0, estate - spouseExempt - NRB - RNRB)
   const currentIHT = currentTaxableEstate * 0.40
 
   // New rules (April 2027+): pension IN estate
   const newTotalEstate = estate + pensionPot
-  const newTaxableEstate = Math.max(0, newTotalEstate - spouseExempt - NRB - RNRB)
+  const newRNRB = rnrbFor(hasRNRB, newTotalEstate)
+  const newTaxableEstate = Math.max(0, newTotalEstate - spouseExempt - NRB - newRNRB)
   const newIHT = newTaxableEstate * 0.40
 
   const extraIHT = newIHT - currentIHT
   const pensionTaxBefore75 = 0 // currently tax-free if die before 75
   const pensionTaxAfter75 = pensionPot * 0.40 // marginal rate for beneficiary
 
-  return { currentIHT, newIHT, extraIHT, newTotalEstate, pensionPot }
+  return { currentIHT, newIHT, extraIHT, newTotalEstate, pensionPot, RNRB, newRNRB }
 }
 
 export default function InheritanceTaxPensionCalculator() {
@@ -43,6 +50,7 @@ export default function InheritanceTaxPensionCalculator() {
       </div>
       <div className="space-y-2">
         <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={spouse} onChange={(ev) => setSpouse(ev.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Married / civil partner</span></label>
+        {spouse && <div className="ml-8"><label className="block text-sm font-medium mb-2">Left to spouse / civil partner (exempt)</label><div className="relative w-full sm:w-64"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={spouseAmt} onChange={(ev) => setSpouseAmt(ev.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Amount left to spouse or civil partner" /></div></div>}
         <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={rnrb} onChange={(ev) => setRnrb(ev.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Home passes to direct descendants (RNRB)</span></label>
       </div>
 
@@ -61,7 +69,7 @@ export default function InheritanceTaxPensionCalculator() {
           )}
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
             <p className="font-medium text-foreground">Key change from April 2027:</p>
-            <p>Pensions will be included in the estate for IHT. Currently pensions pass outside the estate (tax-free if you die before 75, or at beneficiary's marginal rate after 75). This is one of the biggest IHT changes in decades. Consider: lifetime gifting, spending pension first, whole-of-life insurance to cover the IHT bill.</p>
+            <p>Unused pensions are included in the estate for IHT for deaths from 6 April 2027 (Finance Act 2026); death-in-service benefits and dependants' scheme pensions stay outside. The personal representatives pay the tax. Above £2m the residence nil-rate band tapers away{result.newRNRB < result.RNRB ? `, which here costs ${formatCurrency(result.RNRB - result.newRNRB)} of it` : ''}. Income tax can still apply to what beneficiaries draw if you die after 75.</p>
           </div>
         </div>
       )}

@@ -6338,7 +6338,7 @@
     },
     {
       "key": "council_tax_second_home_premium",
-      "value": "200",
+      "value": "100",
       "unit": "%",
       "law": "Council Tax premiums",
       "theme": "council_tax",
@@ -6348,10 +6348,14 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.gov.uk/council-tax/second-homes-and-empty-properties",
       "status": "current",
       "change_frequency": "",
-      "note": "Second home/holiday let premium up to 200% (300% in Wales) (council-tax-calculator)"
+      "note": "high-council-tax-calculator prose: England second-home premium max 100% (Wales up to 300%)",
+      "official_value": "100",
+      "freshness_note": "England: second-home premium up to 100% since 1 April 2025 (LURA 2023); Wales up to 300%. Ledger and high-council-tax prose said 100-200%, fixed 2026-09-26.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26-r2"
     },
     {
       "key": "council_tax_single_person_discount",
@@ -9642,7 +9646,10 @@
       "change_frequency": "",
       "note": "inheritance-tax/farm-operating: from Apr 2026 first £2.5m combined BPR/APR at 100%, above £2.5m reduces to 50% (effective 20% IHT)",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "freshness_note": " 2026-09-26: farm-operating-cost prose/FAQ still computed extra tax from the old £1m cap (£200k-£1.8M); fixed to £0-£1.5M (£1M with a transferred spouse allowance).",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26-r2"
     },
     {
       "key": "iht_bpr_apr_100pct_cap_from_april",
@@ -9662,9 +9669,11 @@
       "note": "From April 2026 first GBP2.5m combined BPR/APR retains 100%, above reduces to 50% (inheritance-tax-calculator)",
       "official_value": "2500000",
       "confidence": "high",
-      "freshness_note": "BPR/APR reform: from 6 April 2026 the allowance for the 100% rate of relief is £2.5m (50% relief above). Originally announced as £1m, but on 23 Dec 2025 the government increased it to £2,500,000 befor",
+      "freshness_note": "BPR/APR reform: from 6 April 2026 the allowance for the 100% rate of relief is £2.5m (50% relief above). Originally announced as £1m, but on 23 Dec 2025 the government increased it to £2,500,000 befor 2026-09-26: farm-operating-cost prose/FAQ still computed extra tax from the old £1m cap (£200k-£1.8M); fixed to £0-£1.5M (£1M with a transferred spouse allowance).",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26-r2"
     },
     {
       "key": "iht_charity_reduced_rate",
@@ -13332,7 +13341,9 @@
         "prose"
       ],
       "used_by": [
-        "src/components/calculators/EPCCalculator.tsx"
+        "src/components/calculators/EPCCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/consultations/improving-the-energy-performance-of-privately-rented-homes-2025-update",
       "status": "current",
@@ -13340,9 +13351,9 @@
       "note": "EPC Calculator: prose 'Band C from 2028 for new tenancies' (proposed/planned uplift to minimum rental EPC)",
       "official_value": "EPC band C from 1 October 2030 (single compliance date, all tenancies)",
       "confidence": "high",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). Band C is correct but the DATE is stale: the government response (published 21 Jan 2026) confirmed a single compliance date of 1 Oct 2030 for ALL privately rented homes — not 2028 'for new tenancies'. Old: C from 2028 (new tenancies) -> New: C from 1 Oct 2030 (all tenancies).",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). Band C is correct but the DATE is stale: the government response (published 21 Jan 2026) confirmed a single compliance date of 1 Oct 2030 for ALL privately rented homes — not 2028 'for new tenancies'. Old: C from 2028 (new tenancies) -> New: C from 1 Oct 2030 (all tenancies). 2026-09-26: prose/FAQ on epc-calculator and epc-rating pages still said \"C for new tenancies by 2028 / April 2025+2028\"; fixed to the single 1 Oct 2030 date with the £10,000 cost cap (gov response 21 Jan 2026).",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26-r2"
     },
     {
       "key": "mileage_allowance_bicycle",
@@ -30620,6 +30631,208 @@
       "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
       "verified_date": "2026-09-26",
       "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "eved_bev_pence_per_mile",
+      "value": "3",
+      "unit": "pence/mile",
+      "law": "Electric Vehicle Excise Duty (consultation response Jul 2026)",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/PayPerMileCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/consultations/consultation-on-the-introduction-of-electric-vehicle-excise-duty-eved/outcome/the-introduction-of-electric-vehicle-excise-duty-eved-consultation-response",
+      "status": "current",
+      "change_frequency": "",
+      "note": "eVED from April 2028: 3p/mile battery EVs, on top of VED; mileage declared at VED renewal, checked vs MOT odometer; vans out of scope",
+      "official_value": "3",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck round 2 (2026-09-26) after a stale or missing value was found; verified at the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26-r2",
+      "changes_next_fy": "April 2028: eVED starts; from 2029-30 uprated by CPI (update pay-per-mile, ev-savings, EV running-cost prose)."
+    },
+    {
+      "key": "eved_phev_pence_per_mile",
+      "value": "1.5",
+      "unit": "pence/mile",
+      "law": "Electric Vehicle Excise Duty",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/PayPerMileCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/consultations/consultation-on-the-introduction-of-electric-vehicle-excise-duty-eved/outcome/the-introduction-of-electric-vehicle-excise-duty-eved-consultation-response",
+      "status": "current",
+      "change_frequency": "",
+      "note": "eVED plug-in hybrids 1.5p/mile from April 2028",
+      "official_value": "1.5",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck round 2 (2026-09-26) after a stale or missing value was found; verified at the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26-r2",
+      "changes_next_fy": "2029-30: CPI uprating begins."
+    },
+    {
+      "key": "fya_main_rate_unincorporated_pct",
+      "value": "40",
+      "unit": "%",
+      "law": "Capital allowances: 40% first-year allowance (from 1 Jan 2026)",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/CapitalAllowancesCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/news/business-investment-boosted-with-new-tax-relief-taking-effect-today",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Permanent 40% FYA for new main-rate plant for unincorporated businesses and leasing (where full expensing does not apply)",
+      "official_value": "40",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck round 2 (2026-09-26) after a stale or missing value was found; verified at the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26-r2"
+    },
+    {
+      "key": "fya_zero_emission_car_end",
+      "value": "31 March 2027 (CT) / 5 April 2027 (IT)",
+      "unit": "date",
+      "law": "Capital allowances: 100% FYA zero-emission cars and EV charge points",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/CapitalAllowancesCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://taxscape.deloitte.com/measures-autumn-budget-2025/capital-allowances--writing-down-allowances-rate-reduction-and-new-first-year-allowance.aspx",
+      "status": "current",
+      "change_frequency": "",
+      "note": "100% FYA for new zero-emission cars extended to 31 Mar 2027 (CT) / 5 Apr 2027 (IT)",
+      "official_value": "31 March 2027 (CT) / 5 April 2027 (IT)",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck round 2 (2026-09-26) after a stale or missing value was found; verified at the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26-r2",
+      "changes_next_fy": "After 31 Mar / 5 Apr 2027 the ZEV car FYA ends unless extended again: move zero-emission cars to the main pool in CapitalAllowancesCalculator and prose."
+    },
+    {
+      "key": "winter_fuel_payment_household",
+      "value": "200",
+      "unit": "GBP",
+      "law": "Winter Fuel Payment 2026/27",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/WinterFuelPaymentCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/winter-fuel-payment/how-much-youll-get",
+      "status": "current",
+      "change_frequency": "annual (winter)",
+      "note": "£200 household, £300 if someone 80+; couples not on PC: £100 each, £150 each if both 80+, £200/£100 if one is 80+",
+      "official_value": "200",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck round 2 (2026-09-26) after a stale or missing value was found; verified at the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26-r2"
+    },
+    {
+      "key": "winter_fuel_payment_optout_2027_28_opens",
+      "value": "21 December 2026",
+      "unit": "date",
+      "law": "Winter Fuel Payment opt-out",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/WinterFuelPaymentCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/winter-fuel-payment/opt-out-of-winter-fuel-payment",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Opt-out for 2026/27 closed; for 2027/28 opens 21 Dec 2026. HMRC recovery via tax code from Jan 2027, again Apr 2027 (2027 payment collected in advance)",
+      "official_value": "21 December 2026",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck round 2 (2026-09-26) after a stale or missing value was found; verified at the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26-r2",
+      "changes_next_fy": "21 Dec 2026: opt-out for 2027/28 opens; before the Sept 2027 qualifying week refresh the WFP dates, amounts and opt-out wording."
+    },
+    {
+      "key": "warm_homes_local_grant_income_limit",
+      "value": "36000",
+      "unit": "GBP/year",
+      "law": "Warm Homes: Local Grant (England)",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/apply-warm-homes-local-grant",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Privately owned/rented homes EPC D-G, household income usually <= £36,000 or certain benefits; replaced GBIS (closed 31 Mar 2026) as main insulation route; ECO4 winding down in 2026",
+      "official_value": "36000",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck round 2 (2026-09-26) after a stale or missing value was found; verified at the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26-r2"
+    },
+    {
+      "key": "iht_unused_pensions_in_estate_from",
+      "value": "6 April 2027",
+      "unit": "date",
+      "law": "Finance Act 2026 (Royal Assent 18 Mar 2026)",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/InheritanceTaxPensionCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/inheritance-tax-on-pensions-technical-note/technical-note-inheritance-tax-on-pensions",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Unused pension funds count for IHT on deaths from 6 Apr 2027; PRs liable (can make scheme withhold up to 50% for 15 months or pay HMRC); death-in-service and dependants scheme pensions excluded",
+      "official_value": "6 April 2027",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck round 2 (2026-09-26) after a stale or missing value was found; verified at the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26-r2"
     }
   ],
   "status_summary": {
