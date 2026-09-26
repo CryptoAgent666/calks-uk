@@ -1,6 +1,6 @@
 # Calks.uk
 
-> Free online calculators for the United Kingdom. Tax, salary, mortgage, pension, VAT, stamp duty, NI and 300+ more — updated for the 2025/26 tax year.
+> Free online calculators for the United Kingdom. Tax, salary, mortgage, pension, VAT, stamp duty, NI and 300+ more — updated for the 2026/27 tax year.
 
 ## About
 
@@ -41,7 +41,7 @@ All rates and thresholds come from official UK government sources:
 
 ## Tax Year
 
-All tax-related calculators are updated for the 2025/26 UK tax year (6 April 2025 to 5 April 2026).
+All tax-related calculators are updated for the 2026/27 UK tax year (6 April 2026 to 5 April 2027).
 
 ## Full Content
 
