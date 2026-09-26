@@ -260,6 +260,40 @@
    "was": "3532",
    "now": "3000",
    "what": "cms_max_assessable_income (prose invented £3,532)"
+  },
+  {
+   "was": "103%",
+   "now": "109%",
+   "what": "small_employers_relief_statutory_pay_reclaim",
+   "ctx": "reclaim|recover|Small Employers"
+  },
+  {
+   "was": "6,176.94",
+   "now": "6,412.56 (33 × £194.32)",
+   "what": "smp_example_33_weeks_flat_rate_600_awe"
+  },
+  {
+   "was": "9,416.94",
+   "now": "9,652.56 (£3,240 + £6,412.56)",
+   "what": "smp_example_39_week_total_600_awe"
+  },
+  {
+   "was": "2030",
+   "now": "2031 (5 April 2031, Budget 2025)",
+   "what": "iht_nil_rate_band_freeze_end",
+   "ctx": "(nil[- ]rate band|\\bNRB\\b)[^.]{0,80}(frozen|freeze)[^.]{0,40}2030"
+  },
+  {
+   "was": "100%",
+   "now": "half-rate BPR for AIM and other not-listed shares, outside the allowance",
+   "what": "iht_bpr_aim_shares_rate",
+   "ctx": "100%[^.]{0,120}AIM shares|AIM shares[^.]{0,60}(?<!not )100%"
+  },
+  {
+   "was": "14%",
+   "now": "18% (BADR from 6 Apr 2026)",
+   "what": "cgt_badr_rate_2026_27",
+   "ctx": "(Business Asset Disposal|BADR)[^.]*14%[^.]{0,40}(April 2026|2026/27|2026-27)"
   }
  ]
 }
