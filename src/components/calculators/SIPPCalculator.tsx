@@ -4,7 +4,9 @@ import { formatCurrency } from '@/utils'
 function calculate(monthlyContrib: number, employerContrib: number, currentPot: number, yearsToRetirement: number, growthRate: number, taxBand: string) {
   const taxRate = taxBand === 'higher' ? 0.40 : taxBand === 'additional' ? 0.45 : 0.20
   const grossMonthly = monthlyContrib / (1 - 0.20) // provider adds 20%
-  const extraReclaim = taxRate > 0.20 ? monthlyContrib * ((taxRate - 0.20) / (1 - taxRate)) : 0 // extra via self-assessment
+  // Higher/additional-rate relief reclaimed via Self Assessment: the extra 20%/25% of the GROSS
+  // contribution (£800 net = £1,000 gross, so £200 or £250 more back)
+  const extraReclaim = taxRate > 0.20 ? grossMonthly * (taxRate - 0.20) : 0
   const totalMonthly = grossMonthly + employerContrib
   const monthlyGrowth = growthRate / 100 / 12
 
@@ -15,8 +17,8 @@ function calculate(monthlyContrib: number, employerContrib: number, currentPot: 
 
   const totalContributed = (monthlyContrib + employerContrib) * yearsToRetirement * 12 + currentPot
   const totalGovtRelief = (grossMonthly - monthlyContrib) * yearsToRetirement * 12 + extraReclaim * yearsToRetirement * 12
-  const taxFreeLump = pot * 0.25
-  const remainingPot = pot * 0.75
+  const taxFreeLump = Math.min(pot * 0.25, 268_275) // capped by the Lump Sum Allowance
+  const remainingPot = pot - taxFreeLump
   const drawdownMonthly = remainingPot / (25 * 12) // assume 25 years drawdown
 
   return { pot, totalContributed, totalGovtRelief, taxFreeLump, remainingPot, drawdownMonthly, grossMonthly, extraReclaim: extraReclaim * 12 }
@@ -53,7 +55,7 @@ export default function SIPPCalculator() {
           <div className="rounded-2xl bg-primary/10 p-6 text-center">
             <p className="text-sm text-muted-foreground">SIPP Value at Retirement</p>
             <p className="text-3xl font-bold text-primary mt-1">{formatCurrency(result.pot)}</p>
-            <p className="text-sm text-muted-foreground mt-1">25% tax-free lump sum: {formatCurrency(result.taxFreeLump)}</p>
+            <p className="text-sm text-muted-foreground mt-1">Tax-free lump sum (25%, max £268,275): {formatCurrency(result.taxFreeLump)}</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="rounded-xl bg-green-100 dark:bg-green-950 p-3 text-center"><p className="text-xs text-muted-foreground">Govt Tax Relief</p><p className="text-lg font-bold text-green-700 dark:text-green-400">{formatCurrency(result.totalGovtRelief)}</p></div>

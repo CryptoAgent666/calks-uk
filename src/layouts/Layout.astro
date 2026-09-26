@@ -2,7 +2,6 @@
 import '@/styles/global.css'
 import Header from '@/components/layout/Header.astro'
 import Footer from '@/components/layout/Footer.astro'
-import CookieConsent from '@/components/CookieConsent.astro'
 import AppPromo from '@/components/AppPromo.astro'
 import { getPersonSchema } from '@/utils/seo'
 
@@ -43,6 +42,7 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
 
     <!-- SEO -->
@@ -135,11 +135,23 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
       }
     </script>
 
-    <!-- Google Analytics (consent-gated, skipped in mobile app) -->
+    <!-- Google Analytics with Consent Mode v2 (skipped in mobile app). Consent comes from Google's own
+         consent message (AdSense → Privacy & messaging → European regulations, "consent mode" ticked for
+         advertising and analytics), which updates these defaults once the visitor answers. It only shows
+         in the UK, EEA and Switzerland, so those regions start denied (cookieless pings, no _ga cookie)
+         and everywhere else starts granted. The region-specific default wins over the global one. -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      if (!window.__IS_CAPACITOR__ && localStorage.getItem('cookie-consent') === 'accepted') {
+      if (!window.__IS_CAPACITOR__) {
+        gtag('consent', 'default', {
+          ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied',
+          region: ['GB','CH','AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO'],
+          wait_for_update: 500
+        });
+        gtag('consent', 'default', {
+          ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted'
+        });
         var s = document.createElement('script');
         s.async = true;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7ZTS02YTBC';
@@ -149,16 +161,17 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
       }
     </script>
 
+    <!-- AdSense web ads aren't permitted inside the native (Capacitor) app webview (it shows AdMob instead).
+         Pause every ad request, auto ads included, BEFORE the tag below: removing the <script> element
+         doesn't help, because an async script that has already started loading still executes. -->
+    <script is:inline>
+      if (window.__IS_CAPACITOR__) {
+        (window.adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
+      }
+    </script>
     <!-- Google AdSense Auto Ads — static tag so AdSense can verify ownership and the reviewer/crawler can see it. -->
     <!-- GDPR/UK consent for ad personalisation is handled by Google's consent message (CMP), configured in the AdSense dashboard. -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4859241862365215" crossorigin="anonymous"></script>
-    <!-- AdSense web ads aren't permitted inside the native (Capacitor) app webview — remove the tag there before it runs. -->
-    <script is:inline>
-      if (window.__IS_CAPACITOR__) {
-        var __adsTag = document.querySelector('script[src*="adsbygoogle.js"]');
-        if (__adsTag) __adsTag.remove();
-      }
-    </script>
 
     <!-- OTA live-updates: native app pulls new web bundles from Cloudflare (no-op on the website) -->
     <script>
@@ -178,7 +191,6 @@ const canonical = canonicalUrl || `${siteUrl}${Astro.url.pathname}`
       <slot />
     </main>
     <Footer />
-    <CookieConsent />
     <AppPromo />
     <script is:inline>
       if ('serviceWorker' in navigator) {

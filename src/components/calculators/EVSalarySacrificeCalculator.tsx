@@ -1,8 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-function calculate(salary: number, carListPrice: number, bikRate: number, leaseTerm: number) {
-  const monthlyLease = carListPrice / leaseTerm
+function calculate(salary: number, carListPrice: number, bikRate: number, leaseTerm: number, monthlyLease: number) {
   const newGross = salary - monthlyLease * 12
   const taxBefore = calcTax(salary)
   const niBefore = calcNI(salary)
@@ -12,10 +11,11 @@ function calculate(salary: number, carListPrice: number, bikRate: number, leaseT
   const niSaving = niBefore - niAfter
   const totalSaving = taxSaving + niSaving
 
-  // BiK tax
+  // BiK tax: the car benefit is added to taxable pay after the sacrifice, so charge the exact extra
+  // income tax it causes (covers the band edges, the £100k taper and 45%). No employee NI on a car
+  // benefit; the employer pays Class 1A.
   const bikValue = carListPrice * (bikRate / 100)
-  const marginalRate = salary > 50_270 ? 0.40 : 0.20
-  const bikTax = bikValue * marginalRate
+  const bikTax = calcTax(newGross + bikValue) - calcTax(newGross)
   const monthlyBikTax = bikTax / 12
 
   const netMonthlyCost = monthlyLease - (totalSaving / 12) + monthlyBikTax
@@ -47,23 +47,26 @@ export default function EVSalarySacrificeCalculator() {
   const [price, setPrice] = useState('35000')
   const [bik, setBik] = useState('4')
   const [term, setTerm] = useState('36')
+  const [lease, setLease] = useState('450')
 
   const s = parseFloat(salary.replace(/,/g,'')) || 0
   const p = parseFloat(price.replace(/,/g,'')) || 0
   const b = parseFloat(bik) || 4
   const t = parseInt(term) || 36
-  const result = useMemo(() => calculate(s, p, b, t), [s, p, b, t])
+  const l = parseFloat(lease.replace(/,/g,'')) || 0
+  const result = useMemo(() => calculate(s, p, b, t, l), [s, p, b, t, l])
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         <div><label className="block text-sm font-medium mb-2">Annual Salary</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={salary} onChange={(e) => setSalary(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Salary" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Car List Price</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Car List Price" /></div></div>
+        <div><label className="block text-sm font-medium mb-2">Monthly Lease Cost</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={lease} onChange={(e) => setLease(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Monthly Lease Cost" /></div><p className="text-xs text-muted-foreground mt-1">Gross amount sacrificed per month</p></div>
         <div><label className="block text-sm font-medium mb-2">BiK Rate (%)</label><input type="number" min="2" max="37" value={bik} onChange={(e) => setBik(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="BiK Rate (%)" /><p className="text-xs text-muted-foreground mt-1">EV: 4% (2026/27)</p></div>
         <div><label className="block text-sm font-medium mb-2">Lease Term (months)</label><input type="number" min="24" max="48" value={term} onChange={(e) => setTerm(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Lease Term (months)" /></div>
       </div>
 
-      {s > 0 && p > 0 && (
+      {s > 0 && p > 0 && l > 0 && (
         <div className="space-y-4 animate-fade-in-up">
           <div className="rounded-2xl bg-green-100 dark:bg-green-950 p-6 text-center">
             <p className="text-sm text-muted-foreground">Net Monthly Cost (after tax/NI savings)</p>

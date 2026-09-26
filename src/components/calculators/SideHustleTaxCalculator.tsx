@@ -3,28 +3,26 @@ import { formatCurrency, formatPercent } from '@/utils'
 
 const TRADING_ALLOWANCE = 1_000
 
+// rUK income tax 2026/27: PA £12,570 tapered by £1 per £2 over £100k; 20% on the first £37,700
+// of taxable income, 40% to £125,140, 45% above
+function incomeTax(income: number) {
+  const pa = income > 100_000 ? Math.max(0, 12_570 - Math.floor((income - 100_000) / 2)) : 12_570
+  const taxable = Math.max(0, income - pa)
+  const basic = Math.min(taxable, 37_700)
+  const higher = Math.min(Math.max(0, taxable - 37_700), 125_140 - 37_700)
+  const additional = Math.max(0, taxable - 125_140)
+  return basic * 0.20 + higher * 0.40 + additional * 0.45
+}
+
 function calculate(income: number, employmentIncome: number, expenses: number, useAllowance: boolean) {
   const taxFree = useAllowance ? TRADING_ALLOWANCE : expenses
   const taxableProfit = Math.max(0, income - taxFree)
   const totalIncome = employmentIncome + taxableProfit
 
-  let pa = 12_570
-  if (totalIncome > 100_000) pa = Math.max(0, 12_570 - Math.floor((totalIncome - 100_000) / 2))
-
-  // Tax already paid on employment
-  let empTax = 0
-  if (employmentIncome > pa) {
-    if (employmentIncome <= 50_270) empTax = (employmentIncome - pa) * 0.20
-    else empTax = 37_700 * 0.20 + (employmentIncome - pa - 37_700) * 0.40
-  }
-
-  // Tax on total
-  let totalTax = 0
-  if (totalIncome > pa) {
-    if (totalIncome <= 50_270) totalTax = (totalIncome - pa) * 0.20
-    else if (totalIncome <= 125_140) totalTax = 37_700 * 0.20 + (totalIncome - pa - 37_700) * 0.40
-    else totalTax = 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (totalIncome - 125_140) * 0.45
-  }
+  // Tax on salary alone vs salary + side profit, each with its own Personal Allowance taper,
+  // so side income that pushes you into £100k-£125,140 shows the real 60% marginal rate.
+  const empTax = incomeTax(employmentIncome)
+  const totalTax = incomeTax(totalIncome)
 
   const extraTax = totalTax - empTax
 

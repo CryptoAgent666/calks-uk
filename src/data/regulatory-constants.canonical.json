@@ -1524,24 +1524,32 @@
     },
     {
       "key": "boe_base_rate",
-      "value": "4.25",
+      "value": "3.75",
       "unit": "%",
       "law": "Bank of England base rate",
       "theme": "other",
       "surfaces": [
-        "computed"
+        "computed",
+        "prose"
       ],
       "used_by": [
-        "src/components/calculators/LatePenaltyCalculator.tsx"
+        "src/components/calculators/LatePenaltyCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "bankofengland.co.uk",
+      "source_url": "https://www.bankofengland.co.uk/boeapps/database/Bank-Rate.asp",
       "status": "current",
       "change_frequency": "",
-      "note": "LatePenaltyCalculator: BOE_BASE_RATE = 4.25 (commented as of Q1 2026), basis for statutory late-payment interest; also shown in prose 'BoE base rate 4.25%'",
+      "note": "LatePenaltyCalculator BOE_BASE_RATE + statutory late-payment interest (base + 8% = 11.75%); also prose on late-payment, annuity, inflation, mortgage-rate pages",
       "fixed": true,
       "fixed_date": "2026-06-16",
       "volatile": true,
-      "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)"
+      "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)",
+      "official_value": "3.75",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26",
+      "confidence": "high",
+      "freshness_note": "Bank Rate 3.75% since 18 Dec 2025 (BoE database, re-checked 26 Sep 2026). Code already held 3.75; ledger still said 4.25 and six prose spots (late payment x2, annuity x2, inflation x2) said 4.75%/4.5%, fixed 2026-09-26."
     },
     {
       "key": "boiler_upgrade_scheme_grant",
@@ -3011,10 +3019,15 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.legislation.gov.uk/ukpga/1991/48/schedule/1",
       "status": "current",
       "change_frequency": "",
-      "note": "CMS 12% of gross for 1 child (GBP200-GBP800) (child-maintenance-calculator)"
+      "note": "CMS 12% of gross for 1 child (GBP200-GBP800) (child-maintenance-calculator)",
+      "official_value": "12",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "child_maintenance_cap_weekly",
@@ -3028,10 +3041,15 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.legislation.gov.uk/ukpga/1991/48/schedule/1",
       "status": "current",
       "change_frequency": "",
-      "note": "CMS caps over GBP3,000/week gross (GBP156,000/year) (child-maintenance-calculator)"
+      "note": "CMS caps over GBP3,000/week gross (GBP156,000/year) (child-maintenance-calculator)",
+      "official_value": "3000",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "child_maintenance_flat_rate",
@@ -3045,10 +3063,15 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.legislation.gov.uk/ukpga/1991/48/schedule/1",
       "status": "current",
       "change_frequency": "",
-      "note": "CMS flat GBP7/week for GBP100-GBP200 income (child-maintenance-calculator)"
+      "note": "CMS flat GBP7/week for gross income GBP7-GBP100 or certain benefits (child-maintenance-calculator)",
+      "official_value": "7",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "child_maintenance_flat_rate_weekly",
@@ -3065,11 +3088,16 @@
       "source_url": "https://www.gov.uk/calculate-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "child-maintenance-calculator: flat £7/week for gross income £100-£200; nil rate under £100; Collect&Pay 20% paying / 4% receiving"
+      "note": "child-maintenance-calculator: flat £7/week for gross income £100-£200; nil rate under £100; Collect&Pay 20% paying / 4% receiving",
+      "official_value": "7",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "child_maintenance_nil_rate_threshold",
-      "value": "100",
+      "value": "7",
       "unit": "GBP/week",
       "law": "CMS Child Maintenance",
       "theme": "other",
@@ -3079,10 +3107,15 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.legislation.gov.uk/ukpga/1991/48/schedule/1",
       "status": "current",
       "change_frequency": "",
-      "note": "CMS nil rate under GBP100/week gross income (child-maintenance-calculator)"
+      "note": "CMS nil rate under GBP7/week gross income (child-maintenance-calculator; prose said GBP100 until 2026-09-26)",
+      "official_value": "7",
+      "confidence": "high",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)",
+      "freshness_note": "FIXED 2026-09-26: prose claimed nil rate below GBP100; Sch 1 para 5 nil rate is below GBP7 (GBP7-GBP100 = flat rate). Unchanged for 2026/27."
     },
     {
       "key": "child_maintenance_one_child_rate",
@@ -3099,7 +3132,12 @@
       "source_url": "https://www.gov.uk/calculate-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "child-maintenance-calculator: basic rate 12% one child / 16% two / 19% three+; flat £7/week £100-£200; capped £3,000/week gross (howItWorks[2] cites £3,532)"
+      "note": "child-maintenance-calculator: basic rate 12% one child / 16% two / 19% three+; flat £7/week £7-£100; capped £3,000/week gross (prose said £3,532 and flat £100-£200 until 2026-09-26)",
+      "official_value": "12",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "childcare_entitlement_income_cap",
@@ -3475,7 +3513,12 @@
       "source_url": "https://www.gov.uk/calculate-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "Child Maintenance calc: basic rate applies to first GBP800; basic-plus rate on income above GBP800; in code and prose"
+      "note": "Child Maintenance calc: basic rate applies to first GBP800; basic-plus rate on income above GBP800; in code and prose",
+      "official_value": "800",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_basic_plus_rate_1_child",
@@ -3492,7 +3535,12 @@
       "source_url": "https://www.gov.uk/calculate-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "Child Maintenance calc: basic-plus rate 9% on income above GBP800 for 1 child; in code and prose"
+      "note": "Child Maintenance calc: basic-plus rate 9% on income above GBP800 for 1 child; in code and prose",
+      "official_value": "9",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_basic_plus_rate_2_children",
@@ -3509,7 +3557,12 @@
       "source_url": "https://www.gov.uk/calculate-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "Child Maintenance calc: basic-plus rate 12% on income above GBP800 for 2 children; in code and prose"
+      "note": "Child Maintenance calc: basic-plus rate 12% on income above GBP800 for 2 children; in code and prose",
+      "official_value": "12",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_basic_plus_rate_3plus_children",
@@ -3526,7 +3579,12 @@
       "source_url": "https://www.gov.uk/calculate-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "Child Maintenance calc: basic-plus rate 15% on income above GBP800 for 3+ children; in code and prose"
+      "note": "Child Maintenance calc: basic-plus rate 15% on income above GBP800 for 3+ children; in code and prose",
+      "official_value": "15",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_basic_rate_1_child",
@@ -3543,7 +3601,12 @@
       "source_url": "https://www.gov.uk/calculate-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "Child Maintenance calc: basic rate 12% of income for 1 child; in code and prose"
+      "note": "Child Maintenance calc: basic rate 12% of income for 1 child; in code and prose",
+      "official_value": "12",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_basic_rate_2_children",
@@ -3560,7 +3623,12 @@
       "source_url": "https://www.gov.uk/calculate-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "Child Maintenance calc: basic rate 16% of income for 2 children; in code and prose"
+      "note": "Child Maintenance calc: basic rate 16% of income for 2 children; in code and prose",
+      "official_value": "16",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_basic_rate_3plus_children",
@@ -3577,7 +3645,12 @@
       "source_url": "https://www.gov.uk/calculate-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "Child Maintenance calc: basic rate 19% of income for 3+ children; in code and prose"
+      "note": "Child Maintenance calc: basic rate 19% of income for 3+ children; in code and prose",
+      "official_value": "19",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_basic_rate_lower_income",
@@ -3594,7 +3667,12 @@
       "source_url": "https://www.gov.uk/calculate-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "Child Maintenance calc: basic rate band starts at GBP200.01 gross weekly income (prose); reduced rate is GBP100.01-GBP200"
+      "note": "Child Maintenance calc: basic rate applies from GBP200 gross weekly income; reduced rate GBP100.01-GBP199.99",
+      "official_value": "200",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_collect_and_pay_paying_surcharge",
@@ -3650,7 +3728,12 @@
       "source_url": "https://www.gov.uk/calculate-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "Child Maintenance calc: flat rate applies for gross weekly income below GBP100; reduced rate GBP100.01-GBP200"
+      "note": "Child Maintenance calc: flat rate applies for gross weekly income GBP7-GBP100; reduced rate GBP100.01-GBP199.99",
+      "official_value": "100",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_flat_rate_weekly",
@@ -3667,7 +3750,12 @@
       "source_url": "https://www.gov.uk/calculate-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "Child Maintenance calc: flat rate = GBP7/week for income GBP7-GBP100; in code and prose"
+      "note": "Child Maintenance calc: flat rate = GBP7/week for income GBP7-GBP100; in code and prose",
+      "official_value": "7",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_max_assessable_income",
@@ -3684,12 +3772,12 @@
       "source_url": "https://www.gov.uk/how-child-maintenance-is-worked-out",
       "status": "current",
       "change_frequency": "",
-      "note": "Child Maintenance calc: basic-plus band capped at GBP3,000 gross weekly income (input max 3000; prose 800.01-3000)",
-      "official_value": "3000 GBP/week",
+      "note": "Child Maintenance calc: gross weekly income over GBP3,000 ignored (code caps since 2026-09-26; input max 3000; prose 800.01-3000)",
+      "official_value": "3000",
       "confidence": "high",
-      "freshness_note": "gov.uk: above GBP3,000 gross weekly income the receiving parent applies to court; CMS uses GBP3,000 as the upper cap, unchanged.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_nil_rate_income_threshold",
@@ -3706,7 +3794,12 @@
       "source_url": "https://www.gov.uk/calculate-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "Child Maintenance calc: gross weekly income under GBP7 = nil rate; in code and prose"
+      "note": "Child Maintenance calc: gross weekly income under GBP7 = nil rate; in code and prose",
+      "official_value": "7",
+      "confidence": "high",
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_relevant_other_child_reduction_1",
@@ -3724,11 +3817,11 @@
       "status": "current",
       "change_frequency": "",
       "note": "Child Maintenance calc: income reduced 11% for 1 other child living with paying parent",
-      "official_value": "11%",
+      "official_value": "11",
       "confidence": "high",
-      "freshness_note": "CMS reduces gross income by 11% for 1 relevant other child living with the paying parent; statutory scheme percentage, unchanged.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_relevant_other_child_reduction_2",
@@ -3746,11 +3839,11 @@
       "status": "current",
       "change_frequency": "",
       "note": "Child Maintenance calc: income reduced 14% for 2 other children living with paying parent",
-      "official_value": "14%",
+      "official_value": "14",
       "confidence": "high",
-      "freshness_note": "CMS reduces gross income by 14% for 2 relevant other children; statutory scheme percentage, unchanged.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_relevant_other_child_reduction_3plus",
@@ -3768,11 +3861,281 @@
       "status": "current",
       "change_frequency": "",
       "note": "Child Maintenance calc: income reduced 16% for 3+ other children living with paying parent",
-      "official_value": "16%",
+      "official_value": "16",
       "confidence": "high",
-      "freshness_note": "CMS reduces gross income by 16% for 3+ relevant other children; statutory scheme percentage, unchanged.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
+    },
+    {
+      "key": "cms_reduced_rate_t_1_child_0_other",
+      "value": "17.0",
+      "unit": "percent",
+      "law": "Child Support Maintenance Calculation Regs 2012 reg 43 (reduced rate)",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2012/2677/regulation/43",
+      "status": "current",
+      "change_frequency": "rarely (statutory)",
+      "note": "Child Maintenance calc: reduced rate = GBP7 + 17.0% of gross weekly income between GBP100 and GBP200, 1 qualifying child(ren), 0 relevant other child(ren) (REDUCED_T)",
+      "official_value": "17.0",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26: reg 43 table read from legislation.gov.uk data.xml (substituted by SI 2013/1654; no outstanding effects).",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (legislation.gov.uk reg 43 XML)"
+    },
+    {
+      "key": "cms_reduced_rate_t_1_child_1_other",
+      "value": "14.1",
+      "unit": "percent",
+      "law": "Child Support Maintenance Calculation Regs 2012 reg 43 (reduced rate)",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2012/2677/regulation/43",
+      "status": "current",
+      "change_frequency": "rarely (statutory)",
+      "note": "Child Maintenance calc: reduced rate = GBP7 + 14.1% of gross weekly income between GBP100 and GBP200, 1 qualifying child(ren), 1 relevant other child(ren) (REDUCED_T)",
+      "official_value": "14.1",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26: reg 43 table read from legislation.gov.uk data.xml (substituted by SI 2013/1654; no outstanding effects).",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (legislation.gov.uk reg 43 XML)"
+    },
+    {
+      "key": "cms_reduced_rate_t_1_child_2_other",
+      "value": "13.2",
+      "unit": "percent",
+      "law": "Child Support Maintenance Calculation Regs 2012 reg 43 (reduced rate)",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2012/2677/regulation/43",
+      "status": "current",
+      "change_frequency": "rarely (statutory)",
+      "note": "Child Maintenance calc: reduced rate = GBP7 + 13.2% of gross weekly income between GBP100 and GBP200, 1 qualifying child(ren), 2 relevant other child(ren) (REDUCED_T)",
+      "official_value": "13.2",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26: reg 43 table read from legislation.gov.uk data.xml (substituted by SI 2013/1654; no outstanding effects).",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (legislation.gov.uk reg 43 XML)"
+    },
+    {
+      "key": "cms_reduced_rate_t_1_child_3plus_other",
+      "value": "12.4",
+      "unit": "percent",
+      "law": "Child Support Maintenance Calculation Regs 2012 reg 43 (reduced rate)",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2012/2677/regulation/43",
+      "status": "current",
+      "change_frequency": "rarely (statutory)",
+      "note": "Child Maintenance calc: reduced rate = GBP7 + 12.4% of gross weekly income between GBP100 and GBP200, 1 qualifying child(ren), 3+ relevant other child(ren) (REDUCED_T)",
+      "official_value": "12.4",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26: reg 43 table read from legislation.gov.uk data.xml (substituted by SI 2013/1654; no outstanding effects).",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (legislation.gov.uk reg 43 XML)"
+    },
+    {
+      "key": "cms_reduced_rate_t_2_children_0_other",
+      "value": "25.0",
+      "unit": "percent",
+      "law": "Child Support Maintenance Calculation Regs 2012 reg 43 (reduced rate)",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2012/2677/regulation/43",
+      "status": "current",
+      "change_frequency": "rarely (statutory)",
+      "note": "Child Maintenance calc: reduced rate = GBP7 + 25.0% of gross weekly income between GBP100 and GBP200, 2 qualifying child(ren), 0 relevant other child(ren) (REDUCED_T)",
+      "official_value": "25.0",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26: reg 43 table read from legislation.gov.uk data.xml (substituted by SI 2013/1654; no outstanding effects).",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (legislation.gov.uk reg 43 XML)"
+    },
+    {
+      "key": "cms_reduced_rate_t_2_children_1_other",
+      "value": "21.2",
+      "unit": "percent",
+      "law": "Child Support Maintenance Calculation Regs 2012 reg 43 (reduced rate)",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2012/2677/regulation/43",
+      "status": "current",
+      "change_frequency": "rarely (statutory)",
+      "note": "Child Maintenance calc: reduced rate = GBP7 + 21.2% of gross weekly income between GBP100 and GBP200, 2 qualifying child(ren), 1 relevant other child(ren) (REDUCED_T)",
+      "official_value": "21.2",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26: reg 43 table read from legislation.gov.uk data.xml (substituted by SI 2013/1654; no outstanding effects).",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (legislation.gov.uk reg 43 XML)"
+    },
+    {
+      "key": "cms_reduced_rate_t_2_children_2_other",
+      "value": "19.9",
+      "unit": "percent",
+      "law": "Child Support Maintenance Calculation Regs 2012 reg 43 (reduced rate)",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2012/2677/regulation/43",
+      "status": "current",
+      "change_frequency": "rarely (statutory)",
+      "note": "Child Maintenance calc: reduced rate = GBP7 + 19.9% of gross weekly income between GBP100 and GBP200, 2 qualifying child(ren), 2 relevant other child(ren) (REDUCED_T)",
+      "official_value": "19.9",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26: reg 43 table read from legislation.gov.uk data.xml (substituted by SI 2013/1654; no outstanding effects).",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (legislation.gov.uk reg 43 XML)"
+    },
+    {
+      "key": "cms_reduced_rate_t_2_children_3plus_other",
+      "value": "18.9",
+      "unit": "percent",
+      "law": "Child Support Maintenance Calculation Regs 2012 reg 43 (reduced rate)",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2012/2677/regulation/43",
+      "status": "current",
+      "change_frequency": "rarely (statutory)",
+      "note": "Child Maintenance calc: reduced rate = GBP7 + 18.9% of gross weekly income between GBP100 and GBP200, 2 qualifying child(ren), 3+ relevant other child(ren) (REDUCED_T)",
+      "official_value": "18.9",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26: reg 43 table read from legislation.gov.uk data.xml (substituted by SI 2013/1654; no outstanding effects).",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (legislation.gov.uk reg 43 XML)"
+    },
+    {
+      "key": "cms_reduced_rate_t_3plus_children_0_other",
+      "value": "31.0",
+      "unit": "percent",
+      "law": "Child Support Maintenance Calculation Regs 2012 reg 43 (reduced rate)",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2012/2677/regulation/43",
+      "status": "current",
+      "change_frequency": "rarely (statutory)",
+      "note": "Child Maintenance calc: reduced rate = GBP7 + 31.0% of gross weekly income between GBP100 and GBP200, 3+ qualifying child(ren), 0 relevant other child(ren) (REDUCED_T)",
+      "official_value": "31.0",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26: reg 43 table read from legislation.gov.uk data.xml (substituted by SI 2013/1654; no outstanding effects).",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (legislation.gov.uk reg 43 XML)"
+    },
+    {
+      "key": "cms_reduced_rate_t_3plus_children_1_other",
+      "value": "26.4",
+      "unit": "percent",
+      "law": "Child Support Maintenance Calculation Regs 2012 reg 43 (reduced rate)",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2012/2677/regulation/43",
+      "status": "current",
+      "change_frequency": "rarely (statutory)",
+      "note": "Child Maintenance calc: reduced rate = GBP7 + 26.4% of gross weekly income between GBP100 and GBP200, 3+ qualifying child(ren), 1 relevant other child(ren) (REDUCED_T)",
+      "official_value": "26.4",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26: reg 43 table read from legislation.gov.uk data.xml (substituted by SI 2013/1654; no outstanding effects).",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (legislation.gov.uk reg 43 XML)"
+    },
+    {
+      "key": "cms_reduced_rate_t_3plus_children_2_other",
+      "value": "24.9",
+      "unit": "percent",
+      "law": "Child Support Maintenance Calculation Regs 2012 reg 43 (reduced rate)",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2012/2677/regulation/43",
+      "status": "current",
+      "change_frequency": "rarely (statutory)",
+      "note": "Child Maintenance calc: reduced rate = GBP7 + 24.9% of gross weekly income between GBP100 and GBP200, 3+ qualifying child(ren), 2 relevant other child(ren) (REDUCED_T)",
+      "official_value": "24.9",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26: reg 43 table read from legislation.gov.uk data.xml (substituted by SI 2013/1654; no outstanding effects).",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (legislation.gov.uk reg 43 XML)"
+    },
+    {
+      "key": "cms_reduced_rate_t_3plus_children_3plus_other",
+      "value": "23.8",
+      "unit": "percent",
+      "law": "Child Support Maintenance Calculation Regs 2012 reg 43 (reduced rate)",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2012/2677/regulation/43",
+      "status": "current",
+      "change_frequency": "rarely (statutory)",
+      "note": "Child Maintenance calc: reduced rate = GBP7 + 23.8% of gross weekly income between GBP100 and GBP200, 3+ qualifying child(ren), 3+ relevant other child(ren) (REDUCED_T)",
+      "official_value": "23.8",
+      "confidence": "high",
+      "freshness_note": "Added 2026-09-26: reg 43 table read from legislation.gov.uk data.xml (substituted by SI 2013/1654; no outstanding effects).",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (legislation.gov.uk reg 43 XML)"
     },
     {
       "key": "cms_shared_care_reduction_1_night",
@@ -3792,9 +4155,9 @@
       "note": "Child Maintenance calc: shared care reduction 1/7 for 1 night/week (avg 52+ nights/yr); in code and UI",
       "official_value": "1/7 (52-103 nights/yr = 14.29%)",
       "confidence": "high",
-      "freshness_note": "gov.uk states '52 to 103 nights: 14.29%' which equals 1/7 reduction for ~1 night/week; matches stored value.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_shared_care_reduction_2_nights",
@@ -3814,9 +4177,9 @@
       "note": "Child Maintenance calc: shared care reduction 2/7 for 2 nights/week; in code and UI",
       "official_value": "2/7 (104-155 nights/yr = 28.57%)",
       "confidence": "high",
-      "freshness_note": "gov.uk states '104 to 155 nights: 28.57%' which equals 2/7 reduction for ~2 nights/week; matches stored value.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "cms_shared_care_reduction_3plus_nights",
@@ -3836,9 +4199,9 @@
       "note": "Child Maintenance calc: shared care reduction 3/7 for 3+ nights/week; in code and UI",
       "official_value": "3/7 (156-174 nights/yr = 42.86%)",
       "confidence": "high",
-      "freshness_note": "gov.uk states '156 to 174 nights: 42.86%' which equals 3/7 reduction for ~3 nights/week; matches stored value (175+ nights = 50% + GBP7).",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
       "key": "collective_redundancy_consultation_threshold",
@@ -18634,7 +18997,8 @@
         "src/components/calculators/ProbateFeeCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/SolicitorFeeCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/applying-for-probate/fees",
       "status": "current",
@@ -18644,7 +19008,7 @@
       "confidence": "high",
       "fixed": true,
       "fixed_date": "2026-07-14",
-      "freshness_note": "FIXED 2026-07-14 (DataHub freshness verify, adversarially confirmed): HMCTS probate application fee for estates over GBP 5,000 rose GBP 300 -> GBP 526. gov.uk/applying-for-probate/fees states verbatim 'If the value of the estate is over £5,000, the application fee is £526.' Prior £300/£273 were superseded."
+      "freshness_note": "FIXED 2026-07-14 (DataHub freshness verify, adversarially confirmed): HMCTS probate application fee for estates over GBP 5,000 rose GBP 300 -> GBP 526. gov.uk/applying-for-probate/fees states verbatim 'If the value of the estate is over £5,000, the application fee is £526.' Prior £300/£273 were superseded. 2026-09-26: SolicitorFeeCalculator had its own copy still at £300 (disbursement), not listed in used_by; fixed to 526."
     },
     {
       "key": "probate_application_fee_personal",
@@ -24537,7 +24901,7 @@
     },
     {
       "key": "teacher_leadership_group1_max",
-      "value": "77924",
+      "value": "80652",
       "unit": "GBP",
       "law": "STPCD teacher pay (leadership, outside London)",
       "theme": "public_pay",
@@ -24547,19 +24911,19 @@
       "used_by": [
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Leadership Headteacher Group 1 maximum (LEADERSHIP)",
-      "official_value": "77924",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Leadership Headteacher Group 1 maximum (LEADERSHIP)",
+      "official_value": "80652",
       "confidence": "high",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). STPCD 2025 (eff 1 Sep 2025) Table 2, England outside London, Headteacher Group 1 maximum is GBP77,924 (stored 76,449 is the 2024/25 figure); 76,449 -> 77,924.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 77,924 -> 80,652. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_leadership_group1_min",
-      "value": "58569",
+      "value": "60619",
       "unit": "GBP",
       "law": "STPCD teacher pay (leadership, outside London)",
       "theme": "public_pay",
@@ -24569,19 +24933,19 @@
       "used_by": [
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Leadership Headteacher Group 1 minimum (LEADERSHIP)",
-      "official_value": "58569",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Leadership Headteacher Group 1 minimum (LEADERSHIP)",
+      "official_value": "60619",
       "confidence": "high",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). STPCD 2025 Table 2, outside London, Group 1 minimum is GBP58,569 (stored 58,325 is the 2024/25 figure); 58,325 -> 58,569.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 58,569 -> 60,619. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_leadership_group4_max",
-      "value": "97136",
+      "value": "100536",
       "unit": "GBP",
       "law": "STPCD teacher pay (leadership, outside London)",
       "theme": "public_pay",
@@ -24591,19 +24955,19 @@
       "used_by": [
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Leadership Headteacher Group 4 maximum (LEADERSHIP)",
-      "official_value": "97136",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Leadership Headteacher Group 4 maximum (LEADERSHIP)",
+      "official_value": "100536",
       "confidence": "high",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). STPCD 2025 Table 2, outside London, Group 4 maximum is GBP97,136 (stored 98,884 does not match 2025/26 - it appears to be a different/older basis); 98,884 -> 97,136.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 97,136 -> 100,536. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_leadership_group4_min",
-      "value": "71330",
+      "value": "73827",
       "unit": "GBP",
       "law": "STPCD teacher pay (leadership, outside London)",
       "theme": "public_pay",
@@ -24613,19 +24977,19 @@
       "used_by": [
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Leadership Headteacher Group 4 minimum (LEADERSHIP)",
-      "official_value": "71330",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Leadership Headteacher Group 4 minimum (LEADERSHIP)",
+      "official_value": "73827",
       "confidence": "high",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). STPCD 2025 Table 2, outside London, Group 4 minimum is GBP71,330 (stored 69,596 is the 2024/25 figure); 69,596 -> 71,330.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 71,330 -> 73,827. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_leadership_group8_max",
-      "value": "143796",
+      "value": "148829",
       "unit": "GBP",
       "law": "STPCD teacher pay (leadership, outside London)",
       "theme": "public_pay",
@@ -24635,19 +24999,19 @@
       "used_by": [
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Leadership Headteacher Group 8 maximum (LEADERSHIP)",
-      "official_value": "143796",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Leadership Headteacher Group 8 maximum (LEADERSHIP)",
+      "official_value": "148829",
       "confidence": "high",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). STPCD 2025 Table 1/Table 2, outside London, leadership/Group 8 maximum is GBP143,796 (stored 136,298 is the 2024/25 figure); 136,298 -> 143,796.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 143,796 -> 148,829. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_leadership_group8_min",
-      "value": "100540",
+      "value": "104059",
       "unit": "GBP",
       "law": "STPCD teacher pay (leadership, outside London)",
       "theme": "public_pay",
@@ -24657,15 +25021,15 @@
       "used_by": [
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Leadership Headteacher Group 8 minimum (LEADERSHIP)",
-      "official_value": "100540",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Leadership Headteacher Group 8 minimum (LEADERSHIP)",
+      "official_value": "104059",
       "confidence": "high",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). STPCD 2025 Table 2, outside London, Group 8 minimum is GBP100,540 (stored 92,991 is the 2024/25 figure); 92,991 -> 100,540.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 100,540 -> 104,059. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_london_weighting_fringe",
@@ -24744,7 +25108,7 @@
     },
     {
       "key": "teacher_main_scale_m1",
-      "value": "32916",
+      "value": "34069",
       "unit": "GBP",
       "law": "STPCD teacher pay (England, outside London)",
       "theme": "public_pay",
@@ -24755,19 +25119,19 @@
         "src/components/calculators/TeacherPayCalculator.tsx",
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Main Pay Scale point M1, outside London (MAIN_SCALE[0])",
-      "official_value": "32916",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Main Pay Scale point M1, outside London (MAIN_SCALE[0])",
+      "official_value": "34069",
       "confidence": "high",
-      "freshness_note": "STPCD 2025 Annex 3 Table 12, Rest of England, M1 = GBP32,916; matches stored. 2026/27 STPCD not yet published, so 2025/26 is the current official figure.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 32,916 -> 34,069. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_main_scale_m2",
-      "value": "34823",
+      "value": "36042",
       "unit": "GBP",
       "law": "STPCD teacher pay (England, outside London)",
       "theme": "public_pay",
@@ -24777,19 +25141,19 @@
       "used_by": [
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Main Pay Scale point M2, outside London (MAIN_SCALE[1])",
-      "official_value": "34823",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Main Pay Scale point M2, outside London (MAIN_SCALE[1])",
+      "official_value": "36042",
       "confidence": "high",
-      "freshness_note": "STPCD 2025 Annex 3, Rest of England, M2 = GBP34,823; matches stored.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 34,823 -> 36,042. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_main_scale_m3",
-      "value": "37101",
+      "value": "38400",
       "unit": "GBP",
       "law": "STPCD teacher pay (England, outside London)",
       "theme": "public_pay",
@@ -24799,19 +25163,19 @@
       "used_by": [
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Main Pay Scale point M3, outside London (MAIN_SCALE[2])",
-      "official_value": "37101",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Main Pay Scale point M3, outside London (MAIN_SCALE[2])",
+      "official_value": "38400",
       "confidence": "high",
-      "freshness_note": "STPCD 2025 Annex 3, Rest of England, M3 = GBP37,101; matches stored.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 37,101 -> 38,400. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_main_scale_m4",
-      "value": "39556",
+      "value": "40941",
       "unit": "GBP",
       "law": "STPCD teacher pay (England, outside London)",
       "theme": "public_pay",
@@ -24821,19 +25185,19 @@
       "used_by": [
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Main Pay Scale point M4, outside London (MAIN_SCALE[3])",
-      "official_value": "39556",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Main Pay Scale point M4, outside London (MAIN_SCALE[3])",
+      "official_value": "40941",
       "confidence": "high",
-      "freshness_note": "STPCD 2025 Annex 3, Rest of England, M4 = GBP39,556; matches stored.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 39,556 -> 40,941. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_main_scale_m5",
-      "value": "42057",
+      "value": "43529",
       "unit": "GBP",
       "law": "STPCD teacher pay (England, outside London)",
       "theme": "public_pay",
@@ -24843,19 +25207,19 @@
       "used_by": [
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Main Pay Scale point M5, outside London (MAIN_SCALE[4])",
-      "official_value": "42057",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Main Pay Scale point M5, outside London (MAIN_SCALE[4])",
+      "official_value": "43529",
       "confidence": "high",
-      "freshness_note": "STPCD 2025 Annex 3, Rest of England, M5 = GBP42,057; matches stored.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 42,057 -> 43,529. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_main_scale_m6",
-      "value": "45352",
+      "value": "46940",
       "unit": "GBP",
       "law": "STPCD teacher pay (England, outside London)",
       "theme": "public_pay",
@@ -24866,15 +25230,15 @@
         "src/components/calculators/TeacherPayCalculator.tsx",
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Main Pay Scale point M6, outside London (MAIN_SCALE[5])",
-      "official_value": "45352",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Main Pay Scale point M6, outside London (MAIN_SCALE[5])",
+      "official_value": "46940",
       "confidence": "high",
-      "freshness_note": "STPCD 2025 Annex 3, Rest of England, M6 (MPR maximum) = GBP45,352; matches stored.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 45,352 -> 46,940. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_training_bursary_max",
@@ -24900,7 +25264,7 @@
     },
     {
       "key": "teacher_upper_scale_ups1",
-      "value": "47472",
+      "value": "49134",
       "unit": "GBP",
       "law": "STPCD teacher pay (England, outside London)",
       "theme": "public_pay",
@@ -24910,19 +25274,19 @@
       "used_by": [
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Upper Pay Scale point UPS1, outside London (UPPER_SCALE[0])",
-      "official_value": "47472",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Upper Pay Scale point UPS1, outside London (UPPER_SCALE[0])",
+      "official_value": "49134",
       "confidence": "high",
-      "freshness_note": "STPCD 2025 Annex 3, Rest of England, U1 (UPR minimum) = GBP47,472; matches stored.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 47,472 -> 49,134. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_upper_scale_ups2",
-      "value": "49232",
+      "value": "50956",
       "unit": "GBP",
       "law": "STPCD teacher pay (England, outside London)",
       "theme": "public_pay",
@@ -24932,19 +25296,19 @@
       "used_by": [
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Upper Pay Scale point UPS2, outside London (UPPER_SCALE[1])",
-      "official_value": "49232",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Upper Pay Scale point UPS2, outside London (UPPER_SCALE[1])",
+      "official_value": "50956",
       "confidence": "high",
-      "freshness_note": "STPCD 2025 Annex 3, Rest of England, U2 = GBP49,232; matches stored.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 49,232 -> 50,956. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teacher_upper_scale_ups3",
-      "value": "51048",
+      "value": "52835",
       "unit": "GBP",
       "law": "STPCD teacher pay (England, outside London)",
       "theme": "public_pay",
@@ -24954,15 +25318,15 @@
       "used_by": [
         "src/components/calculators/TeacherPayCalculator.tsx"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/687a6260312ee8a5f0806bb5/School_teachers__pay_and_conditions_document_2025_and_guidance_on_school_teachers__pay_and_conditions.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a4623ac732d8e7ce5f53afb/STRB_36th_Report_2026.pdf",
       "status": "current",
-      "change_frequency": "",
-      "note": "TeacherPayCalculator: 2025/26 STPCD Upper Pay Scale point UPS3, outside London (UPPER_SCALE[2])",
-      "official_value": "51048",
+      "change_frequency": "annual (1 September)",
+      "note": "TeacherPayCalculator: 2026/27 (from 1 Sep 2026) Upper Pay Scale point UPS3, outside London (UPPER_SCALE[2])",
+      "official_value": "52835",
       "confidence": "high",
-      "freshness_note": "STPCD 2025 Annex 3, Rest of England, U3 (UPR maximum) = GBP51,048; matches stored. 2026/27 award not yet published.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-09-26: STRB 36th report (CP 1602) Appendix F 'Recommended pay levels from 1 September 2026', accepted in full by the Government on 1 Jul 2026 (WMS), backdated to 1 Sep 2026: 3.5% on all ranges and advisory points, rounded up to the nearest GBP. 51,048 -> 52,835. Final STPCD 2026 due mid-Oct 2026 (not yet on gov.uk at check); next change +3.0% from 1 Sep 2027.",
+      "verified_date": "2026-09-26",
+      "verify_method": "primary source read in full (STRB 36th report Appendix F; WMS 1 Jul 2026)"
     },
     {
       "key": "teachers_pension_accrual_rate",
@@ -29860,10 +30224,406 @@
       "verify_method": "phase4 apply (tier2 2026-09-13 verdicts)",
       "fixed": true,
       "fixed_date": "2026-09-13"
+    },
+    {
+      "key": "mtd_itsa_phase3_income_threshold",
+      "value": "20000",
+      "unit": "GBP",
+      "law": "Making Tax Digital for Income Tax",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/MakingTaxDigitalCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/check-if-youre-eligible-for-making-tax-digital-for-income-tax",
+      "status": "current",
+      "change_frequency": "",
+      "note": "MTD ITSA third wave: qualifying income over £20,000 in 2026/27 -> mandatory from 6 April 2028 (pages said \"delayed indefinitely\")",
+      "official_value": "20000",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "mtd_itsa_quarterly_update_due_day",
+      "value": "7",
+      "unit": "day of month",
+      "law": "Making Tax Digital for Income Tax",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/use-making-tax-digital-for-income-tax/send-quarterly-updates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Quarterly updates due 7 Aug / 7 Nov / 7 Feb / 7 May (pages said the 5th)",
+      "official_value": "7",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "mtd_itsa_2026_27_late_update_points_suspended",
+      "value": "true",
+      "unit": "flag",
+      "law": "Making Tax Digital for Income Tax",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/use-making-tax-digital-for-income-tax/send-quarterly-updates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "HMRC will not apply penalty points for late quarterly updates during 2026/27 (late returns still earn points)",
+      "official_value": "true",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26",
+      "changes_next_fy": "Ends 5 April 2027: from 2027/28 late quarterly updates earn points again; remove the 2026/27 caveat from mtd-readiness and making-tax-digital prose/FAQ."
+    },
+    {
+      "key": "hmlr_scale1_portal_fee_200k_500k",
+      "value": "150",
+      "unit": "GBP",
+      "law": "HM Land Registry Scale 1 (from 9 Dec 2024)",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/HomeBuyingTotalCostCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/hm-land-registry-registration-services-fees",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Scale 1 portal whole-title fees: £20 (<=80k), £40 (<=100k), £100 (<=200k), £150 (<=500k), £295 (<=1m), £500 (>1m); post £45/95/230/330/655/1,105",
+      "official_value": "150",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "tv_licence_colour_annual",
+      "value": "180",
+      "unit": "GBP/year",
+      "law": "TV licence fee (2022 settlement, CPI)",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.moneysavingexpert.com/news/2026/02/tv-licence-fee-rise/",
+      "status": "current",
+      "change_frequency": "annual (1 April)",
+      "note": "£180 a year from 1 April 2026 (£15/month); pages said £159 and £13",
+      "official_value": "180",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "nhs_ppc_3_month",
+      "value": "32.05",
+      "unit": "GBP",
+      "law": "NHS prescription prepayment certificate (England)",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs",
+      "status": "current",
+      "change_frequency": "annual (1 April)",
+      "note": "3-month PPC £32.05, 12-month £114.50 (page said £33/£114)",
+      "official_value": "32.05",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "nhs_ppc_12_month",
+      "value": "114.5",
+      "unit": "GBP",
+      "law": "NHS prescription prepayment certificate (England)",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs",
+      "status": "current",
+      "change_frequency": "annual (1 April)",
+      "note": "12-month PPC £114.50",
+      "official_value": "114.5",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "housing_benefit_applicable_amount_pension_single",
+      "value": "238.0",
+      "unit": "GBP/week",
+      "law": "Housing Benefit (State Pension age) personal allowance 2026/27",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/HousingBenefitCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://england.shelter.org.uk/professional_resources/legal/benefits/housing_benefit_calculation_rates/housing_benefit_calculation_rates_2026_to_2027",
+      "status": "current",
+      "change_frequency": "annual (April uprating)",
+      "note": "Pension-age HB personal allowance single £238.00 / couple £363.25 (same as Pension Credit guarantee); calculator gained a State Pension age option 2026-09-26",
+      "official_value": "238.0",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "housing_benefit_applicable_amount_pension_couple",
+      "value": "363.25",
+      "unit": "GBP/week",
+      "law": "Housing Benefit (State Pension age) personal allowance 2026/27",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/HousingBenefitCalculator.tsx"
+      ],
+      "source_url": "https://england.shelter.org.uk/professional_resources/legal/benefits/housing_benefit_calculation_rates/housing_benefit_calculation_rates_2026_to_2027",
+      "status": "current",
+      "change_frequency": "annual (April uprating)",
+      "note": "Pension-age HB personal allowance couple",
+      "official_value": "363.25",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "dartford_crossing_car_charge",
+      "value": "3.5",
+      "unit": "GBP",
+      "law": "Dart Charge",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/pay-dartford-crossing-charge/charges",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Car £3.50 one-off, £2.80 with pre-pay account (page said £2.50)",
+      "official_value": "3.5",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "m6_toll_car_full_length",
+      "value": "12.0",
+      "unit": "GBP",
+      "law": "M6toll zonal pricing",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.m6toll.co.uk/pricing-tables/",
+      "status": "current",
+      "change_frequency": "quarterly (operator)",
+      "note": "Car full length £12.00 contactless, £10.20 Breeze, since 7 Jul 2026 (page said £8.40 off-peak / £11.10 peak); operator reviews prices quarterly",
+      "official_value": "12.0",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "humber_bridge_car_toll",
+      "value": "2.0",
+      "unit": "GBP",
+      "law": "Humber Bridge",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.humberbridge.co.uk/plan-your-trip/toll-prices/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Car £2 each way since 2 Feb 2026, £1.50 for account holders (page said £1.50)",
+      "official_value": "2.0",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "tyne_tunnel_car_toll",
+      "value": "2.6",
+      "unit": "GBP",
+      "law": "River Tyne (Tunnels) (Revision of Tolls) Order 2026",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.tt2.co.uk/toll-changes-may-26/",
+      "status": "current",
+      "change_frequency": "annual (May)",
+      "note": "Car £2.60 from 1 May 2026 (page said £2.30)",
+      "official_value": "2.6",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "mersey_gateway_car_toll",
+      "value": "2.4",
+      "unit": "GBP",
+      "law": "Mersey Gateway",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://merseygateway.co.uk/toll-charges/",
+      "status": "current",
+      "change_frequency": "annual (April)",
+      "note": "Unregistered car £2.40 since April 2025 (page said £2.30)",
+      "official_value": "2.4",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "skilled_worker_english_level",
+      "value": "B2",
+      "unit": "CEFR",
+      "law": "Immigration Rules HC 1333",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/VisaPointsCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/skilled-worker-visa/knowledge-of-english",
+      "status": "current",
+      "change_frequency": "",
+      "note": "B2 for Skilled Worker / Scale-up / HPI applications from 8 Jan 2026 (pages said B1 and listed B1-only tests)",
+      "official_value": "B2",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "settlement_english_level",
+      "value": "B1",
+      "unit": "CEFR",
+      "law": "Immigration Rules HC 1691",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/statement-of-changes-to-the-immigration-rules-hc-1619-5-march-2026/statement-of-changes-to-the-immigration-rules-hc-1691-5-march-2026-accessible-version",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Settlement English B1 today; B2 for settlement applications on/after 26 March 2027 (HC 1691)",
+      "official_value": "B1",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26",
+      "changes_next_fy": "26 March 2027: settlement English rises to B2; update ilr-calculator and skilled-worker settlement prose/FAQ tense."
+    },
+    {
+      "key": "ilr_priority_service_fee",
+      "value": "500",
+      "unit": "GBP",
+      "law": "Home Office faster decision services",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/faster-decision-visa-settlement",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Priority £500 (usually within 5 working days), super priority £1,000 (by end of next working day); page said 8 weeks / same day",
+      "official_value": "500",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
     }
   ],
   "status_summary": {
-    "current": 1368,
+    "current": 1380,
     "retired": 23,
     "superseded_by_component": 4,
     "historical": 15,

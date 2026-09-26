@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // Simplified Housing Benefit / UC Housing Element
-function calculate(weeklyRent: number, lhaRate: number, isSingle: boolean, age: number, bedrooms: number, weeklyIncome: number) {
+function calculate(weeklyRent: number, lhaRate: number, isSingle: boolean, age: number, bedrooms: number, weeklyIncome: number, pensionAge: boolean) {
   const eligibleRent = Math.min(weeklyRent, lhaRate)
 
   // Under 35 single: shared accommodation rate
@@ -12,7 +12,9 @@ function calculate(weeklyRent: number, lhaRate: number, isSingle: boolean, age: 
   const excessBedrooms = 0 // simplified
 
   // Taper: 65% of excess income (for HB) or 55% for UC
-  const applicableAmount = isSingle ? 95.55 : 150.15 // weekly personal allowance 2026/27
+  // Weekly personal allowance 2026/27: working age 25+ £95.55 / couple £150.15; State Pension age
+  // (reached after 1 Apr 2021) £238.00 / £363.25, the same as the Pension Credit guarantee
+  const applicableAmount = pensionAge ? (isSingle ? 238.00 : 363.25) : (isSingle ? 95.55 : 150.15)
   const excessIncome = Math.max(0, weeklyIncome - applicableAmount)
   const taper = excessIncome * 0.65
 
@@ -29,12 +31,13 @@ export default function HousingBenefitCalculator() {
   const [single, setSingle] = useState(true)
   const [age, setAge] = useState('30')
   const [income, setIncome] = useState('100')
+  const [pensioner, setPensioner] = useState(false)
 
   const r = parseFloat(rent) || 0
   const l = parseFloat(lha) || 0
   const a = parseInt(age) || 30
   const i = parseFloat(income) || 0
-  const result = useMemo(() => calculate(r, l, single, a, 1, i), [r, l, single, a, i])
+  const result = useMemo(() => calculate(r, l, single, a, 1, i, pensioner), [r, l, single, a, i, pensioner])
 
   return (
     <div className="space-y-6">
@@ -46,6 +49,10 @@ export default function HousingBenefitCalculator() {
       <div className="grid grid-cols-2 gap-2">
         <button onClick={() => setSingle(true)} className={`px-4 py-2.5 rounded-xl text-sm font-medium border ${single ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border hover:bg-accent'}`}>Single</button>
         <button onClick={() => setSingle(false)} className={`px-4 py-2.5 rounded-xl text-sm font-medium border ${!single ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border hover:bg-accent'}`}>Couple</button>
+      </div>
+      <div className="grid grid-cols-2 gap-2">
+        <button onClick={() => setPensioner(false)} className={`px-4 py-2.5 rounded-xl text-sm font-medium border ${!pensioner ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border hover:bg-accent'}`}>Working age</button>
+        <button onClick={() => setPensioner(true)} className={`px-4 py-2.5 rounded-xl text-sm font-medium border ${pensioner ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border hover:bg-accent'}`}>State Pension age</button>
       </div>
 
       <div className="space-y-4 animate-fade-in-up">
@@ -59,12 +66,13 @@ export default function HousingBenefitCalculator() {
             <tr className="border-b border-border/50"><td className="py-2">Weekly Rent</td><td className="text-right tabular-nums">{formatCurrency(r)}</td></tr>
             <tr className="border-b border-border/50"><td className="py-2">LHA Cap</td><td className="text-right tabular-nums">{formatCurrency(l)}</td></tr>
             <tr className="border-b border-border/50"><td className="py-2">Eligible Rent</td><td className="text-right tabular-nums">{formatCurrency(result.eligibleRent)}</td></tr>
+            <tr className="border-b border-border/50"><td className="py-2">Applicable Amount</td><td className="text-right tabular-nums">{formatCurrency(result.applicableAmount)}</td></tr>
             {result.taper > 0 && <tr className="border-b border-border/50"><td className="py-2 text-destructive">Income Taper (65%)</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.taper)}</td></tr>}
             <tr className="font-semibold"><td className="py-2 text-primary">Housing Benefit</td><td className="text-right tabular-nums text-primary">{formatCurrency(result.weeklyHB)}</td></tr>
           </tbody>
         </table>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-          <p>Simplified estimate. Most new claims go through Universal Credit housing element. LHA rates vary by area and bedrooms.</p>
+          <p>Simplified estimate. Working-age claims now mostly go through the Universal Credit housing element, so new Housing Benefit claims are mainly from people over State Pension age. LHA rates vary by area and bedrooms.</p>
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ const MATTERS: Record<MatterType, { name: string; baseFee: number; description: 
   conveyancing_sell: { name: 'Conveyancing (Selling)', baseFee: 1200, description: 'Legal fees for selling a property', disbursements: 100 },
   divorce: { name: 'Divorce (uncontested)', baseFee: 1000, description: 'No-fault divorce proceedings', disbursements: 628 },
   will: { name: 'Simple Will', baseFee: 250, description: 'Standard single will', disbursements: 0 },
-  probate: { name: 'Probate Application', baseFee: 2500, description: 'Grant of probate + estate administration', disbursements: 300 },
+  probate: { name: 'Probate Application', baseFee: 2500, description: 'Grant of probate + estate administration', disbursements: 526 }, // probate application fee, estates over £5,000 (gov.uk/applying-for-probate/fees)
   employment: { name: 'Employment Tribunal', baseFee: 3000, description: 'Representation at employment tribunal', disbursements: 200 },
 }
 

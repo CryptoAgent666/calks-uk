@@ -10,7 +10,8 @@
  *   - inside the Capacitor app itself (`__IS_CAPACITOR__`) — the OTA bundle is
  *     the same build as the website, so without this guard the app would
  *     advertise itself to its own users;
- *   - while the cookie banner is still undecided, so two overlays never stack;
+ *   - while Google's consent message (UK/EEA/CH) is still unanswered, so two
+ *     overlays never stack;
  *   - when the site is already running as an installed PWA;
  *   - for 60 days after the visitor dismisses it.
  *
@@ -121,19 +122,29 @@ const isIosBuild = import.meta.env.PUBLIC_IS_IOS_BUILD === '1'
       cta.addEventListener('click', dismiss);
     }
 
-    // One overlay at a time: if the cookie banner still needs an answer, wait
-    // for it rather than covering it.
-    var consent = null;
-    try { consent = localStorage.getItem('cookie-consent'); } catch (_) {}
-    if (!consent && document.getElementById('cookie-banner')) {
-      ['cookie-accept', 'cookie-reject'].forEach(function (id) {
-        var b = document.getElementById(id);
-        if (b) b.addEventListener('click', function () { setTimeout(show, 800); });
-      });
-      return;
+    // One overlay at a time: Google's consent message (UK/EEA/CH) is a TCF CMP
+    // that AdSense loads asynchronously. If it turns up, wait until the visitor
+    // has answered it (or already had, or it doesn't apply to them) rather than
+    // covering it. If no CMP appears within a few seconds, there is nothing to wait for.
+    var shown = false;
+    function showOnce(delay) {
+      if (shown) return;
+      shown = true;
+      setTimeout(show, delay);
     }
-
-    // Let the page settle first so this never competes with LCP.
-    setTimeout(show, 1500);
+    var tries = 0;
+    (function waitForCmp() {
+      if (typeof window.__tcfapi === 'function') {
+        window.__tcfapi('addEventListener', 2, function (tcData, ok) {
+          if (!ok || !tcData) return;
+          if (tcData.gdprApplies === false || tcData.eventStatus === 'tcloaded') showOnce(1500);
+          else if (tcData.eventStatus === 'useractioncomplete') showOnce(800);
+        });
+        return;
+      }
+      // Let the page settle first so this never competes with LCP.
+      if (++tries > 10) return showOnce(0);
+      setTimeout(waitForCmp, 500);
+    })();
   })();
 </script>

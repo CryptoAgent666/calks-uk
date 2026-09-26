@@ -1,40 +1,66 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// CMS rates 2025/26 (gov.uk "Calculate child maintenance")
+// CMS rates: Child Support Act 1991 Sch 1 Pt I (gov.uk "How child maintenance is worked out"). Fixed in
+// the Act, not uprated yearly; unchanged for 2026/27 (checked 26 Sep 2026).
+
+// Reduced rate T% by qualifying children (1, 2, 3+) and relevant other children (0, 1, 2, 3+),
+// reg 43 Child Support Maintenance Calculation Regulations 2012 (SI 2012/2677)
+const REDUCED_T: Record<number, number[]> = {
+  1: [17.0, 14.1, 13.2, 12.4],
+  2: [25.0, 21.2, 19.9, 18.9],
+  3: [31.0, 26.4, 24.9, 23.8],
+}
+
+type Band = 'nil' | 'flat' | 'reduced' | 'basic' | 'basic plus'
+
 function calculate(grossWeeklyIncome: number, children: number, nightsPerWeek: number, otherChildren: number) {
-  let income = grossWeeklyIncome
+  // Gross weekly income over £3,000 is ignored (Sch 1 para 10(3)); above that the court can top up
+  const gross = Math.min(grossWeeklyIncome, 3000)
+  const kids = Math.min(Math.max(children, 1), 3)
 
-  // Deduction for other children living with the paying parent
+  // Deduction for other children living with the paying parent (basic and basic-plus rates)
   const otherChildReduction = otherChildren === 1 ? 0.11 : otherChildren === 2 ? 0.14 : otherChildren >= 3 ? 0.16 : 0
-  income = income * (1 - otherChildReduction)
+  const income = gross * (1 - otherChildReduction)
 
-  // Basic rate (gross weekly income £200.01–£800) by number of children
-  const rate = children === 1 ? 0.12 : children === 2 ? 0.16 : 0.19 // 3+
+  // Basic rate by number of children, on reduced income up to £800
+  const rate = kids === 1 ? 0.12 : kids === 2 ? 0.16 : 0.19
   // Basic-plus rate applied to the slice of income above £800 (£800.01–£3,000)
-  const basicPlusRate = children === 1 ? 0.09 : children === 2 ? 0.12 : 0.15 // 3+
+  const basicPlusRate = kids === 1 ? 0.09 : kids === 2 ? 0.12 : 0.15
+  const reducedT = REDUCED_T[kids][Math.min(otherChildren, 3)]
 
   let weeklyAmount: number
-  if (grossWeeklyIncome < 7) {
-    weeklyAmount = 0 // nil rate
-  } else if (grossWeeklyIncome < 100) {
-    weeklyAmount = 7 // flat rate
+  let band: Band
+  if (gross < 7) {
+    weeklyAmount = 0
+    band = 'nil'
+  } else if (gross <= 100) {
+    weeklyAmount = 7
+    band = 'flat'
+  } else if (gross < 200) {
+    // Reduced rate: flat £7 plus T% of the income between £100 and £200
+    weeklyAmount = 7 + (gross - 100) * reducedT / 100
+    band = 'reduced'
   } else if (income > 800) {
     // Basic rate plus: basic rate on the first £800, then the lower basic-plus rate on the excess
     weeklyAmount = 800 * rate + (income - 800) * basicPlusRate
+    band = 'basic plus'
   } else {
-    // Basic rate (the reduced-rate £100–£200 band is approximated by the basic rate here)
     weeklyAmount = income * rate
+    band = 'basic'
   }
 
-  // Shared care reduction (does not apply to nil/flat rate)
-  if (nightsPerWeek >= 1 && weeklyAmount > 7) {
+  // Shared care reduction (reduced and basic rates only)
+  if (nightsPerWeek >= 1 && (band === 'reduced' || band === 'basic' || band === 'basic plus')) {
     const reductions: Record<number, number> = { 1: 1/7, 2: 2/7, 3: 3/7 }
     const reduction = reductions[Math.min(nightsPerWeek, 3)] || 3/7
     weeklyAmount *= (1 - reduction)
   }
 
-  return { weeklyAmount, monthlyAmount: weeklyAmount * 52 / 12, annualAmount: weeklyAmount * 52, rate: rate * 100 }
+  return {
+    weeklyAmount, monthlyAmount: weeklyAmount * 52 / 12, annualAmount: weeklyAmount * 52,
+    band, rate: rate * 100, basicPlusRate: basicPlusRate * 100, reducedT, capped: grossWeeklyIncome > 3000,
+  }
 }
 
 export default function ChildMaintenanceCalculator() {
@@ -67,8 +93,15 @@ export default function ChildMaintenanceCalculator() {
           <p className="text-sm text-muted-foreground mt-1">{formatCurrency(result.monthlyAmount)}/month &middot; {formatCurrency(result.annualAmount)}/year</p>
         </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-          <p>Based on CMS basic rate ({result.rate}% for {c} child{c > 1 ? 'ren' : ''}).</p>
-          <p className="mt-1">CMS rate bands (gross weekly income): under £7 = nil rate; £7–£100 = flat rate (£7/week); £100.01–£200 = reduced rate; £200.01–£800 = basic rate (12%/16%/19% for 1/2/3+ children); £800.01–£3,000 = basic-plus (the basic rate on the first £800, then 9%/12%/15% on the excess).</p>
+          <p>
+            {result.band === 'nil' && <>Nil rate: gross income under £7 a week.</>}
+            {result.band === 'flat' && <>Flat rate: £7 a week, whatever the number of children.</>}
+            {result.band === 'reduced' && <>Reduced rate: £7 plus {result.reducedT}% of income over £100 for {c} child{c > 1 ? 'ren' : ''}.</>}
+            {result.band === 'basic' && <>Basic rate: {result.rate}% for {c} child{c > 1 ? 'ren' : ''}.</>}
+            {result.band === 'basic plus' && <>Basic rate plus: {result.rate}% on the first £800, then {result.basicPlusRate}% on the rest.</>}
+            {result.capped && <> Income over £3,000 a week is ignored; the receiving parent can ask a court for more.</>}
+          </p>
+          <p className="mt-1">CMS rate bands (gross weekly income): under £7 = nil rate; £7–£100 = flat rate (£7/week); £100.01–£199.99 = reduced rate (£7 plus 17%/25%/31% of income over £100 for 1/2/3+ children, less if other children live with you); £200–£800 = basic rate (12%/16%/19%); £800.01–£3,000 = basic-plus (the basic rate on the first £800, then 9%/12%/15% on the excess).</p>
         </div>
       </div>
     </div>

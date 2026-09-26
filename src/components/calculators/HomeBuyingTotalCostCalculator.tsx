@@ -12,7 +12,8 @@ function calculate(price: number, deposit: number, isFirstTimeBuyer: boolean, ra
   const solicitor = price < 250_000 ? 1200 : price < 500_000 ? 1500 : 2000
   const survey = price < 250_000 ? 400 : 600
   const searches = 300
-  const landRegistry = price < 200_000 ? 100 : 150
+  // HM Land Registry Scale 1, portal fee for a whole-title transfer (from 9 Dec 2024)
+  const landRegistry = price <= 80_000 ? 20 : price <= 100_000 ? 40 : price <= 200_000 ? 100 : price <= 500_000 ? 150 : price <= 1_000_000 ? 295 : 500
   const mortgageFee = 999
   const removals = 800
   const totalUpfront = deposit + sdlt + solicitor + survey + searches + landRegistry + mortgageFee + removals

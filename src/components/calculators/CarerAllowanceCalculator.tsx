@@ -23,7 +23,7 @@ export default function CarerAllowanceCalculator() {
   const [earnings, setEarnings] = useState('120')
   const [qualifying, setQualifying] = useState(true)
 
-  const h = parseInt(hours) || 0
+  const h = Math.min(168, Math.max(0, parseInt(hours) || 0)) // a week has 168 hours
   const e = parseFloat(earnings) || 0
   const result = useMemo(() => calculate(h, e, qualifying), [h, e, qualifying])
 
@@ -53,7 +53,7 @@ export default function CarerAllowanceCalculator() {
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-1">
         <p>Carer's Allowance: <span className="font-medium text-foreground">£{CA_WEEKLY}/week</span> (2026/27)</p>
         <p>Must care for someone 35+ hours/week who gets a qualifying disability benefit.</p>
-        <p>Earnings limit: £{EARNINGS_LIMIT}/week net (after tax, NI, pension, and care costs).</p>
+        <p>Earnings limit: £{EARNINGS_LIMIT}/week net (after tax, NI, half of pension contributions and some care costs).</p>
         <p>CA counts as taxable income and may affect other benefits (Universal Credit, Pension Credit).</p>
       </div>
     </div>
