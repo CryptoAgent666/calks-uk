@@ -59,7 +59,8 @@
   {
    "was": "38400",
    "now": "16000",
-   "what": "right_to_buy_max_discount_cap_london"
+   "what": "right_to_buy_max_discount_cap_london",
+   "ctx": "right.to.buy|discount|RTB"
   },
   {
    "was": "34290",
@@ -128,6 +129,98 @@
    "was": "£33 for 3 months",
    "now": "£32.05",
    "what": "nhs_ppc_3_month"
+  },
+  {
+   "was": "32916",
+   "now": "34069",
+   "what": "teacher_main_scale_m1 (STPCD 2025 -> 1 Sep 2026)",
+   "ctx": "^(?!.*London teacher pay uses the real pay ranges)"
+  },
+  {
+   "was": "34823",
+   "now": "36042",
+   "what": "teacher_main_scale_m2 (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "37101",
+   "now": "38400",
+   "what": "teacher_main_scale_m3 (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "39556",
+   "now": "40941",
+   "what": "teacher_main_scale_m4 (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "42057",
+   "now": "43529",
+   "what": "teacher_main_scale_m5 (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "45352",
+   "now": "46940",
+   "what": "teacher_main_scale_m6 (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "47472",
+   "now": "49134",
+   "what": "teacher_upper_scale_ups1 (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "49232",
+   "now": "50956",
+   "what": "teacher_upper_scale_ups2 (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "51048",
+   "now": "52835",
+   "what": "teacher_upper_scale_ups3 (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "40317",
+   "now": "41729",
+   "what": "teacher_london_inner_m1 (STPCD 2025 -> 1 Sep 2026)",
+   "ctx": "^(?!.*London teacher pay uses the real pay ranges)"
+  },
+  {
+   "was": "37870",
+   "now": "39196",
+   "what": "teacher_london_outer_m1 (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "34398",
+   "now": "35602",
+   "what": "teacher_london_fringe_m1 (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "51773",
+   "now": "53586",
+   "what": "teacher_leadership_l1 (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "58569",
+   "now": "60619",
+   "what": "teacher_leadership_group1_min (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "77924",
+   "now": "80652",
+   "what": "teacher_leadership_group1_max (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "100540",
+   "now": "104059",
+   "what": "teacher_leadership_group8_min (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "143796",
+   "now": "148829",
+   "what": "teacher_leadership_group8_max (STPCD 2025 -> 1 Sep 2026)"
+  },
+  {
+   "was": "3532",
+   "now": "3000",
+   "what": "cms_max_assessable_income (prose invented £3,532)"
   }
  ]
 }

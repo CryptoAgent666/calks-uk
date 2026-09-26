@@ -14,14 +14,26 @@
       "type": "image/svg+xml"
     },
     {
-      "src": "/icons/icon-192.png",
+      "src": "/icons/icon-192-3245bd6c.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "/icons/icon-512-93dbc8fa.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-maskable-192-d5dd72c6.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-maskable-512-23ec1178.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "categories": ["finance", "utilities"]
