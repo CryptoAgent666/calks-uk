@@ -90,6 +90,44 @@
    "was": "4124",
    "now": "3935",
    "what": "wtc_disability_element"
+  },
+  {
+   "was": "4.75%",
+   "now": "3.75%",
+   "what": "boe_base_rate (current since 18 Dec 2025)",
+   "ctx": "base rate"
+  },
+  {
+   "was": "4.5% as of May 2026",
+   "now": "3.75%",
+   "what": "boe_base_rate (annuity prose)"
+  },
+  {
+   "was": "5 August 2026",
+   "now": "the 7th of the month after the quarter",
+   "what": "mtd_itsa_quarterly_update_due_day"
+  },
+  {
+   "was": "£90.50",
+   "now": "£95.55",
+   "what": "housing_benefit_applicable_amount_single (2024/25 value)"
+  },
+  {
+   "was": "£2.50",
+   "now": "£3.50",
+   "what": "dartford_crossing_car_charge",
+   "ctx": "Dartford"
+  },
+  {
+   "was": "£159",
+   "now": "£180",
+   "what": "tv_licence_colour_annual (2023/24 value)",
+   "ctx": "TV licence"
+  },
+  {
+   "was": "£33 for 3 months",
+   "now": "£32.05",
+   "what": "nhs_ppc_3_month"
   }
  ]
 }

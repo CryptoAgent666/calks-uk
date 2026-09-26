@@ -11,6 +11,8 @@ const BANDS = [
 ]
 
 function calculate(price: number) {
+  // The higher rates do not apply to a property bought for less than £40,000 (gov.uk)
+  const surchargeApplies = price >= 40_000
   let standardSDLT = 0
   let additionalSDLT = 0
   const breakdown: { from: number; to: number; standardRate: number; additionalRate: number; standardTax: number; additionalTax: number }[] = []
@@ -19,10 +21,11 @@ function calculate(price: number) {
     if (price <= b.from) break
     const taxable = Math.min(price, b.to) - b.from
     const stdTax = taxable * b.baseRate
-    const addTax = taxable * (b.baseRate + b.surcharge)
+    const addRate = b.baseRate + (surchargeApplies ? b.surcharge : 0)
+    const addTax = taxable * addRate
     standardSDLT += stdTax
     additionalSDLT += addTax
-    breakdown.push({ from: b.from, to: Math.min(price, b.to), standardRate: b.baseRate, additionalRate: b.baseRate + b.surcharge, standardTax: stdTax, additionalTax: addTax })
+    breakdown.push({ from: b.from, to: Math.min(price, b.to), standardRate: b.baseRate, additionalRate: addRate, standardTax: stdTax, additionalTax: addTax })
   }
 
   const surchargeAmount = additionalSDLT - standardSDLT

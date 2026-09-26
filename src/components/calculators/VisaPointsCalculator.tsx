@@ -5,7 +5,7 @@ import { formatCurrency } from '@/utils'
 const MANDATORY_POINTS = [
   { id: 'job', label: 'Job offer from approved sponsor', points: 20, required: true },
   { id: 'skill', label: 'Job at appropriate skill level (RQF 6+ from July 2025, or on ISL/TSL)', points: 20, required: true },
-  { id: 'english', label: 'English language at required level (B1+)', points: 10, required: true },
+  { id: 'english', label: 'English language at required level (B2+ from 8 Jan 2026)', points: 10, required: true },
 ]
 
 const TRADEABLE_POINTS = [

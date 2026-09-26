@@ -1524,24 +1524,32 @@
     },
     {
       "key": "boe_base_rate",
-      "value": "4.25",
+      "value": "3.75",
       "unit": "%",
       "law": "Bank of England base rate",
       "theme": "other",
       "surfaces": [
-        "computed"
+        "computed",
+        "prose"
       ],
       "used_by": [
-        "src/components/calculators/LatePenaltyCalculator.tsx"
+        "src/components/calculators/LatePenaltyCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "bankofengland.co.uk",
+      "source_url": "https://www.bankofengland.co.uk/boeapps/database/Bank-Rate.asp",
       "status": "current",
       "change_frequency": "",
-      "note": "LatePenaltyCalculator: BOE_BASE_RATE = 4.25 (commented as of Q1 2026), basis for statutory late-payment interest; also shown in prose 'BoE base rate 4.25%'",
+      "note": "LatePenaltyCalculator BOE_BASE_RATE + statutory late-payment interest (base + 8% = 11.75%); also prose on late-payment, annuity, inflation, mortgage-rate pages",
       "fixed": true,
       "fixed_date": "2026-06-16",
       "volatile": true,
-      "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)"
+      "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)",
+      "official_value": "3.75",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26",
+      "confidence": "high",
+      "freshness_note": "Bank Rate 3.75% since 18 Dec 2025 (BoE database, re-checked 26 Sep 2026). Code already held 3.75; ledger still said 4.25 and six prose spots (late payment x2, annuity x2, inflation x2) said 4.75%/4.5%, fixed 2026-09-26."
     },
     {
       "key": "boiler_upgrade_scheme_grant",
@@ -18634,7 +18642,8 @@
         "src/components/calculators/ProbateFeeCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/SolicitorFeeCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/applying-for-probate/fees",
       "status": "current",
@@ -18644,7 +18653,7 @@
       "confidence": "high",
       "fixed": true,
       "fixed_date": "2026-07-14",
-      "freshness_note": "FIXED 2026-07-14 (DataHub freshness verify, adversarially confirmed): HMCTS probate application fee for estates over GBP 5,000 rose GBP 300 -> GBP 526. gov.uk/applying-for-probate/fees states verbatim 'If the value of the estate is over £5,000, the application fee is £526.' Prior £300/£273 were superseded."
+      "freshness_note": "FIXED 2026-07-14 (DataHub freshness verify, adversarially confirmed): HMCTS probate application fee for estates over GBP 5,000 rose GBP 300 -> GBP 526. gov.uk/applying-for-probate/fees states verbatim 'If the value of the estate is over £5,000, the application fee is £526.' Prior £300/£273 were superseded. 2026-09-26: SolicitorFeeCalculator had its own copy still at £300 (disbursement), not listed in used_by; fixed to 526."
     },
     {
       "key": "probate_application_fee_personal",
@@ -29860,6 +29869,402 @@
       "verify_method": "phase4 apply (tier2 2026-09-13 verdicts)",
       "fixed": true,
       "fixed_date": "2026-09-13"
+    },
+    {
+      "key": "mtd_itsa_phase3_income_threshold",
+      "value": "20000",
+      "unit": "GBP",
+      "law": "Making Tax Digital for Income Tax",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/MakingTaxDigitalCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/check-if-youre-eligible-for-making-tax-digital-for-income-tax",
+      "status": "current",
+      "change_frequency": "",
+      "note": "MTD ITSA third wave: qualifying income over £20,000 in 2026/27 -> mandatory from 6 April 2028 (pages said \"delayed indefinitely\")",
+      "official_value": "20000",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "mtd_itsa_quarterly_update_due_day",
+      "value": "7",
+      "unit": "day of month",
+      "law": "Making Tax Digital for Income Tax",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/use-making-tax-digital-for-income-tax/send-quarterly-updates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Quarterly updates due 7 Aug / 7 Nov / 7 Feb / 7 May (pages said the 5th)",
+      "official_value": "7",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "mtd_itsa_2026_27_late_update_points_suspended",
+      "value": "true",
+      "unit": "flag",
+      "law": "Making Tax Digital for Income Tax",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/use-making-tax-digital-for-income-tax/send-quarterly-updates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "HMRC will not apply penalty points for late quarterly updates during 2026/27 (late returns still earn points)",
+      "official_value": "true",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26",
+      "changes_next_fy": "Ends 5 April 2027: from 2027/28 late quarterly updates earn points again; remove the 2026/27 caveat from mtd-readiness and making-tax-digital prose/FAQ."
+    },
+    {
+      "key": "hmlr_scale1_portal_fee_200k_500k",
+      "value": "150",
+      "unit": "GBP",
+      "law": "HM Land Registry Scale 1 (from 9 Dec 2024)",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/HomeBuyingTotalCostCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/hm-land-registry-registration-services-fees",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Scale 1 portal whole-title fees: £20 (<=80k), £40 (<=100k), £100 (<=200k), £150 (<=500k), £295 (<=1m), £500 (>1m); post £45/95/230/330/655/1,105",
+      "official_value": "150",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "tv_licence_colour_annual",
+      "value": "180",
+      "unit": "GBP/year",
+      "law": "TV licence fee (2022 settlement, CPI)",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.moneysavingexpert.com/news/2026/02/tv-licence-fee-rise/",
+      "status": "current",
+      "change_frequency": "annual (1 April)",
+      "note": "£180 a year from 1 April 2026 (£15/month); pages said £159 and £13",
+      "official_value": "180",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "nhs_ppc_3_month",
+      "value": "32.05",
+      "unit": "GBP",
+      "law": "NHS prescription prepayment certificate (England)",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs",
+      "status": "current",
+      "change_frequency": "annual (1 April)",
+      "note": "3-month PPC £32.05, 12-month £114.50 (page said £33/£114)",
+      "official_value": "32.05",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "nhs_ppc_12_month",
+      "value": "114.5",
+      "unit": "GBP",
+      "law": "NHS prescription prepayment certificate (England)",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs",
+      "status": "current",
+      "change_frequency": "annual (1 April)",
+      "note": "12-month PPC £114.50",
+      "official_value": "114.5",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "housing_benefit_applicable_amount_pension_single",
+      "value": "238.0",
+      "unit": "GBP/week",
+      "law": "Housing Benefit (State Pension age) personal allowance 2026/27",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/HousingBenefitCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://england.shelter.org.uk/professional_resources/legal/benefits/housing_benefit_calculation_rates/housing_benefit_calculation_rates_2026_to_2027",
+      "status": "current",
+      "change_frequency": "annual (April uprating)",
+      "note": "Pension-age HB personal allowance single £238.00 / couple £363.25 (same as Pension Credit guarantee); calculator gained a State Pension age option 2026-09-26",
+      "official_value": "238.0",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "housing_benefit_applicable_amount_pension_couple",
+      "value": "363.25",
+      "unit": "GBP/week",
+      "law": "Housing Benefit (State Pension age) personal allowance 2026/27",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/HousingBenefitCalculator.tsx"
+      ],
+      "source_url": "https://england.shelter.org.uk/professional_resources/legal/benefits/housing_benefit_calculation_rates/housing_benefit_calculation_rates_2026_to_2027",
+      "status": "current",
+      "change_frequency": "annual (April uprating)",
+      "note": "Pension-age HB personal allowance couple",
+      "official_value": "363.25",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "dartford_crossing_car_charge",
+      "value": "3.5",
+      "unit": "GBP",
+      "law": "Dart Charge",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/pay-dartford-crossing-charge/charges",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Car £3.50 one-off, £2.80 with pre-pay account (page said £2.50)",
+      "official_value": "3.5",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "m6_toll_car_full_length",
+      "value": "12.0",
+      "unit": "GBP",
+      "law": "M6toll zonal pricing",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.m6toll.co.uk/pricing-tables/",
+      "status": "current",
+      "change_frequency": "quarterly (operator)",
+      "note": "Car full length £12.00 contactless, £10.20 Breeze, since 7 Jul 2026 (page said £8.40 off-peak / £11.10 peak); operator reviews prices quarterly",
+      "official_value": "12.0",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "humber_bridge_car_toll",
+      "value": "2.0",
+      "unit": "GBP",
+      "law": "Humber Bridge",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.humberbridge.co.uk/plan-your-trip/toll-prices/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Car £2 each way since 2 Feb 2026, £1.50 for account holders (page said £1.50)",
+      "official_value": "2.0",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "tyne_tunnel_car_toll",
+      "value": "2.6",
+      "unit": "GBP",
+      "law": "River Tyne (Tunnels) (Revision of Tolls) Order 2026",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.tt2.co.uk/toll-changes-may-26/",
+      "status": "current",
+      "change_frequency": "annual (May)",
+      "note": "Car £2.60 from 1 May 2026 (page said £2.30)",
+      "official_value": "2.6",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "mersey_gateway_car_toll",
+      "value": "2.4",
+      "unit": "GBP",
+      "law": "Mersey Gateway",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://merseygateway.co.uk/toll-charges/",
+      "status": "current",
+      "change_frequency": "annual (April)",
+      "note": "Unregistered car £2.40 since April 2025 (page said £2.30)",
+      "official_value": "2.4",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "skilled_worker_english_level",
+      "value": "B2",
+      "unit": "CEFR",
+      "law": "Immigration Rules HC 1333",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/VisaPointsCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/skilled-worker-visa/knowledge-of-english",
+      "status": "current",
+      "change_frequency": "",
+      "note": "B2 for Skilled Worker / Scale-up / HPI applications from 8 Jan 2026 (pages said B1 and listed B1-only tests)",
+      "official_value": "B2",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
+    },
+    {
+      "key": "settlement_english_level",
+      "value": "B1",
+      "unit": "CEFR",
+      "law": "Immigration Rules HC 1691",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/statement-of-changes-to-the-immigration-rules-hc-1619-5-march-2026/statement-of-changes-to-the-immigration-rules-hc-1691-5-march-2026-accessible-version",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Settlement English B1 today; B2 for settlement applications on/after 26 March 2027 (HC 1691)",
+      "official_value": "B1",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26",
+      "changes_next_fy": "26 March 2027: settlement English rises to B2; update ilr-calculator and skilled-worker settlement prose/FAQ tense."
+    },
+    {
+      "key": "ilr_priority_service_fee",
+      "value": "500",
+      "unit": "GBP",
+      "law": "Home Office faster decision services",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/faster-decision-visa-settlement",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Priority £500 (usually within 5 working days), super priority £1,000 (by end of next working day); page said 8 weeks / same day",
+      "official_value": "500",
+      "confidence": "high",
+      "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
+      "verified_date": "2026-09-26",
+      "verify_method": "calkcheck-2026-09-26"
     }
   ],
   "status_summary": {

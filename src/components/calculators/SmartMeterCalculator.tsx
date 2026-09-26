@@ -43,7 +43,7 @@ export default function SmartMeterCalculator() {
             <span className="text-xs text-muted-foreground w-16 shrink-0">{item.watts}W</span>
             <input type="number" min="0" max="24" step="0.25" value={item.hours} onChange={(e) => updateHours(i, parseFloat(e.target.value) || 0)} className="w-20 rounded-lg border border-input bg-background px-2 py-1.5 text-sm text-center font-medium focus:outline-none focus:ring-2 focus:ring-ring" />
             <span className="text-xs text-muted-foreground">hrs/day</span>
-            <span className="text-sm font-medium ml-auto">{((item.watts * item.hours / 1000) * (r / 100)).toFixed(2)}p</span>
+            <span className="text-sm font-medium ml-auto">£{((item.watts * item.hours / 1000) * (r / 100)).toFixed(2)}</span>
           </div>
         ))}
       </div>

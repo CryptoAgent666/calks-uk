@@ -6,9 +6,14 @@ const TAPER_START = 260_000 // adjusted income
 const TAPER_END = 360_000
 const MIN_ALLOWANCE = 10_000
 const MONEY_PURCHASE_AA = 10_000
+const THRESHOLD_INCOME_LIMIT = 200_000 // taper needs threshold income over this as well
 
 function calculate(totalIncome: number, pensionContributions: number, isMPAA: boolean) {
-  const aa = isMPAA ? MONEY_PURCHASE_AA : calculateAA(totalIncome)
+  // Threshold income is net income less your own relief-at-source contributions. Adjusted income
+  // minus all contributions is never below it, so using that as the estimate never wrongly clears
+  // someone of the taper (e.g. £190k salary + £90k employer: adjusted £280k, threshold £190k, no taper).
+  const thresholdIncome = Math.max(0, totalIncome - pensionContributions)
+  const aa = isMPAA ? MONEY_PURCHASE_AA : calculateAA(totalIncome, thresholdIncome)
   const used = pensionContributions
   const remaining = Math.max(0, aa - used)
   const exceeded = used > aa
@@ -21,8 +26,8 @@ function calculate(totalIncome: number, pensionContributions: number, isMPAA: bo
   return { aa, used, remaining, exceeded, excessCharge, taxCharge, marginalRate: marginalRate * 100 }
 }
 
-function calculateAA(income: number) {
-  if (income <= TAPER_START) return ANNUAL_ALLOWANCE
+function calculateAA(income: number, thresholdIncome: number) {
+  if (thresholdIncome <= THRESHOLD_INCOME_LIMIT || income <= TAPER_START) return ANNUAL_ALLOWANCE
   if (income >= TAPER_END) return MIN_ALLOWANCE
   const reduction = Math.floor((income - TAPER_START) / 2)
   return Math.max(MIN_ALLOWANCE, ANNUAL_ALLOWANCE - reduction)
@@ -59,7 +64,7 @@ export default function PensionAnnualAllowanceCalculator() {
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Remaining</p><p className="text-lg font-bold">{formatCurrency(result.remaining)}</p></div>
         </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-          <p>Standard AA: £{ANNUAL_ALLOWANCE.toLocaleString()}. Tapers for adjusted income over £{TAPER_START.toLocaleString()} (min £{MIN_ALLOWANCE.toLocaleString()} at £{TAPER_END.toLocaleString()}+). MPAA: £{MONEY_PURCHASE_AA.toLocaleString()} if you've flexibly accessed pension.</p>
+          <p>Standard AA: £{ANNUAL_ALLOWANCE.toLocaleString()}. Tapers for adjusted income over £{TAPER_START.toLocaleString()} (min £{MIN_ALLOWANCE.toLocaleString()} at £{TAPER_END.toLocaleString()}+), but only if threshold income, roughly income excluding pension contributions, is also over £{THRESHOLD_INCOME_LIMIT.toLocaleString()}. MPAA: £{MONEY_PURCHASE_AA.toLocaleString()} if you've flexibly accessed pension.</p>
           <p className="mt-1">Unused allowance can be carried forward from the previous 3 tax years.</p>
         </div>
       </div>

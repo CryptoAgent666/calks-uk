@@ -1,5 +1,30 @@
 # CHANGELOG — Calks.uk
 
+## 2026-09-26 — Children's BMI on real centiles, Bank Rate, MTD deadlines, tolls
+
+`/calkcheck` data-currency pass over 20 calculators (report: `AUDIT-2026-09-26.md`).
+
+**Children's BMI.** The calculator compared BMI with a straight line and ignored sex, so a healthy
+10-year-old boy was called underweight. It now computes the exact centile from the UK-WHO/UK90
+reference used by NHS growth charts (RCPCH data), with the NHS 2nd/91st/98th cut-offs.
+
+**Bank of England base rate** is 3.75% since December 2025; six places still said 4.75% or 4.5%, so
+statutory late-payment interest showed 12.75% instead of 11.75%.
+
+**Making Tax Digital.** Quarterly updates are due on the 7th, not the 5th; the £20,000 band joins in
+April 2028; no penalty points for late quarterly updates in 2026/27; the End of Period Statement is gone.
+
+**Calculators corrected:** SIPP higher-rate relief (£2,000 → £1,500 a year on £500/month), side hustle
+(60% taper zone, 45% band), EV salary sacrifice (real lease input, exact BiK tax), annual allowance
+(£200,000 threshold income test), Housing Benefit (State Pension age allowance), solicitor fee (£526
+probate fee), home buying (full Land Registry scale), SDLT surcharge (not under £40,000), MTD (2028 tier).
+
+**Figures corrected:** Skilled Worker English B2 (since 8 Jan 2026) and settlement B2 from 26 Mar 2027,
+ILR priority timings and the domestic-abuse fee waiver, Dartford £3.50, M6 Toll £12, Humber £2, Tyne
+£2.60, Mersey £2.40, TV licence £180, prescription prepayment £32.05/£114.50, Housing Benefit £95.55,
+CIS late-return penalties, HL platform fee 0.35%, NCMP 2024/25, CPI 2024/2025, and worked examples
+on the mileage, freelance, side hustle, CIS, mortgage-rate, carer's allowance and EV pages.
+
 ## 2026-08-15 — Blind Person's Allowance, and the owner-manager comparisons
 
 Second pass of the same `/calkcheck` audit, extending the CALC-10 marginal-scale
