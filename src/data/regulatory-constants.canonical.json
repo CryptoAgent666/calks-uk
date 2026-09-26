@@ -9296,7 +9296,7 @@
       "source_url": "https://www.gov.uk/government/publications/changes-to-agricultural-property-relief-and-business-property-relief/agricultural-property-relief-and-business-property-relief-changes",
       "status": "current",
       "change_frequency": "",
-      "note": "From April 2026 first GBP1m combined BPR/APR retains 100%, above reduces to 50% (inheritance-tax-calculator)",
+      "note": "From April 2026 first GBP2.5m combined BPR/APR retains 100%, above reduces to 50% (inheritance-tax-calculator)",
       "official_value": "2500000",
       "confidence": "high",
       "freshness_note": "BPR/APR reform: from 6 April 2026 the allowance for the 100% rate of relief is £2.5m (50% relief above). Originally announced as £1m, but on 23 Dec 2025 the government increased it to £2,500,000 befor",
@@ -9428,7 +9428,7 @@
       "note": "InheritanceTaxCalculator: NIL_RATE_BAND constant (also a quick-amount button value)",
       "official_value": "325000",
       "confidence": "high",
-      "freshness_note": "NRB £325,000, frozen for 2026-27 and 2027-28 (extended freeze to 5 April 2030 per Autumn 2024/2025 measures)."
+      "freshness_note": "NRB £325,000, frozen for 2026-27 and 2027-28 (frozen to 5 April 2030 by Autumn Budget 2024, extended to 5 April 2031 by Budget 2025)."
     },
     {
       "key": "iht_pension_in_estate_start_date",
@@ -22281,7 +22281,7 @@
       "source_url": "https://www.gov.uk/recover-statutory-payments",
       "status": "current",
       "change_frequency": "",
-      "note": "maternity-pay-calculator: employers reclaim 92% of SMP (103% with Small Employers' Relief)",
+      "note": "maternity-pay-calculator: employers reclaim 92% of SMP (109% with Small Employers' Relief)",
       "official_value": "92",
       "confidence": "high",
       "freshness_note": "Standard employers reclaim 92% of SMP. Small employers (Class 1 NIC <= £45,000) reclaim 100% + 9% compensation (109%) for 2026-27. The 92% standard rate is unchanged."
