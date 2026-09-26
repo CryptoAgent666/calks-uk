@@ -10,7 +10,8 @@ function calculate(balance: number, rate: number, remainingYears: number, ercPct
   const erc = ercYearsLeft > 0 ? balance * (ercPct / 100) : 0
   const totalToPayOff = balance + erc
   const saving = totalRemaining - totalToPayOff
-  const worthIt = saving > erc
+  // saving already has the ERC taken off, so any positive figure means clearing the loan costs less
+  const worthIt = saving > 0
 
   return { monthly, totalRemaining, totalInterest, erc, totalToPayOff, saving, worthIt }
 }
@@ -39,7 +40,7 @@ export default function MortgageEarlyRepaymentCalculator() {
         <div><label className="block text-sm font-medium mb-2">ERC Years Left</label><input type="number" min="0" max="5" value={ercYears} onChange={(e) => setErcYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="ERC Years Left" /></div>
       </div>
 
-      {b > 0 && (
+      {b > 0 && y > 0 && (
         <div className="space-y-4 animate-fade-in-up">
           <div className={`rounded-2xl p-6 text-center ${result.worthIt ? 'bg-green-100 dark:bg-green-950' : 'bg-orange-100 dark:bg-orange-950'}`}>
             <p className="text-sm text-muted-foreground">{result.worthIt ? 'Paying off early saves money!' : result.erc > 0 ? 'ERC may make early repayment uneconomical' : 'Consider overpaying instead'}</p>
@@ -50,10 +51,11 @@ export default function MortgageEarlyRepaymentCalculator() {
               <tr className="border-b border-border/50"><td className="py-2">Balance to repay</td><td className="text-right tabular-nums">{formatCurrency(b)}</td></tr>
               {result.erc > 0 && <tr className="border-b border-border/50"><td className="py-2 text-destructive">Early Repayment Charge ({ercPct}%)</td><td className="text-right tabular-nums text-destructive">{formatCurrency(result.erc)}</td></tr>}
               <tr className="border-b border-border/50 font-medium"><td className="py-2">Total to pay off now</td><td className="text-right tabular-nums">{formatCurrency(result.totalToPayOff)}</td></tr>
-              <tr className="border-b border-border/50"><td className="py-2">vs keep paying ({y} years)</td><td className="text-right tabular-nums">{formatCurrency(result.totalRemaining)}</td></tr>
+              <tr className="border-b border-border/50"><td className="py-2">vs keep paying ({y} year{y === 1 ? '' : 's'})</td><td className="text-right tabular-nums">{formatCurrency(result.totalRemaining)}</td></tr>
               <tr className="border-b border-border/50"><td className="py-2 text-muted-foreground">Total interest remaining</td><td className="text-right tabular-nums text-muted-foreground">{formatCurrency(result.totalInterest)}</td></tr>
             </tbody>
           </table>
+          <p className="text-xs text-muted-foreground">This compares clearing the loan now with paying it off as scheduled. It doesn't count the interest the same cash could earn in savings, so compare the saving with that before you decide.</p>
         </div>
       )}
     </div>

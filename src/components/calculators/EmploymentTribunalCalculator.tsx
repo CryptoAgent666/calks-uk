@@ -13,7 +13,9 @@ function calculate(weeklyPay: number, age: number, yearsService: number, weeksLo
   // Basic award (same as statutory redundancy)
   let basicWeeks = 0
   for (let y = 0; y < years; y++) {
-    const ageAtYear = age - (years - y - 1)
+    // A year counts at the higher rate only if you were that age throughout it (ERA 1996 s162/s119),
+    // so each year is judged by your age at its start
+    const ageAtYear = age - (years - y)
     if (ageAtYear < 22) basicWeeks += 0.5
     else if (ageAtYear < 41) basicWeeks += 1
     else basicWeeks += 1.5
