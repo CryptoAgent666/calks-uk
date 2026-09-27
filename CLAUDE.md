@@ -51,7 +51,7 @@ The site hard-codes hundreds of government-set values. They are inventoried + fr
   `RATES_VERIFIED` in `src/data/site.ts`** (per-page "Rates verified" trust badge) → `npm run deploy`.
 
 ## Key UK context
-- Income-tax thresholds **frozen to 2028** (PA £12,570, basic-rate limit £37,700, higher £50,270, additional £125,140).
+- Income-tax and NI thresholds **frozen to April 2031** (Budget 2025 extended the 2028 freeze; PA £12,570, basic-rate limit £37,700, higher £50,270, additional £125,140; NI PT £12,570, UEL £50,270, ST £5,000). Scottish bands apply to taxable income, so they shift down when the PA tapers above £100k.
 - **Scotland has its own income-tax bands & rates** (starter 19 / basic 20 / intermediate 21 / higher 42 / advanced 45 / top 48%) — set annually via the Scottish Budget.
 - Employer (secondary) NI **15%** from Apr 2025 (secondary threshold £5,000).
 - SDLT (England/NI) from Apr 2025: residential nil-rate £125k, FTB relief to £300k (cap £500k), +5% additional-property surcharge.

@@ -582,6 +582,287 @@
    "was": "reclaim it from the Student Loans Company at year-end",
    "now": "refund only if annual income below the threshold",
    "what": "student loan bonus deduction (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "frozen until 2028",
+   "now": "frozen until April twenty thirty-one",
+   "what": "income_tax_ni_thresholds_freeze_end (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "thresholds are frozen to 2028",
+   "now": "frozen until April twenty thirty-one",
+   "what": "income_tax_ni_thresholds_freeze_end (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "no change until 2028",
+   "now": "frozen until April twenty thirty-one",
+   "what": "income_tax_ni_thresholds_freeze_end (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "up to about £80 a year",
+   "now": "student loan threshold gains by plan",
+   "what": "tax-year-comparison student loan (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "intermediate rate of 21% or above",
+   "now": "Scottish recipients may pay the intermediate rate",
+   "what": "marriage_allowance_recipient_limit_scotland (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "tapers away above £37,700",
+   "now": "MCA income limit thirty-nine thousand two hundred",
+   "what": "married_couples_allowance_income_limit (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "up to £1,260 total refund",
+   "now": "four back years at the full saving",
+   "what": "marriage allowance backdating (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "SOAVI",
+   "now": "Scotland and NI: cannot do work for which eyesight is essential",
+   "what": "blind persons allowance eligibility (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "0300 200 3300",
+   "now": "HMRC BPA line ending three three zero one",
+   "what": "blind persons allowance phone (calkcheck 2026-09-27 r4)",
+   "ctx": "Blind Person|BPA|registered blind|sight"
+  },
+  {
+   "was": "£108.55",
+   "now": "PIP enhanced daily living for this year",
+   "what": "pip_daily_living_enhanced_weekly (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "bases the charge on household income",
+   "now": "HICBC stays on individual adjusted net income",
+   "what": "hicbc_household_income_basis_date retired (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "roughly £328",
+   "now": "State Pension per NI year this year",
+   "what": "state pension per NI year (HICBC page) (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£34 Confirmation Statement",
+   "now": "confirmation statement fifty pounds online",
+   "what": "companies_house_confirmation_statement_fee (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£13 Companies House filing fee",
+   "now": "filing accounts is free",
+   "what": "companies_house_confirmation_statement_fee (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "balance sheet under £5.1m",
+   "now": "balance sheet not more than seven and a half million",
+   "what": "off_payroll_small_company_balance_sheet (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "capped at £8,096",
+   "now": "HCAS inner London maximum for this year",
+   "what": "nhs_hcas_inner_london (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "capped at £5,329",
+   "now": "HCAS outer London maximum for this year",
+   "what": "nhs_hcas_inner_london (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "5.2% to 13.5%",
+   "now": "NHS pension tiers up to twelve and a half percent",
+   "what": "nhs_pension_employee_tiers_2026_27 (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£37,338",
+   "now": "Band six example on this year's pay points",
+   "what": "nhs pay example (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "removes roughly £1,500",
+   "now": "eight bank holidays at the example rate",
+   "what": "hourly-to-salary bank holidays (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "From April 2024 some employers have had to match",
+   "now": "no statutory duty to match enhanced pay",
+   "what": "shared parental enhanced pay (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "14 weeks where the child is adopted",
+   "now": "adopters: twenty-six weeks by the matching week",
+   "what": "shared parental adopters (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "The net cost is £180 lower",
+   "now": "salary sacrifice vs relief at source gap of twenty pounds",
+   "what": "pension relief sacrifice comparison (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "leaves £181,000",
+   "now": "fee drag projection on the calculator's method",
+   "what": "pension consolidation projection (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "exit penalties of 1 to 5%",
+   "now": "exit charges capped at one percent",
+   "what": "pension_exit_charge_cap_over_55 (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "0.109%",
+   "now": "compounded daily EAR rate",
+   "what": "overdraft daily rate (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£32.70",
+   "now": "overdraft month cost on compounded EAR",
+   "what": "overdraft example (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£250 interest-free for the first 12 months",
+   "now": "Nationwide fifty pound buffer",
+   "what": "overdraft Nationwide (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "Starling Bank charges 15% APR",
+   "now": "Starling tiered EAR by credit score",
+   "what": "overdraft Starling (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£81,500",
+   "now": "off-payroll example on the calculator's figures",
+   "what": "ir35 example (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "20 years 5 months",
+   "now": "overpayment example on the calculator's figures",
+   "what": "mortgage overpayment prose (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "4 years 7 months off the term",
+   "now": "overpayment example on the calculator's figures",
+   "what": "mortgage overpayment prose (repayment page) (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£44,816",
+   "now": "daily compounding result",
+   "what": "compound interest daily (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£17,816",
+   "now": "real value after inflation",
+   "what": "compound interest real value (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "has been extended to 2028",
+   "now": "BUS funded under the Warm Homes Plan",
+   "what": "boiler_upgrade_scheme_grant (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£2,050 for a couple",
+   "now": "Help with Fees couple limit for this year",
+   "what": "help_with_fees_max_income_couple (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£2,050 as a couple",
+   "now": "Help with Fees couple limit for this year",
+   "what": "help_with_fees_max_income_couple (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "slightly cheaper than paper",
+   "now": "one fee scale online and on paper",
+   "what": "court fee online vs paper (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "usually listed within 6 months",
+   "now": "median weeks to small claims trial",
+   "what": "small_claims_median_weeks_to_trial (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "usually held within 6 months",
+   "now": "median weeks to small claims trial",
+   "what": "small_claims_median_weeks_to_trial (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "rises 4-7% for every year",
+   "now": "critical illness age loading per source",
+   "what": "critical illness age (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "Estimated monthly premium: £80-£120",
+   "now": "critical illness example on the calculator",
+   "what": "critical illness example (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "a rate frozen since 2011",
+   "now": "duty since the March cut, extended",
+   "what": "fuel_duty_per_litre (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "2nd-highest fuel taxes in Europe",
+   "now": "no unverified ranking",
+   "what": "fuel-cost prose (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "typical prices are about £1.45 a litre",
+   "now": "DESNZ weekly average dated",
+   "what": "pump_price_petrol_ppl (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "At £1.40 a litre that tankful",
+   "now": "DESNZ weekly average dated",
+   "what": "pump_price_petrol_ppl (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "burns 1,365 litres and costs £1,980",
+   "now": "EV savings petrol side at current price",
+   "what": "pump_price_petrol_ppl (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£1.42 a litre",
+   "now": "DESNZ weekly average dated",
+   "what": "pump_price_petrol_ppl (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£1.42/L",
+   "now": "DESNZ weekly average dated",
+   "what": "pump_price_petrol_ppl (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "useState('135')",
+   "now": "current pump price default",
+   "what": "pump_price_petrol_ppl components (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£9,013.80",
+   "now": "Scottish fifty-thousand example on this year's bands",
+   "what": "scottish_bands_taxable_income_2026_27 (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£9,014",
+   "now": "Scottish fifty-thousand example on this year's bands",
+   "what": "scottish_bands_taxable_income_2026_27 (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£56,398",
+   "now": "Scottish one-fifty example with tapered bands",
+   "what": "scottish_bands_taxable_income_2026_27 (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£30,764",
+   "now": "Scottish one-hundred example on this year's bands",
+   "what": "scottish_bands_taxable_income_2026_27 (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "nets £37,486",
+   "now": "net after income tax and NI",
+   "what": "cost-of-living net pay (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "£4k of mortgage interest",
+   "now": "interest at the calculator's rate",
+   "what": "rental/btl gearing example (calkcheck 2026-09-27 r4)"
   }
  ]
 }

@@ -2,6 +2,8 @@ import { useState, useMemo } from 'react'
 import { formatCurrency, ukIncomeTax, ukCorporationTax, ukDividendTax } from '@/utils'
 
 // Simplified comparison at different profit levels
+const ACCOUNTANCY = 1_200
+
 function calculate() {
   const profits = [20_000, 30_000, 40_000, 50_000, 60_000, 75_000, 100_000]
   return profits.map(profit => {
@@ -17,13 +19,15 @@ function calculate() {
     // past the basic band — charging a flat 25% and a flat 10.75% overstated the
     // tax bill at the low end and understated it at the high end, which is the
     // difference this whole table exists to show.
+    // Accountancy is a company expense, so it comes off profit before
+    // Corporation Tax rather than out of the director's post-tax dividends.
     const ltdSalary = 12_570
     const ltdErNI = Math.max(0, (ltdSalary - 5_000) * 0.15)
-    const ltdProfit = profit - ltdSalary - ltdErNI
+    const ltdProfit = profit - ltdSalary - ltdErNI - ACCOUNTANCY
     const ltdCorpTax = ukCorporationTax(ltdProfit)
     const ltdDividends = ltdProfit - ltdCorpTax
     const ltdDivTax = ukDividendTax(ltdDividends, ltdSalary)
-    const ltdTotal = ltdCorpTax + ltdDivTax + ltdErNI + 1200 // +accountancy
+    const ltdTotal = ltdCorpTax + ltdDivTax + ltdErNI + ACCOUNTANCY
 
     return { profit, stTakeHome: profit - stTotal, ltdTakeHome: profit - ltdTotal, stTotal, ltdTotal, saving: (profit - ltdTotal) - (profit - stTotal) }
   })
@@ -49,7 +53,7 @@ export default function SoleTraderVsLtdComparisonCalculator() {
         </table>
       </div>
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p>Ltd assumes: £12,570 salary + dividends, ~£1,200 accountancy. Since Class 4 NI was cut to 6% (April 2024), the limited-company advantage is much smaller than it used to be — at these assumptions a sole trader keeps more up to around £90K, with Ltd only edging ahead near £100K profit. The gap widens at higher profits. Always weigh IR35, mortgage implications and the extra admin/accountancy burden — and check the figures against your own circumstances.</p>
+        <p>Ltd assumes: £12,570 salary (£1,135.50 employer NI) with the rest drawn as dividends, and £1,200 accountancy deducted before Corporation Tax. Since Class 4 NI was cut to 6% (April 2024), a sole trader keeps more at every profit level in this table when all the profit is drawn out: £2,274 more at £50K and £4,668 more at £100K. A company pays off mainly when profit is left in it or paid into a pension. Always weigh IR35, mortgage implications and the extra admin, and check the figures against your own circumstances.</p>
       </div>
     </div>
   )

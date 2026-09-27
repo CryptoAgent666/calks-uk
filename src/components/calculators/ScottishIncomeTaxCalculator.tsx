@@ -5,14 +5,18 @@ import { formatCurrency, formatPercent } from '@/utils'
 const PERSONAL_ALLOWANCE = 12_570
 const PA_TAPER_START = 100_000
 
+// Bands are widths of TAXABLE income (after the Personal Allowance), as HMRC
+// sets them: starter up to £3,967, basic to £16,956, intermediate to £31,092,
+// higher to £62,430, advanced to £125,140, top above. With the full allowance
+// these match £16,537 / £29,526 / £43,662 / £75,000 of gross pay, but when the
+// allowance tapers above £100,000 every threshold moves down with it.
 const SCOTTISH_BANDS = [
-  { name: 'Personal Allowance (0%)', rate: 0 },
-  { name: 'Starter Rate (19%)', rate: 0.19, from: 12_570, to: 16_537 },
-  { name: 'Basic Rate (20%)', rate: 0.20, from: 16_537, to: 29_526 },
-  { name: 'Intermediate Rate (21%)', rate: 0.21, from: 29_526, to: 43_662 },
-  { name: 'Higher Rate (42%)', rate: 0.42, from: 43_662, to: 75_000 },
-  { name: 'Advanced Rate (45%)', rate: 0.45, from: 75_000, to: 125_140 },
-  { name: 'Top Rate (48%)', rate: 0.48, from: 125_140, to: Infinity },
+  { name: 'Starter Rate (19%)', rate: 0.19, width: 3_967 },
+  { name: 'Basic Rate (20%)', rate: 0.20, width: 12_989 },
+  { name: 'Intermediate Rate (21%)', rate: 0.21, width: 14_136 },
+  { name: 'Higher Rate (42%)', rate: 0.42, width: 31_338 },
+  { name: 'Advanced Rate (45%)', rate: 0.45, width: 62_710 },
+  { name: 'Top Rate (48%)', rate: 0.48, width: Infinity },
 ]
 
 function calculate(gross: number) {
@@ -27,19 +31,10 @@ function calculate(gross: number) {
   // Personal Allowance band
   breakdown.push({ name: 'Personal Allowance (0%)', taxable: Math.min(gross, pa), tax: 0, rate: 0 })
 
+  let remaining = Math.max(0, gross - pa)
   for (const band of SCOTTISH_BANDS) {
-    if (band.rate === 0) continue
-    const adjustedFrom = band.from <= PERSONAL_ALLOWANCE ? pa : band.from
-    if (gross <= adjustedFrom) {
-      breakdown.push({ name: band.name, taxable: 0, tax: 0, rate: band.rate })
-      continue
-    }
-    const to = band.to === Infinity ? gross : Math.min(gross, band.to)
-    const taxable = to - adjustedFrom
-    if (taxable <= 0) {
-      breakdown.push({ name: band.name, taxable: 0, tax: 0, rate: band.rate })
-      continue
-    }
+    const taxable = Math.min(remaining, band.width)
+    remaining -= taxable
     const tax = taxable * band.rate
     totalTax += tax
     breakdown.push({ name: band.name, taxable, tax, rate: band.rate })

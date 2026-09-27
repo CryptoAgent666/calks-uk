@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-// Civil court fees England & Wales (EX50, current from Nov 2025)
+// Civil court fees England & Wales (EX50; issue fees checked against gov.uk/make-court-claim-for-money/court-fees, 27 Sep 2026)
 const MONEY_CLAIM_FEES = [
   { upTo: 300, fee: 35 },
   { upTo: 500, fee: 50 },
@@ -74,8 +74,8 @@ export default function CourtFeeCalculator() {
             <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Total Fees</p><p className="text-xl font-bold text-primary">{formatCurrency(result.totalFees)}</p></div>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>Court fees for money claims in England & Wales. Fees may differ for other claim types.</p>
-            <p className="mt-1">Fee remission (Help with Fees) may be available if on low income or benefits.</p>
+            <p>Court fees for money claims in England & Wales. The same fees apply online (Money Claim Online) and on paper. Fees differ for other claim types.</p>
+            <p className="mt-1">Help with Fees may reduce or waive the fee on benefits or a low income: gross monthly income up to £1,420 single or £2,130 for a couple, plus allowances for children, and savings under the limit for your fee (£4,250 for fees up to £1,420). This calculator does not check eligibility.</p>
           </div>
         </div>
       )}

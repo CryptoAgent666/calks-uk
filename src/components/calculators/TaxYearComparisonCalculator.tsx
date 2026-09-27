@@ -10,9 +10,12 @@ const PA_TAPER = 100_000
 const NI_PT = 12_570
 const NI_UEL = 50_270
 
+// Scottish bands are set on TAXABLE income (after the Personal Allowance), so
+// they are stored here as upper limits of taxable income. When the allowance
+// tapers above £100k every Scottish threshold moves down with it.
 interface YearParams {
   label: string
-  scotBands: { rate: number; from: number; to: number }[]
+  scotBands: { rate: number; upTo: number }[]
   slPlans: Record<string, { threshold: number; rate: number }>
   divBasic: number
   divHigher: number
@@ -21,13 +24,14 @@ interface YearParams {
 
 const Y2526: YearParams = {
   label: '2025/26',
+  // starter to £2,827, basic to £14,921 (= £15,397 / £27,491 of gross pay)
   scotBands: [
-    { rate: 0.19, from: 12_570, to: 15_397 },
-    { rate: 0.20, from: 15_397, to: 27_491 },
-    { rate: 0.21, from: 27_491, to: 43_662 },
-    { rate: 0.42, from: 43_662, to: 75_000 },
-    { rate: 0.45, from: 75_000, to: 125_140 },
-    { rate: 0.48, from: 125_140, to: Infinity },
+    { rate: 0.19, upTo: 2_827 },
+    { rate: 0.20, upTo: 14_921 },
+    { rate: 0.21, upTo: 31_092 },
+    { rate: 0.42, upTo: 62_430 },
+    { rate: 0.45, upTo: 125_140 },
+    { rate: 0.48, upTo: Infinity },
   ],
   slPlans: {
     none: { threshold: 0, rate: 0 },
@@ -44,13 +48,14 @@ const Y2526: YearParams = {
 
 const Y2627: YearParams = {
   label: '2026/27',
+  // starter to £3,967, basic to £16,956 (= £16,537 / £29,526 of gross pay)
   scotBands: [
-    { rate: 0.19, from: 12_570, to: 16_537 },
-    { rate: 0.20, from: 16_537, to: 29_526 },
-    { rate: 0.21, from: 29_526, to: 43_662 },
-    { rate: 0.42, from: 43_662, to: 75_000 },
-    { rate: 0.45, from: 75_000, to: 125_140 },
-    { rate: 0.48, from: 125_140, to: Infinity },
+    { rate: 0.19, upTo: 3_967 },
+    { rate: 0.20, upTo: 16_956 },
+    { rate: 0.21, upTo: 31_092 },
+    { rate: 0.42, upTo: 62_430 },
+    { rate: 0.45, upTo: 125_140 },
+    { rate: 0.48, upTo: Infinity },
   ],
   slPlans: {
     none: { threshold: 0, rate: 0 },
@@ -67,26 +72,33 @@ const Y2627: YearParams = {
 
 type Region = 'ruk' | 'scotland'
 
-function taperedPA(income: number): number {
-  if (income <= PA_TAPER) return PA
-  return Math.max(0, PA - Math.floor((income - PA_TAPER) / 2))
+// UK basic-rate band and additional-rate threshold, both in taxable income.
+// Dividends use these UK bands for Scottish taxpayers too.
+const BASIC_BAND = 37_700
+const ADDITIONAL_THRESHOLD = 125_140
+const DIVIDEND_ALLOWANCE = 500
+
+// The taper is based on adjusted net income, which includes dividends.
+function taperedPA(totalIncome: number): number {
+  if (totalIncome <= PA_TAPER) return PA
+  return Math.max(0, PA - Math.floor((totalIncome - PA_TAPER) / 2))
 }
 
-function rukTax(gross: number): number {
-  const pa = taperedPA(gross)
-  if (gross <= pa) return 0
-  if (gross <= 50_270) return (gross - pa) * 0.20
-  if (gross <= 125_140) return 37_700 * 0.20 + (gross - pa - 37_700) * 0.40
-  return 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (gross - 125_140) * 0.45
+function rukTax(taxable: number): number {
+  return (
+    Math.min(taxable, BASIC_BAND) * 0.20 +
+    Math.max(0, Math.min(taxable, ADDITIONAL_THRESHOLD) - BASIC_BAND) * 0.40 +
+    Math.max(0, taxable - ADDITIONAL_THRESHOLD) * 0.45
+  )
 }
 
-function scotTax(gross: number, bands: YearParams['scotBands']): number {
-  const pa = taperedPA(gross)
+function scotTax(taxable: number, bands: YearParams['scotBands']): number {
   let tax = 0
+  let lower = 0
   for (const b of bands) {
-    const from = Math.max(b.from <= PA ? pa : b.from, pa)
-    if (gross <= from) continue
-    tax += (Math.min(gross, b.to) - from) * b.rate
+    if (taxable <= lower) break
+    tax += (Math.min(taxable, b.upTo) - lower) * b.rate
+    lower = b.upTo
   }
   return tax
 }
@@ -97,39 +109,28 @@ function ni(gross: number): number {
   return (NI_UEL - NI_PT) * 0.08 + (gross - NI_UEL) * 0.02
 }
 
-// Dividend tax stacked on top of salary (allowance £500 both years)
-function divTax(salary: number, dividends: number, y: YearParams): number {
-  if (dividends <= 0) return 0
-  const allowance = 500
-  const taxableDiv = Math.max(0, dividends - allowance)
-  let tax = 0
-  let position = Math.max(salary, taperedPA(salary + dividends))
-  // simplified banding by total-income position (rUK bands; Scottish taxpayers
-  // pay rUK rates on dividends too)
-  let remaining = taxableDiv
-  const bandsEnds: [number, number][] = [
-    [50_270, y.divBasic],
-    [125_140, y.divHigher],
-    [Infinity, y.divAdditional],
-  ]
-  for (const [end, rate] of bandsEnds) {
-    if (remaining <= 0) break
-    const room = Math.max(0, end - Math.max(position, taperedPA(salary + dividends)))
-    const slice = Math.min(remaining, room)
-    tax += slice * rate
-    remaining -= slice
-    position += slice
-  }
-  return tax
+// Dividends sit on top of salary. The £500 allowance is taxed at 0% but still
+// uses up band space, so it counts towards the position before rates apply.
+function divTax(taxableSalary: number, dividendsAfterPA: number, y: YearParams): number {
+  const taxableDiv = Math.max(0, dividendsAfterPA - DIVIDEND_ALLOWANCE)
+  if (taxableDiv <= 0) return 0
+  const used = taxableSalary + Math.min(DIVIDEND_ALLOWANCE, dividendsAfterPA)
+  const inBasic = Math.min(taxableDiv, Math.max(0, BASIC_BAND - used))
+  const inHigher = Math.min(taxableDiv - inBasic, Math.max(0, ADDITIONAL_THRESHOLD - Math.max(used, BASIC_BAND)))
+  const inAdditional = taxableDiv - inBasic - inHigher
+  return inBasic * y.divBasic + inHigher * y.divHigher + inAdditional * y.divAdditional
 }
 
 function yearResult(salary: number, dividends: number, region: Region, plan: string, y: YearParams) {
-  const tax = region === 'scotland' ? scotTax(salary, y.scotBands) : rukTax(salary)
+  const pa = taperedPA(salary + dividends)
+  const taxableSalary = Math.max(0, salary - pa)
+  const dividendsAfterPA = Math.max(0, dividends - Math.max(0, pa - salary))
+  const tax = region === 'scotland' ? scotTax(taxableSalary, y.scotBands) : rukTax(taxableSalary)
   const nic = ni(salary)
   const sl = y.slPlans[plan] && salary > y.slPlans[plan].threshold
     ? (salary - y.slPlans[plan].threshold) * y.slPlans[plan].rate
     : 0
-  const dv = divTax(salary, dividends, y)
+  const dv = divTax(taxableSalary, dividendsAfterPA, y)
   const takeHome = salary + dividends - tax - nic - sl - dv
   return { tax, nic, sl, dv, takeHome }
 }
@@ -204,7 +205,7 @@ export default function TaxYearComparisonCalculator() {
             </p>
             <p className="text-sm text-muted-foreground mt-1">
               {Math.abs(result.delta) < 0.01
-                ? 'No change — rUK thresholds are frozen to 2028'
+                ? 'No change: rUK thresholds are frozen until April 2031'
                 : `${formatCurrency(Math.abs(result.delta) / 12)}/month ${result.delta >= 0 ? 'better' : 'worse'} off`}
             </p>
           </div>
@@ -238,8 +239,8 @@ export default function TaxYearComparisonCalculator() {
 
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-1">
             <p className="font-medium text-foreground">What actually changed in April 2026:</p>
-            <p>• rUK income tax and NI thresholds — frozen (no change until 2028; inflation quietly raises your real tax burden — "fiscal drag")</p>
-            <p>• Scottish starter/basic bands uprated (~£1,100 more taxed at 19–20% instead of 21%)</p>
+            <p>• rUK income tax and NI thresholds frozen until April 2031, so inflation quietly raises your real tax burden ("fiscal drag")</p>
+            <p>• Scottish starter and basic bands raised: £1,140 more taxed at 19% instead of 20% and £2,035 more at 20% instead of 21%, worth up to £31.75 a year</p>
             <p>• Student loan thresholds up: Plan 1 → £26,900, Plan 2 → £29,385, Plan 4 → £33,795 (repayments fall slightly)</p>
             <p>• Dividend tax +2pp: basic 10.75%, higher 35.75% (Budget 2025)</p>
             <p>• National Living Wage £12.21 → £12.71/hour</p>

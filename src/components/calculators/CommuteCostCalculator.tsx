@@ -31,12 +31,12 @@ export default function CommuteCostCalculator() {
   const [days, setDays] = useState('5')
   const [weeks, setWeeks] = useState('48')
   const [mode, setMode] = useState('car')
-  const [fuel, setFuel] = useState('135')
+  const [fuel, setFuel] = useState('172') // UK average petrol, DESNZ w/c 21 Sep 2026 (172.01p)
   const [mpg, setMpg] = useState('40')
   const [train, setTrain] = useState('200')
   const [bus, setBus] = useState('70')
 
-  const result = useMemo(() => calculate(parseFloat(distance)||0, parseInt(days)||5, parseInt(weeks)||48, mode, parseFloat(fuel)||135, parseFloat(mpg)||40, parseFloat(train)||0, parseFloat(bus)||0), [distance, days, weeks, mode, fuel, mpg, train, bus])
+  const result = useMemo(() => calculate(parseFloat(distance)||0, parseInt(days)||5, parseInt(weeks)||48, mode, parseFloat(fuel)||172, parseFloat(mpg)||40, parseFloat(train)||0, parseFloat(bus)||0), [distance, days, weeks, mode, fuel, mpg, train, bus])
 
   return (
     <div className="space-y-6">

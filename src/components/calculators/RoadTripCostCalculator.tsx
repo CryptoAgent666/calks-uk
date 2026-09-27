@@ -20,14 +20,14 @@ function calculate(distanceMiles: number, mpg: number, fuelPriceP: number, passe
 export default function RoadTripCostCalculator() {
   const [distance, setDistance] = useState('300')
   const [mpg, setMpg] = useState('40')
-  const [fuel, setFuel] = useState('135')
+  const [fuel, setFuel] = useState('172') // UK average petrol, DESNZ w/c 21 Sep 2026 (172.01p)
   const [passengers, setPassengers] = useState('2')
   const [tolls, setTolls] = useState('0')
   const [parking, setParking] = useState('10')
 
   const d = parseFloat(distance) || 0
   const m = parseFloat(mpg) || 40
-  const f = parseFloat(fuel) || 135
+  const f = parseFloat(fuel) || 172
   const p = parseInt(passengers) || 1
   const t = parseFloat(tolls) || 0
   const pk = parseFloat(parking) || 0
@@ -38,7 +38,7 @@ export default function RoadTripCostCalculator() {
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         <div><label className="block text-sm font-medium mb-2">Distance (miles)</label><input type="number" min="1" max="2000" value={distance} onChange={(e) => setDistance(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Distance (miles)" /></div>
         <div><label className="block text-sm font-medium mb-2">Your MPG</label><input type="number" min="10" max="70" value={mpg} onChange={(e) => setMpg(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Your MPG" /></div>
-        <div><label className="block text-sm font-medium mb-2">Fuel Price (p/litre)</label><input type="number" min="100" max="200" value={fuel} onChange={(e) => setFuel(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Fuel Price (p/litre)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Fuel Price (p/litre)</label><input type="number" min="100" max="300" value={fuel} onChange={(e) => setFuel(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Fuel Price (p/litre)" /></div>
         <div><label className="block text-sm font-medium mb-2">People in Car</label><input type="number" min="1" max="8" value={passengers} onChange={(e) => setPassengers(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="People in Car" /></div>
         <div><label className="block text-sm font-medium mb-2">Tolls (£)</label><input type="number" min="0" value={tolls} onChange={(e) => setTolls(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Tolls (£)" /></div>
         <div><label className="block text-sm font-medium mb-2">Parking (£)</label><input type="number" min="0" value={parking} onChange={(e) => setParking(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Parking (£)" /></div>
