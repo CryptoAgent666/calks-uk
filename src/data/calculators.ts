@@ -295,7 +295,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'mortgage-overpayment-calculator',
     title: 'Mortgage Overpayment Calculator',
-    description: 'See how much overpaying your UK mortgage saves. £100/month extra can cut a 25-year mortgage by 5+ years. Interest savings calculator updated 2026.',
+    description: 'See how much overpaying your UK mortgage saves. £100/month extra on a £200k, 25-year mortgage at 5% cuts 3½ years and saves £24,505 in interest.',
     category: 'mortgage',
     icon: 'Home',
     keywords: ['mortgage overpayment', 'overpay mortgage', 'pay off mortgage early'],

@@ -20,7 +20,7 @@ function calculate(annualMiles: number, petrolMpg: number, petrolPriceP: number,
   const totalAnnualSaving = fuelSaving + vedSaving + servicingSaving
 
   // CO2
-  const petrolCO2 = annualMiles * 0.17 // ~170g/km avg
+  const petrolCO2 = annualMiles * 1.609344 * 0.17 // ~170g/km avg, converted to miles
   const evCO2 = evKwh * 0.15 // ~150g/kWh UK grid
 
   return { petrolCost, evCost, fuelSaving, vedSaving, servicingSaving, totalAnnualSaving, petrolCO2: petrolCO2/1000, evCO2: evCO2/1000, co2Saving: (petrolCO2-evCO2)/1000 }
@@ -29,20 +29,20 @@ function calculate(annualMiles: number, petrolMpg: number, petrolPriceP: number,
 export default function EVSavingsCalculator() {
   const [miles, setMiles] = useState('10000')
   const [mpg, setMpg] = useState('40')
-  const [petrolP, setPetrolP] = useState('135')
+  const [petrolP, setPetrolP] = useState('172') // UK average petrol, DESNZ w/c 21 Sep 2026 (172.01p)
   const [evEff, setEvEff] = useState('3.5')
   const [homeElec, setHomeElec] = useState('26.11')
   const [publicElec, setPublicElec] = useState('70')
   const [homePct, setHomePct] = useState('80')
 
-  const result = useMemo(() => calculate(parseFloat(miles)||0, parseFloat(mpg)||40, parseFloat(petrolP)||135, parseFloat(evEff)||3.5, parseFloat(homeElec)||26.11, parseFloat(publicElec)||70, parseFloat(homePct)||80), [miles, mpg, petrolP, evEff, homeElec, publicElec, homePct])
+  const result = useMemo(() => calculate(parseFloat(miles)||0, parseFloat(mpg)||40, parseFloat(petrolP)||172, parseFloat(evEff)||3.5, parseFloat(homeElec)||26.11, parseFloat(publicElec)||70, parseFloat(homePct)||80), [miles, mpg, petrolP, evEff, homeElec, publicElec, homePct])
 
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div><label className="block text-sm font-medium mb-2">Annual Miles</label><input type="number" min="1000" max="40000" step="1000" value={miles} onChange={(e) => setMiles(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Miles" /></div>
         <div><label className="block text-sm font-medium mb-2">Current MPG</label><input type="number" min="15" max="70" value={mpg} onChange={(e) => setMpg(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Current MPG" /></div>
-        <div><label className="block text-sm font-medium mb-2">Petrol (p/litre)</label><input type="number" min="100" max="200" value={petrolP} onChange={(e) => setPetrolP(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Petrol (p/litre)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Petrol (p/litre)</label><input type="number" min="100" max="300" value={petrolP} onChange={(e) => setPetrolP(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Petrol (p/litre)" /></div>
         <div><label className="block text-sm font-medium mb-2">EV Efficiency (mi/kWh)</label><input type="number" min="2" max="5" step="0.1" value={evEff} onChange={(e) => setEvEff(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="EV Efficiency (mi/kWh)" /></div>
         <div><label className="block text-sm font-medium mb-2">Home Elec (p/kWh)</label><input type="number" min="0" step="0.1" value={homeElec} onChange={(e) => setHomeElec(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Home Elec (p/kWh)" /></div>
         <div><label className="block text-sm font-medium mb-2">Public (p/kWh)</label><input type="number" min="0" step="1" value={publicElec} onChange={(e) => setPublicElec(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Public (p/kWh)" /></div>

@@ -9,14 +9,17 @@ const HICBC_END = 80_000
 function calculate(children: number, income: number, claimBenefit: boolean) {
   const totalBenefit = (children >= 1 ? FIRST_CHILD : 0) + Math.max(0, children - 1) * ADDITIONAL_CHILD
 
+  // ITEPA 2003 s681C(3): 1% per FULL £200 over £60,000 (percentage rounded
+  // down to a whole number), and both the benefit total and the charge are
+  // rounded down to whole pounds.
   let clawbackPct = 0
   if (income > HICBC_START && income < HICBC_END) {
-    clawbackPct = ((income - HICBC_START) / (HICBC_END - HICBC_START)) * 100
+    clawbackPct = Math.floor((income - HICBC_START) / ((HICBC_END - HICBC_START) / 100))
   } else if (income >= HICBC_END) {
     clawbackPct = 100
   }
 
-  const clawback = totalBenefit * (clawbackPct / 100)
+  const clawback = Math.floor(Math.floor(totalBenefit) * clawbackPct / 100)
   const netBenefit = totalBenefit - clawback
   const worthClaiming = netBenefit > 0 || claimBenefit
 

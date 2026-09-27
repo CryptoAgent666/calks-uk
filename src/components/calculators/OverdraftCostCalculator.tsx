@@ -1,11 +1,17 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-function calculate(amount: number, apr: number, days: number) {
-  const dailyRate = apr / 100 / 365
-  const interest = amount * dailyRate * days
-  const eac = amount * (apr / 100) // equivalent annual cost
-  return { interest, dailyRate, eac, dailyCost: interest / days, monthlyCost: interest / days * 30.44 }
+// UK overdraft rates are quoted as an EAR, which already includes the effect of
+// interest being charged monthly. The cost over d days is therefore
+// amount × ((1 + EAR)^(d/365) − 1). Treating the EAR as a simple rate
+// (EAR ÷ 365 × days) overstates a 30-day cost by about 17%.
+function calculate(amount: number, ear: number, days: number) {
+  const r = ear / 100
+  const growth = (d: number) => Math.pow(1 + r, d / 365) - 1
+  const dailyRate = growth(1)
+  const interest = days > 0 ? amount * growth(days) : 0
+  const eac = amount * r // a full year at the EAR
+  return { interest, dailyRate, eac, dailyCost: amount * dailyRate, monthlyCost: amount * growth(365 / 12) }
 }
 
 export default function OverdraftCostCalculator() {
@@ -22,7 +28,7 @@ export default function OverdraftCostCalculator() {
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div><label className="block text-sm font-medium mb-2">Overdraft Amount</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Overdraft Amount" /></div></div>
-        <div><label className="block text-sm font-medium mb-2">APR (%)</label><input type="number" min="0" max="80" step="0.1" value={apr} onChange={(e) => setApr(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="APR (%)" /><p className="text-xs text-muted-foreground mt-1">Most UK banks: ~39.9% EAR</p></div>
+        <div><label className="block text-sm font-medium mb-2">Overdraft Rate, EAR (%)</label><input type="number" min="0" max="80" step="0.1" value={apr} onChange={(e) => setApr(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Overdraft rate, EAR (%)" /><p className="text-xs text-muted-foreground mt-1">Many UK banks: 39.9% EAR</p></div>
         <div><label className="block text-sm font-medium mb-2">Number of Days</label><input type="number" min="1" max="365" value={days} onChange={(e) => setDays(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Number of Days" /></div>
       </div>
 
@@ -34,8 +40,8 @@ export default function OverdraftCostCalculator() {
             <p className="text-sm text-muted-foreground mt-1">{formatCurrency(result.dailyCost)}/day &middot; ~{formatCurrency(result.monthlyCost)}/month</p>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>At {r}% APR, borrowing {formatCurrency(a)} for a full year costs {formatCurrency(result.eac)}.</p>
-            <p className="mt-1">Since 2020, most UK banks charge a single simple interest rate on overdrafts (typically ~39.9% EAR).</p>
+            <p>At {r}% EAR, borrowing {formatCurrency(a)} for a full year costs {formatCurrency(result.eac)}. Daily rate: {(result.dailyRate * 100).toFixed(4)}%.</p>
+            <p className="mt-1">Since April 2020, UK banks charge a single annual interest rate on overdrafts, quoted as an EAR that includes monthly compounding. Deduct any interest-free buffer from the amount first.</p>
           </div>
         </div>
       )}

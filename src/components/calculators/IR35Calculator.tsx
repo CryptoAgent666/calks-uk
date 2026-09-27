@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency, formatPercent, ukIncomeTax, ukCorporationTax, ukDividendTax } from '@/utils'
+import { formatCurrency, formatPercent, ukIncomeTax, ukPersonalAllowance, ukCorporationTax, ukDividendTax } from '@/utils'
 
 function calculateOutside(dayRate: number, daysPerYear: number, expenses: number) {
   const revenue = dayRate * daysPerYear
@@ -14,10 +14,14 @@ function calculateOutside(dayRate: number, daysPerYear: number, expenses: number
   const corpTax = ukCorporationTax(corpProfit)
   const dividendIncome = corpProfit - corpTax
   const dividendTax = ukDividendTax(dividendIncome, optimalSalary)
+  // The salary is only tax-free while the Personal Allowance covers it. Salary
+  // plus dividends over £100,000 tapers the allowance (gone at £125,140), and
+  // the uncovered part of the £12,570 salary is taxed at 20%: up to £2,514.
+  const salaryTax = ukIncomeTax(optimalSalary, ukPersonalAllowance(optimalSalary + dividendIncome))
 
-  const takeHome = optimalSalary + dividendIncome - dividendTax
+  const takeHome = optimalSalary - salaryTax + dividendIncome - dividendTax
 
-  return { revenue, profit, corpTax, takeHome, effectiveRate: revenue > 0 ? ((revenue - takeHome) / revenue) * 100 : 0 }
+  return { revenue, profit, corpTax, salaryTax, dividendTax, takeHome, effectiveRate: revenue > 0 ? ((revenue - takeHome) / revenue) * 100 : 0 }
 }
 
 function calculateInside(dayRate: number, daysPerYear: number) {
@@ -93,8 +97,9 @@ export default function IR35Calculator() {
 
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-1">
             <p className="font-medium text-foreground">Note:</p>
-            <p>Outside IR35: salary + dividends via Ltd company (optimal split).</p>
-            <p>Inside IR35: taxed as employment (PAYE + employee NI + employer NI).</p>
+            <p>Outside IR35: £12,570 salary plus all remaining profit paid out as dividends in the year, after Corporation Tax.</p>
+            <p>Inside IR35: umbrella-style pay, where employer NI (15%) comes out of the day rate, then PAYE income tax and employee NI. Apprenticeship Levy and umbrella margin are not included.</p>
+            <p>Leaving profit in the company or paying employer pension contributions would lower the tax outside IR35.</p>
             <p>This is a simplified estimate. Actual figures depend on individual circumstances.</p>
           </div>
         </div>

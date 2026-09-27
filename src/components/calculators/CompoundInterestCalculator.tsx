@@ -1,8 +1,20 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-function calculate(principal: number, monthlyDeposit: number, annualRate: number, years: number) {
-  const monthlyRate = annualRate / 100 / 12
+// Compounding periods per year. Contributions are always monthly, so interest
+// is applied each month at the rate equivalent to the chosen frequency:
+// (1 + r/n)^(n/12) − 1. With no contributions this reproduces P(1 + r/n)^(nt)
+// exactly at each year end.
+const COMPOUNDING: { value: number; label: string }[] = [
+  { value: 365, label: 'Daily' },
+  { value: 12, label: 'Monthly' },
+  { value: 4, label: 'Quarterly' },
+  { value: 1, label: 'Annually' },
+]
+
+function calculate(principal: number, monthlyDeposit: number, annualRate: number, years: number, periodsPerYear = 12) {
+  const n = periodsPerYear > 0 ? periodsPerYear : 12
+  const monthlyRate = Math.pow(1 + annualRate / 100 / n, n / 12) - 1
   const months = years * 12
   let balance = principal
   let totalDeposits = principal
@@ -36,13 +48,15 @@ export default function CompoundInterestCalculator() {
   const [monthly, setMonthly] = useState('200')
   const [rate, setRate] = useState('5')
   const [years, setYears] = useState('10')
+  const [frequency, setFrequency] = useState('12')
 
   const p = parseFloat(principal.replace(/,/g, '')) || 0
   const m = parseFloat(monthly.replace(/,/g, '')) || 0
   const r = parseFloat(rate) || 0
   const y = parseInt(years) || 0
+  const n = parseInt(frequency) || 12
 
-  const result = useMemo(() => calculate(p, m, r, y), [p, m, r, y])
+  const result = useMemo(() => calculate(p, m, r, y, n), [p, m, r, y, n])
 
   return (
     <div className="space-y-6">
@@ -68,6 +82,12 @@ export default function CompoundInterestCalculator() {
         <div>
           <label className="block text-sm font-medium mb-2">Time Period (years)</label>
           <input type="number" min="1" max="50" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Time Period (years)" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-2">Compounding</label>
+          <select value={frequency} onChange={(e) => setFrequency(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Compounding frequency">
+            {COMPOUNDING.map((c) => <option key={c.value} value={String(c.value)}>{c.label}</option>)}
+          </select>
         </div>
       </div>
 

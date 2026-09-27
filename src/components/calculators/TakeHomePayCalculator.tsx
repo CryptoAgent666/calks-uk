@@ -48,13 +48,18 @@ function rukTax(taxBase: number): number {
 }
 
 function scottishTax(taxBase: number): number {
-  const pa = taperedPA(taxBase)
+  // Scottish bands are set on taxable income (after the Personal Allowance), so
+  // when the allowance tapers above £100k every threshold moves down with it.
+  // SCOTTISH_BANDS holds gross-pay limits for someone with the full allowance;
+  // convert them to taxable income. £125,140 needs no conversion: the
+  // allowance is nil there, so gross and taxable income coincide.
+  const toTaxable = (limit: number) => (limit >= HIGHER_LIMIT ? limit : limit - PERSONAL_ALLOWANCE)
+  const taxable = Math.max(0, taxBase - taperedPA(taxBase))
   let tax = 0
   for (const band of SCOTTISH_BANDS) {
-    const from = Math.max(band.from <= PERSONAL_ALLOWANCE ? pa : band.from, pa)
-    if (taxBase <= from) continue
-    const to = Math.min(taxBase, band.to)
-    if (to > from) tax += (to - from) * band.rate
+    const from = toTaxable(band.from)
+    const to = toTaxable(band.to)
+    if (taxable > from) tax += (Math.min(taxable, to) - from) * band.rate
   }
   return tax
 }

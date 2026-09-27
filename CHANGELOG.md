@@ -1,5 +1,32 @@
 # CHANGELOG — Calks.uk
 
+## 2026-09-27 (round 4) — Scottish tax above £100k, 2031 freeze, fuel at 172p, pension relief
+
+Fourth `/calkcheck` data-currency pass, 20 more calculators (report: `AUDIT-2026-09-27-b.md`).
+
+**Scottish income tax above £100,000.** Scottish bands apply to taxable income, so they move down as the
+Personal Allowance tapers. The Scottish income tax, take-home pay and tax year comparison calculators kept
+them fixed and under-taxed Scottish earners above £100k (£150k: £59,634.35, not £56,366.15).
+
+**Thresholds frozen until April 2031** (Budget 2025), not 2028. **Petrol 172p, diesel 196p** (DESNZ, w/c 21
+Sep 2026) in six motoring calculators that assumed 135p.
+
+**Calculators corrected:** pension tax relief (PA taper, 45% band, Scotland, earnings/AA caps), shared parental
+leave (compulsory weeks counted twice; 39 paid weeks within 52), NHS pay (pension deducted, real pay points,
+HCAS), IR35 (salary taxed once the PA tapers), overdraft (EAR compounding), HICBC (s681C rounding), marriage
+allowance (Scotland, recipient's own tax cap), blind person's allowance (Scotland), tax year comparison
+(dividends in the taper, allowance uses band space), sole trader vs Ltd (accountancy deductible), heat pump
+(oil/LPG price, electric at 100%, BUS grant), compound interest (compounding frequency), flooring (pack size,
+whole packs), critical illness (September 2026 quotes), hourly to salary (take-home), mortgage overpayment
+(10% check), pension consolidation (exit charge).
+
+**Figures corrected:** HICBC household-income claim removed (the reform was dropped); Marriage Allowance for
+Scottish intermediate-rate taxpayers; MCA £453-£1,170, limit £39,200; PIP/AA 2026/27; HCAS, NHS pension tiers
+(to 12.5%), unsocial hours, doctors' pay; ShPP eligibility; Companies House fees; off-payroll £7.5m balance
+sheet; Help with Fees limits; court fees same online and paper; BUS funding and £1,500 off-gas uplift; pension
+exit charges 1%; Section 24 example; mortgage overpayment and rental-yield gearing examples; worked examples on
+the IR35, overdraft, compound interest, NHS, critical illness and flooring pages.
+
 ## 2026-09-27 — Salary sacrifice 2029 is law, bonus NI per pay period, 12 calculators giving wrong answers
 
 Third `/calkcheck` data-currency pass, 20 more calculators never audited before (report: `AUDIT-2026-09-27.md`).

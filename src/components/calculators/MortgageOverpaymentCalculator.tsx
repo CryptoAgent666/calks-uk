@@ -30,10 +30,18 @@ function calculate(balance: number, rate: number, termYears: number, monthlyOver
   const interestSaved = normalInterest - totalInterestWithOP
   const timeSaved = totalPayments - monthsPaid
 
+  // Most fixed and discounted deals let you overpay up to 10% of the balance a
+  // year without an early repayment charge. Compare a year of overpayments with
+  // 10% of the balance entered.
+  const annualOverpayment = monthlyOverpayment * 12
+  const annualAllowance = balance * 0.1
+  const overAllowance = annualOverpayment > annualAllowance
+
   return {
     normalMonthly, normalTotalPaid, normalInterest,
     monthsPaid, totalPaidWithOP, totalInterestWithOP,
     interestSaved, timeSaved,
+    annualOverpayment, annualAllowance, overAllowance,
     yearsSaved: Math.floor(timeSaved / 12),
     monthsSaved: timeSaved % 12,
   }
@@ -94,6 +102,14 @@ export default function MortgageOverpaymentCalculator() {
               <tr className="border-b border-border/50"><td className="py-2.5">Mortgage Term</td><td className="text-right">{t} years</td><td className="text-right text-primary">{Math.floor(result.monthsPaid / 12)}y {result.monthsPaid % 12}m</td></tr>
             </tbody>
           </table>
+          {result.annualOverpayment > 0 && (
+            <div className={`rounded-xl p-4 text-sm ${result.overAllowance ? 'bg-destructive/10 text-destructive' : 'bg-muted/50 text-muted-foreground'}`}>
+              {result.overAllowance
+                ? <p>{formatCurrency(result.annualOverpayment)} a year is more than 10% of your balance ({formatCurrency(result.annualAllowance)}). During a fixed or discounted deal, overpaying beyond your lender's annual allowance usually triggers an early repayment charge. Check your mortgage offer.</p>
+                : <p>{formatCurrency(result.annualOverpayment)} a year is within the usual 10% annual allowance ({formatCurrency(result.annualAllowance)} on this balance). Some deals allow only 5%, so check your mortgage offer.</p>}
+            </div>
+          )}
+          <p className="text-xs text-muted-foreground">Results assume each overpayment shortens the term, with your monthly payment unchanged.</p>
         </div>
       )}
     </div>

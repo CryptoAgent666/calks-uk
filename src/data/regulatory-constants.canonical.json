@@ -1459,7 +1459,9 @@
       "fixed": true,
       "fixed_date": "2026-06-16",
       "verified": "2026-08-15",
-      "verified_source": "https://www.gov.uk/blind-persons-allowance/what-youll-get"
+      "verified_source": "https://www.gov.uk/blind-persons-allowance/what-youll-get",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4"
     },
     {
       "key": "blind_persons_allowance_plus_pa_total",
@@ -1567,12 +1569,16 @@
         "computed"
       ],
       "used_by": [
-        "src/data/calculator-content.ts"
+        "src/components/calculators/HeatPumpCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/apply-boiler-upgrade-scheme",
+      "source_url": "https://www.gov.uk/apply-boiler-upgrade-scheme/what-you-can-get",
       "status": "current",
       "change_frequency": "",
-      "note": "boiler-replacement/radiator-btu/insulation: BUS grant £7,500 toward air/ground source heat pump (raised from £5,000 Oct 2023); England & Wales"
+      "note": "boiler-replacement/radiator-btu/insulation: BUS grant £7,500 toward air/ground source heat pump (raised from £5,000 Oct 2023); England & Wales",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4"
     },
     {
       "key": "bps_phase_out_year",
@@ -8669,10 +8675,14 @@
       "used_by": [
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/rates-and-allowances-travel-mileage-and-fuel-allowances",
+      "source_url": "https://www.gov.uk/government/publications/amended-fuel-duty-rates-for-2026-to-2027/amended-fuel-duty-rates-2026-to-2027",
       "status": "current",
       "change_frequency": "",
-      "note": "fuel-cost-calculator: Fuel Duty 52.95p/litre (frozen since 2011)"
+      "note": "Fuel duty 52.95p/litre (the rate since the 5p cut of 23 March 2022, extended; the 1 Sep 2026 staged rise was cancelled). fuel-cost prose used to say \"frozen since 2011\".",
+      "official_value": "52.95",
+      "changes_next_fy": "Rates return to Budget 2025 levels from 1 Jan 2027 unless Budget 2026 changes them, reaching 57.95p from 1 Mar 2027 (gov.uk amended rates) - re-check after the Autumn Budget 2026 and update fuel-cost prose + pump-price defaults.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4"
     },
     {
       "key": "fuel_duty_petrol_diesel",
@@ -8684,16 +8694,21 @@
         "prose"
       ],
       "used_by": [
+        "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.gov.uk/government/publications/amended-fuel-duty-rates-for-2026-to-2027/amended-fuel-duty-rates-2026-to-2027",
       "status": "current",
       "change_frequency": "",
-      "note": "Fuel Duty 52.95p/litre (frozen since 2011) (fuel-cost-calculator)"
+      "note": "Fuel duty 52.95p/litre (the rate since the 5p cut of 23 March 2022, extended; the 1 Sep 2026 staged rise was cancelled). fuel-cost prose used to say \"frozen since 2011\".",
+      "official_value": "52.95",
+      "changes_next_fy": "Rates return to Budget 2025 levels from 1 Jan 2027 unless Budget 2026 changes them, reaching 57.95p from 1 Mar 2027 (gov.uk amended rates) - re-check after the Autumn Budget 2026 and update fuel-cost prose + pump-price defaults.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4"
     },
     {
       "key": "fuel_duty_plus_vat_share_of_pump_price",
-      "value": "0.45",
+      "value": "0.47",
       "unit": "%",
       "law": "HMRC fuel duty",
       "theme": "other",
@@ -8701,17 +8716,18 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/PayPerMileCalculator.tsx"
+        "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/amended-fuel-duty-rates-for-2026-to-2027/amended-fuel-duty-rates-2026-to-2027",
       "status": "current",
       "change_frequency": "",
-      "note": "PayPerMileCalculator: editorial estimate that ~45% of pump price is fuel duty + VAT on duty (currentFuelCost * 0.45)",
-      "official_value": "0.45",
+      "note": "Duty 52.95p + VAT 28.67p = 81.62p of 172.01p petrol (47%); diesel ~44% (DESNZ w/c 21 Sep 2026). Prose on fuel-cost; no longer a PayPerMile constant.",
+      "official_value": "0.47",
       "official_source": "https://www.gov.uk/government/publications/fees-in-the-civil-and-family-courts-main-fees-ex50/civil-court-fees-ex50",
-      "verified_date": "2026-09-13",
-      "verify_method": "tier2 uncertain sweep (3 parallel primary-source agents + main-thread gov.uk spot-checks)",
-      "freshness_note": "Editorial estimate, fair. Duty 52.95p/l to 31 Dec 2026 (then 55.95p, 57.95p from 1 Mar 2027). DESNZ 7 Sep 2026: petrol 164.40p, diesel 186.36p -> duty + all VAT = 48.9% petrol / 45.1% diesel. Matches the 'duty plus all VAT' definition; rises from 1 Jan 2027."
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "freshness_note": "Editorial estimate, fair. Duty 52.95p/l to 31 Dec 2026 (then 55.95p, 57.95p from 1 Mar 2027). DESNZ 7 Sep 2026: petrol 164.40p, diesel 186.36p -> duty + all VAT = 48.9% petrol / 45.1% diesel. Matches the 'duty plus all VAT' definition; rises from 1 Jan 2027.",
+      "volatile": true
     },
     {
       "key": "full_expensing_rate",
@@ -8954,12 +8970,15 @@
         "prose"
       ],
       "used_by": [
+        "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "Help with Fees max monthly income GBP1,420 single (court-fee-calculator)"
+      "note": "Help with Fees max monthly income GBP1,420 single (court-fee-calculator)",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4"
     },
     {
       "key": "hicbc_charge_rate_per_200",
@@ -9013,14 +9032,16 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "https://commonslibrary.parliament.uk/research-briefings/cbp-8631/",
-      "status": "current",
+      "source_url": "https://www.gov.uk/child-benefit-tax-charge",
+      "status": "retired",
       "change_frequency": "",
-      "note": "From April 2026 HICBC based on household income (high-income-child-benefit-calculator)",
-      "official_value": "N/A - reform abandoned; HICBC remains on individual income",
+      "note": "WRONG as \"current\": the plan to base HICBC on household income from April 2026 was dropped at Autumn Budget 2024. The charge stays on the individual's adjusted net income. Prose on high-income-child-benefit claimed it had happened; removed 2026-09-27.",
+      "official_value": "not introduced",
       "confidence": "high",
       "freshness_note": "The Spring Budget 2024 plan to move HICBC to a HOUSEHOLD income basis from April 2026 was CANCELLED (government confirmed it would not proceed, cost ~GBP1.4bn). As of 2026-27 HICBC is still assessed o",
-      "resolve_note": "HICBC household-income-basis reform ABANDONED; remains on individual income"
+      "resolve_note": "HICBC household-income-basis reform ABANDONED; remains on individual income",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4"
     },
     {
       "key": "hicbc_lower_threshold",
@@ -11105,12 +11126,15 @@
         "prose"
       ],
       "used_by": [
+        "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "Small client exemption fewer than 50 employees (ir35-calculator)"
+      "note": "Small company test: not more than 50 employees (prose said \"fewer than 50\"); with turnover not more than £15m and balance sheet not more than £7.5m (from financial years beginning 6 Apr 2025).",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4"
     },
     {
       "key": "ir35_small_client_turnover_exemption",
@@ -13189,7 +13213,9 @@
       "change_frequency": "",
       "note": "marriage-allowance-calculator: MCA (born before 6 Apr 1935) worth £453-£1,108/year, tapers above £37,700",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4"
     },
     {
       "key": "maternity_90pct_weeks",
@@ -14664,17 +14690,19 @@
         "computed"
       ],
       "used_by": [
-        "src/data/calculator-content.ts"
+        "src/components/calculators/NhsPayCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "https://faq-hrss.nhsbsa.nhs.uk/knowledgebase/article/KA-23439/en-us",
+      "source_url": "https://www.nhsemployers.org/articles/pay-scales-202627",
       "status": "current",
       "change_frequency": "",
-      "note": "nhs-pay-calculator: HCAS Inner London 20% (cap £8,096), Outer London 15% (£5,329), Fringe 5% (£1,929)",
+      "note": "HCAS 2026/27: Inner London 20% (min £5,794, max £8,746), Outer 15% (£4,870-£6,137), Fringe 5% (£1,346-£2,270); NhsPayCalculator HCAS selector (was prose \"capped at £8,096/£5,329/£1,929\").",
       "official_value": "20",
       "confidence": "high",
       "freshness_note": "Inner London HCAS rate is 20% (Agenda for Change), unchanged; the stored value (20%) is correct, but the cap figures embedded in the note (£8,096/£5,329/£1,929) are outdated - 2026/27 caps are Inner £8,746, Outer £6,137, Fringe £2,270.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4"
     },
     {
       "key": "nhs_prescription_charge",
@@ -22244,17 +22272,17 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/SharedParentalLeaveCalculator.tsx"
+        "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/shared-parental-leave-and-pay/what-youll-get",
       "status": "current",
       "change_frequency": "",
-      "note": "MAX_WEEKS constant: 50 weeks of leave that can be shared between partners (52 minus 2 compulsory maternity).",
+      "note": "50 weeks of SPL after the 2 compulsory weeks of maternity leave (52 in total); the calculator now caps total leave at 52 (was double-subtracting the compulsory weeks).",
       "official_value": "50 weeks",
       "confidence": "high",
       "freshness_note": "Confirmed: up to 50 weeks of leave can be shared (52 minus 2 compulsory maternity weeks).",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4"
     },
     {
       "key": "shared_parental_leave_max_weeks",
@@ -22316,12 +22344,12 @@
       "source_url": "https://www.gov.uk/shared-parental-leave-and-pay/what-youll-get",
       "status": "current",
       "change_frequency": "",
-      "note": "37 weeks eligible for ShPP (50 weeks leave minus 6 weeks paid at 90% / minus other); stated in code comment and prose FAQ.",
+      "note": "ShPP up to 39 weeks less SMP weeks taken (so at most 37 when the 2 compulsory weeks are paid as SMP). SharedParentalLeaveCalculator shares 39 paid weeks within 52 weeks of leave (rewritten 2026-09-27).",
       "official_value": "37 weeks",
       "confidence": "high",
       "freshness_note": "Confirmed: up to 37 weeks of Shared Parental Pay can be shared.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4"
     },
     {
       "key": "shared_parental_pay_weekly_rate",
@@ -31648,11 +31676,534 @@
       "confidence": "medium",
       "volatile": true,
       "changes_next_fy": "Market figure - refresh each calkcheck cycle"
+    },
+    {
+      "key": "income_tax_ni_thresholds_freeze_end",
+      "value": "April 2031",
+      "unit": "date",
+      "law": "Budget 2025 (Finance Act 2026 / NICs regs)",
+      "theme": "income_tax",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/TaxYearComparisonCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts",
+        "public/llms-full.txt"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2025-overview-of-tax-legislation-and-rates-ootlar/budget-2025-overview-of-tax-legislation-and-rates-ootlar",
+      "status": "current",
+      "change_frequency": "",
+      "note": "PA £12,570, basic-rate limit £37,700 (higher threshold £50,270), NI PT/LPL £12,570, UEL/UPL £50,270 and ST £5,000 frozen until April 2031 (through 2030-31). Pages said \"frozen to 2028\".",
+      "official_value": "April 2031",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high"
+    },
+    {
+      "key": "scottish_bands_taxable_income_2026_27",
+      "value": "3967 / 16956 / 31092 / 62430 / 125140",
+      "unit": "GBP taxable income",
+      "law": "Scottish rate resolution 2026",
+      "theme": "income_tax",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/ScottishIncomeTaxCalculator.tsx",
+        "src/components/calculators/TakeHomePayCalculator.tsx",
+        "src/components/calculators/TaxYearComparisonCalculator.tsx",
+        "src/components/calculators/TaxRefundCalculator.tsx",
+        "src/components/calculators/PensionEmergencyTaxCalculator.tsx",
+        "src/components/calculators/PensionTaxReliefCalculator.tsx",
+        "public/llms-full.txt"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Upper limits of starter/basic/intermediate/higher/advanced on TAXABLE income (after PA). Above £100k the total-income thresholds move down as the PA tapers. Scottish, take-home and tax-year-comparison calculators used fixed total-income thresholds and under-taxed Scots over £100k (£150k: £56,366.15 -> £59,634.35); fixed 2026-09-27.",
+      "official_value": "3967 / 16956 / 31092 / 62430 / 125140",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high",
+      "changes_next_fy": "Scottish Budget each winter sets 2027/28 bands"
+    },
+    {
+      "key": "scottish_bands_taxable_income_2025_26",
+      "value": "2827 / 14921 / 31092 / 62430 / 125140",
+      "unit": "GBP taxable income",
+      "law": "Scottish rate resolution 2025",
+      "theme": "income_tax",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/TaxYearComparisonCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+      "status": "current",
+      "change_frequency": "",
+      "note": "2025/26 Scottish band limits on taxable income, used by the tax-year comparison.",
+      "official_value": "2827 / 14921 / 31092 / 62430 / 125140",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high"
+    },
+    {
+      "key": "marriage_allowance_recipient_limit_scotland",
+      "value": "43662",
+      "unit": "GBP",
+      "law": "ITA 2007 s55B (Scottish taxpayers)",
+      "theme": "income_tax",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/MarriageAllowanceCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/marriage-allowance/eligibility",
+      "status": "current",
+      "change_frequency": "",
+      "note": "A Scottish recipient may pay starter, basic or intermediate rate (income up to £43,662). Prose said intermediate-rate payers were excluded.",
+      "official_value": "43662",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high"
+    },
+    {
+      "key": "married_couples_allowance_max",
+      "value": "1170",
+      "unit": "GBP",
+      "law": "ITA 2007 s45/46",
+      "theme": "income_tax",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2025-overview-of-tax-legislation-and-rates-ootlar/budget-2025-overview-of-tax-legislation-and-rates-ootlar",
+      "status": "current",
+      "change_frequency": "",
+      "note": "MCA 2026/27: max £11,700 allowance (£1,170 relief), min £4,530 (£453), reduced £1 per £2 of income above £39,200 (Annex A). Prose had £1,108 and £37,700.",
+      "official_value": "1170",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high",
+      "changes_next_fy": "CPI-uprated each April"
+    },
+    {
+      "key": "married_couples_allowance_income_limit",
+      "value": "39200",
+      "unit": "GBP",
+      "law": "ITA 2007 s45/46",
+      "theme": "income_tax",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2025-overview-of-tax-legislation-and-rates-ootlar/budget-2025-overview-of-tax-legislation-and-rates-ootlar",
+      "status": "current",
+      "change_frequency": "",
+      "note": "MCA income limit 2026/27.",
+      "official_value": "39200",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high",
+      "changes_next_fy": "CPI-uprated each April"
+    },
+    {
+      "key": "pip_daily_living_enhanced_weekly",
+      "value": "114.6",
+      "unit": "GBP/week",
+      "law": "Social Security benefit uprating 2026",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/pip/how-much-youll-get",
+      "status": "current",
+      "change_frequency": "",
+      "note": "PIP 2026/27: daily living £76.70 / £114.60; mobility £30.30 / £80.00 (blind-persons-allowance prose had £108.55 / £77.05).",
+      "official_value": "114.6",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high",
+      "changes_next_fy": "Uprated each April"
+    },
+    {
+      "key": "attendance_allowance_higher_weekly",
+      "value": "114.6",
+      "unit": "GBP/week",
+      "law": "Social Security benefit uprating 2026",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/attendance-allowance",
+      "status": "current",
+      "change_frequency": "",
+      "note": "AA 2026/27: lower £76.70, higher £114.60; for people over State Pension age (prose had £73.90/£110.40 and \"over 65\").",
+      "official_value": "114.6",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high",
+      "changes_next_fy": "Uprated each April"
+    },
+    {
+      "key": "hicbc_rounding_rule",
+      "value": "percentage and charge rounded down",
+      "unit": "rule",
+      "law": "ITEPA 2003 s681C(3)",
+      "theme": "benefits",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/HighIncomeChildBenefitCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ukpga/2003/1/section/681C",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Appropriate percentage rounded down to a whole number (1% per full £200) and the charge rounded down to whole pounds. HICBC can be paid through PAYE tax code (gov.uk/child-benefit-tax-charge/pay-the-charge).",
+      "official_value": "percentage and charge rounded down",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high"
+    },
+    {
+      "key": "companies_house_confirmation_statement_fee",
+      "value": "50 / 110",
+      "unit": "GBP",
+      "law": "Companies House fees",
+      "theme": "business",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/companies-house-fees/companies-house-fees",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Confirmation statement £50 online / £110 paper; filing accounts free; incorporation £100 / £124. Prose had £13 filing + £34 CS.",
+      "official_value": "50 / 110",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high"
+    },
+    {
+      "key": "off_payroll_small_company_balance_sheet",
+      "value": "7500000",
+      "unit": "GBP",
+      "law": "Companies Act 2006 s382 (as amended April 2025)",
+      "theme": "business",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.icaew.com/insights/tax-news/2025/feb-2025/changes-to-size-thresholds-for-off-payroll-working",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Small client test for off-payroll rules: balance sheet not more than £7.5m (was £5.1m), turnover not more than £15m, not more than 50 employees; financial years from 6 Apr 2025.",
+      "official_value": "7500000",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "medium"
+    },
+    {
+      "key": "nhs_afc_intermediate_points_2026_27",
+      "value": "B5 34592; B6 42170; B7 51932; 8a 60417; 8b 70896; 8c 84346; 8d 100140; B9 119583",
+      "unit": "GBP",
+      "law": "NHS Terms and Conditions (AfC) 2026/27",
+      "theme": "pay",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/NhsPayCalculator.tsx"
+      ],
+      "source_url": "https://www.nhsemployers.org/articles/pay-scales-202627",
+      "status": "current",
+      "change_frequency": "",
+      "note": "AfC pay points 2026/27 (entry/intermediate/top); calculator now uses real pay points instead of interpolating min->max.",
+      "official_value": "B5 34592; B6 42170; B7 51932; 8a 60417; 8b 70896; 8c 84346; 8d 100140; B9 119583",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high",
+      "changes_next_fy": "AfC pay award each spring (1 April effective)"
+    },
+    {
+      "key": "nhs_pension_employee_tiers_2026_27",
+      "value": "5.2/6.5/8.3/9.8/10.7/12.5% at 13259/28854/35155/52778/67668",
+      "unit": "% of pensionable pay",
+      "law": "NHS Pension Scheme Regulations",
+      "theme": "pension",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/NhsPayCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.nhsbsa.nhs.uk/member-hub/cost-being-scheme",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Tier rate applies to all pensionable pay; NhsPayCalculator deducted no pension before 2026-09-27. Prose had \"5.2% to 13.5%\". Employer rate 23.7%.",
+      "official_value": "5.2/6.5/8.3/9.8/10.7/12.5% at 13259/28854/35155/52778/67668",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high",
+      "changes_next_fy": "Tier thresholds uprated each April with AfC"
+    },
+    {
+      "key": "nhs_consultant_pay_range_2026_27",
+      "value": "113565-150569",
+      "unit": "GBP",
+      "law": "NHS Employers Pay and Conditions Circular (M&D) 1/2026",
+      "theme": "pay",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.nhsemployers.org/system/files/2026-07/Pay-and-Conditions-Circular-(MD)-1-2026-R2.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Consultant (2003 contract) basic range 2026/27; salaried GP £78,699-£118,759; FY1 £41,226, FY2 £47,610.",
+      "official_value": "113565-150569",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "medium",
+      "changes_next_fy": "DDRB award each summer"
+    },
+    {
+      "key": "pension_exit_charge_cap_over_55",
+      "value": "1",
+      "unit": "%",
+      "law": "FCA COBS 19.10 / SI 2017/774",
+      "theme": "pension",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/PensionConsolidationCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.fca.org.uk/news/press-releases/fca-introduces-cap-early-exit-pension-charges",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Early exit charges capped at 1% for over-55s on existing contract-based pensions from 31 Mar 2017, banned on new contracts; 1% cap in trust-based schemes. Prose said \"1 to 5%\".",
+      "official_value": "1",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high"
+    },
+    {
+      "key": "help_with_fees_max_income_couple",
+      "value": "2130",
+      "unit": "GBP/month",
+      "law": "Help with Fees (Civil Proceedings Fees Order Sch 2)",
+      "theme": "legal",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/CourtFeeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/get-help-with-court-fees/income",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Couple gross monthly income limit (single £1,420; +£425 per child 0-13, +£710 per child 14+). Savings limit £4,250 for fees up to £1,420 rising to £16,000 for fees over £7,000; £16,000 for 66+. Prose had £2,050 and \"£3,000-£16,000 by age\".",
+      "official_value": "2130",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high"
+    },
+    {
+      "key": "bus_air_to_air_grant",
+      "value": "2500",
+      "unit": "GBP",
+      "law": "Boiler Upgrade Scheme (England and Wales) Regulations",
+      "theme": "energy",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/apply-boiler-upgrade-scheme/what-you-can-get",
+      "status": "current",
+      "change_frequency": "",
+      "note": "BUS air-to-air heat pump grant.",
+      "official_value": "2500",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high"
+    },
+    {
+      "key": "bus_off_gas_uplift",
+      "value": "1500",
+      "unit": "GBP",
+      "law": "Boiler Upgrade Scheme",
+      "theme": "energy",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/HeatPumpCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/apply-boiler-upgrade-scheme/what-you-can-get",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Extra £1,500 for ASHP/GSHP replacing oil or LPG in off-gas-grid homes, until March 2027. HeatPumpCalculator adds it when current fuel is oil or LPG.",
+      "official_value": "1500",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high",
+      "changes_next_fy": "Ends March 2027 - remove from HeatPumpCalculator (grant £9,000 -> £7,500 for oil/LPG) and prose after 31 Mar 2027 unless extended"
+    },
+    {
+      "key": "pump_price_petrol_ppl",
+      "value": "172.01",
+      "unit": "pence/litre",
+      "law": "DESNZ weekly road fuel prices (market)",
+      "theme": "transport",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/MilesPerGallonCalculator.tsx",
+        "src/components/calculators/FuelCostCalculator.tsx",
+        "src/components/calculators/CommuteCostCalculator.tsx",
+        "src/components/calculators/EVSavingsCalculator.tsx",
+        "src/components/calculators/MileageCalculator.tsx",
+        "src/components/calculators/RoadTripCostCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/statistics/weekly-road-fuel-prices",
+      "status": "current",
+      "change_frequency": "",
+      "note": "UK average ULSP w/c 21 Sep 2026 (161.6p on 31 Aug; rising). Six calculators defaulted to 135p; now 172. Prose dated to that week.",
+      "official_value": "172.01",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high",
+      "volatile": true,
+      "changes_next_fy": "Market figure: refresh defaults and dated prose each calkcheck cycle (DESNZ CSV weekly)"
+    },
+    {
+      "key": "pump_price_diesel_ppl",
+      "value": "195.53",
+      "unit": "pence/litre",
+      "law": "DESNZ weekly road fuel prices (market)",
+      "theme": "transport",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/MilesPerGallonCalculator.tsx",
+        "src/components/calculators/FuelCostCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/statistics/weekly-road-fuel-prices",
+      "status": "current",
+      "change_frequency": "",
+      "note": "UK average ULSD w/c 21 Sep 2026 (button default 196p).",
+      "official_value": "195.53",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "high",
+      "volatile": true,
+      "changes_next_fy": "Market figure: refresh each calkcheck cycle"
+    },
+    {
+      "key": "heating_oil_kerosene_ppkwh",
+      "value": "11.2",
+      "unit": "pence/kWh",
+      "law": "BoilerJuice kerosene price (market)",
+      "theme": "energy",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/HeatPumpCalculator.tsx"
+      ],
+      "source_url": "https://www.boilerjuice.com/kerosene-prices/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Kerosene 116.06p/L on 27 Sep 2026 at ~10.35 kWh/L. HeatPumpCalculator oil default was a hidden 5.5p/kWh.",
+      "official_value": "11.2",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "medium",
+      "volatile": true,
+      "changes_next_fy": "Market figure: refresh each calkcheck cycle"
+    },
+    {
+      "key": "small_claims_median_weeks_to_trial",
+      "value": "41.0",
+      "unit": "weeks",
+      "law": "MoJ Civil Justice Statistics Quarterly (statistic)",
+      "theme": "legal",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/statistics/civil-justice-statistics-quarterly-april-to-june-2026/civil-justice-statistics-quarterly-april-to-june-2026",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Median time from claim to small claims trial, Apr-Jun 2026 (prose said \"within 6 months\").",
+      "official_value": "41.0",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r4",
+      "confidence": "medium",
+      "volatile": true,
+      "changes_next_fy": "Quarterly MoJ release"
     }
   ],
   "status_summary": {
-    "current": 1437,
-    "retired": 23,
+    "current": 1458,
+    "retired": 24,
     "superseded_by_component": 4,
     "historical": 15,
     "superseded": 11,
