@@ -397,6 +397,191 @@
    "now": "State Pension per NI year (six pounds eighty-nine a week in 2026/27)",
    "what": "state_pension_weekly_per_ni_year (browser-qa 2026-09-26)",
    "ctx": "State Pension|NI year"
+  },
+  {
+   "was": "Non-EU (6.5% duty)",
+   "now": "ten percent duty on passenger cars from outside the EU",
+   "what": "car_import_duty_rate_non_eu (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "Customs duty at 6.5%",
+   "now": "ten percent duty on passenger cars from outside the EU",
+   "what": "car_import_duty_rate_non_eu example (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "currently costs £478",
+   "now": "IVA one hundred and ninety-nine pounds",
+   "what": "iva_fee_m1_statutory (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "less than 25 years old from non-EU",
+   "now": "GB approval exemption is for cars over ten years old",
+   "what": "vehicle_approval_exempt_age (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "average metered household pays",
+   "now": "Water UK average combined bill six hundred and thirty-nine pounds",
+   "what": "water_unmetered_combined_bill_avg (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "£719 for a Skilled Worker",
+   "now": "Skilled Worker eight hundred and nineteen pounds",
+   "what": "visa_fee_skilled_worker_up_to_3yr (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "Certificate of Sponsorship costs £239",
+   "now": "CoS five hundred and twenty-five pounds",
+   "what": "visa_certificate_of_sponsorship_skilled_worker (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "Certificate of Sponsorship at £239",
+   "now": "CoS five hundred and twenty-five pounds",
+   "what": "visa_certificate_of_sponsorship_skilled_worker FAQ (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "No legislation had been passed as of April 2026",
+   "now": "enacted: NICs (Employer Pensions Contributions) Act, Royal Assent April",
+   "what": "ni_salary_sacrifice_pension_nic_free_limit (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "No legislation has been passed as of April 2026",
+   "now": "enacted: NICs (Employer Pensions Contributions) Act, Royal Assent April",
+   "what": "ni_salary_sacrifice_pension_nic_free_limit FAQ (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "proposed 2029 rules",
+   "now": "enacted rules from April, first two thousand pounds NI-free",
+   "what": "ni_salary_sacrifice meta (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "the bill rises to £6,750",
+   "now": "employer NI base less the capped sacrifice",
+   "what": "ni_salary_sacrifice employer example (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "somewhere between 28% and 53%",
+   "now": "relief by band: basic, higher, additional, taper band",
+   "what": "salary_sacrifice combined relief (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "State Pension credits are built on the lower earnings figure",
+   "now": "flat-rate new State Pension; only the LEL matters",
+   "what": "salary_sacrifice state pension (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "State Pension credits build on the lower earnings figure",
+   "now": "flat-rate new State Pension; only the LEL matters",
+   "what": "salary_sacrifice state pension FAQ (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "£35,000 × 3% = £1,050",
+   "now": "pension on qualifying earnings above the lower limit",
+   "what": "auto_enrolment_qualifying_earnings employer-cost (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "£6,239.17",
+   "now": "month one higher-rate slice of seven thousand two hundred and eighty-six pounds",
+   "what": "pension emergency tax month-1 slice (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "a sharp rise from the £1.50",
+   "now": "copies two pounds with the application, sixteen later",
+   "what": "probate_copy_fee_with_application (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "Total probate cost: £574",
+   "now": "probate example with copies at two pounds",
+   "what": "probate example (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "judged on the gross value",
+   "now": "fee judged on the net estate",
+   "what": "probate_estate_threshold basis (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "worth £248.70 a week",
+   "now": "Scotland free personal care payment for care-home residents",
+   "what": "scotland_free_personal_care_weekly (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "2021 Health and Care Act",
+   "now": "Health and Care Act (twenty twenty-two)",
+   "what": "care cap act year (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "£11,502 a year",
+   "now": "full new State Pension for this tax year",
+   "what": "state_pension_full_new_annual pension-pot (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "£14,400 a year for a single person",
+   "now": "Retirement Living Standards June update figures",
+   "what": "retirement_living_standards_2026 (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "Bursary of up to £8,100",
+   "now": "Young Students Bursary up to two thousand pounds",
+   "what": "saas_young_students_bursary_max_2026_27 (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "5% to 15% of the net VAT",
+   "now": "failure-to-notify penalties by behaviour",
+   "what": "vat_failure_to_notify_penalty_range (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "late registration penalty of 5% to 15%",
+   "now": "failure-to-notify penalties by behaviour",
+   "what": "vat_failure_to_notify_penalty_range prose (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "first day of the month after you notify",
+   "now": "first day of the second month after going over",
+   "what": "vat registration effective date (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "30-day reporting rule",
+   "now": "sixty days from completion",
+   "what": "cgt_property_reporting_window_days (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "At least £100 of the transaction has to go on the card",
+   "now": "item cash price over one hundred pounds; any part on the card",
+   "what": "section 75 (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "notional 7-8%",
+   "now": "stress rate set by the lender",
+   "what": "mortgage stress test (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "monthly payment £1,789",
+   "now": "affordability payment at the average fix",
+   "what": "mortgage affordability example (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "Barclaycard Rewards pays 1% cashback",
+   "now": "no brand cashback claims",
+   "what": "credit card cashback (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "the highest in the EU",
+   "now": "young-driver premiums by age with source and date",
+   "what": "car insurance young drivers (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "£4,856.55",
+   "now": "tax credits example with the thirty-hour and family elements",
+   "what": "tax credits example (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "£462,450",
+   "now": "pension pot example on the current State Pension",
+   "what": "pension-pot example (calkcheck 2026-09-27)"
+  },
+  {
+   "was": "reclaim it from the Student Loans Company at year-end",
+   "now": "refund only if annual income below the threshold",
+   "what": "student loan bonus deduction (calkcheck 2026-09-27)"
   }
  ]
 }

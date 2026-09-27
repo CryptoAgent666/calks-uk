@@ -285,7 +285,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'mortgage-affordability-calculator',
     title: 'Mortgage Affordability Calculator',
-    description: 'See exactly how much you can borrow for a UK mortgage in 2026. Calculator uses 4.5x income multiplier and Bank of England stress test rates.',
+    description: 'See how much you can borrow for a UK mortgage in 2026. Uses your income multiple, deposit and monthly commitments, caps the loan at 95% LTV and shows the monthly payment.',
     category: 'mortgage',
     icon: 'Home',
     keywords: ['mortgage affordability', 'how much can I borrow', 'borrowing capacity'],
@@ -1816,7 +1816,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'pay-per-mile-calculator', title: 'EV Pay-Per-Mile Road Pricing Calculator', description: 'Compare potential road pricing costs vs current VED and fuel duty. Prepare for future EV taxation.', category: 'auto', icon: 'Car', keywords: ['pay per mile', 'road pricing', 'EV tax', 'road user charge'], priority: 2, isTrending: true , metaTitle: 'Pay Per Mile Calculator UK 2026' },
   // TAX (trending)
   { slug: 'high-council-tax-calculator', title: 'High-Value Council Tax Surcharge Calculator (2028)', description: 'Estimate the proposed surcharge on homes worth £2m+ (from April 2028) — £2,500 to £7,500 a year on top of Council Tax.', category: 'tax', icon: 'Receipt', keywords: ['high value council tax', 'council tax surcharge', 'mansion tax', '£2 million home', 'HVCTS'], priority: 2, isTrending: true , metaTitle: 'High-Value Council Tax Surcharge Calculator 2028' },
-  { slug: 'ni-salary-sacrifice-2029-calculator', title: 'NI on Salary Sacrifice Calculator (2029)', description: 'Compare current salary sacrifice NI savings vs proposed 2029 rules. See how much you\'ll lose.', category: 'tax', icon: 'Receipt', keywords: ['NI salary sacrifice', '2029 pension', 'salary sacrifice change', 'pension NI'], priority: 2, isTrending: true , metaTitle: 'NI Salary Sacrifice 2029 Calculator UK' },
+  { slug: 'ni-salary-sacrifice-2029-calculator', title: 'NI on Salary Sacrifice Calculator (2029)', description: 'Compare salary sacrifice NI savings now vs from April 2029, when only the first £2,000 stays NI-free. See how much you\'ll lose.', category: 'tax', icon: 'Receipt', keywords: ['NI salary sacrifice', '2029 pension', 'salary sacrifice change', 'pension NI'], priority: 2, isTrending: true , metaTitle: 'NI Salary Sacrifice 2029 Calculator UK' },
   // BUSINESS
   { slug: 'sole-trader-vs-ltd-comparison-calculator', title: 'Sole Trader vs Ltd Comparison Table', description: 'Side-by-side take-home pay comparison at 7 different profit levels (£20K-£100K).', category: 'business', icon: 'Briefcase', keywords: ['sole trader vs ltd table', 'comparison table', 'profit levels', 'when to incorporate'], priority: 1 , metaTitle: 'Sole Trader vs Ltd Side-by-Side Comparison UK 2026' },
   { slug: 'apprenticeship-levy-calculator', title: 'Apprenticeship Levy Calculator', description: 'Calculate apprenticeship levy at 0.5% of pay bill over £3M. See government top-up and total training fund.', category: 'business', icon: 'Briefcase', keywords: ['apprenticeship levy', 'training levy', 'pay bill', 'digital apprenticeship'], priority: 2 , metaTitle: 'Apprenticeship Levy Calculator UK 2026 (0.5%)' },

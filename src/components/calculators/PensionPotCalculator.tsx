@@ -8,7 +8,9 @@ function calculate(targetIncome: number, yearsInRetirement: number, statePension
   // 4% rule
   const potFor4pct = annualShortfall / 0.04
 
-  // Annuity-based (roughly 5% income rate at 67)
+  // Annuity-based: 5.5% is a cautious starting rate for an income that rises each
+  // year. MoneyHelper via Which? (21 Sep 2026), healthy 65-year-old, £100k: best
+  // joint-life annuity rising 3% a year ~5.7%; best level single-life ~8.2%.
   const potForAnnuity = annualShortfall / 0.055
 
   // Drawdown with growth
@@ -56,10 +58,10 @@ export default function PensionPotCalculator() {
           <div className="grid grid-cols-3 gap-3">
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Drawdown ({g}% growth)</p><p className="text-lg font-bold">{formatCurrency(result.potDrawdown)}</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">4% Rule</p><p className="text-lg font-bold">{formatCurrency(result.potFor4pct)}</p></div>
-            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Annuity (~5.5%)</p><p className="text-lg font-bold">{formatCurrency(result.potForAnnuity)}</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Rising Annuity (~5.5%)</p><p className="text-lg font-bold">{formatCurrency(result.potForAnnuity)}</p></div>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>3 methods: Drawdown (invest and withdraw), 4% Rule (safe withdrawal rate), Annuity (guaranteed income for life). State Pension provides {formatCurrency(s * 52)}/yr — the rest must come from your pot.</p>
+            <p>3 methods: Drawdown (invest and withdraw), 4% Rule (safe withdrawal rate), Annuity (guaranteed income for life, at a 5.5% starting rate for income that rises each year; a level annuity pays more at first, about 8% at 65 in September 2026, but never rises). State Pension provides {formatCurrency(s * 52)}/yr — the rest must come from your pot.</p>
           </div>
         </div>
       )}
