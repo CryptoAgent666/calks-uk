@@ -9,10 +9,10 @@ function calculate(payBill: number) {
   const netLevy = Math.max(0, grossLevy - ALLOWANCE)
   const monthlyLevy = netLevy / 12
   const isLevyPayer = payBill > 3_000_000
-  const topUp = netLevy * 0.10 // government adds 10%
-  const totalFunding = netLevy + topUp
+  // The automatic 10% government top-up was removed from 1 August 2026, so the training fund equals the levy paid
+  const totalFunding = netLevy
 
-  return { grossLevy, netLevy, monthlyLevy, isLevyPayer, topUp, totalFunding, payBill }
+  return { grossLevy, netLevy, monthlyLevy, isLevyPayer, totalFunding, payBill }
 }
 
 export default function ApprenticeshipLevyCalculator() {
@@ -34,11 +34,11 @@ export default function ApprenticeshipLevyCalculator() {
             <>
               <div className="grid grid-cols-3 gap-3">
                 <div className="rounded-xl bg-destructive/10 p-4 text-center"><p className="text-xs text-muted-foreground">Annual Levy</p><p className="text-xl font-bold text-destructive">{formatCurrency(result.netLevy)}</p></div>
-                <div className="rounded-xl bg-green-100 dark:bg-green-950 p-4 text-center"><p className="text-xs text-muted-foreground">+ Govt Top-Up (10%)</p><p className="text-xl font-bold text-green-700 dark:text-green-400">{formatCurrency(result.topUp)}</p></div>
+                <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Monthly Levy</p><p className="text-xl font-bold">{formatCurrency(result.monthlyLevy)}</p></div>
                 <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Training Fund</p><p className="text-xl font-bold text-primary">{formatCurrency(result.totalFunding)}</p></div>
               </div>
               <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-                <p>Levy: 0.5% of pay bill minus £15,000 allowance. Funds go into your Digital Apprenticeship Service account. Use within 24 months or funds expire. Government adds 10% top-up. Can transfer up to 50% to supply chain partners.</p>
+                <p>Levy: 0.5% of pay bill minus £15,000 allowance. Funds go into your apprenticeship service account. There is no government top-up on funds from 1 August 2026, and funds entering the account from August 2026 expire after 12 months (older funds after 24). They pay for apprenticeship training and assessment, and apprenticeship units from August 2026. Can transfer up to 50% to other employers, such as supply chain partners.</p>
               </div>
             </>
           )}

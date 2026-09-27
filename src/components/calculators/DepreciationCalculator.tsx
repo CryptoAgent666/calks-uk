@@ -4,7 +4,7 @@ import { formatCurrency } from '@/utils'
 type Method = 'straight' | 'reducing'
 
 function calculate(cost: number, salvage: number, years: number, method: Method) {
-  if (years <= 0 || cost <= 0) return null
+  if (years <= 0 || cost <= 0 || salvage < 0 || salvage >= cost) return null
   const schedule: { year: number; depreciation: number; bookValue: number }[] = []
 
   if (method === 'straight') {
@@ -17,7 +17,9 @@ function calculate(cost: number, salvage: number, years: number, method: Method)
     return { annualDepreciation: annual, schedule, method }
   }
 
-  // Reducing balance
+  // Reducing balance: the rate that lands on the residual. A fixed percentage never reaches exactly £0,
+  // so a nil residual has no usable rate (it would mean writing off 100% in year 1).
+  if (salvage <= 0) return null
   const rate = 1 - Math.pow(salvage / cost, 1 / years)
   let bv = cost
   for (let y = 1; y <= years; y++) {
@@ -37,7 +39,8 @@ export default function DepreciationCalculator() {
   const c = parseFloat(cost.replace(/,/g,'')) || 0
   const s = parseFloat(salvage.replace(/,/g,'')) || 0
   const y = parseInt(years) || 0
-  const result = useMemo(() => calculate(c, s > 0 ? s : 1, y, method), [c, s, y, method])
+  const result = useMemo(() => calculate(c, s, y, method), [c, s, y, method])
+  const needsResidual = method === 'reducing' && c > 0 && s <= 0
 
   return (
     <div className="space-y-6">
@@ -52,11 +55,16 @@ export default function DepreciationCalculator() {
         <div><label className="block text-sm font-medium mb-2">Useful Life (years)</label><input type="number" min="1" max="50" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Useful Life (years)" /></div>
       </div>
 
+      {needsResidual && (
+        <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
+          <p>Reducing balance takes a fixed percentage of the book value each year, so it never reaches exactly £0. Enter a residual value above £0 to get the rate, or use straight line for a nil residual.</p>
+        </div>
+      )}
       {result && result.schedule.length > 0 && (
         <div className="space-y-4 animate-fade-in-up">
           <div className="rounded-xl bg-primary/10 p-4 text-center">
             {result.method === 'straight' && 'annualDepreciation' in result && <><p className="text-sm text-muted-foreground">Annual Depreciation</p><p className="text-2xl font-bold text-primary">{formatCurrency(result.annualDepreciation)}</p></>}
-            {result.method === 'reducing' && 'rate' in result && <><p className="text-sm text-muted-foreground">Depreciation Rate</p><p className="text-2xl font-bold text-primary">{result.rate.toFixed(1)}% per year</p></>}
+            {result.method === 'reducing' && 'rate' in result && <><p className="text-sm text-muted-foreground">Depreciation Rate</p><p className="text-2xl font-bold text-primary">{result.rate.toFixed(2)}% per year</p></>}
           </div>
           <table className="w-full text-sm">
             <thead><tr className="border-b border-border"><th className="text-left py-2 font-medium text-muted-foreground">Year</th><th className="text-right py-2 font-medium text-muted-foreground">Depreciation</th><th className="text-right py-2 font-medium text-muted-foreground">Book Value</th></tr></thead>

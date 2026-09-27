@@ -11,10 +11,20 @@ const PLANS = {
 
 type PlanId = keyof typeof PLANS
 
+// gov.uk: with more than one undergraduate plan you repay a single 9% over the LOWEST of
+// their thresholds. The lowest-threshold plan takes 9% of the band up to the next plan's
+// threshold and the rest goes to the next plan. A Postgraduate Loan (6% over £21,000)
+// is deducted alongside, not instead.
 function calculate(salary: number, planIds: PlanId[]) {
-  const results = planIds.map((id) => {
+  const undergrad = (Object.keys(PLANS) as PlanId[])
+    .filter((id) => id !== 'postgrad' && planIds.includes(id))
+    .sort((a, b) => PLANS[a].threshold - PLANS[b].threshold)
+
+  const results = undergrad.map((id, i) => {
     const plan = PLANS[id]
-    const annual = salary > plan.threshold ? (salary - plan.threshold) * plan.rate : 0
+    const next = undergrad[i + 1]
+    const top = next ? Math.min(salary, PLANS[next].threshold) : salary
+    const annual = Math.max(0, top - plan.threshold) * plan.rate
     return {
       plan: plan.name,
       threshold: plan.threshold,
@@ -24,10 +34,23 @@ function calculate(salary: number, planIds: PlanId[]) {
     }
   })
 
+  if (planIds.includes('postgrad')) {
+    const plan = PLANS.postgrad
+    const annual = Math.max(0, salary - plan.threshold) * plan.rate
+    results.push({
+      plan: plan.name,
+      threshold: plan.threshold,
+      rate: plan.rate,
+      annualRepayment: annual,
+      monthlyRepayment: annual / 12,
+    })
+  }
+
   const totalAnnual = results.reduce((sum, r) => sum + r.annualRepayment, 0)
   const totalMonthly = totalAnnual / 12
+  const undergradThreshold = undergrad.length ? PLANS[undergrad[0]].threshold : 0
 
-  return { results, totalAnnual, totalMonthly }
+  return { results, totalAnnual, totalMonthly, multipleUndergrad: undergrad.length > 1, undergradThreshold }
 }
 
 export default function StudentLoanCalculator() {
@@ -116,6 +139,12 @@ export default function StudentLoanCalculator() {
                 </tbody>
               </table>
             </div>
+          )}
+
+          {result.multipleUndergrad && (
+            <p className="text-xs text-muted-foreground">
+              With more than one undergraduate plan you pay a single 9% of income over the lowest threshold ({formatCurrency(result.undergradThreshold)}), not 9% per plan. The split shown follows the SLC rule: the lowest-threshold plan takes the slice up to the next plan&apos;s threshold and the rest goes to the other loan.
+            </p>
           )}
         </div>
       )}
