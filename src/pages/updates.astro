@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-09-26'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-09-27'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -24,6 +24,43 @@ const schemas = [
     <p class="text-sm text-muted-foreground mb-8">Rate changes, new calculators and site improvements</p>
 
     <div class="space-y-8">
+      <!-- September 2026 — calkcheck round 3 (27 Sep) -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            September 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Salary sacrifice, bonus, dividend and care calculators corrected</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Salary sacrifice NI from April 2029 is now law, with a £2,000 allowance.</strong> The National Insurance Contributions (Employer Pensions Contributions) Act 2026 received Royal Assent on 29 April. The first £2,000 a year you sacrifice into a pension stays free of NI; above that, both you and your employer pay NI. Our <a href="/calculator/ni-salary-sacrifice-2029-calculator/" class="text-primary hover:underline">salary sacrifice 2029 calculator</a> removed the whole NI saving, so on a £50,000 salary with £5,000 sacrificed it showed a £400 loss. The real figure is <strong class="text-foreground">£240</strong>, and it now shows the employer&rsquo;s extra NI too.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Bonus NI and dividend tax corrected.</strong> The <a href="/calculator/bonus-tax-calculator/" class="text-primary hover:underline">bonus tax calculator</a> worked out NI over the whole year, but employees pay NI pay period by pay period, so a £5,000 bonus on a £35,000 salary loses £176 in NI, not £400. Directors can switch to the annual method. The <a href="/calculator/dividend-tax-calculator/" class="text-primary hover:underline">dividend tax calculator</a> now lets unused Personal Allowance cover dividends (£20,000 of dividends with no other income is taxed £744.98, not £2,096.25) and applies the taper above £100,000.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Inheritance tax and probate.</strong> The <a href="/calculator/inheritance-tax-calculator/" class="text-primary hover:underline">inheritance tax calculator</a> tapered the residence nil-rate band after the spouse exemption; the law tests the whole estate first, and the band is capped at the value of the home left to children, which you can now enter. The <a href="/calculator/probate-fee-calculator/" class="text-primary hover:underline">probate fee calculator</a> charged £16 for every copy of the grant; copies ordered with the application have cost <strong class="text-foreground">£2</strong> since 6 July 2026.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Care costs, employer costs and visa fees.</strong> The <a href="/calculator/care-cost-calculator/" class="text-primary hover:underline">care cost calculator</a> now uses 2026 care-home fees, lets residents keep the £31.80 Personal Expenses Allowance and protects the £241.45 Minimum Income Guarantee for care at home. The <a href="/calculator/employer-cost-calculator/" class="text-primary hover:underline">employer cost calculator</a> charged pension on the whole salary instead of qualifying earnings (£862.80, not £1,050, on £35,000). The <a href="/calculator/visa-fee-calculator/" class="text-primary hover:underline">visa fee calculator</a> page now quotes the April 2026 fees throughout, charges children the £776 health surcharge, adds the £130 citizenship ceremony and shows the Graduate visa at 2 years (18 months for applications from 1 January 2027).</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Car import, car insurance and VAT registration.</strong> The <a href="/calculator/car-import-duty-calculator/" class="text-primary hover:underline">car import duty calculator</a> page still described non-EU duty at the motor caravan rate; passenger cars pay <strong class="text-foreground">10%</strong>, individual vehicle approval costs £199 and cars over 10 years old are exempt. The <a href="/calculator/car-insurance-estimate-calculator/" class="text-primary hover:underline">car insurance estimator</a> took a no-claims discount off prices that already included one, so it showed about £160 a year; it is now calibrated to the ABI average of £566. The <a href="/calculator/vat-threshold-calculator/" class="text-primary hover:underline">VAT threshold calculator</a> said a steady £6,000 a month would cross £90,000 in three months; at that rate it never does.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Credit cards and mortgages.</strong> The <a href="/calculator/credit-card-repayment-calculator/" class="text-primary hover:underline">credit card repayment calculator</a> treated APR as a simple annual rate, overstating interest; it now converts it properly and compares paying the minimum. The <a href="/calculator/mortgage-affordability-calculator/" class="text-primary hover:underline">mortgage affordability calculator</a> caps borrowing at 95% loan-to-value, takes off existing credit commitments and shows the monthly payment at the current average two-year fix of 5.73%. Pages that still described the Bank of England&rsquo;s fixed stress test, withdrawn in 2022, now say lenders set their own.</span>
+          </li>
+        </ul>
+      </article>
+
       <!-- September 2026 — browser QA corrections (26 Sep) -->
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>

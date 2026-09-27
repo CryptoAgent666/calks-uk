@@ -17,7 +17,13 @@ function calculate(openingBalance: number, months: { income: number; expenses: n
   const totalIncome = months.reduce((s, m) => s + m.income, 0)
   const totalExpenses = months.reduce((s, m) => s + m.expenses, 0)
 
-  return { schedule, closingBalance: balance, lowestBalance, lowestMonth, totalIncome, totalExpenses }
+  const avgNet = months.length > 0 ? (totalIncome - totalExpenses) / months.length : 0
+  // Burn rate: average monthly outflows minus inflows, when outflows are larger
+  const burnRate = avgNet < 0 ? -avgNet : 0
+  // Runway: months the opening balance lasts at that burn
+  const runwayMonths = burnRate > 0 ? Math.max(openingBalance, 0) / burnRate : null
+
+  return { schedule, closingBalance: balance, lowestBalance, lowestMonth, totalIncome, totalExpenses, burnRate, runwayMonths }
 }
 
 export default function CashFlowCalculator() {
@@ -46,9 +52,16 @@ export default function CashFlowCalculator() {
       <div className="space-y-4 animate-fade-in-up">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div className={`rounded-xl p-4 text-center ${result.closingBalance >= 0 ? 'bg-green-100 dark:bg-green-950' : 'bg-destructive/10'}`}><p className="text-xs text-muted-foreground">Closing Balance</p><p className={`text-xl font-bold ${result.closingBalance >= 0 ? 'text-green-700 dark:text-green-400' : 'text-destructive'}`}>{formatCurrency(result.closingBalance)}</p></div>
-          <div className={`rounded-xl p-4 text-center ${result.lowestBalance >= 0 ? 'bg-muted/50' : 'bg-destructive/10'}`}><p className="text-xs text-muted-foreground">Lowest Balance</p><p className={`text-lg font-bold ${result.lowestBalance < 0 ? 'text-destructive' : ''}`}>{formatCurrency(result.lowestBalance)}</p><p className="text-xs text-muted-foreground">Month {result.lowestMonth}</p></div>
+          <div className={`rounded-xl p-4 text-center ${result.lowestBalance >= 0 ? 'bg-muted/50' : 'bg-destructive/10'}`}><p className="text-xs text-muted-foreground">Lowest Balance</p><p className={`text-lg font-bold ${result.lowestBalance < 0 ? 'text-destructive' : ''}`}>{formatCurrency(result.lowestBalance)}</p><p className="text-xs text-muted-foreground">{result.lowestMonth === 0 ? 'Never below opening balance' : `Month ${result.lowestMonth}`}</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Total Income</p><p className="text-lg font-bold">{formatCurrency(result.totalIncome)}</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Total Expenses</p><p className="text-lg font-bold">{formatCurrency(result.totalExpenses)}</p></div>
+        </div>
+        <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
+          {result.burnRate > 0 && result.runwayMonths !== null ? (
+            <p>Burn rate <span className="font-medium text-foreground">{formatCurrency(result.burnRate)}</span> a month. Runway: <span className="font-medium text-foreground">{result.runwayMonths.toFixed(1)} months</span> before the opening balance is used up.</p>
+          ) : (
+            <p>No cash burn: inflows cover outflows, so the balance does not fall over the period.</p>
+          )}
         </div>
         <div className="overflow-x-auto max-h-64 overflow-y-auto">
           <table className="w-full text-sm">

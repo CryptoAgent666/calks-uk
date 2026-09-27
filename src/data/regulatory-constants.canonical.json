@@ -873,6 +873,7 @@
         "prose"
       ],
       "used_by": [
+        "src/components/calculators/EmployerCostCalculator.tsx",
         "src/components/calculators/EmployerPensionCalculator.tsx",
         "src/data/faqs.ts"
       ],
@@ -882,7 +883,9 @@
       "note": "EmployerPensionCalculator: const QUALIFYING_LOWER = 6_240 (lower limit of qualifying earnings band); prose '(£6,240 – £50,270)'",
       "official_value": "6240",
       "confidence": "high",
-      "freshness_note": "DWP HCWS1206: qualifying earnings lower limit held at GBP 6,240 for 2026/27 (aligned to NI LEL)."
+      "freshness_note": "DWP HCWS1206: qualifying earnings lower limit held at GBP 6,240 for 2026/27 (aligned to NI LEL).",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "auto_enrolment_qualifying_earnings_upper",
@@ -895,6 +898,7 @@
         "prose"
       ],
       "used_by": [
+        "src/components/calculators/EmployerCostCalculator.tsx",
         "src/components/calculators/EmployerPensionCalculator.tsx",
         "src/data/faqs.ts"
       ],
@@ -904,7 +908,9 @@
       "note": "EmployerPensionCalculator: const QUALIFYING_UPPER = 50_270 (upper limit of qualifying earnings band); prose '(£6,240 – £50,270)'",
       "official_value": "50270",
       "confidence": "high",
-      "freshness_note": "DWP HCWS1206: qualifying earnings upper limit held at GBP 50,270 for 2026/27 (aligned to UEL/higher-rate threshold, which is frozen)."
+      "freshness_note": "DWP HCWS1206: qualifying earnings upper limit held at GBP 50,270 for 2026/27 (aligned to UEL/higher-rate threshold, which is frozen).",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "auto_enrolment_total_min_contribution",
@@ -2188,7 +2194,9 @@
       "source_url": "https://www.gov.uk/importing-vehicles",
       "status": "current",
       "change_frequency": "",
-      "note": "car-import-duty-calculator: 10% non-EU import duty + 20% VAT (prose); howItWorks[0]/example use 6.5%. EU 0% with origin proof. IVA £478; DVLA reg £55; ToR relief available"
+      "note": "car-import-duty-calculator: 10% non-EU import duty + 20% VAT; EU/Japan/South Korea/Turkey 0% with proof of origin. IVA £199 (statutory, working hours; cars over 10 years exempt); DVLA first registration £55; ToR relief available",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "car_import_duty_rate_eu",
@@ -2217,18 +2225,20 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/CarImportDutyCalculator.tsx"
+        "src/components/calculators/CarImportDutyCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "CarImportDutyCalculator: 6.5% import duty on cars from non-EU. Also in button label 'Non-EU (6.5% duty)'.",
+      "note": "CarImportDutyCalculator: 10% UK Global Tariff duty on passenger cars from outside the EU; 0% for EU, Japan, South Korea, Turkey origin with proof (preferential).",
       "official_value": "10",
       "official_source": "gov.uk/guidance/tariffs-on-goods-imported-into-the-uk; multiple import-duty guides",
-      "verified_date": "2026-08-29",
-      "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
       "confidence": "medium",
-      "freshness_note": "Applied 2026-08-29: UK MFN third-country duty on passenger cars (HS 8703) is 10%, not 6.5%. 6.5% is the rate for motor caravans, a different 8703 subheading, so the old value understated duty on every car. Confidence medium rather than high: trade-tariff.service.gov.uk returns a WAF challenge to both this Mac and the DATA_HUB server, so the figure rests on the published MFN schedule rather than a direct read of the tariff service."
+      "freshness_note": "Applied 2026-08-29: UK MFN third-country duty on passenger cars (HS 8703) is 10%, not 6.5%. 6.5% is the rate for motor caravans, a different 8703 subheading, so the old value understated duty on every car. Confidence medium rather than high: trade-tariff.service.gov.uk returns a WAF challenge to both this Mac and the DATA_HUB server, so the figure rests on the published MFN schedule rather than a direct read of the tariff service. 2026-09-27: the engine had 10% since 29 Aug but the button still read \"Non-EU (6.5% duty)\" and the prose, example and FAQ all said 6.5%; fixed."
     },
     {
       "key": "care_capital_lower_limit",
@@ -2748,7 +2758,8 @@
         "prose"
       ],
       "used_by": [
-        "src/components/calculators/PropertyCGTCalculator.tsx"
+        "src/components/calculators/PropertyCGTCalculator.tsx",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/report-and-pay-your-capital-gains-tax/if-you-sold-a-property-in-the-uk-on-or-after-6-april-2020",
       "status": "current",
@@ -2756,7 +2767,9 @@
       "note": "PropertyCGTCalculator: must report and pay residential property CGT within 60 days of completion",
       "official_value": "60",
       "confidence": "high",
-      "freshness_note": "HMRC: must report and pay CGT on UK residential property within 60 days of completion. Extended from 30 to 60 days for disposals completing on/after 27 Oct 2021; still 60 days for 2026-27."
+      "freshness_note": "HMRC: must report and pay CGT on UK residential property within 60 days of completion. Extended from 30 to 60 days for disposals completing on/after 27 Oct 2021; still 60 days for 2026-27.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "cgt_property_reporting_window_days",
@@ -2777,7 +2790,9 @@
       "note": "capital-gains-tax/property-cgt: UK residential property gains reported & paid within 60 days of completion",
       "official_value": "60",
       "confidence": "high",
-      "freshness_note": "Same 60-day reporting/payment window as cgt_property_reporting_deadline_days. Confirmed on gov.uk."
+      "freshness_note": "Same 60-day reporting/payment window as cgt_property_reporting_deadline_days. Confirmed on gov.uk.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "cgt_rate_basic",
@@ -3342,14 +3357,19 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/UKCitizenshipCalculator.tsx"
+        "src/components/calculators/UKCitizenshipCalculator.tsx",
+        "src/components/calculators/VisaFeeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.gov.uk/government/publications/visa-regulations-revised-table/home-office-immigration-and-nationality-fees-8-april-2026",
       "status": "current",
       "change_frequency": "",
       "note": "UK Citizenship calculator: CEREMONY_FEE constant — statutory citizenship ceremony fee",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "citizenship_ilr_qualifying_period_months",
@@ -6886,12 +6906,12 @@
       "source_url": "https://www.gov.uk/government/publications/rates-and-allowances-tax-credits-child-benefit-and-guardians-allowance/tax-credits-child-benefit-and-guardians-allowance",
       "status": "current",
       "change_frequency": "",
-      "note": "TaxWorkingCreditsCalculator: Child Tax Credit family element, frozen (CTC_FAMILY)",
+      "note": "TaxWorkingCreditsCalculator: Child Tax Credit family element, frozen (CTC_FAMILY); paid only if a child was born before 6 Apr 2017 (two-child rule), applied 2026-09-27.",
       "official_value": "£545 per year",
       "confidence": "high",
       "freshness_note": "CTC family element £545/yr is the correct final (2024/25) rate; tax credits closed 5 Apr 2025, no 2026/27 figure exists.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "ctc_per_child_element",
@@ -14139,7 +14159,9 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/PensionPotCalculator.tsx"
+        "src/components/calculators/PensionPotCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://assets.publishing.service.gov.uk/media/69285a30ce50d215cae96148/proposed-benefit-and-pension-rates-2026-2027.pdf",
       "status": "current",
@@ -14147,7 +14169,9 @@
       "note": "PensionPotCalculator: default full new State Pension £241.30/week for 2026/27 (triple-lock uprated)",
       "official_value": "241.30",
       "confidence": "high",
-      "freshness_note": "Same figure: New State Pension full rate GBP 241.30/week for 2026/27."
+      "freshness_note": "Same figure: New State Pension full rate GBP 241.30/week for 2026/27.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "nhs_afc_band1_min",
@@ -15459,7 +15483,7 @@
       "key": "ni_salary_sacrifice_change_year",
       "value": "2029",
       "unit": "year",
-      "law": "Proposed NI on salary sacrifice change",
+      "law": "National Insurance Contributions (Employer Pensions Contributions) Act 2026 (c.15)",
       "theme": "other",
       "surfaces": [
         "prose"
@@ -15467,16 +15491,21 @@
       "used_by": [
         "src/data/calculators.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.legislation.gov.uk/ukpga/2026/15/enacted",
       "status": "current",
       "change_frequency": "",
-      "note": "ni-salary-sacrifice-2029-calculator: 'current salary sacrifice NI savings vs proposed 2029 rules'"
+      "note": "ni-salary-sacrifice-2029-calculator: 'current salary sacrifice NI savings vs proposed 2029 rules'",
+      "official_value": "2029",
+      "confidence": "high",
+      "freshness_note": "Enacted: Royal Assent 29 April 2026. From 6 April 2029 (2029-30) pension salary sacrifice above a £2,000 limit per tax year is earnings for employee AND employer Class 1 NI; up to £2,000 stays NI-free. Prose called it a consultation with no legislation and the calculator removed the whole NI saving; fixed 2026-09-27.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "ni_salary_sacrifice_pension_change_year",
       "value": "April 2029",
       "unit": "date",
-      "law": "NI Class 1 (salary sacrifice reform)",
+      "law": "National Insurance Contributions (Employer Pensions Contributions) Act 2026 (c.15)",
       "theme": "national_insurance",
       "surfaces": [
         "prose"
@@ -15484,19 +15513,21 @@
       "used_by": [
         "src/components/calculators/NISalarySacrificeCalculator.tsx"
       ],
-      "source_url": "https://www.icaew.com/insights/tax-news/2025/nov-2025/budget-nic-saving-on-salary-sacrifice-pension-contributions-capped",
+      "source_url": "https://www.legislation.gov.uk/ukpga/2026/15/enacted",
       "status": "current",
       "change_frequency": "",
       "note": "NISalarySacrificeCalculator — proposed change: employee NI to be charged on salary-sacrifice pension contributions from April 2029 (prose + code comment)",
-      "official_value": "April 2029 (from 6 April 2029)",
+      "official_value": "April 2029",
       "confidence": "high",
-      "freshness_note": "Autumn Budget (26 Nov 2025): NI relief on salary-sacrificed pension contributions capped at GBP 2,000/year from 6 April 2029. Date is correct."
+      "freshness_note": "Enacted: Royal Assent 29 April 2026. From 6 April 2029 (2029-30) pension salary sacrifice above a £2,000 limit per tax year is earnings for employee AND employer Class 1 NI; up to £2,000 stays NI-free. Prose called it a consultation with no legislation and the calculator removed the whole NI saving; fixed 2026-09-27.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "ni_salary_sacrifice_pension_relief_change_year",
       "value": "2029",
       "unit": "year",
-      "law": "Proposed NI salary sacrifice restriction",
+      "law": "National Insurance Contributions (Employer Pensions Contributions) Act 2026 (c.15)",
       "theme": "other",
       "surfaces": [
         "prose"
@@ -15504,10 +15535,15 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.legislation.gov.uk/ukpga/2026/15/enacted",
       "status": "current",
       "change_frequency": "",
-      "note": "Proposed removal of employer NI advantage on salary-sacrifice pensions ~2029 (not legislated) (ni-salary-sacrifice-2029-calculator)"
+      "note": "Enacted removal of employer NI advantage on salary-sacrifice pensions ~2029 (enacted 29 Apr 2026) (ni-salary-sacrifice-2029-calculator)",
+      "official_value": "2029",
+      "confidence": "high",
+      "freshness_note": "Enacted: Royal Assent 29 April 2026. From 6 April 2029 (2029-30) pension salary sacrifice above a £2,000 limit per tax year is earnings for employee AND employer Class 1 NI; up to £2,000 stays NI-free. Prose called it a consultation with no legislation and the calculator removed the whole NI saving; fixed 2026-09-27.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "ni_secondary_rate_employer",
@@ -19015,10 +19051,10 @@
       ],
       "used_by": [
         "src/components/calculators/ProbateFeeCalculator.tsx",
+        "src/components/calculators/SolicitorFeeCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/calculators.ts",
-        "src/data/faqs.ts",
-        "src/components/calculators/SolicitorFeeCalculator.tsx"
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/applying-for-probate/fees",
       "status": "current",
@@ -19028,7 +19064,9 @@
       "confidence": "high",
       "fixed": true,
       "fixed_date": "2026-07-14",
-      "freshness_note": "FIXED 2026-07-14 (DataHub freshness verify, adversarially confirmed): HMCTS probate application fee for estates over GBP 5,000 rose GBP 300 -> GBP 526. gov.uk/applying-for-probate/fees states verbatim 'If the value of the estate is over £5,000, the application fee is £526.' Prior £300/£273 were superseded. 2026-09-26: SolicitorFeeCalculator had its own copy still at £300 (disbursement), not listed in used_by; fixed to 526."
+      "freshness_note": "£526 for estates over £5,000 (personal and solicitor applications), in force 6 July 2026 (S.I. 2026/642). The £5,000 test uses the net estate (Non-Contentious Probate Fees Order 2004 art. 1).",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "probate_application_fee_personal",
@@ -19040,15 +19078,21 @@
         "prose"
       ],
       "used_by": [
-        "src/components/calculators/ProbateFeeCalculator.tsx"
+        "src/components/calculators/ProbateFeeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.gov.uk/applying-for-probate/fees",
       "status": "current",
       "change_frequency": "",
       "note": "ProbateFeeCalculator: personal application fee £526 (same as solicitor application), raised from £300; £273 before that",
       "value_history": "273 -> 300 -> 526",
       "fixed": true,
-      "fixed_date": "2026-07-14"
+      "fixed_date": "2026-07-14",
+      "official_value": "526",
+      "freshness_note": "£526 for estates over £5,000 (personal and solicitor applications), in force 6 July 2026 (S.I. 2026/642). The £5,000 test uses the net estate (Non-Contentious Probate Fees Order 2004 art. 1).",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "probate_estate_threshold",
@@ -19111,12 +19155,19 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/ProbateFeeCalculator.tsx"
+        "src/components/calculators/ProbateFeeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.gov.uk/applying-for-probate/fees",
       "status": "current",
       "change_frequency": "",
-      "note": "ProbateFeeCalculator: £16 per extra sealed copy (raised from £1.50 on 17 November 2025), 5 copies assumed"
+      "note": "Copies of the grant ordered AFTER the application: £16 each. Copies ordered with the application are £2 (see probate_copy_fee_with_application). ProbateFeeCalculator shows the £16 later-copy cost as a note.",
+      "official_value": "16",
+      "confidence": "high",
+      "freshness_note": "Court and Tribunal Fees (Miscellaneous Amendments) Order 2026 (S.I. 2026/642), in force 6 July 2026: application fee £300 -> £526, copies £2 with the application, £16 otherwise. The calculator had charged 5 x £16 on every application (DIY total £606 instead of £532 with 3 copies); fixed 2026-09-27.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "property_allowance",
@@ -24201,6 +24252,7 @@
         "prose"
       ],
       "used_by": [
+        "src/data/calculator-content.ts",
         "src/data/calculators.ts",
         "src/data/faqs.ts"
       ],
@@ -24210,7 +24262,9 @@
       "note": "state-pension-calculator: '(£12,547.60/year) for 2026/27'",
       "official_value": "12547.60",
       "confidence": "high",
-      "freshness_note": "Full new State Pension 2026-27 = GBP 241.30/wk x 52 = GBP 12,547.60/yr after 4.8% triple-lock (earnings) uprating from April 2026. Current."
+      "freshness_note": "Full new State Pension 2026-27 = GBP 241.30/wk x 52 = GBP 12,547.60/yr after 4.8% triple-lock (earnings) uprating from April 2026. Current.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "state_pension_full_new_weekly",
@@ -29015,13 +29069,16 @@
       "used_by": [
         "src/components/calculators/VisaFeeCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/visa-regulations-revised-table/home-office-immigration-and-nationality-fees-8-april-2026",
+      "source_url": "https://www.gov.uk/graduate-visa",
       "status": "current",
       "change_frequency": "",
       "note": "Graduate visa application fee (VISA_TYPES graduate)",
       "official_value": "937",
       "confidence": "high",
-      "freshness_note": "Official fee table (8 April 2026): 'Graduate Route - main applicant and dependants' = £937 (in-UK only application). Matches (was £880 in 2025-26, uprated)."
+      "freshness_note": "Official fee table (8 April 2026): 'Graduate Route - main applicant and dependants' = £937 (in-UK only application). Matches (was £880 in 2025-26, uprated).",
+      "changes_next_fy": "Graduate visa length falls from 2 years to 18 months for applications on or after 1 Jan 2027 (PhD stays 3 years); IHS 18 months = £1,552.50. Calculator already offers the 18-month option.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "visa_fee_ilr",
@@ -29053,7 +29110,9 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/VisaFeeCalculator.tsx"
+        "src/components/calculators/VisaFeeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/visa-regulations-revised-table/home-office-immigration-and-nationality-fees-8-april-2026",
       "status": "current",
@@ -29061,7 +29120,9 @@
       "note": "Skilled Worker visa application fee, more than 3 years / up to 5 years (VISA_TYPES skilled_worker fee5yr)",
       "official_value": "1618",
       "confidence": "high",
-      "freshness_note": "Official fee table (8 April 2026): Skilled Worker, CoS over 3 years = £1,618 from OUTSIDE the UK (in-UK equivalent is £1,865). Constant matches the outside-UK figure (was £1,519)."
+      "freshness_note": "Official fee table (8 April 2026): Skilled Worker, CoS over 3 years = £1,618 from OUTSIDE the UK (in-UK equivalent is £1,865). Constant matches the outside-UK figure (was £1,519).",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "visa_fee_skilled_worker_up_to_3yr",
@@ -29073,7 +29134,9 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/VisaFeeCalculator.tsx"
+        "src/components/calculators/VisaFeeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/visa-regulations-revised-table/home-office-immigration-and-nationality-fees-8-april-2026",
       "status": "current",
@@ -29081,7 +29144,9 @@
       "note": "Skilled Worker visa application fee, up to 3 years (out of UK), effective 8 Apr 2026 (VISA_TYPES skilled_worker fee3yr)",
       "official_value": "819",
       "confidence": "high",
-      "freshness_note": "Official fee table (8 April 2026): Skilled Worker, CoS 3 years or less = £819 from OUTSIDE the UK (in-UK equivalent is £943). Constant matches the outside-UK figure (was £769)."
+      "freshness_note": "Official fee table (8 April 2026): Skilled Worker, CoS 3 years or less = £819 from OUTSIDE the UK (in-UK equivalent is £943). Constant matches the outside-UK figure (was £769).",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "visa_fee_spouse_partner",
@@ -29113,7 +29178,9 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/VisaFeeCalculator.tsx"
+        "src/components/calculators/VisaFeeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/visa-regulations-revised-table/home-office-immigration-and-nationality-fees-8-april-2026",
       "status": "current",
@@ -29121,7 +29188,9 @@
       "note": "Student visa application fee (same for 3yr and 5yr) (VISA_TYPES student)",
       "official_value": "558",
       "confidence": "high",
-      "freshness_note": "Official fee table (8 April 2026): 'Student - main applicant and dependants' = £558 (same inside/outside UK; was £524). Matches."
+      "freshness_note": "Official fee table (8 April 2026): 'Student - main applicant and dependants' = £558 (same inside/outside UK; was £524). Matches.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "visa_priority_service_fee",
@@ -29133,7 +29202,9 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/VisaFeeCalculator.tsx"
+        "src/components/calculators/VisaFeeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/visa-regulations-revised-table/home-office-immigration-and-nationality-fees-8-april-2026",
       "status": "current",
@@ -29141,7 +29212,9 @@
       "note": "Priority processing add-on fee (VISA_TYPES priority); also prose 'Priority (+£500)'",
       "official_value": "500",
       "confidence": "high",
-      "freshness_note": "Official fee table (8 April 2026): 'Priority Visa service - Settlement' and '- Non-Settlement', and in-UK 'Expedited processing - Priority service' = £500 (unchanged). Matches."
+      "freshness_note": "Official fee table (8 April 2026): 'Priority Visa service - Settlement' and '- Non-Settlement', and in-UK 'Expedited processing - Priority service' = £500 (unchanged). Matches.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "visa_super_priority_service_fee_other",
@@ -29175,7 +29248,9 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/VisaFeeCalculator.tsx"
+        "src/components/calculators/VisaFeeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/visa-regulations-revised-table/home-office-immigration-and-nationality-fees-8-april-2026",
       "status": "current",
@@ -29183,7 +29258,9 @@
       "note": "Super Priority processing add-on fee for Skilled Worker & Spouse (VISA_TYPES superPriority 1000); also prose 'Super Priority (+£1,000)'",
       "official_value": "1000",
       "confidence": "high",
-      "freshness_note": "Official fee table (8 April 2026): 'Super Priority service' (in-UK) and 'Super priority visa service' (outside UK) both = £1,000 (unchanged). Matches."
+      "freshness_note": "Official fee table (8 April 2026): 'Super Priority service' (in-UK) and 'Super priority visa service' (outside UK) both = £1,000 (unchanged). Matches.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "voluntary_disclosure_penalty_min",
@@ -29398,17 +29475,19 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/WaterBillCalculator.tsx"
+        "src/components/calculators/WaterBillCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "https://www.discoverwater.co.uk/annual-bill",
+      "source_url": "https://www.water.org.uk/annual-average-bill-changes-2026-27",
       "status": "current",
       "change_frequency": "",
       "note": "Average UK combined unmetered (rateable value) annual bill 2026/27 per Ofwat (AVG_UNMETERED); regulator-set average estimate",
       "official_value": "639",
       "confidence": "medium",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). 2026-27 average household combined water+sewerage bill is GBP639/yr (water GBP309 + sewerage GBP330), up from GBP606 in 2025-26; stored GBP583 does not match (583 -> 639). No separate official 'unmetered' average is published.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). 2026-27 average household combined water+sewerage bill is GBP639/yr (water GBP309 + sewerage GBP330), up from GBP606 in 2025-26; stored GBP583 does not match (583 -> 639). No separate official 'unmetered' average is published. 2026-09-27: prose and FAQ still said the \"average metered household pays £448\" (2023/24); now £639 (Water UK 2026/27, +£33, 5.4%).",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "wda_main_pool_rate",
@@ -29721,12 +29800,12 @@
       "source_url": "https://www.gov.uk/government/publications/rates-and-allowances-tax-credits-child-benefit-and-guardians-allowance/tax-credits-child-benefit-and-guardians-allowance",
       "status": "historical",
       "change_frequency": "",
-      "note": "TaxWorkingCreditsCalculator: 2026/27 Working Tax Credit couple/second-adult element (WTC_COUPLES)",
+      "note": "TaxWorkingCreditsCalculator: 2026/27 Working Tax Credit couple/second-adult element (WTC_COUPLES); the same £2,500 element was paid to lone parents (was missing from the calculator until 2026-09-27).",
       "official_value": "2500",
       "confidence": "high",
       "freshness_note": "Historical: Working Tax Credit closed 5 Apr 2025; value is the final 2024/25 rate, kept for old-award illustration only.",
-      "verified_date": "2026-09-13",
-      "verify_method": "phase4 apply (tier2 2026-09-13 verdicts)"
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27"
     },
     {
       "key": "wtc_disability_element",
@@ -31045,10 +31124,534 @@
       "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
       "verified_date": "2026-09-26",
       "verify_method": "browser-qa 2026-09-26: primary source read"
+    },
+    {
+      "key": "probate_copy_fee_with_application",
+      "value": "2",
+      "unit": "GBP",
+      "law": "Non-Contentious Probate Fees Order 2004 (as amended by S.I. 2026/642)",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/ProbateFeeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/applying-for-probate/fees",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Copies of the grant ordered with the application: £2 each (in force 6 July 2026); later copies £16.",
+      "official_value": "2",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high"
+    },
+    {
+      "key": "ni_salary_sacrifice_pension_nic_free_limit",
+      "value": "2000",
+      "unit": "GBP/year",
+      "law": "National Insurance Contributions (Employer Pensions Contributions) Act 2026 (c.15)",
+      "theme": "national_insurance",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/NISalarySacrificeCalculator.tsx",
+        "src/components/calculators/EmployerCostCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ukpga/2026/15/enacted",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Pension salary sacrifice up to £2,000 a tax year stays free of employee and employer NI from 6 April 2029; the excess is earnings for Class 1 primary and secondary NI. First regulations must set £2,000; can be changed by regulations.",
+      "official_value": "2000",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high",
+      "changes_next_fy": "Takes effect 6 April 2029 (tax year 2029-30); design details (e.g. multiple employers) to come in secondary legislation - re-check when regulations are laid."
+    },
+    {
+      "key": "care_personal_expenses_allowance_weekly",
+      "value": "31.8",
+      "unit": "GBP/week",
+      "law": "Care and Support (Charging and Assessment of Resources) Regs 2014; LAC(DHSC)(2026)2",
+      "theme": "benefits",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/CareCostCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/social-care-charging-for-local-authorities-2026-to-2027/social-care-charging-for-care-and-support-2026-to-2027-local-authority-circular",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Personal Expenses Allowance for care-home residents 2026/27 (was £30.65).",
+      "official_value": "31.8",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high",
+      "changes_next_fy": "Uprated each April by DHSC circular"
+    },
+    {
+      "key": "care_mig_single_pension_credit_age_weekly",
+      "value": "241.45",
+      "unit": "GBP/week",
+      "law": "LAC(DHSC)(2026)2 Minimum Income Guarantee",
+      "theme": "benefits",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/CareCostCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/social-care-charging-for-local-authorities-2026-to-2027/social-care-charging-for-care-and-support-2026-to-2027-local-authority-circular",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Minimum Income Guarantee for home care, single person at Pension Credit age, 2026/27.",
+      "official_value": "241.45",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high",
+      "changes_next_fy": "Uprated each April by DHSC circular"
+    },
+    {
+      "key": "care_mig_single_25_to_pension_credit_age_weekly",
+      "value": "120.4",
+      "unit": "GBP/week",
+      "law": "LAC(DHSC)(2026)2 Minimum Income Guarantee",
+      "theme": "benefits",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/CareCostCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/social-care-charging-for-local-authorities-2026-to-2027/social-care-charging-for-care-and-support-2026-to-2027-local-authority-circular",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Minimum Income Guarantee for home care, single person aged 25+ below Pension Credit age (before disability premiums), 2026/27.",
+      "official_value": "120.4",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high",
+      "changes_next_fy": "Uprated each April by DHSC circular"
+    },
+    {
+      "key": "care_mig_couple_each_weekly",
+      "value": "184.3",
+      "unit": "GBP/week",
+      "law": "LAC(DHSC)(2026)2 Minimum Income Guarantee",
+      "theme": "benefits",
+      "surfaces": [],
+      "used_by": [],
+      "source_url": "https://www.gov.uk/government/publications/social-care-charging-for-local-authorities-2026-to-2027/social-care-charging-for-care-and-support-2026-to-2027-local-authority-circular",
+      "status": "current",
+      "change_frequency": "",
+      "note": "MIG for each member of a couple where at least one is at Pension Credit age, 2026/27 (not modelled; reference).",
+      "official_value": "184.3",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high",
+      "changes_next_fy": "Uprated each April by DHSC circular"
+    },
+    {
+      "key": "care_deferred_payment_max_interest_rate",
+      "value": "4.65",
+      "unit": "%",
+      "law": "Care Act 2014 deferred payment agreements - national maximum rate",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.essex.gov.uk/adult-social-care-and-health/paying-care-and-support/paying-care-home/deferred-payments",
+      "status": "current",
+      "change_frequency": "",
+      "note": "National maximum DPA interest rate from 1 July 2026 (gilt-linked, reset 1 January and 1 July).",
+      "official_value": "4.65",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "medium",
+      "volatile": true,
+      "changes_next_fy": "Resets 1 Jan 2027 and every 1 Jan / 1 Jul - update prose on care-cost page"
+    },
+    {
+      "key": "scotland_free_personal_care_weekly",
+      "value": "260.3",
+      "unit": "GBP/week",
+      "law": "Community Care and Health (Scotland) Act 2002 - free personal and nursing care",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.mygov.scot/personal-nursing-care/costs",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Free personal care payment for self-funding care-home residents in Scotland from 1 April 2026 (all adults, any age); nursing care £117.10 on top. Was shown as £248.70 (2024/25) \"for over-65s\".",
+      "official_value": "260.3",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high",
+      "changes_next_fy": "Uprated each April (Scottish Government)"
+    },
+    {
+      "key": "scotland_free_nursing_care_weekly",
+      "value": "117.1",
+      "unit": "GBP/week",
+      "law": "Community Care and Health (Scotland) Act 2002",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.mygov.scot/personal-nursing-care/costs",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Free nursing care payment, Scotland, from 1 April 2026.",
+      "official_value": "117.1",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high",
+      "changes_next_fy": "Uprated each April (Scottish Government)"
+    },
+    {
+      "key": "wales_residential_care_capital_limit",
+      "value": "50000",
+      "unit": "GBP",
+      "law": "Care and Support (Charging) (Wales) Regulations",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.wales/written-statement-raising-capital-limit-ps50000",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Wales capital limit for residential care, £50,000 since 8 April 2019 (prose had said April 2024).",
+      "official_value": "50000",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high"
+    },
+    {
+      "key": "retirement_living_standards_2026",
+      "value": "single 13900/32700/45400; couple 22500/45400/62700",
+      "unit": "GBP/year",
+      "law": "Pensions UK Retirement Living Standards (market/independent benchmark)",
+      "theme": "pension",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.retirementlivingstandards.org.uk/news/2026-rls-update",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Minimum / moderate / comfortable annual spending, after tax, excluding housing. 2026 update published 3 June 2026 (replaced 2024 figures £14,400/£31,300/£43,100 single, £22,400/£43,100/£59,000 couple). Used on pension-pot and wealth-growth.",
+      "official_value": "single 13900/32700/45400; couple 22500/45400/62700",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high",
+      "volatile": true,
+      "changes_next_fy": "Next update expected mid-2027 - check retirementlivingstandards.org.uk"
+    },
+    {
+      "key": "visa_certificate_of_sponsorship_skilled_worker",
+      "value": "525",
+      "unit": "GBP",
+      "law": "Immigration and Nationality (Fees) Regulations - fee table 8 April 2026",
+      "theme": "immigration",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/visa-regulations-revised-table/home-office-immigration-and-nationality-fees-8-april-2026",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Certificate of Sponsorship fee, Skilled Worker (prose had £239).",
+      "official_value": "525",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high"
+    },
+    {
+      "key": "immigration_skills_charge_small_charity_yearly",
+      "value": "480",
+      "unit": "GBP/year",
+      "law": "Immigration Skills Charge Regulations",
+      "theme": "immigration",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/uk-visa-sponsorship-employers/immigration-skills-charge",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Per sponsored worker per year, small or charitable sponsors (prose had £364).",
+      "official_value": "480",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "medium"
+    },
+    {
+      "key": "immigration_skills_charge_medium_large_yearly",
+      "value": "1320",
+      "unit": "GBP/year",
+      "law": "Immigration Skills Charge Regulations",
+      "theme": "immigration",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/uk-visa-sponsorship-employers/immigration-skills-charge",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Per sponsored worker per year, medium or large sponsors (prose had £1,000).",
+      "official_value": "1320",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "medium"
+    },
+    {
+      "key": "visa_fee_health_care_worker",
+      "value": "324 / 628",
+      "unit": "GBP",
+      "law": "Home Office fee table 8 April 2026",
+      "theme": "immigration",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/VisaFeeCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/visa-regulations-revised-table/home-office-immigration-and-nationality-fees-8-april-2026",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Health and Care Worker visa: up to 3 years £324, over 3 years £628; holders and dependants exempt from the IHS.",
+      "official_value": "324 / 628",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high"
+    },
+    {
+      "key": "visa_fee_standard_visitor",
+      "value": "135 / 506 / 903 / 1128",
+      "unit": "GBP",
+      "law": "Home Office fee table 8 April 2026",
+      "theme": "immigration",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/visa-regulations-revised-table/home-office-immigration-and-nationality-fees-8-april-2026",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Standard Visitor: 6 months / 2 / 5 / 10 years (prose had £115/£476/£956/£1,193).",
+      "official_value": "135 / 506 / 903 / 1128",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high"
+    },
+    {
+      "key": "saas_young_students_bursary_max_2026_27",
+      "value": "2000",
+      "unit": "GBP/year",
+      "law": "Student Awards Agency Scotland - Young Students Bursary",
+      "theme": "education",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://registryservices.ed.ac.uk/student-funding/undergraduate/loans-grants/scotland",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Max YSB 2026-27 at household income under £20,999 (£1,125 under £23,999, £500 under £34,000) plus loan up to £9,400 = £11,400. Prose had \"up to £8,100\" with a £6,000 loan (student-budget, student-allowance).",
+      "official_value": "2000",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "medium",
+      "changes_next_fy": "SAAS rates for 2027-28 announced around spring 2027"
+    },
+    {
+      "key": "saas_living_cost_loan_max_dependent_2026_27",
+      "value": "9400",
+      "unit": "GBP/year",
+      "law": "Student Awards Agency Scotland",
+      "theme": "education",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://registryservices.ed.ac.uk/student-funding/undergraduate/loans-grants/scotland",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Max living-cost loan for a young (dependent) Scottish student 2026-27.",
+      "official_value": "9400",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "medium",
+      "changes_next_fy": "SAAS rates for 2027-28 announced around spring 2027"
+    },
+    {
+      "key": "iva_fee_m1_statutory",
+      "value": "199",
+      "unit": "GBP",
+      "law": "DVSA vehicle approval test fees",
+      "theme": "transport",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/CarImportDutyCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/individual-vehicle-approval-inspection-fees/vehicle-approval-test-costs-cars",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Statutory normal IVA inspection, passenger car (M1), working hours (£294 outside). Cars over 10 years old are exempt from approval. Prose had £478/£500, engine £300.",
+      "official_value": "199",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high"
+    },
+    {
+      "key": "historic_vehicle_import_vat_effective",
+      "value": "5",
+      "unit": "%",
+      "law": "VAT Act 1994 s21 (works of art, collectors items) - heading 9705",
+      "theme": "vat",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/hmrc-internal-manuals/imports/imps05200",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Collector-status historic vehicles (30+ years, original state): 0% duty, effective 5% import VAT. Prose had said \"no VAT\" for pre-1960 classics.",
+      "official_value": "5",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "medium"
+    },
+    {
+      "key": "vat_failure_to_notify_penalty_range",
+      "value": "0-30 / 20-70 / 30-100",
+      "unit": "% of potential lost revenue",
+      "law": "Finance Act 2008 Sch 41",
+      "theme": "vat",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/compliance-checks-penalties-for-failure-to-notify-ccfs11/compliance-checks-penalties-for-failure-to-notify-ccfs11",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Late VAT registration: non-deliberate 0-30% (0% only if unprompted and within 12 months), deliberate 20-70%, deliberate and concealed 30-100%. Prose had the pre-2010 \"5% to 15%\".",
+      "official_value": "0-30 / 20-70 / 30-100",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "high"
+    },
+    {
+      "key": "abi_average_motor_premium_paid",
+      "value": "566",
+      "unit": "GBP/year",
+      "law": "ABI Motor Insurance Premium Tracker (market)",
+      "theme": "insurance",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/CarInsuranceEstimateCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.abi.org.uk/news/news-articles/2026/7/record3.2-billion-paid-out-to-support-motor-insurance-customers-in-q2-2026/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Average comprehensive price paid Q2 2026 (£560 Q1). Calculator default profile calibrated to ~£560.",
+      "official_value": "566",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "medium",
+      "volatile": true,
+      "changes_next_fy": "Quarterly: ABI publishes each quarter (Q3 2026 due ~Oct 2026)"
+    },
+    {
+      "key": "mortgage_avg_two_year_fix_moneyfacts",
+      "value": "5.73",
+      "unit": "%",
+      "law": "Moneyfacts UK Mortgage Trends (market)",
+      "theme": "mortgage",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/MortgageAffordabilityCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://moneyfactsgroup.co.uk/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Average 2-year fix 15 Sep 2026 (5-year 5.78%, SVR 7.13%). Used for the affordability monthly payment and commitments factor (£15,926 per £100/month over 25 years). Stress test: FPC 3-point test withdrawn Aug 2022; lenders set their own rate; FCA MCOB 11.6.18R not required on 5-year+ fixes.",
+      "official_value": "5.73",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27",
+      "confidence": "medium",
+      "volatile": true,
+      "changes_next_fy": "Market figure - refresh each calkcheck cycle"
     }
   ],
   "status_summary": {
-    "current": 1414,
+    "current": 1437,
     "retired": 23,
     "superseded_by_component": 4,
     "historical": 15,

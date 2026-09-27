@@ -1,5 +1,31 @@
 # CHANGELOG — Calks.uk
 
+## 2026-09-27 — Salary sacrifice 2029 is law, bonus NI per pay period, 12 calculators giving wrong answers
+
+Third `/calkcheck` data-currency pass, 20 more calculators never audited before (report: `AUDIT-2026-09-27.md`).
+
+**Salary sacrifice.** The NICs (Employer Pensions Contributions) Act 2026 received Royal Assent on 29 April 2026:
+from 6 April 2029 the first £2,000 a year sacrificed into a pension stays NI-free and the excess pays employee and
+employer NI. The page called it an unlegislated proposal and the calculator removed the whole NI saving (£400 lost
+on £50k/£5k instead of £240).
+
+**Calculators corrected:** dividend tax (unused Personal Allowance covers dividends; £100k taper), bonus tax (NI
+per pay period, £176 not £400 on a £5k bonus; director option), employer cost (pension on qualifying earnings),
+inheritance tax (residence band taper before the spouse exemption; capped at the home's value), probate (copies £2
+with the application since 6 July 2026), care cost (2026 fees, Personal Expenses Allowance £31.80, Minimum Income
+Guarantee £241.45, property disregard), tax credits (lone parent element, two-child rule), VAT threshold (rolling
+12-month test; a steady £6,000 a month never crosses), mortgage affordability (95% LTV cap, commitments, payment at
+5.73%), credit card (APR converted properly; minimum-payment comparison), visa fees (child health surcharge,
+citizenship ceremony, Graduate 2 years then 18 months from 1 Jan 2027), car import (IVA £199, cars over 10 years
+exempt, 0% trade-deal origins), car insurance (no double no-claims discount; ABI £566).
+
+**Figures corrected:** visa fees to the 8 April 2026 table (Skilled Worker £819/£1,618, CoS £525, skills charge
+£480/£1,320), car import duty 10% in the page text, water bill average £639, State Pension £12,547.60 on the
+pension pot page, Retirement Living Standards June 2026, Scottish free personal care £260.30 (all adults), Wales
+£50,000 since 2019, Scottish Young Students' Bursary £2,000 + £9,400 loan, VAT late-registration penalties
+(0-30/20-70/30-100%), CGT property reporting 60 days, pension emergency-tax example (£5,128.88 withheld), and the
+withdrawn Bank of England mortgage stress test on five more mortgage pages.
+
 ## 2026-09-26 (round 2) — Mortgage rates, Winter Fuel Payment, inheritance tax on pensions, eVED
 
 Second `/calkcheck` data-currency pass, 20 more calculators (report: `AUDIT-2026-09-26-b.md`).

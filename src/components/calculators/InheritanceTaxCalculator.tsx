@@ -6,18 +6,27 @@ const RNRB = 175_000 // Residence nil-rate band
 const IHT_RATE = 0.40
 const RNRB_TAPER_START = 2_000_000
 
-function calculate(estate: number, hasProperty: boolean, passToDirectDescendant: boolean, spouseExempt: number) {
+// estate = net value of the whole estate (assets minus debts) BEFORE exemptions and reliefs.
+// The RNRB taper is tested on that figure, not on what is left after the spouse exemption
+// (gov.uk: "do not take off any exemptions such as spouse exemption").
+// The RNRB is also capped at the value of the home (or share of it) passing to direct descendants.
+function calculate(estate: number, hasProperty: boolean, passToDirectDescendant: boolean, spouseExempt: number, homeToDescendants = RNRB) {
   const netEstate = Math.max(0, estate - spouseExempt)
 
-  let nrb = NIL_RATE_BAND
+  const nrb = NIL_RATE_BAND
   let rnrb = 0
+  let rnrbTaper = 0
+  let rnrbCappedByHome = false
 
   if (hasProperty && passToDirectDescendant) {
-    rnrb = RNRB
-    if (netEstate > RNRB_TAPER_START) {
-      const taperReduction = Math.floor((netEstate - RNRB_TAPER_START) / 2)
-      rnrb = Math.max(0, RNRB - taperReduction)
+    let maxRnrb = RNRB
+    if (estate > RNRB_TAPER_START) {
+      rnrbTaper = Math.min(RNRB, Math.floor((estate - RNRB_TAPER_START) / 2))
+      maxRnrb = RNRB - rnrbTaper
     }
+    const homeValue = Math.max(0, Math.min(homeToDescendants, estate))
+    rnrb = Math.min(maxRnrb, homeValue)
+    rnrbCappedByHome = homeValue < maxRnrb
   }
 
   const totalNilRate = nrb + rnrb
@@ -25,7 +34,7 @@ function calculate(estate: number, hasProperty: boolean, passToDirectDescendant:
   const iht = taxableEstate * IHT_RATE
 
   return {
-    estate, netEstate, nrb, rnrb, totalNilRate, taxableEstate, iht,
+    estate, netEstate, nrb, rnrb, rnrbTaper, rnrbCappedByHome, totalNilRate, taxableEstate, iht,
     effectiveRate: estate > 0 ? (iht / estate) * 100 : 0,
   }
 }
@@ -35,10 +44,12 @@ export default function InheritanceTaxCalculator() {
   const [hasProperty, setHasProperty] = useState(true)
   const [descendant, setDescendant] = useState(true)
   const [spouseExempt, setSpouseExempt] = useState('0')
+  const [homeValue, setHomeValue] = useState('300000')
 
   const e = parseFloat(estate.replace(/,/g, '')) || 0
   const s = parseFloat(spouseExempt.replace(/,/g, '')) || 0
-  const result = useMemo(() => calculate(e, hasProperty, descendant, s), [e, hasProperty, descendant, s])
+  const h = parseFloat(homeValue.replace(/,/g, '')) || 0
+  const result = useMemo(() => calculate(e, hasProperty, descendant, s, h), [e, hasProperty, descendant, s, h])
 
   return (
     <div className="space-y-6">
@@ -53,6 +64,7 @@ export default function InheritanceTaxCalculator() {
             <button key={a} onClick={() => setEstate(a.toLocaleString())} className="px-3 py-1.5 rounded-lg bg-muted text-sm font-medium hover:bg-accent transition-colors">£{a >= 1_000_000 ? `${a / 1_000_000}M` : `${a / 1000}K`}</button>
           ))}
         </div>
+        <p className="text-xs text-muted-foreground mt-2">Everything owned less debts, before any spouse, charity or other exemptions.</p>
       </div>
 
       <div>
@@ -74,6 +86,17 @@ export default function InheritanceTaxCalculator() {
         </label>
       </div>
 
+      {hasProperty && descendant && (
+        <div>
+          <label htmlFor="iht-home" className="block text-sm font-medium mb-2">Value of home left to children/grandchildren</label>
+          <div className="relative">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
+            <input id="iht-home" type="text" inputMode="numeric" value={homeValue} onChange={(e) => setHomeValue(e.target.value)} placeholder="300,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Value of home left to children/grandchildren" />
+          </div>
+          <p className="text-xs text-muted-foreground mt-1">Your share of the home, less any mortgage on it. The residence nil-rate band cannot exceed this value.</p>
+        </div>
+      )}
+
       {e > 0 && (
         <div className="space-y-4 animate-fade-in-up">
           <div className="rounded-2xl bg-destructive/10 p-6 text-center">
@@ -87,11 +110,14 @@ export default function InheritanceTaxCalculator() {
               <tr className="border-b border-border/50"><td className="py-2.5">Total Estate</td><td className="text-right tabular-nums font-medium">{formatCurrency(result.estate)}</td></tr>
               {s > 0 && <tr className="border-b border-border/50"><td className="py-2.5 text-green-600">Spouse Exemption</td><td className="text-right tabular-nums text-green-600">-{formatCurrency(s)}</td></tr>}
               <tr className="border-b border-border/50"><td className="py-2.5">Nil-Rate Band</td><td className="text-right tabular-nums text-green-600">-{formatCurrency(result.nrb)}</td></tr>
-              {result.rnrb > 0 && <tr className="border-b border-border/50"><td className="py-2.5">Residence Nil-Rate Band</td><td className="text-right tabular-nums text-green-600">-{formatCurrency(result.rnrb)}</td></tr>}
+              {result.rnrb > 0 && <tr className="border-b border-border/50"><td className="py-2.5">Residence Nil-Rate Band{result.rnrbCappedByHome ? ' (limited to home value)' : result.rnrbTaper > 0 ? ` (tapered by ${formatCurrency(result.rnrbTaper)})` : ''}</td><td className="text-right tabular-nums text-green-600">-{formatCurrency(result.rnrb)}</td></tr>}
               <tr className="border-b border-border/50"><td className="py-2.5">Taxable Estate</td><td className="text-right tabular-nums font-medium">{formatCurrency(result.taxableEstate)}</td></tr>
               <tr className="font-semibold"><td className="py-2.5 text-destructive">IHT at 40%</td><td className="text-right tabular-nums text-destructive">{formatCurrency(result.iht)}</td></tr>
             </tbody>
           </table>
+          {hasProperty && descendant && result.rnrbTaper > 0 && (
+            <p className="text-xs text-muted-foreground">The residence nil-rate band is reduced by £1 for every £2 the whole estate exceeds £2m, measured before the spouse exemption and other exemptions or reliefs.</p>
+          )}
         </div>
       )}
     </div>

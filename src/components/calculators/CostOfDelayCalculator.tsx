@@ -1,6 +1,11 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
+// Value of £1 paid in at the end of each month for `months` months
+function fvFactor(monthlyReturn: number, months: number) {
+  return monthlyReturn > 0 ? (Math.pow(1 + monthlyReturn, months) - 1) / monthlyReturn : months
+}
+
 function calculate(monthlyInvestment: number, returnRate: number, delayYears: number, totalYears: number) {
   const monthlyReturn = returnRate / 100 / 12
 
@@ -22,8 +27,10 @@ function calculate(monthlyInvestment: number, returnRate: number, delayYears: nu
   const totalInvestedDelayed = monthlyInvestment * investingYears * 12
   const extraContributions = totalInvestedNow - totalInvestedDelayed
   const lostGrowth = costOfDelay - extraContributions
+  // Monthly amount needed from the later start to finish level with starting now
+  const catchUpMonthly = investingYears > 0 ? balanceNow / fvFactor(monthlyReturn, investingYears * 12) : 0
 
-  return { balanceNow, balanceDelayed, costOfDelay, totalInvestedNow, totalInvestedDelayed, extraContributions, lostGrowth }
+  return { balanceNow, balanceDelayed, costOfDelay, totalInvestedNow, totalInvestedDelayed, extraContributions, lostGrowth, catchUpMonthly }
 }
 
 export default function CostOfDelayCalculator() {
@@ -37,6 +44,7 @@ export default function CostOfDelayCalculator() {
   const d = parseInt(delay) || 0
   const t = parseInt(total) || 0
   const result = useMemo(() => calculate(m, r, d, t), [m, r, d, t])
+  const comparison = useMemo(() => [0, 1, 5, 10, d].filter((x, i, a) => x < t && a.indexOf(x) === i).sort((a, b) => a - b).map(delay => ({ delay, ...calculate(m, r, delay, t) })), [m, r, d, t])
 
   return (
     <div className="space-y-6">
@@ -57,6 +65,19 @@ export default function CostOfDelayCalculator() {
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-xl bg-green-100 dark:bg-green-950 p-4 text-center"><p className="text-sm font-medium text-green-800 dark:text-green-300">Start Now</p><p className="text-2xl font-bold text-green-700 dark:text-green-400 mt-1">{formatCurrency(result.balanceNow)}</p><p className="text-xs text-muted-foreground">Invested: {formatCurrency(result.totalInvestedNow)}</p></div>
             <div className="rounded-xl border border-border p-4 text-center"><p className="text-sm font-medium">Start in {d} Years</p><p className="text-2xl font-bold mt-1">{formatCurrency(result.balanceDelayed)}</p><p className="text-xs text-muted-foreground">Invested: {formatCurrency(result.totalInvestedDelayed)}</p></div>
+          </div>
+          <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
+            <p>To finish level with starting now, you would need to invest <span className="font-medium text-foreground">{formatCurrency(result.catchUpMonthly)}</span> a month from year {d + 1}, {((result.catchUpMonthly / m - 1) * 100).toFixed(0)}% more than {formatCurrency(m)}.</p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead><tr className="border-b border-border"><th className="text-left py-2 font-medium text-muted-foreground">Start</th><th className="text-right py-2 font-medium text-muted-foreground">Pot after {t} years</th><th className="text-right py-2 font-medium text-muted-foreground">Cost of waiting</th><th className="text-right py-2 font-medium text-muted-foreground">Catch-up / month</th></tr></thead>
+              <tbody>
+                {comparison.map(row => (
+                  <tr key={row.delay} className={`border-b border-border/50 ${row.delay === d ? 'font-medium' : ''}`}><td className="py-1.5">{row.delay === 0 ? 'Now' : `In ${row.delay} year${row.delay !== 1 ? 's' : ''}`}</td><td className="text-right tabular-nums">{formatCurrency(row.balanceDelayed)}</td><td className="text-right tabular-nums text-destructive">{row.delay === 0 ? '-' : formatCurrency(row.costOfDelay)}</td><td className="text-right tabular-nums">{formatCurrency(row.catchUpMonthly)}</td></tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       )}

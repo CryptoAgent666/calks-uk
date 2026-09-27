@@ -22,19 +22,30 @@ const DEFAULT_EXPENSES = [
   { id: 'other', label: 'Other', amount: 0, period: 'monthly' as const },
 ]
 
+const NLW_21_PLUS = 12.71 // National Living Wage (21 and over) from April 2026
+
+function calculate(totalIncome: number, monthlyExpenses: number, termWeeks: number) {
+  const termMonths = termWeeks / 4.33
+  const annualExpenses = monthlyExpenses * termMonths
+  const surplus = totalIncome - annualExpenses
+  const weeklyBudget = surplus > 0 ? surplus / termWeeks : 0
+  // Part-time earnings needed in term to close a shortfall
+  const shortfall = surplus < 0 ? -surplus : 0
+  const weeklyEarningsNeeded = shortfall / termWeeks
+  const hoursAtNLW = weeklyEarningsNeeded / NLW_21_PLUS
+  return { termMonths, annualExpenses, surplus, weeklyBudget, shortfall, weeklyEarningsNeeded, hoursAtNLW }
+}
+
 export default function StudentBudgetCalculator() {
   const [income, setIncome] = useState(DEFAULT_INCOME.map(i => ({ ...i })))
   const [expenses, setExpenses] = useState(DEFAULT_EXPENSES.map(e => ({ ...e })))
   const [termWeeks, setTermWeeks] = useState('39')
 
   const tw = parseInt(termWeeks) || 39
-  const termMonths = tw / 4.33
 
   const totalIncome = income.reduce((s, i) => s + i.amount, 0)
   const monthlyExpenses = expenses.reduce((s, e) => s + e.amount, 0)
-  const annualExpenses = monthlyExpenses * termMonths
-  const surplus = totalIncome - annualExpenses
-  const weeklyBudget = surplus > 0 ? surplus / tw : 0
+  const { surplus, weeklyBudget, shortfall, weeklyEarningsNeeded, hoursAtNLW } = calculate(totalIncome, monthlyExpenses, tw)
 
   const updateIncome = (idx: number, amount: number) => setIncome(prev => prev.map((i, j) => j === idx ? { ...i, amount } : i))
   const updateExpense = (idx: number, amount: number) => setExpenses(prev => prev.map((e, j) => j === idx ? { ...e, amount } : e))
@@ -79,6 +90,7 @@ export default function StudentBudgetCalculator() {
         <p className="text-sm text-muted-foreground">Annual {surplus >= 0 ? 'Surplus' : 'Shortfall'}</p>
         <p className={`text-3xl font-bold mt-1 ${surplus >= 0 ? 'text-green-700 dark:text-green-400' : 'text-destructive'}`}>{formatCurrency(Math.abs(surplus))}</p>
         <p className="text-sm text-muted-foreground mt-1">Weekly spending budget: {formatCurrency(Math.max(0, weeklyBudget))}</p>
+        {shortfall > 0 && <p className="text-sm text-muted-foreground mt-1">To close the gap from part-time work: {formatCurrency(weeklyEarningsNeeded)} a week over {tw} weeks, about {hoursAtNLW.toFixed(1)} hours a week at the £{NLW_21_PLUS.toFixed(2)} National Living Wage (21+)</p>}
       </div>
     </div>
   )

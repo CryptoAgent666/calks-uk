@@ -2,21 +2,37 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 type CoverType = 'comprehensive' | 'tpft' | 'tpo'
-type AgeGroup = '17-20' | '21-25' | '26-30' | '31-40' | '41-50' | '51-65' | '66+'
+type AgeGroup = '17-20' | '21-29' | '30-39' | '40-49' | '50-59' | '60-69' | '70+'
 
-const BASE_PREMIUMS: Record<CoverType, Record<AgeGroup, number>> = {
-  comprehensive: { '17-20': 1800, '21-25': 900, '26-30': 550, '31-40': 450, '41-50': 400, '51-65': 380, '66+': 420 },
-  tpft: { '17-20': 1500, '21-25': 750, '26-30': 450, '31-40': 350, '41-50': 320, '51-65': 300, '66+': 340 },
-  tpo: { '17-20': 1400, '21-25': 700, '26-30': 400, '31-40': 300, '41-50': 280, '51-65': 270, '66+': 310 },
+// Annual comprehensive premium before no-claims discount, for a group 15 car
+// doing 6,000-10,000 miles, including 12% Insurance Premium Tax.
+// Calibrated so that each age band, at a typical no-claims record for that age,
+// lands near Confused.com's Q3 2026 average quote by age scaled to price paid
+// (x0.79 = ABI Q2 2026 average paid £566 / Confused Q3 2026 average quote £713),
+// and the default profile (30-39, 5 years NCB) matches the ABI average.
+const BASE_PREMIUM: Record<AgeGroup, number> = {
+  '17-20': 1500, '21-29': 1450, '30-39': 1400, '40-49': 1350, '50-59': 1075, '60-69': 900, '70+': 950,
 }
 
-const NCB_DISCOUNT: Record<number, number> = { 0: 0, 1: 0.20, 2: 0.30, 3: 0.40, 4: 0.50, 5: 0.60 }
+// For the same driver, cover levels price closely. Third party only is often
+// dearer than comprehensive because riskier drivers choose it (Uswitch, Feb-Apr 2026).
+const COVER_FACTOR: Record<CoverType, number> = { comprehensive: 1.0, tpft: 0.95, tpo: 1.05 }
+
+// No-claims discount by claim-free years, capped at 60% from year five.
+const NCB_DISCOUNT: Record<number, number> = { 0: 0, 1: 0.25, 2: 0.35, 3: 0.45, 4: 0.52, 5: 0.60 }
+
+function mileageFactor(miles: number) {
+  if (miles < 6000) return 0.92
+  if (miles <= 10000) return 1.0
+  if (miles <= 15000) return 1.08
+  return 1.15
+}
 
 function calculate(ageGroup: AgeGroup, cover: CoverType, ncbYears: number, carGroup: number, miles: number) {
-  const base = BASE_PREMIUMS[cover][ageGroup]
+  const base = BASE_PREMIUM[ageGroup] * COVER_FACTOR[cover]
   const groupFactor = 1 + (carGroup - 15) * 0.03 // group 1-50, base at 15
-  const milesFactor = miles > 12000 ? 1.1 : miles > 8000 ? 1.0 : 0.9
-  const ncbDiscount = NCB_DISCOUNT[Math.min(ncbYears, 5)] || 0
+  const milesFactor = mileageFactor(miles)
+  const ncbDiscount = NCB_DISCOUNT[Math.min(Math.max(ncbYears, 0), 5)] || 0
 
   const grossPremium = base * groupFactor * milesFactor
   const discount = grossPremium * ncbDiscount
@@ -27,7 +43,7 @@ function calculate(ageGroup: AgeGroup, cover: CoverType, ncbYears: number, carGr
 }
 
 export default function CarInsuranceEstimateCalculator() {
-  const [age, setAge] = useState<AgeGroup>('31-40')
+  const [age, setAge] = useState<AgeGroup>('30-39')
   const [cover, setCover] = useState<CoverType>('comprehensive')
   const [ncb, setNcb] = useState('5')
   const [group, setGroup] = useState('15')
@@ -41,7 +57,7 @@ export default function CarInsuranceEstimateCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Age Group</label><select value={age} onChange={(e) => setAge(e.target.value as AgeGroup)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Age Group"><option value="17-20">17-20</option><option value="21-25">21-25</option><option value="26-30">26-30</option><option value="31-40">31-40</option><option value="41-50">41-50</option><option value="51-65">51-65</option><option value="66+">66+</option></select></div>
+        <div><label className="block text-sm font-medium mb-2">Age Group</label><select value={age} onChange={(e) => setAge(e.target.value as AgeGroup)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Age Group"><option value="17-20">17-20</option><option value="21-29">21-29</option><option value="30-39">30-39</option><option value="40-49">40-49</option><option value="50-59">50-59</option><option value="60-69">60-69</option><option value="70+">70+</option></select></div>
         <div><label className="block text-sm font-medium mb-2">Cover Level</label><select value={cover} onChange={(e) => setCover(e.target.value as CoverType)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Cover Level"><option value="comprehensive">Comprehensive</option><option value="tpft">Third Party Fire & Theft</option><option value="tpo">Third Party Only</option></select></div>
         <div><label className="block text-sm font-medium mb-2">No Claims Bonus (years)</label><input type="number" min="0" max="9" value={ncb} onChange={(e) => setNcb(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="No Claims Bonus (years)" /></div>
         <div><label className="block text-sm font-medium mb-2">Insurance Group (1-50)</label><input type="number" min="1" max="50" value={group} onChange={(e) => setGroup(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Insurance Group (1-50)" /></div>
@@ -60,7 +76,7 @@ export default function CarInsuranceEstimateCalculator() {
           <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Group</p><p className="text-lg font-bold">{group} of 50</p></div>
         </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-          <p>Indicative estimate only. Actual premiums depend on your postcode, occupation, claims history, car modifications and many other factors. Always compare quotes from multiple providers.</p>
+          <p>Indicative estimate only, calibrated to the ABI average price paid (£566, Q2 2026) and Confused.com average quotes by age (Q3 2026), including 12% Insurance Premium Tax. Actual premiums depend on your postcode, occupation, claims history, car modifications and many other factors. Always compare quotes from multiple providers.</p>
         </div>
       </div>
     </div>
