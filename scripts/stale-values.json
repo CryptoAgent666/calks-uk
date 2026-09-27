@@ -39,7 +39,8 @@
   {
    "was": "1635",
    "now": "1334",
-   "what": "court_hearing_fee_up_to_100000"
+   "what": "court_hearing_fee_up_to_100000",
+   "ctx": "hearing|court|claim"
   },
   {
    "was": "2180",
@@ -824,6 +825,292 @@
    "was": "£4k of mortgage interest",
    "now": "interest at the calculator's rate",
    "what": "rental/btl gearing example (calkcheck 2026-09-27 r4)"
+  },
+  {
+   "was": "Plus 10% government top-up gives",
+   "now": "no government top-up since August",
+   "what": "apprenticeship_levy_government_topup_rate (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "topped up by a further 10%",
+   "now": "no government top-up since August",
+   "what": "apprenticeship_levy_government_topup_rate (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "with a further 10% added",
+   "now": "no government top-up since August",
+   "what": "apprenticeship_levy_government_topup_rate (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "Funds expire 24 months after they land",
+   "now": "new funds expire after twelve months",
+   "what": "apprenticeship_funds_expiry_months (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "aged 16 to 21 at a small employer",
+   "now": "full funding for sixteen to twenty-four year olds",
+   "what": "apprenticeship_full_funding_max_age (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "four times the annual exempt amount, which is £12,000",
+   "now": "proceeds over fifty thousand pounds or gains over the exempt amount",
+   "what": "cgt_reporting_proceeds_threshold (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "Airdrops are income at receipt",
+   "now": "airdrops income only for a service or trade",
+   "what": "crypto airdrops (calkcheck 2026-09-27 r5)",
+   "ctx": "Airdrops are income at receipt(?! only)"
+  },
+  {
+   "was": "Airdrops work the same way at receipt",
+   "now": "airdrops income only for a service or trade",
+   "what": "crypto airdrops (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "Airdrops are income at their value",
+   "now": "airdrops income only for a service or trade",
+   "what": "crypto airdrops (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "Binance UK",
+   "now": "no Binance in UK platform lists",
+   "what": "crypto platforms (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "having been applied to crypto from April 2024",
+   "now": "CGT rates for all assets since late October",
+   "what": "crypto CGT rates date (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "a ten-year tail keeps",
+   "now": "IHT tail three to ten years by residence",
+   "what": "fig_regime / IHT tail (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "transitional rules running until 2027",
+   "now": "repatriation facility to April twenty twenty-eight",
+   "what": "fig_regime TRF (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "open to people becoming resident from April 2025 onwards",
+   "now": "arrivals with years left can claim",
+   "what": "fig_regime eligibility (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "taxed normally = approx. £11,432",
+   "now": "claim loses the Personal Allowance",
+   "what": "fig_regime example (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "39 weeks of paid maternity or paternity leave",
+   "now": "maternity pay up to thirty-nine weeks, paternity pay two",
+   "what": "employee-vs-contractor paternity (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "£374.36",
+   "now": "two weeks of SPP at this year's rate",
+   "what": "paternity example (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "April 2024 made it a day-one right",
+   "now": "day-one paternity leave since April twenty twenty-six",
+   "what": "paternity_leave_day_one_right_from (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "regardless of what either normally earns",
+   "now": "each parent's rate from their own earnings",
+   "what": "ShPP rate (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "2 weeks fewer than the 39",
+   "now": "no paid time lost",
+   "what": "ShPP example (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "£4,363.08",
+   "now": "SMP at this year's rate",
+   "what": "ShPP example (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "£189.80",
+   "now": "Savings Credit threshold for this year",
+   "what": "pension_credit_savings_credit thresholds (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "£301.22",
+   "now": "Savings Credit threshold for this year",
+   "what": "pension_credit_savings_credit thresholds (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "between £10,000 and £99,999",
+   "now": "no upper capital limit",
+   "what": "pension credit capital (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "66 in 2026 and rises to 67 from 2028",
+   "now": "rising from sixty-six to sixty-seven during the transition",
+   "what": "pension credit age (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "Money Champions",
+   "now": "no unverified DWP programme",
+   "what": "pension credit prose (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "Williams (2017)",
+   "now": "Williams v British Airways",
+   "what": "holiday entitlement citation (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "renewed each year",
+   "now": "reconfirm every three months",
+   "what": "tax-free childcare reconfirmation (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "fresh code each term",
+   "now": "reconfirm the same code every three months",
+   "what": "free hours code (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "£69 on a £500 contribution",
+   "now": "employer NI at fifteen percent",
+   "what": "salary sacrifice employer NI (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "£496.80 employer share",
+   "now": "employer NI at fifteen percent",
+   "what": "salary sacrifice example (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "take-home falls by £68",
+   "now": "twenty percent tax and eight percent NI",
+   "what": "salary sacrifice basic rate (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "Premium Bonds pay 3.80%",
+   "now": "prize fund rate from the September draw",
+   "what": "premium_bonds_prize_fund_rate (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "average prize rate of 3.80%",
+   "now": "prize fund rate from the September draw",
+   "what": "premium_bonds_prize_fund_rate (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "The 3.80% prize rate",
+   "now": "prize fund rate from the September draw",
+   "what": "premium_bonds_prize_fund_rate (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "£85,000 under FSCS",
+   "now": "FSCS protection at the current limit",
+   "what": "fscs_deposit_protection_limit (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "£85,000 FSCS",
+   "now": "FSCS protection at the current limit",
+   "what": "fscs_deposit_protection_limit (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "more than £85,000 saved",
+   "now": "FSCS protection at the current limit",
+   "what": "fscs_deposit_protection_limit (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "3.93% AER",
+   "now": "Income Bonds rate dated",
+   "what": "nsi_direct_saver_rate (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "Direct Saver at 4.0%",
+   "now": "NS&I rates dated",
+   "what": "nsi_direct_saver_rate (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "pays £450 in tax",
+   "now": "higher-rate tax on savings interest",
+   "what": "offset mortgage example (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "Stress test at 5.5%: £859.38",
+   "now": "stress at pay rate plus two points",
+   "what": "buy-to-let stress test (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "keep a 100% first-year allowance until April 2026",
+   "now": "zero-emission car allowance to March/April twenty twenty-seven",
+   "what": "depreciation ZEV FYA (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "£4,705 sits above the threshold",
+   "now": "Plan two example on this year's threshold",
+   "what": "student loan example (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "Holding more than one loan means repaying each separately",
+   "now": "one nine percent over the lowest threshold",
+   "what": "student_loan_multiple_plans_rule (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "73% of Plan 5 borrowers",
+   "now": "DfE forecast of repayment in full",
+   "what": "student loan forecasts (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "costs about £216 a year",
+   "now": "Plan one vs Plan two gap this year",
+   "what": "student loan plans gap (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "or RPI plus 3% on Plan 2, and grows",
+   "now": "RPI only below the threshold",
+   "what": "plan2 interest (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "Most Plan 5 graduates",
+   "now": "DfE forecast of repayment in full",
+   "what": "student loan forecasts (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "10 to 13 mph over in a 30 zone",
+   "now": "course windows by limit",
+   "what": "npcc_speed_awareness_course_windows (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "At 50% or more over the limit",
+   "now": "summons thresholds by limit",
+   "what": "npcc summons (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "means an extended retest",
+   "now": "retest only if the court orders it",
+   "what": "driving disqualification retest (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "EPC rating of D or better",
+   "now": "no EPC or insulation condition",
+   "what": "boiler_upgrade_scheme_grant eligibility (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "single-occupancy property that already meets minimum insulation",
+   "now": "no EPC or insulation condition",
+   "what": "boiler_upgrade_scheme_grant eligibility (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "Scheme grant require minimum insulation standards",
+   "now": "no EPC or insulation condition",
+   "what": "boiler_upgrade_scheme_grant eligibility (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "running £980/year",
+   "now": "heat pump running cost at the current cap",
+   "what": "boiler replacement example (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "compares three routes",
+   "now": "boiler swap only",
+   "what": "boiler replacement claim (calkcheck 2026-09-27 r5)"
   }
  ]
 }

@@ -554,7 +554,7 @@
     },
     {
       "key": "apprenticeship_funds_expiry_months",
-      "value": "24",
+      "value": "12",
       "unit": "months",
       "law": "Apprenticeship Levy",
       "theme": "business_tax",
@@ -562,12 +562,17 @@
         "prose"
       ],
       "used_by": [
-        "src/components/calculators/ApprenticeshipLevyCalculator.tsx"
+        "src/components/calculators/ApprenticeshipLevyCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.gov.uk/government/publications/apprenticeship-funding/apprenticeship-funding",
       "status": "current",
       "change_frequency": "",
-      "note": "Levy funds in Digital Apprenticeship Service expire if unused within 24 months"
+      "note": "Levy funds entering accounts from August 2026 expire after 12 months; funds already in accounts before then keep the 24-month expiry.",
+      "official_value": "12 (funds entering from Aug 2026; older funds 24)",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "apprenticeship_levy_allowance",
@@ -599,7 +604,7 @@
     },
     {
       "key": "apprenticeship_levy_government_topup_rate",
-      "value": "10",
+      "value": "0",
       "unit": "%",
       "law": "Apprenticeship Levy",
       "theme": "business_tax",
@@ -609,14 +614,17 @@
       "used_by": [
         "src/components/calculators/ApprenticeshipLevyCalculator.tsx"
       ],
-      "source_url": "",
+      "source_url": "https://www.gov.uk/government/publications/apprenticeship-funding/apprenticeship-funding",
       "status": "current",
       "change_frequency": "",
-      "note": "Government adds 10% top-up to levy funds (topUp = netLevy * 0.10)"
+      "note": "The automatic 10% government top-up to levy funds was REMOVED from 1 August 2026 (Growth and Skills Levy reforms). ApprenticeshipLevyCalculator added 10% until 2026-09-27; fixed.",
+      "official_value": "0",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "apprenticeship_levy_govt_topup",
-      "value": "10",
+      "value": "0",
       "unit": "%",
       "law": "Apprenticeship Levy",
       "theme": "business_tax",
@@ -626,10 +634,13 @@
       "used_by": [
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://www.gov.uk/guidance/pay-apprenticeship-levy",
+      "source_url": "https://www.gov.uk/government/publications/apprenticeship-funding/apprenticeship-funding",
       "status": "current",
       "change_frequency": "",
-      "note": "apprenticeship-levy-calculator: government adds 10% top-up to levy funds; SMEs get 95% funding (100% for 16-21 apprentices); £1,000 incentive for 16-18 apprentices"
+      "note": "The automatic 10% government top-up to levy funds was REMOVED from 1 August 2026 (Growth and Skills Levy reforms). ApprenticeshipLevyCalculator added 10% until 2026-09-27; fixed.",
+      "official_value": "0",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "apprenticeship_levy_pay_bill_threshold",
@@ -1569,6 +1580,7 @@
         "computed"
       ],
       "used_by": [
+        "src/components/calculators/BoilerReplacementCalculator.tsx",
         "src/components/calculators/HeatPumpCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
@@ -1576,9 +1588,9 @@
       "source_url": "https://www.gov.uk/apply-boiler-upgrade-scheme/what-you-can-get",
       "status": "current",
       "change_frequency": "",
-      "note": "boiler-replacement/radiator-btu/insulation: BUS grant £7,500 toward air/ground source heat pump (raised from £5,000 Oct 2023); England & Wales",
+      "note": "BUS: £7,500 ASHP/GSHP, £2,500 air-to-air, £5,000 biomass; +£1,500 off-gas uplift to Mar 2027; England and Wales; no insulation or EPC condition since 2024 (boiler-replacement, gas-cost and insulation prose said otherwise until 2026-09-27).",
       "verified_date": "2026-09-27",
-      "verify_method": "calkcheck-2026-09-27-r4"
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "bps_phase_out_year",
@@ -2533,15 +2545,15 @@
       "used_by": [
         "src/components/calculators/CryptoTaxCARFCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/cryptoasset-reporting-framework/implementation-of-the-cryptoasset-reporting-framework-carf",
+      "source_url": "https://www.gov.uk/guidance/reporting-cryptoasset-user-and-transaction-data",
       "status": "current",
       "change_frequency": "",
-      "note": "Crypto Tax (CARF) calculator: prose states UK exchanges report crypto transactions to HMRC under CARF from 2026",
+      "note": "CARF: UK platforms collect user and transaction data from 1 January 2026; first reports to HMRC (covering 2026) due by 31 May 2027.",
       "official_value": "2026",
       "confidence": "high",
       "freshness_note": "CARF comes into effect 1 January 2026 (UK RCASPs begin due diligence/collection); first report due Jan-May 2027 for 2026 data.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "cgt_annual_exempt_amount",
@@ -6843,15 +6855,15 @@
       "used_by": [
         "src/data/calculators.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/cryptoasset-reporting-framework/implementation-of-the-cryptoasset-reporting-framework-carf",
+      "source_url": "https://www.gov.uk/guidance/reporting-cryptoasset-user-and-transaction-data",
       "status": "current",
       "change_frequency": "",
-      "note": "crypto-carf-calculator: 'CARF automatic reporting from 2026'",
+      "note": "CARF: UK platforms collect user and transaction data from 1 January 2026; first reports to HMRC (covering 2026) due by 31 May 2027.",
       "official_value": "2026",
       "confidence": "high",
       "freshness_note": "CARF automatic-reporting obligations begin 1 January 2026; first HMRC report 2027 covering 2026.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "crypto_carf_reporting_start",
@@ -6865,15 +6877,15 @@
       "used_by": [
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/cryptoasset-reporting-framework/implementation-of-the-cryptoasset-reporting-framework-carf",
+      "source_url": "https://www.gov.uk/guidance/reporting-cryptoasset-user-and-transaction-data",
       "status": "current",
       "change_frequency": "",
-      "note": "crypto-carf/crypto-tax-calculator: CARF mandatory reporting by UK crypto exchanges from 1 Jan 2026; penalties up to £30,000",
+      "note": "CARF: UK platforms collect user and transaction data from 1 January 2026; first reports to HMRC (covering 2026) due by 31 May 2027.",
       "official_value": "1 January 2026",
       "confidence": "high",
       "freshness_note": "Confirmed: CARF effective 1 Jan 2026. NB: the constant's prose says penalties up to GBP30,000, but HMRC CARF penalty is up to GBP300 per user (separate detail, not the verified value).",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "ctc_child_element",
@@ -12627,12 +12639,12 @@
       "source_url": "https://www.gov.uk/speeding-penalties",
       "status": "current",
       "change_frequency": "",
-      "note": "SpeedFineCalculator: minimum fine floor of GBP100 applied",
+      "note": "NOT a court minimum: £100 is the fixed penalty (with 3 points) offered instead of court. SpeedFineCalculator shows it as a separate route since 2026-09-27.",
       "official_value": "£100",
       "confidence": "high",
       "freshness_note": "gov.uk: minimum penalty for speeding is a £100 fine plus 3 penalty points.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "maintenance_loan_away_home_max",
@@ -16453,10 +16465,12 @@
       "source_url": "https://assets.publishing.service.gov.uk/media/69285a30ce50d215cae96148/proposed-benefit-and-pension-rates-2026-2027.pdf",
       "status": "current",
       "change_frequency": "",
-      "note": "PensionCreditCalculator: savings tariff block size £500 (deemedIncome = floor((savings - 10000) / 500))",
+      "note": "£1/week deemed income for every £500 OR PART of £500 above £10,000 (Math.ceil since 2026-09-27; was floor).",
       "official_value": "500",
       "confidence": "high",
-      "freshness_note": "Tariff income for Pension Credit (claimant over State Pension age): GBP 1 for every GBP 500 (or part thereof) of capital above the disregard. DWP rates document confirms GBP 500 block. Unchanged for 2"
+      "freshness_note": "Tariff income for Pension Credit (claimant over State Pension age): GBP 1 for every GBP 500 (or part thereof) of capital above the disregard. DWP rates document confirms GBP 500 block. Unchanged for 2",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "pension_credit_deemed_income_per_block",
@@ -16473,10 +16487,12 @@
       "source_url": "https://assets.publishing.service.gov.uk/media/69285a30ce50d215cae96148/proposed-benefit-and-pension-rates-2026-2027.pdf",
       "status": "current",
       "change_frequency": "",
-      "note": "PensionCreditCalculator: £1/week deemed income per £500 of savings over £10,000 (also in prose)",
+      "note": "£1/week deemed income for every £500 OR PART of £500 above £10,000 (Math.ceil since 2026-09-27; was floor).",
       "official_value": "1",
       "confidence": "high",
-      "freshness_note": "GBP 1 assumed weekly income per GBP 500 capital block above the disregard (Pension Credit tariff income). Unchanged for 2026/27."
+      "freshness_note": "GBP 1 assumed weekly income per GBP 500 capital block above the disregard (Pension Credit tariff income). Unchanged for 2026/27.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "pension_credit_guarantee_couple",
@@ -16598,15 +16614,17 @@
       "used_by": [
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/69285a30ce50d215cae96148/proposed-benefit-and-pension-rates-2026-2027.pdf",
+      "source_url": "https://assets.publishing.service.gov.uk/media/69931706ceeaa48d377f6bd5",
       "status": "current",
       "change_frequency": "",
-      "note": "pension-credit-calculator: max Savings Credit single (closed to new claims since Apr 2016); couple £19.04; threshold £189.80 single / £301.22 couple",
+      "note": "Savings Credit 2026/27 (closed to new claims since 2016 except couples with one partner reaching SPA before 6 Apr 2016): max £17.96 single / £20.10 couple; thresholds £208.07 / £329.75 (prose had 2024/25 £189.80/£301.22 and £19.04).",
       "official_value": "17.96",
       "confidence": "high",
       "freshness_note": "DWP 2026/27 Savings Credit maximum (single) is GBP 17.96/week (up from 17.30). Our 17.01 matches neither 2025/26 (17.30) nor 2026/27 (17.96); correct current value is 17.96.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "pension_credit_savings_disregard",
@@ -17903,14 +17921,15 @@
       "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
-      "note": "Student Loan Early Repay Calculator: Plan 2 max interest rate 7.3%",
+      "note": "Plan 2 interest: RPI (4.1% from 1 Sep 2026) at or below £29,385, rising linearly to the cap at £52,885+; cap = lower of RPI+3% and 6% (6% cap confirmed for Sep 2026 - Aug 2027). StudentLoanTotalCostCalculator charged a flat 6% until 2026-09-27.",
       "official_value": "6.0",
       "confidence": "high",
       "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
       "fixed_date": "2026-06-16",
-      "verified_date": "2026-09-10",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "changes_next_fy": "RPI-based rates reset each 1 September; the 6% cap is confirmed only to 31 Aug 2027"
     },
     {
       "key": "plan2_interest_rate_base",
@@ -17951,14 +17970,15 @@
       "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
-      "note": "Student Loan Interest Calculator: Plan 2 max interest rate (RPI + 3%) 7.3%",
+      "note": "Plan 2 interest: RPI (4.1% from 1 Sep 2026) at or below £29,385, rising linearly to the cap at £52,885+; cap = lower of RPI+3% and 6% (6% cap confirmed for Sep 2026 - Aug 2027). StudentLoanTotalCostCalculator charged a flat 6% until 2026-09-27.",
       "official_value": "6.0",
       "confidence": "high",
       "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
       "fixed_date": "2026-06-16",
-      "verified_date": "2026-09-10",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "changes_next_fy": "RPI-based rates reset each 1 September; the 6% cap is confirmed only to 31 Aug 2027"
     },
     {
       "key": "plan2_repayment_rate",
@@ -18019,14 +18039,15 @@
       "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
       "change_frequency": "",
-      "note": "StudentLoanTotalCostCalculator: Plan 2 interest rate (plans.plan2.interest = 7.3)",
+      "note": "Plan 2 interest: RPI (4.1% from 1 Sep 2026) at or below £29,385, rising linearly to the cap at £52,885+; cap = lower of RPI+3% and 6% (6% cap confirmed for Sep 2026 - Aug 2027). StudentLoanTotalCostCalculator charged a flat 6% until 2026-09-27.",
       "official_value": "6.0",
       "confidence": "high",
       "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
       "fixed_date": "2026-06-16",
-      "verified_date": "2026-09-10",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "changes_next_fy": "RPI-based rates reset each 1 September; the 6% cap is confirmed only to 31 Aug 2027"
     },
     {
       "key": "plan2_student_loan_rate",
@@ -19025,20 +19046,22 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/PremiumBondsCalculator.tsx"
+        "src/components/calculators/PremiumBondsCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.nsandi.com/products/premium-bonds",
       "status": "current",
       "change_frequency": "",
-      "note": "PremiumBondsCalculator: PRIZE_RATE = 0.0435, annual prize fund rate (tax-free), September 2026 draw onward.",
+      "note": "PremiumBondsCalculator: PRIZE_RATE = 0.0435, annual prize fund rate (tax-free), September 2026 draw onward. Prose copies on ns-i-savings, offset-mortgage and savings-goal said 3.80% until 2026-09-27.",
       "fixed": true,
       "fixed_date": "2026-06-16",
       "volatile": true,
       "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)",
       "official_value": "4.35",
       "confidence": "high",
-      "verified_date": "2026-08-31",
-      "verify_method": "NS&I product page + press release PR260818",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
       "freshness_note": "Corrected 2026-08-29..31: NS&I raised the prize fund rate to 4.35% and shortened the odds to 21,000 to 1 for the SEPTEMBER 2026 draw (PR260818, 18 Aug 2026), up from 3.80% / 22,000 in July. Found by diffing duplicate ledger rows against each other and then against the live component — the technique calk-uz-2c described. Before the fix four surfaces disagreed: code 3.80%, ledger 4.0, a duplicate ledger row 4.15, and prose 4.00%."
     },
     {
@@ -19224,12 +19247,15 @@
         "prose"
       ],
       "used_by": [
+        "src/components/calculators/ProteinIntakeCalculator.tsx",
         "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.nhs.uk/live-well/eat-well/food-types/meat-and-fish/",
       "status": "current",
       "change_frequency": "",
-      "note": "protein-intake-calculator: UK Reference Nutrient Intake (RNI) 0.75g protein per kg body weight/day for sedentary adults"
+      "note": "protein-intake-calculator: UK Reference Nutrient Intake (RNI) 0.75g protein per kg body weight/day for sedentary adults",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "pupil_premium_primary",
@@ -23357,7 +23383,9 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "SpeedFineCalculator: Band A starting point 50% of weekly income (range 25-75%), 3 penalty points"
+      "note": "SpeedFineCalculator: Band A starting point 50% of weekly income (range 25-75%), 3 penalty points The calculator charged the range bottom (25/75/125%) until 2026-09-27 while the ledger had the right starting point.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "speeding_fine_band_b_points",
@@ -23418,7 +23446,9 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "SpeedFineCalculator: Band B starting point 100% of weekly income (range 75-125%), 4-6 points or 7-28 day ban"
+      "note": "SpeedFineCalculator: Band B starting point 100% of weekly income (range 75-125%), 4-6 points or 7-28 day ban The calculator charged the range bottom (25/75/125%) until 2026-09-27 while the ledger had the right starting point.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "speeding_fine_band_c_points",
@@ -23479,7 +23509,9 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "SpeedFineCalculator: Band C starting point 150% of weekly income (range 125-175%), 6 points or 7-56 day ban"
+      "note": "SpeedFineCalculator: Band C starting point 150% of weekly income (range 125-175%), 6 points or 7-56 day ban The calculator charged the range bottom (25/75/125%) until 2026-09-27 while the ledger had the right starting point.",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5"
     },
     {
       "key": "speeding_fine_cap_motorway",
@@ -32199,10 +32231,265 @@
       "confidence": "medium",
       "volatile": true,
       "changes_next_fy": "Quarterly MoJ release"
+    },
+    {
+      "key": "fscs_deposit_protection_limit",
+      "value": "120000",
+      "unit": "GBP",
+      "law": "PRA Depositor Protection rules",
+      "theme": "savings",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.fscs.org.uk/check/check-your-money-is-protected/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "FSCS protects £120,000 per person per authorised firm since 1 December 2025 (was £85,000); temporary high balances up to £1.4m for six months. ns-i-savings said £85,000 in 5 places until 2026-09-27.",
+      "official_value": "120000",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "confidence": "high"
+    },
+    {
+      "key": "nsi_direct_saver_rate",
+      "value": "3.75",
+      "unit": "% AER",
+      "law": "NS&I product terms (market)",
+      "theme": "savings",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/SavingsInterestCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.nsandi.com/products",
+      "status": "current",
+      "change_frequency": "",
+      "note": "NS&I rates at 27 Sep 2026: Direct Saver 3.75% (from 18 Aug 2026), Direct ISA 3.80%, Junior ISA 3.70%, Income Bonds 3.69% gross / 3.75% AER, Guaranteed Growth Bonds 1-5 yr 4.81-4.85% AER, Green Savings Bonds Issue 9 (3-yr) 4.45%.",
+      "official_value": "3.75",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "confidence": "high",
+      "volatile": true,
+      "changes_next_fy": "NS&I variable rates change without notice: refresh each calkcheck cycle"
+    },
+    {
+      "key": "apprenticeship_full_funding_max_age",
+      "value": "24",
+      "unit": "years",
+      "law": "Apprenticeship funding rules 2026-27",
+      "theme": "business",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/apprenticeship-funding/apprenticeship-funding",
+      "status": "current",
+      "change_frequency": "",
+      "note": "From 1 Aug 2026 government pays 100% for apprentices aged 16-24 at non-levy employers and levy employers with no funds left; 25+: 95% (non-levy, 5% co-investment) or 75% (levy with funds exhausted, 25% co-investment). Prose had \"16 to 21 at a small employer\".",
+      "official_value": "24",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "confidence": "high"
+    },
+    {
+      "key": "student_loan_multiple_plans_rule",
+      "value": "9% over the lowest threshold",
+      "unit": "rule",
+      "law": "Education (Student Loans) (Repayment) Regulations 2009",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/StudentLoanCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "status": "current",
+      "change_frequency": "",
+      "note": "With more than one undergraduate plan you repay 9% of income over the LOWEST threshold (split between plans); Postgraduate 6% over £21,000 runs alongside. StudentLoanCalculator charged 9% per plan and summed until 2026-09-27.",
+      "official_value": "9% over the lowest threshold",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "confidence": "high"
+    },
+    {
+      "key": "student_loan_plan2_threshold_freeze_until",
+      "value": "April 2030",
+      "unit": "date",
+      "law": "Budget 2025",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/StudentLoanTotalCostCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/student-loan-forecasts-for-england/2025-26",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Plan 2 threshold held at £29,385 for 2027/28-2029/30, then RPI (Wales not freezing). Plan 5 £25,000 until April 2027 then RPI. DfE forecast (9 Jul 2026): 55% of 2025/26 Plan 5 starters repay in full; average debt £45,800.",
+      "official_value": "April 2030",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "confidence": "medium",
+      "changes_next_fy": "Plan 2 threshold unfreezes April 2030; Plan 5 uprating from April 2027"
+    },
+    {
+      "key": "speeding_band_table_by_limit",
+      "value": "20:21-30/31-40/41+; 30:31-40/41-50/51+; 40:41-55/56-65/66+; 50:51-65/66-75/76+; 60:61-80/81-90/91+; 70:71-90/91-100/101+",
+      "unit": "mph (A/B/C)",
+      "law": "Sentencing Council speeding guideline (2017)",
+      "theme": "legal",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/SpeedFineCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.sentencingcouncil.org.uk/offences/magistrates-court/item/speeding-revised-2017/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Bands by limit and recorded speed; relevant weekly income is net of tax and NI (£120 floor; £440 assumed with no information). SpeedFineCalculator used flat % over the limit until 2026-09-27 (40 in a 30 was Band B, should be A).",
+      "official_value": "20:21-30/31-40/41+; 30:31-40/41-50/51+; 40:41-55/56-65/66+; 50:51-65/66-75/76+; 60:61-80/81-90/91+; 70:71-90/91-100/101+",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "confidence": "high"
+    },
+    {
+      "key": "npcc_speed_awareness_course_windows",
+      "value": "20:24-31; 30:35-42; 40:46-53; 50:57-64; 60:68-75; 70:79-86",
+      "unit": "mph",
+      "law": "NPCC Speed Enforcement Disposal Guidance 2025",
+      "theme": "legal",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/SpeedFineCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://library.college.police.uk/docs/NPCC/Speed-enforcement-disposal-guidance-2025.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Course offer windows (not attended one in the last 3 years); summons from 35 in a 20, 50 / 66 / 76 / 86 / 96 mph in 30-70 limits.",
+      "official_value": "20:24-31; 30:35-42; 40:46-53; 50:57-64; 60:68-75; 70:79-86",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "confidence": "medium"
+    },
+    {
+      "key": "paternity_leave_day_one_right_from",
+      "value": "6 April 2026",
+      "unit": "date",
+      "law": "Employment Rights Act 2025; SI 2026/15",
+      "theme": "pay",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/paternity-pay-leave/eligibility",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Paternity LEAVE is a day-one right for babies due in or after the week of 5 April 2026; paternity PAY still needs 26 weeks continuous employment by the 15th week before the due week and average earnings of at least £129/week. Page said \"April 2024 made it a day-one right\".",
+      "official_value": "6 April 2026",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "confidence": "high"
+    },
+    {
+      "key": "cgt_reporting_proceeds_threshold",
+      "value": "50000",
+      "unit": "GBP",
+      "law": "Finance Act 2023 s8 (TCGA 1992 Sch 1 para 7)",
+      "theme": "capital_gains_tax",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ukpga/2023/1/section/8",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Self Assessment CGT reporting: disposal proceeds over £50,000, or chargeable gains over the £3,000 AEA, or a loss claim. crypto-tax prose said \"four times the annual exempt amount, £12,000\".",
+      "official_value": "50000",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "confidence": "high"
+    },
+    {
+      "key": "fig_regime_claim_loses_allowances",
+      "value": "Personal Allowance and CGT annual exempt amount lost",
+      "unit": "rule",
+      "law": "Finance Act 2025 (FIG regime)",
+      "theme": "income_tax",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/NonDomTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/check-if-you-can-claim-the-4-year-foreign-income-and-gains-regime",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Claiming the 4-year FIG regime costs the Personal Allowance and CGT AEA for that year; eligibility after 10 years non-resident, including arrivals from 2022/23 with years left; no domicile test. TRF 12%/12%/15% to 5 April 2028. NonDomTaxCalculator kept the PA until 2026-09-27.",
+      "official_value": "Personal Allowance and CGT annual exempt amount lost",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "confidence": "high"
+    },
+    {
+      "key": "boiler_replacement_gas_standing_default",
+      "value": "108",
+      "unit": "GBP/year",
+      "law": "Ofgem price cap 1 Oct-31 Dec 2026 (29.68p/day)",
+      "theme": "energy",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/BoilerReplacementCalculator.tsx"
+      ],
+      "source_url": "https://www.ofgem.gov.uk/information-consumers/energy-advice-households/get-energy-price-cap-standing-charges-and-unit-rates-region",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Default gas standing charge excluded from the efficiency saving in BoilerReplacementCalculator (29.68p/day x 365 = £108.33, October cap).",
+      "official_value": "108",
+      "verified_date": "2026-09-27",
+      "verify_method": "calkcheck-2026-09-27-r5",
+      "confidence": "high",
+      "volatile": true,
+      "changes_next_fy": "Update with each quarterly Ofgem cap (next 1 Jan 2027)"
     }
   ],
   "status_summary": {
-    "current": 1458,
+    "current": 1469,
     "retired": 24,
     "superseded_by_component": 4,
     "historical": 15,

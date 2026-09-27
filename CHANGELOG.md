@@ -1,5 +1,31 @@
 # CHANGELOG — Calks.uk
 
+## 2026-09-27 (round 5) — Apprenticeship levy reforms, student loans, speeding bands, FSCS £120k
+
+Fifth `/calkcheck` data-currency pass, 20 more calculators (report: `AUDIT-2026-09-27-c.md`).
+
+**Apprenticeship levy.** The 10% government top-up ended on 1 August 2026, new funds expire after 12 months,
+and apprentices aged 16-24 are fully funded at any employer. **FSCS** deposit protection is £120,000 (since 1
+December 2025), not £85,000. **Premium Bonds** 4.35% on three more pages.
+
+**Calculators corrected:** student loan repayment (one 9% over the lowest threshold across plans), student loan
+total cost (Plan 2 income-linked interest, thresholds uprated, RPI input), speeding fine (Sentencing Council bands
+by limit, starting points 50/100/150%, net income, NPCC course/summons route), non-dom (FIG claim loses the
+Personal Allowance; claim vs no-claim), crypto (basic band below the PA; brought-forward losses), employee vs
+contractor (PA taper and 45%; employer NI threshold; qualifying earnings), holiday entitlement (4-day weeks,
+irregular hours, part-year), shared parental pay (37-week cap, LEL), paternity pay (LEL, split weeks), Pension
+Credit (tariff income rounded up; both partners' severe disability), childcare (hours per week, 15/30 hours, UC
+comparison), offset mortgage (interest saved, term cut, gross-equivalent rate), buy-to-let (PRA stress rate,
+125%/145%), salary sacrifice pension (relief at source, Scotland, LEL/NMW warnings), NS&I savings (after-tax,
+monthly income), boiler replacement (standing charge excluded), protein (UK RNI floor, per-meal split),
+depreciation (nil salvage).
+
+**Figures corrected:** paternity leave day-one right from 6 April 2026; Savings Credit thresholds 2026/27;
+NS&I rates at 27 September; CGT reporting at £50,000 proceeds; crypto airdrops; CARF first reports by 31 May
+2027; Boiler Upgrade Scheme has no insulation or EPC condition (also on gas-cost and insulation); zero-emission
+car FYA to 2027; student loan plan dates for Wales; DfE forecast (55% of Plan 5 starters repay in full); health
+byline no longer cites Public Health England.
+
 ## 2026-09-27 (round 4) — Scottish tax above £100k, 2031 freeze, fuel at 172p, pension relief
 
 Fourth `/calkcheck` data-currency pass, 20 more calculators (report: `AUDIT-2026-09-27-b.md`).
