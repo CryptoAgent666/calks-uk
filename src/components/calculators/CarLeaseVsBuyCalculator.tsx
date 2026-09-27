@@ -1,27 +1,39 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-function calculate(carPrice: number, leaseMonthly: number, leaseTerm: number, leaseDeposit: number, buyDeposit: number, financeRate: number, financeTerm: number, depreciationPct: number) {
-  // LEASE total cost
-  const leaseTotal = leaseDeposit + leaseMonthly * leaseTerm
-  const leaseMonthlyEff = leaseTotal / leaseTerm
+function calculate(carPrice: number, leaseMonthly: number, leaseTerm: number, leaseDeposit: number, buyDeposit: number, financeRate: number, finTerm: number, depreciationPct: number) {
+  // Comparison period = the lease term
+  const period = Math.max(1, Math.round(leaseTerm))
+  const financeTerm = Math.max(1, Math.round(finTerm))
 
-  // BUY total cost
-  const financeAmount = carPrice - buyDeposit
-  const monthlyRate = financeRate / 100 / 12
-  const buyMonthly = monthlyRate > 0 ? financeAmount * (monthlyRate * Math.pow(1 + monthlyRate, financeTerm)) / (Math.pow(1 + monthlyRate, financeTerm) - 1) : financeAmount / financeTerm
-  const buyTotalPaid = buyDeposit + buyMonthly * financeTerm
+  // LEASE total cost
+  const leaseTotal = leaseDeposit + leaseMonthly * period
+  const leaseMonthlyEff = leaseTotal / period
+
+  // BUY on finance: APR converted to the equivalent monthly rate
+  const deposit = Math.min(Math.max(buyDeposit, 0), carPrice)
+  const financeAmount = carPrice - deposit
+  const monthlyRate = financeRate > 0 ? Math.pow(1 + financeRate / 100, 1 / 12) - 1 : 0
+  const growth = Math.pow(1 + monthlyRate, financeTerm)
+  const buyMonthly = financeAmount <= 0 ? 0 : monthlyRate > 0 ? financeAmount * monthlyRate * growth / (growth - 1) : financeAmount / financeTerm
+  const paymentsInPeriod = Math.min(period, financeTerm)
+  const paidInPeriod = buyMonthly * paymentsInPeriod
+  // Balance still owed at the end of the comparison period (settled from the sale)
+  const g = Math.pow(1 + monthlyRate, paymentsInPeriod)
+  const outstanding = financeAmount <= 0 || paymentsInPeriod >= financeTerm ? 0
+    : monthlyRate > 0 ? Math.max(0, financeAmount * g - buyMonthly * (g - 1) / monthlyRate)
+    : Math.max(0, financeAmount - buyMonthly * paymentsInPeriod)
+  const buyTotalPaid = deposit + paidInPeriod + outstanding
   const buyInterest = buyTotalPaid - carPrice
 
-  // Residual value after lease term equivalent
-  const yearsOwned = leaseTerm / 12
-  const residualValue = carPrice * Math.pow(1 - depreciationPct / 100, yearsOwned)
+  // Resale value at the end of the comparison period
+  const residualValue = carPrice * Math.pow(1 - depreciationPct / 100, period / 12)
   const buyNetCost = buyTotalPaid - residualValue
-  const buyMonthlyEff = buyNetCost / leaseTerm
+  const buyMonthlyEff = buyNetCost / period
 
   const leaseBetter = leaseTotal < buyNetCost
 
-  return { leaseTotal, leaseMonthlyEff, buyTotalPaid, buyInterest, residualValue, buyNetCost, buyMonthlyEff, buyMonthly, leaseBetter, difference: Math.abs(leaseTotal - buyNetCost) }
+  return { leaseTotal, leaseMonthlyEff, buyMonthly, paymentsInPeriod, paidInPeriod, outstanding, buyTotalPaid, buyInterest, residualValue, buyNetCost, buyMonthlyEff, leaseBetter, difference: Math.abs(leaseTotal - buyNetCost) }
 }
 
 export default function CarLeaseVsBuyCalculator() {
@@ -31,11 +43,11 @@ export default function CarLeaseVsBuyCalculator() {
   const [leaseDep, setLeaseDep] = useState('1500')
   const [buyDep, setBuyDep] = useState('5000')
   const [rate, setRate] = useState('7.9')
-  const [finTerm, setFinTerm] = useState('48')
+  const [finTerm, setFinTerm] = useState('36')
   const [dep, setDep] = useState('15')
 
   const p = parseFloat(price.replace(/,/g,'')) || 0
-  const result = useMemo(() => calculate(p, parseFloat(leaseM)||0, parseInt(leaseT)||36, parseFloat(leaseDep.replace(/,/g,''))||0, parseFloat(buyDep.replace(/,/g,''))||0, parseFloat(rate)||0, parseInt(finTerm)||48, parseFloat(dep)||15), [p, leaseM, leaseT, leaseDep, buyDep, rate, finTerm, dep])
+  const result = useMemo(() => calculate(p, parseFloat(leaseM)||0, parseInt(leaseT)||36, parseFloat(leaseDep.replace(/,/g,''))||0, parseFloat(buyDep.replace(/,/g,''))||0, parseFloat(rate)||0, parseInt(finTerm)||36, parseFloat(dep)||15), [p, leaseM, leaseT, leaseDep, buyDep, rate, finTerm, dep])
 
   return (
     <div className="space-y-6">
@@ -48,6 +60,7 @@ export default function CarLeaseVsBuyCalculator() {
         <div className="sm:col-span-4 border-t border-border pt-4"><p className="text-sm font-semibold">Buy Option (Finance)</p></div>
         <div><label className="block text-sm font-medium mb-2">Deposit</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={buyDep} onChange={(e) => setBuyDep(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Deposit" /></div></div>
         <div><label className="block text-sm font-medium mb-2">APR (%)</label><input type="number" min="0" max="20" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="APR (%)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Finance Term (months)</label><input type="number" min="12" max="84" value={finTerm} onChange={(e) => setFinTerm(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Finance Term (months)" /></div>
         <div><label className="block text-sm font-medium mb-2">Depreciation (%/yr)</label><input type="number" min="5" max="30" value={dep} onChange={(e) => setDep(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Depreciation (%/yr)" /></div>
       </div>
 
@@ -66,6 +79,14 @@ export default function CarLeaseVsBuyCalculator() {
               <p className="text-xs text-muted-foreground">{formatCurrency(result.buyMonthlyEff)}/month effective</p>
               {!result.leaseBetter && <span className="inline-block mt-2 text-xs bg-green-600 text-white px-2 py-0.5 rounded-full">Cheaper</span>}
             </div>
+          </div>
+          <div className="rounded-xl border border-border p-4 text-sm space-y-2">
+            <div className="flex justify-between"><span className="text-muted-foreground">Finance payment</span><span className="font-medium">{formatCurrency(result.buyMonthly)}/month</span></div>
+            <div className="flex justify-between"><span className="text-muted-foreground">Deposit + {result.paymentsInPeriod} payments</span><span className="font-medium">{formatCurrency(result.buyTotalPaid - result.outstanding)}</span></div>
+            {result.outstanding > 0 && <div className="flex justify-between"><span className="text-muted-foreground">Balance to settle at month {leaseT}</span><span className="font-medium">{formatCurrency(result.outstanding)}</span></div>}
+            <div className="flex justify-between"><span className="text-muted-foreground">Interest paid</span><span className="font-medium">{formatCurrency(result.buyInterest)}</span></div>
+            <div className="flex justify-between"><span className="text-muted-foreground">Estimated resale value at month {leaseT}</span><span className="font-medium">−{formatCurrency(result.residualValue)}</span></div>
+            <p className="text-xs text-muted-foreground pt-1">Compared over the lease term. Insurance, tax and servicing are left out, as you pay them either way unless your lease includes a maintenance package.</p>
           </div>
           <div className="rounded-xl bg-primary/10 p-4 text-center text-sm">
             {result.leaseBetter ? 'Leasing' : 'Buying'} saves you <span className="font-bold text-primary">{formatCurrency(result.difference)}</span> over {leaseT} months

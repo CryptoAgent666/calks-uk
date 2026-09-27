@@ -3,6 +3,8 @@ import { formatCurrency } from '@/utils'
 
 // Teachers' Pension Scheme (career average, 1/57th accrual)
 const ACCRUAL_RATE = 1 / 57
+const COMMUTATION_FACTOR = 12
+const COMMUTATION_MAX = 30 / 7
 const REVALUATION = 0.032 // projection assumption: CPI 1.6% + 1.6%. Actual active revaluation was 5.4% (April 2026) and 3.3% (April 2025).
 
 // Member contribution tiers from 1 April 2026 (salary bands uprated 3.8% CPI).
@@ -38,9 +40,13 @@ function calculate(salary: number, yearsService: number, yearsToRetirement: numb
   }
 
   const monthlyPension = totalPension / 12
-  const lumpSum = totalPension * 3 // can commute up to 25% for 3:1 lump sum
+  // Optional commutation: £12 of lump sum per £1 of pension given up, lump sum capped at 25% of the
+  // total value (20 x pension + lump sum). With no automatic lump sum that gives pension x 30/7.
+  // Source: teacherspensions.co.uk/members/faqs/planning-retirement/calculations.aspx
+  const lumpSum = totalPension * COMMUTATION_MAX
+  const reducedPension = totalPension - lumpSum / COMMUTATION_FACTOR
 
-  return { contribRate, monthlyContrib, annualContrib, thisYearPension, totalPension, monthlyPension, lumpSum }
+  return { contribRate, monthlyContrib, annualContrib, thisYearPension, totalPension, monthlyPension, lumpSum, reducedPension }
 }
 
 export default function TeachersPensionCalculator() {
@@ -68,14 +74,17 @@ export default function TeachersPensionCalculator() {
             <p className="text-3xl font-bold text-primary mt-1">{formatCurrency(result.totalPension)}</p>
             <p className="text-sm text-muted-foreground mt-1">{formatCurrency(result.monthlyPension)}/month</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">This Year's Accrual</p><p className="text-lg font-bold">{formatCurrency(result.thisYearPension)}/yr</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Contribution Rate</p><p className="text-lg font-bold">{result.contribRate}%</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Monthly Contribution</p><p className="text-lg font-bold">{formatCurrency(result.monthlyContrib)}</p></div>
-            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Max Lump Sum (optional)</p><p className="text-lg font-bold">{formatCurrency(result.lumpSum)}</p></div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Max Tax-Free Lump Sum (optional)</p><p className="text-lg font-bold">{formatCurrency(result.lumpSum)}</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Pension If You Take the Max Lump Sum</p><p className="text-lg font-bold">{formatCurrency(result.reducedPension)}/yr</p></div>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>Career average scheme: 1/57th of pensionable salary accrued each year, revalued annually by CPI + 1.6% (5.4% in April 2026); this projection assumes 3.2% a year. Normal pension age is linked to State Pension age. This is a simplified projection.</p>
+            <p>Career average scheme: 1/57th of pensionable salary accrued each year, revalued annually by CPI + 1.6% (5.4% in April 2026); this projection assumes 3.2% a year. Normal pension age is linked to State Pension age. There is no automatic lump sum: you can give up £1 of pension for every £12 of lump sum, up to 25% of the total value of your benefits. All service is treated as career average at your current salary, so final salary service before April 2015 (1/80th plus an automatic lump sum, or 1/60th) is not modelled separately. This is a simplified projection.</p>
           </div>
         </div>
       )}

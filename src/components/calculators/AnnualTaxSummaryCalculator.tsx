@@ -46,6 +46,12 @@ function calculate(salary: number, dividends: number, selfEmployment: number, re
   return { totalIncome, pa, incomeTax, dividendTax, employeeNI, class4NI, cgt, totalTax, takeHome, effectiveRate: totalGross > 0 ? (totalTax / totalGross) * 100 : 0 }
 }
 
+// Defined at module level: a component declared inside render is remounted on every
+// keystroke, which drops focus after each digit.
+const Input = ({ label, value, onChange }: { label: string; value: string; onChange: (v: string) => void }) => (
+  <div><label className="block text-sm font-medium mb-2">{label}</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => onChange(e.target.value)} aria-label={label} placeholder="0" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
+)
+
 export default function AnnualTaxSummaryCalculator() {
   const [salary, setSalary] = useState('40000')
   const [dividends, setDividends] = useState('0')
@@ -57,9 +63,6 @@ export default function AnnualTaxSummaryCalculator() {
 
   const result = useMemo(() => calculate(parseFloat(salary.replace(/,/g,''))||0, parseFloat(dividends.replace(/,/g,''))||0, parseFloat(selfEmp.replace(/,/g,''))||0, parseFloat(rental.replace(/,/g,''))||0, parseFloat(cg.replace(/,/g,''))||0, parseFloat(pension.replace(/,/g,''))||0, parseFloat(giftAid.replace(/,/g,''))||0), [salary, dividends, selfEmp, rental, cg, pension, giftAid])
 
-  const Input = ({ label, value, onChange }: { label: string; value: string; onChange: (v: string) => void }) => (
-    <div><label className="block text-sm font-medium mb-2">{label}</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => onChange(e.target.value)} placeholder="0" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
-  )
 
   return (
     <div className="space-y-6">

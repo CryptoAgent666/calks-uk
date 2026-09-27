@@ -50,7 +50,7 @@ export default function SpousalMaintenanceCalculator() {
             <div className="rounded-xl border border-border p-4 text-center"><p className="text-xs text-muted-foreground">High (33%)</p><p className="text-lg font-bold">{formatCurrency(result.high)}/yr</p></div>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>England & Wales has no fixed formula for spousal maintenance. Courts consider: income gap, length of marriage, standard of living, ages, earning capacity, and childcare responsibilities. This is a rough guide only — seek legal advice.</p>
+            <p>England & Wales has no fixed formula for spousal maintenance. Courts consider needs, income and earning capacity, length of marriage, standard of living, ages and childcare responsibilities. The 20%, 25% and 33% figures are illustrative shares of the income gap, not a legal rule. In Scotland, support for a financially dependent spouse is limited to three years after divorce. This is a rough guide only, so seek legal advice.</p>
           </div>
         </div>
       )}

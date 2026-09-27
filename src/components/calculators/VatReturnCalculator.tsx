@@ -16,6 +16,12 @@ function calculate(salesStd: number, sales5: number, salesZero: number, salesExe
   return { outputVatStd, outputVat5, totalOutputVat, inputVatStd, inputVat5, totalInputVat, vatDue, isRefund, totalSales: salesStd + sales5 + salesZero + salesExempt, totalPurchases: purchasesStd + purchases5 }
 }
 
+// Defined at module level: a component declared inside render is remounted on every
+// keystroke, which drops focus after each digit.
+const Input = ({ label, value, onChange, hint }: { label: string; value: string; onChange: (v: string) => void; hint?: string }) => (
+  <div><label className="block text-sm font-medium mb-2">{label}</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => onChange(e.target.value)} aria-label={label} placeholder="0" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>{hint && <p className="text-xs text-muted-foreground mt-1">{hint}</p>}</div>
+)
+
 export default function VatReturnCalculator() {
   const [salesStd, setSalesStd] = useState('')
   const [sales5, setSales5] = useState('0')
@@ -26,9 +32,6 @@ export default function VatReturnCalculator() {
 
   const result = useMemo(() => calculate(parseFloat(salesStd.replace(/,/g,''))||0, parseFloat(sales5.replace(/,/g,''))||0, parseFloat(salesZero.replace(/,/g,''))||0, parseFloat(salesExempt.replace(/,/g,''))||0, parseFloat(purchStd.replace(/,/g,''))||0, parseFloat(purch5.replace(/,/g,''))||0), [salesStd, sales5, salesZero, salesExempt, purchStd, purch5])
 
-  const Input = ({ label, value, onChange, hint }: { label: string; value: string; onChange: (v: string) => void; hint?: string }) => (
-    <div><label className="block text-sm font-medium mb-2">{label}</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => onChange(e.target.value)} placeholder="0" className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>{hint && <p className="text-xs text-muted-foreground mt-1">{hint}</p>}</div>
-  )
 
   return (
     <div className="space-y-6">

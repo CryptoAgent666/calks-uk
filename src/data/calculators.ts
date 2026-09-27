@@ -74,7 +74,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'stamp-duty-first-time-buyer-calculator',
     title: 'Stamp Duty First-Time Buyer Calculator',
-    description: 'Calculate stamp duty relief for first-time buyers in England and Northern Ireland. Updated April 2025.',
+    description: 'Calculate stamp duty relief for first-time buyers in England and Northern Ireland at 2026/27 rates.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['first time buyer', 'stamp duty relief', 'FTB', 'first home'],
@@ -1302,7 +1302,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'pay-rise-calculator',
     title: 'Pay Rise Calculator (Real Terms)',
-    description: 'Check if your pay rise beats inflation. Compare nominal and real-terms increases.',
+    description: 'Check if your pay rise beats inflation and how much you keep after tax, NI, pension and student loan.',
     category: 'pay',
     icon: 'Banknote',
     keywords: ['pay rise', 'salary increase', 'inflation', 'real terms', 'pay cut'],
@@ -1588,7 +1588,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'debt-to-income-calculator', title: 'Debt-to-Income Ratio Calculator', description: 'Calculate your DTI ratio to see if lenders will approve your mortgage or loan application.', category: 'mortgage', icon: 'Home', keywords: ['debt to income', 'DTI', 'affordability', 'lending ratio'], priority: 2 , metaTitle: 'Debt-to-Income Ratio Calculator UK' },
   // LOANS (additional)
   { slug: 'apr-calculator', title: 'APR Calculator — True Interest Rate', description: 'Calculate the true Annual Percentage Rate of any loan from the amount borrowed and total repaid.', category: 'loans', icon: 'CreditCard', keywords: ['APR', 'annual percentage rate', 'true cost', 'interest rate'], priority: 2 , metaTitle: 'APR Calculator UK 2026 — True Loan Cost' },
-  { slug: 'bnpl-calculator', title: 'Buy Now Pay Later Calculator', description: 'Calculate BNPL instalment costs for Klarna, Clearpay and custom plans. See the true cost and late fee risks.', category: 'loans', icon: 'CreditCard', keywords: ['BNPL', 'buy now pay later', 'Klarna', 'Clearpay', 'instalments'], priority: 2 , metaTitle: 'Buy Now Pay Later (BNPL) Cost Calculator UK 2026' },
+  { slug: 'bnpl-calculator', title: 'Buy Now Pay Later Calculator', description: 'Calculate BNPL instalments for Pay in 3, Pay in 4 and interest-bearing plans, with late fees and your total monthly BNPL commitment.', category: 'loans', icon: 'CreditCard', keywords: ['BNPL', 'buy now pay later', 'Klarna', 'Clearpay', 'instalments'], priority: 2 , metaTitle: 'Buy Now Pay Later (BNPL) Cost Calculator UK 2026' },
   // PENSION (additional)
   { slug: 'salary-sacrifice-pension-calculator', title: 'Salary Sacrifice Pension Calculator', description: 'Compare salary sacrifice vs relief at source pension contributions. See tax and NI savings.', category: 'pension', icon: 'PiggyBank', keywords: ['salary sacrifice pension', 'pension contribution', 'relief at source', 'pension NI saving'], priority: 2, metaTitle: 'Salary Sacrifice Pension Calculator UK 2026/27 — Tax + NI Savings' },
   // TOOLS (additional)
@@ -1709,10 +1709,10 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'pension-annual-allowance-calculator', title: 'Pension Annual Allowance Calculator', description: 'Check your pension annual allowance (£60K), tapered allowance and MPAA. See if you face a tax charge.', category: 'pension', icon: 'PiggyBank', keywords: ['annual allowance', 'pension limit', 'taper', 'MPAA', 'pension tax charge'], priority: 2, financialYear: '2026-27', metaTitle: 'Pension Annual Allowance Calculator 2026' },
   { slug: 'state-pension-age-calculator', title: 'State Pension Age Calculator', description: 'Find your State Pension age based on date of birth. See exact date and days remaining.', category: 'pension', icon: 'PiggyBank', keywords: ['state pension age', 'SPA', 'pension age', 'when can I retire'], priority: 1, metaTitle: 'UK State Pension Age Calculator — Check Your Pension Date' },
   // LOANS
-  { slug: 'student-loan-early-repay-calculator', title: 'Should I Repay Student Loan Early?', description: 'Compare total cost of normal repayments vs lump sum. See if early repayment saves money or wastes it.', category: 'loans', icon: 'CreditCard', keywords: ['early repayment', 'student loan overpay', 'write off', 'plan 2 repay'], priority: 1 , metaTitle: 'Student Loan Early Repayment Calculator UK' },
+  { slug: 'student-loan-early-repay-calculator', title: 'Should I Repay Student Loan Early?', description: 'Compare the total you pay with and without a lump sum, and repaying vs investing it. See if early repayment saves money or wastes it.', category: 'loans', icon: 'CreditCard', keywords: ['early repayment', 'student loan overpay', 'write off', 'plan 2 repay'], priority: 1 , metaTitle: 'Student Loan Early Repayment Calculator UK' },
   // PENSION
   { slug: 'pension-pot-calculator', title: 'How Much Pension Do I Need?', description: 'Calculate the pension pot needed for your target retirement income using drawdown, 4% rule or annuity.', category: 'pension', icon: 'PiggyBank', keywords: ['pension pot needed', 'retirement savings', 'how much pension', '4% rule'], priority: 1, metaTitle: 'Pension Pot Calculator UK 2026 — How Much Will I Have at 65?' },
-  { slug: 'teachers-pension-calculator', title: "Teachers' Pension Calculator", description: "Project your Teachers' Pension Scheme (TPS) benefits — career average (1/57th) and final salary calculations with 2026/27 contribution tiers.", category: 'pension', icon: 'PiggyBank', keywords: ['teachers pension', 'TPS', 'career average', 'teaching pension'], priority: 2, metaTitle: "Teachers' Pension Calculator 2026" },
+  { slug: 'teachers-pension-calculator', title: "Teachers' Pension Calculator", description: "Project your Teachers' Pension Scheme (TPS) career average (1/57th) pension, 2026/27 contribution tiers and the maximum tax-free lump sum you can take.", category: 'pension', icon: 'PiggyBank', keywords: ['teachers pension', 'TPS', 'career average', 'teaching pension'], priority: 2, metaTitle: "Teachers' Pension Calculator 2026" },
   // INVESTMENT
   { slug: 'junior-isa-calculator', title: 'Junior ISA Calculator', description: 'Calculate how much a Junior ISA will be worth when your child turns 18. Tax-free growth with £9,000/year limit.', category: 'investment', icon: 'TrendingUp', keywords: ['junior ISA', 'JISA', 'child savings', 'under 18'], priority: 2, metaTitle: 'Junior ISA Calculator UK 2026/27 — £9,000 Annual Allowance' },
   // PAY
@@ -1746,7 +1746,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // INVESTMENT
   { slug: 'wealth-growth-calculator', title: 'Wealth Growth Projector', description: 'Project wealth growth over time with annual savings and compound returns. See milestones (£100K, £1M).', category: 'investment', icon: 'TrendingUp', keywords: ['wealth growth', 'wealth projector', 'net worth', 'millionaire calculator'], priority: 2 , metaTitle: 'Wealth Growth Calculator UK 2026' },
   { slug: 'cgt-on-shares-calculator', title: 'CGT on Shares Calculator', description: 'Calculate capital gains tax on share sales. Includes annual exempt amount, basic/higher rates and ISA tip.', category: 'investment', icon: 'TrendingUp', keywords: ['CGT shares', 'share tax', 'stock tax', 'investment tax', 'capital gains shares'], priority: 1 , metaTitle: 'CGT on Shares Calculator UK 2026/27' },
-  { slug: 'dividend-income-calculator', title: 'Dividend Income Calculator', description: 'Calculate annual dividend income and project portfolio growth with or without reinvestment (DRIP).', category: 'investment', icon: 'TrendingUp', keywords: ['dividend income', 'dividend yield', 'DRIP', 'passive income', 'dividend investing'], priority: 2 , metaTitle: 'Dividend Income Calculator UK 2026/27' },
+  { slug: 'dividend-income-calculator', title: 'Dividend Income Calculator', description: 'Calculate annual dividend income, estimate 2026/27 dividend tax on top of your other income, and project growth with or without DRIP.', category: 'investment', icon: 'TrendingUp', keywords: ['dividend income', 'dividend yield', 'DRIP', 'passive income', 'dividend investing'], priority: 2 , metaTitle: 'Dividend Income Calculator UK 2026/27' },
   // TAX
   { slug: 'non-dom-tax-calculator', title: 'Non-Dom Tax Calculator (FIG Regime)', description: 'Compare UK tax with and without a claim under the 4-year foreign income and gains (FIG) regime for new UK residents.', category: 'tax', icon: 'Receipt', keywords: ['non-dom', 'FIG', 'foreign income', 'non-domiciled', 'remittance basis'], priority: 2, isTrending: true , metaTitle: 'UK Non-Dom Tax Calculator 2026/27 (New Rules)' },
   // BUSINESS
@@ -1836,7 +1836,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'minimum-wage-calculator', title: 'UK Minimum Wage Calculator', description: "Are you being paid the legal minimum? Check your hourly, weekly and annual pay against UK National Living Wage (£12.71/hr) and NMW rates by age for 2026.", category: 'pay', icon: 'Banknote', keywords: ['minimum wage', 'NMW', 'NLW', 'living wage', 'hourly rate'], priority: 1, metaTitle: "Minimum Wage Calculator 2026/27" },
   // MORTGAGE
   { slug: 'first-homes-scheme-calculator', title: 'First Homes Scheme Calculator', description: 'Calculate First Homes discounted price (30-50% off). Check if you can afford with income and deposit.', category: 'mortgage', icon: 'Home', keywords: ['first homes', 'first homes scheme', 'discounted home', 'affordable housing'], priority: 2 , metaTitle: 'First Homes Scheme Calculator UK 2026 — 30% Discount' },
-  { slug: 'shared-ownership-affordability-calculator', title: 'Shared Ownership Mortgage Affordability', description: 'Check if you can afford shared ownership — mortgage on your share plus rent on unsold share.', category: 'mortgage', icon: 'Home', keywords: ['shared ownership affordability', 'can I afford', 'shared ownership mortgage'], priority: 2 , metaTitle: 'Shared Ownership Affordability Calculator UK 2026' },
+  { slug: 'shared-ownership-affordability-calculator', title: 'Shared Ownership Mortgage Affordability', description: 'Check if you can afford shared ownership: mortgage, rent and service charge against take-home pay, the income limit and the largest share that passes.', category: 'mortgage', icon: 'Home', keywords: ['shared ownership affordability', 'can I afford', 'shared ownership mortgage'], priority: 2 , metaTitle: 'Shared Ownership Affordability Calculator UK 2026' },
   // BUSINESS
   { slug: 'invoice-profit-calculator', title: 'Invoice & Job Profit Calculator', description: 'Calculate profit margin and markup on jobs. Add VAT and generate invoice total.', category: 'business', icon: 'Briefcase', keywords: ['invoice', 'job profit', 'margin', 'markup', 'quote'], priority: 2 , metaTitle: 'Invoice Profit Calculator UK 2026' },
   { slug: 'employee-vs-contractor-calculator', title: 'Employee vs Contractor Calculator', description: 'Compare take-home pay as an employee vs contractor for the same total cost to the hiring company.', category: 'business', icon: 'Briefcase', keywords: ['employee vs contractor', 'perm vs contract', 'PAYE vs Ltd', 'employment status'], priority: 2 , metaTitle: 'Employee vs Contractor Calculator UK 2026' },

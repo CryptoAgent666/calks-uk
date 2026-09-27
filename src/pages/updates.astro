@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-09-27'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-09-28'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -24,6 +24,43 @@ const schemas = [
     <p class="text-sm text-muted-foreground mb-8">Rate changes, new calculators and site improvements</p>
 
     <div class="space-y-8">
+      <!-- September 2026 — calkcheck round 6 (28 Sep) -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            September 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Input bug fixed; BNPL, free school meals and landlord tax updated</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Typing in six calculators fixed.</strong> In the <a href="/calculator/vat-return-calculator/" class="text-primary hover:underline">VAT return</a>, <a href="/calculator/profit-and-loss-calculator/" class="text-primary hover:underline">profit and loss</a>, <a href="/calculator/debt-to-income-calculator/" class="text-primary hover:underline">debt-to-income</a>, <a href="/calculator/life-insurance-calculator/" class="text-primary hover:underline">life insurance</a>, <a href="/calculator/divorce-settlement-calculator/" class="text-primary hover:underline">divorce settlement</a> and <a href="/calculator/annual-tax-summary-calculator/" class="text-primary hover:underline">annual tax summary</a> calculators, each money box lost focus after the first digit, so you had to click back in for every number. They now take typing normally.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Buy now, pay later is regulated.</strong> The FCA has regulated BNPL since 15 July 2026: lenders must check you can afford it, you can complain to the Financial Ombudsman, and Section 75 protection applies. The <a href="/calculator/bnpl-calculator/" class="text-primary hover:underline">BNPL calculator</a> page still described regulation as coming.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Free school meals from September 2026.</strong> Every family on Universal Credit in England now qualifies for free school meals, but pupil premium and other linked help stay with families earning up to £7,400 a year. The <a href="/calculator/free-school-meals-calculator/" class="text-primary hover:underline">free school meals calculator</a> now shows both, and no longer offers tax credits as a route.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Landlords, property and capital allowances.</strong> The <a href="/calculator/landlord-tax-calculator/" class="text-primary hover:underline">landlord tax calculator</a> did not charge the Personal Allowance lost above £100,000 to rental profit and could show negative tax; the Section 24 credit is now capped as the law requires, with Scotland added. The <a href="/calculator/property-cgt-calculator/" class="text-primary hover:underline">property CGT calculator</a> widened the 18% band for people with little other income, and the <a href="/calculator/annual-investment-allowance-calculator/" class="text-primary hover:underline">annual investment allowance calculator</a> now applies full expensing or the 40% first-year allowance above £1 million.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Pay rises, umbrella pay and pensions.</strong> The <a href="/calculator/pay-rise-calculator/" class="text-primary hover:underline">pay rise calculator</a> now works out take-home pay (a £1,400 rise on £35,000 is £84 a month after tax and NI, not £117). The <a href="/calculator/umbrella-company-calculator/" class="text-primary hover:underline">umbrella calculator</a> charged employer NI on the whole contract value and costed a weekly margin as if monthly. The <a href="/calculator/teachers-pension-calculator/" class="text-primary hover:underline">Teachers&rsquo; Pension calculator</a> understated the maximum lump sum by about 30% (it is 30/7 of the pension, not 3 times).</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Housing and student loans.</strong> The <a href="/calculator/rent-vs-buy-calculator/" class="text-primary hover:underline">rent vs buy calculator</a> now uses the real mortgage balance, stamp duty, maintenance and selling costs; the <a href="/calculator/shared-ownership-affordability-calculator/" class="text-primary hover:underline">shared ownership calculator</a> checks the income cap and shows the largest share you can afford; and the <a href="/calculator/student-loan-early-repay-calculator/" class="text-primary hover:underline">student loan overpayment calculator</a> compares what you would pay in total, with Plan 2 interest linked to income.</span>
+          </li>
+        </ul>
+      </article>
+
       <!-- September 2026 — calkcheck round 5 (27 Sep) -->
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>

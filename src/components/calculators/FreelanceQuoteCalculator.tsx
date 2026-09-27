@@ -1,15 +1,19 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
+// Profit margin is a share of the net price, not a markup on cost: a 20% margin
+// means the price is cost / 0.8 (cost x 1.25), so the profit is 20% of the price.
 function calculate(hourlyRate: number, hours: number, materials: number, marginPct: number, vatRegistered: boolean) {
+  const m = Math.min(Math.max(marginPct, 0), 95) / 100
   const labourCost = hourlyRate * hours
   const subtotal = labourCost + materials
-  const margin = subtotal * (marginPct / 100)
-  const netQuote = subtotal + margin
+  const netQuote = subtotal / (1 - m)
+  const margin = netQuote - subtotal
   const vat = vatRegistered ? netQuote * 0.20 : 0
   const totalQuote = netQuote + vat
   const profit = margin
-  const effectiveHourly = hours > 0 ? (netQuote - materials) / hours : 0
+  // Labour plus the margin earned on the labour only, per hour.
+  const effectiveHourly = hours > 0 ? labourCost / (1 - m) / hours : 0
 
   return { labourCost, subtotal, margin, netQuote, vat, totalQuote, profit, effectiveHourly }
 }
@@ -21,19 +25,19 @@ export default function FreelanceQuoteCalculator() {
   const [margin, setMargin] = useState('20')
   const [vat, setVat] = useState(false)
 
-  const r = parseFloat(rate) || 0
+  const r = parseFloat(rate.replace(/,/g,'')) || 0
   const h = parseFloat(hours) || 0
   const m = parseFloat(materials.replace(/,/g,'')) || 0
-  const mg = parseFloat(margin) || 0
+  const mg = Math.min(Math.max(parseFloat(margin) || 0, 0), 95)
   const result = useMemo(() => calculate(r, h, m, mg, vat), [r, h, m, mg, vat])
 
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Hourly Rate</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="number" min="0" step="1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Hourly Rate" /></div></div>
+        <div><label className="block text-sm font-medium mb-2">Hourly Rate</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Hourly Rate" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Estimated Hours</label><input type="number" min="0" step="0.5" value={hours} onChange={(e) => setHours(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Estimated Hours" /></div>
         <div><label className="block text-sm font-medium mb-2">Materials</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={materials} onChange={(e) => setMaterials(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Materials" /></div></div>
-        <div><label className="block text-sm font-medium mb-2">Profit Margin (%)</label><input type="number" min="0" max="100" value={margin} onChange={(e) => setMargin(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Profit Margin (%)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Profit Margin (%)</label><input type="number" min="0" max="95" value={margin} onChange={(e) => setMargin(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Profit Margin (%)" /></div>
       </div>
       <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={vat} onChange={(e) => setVat(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Add VAT (20%)</span></label>
 
@@ -53,7 +57,7 @@ export default function FreelanceQuoteCalculator() {
               <tr className="font-semibold"><td className="py-2">Total</td><td className="text-right tabular-nums">{formatCurrency(result.totalQuote)}</td></tr>
             </tbody>
           </table>
-          <div className="rounded-xl bg-muted/50 p-3 text-center text-sm">Effective hourly rate: {formatCurrency(result.effectiveHourly)}/hr (including margin)</div>
+          <div className="rounded-xl bg-muted/50 p-3 text-center text-sm">Effective hourly rate: {formatCurrency(result.effectiveHourly)}/hr (your rate plus the margin on labour, excluding materials) &middot; Margin is {mg}% of the net quote</div>
         </div>
       )}
     </div>

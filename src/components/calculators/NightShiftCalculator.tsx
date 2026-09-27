@@ -1,5 +1,14 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency } from '@/utils'
+import { formatCurrency, ukIncomeTax } from '@/utils'
+
+// 2026/27 employee Class 1 NI (8% main rate, 2% above £50,270).
+function employeeNI(pay: number) {
+  if (pay <= 12_570) return 0
+  if (pay <= 50_270) return (pay - 12_570) * 0.08
+  return (50_270 - 12_570) * 0.08 + (pay - 50_270) * 0.02
+}
+
+const netPay = (gross: number) => gross - ukIncomeTax(gross) - employeeNI(gross)
 
 function calculate(baseSalary: number, nightShifts: number, nightHours: number, nightPremiumPct: number) {
   const hourlyBase = baseSalary / (37.5 * 52)
@@ -7,8 +16,10 @@ function calculate(baseSalary: number, nightShifts: number, nightHours: number, 
   const nightPremium = (nightRate - hourlyBase) * nightHours * nightShifts * 52
   const totalAnnual = baseSalary + nightPremium
   const monthlyExtra = nightPremium / 12
+  // What the premium adds to take-home once income tax and employee NI come off.
+  const extraNet = netPay(totalAnnual) - netPay(baseSalary)
 
-  return { hourlyBase, nightRate, nightPremium, totalAnnual, monthlyExtra }
+  return { hourlyBase, nightRate, nightPremium, totalAnnual, monthlyExtra, extraNet }
 }
 
 export default function NightShiftCalculator() {
@@ -37,13 +48,14 @@ export default function NightShiftCalculator() {
           <div className="rounded-2xl bg-green-100 dark:bg-green-950 p-6 text-center">
             <p className="text-sm text-muted-foreground">Night Shift Premium</p>
             <p className="text-3xl font-bold text-green-700 dark:text-green-400 mt-1">+{formatCurrency(result.nightPremium)}/year</p>
-            <p className="text-sm text-muted-foreground mt-1">+{formatCurrency(result.monthlyExtra)}/month</p>
+            <p className="text-sm text-muted-foreground mt-1">+{formatCurrency(result.monthlyExtra)}/month gross &middot; about +{formatCurrency(result.extraNet / 12)}/month after income tax and NI</p>
           </div>
           <div className="grid grid-cols-3 gap-3">
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Base Hourly</p><p className="text-lg font-bold">{formatCurrency(result.hourlyBase)}</p></div>
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Night Hourly</p><p className="text-lg font-bold">{formatCurrency(result.nightRate)}</p></div>
             <div className="rounded-xl bg-primary/10 p-3 text-center"><p className="text-xs text-muted-foreground">Total Annual</p><p className="text-lg font-bold text-primary">{formatCurrency(result.totalAnnual)}</p></div>
           </div>
+          <div className="rounded-xl bg-muted/50 p-3 text-center text-sm">Premium after income tax and employee NI: {formatCurrency(result.extraNet)}/year (2026/27 rates for England, Wales and Northern Ireland, before any pension or student loan)</div>
         </div>
       )}
     </div>
