@@ -35,8 +35,8 @@ function calculate(revenue: number, expenses: number) {
 }
 
 export default function SoleTraderTaxCalculator() {
-  const [revenue, setRevenue] = useState('')
-  const [expenses, setExpenses] = useState('')
+  const [revenue, setRevenue] = useState('60000')
+  const [expenses, setExpenses] = useState('5000')
 
   const r = parseFloat(revenue.replace(/,/g, '')) || 0
   const e = parseFloat(expenses.replace(/,/g, '')) || 0
@@ -75,6 +75,7 @@ export default function SoleTraderTaxCalculator() {
               <tr className="font-semibold"><td className="py-2.5 text-primary">Take Home</td><td className="text-right tabular-nums text-primary">{formatCurrency(result.takeHome)}</td></tr>
             </tbody>
           </table>
+          <p className="text-xs text-muted-foreground">Assumes the business is your only income for the tax year. Other income such as a salary, pension or rent would push more of the profit into higher bands.</p>
         </div>
       )}
     </div>

@@ -82,7 +82,7 @@ export default function WorkplacePensionCalculator() {
           <div className="rounded-2xl bg-primary/10 p-6 text-center">
             <p className="text-sm text-muted-foreground">Projected Pension Pot at Retirement</p>
             <p className="text-3xl font-bold text-primary mt-1">{formatCurrency(result.pot)}</p>
-            <p className="text-sm text-muted-foreground mt-1">25% tax-free lump sum: {formatCurrency(result.pot * 0.25)}</p>
+            <p className="text-sm text-muted-foreground mt-1">25% tax-free lump sum: {formatCurrency(Math.min(result.pot * 0.25, 268_275))}{result.pot * 0.25 > 268_275 ? ' (capped at the £268,275 Lump Sum Allowance)' : ''}</p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">

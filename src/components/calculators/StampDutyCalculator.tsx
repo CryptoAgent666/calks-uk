@@ -21,26 +21,32 @@ const FTB_BANDS = [
 ]
 
 const ADDITIONAL_SURCHARGE = 0.05 // 5% from October 2024
+// Non-UK resident surcharge: 2 percentage points on top of every residential
+// rate (standard, first-time buyer and higher rates) since 1 April 2021
+const NON_RESIDENT_SURCHARGE = 0.02
+// Neither surcharge applies to a property bought for less than £40,000 (gov.uk)
+const SURCHARGE_MIN_PRICE = 40_000
 
-function calculateSdlt(price: number, buyerType: BuyerType) {
+function calculateSdlt(price: number, buyerType: BuyerType, nonResident = false) {
   // First-time buyers: relief only available up to £500,000
-  if (buyerType === 'ftb' && price <= 500_000) {
-    return calculateBands(price, FTB_BANDS)
+  const baseResult = buyerType === 'ftb' && price <= 500_000
+    ? calculateBands(price, FTB_BANDS)
+    : calculateBands(price, STANDARD_BANDS)
+
+  // Both surcharges fall on the whole price, which is the same as adding the
+  // percentage points to every band
+  const surchargeApplies = price >= SURCHARGE_MIN_PRICE
+  const surcharge = buyerType === 'additional' && surchargeApplies ? price * ADDITIONAL_SURCHARGE : 0
+  const nonResidentSurcharge = nonResident && surchargeApplies ? price * NON_RESIDENT_SURCHARGE : 0
+  const totalTax = baseResult.totalTax + surcharge + nonResidentSurcharge
+
+  return {
+    ...baseResult,
+    surcharge,
+    nonResidentSurcharge,
+    totalTax,
+    effectiveRate: price > 0 ? (totalTax / price) * 100 : 0,
   }
-
-  const baseResult = calculateBands(price, STANDARD_BANDS)
-
-  if (buyerType === 'additional') {
-    const surcharge = price * ADDITIONAL_SURCHARGE
-    return {
-      ...baseResult,
-      surcharge,
-      totalTax: baseResult.totalTax + surcharge,
-      effectiveRate: price > 0 ? ((baseResult.totalTax + surcharge) / price) * 100 : 0,
-    }
-  }
-
-  return { ...baseResult, surcharge: 0 }
 }
 
 function calculateBands(price: number, bands: { from: number; to: number; rate: number }[]) {
@@ -64,16 +70,19 @@ function calculateBands(price: number, bands: { from: number; to: number; rate: 
 }
 
 export default function StampDutyCalculator() {
-  const [price, setPrice] = useUrlParam('price', '')
+  const [price, setPrice] = useUrlParam('price', '350,000')
   const [buyerType, setBuyerType] = useState<BuyerType>('standard')
+  const [nonResident, setNonResident] = useState(false)
 
   useEffect(() => {
-    const b = new URLSearchParams(window.location.search).get('buyer')
+    const params = new URLSearchParams(window.location.search)
+    const b = params.get('buyer')
     if (b === 'ftb' || b === 'additional') setBuyerType(b)
+    if (params.get('nonres') === '1') setNonResident(true)
   }, [])
 
   const value = parseFloat(price.replace(/,/g, '')) || 0
-  const result = useMemo(() => calculateSdlt(value, buyerType), [value, buyerType])
+  const result = useMemo(() => calculateSdlt(value, buyerType, nonResident), [value, buyerType, nonResident])
 
   return (
     <div className="space-y-6">
@@ -99,6 +108,8 @@ export default function StampDutyCalculator() {
             </button>
           ))}
         </div>
+        <label className="flex items-center gap-3 cursor-pointer mt-3"><input type="checkbox" checked={nonResident} onChange={(e) => setNonResident(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Non-UK resident buyer (+2% surcharge)</span></label>
+        <p className="text-xs text-muted-foreground mt-1">For SDLT you are non-resident if you were in the UK for fewer than 183 days in the 12 months before buying.</p>
       </div>
 
       {/* Price Input */}
@@ -143,13 +154,23 @@ export default function StampDutyCalculator() {
               <p className="text-xs text-muted-foreground">Effective Rate</p>
               <p className="text-xl font-bold">{formatPercent(result.effectiveRate)}</p>
             </div>
-            {'surcharge' in result && result.surcharge > 0 && (
+            {result.surcharge > 0 && (
               <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-4">
                 <p className="text-xs text-muted-foreground">5% Surcharge</p>
                 <p className="text-xl font-bold text-orange-700 dark:text-orange-400">{formatCurrency(result.surcharge)}</p>
               </div>
             )}
+            {result.nonResidentSurcharge > 0 && (
+              <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-4">
+                <p className="text-xs text-muted-foreground">2% Non-Resident Surcharge</p>
+                <p className="text-xl font-bold text-orange-700 dark:text-orange-400">{formatCurrency(result.nonResidentSurcharge)}</p>
+              </div>
+            )}
           </div>
+
+          {value < 40_000 && (buyerType === 'additional' || nonResident) && (
+            <p className="text-sm text-muted-foreground">No surcharge is charged on a property bought for less than £40,000.</p>
+          )}
 
           {/* Band Breakdown */}
           <div>
@@ -173,12 +194,28 @@ export default function StampDutyCalculator() {
                       <td className="text-right py-2.5 tabular-nums font-medium">{formatCurrency(band.tax)}</td>
                     </tr>
                   ))}
+                  {result.surcharge > 0 && (
+                    <tr className="border-b border-border/50">
+                      <td className="py-2.5">Additional-property surcharge</td>
+                      <td className="text-right py-2.5">5%</td>
+                      <td className="text-right py-2.5 tabular-nums">{formatCurrency(value)}</td>
+                      <td className="text-right py-2.5 tabular-nums font-medium">{formatCurrency(result.surcharge)}</td>
+                    </tr>
+                  )}
+                  {result.nonResidentSurcharge > 0 && (
+                    <tr className="border-b border-border/50">
+                      <td className="py-2.5">Non-resident surcharge</td>
+                      <td className="text-right py-2.5">2%</td>
+                      <td className="text-right py-2.5 tabular-nums">{formatCurrency(value)}</td>
+                      <td className="text-right py-2.5 tabular-nums font-medium">{formatCurrency(result.nonResidentSurcharge)}</td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
             </div>
           </div>
 
-          <ShareRow params={{ price, buyer: buyerType }} />
+          <ShareRow params={{ price, buyer: buyerType, nonres: nonResident ? '1' : '' }} />
         </div>
       )}
     </div>

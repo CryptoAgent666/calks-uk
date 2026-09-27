@@ -1,9 +1,8 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency, formatPercent } from '@/utils'
+import { formatCurrency, formatPercent, ukPersonalAllowance, UK_BASIC_BAND } from '@/utils'
 
 // CGT 2026/27 — rates increased from 30 October 2024 Budget
 const ANNUAL_EXEMPT = 3_000
-const BASIC_RATE_LIMIT = 50_270
 const CGT_BASIC = 0.18      // 18% from Oct 2024 (was 10%)
 const CGT_HIGHER = 0.24     // 24% from Oct 2024 (was 20%)
 const CGT_PROPERTY_BASIC = 0.18
@@ -18,8 +17,13 @@ function calculate(gain: number, income: number, assetType: AssetType) {
   const basicRate = assetType === 'property' ? CGT_PROPERTY_BASIC : CGT_BASIC
   const higherRate = assetType === 'property' ? CGT_PROPERTY_HIGHER : CGT_HIGHER
 
-  // Remaining basic rate band
-  const remainingBasic = Math.max(0, BASIC_RATE_LIMIT - income)
+  // Remaining basic rate band, measured in TAXABLE income. Gains can only use
+  // the part of the £37,700 band that taxable income (income less the Personal
+  // Allowance, tapered above £100,000) has not filled. Unused Personal Allowance
+  // cannot be set against gains, so "£50,270 minus income" over-widens the 18%
+  // band for anyone earning under £12,570.
+  const taxableIncome = Math.max(0, income - ukPersonalAllowance(income))
+  const remainingBasic = Math.max(0, UK_BASIC_BAND - taxableIncome)
   const gainAtBasic = Math.min(taxableGain, remainingBasic)
   const gainAtHigher = taxableGain - gainAtBasic
 
@@ -31,7 +35,7 @@ function calculate(gain: number, income: number, assetType: AssetType) {
 }
 
 export default function CapitalGainsTaxCalculator() {
-  const [gain, setGain] = useState('')
+  const [gain, setGain] = useState('20000')
   const [income, setIncome] = useState('35000')
   const [assetType, setAssetType] = useState<AssetType>('shares')
 

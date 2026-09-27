@@ -1216,12 +1216,14 @@
         "src/components/calculators/BenefitCapCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/benefit-cap/when-youre-not-affected",
-      "status": "current",
+      "status": "historical",
       "change_frequency": "",
-      "note": "Exemption from benefit cap if working 16+ hrs/wk (also disability benefit/carer's/guardian's allowance). BenefitCapCalculator exempt checkbox label",
+      "note": "The 16-hours-a-week exemption was the Working Tax Credit route (tax credits ended 5 Apr 2025). For UC the earnings exemption is household net earnings of at least £881 a month (see benefit_cap_uc_earnings_exemption_monthly). BenefitCapCalculator checkbox relabelled 2026-09-28.",
       "official_value": "16",
       "confidence": "high",
-      "freshness_note": "UC earnings exemption is defined in reg as the monthly amount earned by working 16 hours/week at National Living Wage (= GBP881/month from 1 Apr 2026, was GBP846.56). The 16-hour-at-NLW basis is uncha"
+      "freshness_note": "UC earnings exemption is defined in reg as the monthly amount earned by working 16 hours/week at National Living Wage (= GBP881/month from 1 Apr 2026, was GBP846.56). The 16-hour-at-NLW basis is uncha",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7"
     },
     {
       "key": "benefit_cap_greater_london",
@@ -13274,17 +13276,21 @@
         "prose"
       ],
       "used_by": [
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/MaternityPayCalculator.tsx",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "https://assets.publishing.service.gov.uk/media/69931706ceeaa48d377f6bd5/Benefit-and-pension-rates-2026-2027.pdf",
       "status": "current",
       "change_frequency": "",
-      "note": "Maternity Allowance GBP187.18/week for 39 weeks (note maternity-pay FAQ states GBP194.32 - inconsistency) (pregnancy-due-date-calculator)",
+      "note": "Maternity Allowance 2026/27: £194.32 a week or 90% of average weekly earnings, whichever is lower, for up to 39 weeks (£27/wk for some self-employed; £27 for 14 weeks for unpaid work in a spouse's business). MaternityPayCalculator estimates MA when AWE is below the £129 LEL.",
       "official_value": "194.32",
       "confidence": "high",
       "freshness_note": "Maternity Allowance / SMP standard rate uprated 187.18 (2025-26) -> 194.32 (2026-27) from April 2026. 187.18 is the prior-year (stale) figure. Confirmed in DWP rates 2026-27 and gov.uk maternity-pay p",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7"
     },
     {
       "key": "maternity_allowance_weekly_rate_alt",
@@ -13299,12 +13305,14 @@
         "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/maternity-pay-leave/pay",
-      "status": "current",
+      "status": "superseded",
       "change_frequency": "",
-      "note": "Maternity Allowance stated as GBP194.32/week in maternity-pay-calculator FAQ (conflicts with GBP187.18 in pregnancy-due-date) (maternity-pay-calculator)",
+      "note": "Duplicate of maternity_allowance_weekly_rate; the £187.18 conflict was the 2025/26 rate, long fixed.",
       "official_value": "194.32",
       "confidence": "high",
-      "freshness_note": "GBP194.32/week is the correct 2026-27 standard rate for Maternity Allowance / SMP. This 'alt' key already holds the current figure."
+      "freshness_note": "GBP194.32/week is the correct 2026-27 standard rate for Maternity Allowance / SMP. This 'alt' key already holds the current figure.",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7"
     },
     {
       "key": "maternity_leave_total_weeks",
@@ -18995,7 +19003,9 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "PremiumBondsCalculator: top jackpot prize tier £1,000,000 (odds 1/59,065,000,000) in PRIZES array"
+      "note": "PremiumBondsCalculator PRIZES array now holds the actual September 2026 draw counts from NS&I prize allocation: 2 x £1m, 95 x £100k, 192 x £50k, 381 x £25k; about 2.37m each of £50 and £100, 1.72m of £25; total fund £497,086,175. Jackpot odds about 1 in 69bn per bond per draw.",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7"
     },
     {
       "key": "premium_bonds_min_holding",
@@ -19029,7 +19039,9 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "PremiumBondsCalculator: smallest prize tier in PRIZES array (£25, odds 1/21,000); prose 'Most prizes are £25'"
+      "note": "Smallest prize £25, but since 2024 the £50 and £100 prizes are the most common (about 36% each, £25 about 26%, Sept 2026 draw). Prose \"Most prizes are £25\" removed 2026-09-28.",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7"
     },
     {
       "key": "premium_bonds_odds_per_bond_per_month",
@@ -21736,10 +21748,12 @@
       "source_url": "https://www.gov.uk/guidance/apply-for-a-refund-of-the-higher-rates-of-stamp-duty-land-tax",
       "status": "current",
       "change_frequency": "",
-      "note": "Surcharge refund within 12 months of selling original main residence (stamp-duty-calculator)",
+      "note": "Refund claim within 12 months of selling the previous main residence or 12 months of the SDLT return filing date, whichever is later (sale must be within 36 months).",
       "official_value": "12",
       "confidence": "high",
-      "freshness_note": "Higher-rate refund (replacing main residence) must be CLAIMED within 12 months of selling the previous home, or 12 months of the SDLT return filing date, whichever is later. (Distinct from the 36-mont"
+      "freshness_note": "Higher-rate refund (replacing main residence) must be CLAIMED within 12 months of selling the previous home, or 12 months of the SDLT return filing date, whichever is later. (Distinct from the 36-mont",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7"
     },
     {
       "key": "seasonal_worker_visa_quota",
@@ -26325,12 +26339,12 @@
       "source_url": "https://assets.publishing.service.gov.uk/media/69931706ceeaa48d377f6bd5/Benefit-and-pension-rates-2026-2027.pdf",
       "status": "current",
       "change_frequency": "",
-      "note": "UC first child element (child born before 6 Apr 2017), 2026/27 monthly (CHILD_FIRST)",
+      "note": "UC first child element (child born before 6 Apr 2017), 2026/27 monthly (CHILD_FIRST) Higher first-child rate £351.88 only where the first child was born before 6 April 2017; UniversalCreditCalculator now asks (default: born after, £303.94).",
       "official_value": "£351.88 per month",
       "confidence": "high",
       "freshness_note": "Confirmed: 2026/27 UC first child element (born before 6 Apr 2017) is £351.88/month.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7"
     },
     {
       "key": "uc_child_element_post_2017",
@@ -31934,15 +31948,16 @@
       ],
       "used_by": [
         "src/components/calculators/HighIncomeChildBenefitCalculator.tsx",
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/components/calculators/ChildBenefitCalculator.tsx"
       ],
       "source_url": "https://www.legislation.gov.uk/ukpga/2003/1/section/681C",
       "status": "current",
       "change_frequency": "",
       "note": "Appropriate percentage rounded down to a whole number (1% per full £200) and the charge rounded down to whole pounds. HICBC can be paid through PAYE tax code (gov.uk/child-benefit-tax-charge/pay-the-charge).",
       "official_value": "percentage and charge rounded down",
-      "verified_date": "2026-09-27",
-      "verify_method": "calkcheck-2026-09-27-r4",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
       "confidence": "high"
     },
     {
@@ -32024,15 +32039,16 @@
       "used_by": [
         "src/components/calculators/NhsPayCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/NhsPensionCalculator.tsx"
       ],
       "source_url": "https://www.nhsbsa.nhs.uk/member-hub/cost-being-scheme",
       "status": "current",
       "change_frequency": "",
       "note": "Tier rate applies to all pensionable pay; NhsPayCalculator deducted no pension before 2026-09-27. Prose had \"5.2% to 13.5%\". Employer rate 23.7%.",
       "official_value": "5.2/6.5/8.3/9.8/10.7/12.5% at 13259/28854/35155/52778/67668",
-      "verified_date": "2026-09-27",
-      "verify_method": "calkcheck-2026-09-27-r4",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
       "confidence": "high",
       "changes_next_fy": "Tier thresholds uprated each April with AfC"
     },
@@ -32766,6 +32782,512 @@
       "verified_date": "2026-09-28",
       "verify_method": "calkcheck-2026-09-28-r6",
       "confidence": "medium"
+    },
+    {
+      "key": "benefit_cap_uc_earnings_exemption_monthly",
+      "value": "881",
+      "unit": "GBP/month net",
+      "law": "Benefit Cap regulations; UC Regs 2013 reg 82 (16 x NLW x 52/12)",
+      "theme": "benefits",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BenefitCapCalculator.tsx",
+        "src/components/calculators/UniversalCreditCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/benefit-cap",
+      "status": "current",
+      "change_frequency": "",
+      "note": "UC households with net earnings of £881 or more a month (2026/27; £846 before 1 Apr 2026) are exempt from the benefit cap.",
+      "official_value": "881",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high",
+      "changes_next_fy": "Rises each April with 16 hours at the National Living Wage"
+    },
+    {
+      "key": "benefit_cap_uc_grace_period_months",
+      "value": "9",
+      "unit": "months",
+      "law": "UC Regs 2013 reg 82(2)",
+      "theme": "benefits",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/benefit-cap",
+      "status": "current",
+      "change_frequency": "",
+      "note": "9-month grace period for UC if the household earned at least the earnings threshold in each of the previous 12 months. The 39-week / 50-of-52-weeks rule is Housing Benefit only.",
+      "official_value": "9",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high"
+    },
+    {
+      "key": "benefit_cap_households_capped_may_2026",
+      "value": "160000",
+      "unit": "households",
+      "law": "DWP statistics",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/statistics/benefit-cap-number-of-households-capped-to-may-2026",
+      "status": "current",
+      "change_frequency": "",
+      "note": "About 160,000 households in GB capped in May 2026, up from about 113,000 in May 2025 after the two-child limit ended.",
+      "official_value": "160000",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "medium"
+    },
+    {
+      "key": "crisis_resilience_fund_replaces_dhp_england",
+      "value": "1 April 2026",
+      "unit": "date",
+      "law": "DWP Crisis and Resilience Fund guidance 2026-2029",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/crisis-and-resilience-fund-guidance-for-local-authorities-in-england-1-april-2026-to-31-march-2029",
+      "status": "current",
+      "change_frequency": "",
+      "note": "In England Discretionary Housing Payments were folded into the Crisis and Resilience Fund (Housing Payments) from 1 April 2026; DHPs continue in Scotland and Wales.",
+      "official_value": "1 April 2026",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high"
+    },
+    {
+      "key": "lgps_contribution_bands_2026_27",
+      "value": "5.5% to £18,400 … 12.5% above £210,700",
+      "unit": "bands",
+      "law": "LGPS Regulations 2013 reg 9; LGPC Bulletin 274",
+      "theme": "pensions",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/LgpsPensionCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.lgpsmember.org/2026/01/21/new-contribution-bands-2026/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "England & Wales main section from 1 Apr 2026: to £18,400 5.5%; to £29,000 5.8%; to £47,300 6.5%; to £59,800 6.8%; to £84,000 8.5%; to £119,100 9.9%; to £140,400 10.5%; to £210,700 11.4%; above 12.5%. 2025/26 thresholds x 1.038 (Sept 2025 CPI) rounded down to £100.",
+      "official_value": "5.5% to £18,400 … 12.5% above £210,700",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high",
+      "changes_next_fy": "Thresholds uprated each April by the previous September CPI"
+    },
+    {
+      "key": "db_pension_max_lump_sum_factor",
+      "value": "30/7",
+      "unit": "x annual pension",
+      "law": "FA 2004 Sch 29 para 3 (25% of capital value, factor 20); 12:1 commutation",
+      "theme": "pensions",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/NhsPensionCalculator.tsx",
+        "src/components/calculators/LgpsPensionCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.nhsbsa.nhs.uk/member-hub/taking-your-pension",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Maximum lump sum = 25% of capital value (20 x reduced pension + lump sum) at £12 per £1 given up, i.e. 30/7 (about 4.29) x the full pension, capped at the £268,275 Lump Sum Allowance. Both NHS and LGPS calculators used 25% x pension x 12 until 2026-09-28.",
+      "official_value": "30/7",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high"
+    },
+    {
+      "key": "annuity_best_buy_level_single_65_per_100k",
+      "value": "8125",
+      "unit": "GBP/year per £100k",
+      "law": "market (HL best-buy table 17 Sep 2026)",
+      "theme": "pensions",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.hl.co.uk/retirement/annuities/best-buy-rates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Best level single-life annuity at 65 about £8,125 a year per £100,000 (Sept 2026); pages say \"around 7.5% to 8%\". Market figure, re-check each cycle.",
+      "official_value": "8125",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "medium"
+    },
+    {
+      "key": "motor_finance_redress_scheme",
+      "value": "FCA PS26/3: 2007-2024 agreements, £7.5bn",
+      "unit": "scheme",
+      "law": "FCA PS26/3 (30 Mar 2026); Johnson v FirstRand [2025] UKSC 33",
+      "theme": "loans",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.fca.org.uk/news/statements/fca-confirms-motor-finance-redress-scheme",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Agreements 6 Apr 2007 - 1 Nov 2024 with DCA, high commission or contractual tie; about 12.1m agreements, £7.5bn redress, average £829, interest at Bank Rate + 1% (min 3%). Started 30 Jun 2026 (from Apr 2014) and 31 Aug 2026 (earlier); complain by 31 Aug 2027. Parts suspended by the Upper Tribunal 2 Jul 2026 (statement updated 14 Sep 2026).",
+      "official_value": "FCA PS26/3: 2007-2024 agreements, £7.5bn",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high",
+      "changes_next_fy": "Watch the Upper Tribunal challenge outcome"
+    },
+    {
+      "key": "sdlt_higher_rates_minimum_price",
+      "value": "40000",
+      "unit": "GBP",
+      "law": "FA 2003 Sch 4ZA; Sch 9A",
+      "theme": "property",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/StampDutyCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/stamp-duty-land-tax-buying-an-additional-residential-property",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Neither the 5% higher rates nor the 2% non-resident surcharge applies to a purchase under £40,000.",
+      "official_value": "40000",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high"
+    },
+    {
+      "key": "sdlt_non_resident_surcharge",
+      "value": "2",
+      "unit": "percent",
+      "law": "FA 2003 Sch 9A (from 1 Apr 2021)",
+      "theme": "property",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/StampDutyCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/rates-for-non-uk-residents-and-stamp-duty-land-tax",
+      "status": "current",
+      "change_frequency": "",
+      "note": "2% on the whole price for non-UK-resident buyers, on top of standard, first-time buyer and higher rates.",
+      "official_value": "2",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high"
+    },
+    {
+      "key": "corporation_tax_limits_associated_companies",
+      "value": "÷ (1 + associates) × days/365",
+      "unit": "rule",
+      "law": "CTA 2010 s18C-18E",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/CorporationTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/corporation-tax-rates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "The £50,000 and £250,000 limits are divided by one plus the number of associated companies and pro-rated for short accounting periods; CorporationTaxCalculator gained both inputs 2026-09-28.",
+      "official_value": "÷ (1 + associates) × days/365",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high"
+    },
+    {
+      "key": "savings_starting_rate_band_interaction",
+      "value": "PA → starting rate → PSA → bands",
+      "unit": "rule",
+      "law": "ITA 2007 s12, s12A-12B",
+      "theme": "income_tax",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/SavingsInterestTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/apply-tax-free-interest-on-savings",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Unused personal allowance, then the £5,000 starting rate band (reduced £1 per £1 of other taxable income), then the PSA (band set by total income including interest); SavingsInterestTaxCalculator applied a flat rate by salary until 2026-09-28.",
+      "official_value": "PA → starting rate → PSA → bands",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high"
+    },
+    {
+      "key": "premium_bonds_prize_mix_sept_2026",
+      "value": "£50 and £100 most common",
+      "unit": "distribution",
+      "law": "NS&I prize allocation, Sept 2026 draw",
+      "theme": "investment",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/PremiumBondsCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.nsandi.com/products/premium-bonds",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Sept 2026 draw: 6,529,868 prizes; 2,365,010 each of £50 and £100, 1,716,787 of £25; fund £497,086,175 at 4.35%, odds 21,000 to 1.",
+      "official_value": "£50 and £100 most common",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high",
+      "changes_next_fy": "Changes with each NS&I prize fund rate announcement"
+    },
+    {
+      "key": "equity_release_lending_2025",
+      "value": "2.57",
+      "unit": "GBP bn",
+      "law": "Equity Release Council Q4 2025 figures",
+      "theme": "mortgage",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.equityreleasecouncil.com/news/council-publishes-q4-lending-figures-2025/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "£2.57bn lent in 2025 (£2.3bn in 2024; £6.2bn peak in 2022). Pages said \"more than £6 billion in 2025\".",
+      "official_value": "2.57",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "medium"
+    },
+    {
+      "key": "lifetime_mortgage_rates_sept_2026",
+      "value": "6.3% to 8%",
+      "unit": "percent range",
+      "law": "market (Key, Money Release, Sept 2026)",
+      "theme": "mortgage",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/EquityReleaseCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.keyadvice.co.uk/equity-release/interest-rates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Lowest lifetime mortgage rates about 6.25-6.7% AER, typical customer about 7.8% (Key, 14 Sep 2026). Calculator default 7.25%. Market figure, re-check each cycle.",
+      "official_value": "6.3% to 8%",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "medium"
+    },
+    {
+      "key": "ved_2001_2017_band_m_annual",
+      "value": "790",
+      "unit": "GBP/year",
+      "law": "VED rates 2026/27 (cars registered 1 Mar 2001 - 31 Mar 2017)",
+      "theme": "auto",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/CarTaxCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/vehicle-tax-rate-tables",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Old CO2 bands A-M for 2026/27: A £20, B £20, C £35, D £170, E £200, F £225, G £275, H £325, I £360, J £410, K £445, L £760, M £790; pre-2001 £230 / £375. Zero-emission cars registered 2001-2017 are Band A (£20) since 1 Apr 2025.",
+      "official_value": "790",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high",
+      "changes_next_fy": "Uprated with RPI each April"
+    },
+    {
+      "key": "ved_direct_debit_surcharge",
+      "value": "5",
+      "unit": "percent",
+      "law": "DVLA vehicle tax payment rules",
+      "theme": "auto",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/CarTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/vehicle-tax-direct-debit",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Paying monthly or six-monthly by Direct Debit adds 5%; a single six-month payment by other means adds 10%.",
+      "official_value": "5",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high"
+    },
+    {
+      "key": "student_support_wales_max_2026_27",
+      "value": "15720",
+      "unit": "GBP/year",
+      "law": "Student Finance Wales 2026/27 (SFWIN 02/2026)",
+      "theme": "education",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.studentfinancewales.co.uk/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Maximum combined grant + loan: £15,720 in London, £12,590 elsewhere, £10,685 at home.",
+      "official_value": "15720",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high"
+    },
+    {
+      "key": "student_support_ni_loan_max_2026_27",
+      "value": "8352",
+      "unit": "GBP/year",
+      "law": "Student Finance NI 2026/27",
+      "theme": "education",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.studentfinanceni.co.uk/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "NI maintenance loan up to £8,352 (£11,699 in London) plus a means-tested maintenance grant up to £3,569.",
+      "official_value": "8352",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "medium"
+    },
+    {
+      "key": "sole_trader_cash_basis_default",
+      "value": "default, no turnover limit",
+      "unit": "rule",
+      "law": "ITTOIA 2005 as amended by FA 2024",
+      "theme": "business",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/simpler-income-tax-cash-basis",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Since 6 Apr 2024 the cash basis is the default for sole traders with no turnover limit; accruals is opt-in.",
+      "official_value": "default, no turnover limit",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high"
+    },
+    {
+      "key": "emergency_tax_code",
+      "value": "1257L W1/M1",
+      "unit": "tax code",
+      "law": "PAYE regulations",
+      "theme": "income_tax",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/emergency-tax-code",
+      "status": "current",
+      "change_frequency": "",
+      "note": "The emergency code is the standard code on a week 1/month 1 (or X) basis; 0T means no personal allowance.",
+      "official_value": "1257L W1/M1",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high"
+    },
+    {
+      "key": "mencap_sleep_in_ruling",
+      "value": "19 March 2021",
+      "unit": "date",
+      "law": "Royal Mencap Society v Tomlinson-Blake [2021] UKSC 8",
+      "theme": "minimum_wage",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.supremecourt.uk/cases/uksc-2018-0160",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Supreme Court (2021) upheld the 2018 Court of Appeal: sleep-in time counts for NMW only when the worker is awake for work.",
+      "official_value": "19 March 2021",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r7",
+      "confidence": "high"
     }
   ],
   "status_summary": {

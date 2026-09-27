@@ -20,8 +20,8 @@ function calculate(monthlyAmount: number, years: number, growthRate: number, tax
   }
 
   // Pension: 25% tax-free, rest taxed at marginal rate in retirement
-  const pensionLumpSum = pensionPot * 0.25
-  const pensionTaxable = pensionPot * 0.75
+  const pensionLumpSum = Math.min(pensionPot * 0.25, 268_275) // capped at the Lump Sum Allowance
+  const pensionTaxable = pensionPot - pensionLumpSum
   const pensionTax = pensionTaxable * 0.20 // assume basic rate in retirement
   const pensionNet = pensionPot - pensionTax + extraRelief * years * 12
 

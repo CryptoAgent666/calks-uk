@@ -20,7 +20,7 @@ function getRate(age: number): number {
 }
 
 function calculate(pot: number, age: number, takeLumpSum: boolean, jointLife: boolean) {
-  const lumpSum = takeLumpSum ? pot * 0.25 : 0
+  const lumpSum = takeLumpSum ? Math.min(pot * 0.25, 268_275) : 0 // capped at the Lump Sum Allowance
   const annuityPot = pot - lumpSum
   let rate = getRate(age)
   if (jointLife) rate *= 0.85 // ~15% reduction for joint life

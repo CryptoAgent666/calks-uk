@@ -1,30 +1,36 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency, formatPercent } from '@/utils'
+import { formatCurrency, formatPercent, ukPersonalAllowance, UK_BASIC_BAND, UK_ADDITIONAL_THRESHOLD } from '@/utils'
 
 function calculate(salary: number, dividends: number, selfEmployment: number, rentalIncome: number, capitalGains: number, pensionContrib: number, giftAid: number) {
   const totalIncome = salary + dividends + selfEmployment + rentalIncome
-  let pa = 12_570
-  if (totalIncome > 100_000) pa = Math.max(0, 12_570 - Math.floor((totalIncome - 100_000) / 2))
 
-  // Extend basic rate band for pension/gift aid
-  const extendedBasic = 50_270 + pensionContrib + (giftAid * 1.25)
+  // Relief-at-source pension contributions (gross) and grossed-up Gift Aid extend the
+  // basic and higher rate bands, and reduce adjusted net income for the £100k taper.
+  const extension = pensionContrib + giftAid * 1.25
+  const pa = ukPersonalAllowance(Math.max(0, totalIncome - extension))
 
-  // Income Tax on non-dividend income
-  const nonDivIncome = salary + selfEmployment + rentalIncome
-  let incomeTax = 0
-  if (nonDivIncome > pa) {
-    if (nonDivIncome <= extendedBasic) incomeTax = (nonDivIncome - pa) * 0.20
-    else if (nonDivIncome <= 125_140) incomeTax = (extendedBasic - pa) * 0.20 + (nonDivIncome - extendedBasic) * 0.40
-    else incomeTax = (extendedBasic - pa) * 0.20 + (125_140 - extendedBasic) * 0.40 + (nonDivIncome - 125_140) * 0.45
+  // Band limits measured in TAXABLE income, so the 20% band is always £37,700 wide
+  // (plus any extension) even when the personal allowance tapers away above £100k.
+  const basicLimit = UK_BASIC_BAND + extension
+  const higherLimit = UK_ADDITIONAL_THRESHOLD + extension
+  const slice = (from: number, amount: number, rates: [number, number, number]) => {
+    const to = from + amount
+    const inBasic = Math.max(0, Math.min(to, basicLimit) - from)
+    const inHigher = Math.max(0, Math.min(to, higherLimit) - Math.max(from, basicLimit))
+    const inAdditional = Math.max(0, to - Math.max(from, higherLimit))
+    return inBasic * rates[0] + inHigher * rates[1] + inAdditional * rates[2]
   }
 
-  // Dividend tax
-  const divAllowance = 500
-  const taxableDividends = Math.max(0, dividends - divAllowance)
-  const remainingBasic = Math.max(0, extendedBasic - nonDivIncome)
-  const divAtBasic = Math.min(taxableDividends, remainingBasic)
-  const divAtHigher = taxableDividends - divAtBasic
-  const dividendTax = divAtBasic * 0.1075 + divAtHigher * 0.3575
+  // Income Tax on non-dividend income (uses the personal allowance first)
+  const nonDivIncome = salary + selfEmployment + rentalIncome
+  const nonDivTaxable = Math.max(0, nonDivIncome - pa)
+  const incomeTax = slice(0, nonDivTaxable, [0.20, 0.40, 0.45])
+
+  // Dividends sit on top: any unused allowance covers them first, then the £500
+  // dividend allowance (taxed at 0% but still using band room)
+  const divTaxable = Math.max(0, dividends - Math.max(0, pa - nonDivIncome))
+  const divAllowance = Math.min(500, divTaxable)
+  const dividendTax = slice(nonDivTaxable + divAllowance, divTaxable - divAllowance, [0.1075, 0.3575, 0.3935])
 
   // NI
   let employeeNI = 0
@@ -34,10 +40,12 @@ function calculate(salary: number, dividends: number, selfEmployment: number, re
   if (selfEmployment > 12_570) { if (selfEmployment <= 50_270) class4NI = (selfEmployment - 12_570) * 0.06; else class4NI = (50_270 - 12_570) * 0.06 + (selfEmployment - 50_270) * 0.02 }
   // Class 2 NI abolished from 6 April 2024 — removed
 
-  // CGT (post-Oct 2024 Budget: 18%/24% for all assets)
+  // CGT (18%/24% for all assets since 30 Oct 2024): gains above the £3,000 exempt
+  // amount use whatever basic-rate band is left after all taxable income
   const cgtAllowance = 3_000
   const taxableCGT = Math.max(0, capitalGains - cgtAllowance)
-  const cgt = nonDivIncome <= 50_270 ? taxableCGT * 0.18 : taxableCGT * 0.24
+  const basicLeft = Math.max(0, basicLimit - nonDivTaxable - divTaxable)
+  const cgt = Math.min(taxableCGT, basicLeft) * 0.18 + Math.max(0, taxableCGT - basicLeft) * 0.24
 
   const totalTax = incomeTax + dividendTax + employeeNI + class4NI + cgt
   const totalGross = totalIncome + capitalGains

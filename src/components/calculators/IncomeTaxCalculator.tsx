@@ -8,6 +8,19 @@ const BASIC_RATE_BAND = 37_700       // width of the 20% band in taxable income
 const HIGHER_RATE_LIMIT = 125_140    // taxable income where 45% starts
 const PA_TAPER_START = 100_000
 
+// Employee Class 1 National Insurance 2026/27 (annualised)
+const NI_PRIMARY_THRESHOLD = 12_570
+const NI_UPPER_EARNINGS_LIMIT = 50_270
+const NI_MAIN_RATE = 0.08
+const NI_ADDITIONAL_RATE = 0.02
+
+function calculateEmployeeNI(gross: number) {
+  if (gross <= NI_PRIMARY_THRESHOLD) return 0
+  const main = Math.min(gross, NI_UPPER_EARNINGS_LIMIT) - NI_PRIMARY_THRESHOLD
+  const additional = Math.max(0, gross - NI_UPPER_EARNINGS_LIMIT)
+  return main * NI_MAIN_RATE + additional * NI_ADDITIONAL_RATE
+}
+
 const TAX_BANDS = [
   { name: 'Personal Allowance', rate: 0, from: 0, to: PERSONAL_ALLOWANCE },
   { name: 'Basic Rate', rate: 0.20, from: PERSONAL_ALLOWANCE, to: BASIC_RATE_LIMIT },
@@ -52,18 +65,23 @@ function calculateIncomeTax(gross: number) {
     breakdown.push({ name: band.name, taxable: taxableInBand, tax, rate: band.rate })
   }
 
+  const employeeNI = calculateEmployeeNI(gross)
+  const takeHome = gross - totalTax - employeeNI
+
   return {
     gross,
     totalTax,
-    netIncome: gross - totalTax,
+    employeeNI,
+    takeHome,
     effectiveRate: gross > 0 ? (totalTax / gross) * 100 : 0,
+    combinedRate: gross > 0 ? ((totalTax + employeeNI) / gross) * 100 : 0,
     personalAllowance,
     breakdown,
   }
 }
 
 export default function IncomeTaxCalculator() {
-  const [income, setIncome] = useUrlParam('salary', '')
+  const [income, setIncome] = useUrlParam('salary', '45000')
 
   const gross = parseFloat(income.replace(/,/g, '')) || 0
   const result = useMemo(() => calculateIncomeTax(gross), [gross])
@@ -105,18 +123,26 @@ export default function IncomeTaxCalculator() {
       {gross > 0 && (
         <div className="space-y-4 animate-fade-in-up">
           {/* Summary Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             <div className="rounded-xl bg-muted/50 p-4">
               <p className="text-xs text-muted-foreground">Income Tax</p>
               <p className="text-lg font-bold text-destructive">{formatCurrency(result.totalTax)}</p>
             </div>
             <div className="rounded-xl bg-muted/50 p-4">
-              <p className="text-xs text-muted-foreground">Take Home</p>
-              <p className="text-lg font-bold text-primary">{formatCurrency(result.netIncome)}</p>
+              <p className="text-xs text-muted-foreground">National Insurance</p>
+              <p className="text-lg font-bold text-destructive">{formatCurrency(result.employeeNI)}</p>
             </div>
             <div className="rounded-xl bg-muted/50 p-4">
-              <p className="text-xs text-muted-foreground">Effective Rate</p>
+              <p className="text-xs text-muted-foreground">Take Home (after tax and NI)</p>
+              <p className="text-lg font-bold text-primary">{formatCurrency(result.takeHome)}</p>
+            </div>
+            <div className="rounded-xl bg-muted/50 p-4">
+              <p className="text-xs text-muted-foreground">Effective Tax Rate</p>
               <p className="text-lg font-bold">{formatPercent(result.effectiveRate)}</p>
+            </div>
+            <div className="rounded-xl bg-muted/50 p-4">
+              <p className="text-xs text-muted-foreground">Tax + NI Rate</p>
+              <p className="text-lg font-bold">{formatPercent(result.combinedRate)}</p>
             </div>
             <div className="rounded-xl bg-muted/50 p-4">
               <p className="text-xs text-muted-foreground">Personal Allowance</p>
@@ -128,15 +154,15 @@ export default function IncomeTaxCalculator() {
           <div className="grid grid-cols-3 gap-3">
             <div className="rounded-xl border border-border p-4 text-center">
               <p className="text-xs text-muted-foreground">Monthly Take Home</p>
-              <p className="text-lg font-bold text-primary">{formatCurrency(result.netIncome / 12)}</p>
+              <p className="text-lg font-bold text-primary">{formatCurrency(result.takeHome / 12)}</p>
             </div>
             <div className="rounded-xl border border-border p-4 text-center">
               <p className="text-xs text-muted-foreground">Weekly Take Home</p>
-              <p className="text-lg font-bold text-primary">{formatCurrency(result.netIncome / 52)}</p>
+              <p className="text-lg font-bold text-primary">{formatCurrency(result.takeHome / 52)}</p>
             </div>
             <div className="rounded-xl border border-border p-4 text-center">
               <p className="text-xs text-muted-foreground">Daily Take Home</p>
-              <p className="text-lg font-bold text-primary">{formatCurrency(result.netIncome / 365)}</p>
+              <p className="text-lg font-bold text-primary">{formatCurrency(result.takeHome / 365)}</p>
             </div>
           </div>
 
@@ -160,14 +186,27 @@ export default function IncomeTaxCalculator() {
                       <td className="text-right py-2.5 tabular-nums font-medium">{formatCurrency(band.tax)}</td>
                     </tr>
                   ))}
-                  <tr className="font-semibold">
-                    <td className="py-2.5">Total</td>
+                  <tr className="border-b border-border font-semibold">
+                    <td className="py-2.5">Total income tax</td>
                     <td className="text-right py-2.5 tabular-nums">{formatCurrency(gross)}</td>
                     <td className="text-right py-2.5 tabular-nums text-destructive">{formatCurrency(result.totalTax)}</td>
+                  </tr>
+                  <tr className="border-b border-border/50">
+                    <td className="py-2.5">Employee NI (8% / 2%)</td>
+                    <td className="text-right py-2.5 tabular-nums">{formatCurrency(Math.max(0, gross - NI_PRIMARY_THRESHOLD))}</td>
+                    <td className="text-right py-2.5 tabular-nums font-medium">{formatCurrency(result.employeeNI)}</td>
+                  </tr>
+                  <tr className="font-semibold">
+                    <td className="py-2.5 text-primary">Take home</td>
+                    <td className="text-right py-2.5 tabular-nums"></td>
+                    <td className="text-right py-2.5 tabular-nums text-primary">{formatCurrency(result.takeHome)}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <p className="text-xs text-muted-foreground mt-2">
+              National Insurance assumes the income is employment pay (Class 1: 8% on {formatCurrency(NI_PRIMARY_THRESHOLD)} to {formatCurrency(NI_UPPER_EARNINGS_LIMIT)}, 2% above) and that you are under State Pension age. Pension contributions, student loans and other deductions are not included.
+            </p>
           </div>
 
           <ShareRow params={{ salary: income }} />

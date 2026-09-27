@@ -1,5 +1,31 @@
 # CHANGELOG — Calks.uk
 
+## 2026-09-28 (round 7) — Core tax and benefit calculators: take-home, SSP, UC benefit cap, savings tax
+
+Seventh `/calkcheck` data-currency pass, 20 of the highest-traffic calculators that had not had their logic
+hand-checked since May–August (report: `AUDIT-2026-09-28-b.md`).
+
+**Calculators corrected (in sample):** income tax (take-home now after NI), dividend vs salary (tax on the salary
+when the allowance tapers; employer NI secondary threshold; ranking flipped at £200k), capital gains tax (18% band
+below the PA), savings interest tax (starting rate for savings, unused PA, band on total income), corporation tax
+(associated companies, short periods), stamp duty (2% non-resident surcharge, £40k rule), child benefit (HICBC
+rounding, PAYE route), Universal Credit (pre-2017 first-child rate, benefit cap, hidden £1,200 rent cap removed),
+benefit cap (UC £881 test, 9-month grace, childcare element offset), SMP (LEL check, Maternity Allowance
+estimate), SSP (working days, not calendar days), minimum wage (pay check), NHS pension (2026/27 tiers, lump sum
+30/7, today's money), pension drawdown (£268,275 cap, never-runs-out, final part-year), car tax (registration date,
+old bands, EV rules, RDE2, Direct Debit 5%), Premium Bonds (Sept 2026 prize list), equity release (rates, age 55,
+no-negative-equity floor, growth input).
+
+**Outside the sample (sweep):** CGT on shares (same band bug), LGPS (2026/27 bands, lump sum 30/7), annuity /
+pension vs ISA / workplace pension (£268,275 cap), annual tax summary (fixed-width basic band, dividends, CGT
+split), sole trader vs ltd (accountancy before CT, £60k example), car finance (FCA redress scheme), payroll (0T),
+tax bracket visualiser (NI figures), pregnancy due date (Maternity Allowance), housing benefit (Crisis and
+Resilience Fund, bedroom rules), student allowance (Wales/NI figures), student budget, pension lump sum
+(State Pension £12,547.60), four employer-rates source links.
+
+**Guards and ledger:** 90 new `stale-values.json` entries, all fire on the old tree and are clean now. Ledger
+1540 → 1562 (22 new, 9 corrected).
+
 ## 2026-09-28 (round 6) — Input focus bug, BNPL regulation, free school meals, landlord tax
 
 Sixth `/calkcheck` data-currency pass, 20 more calculators (report: `AUDIT-2026-09-28.md`).

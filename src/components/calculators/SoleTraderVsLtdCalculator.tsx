@@ -16,14 +16,16 @@ function calculate(profit: number) {
   // LIMITED COMPANY (optimal salary £12,570 + dividends)
   const ltdSalary = 12_570
   const ltdEmployerNI = Math.max(0, (ltdSalary - 5_000) * 0.15)
-  const ltdCorpProfit = profit - ltdSalary - ltdEmployerNI
+  // Accountancy is a company expense, so it comes off profit before Corporation Tax
+  // (as on the side-by-side comparison page), not out of the post-tax dividends.
+  const ltdAccountancy = 1200
+  const ltdCorpProfit = profit - ltdSalary - ltdEmployerNI - ltdAccountancy
   const ltdCorpTax = ukCorporationTax(ltdCorpProfit)
   const ltdDividends = ltdCorpProfit - ltdCorpTax
   // Dividends stack on top of the £12,570 salary across the £500 allowance and the
   // 10.75% / 35.75% / 39.35% bands. Shared with the side-by-side comparison page so
   // the two cannot drift apart.
   const ltdDivTax = ukDividendTax(ltdDividends, ltdSalary)
-  const ltdAccountancy = 1200
   const ltdTotal = ltdCorpTax + ltdDivTax + ltdEmployerNI + ltdAccountancy
   const ltdTakeHome = profit - ltdTotal
 

@@ -8,18 +8,20 @@ const ACCRUAL_FULL = 1 / 49
 const ACCRUAL_5050 = 1 / 98
 const REVALUATION = 0.02 // CPI
 
-// Main-section member contribution bands (England & Wales)
+// Main-section member contribution bands (England & Wales) from 1 April 2026:
+// 2025/26 thresholds uprated by September 2025 CPI (3.8%), rounded down to £100
 const CONTRIBUTION_RATES = [
-  { upTo: 17_800, rate: 5.5 },
-  { upTo: 28_000, rate: 5.8 },
-  { upTo: 45_600, rate: 6.5 },
-  { upTo: 57_700, rate: 6.8 },
-  { upTo: 81_000, rate: 8.5 },
-  { upTo: 114_800, rate: 9.9 },
-  { upTo: 135_300, rate: 10.5 },
-  { upTo: 203_000, rate: 11.4 },
+  { upTo: 18_400, rate: 5.5 },
+  { upTo: 29_000, rate: 5.8 },
+  { upTo: 47_300, rate: 6.5 },
+  { upTo: 59_800, rate: 6.8 },
+  { upTo: 84_000, rate: 8.5 },
+  { upTo: 119_100, rate: 9.9 },
+  { upTo: 140_400, rate: 10.5 },
+  { upTo: 210_700, rate: 11.4 },
   { upTo: Infinity, rate: 12.5 },
 ]
+const LUMP_SUM_ALLOWANCE = 268_275
 
 function calculate(salary: number, yearsService: number, yearsToRetirement: number, fiftyFifty: boolean) {
   if (salary <= 0) return null
@@ -42,8 +44,11 @@ function calculate(salary: number, yearsService: number, yearsToRetirement: numb
     totalPension += thisYearPension
   }
 
-  const maxLumpSum = totalPension * 0.25 * 12
-  const reducedPension = totalPension * 0.75
+  // £12 of lump sum per £1 of pension given up. HMRC caps the lump sum at 25% of
+  // the capital value (20 x the reduced pension + the lump sum), which works out
+  // at 30/7 of the full pension, and at the £268,275 Lump Sum Allowance.
+  const maxLumpSum = Math.min(totalPension * 30 / 7, LUMP_SUM_ALLOWANCE)
+  const reducedPension = totalPension - maxLumpSum / 12
 
   return { contribRate, annualContrib, monthlyContrib, thisYearPension, totalPension, monthlyPension: totalPension / 12, maxLumpSum, reducedPension }
 }
