@@ -16,6 +16,12 @@ function calculate(property: number, mortgage: number, pensions1: number, pensio
   return { totalAssets, equity, halfShare, share1, share2, childAdjustment }
 }
 
+// Defined at module level: a component declared inside render is remounted on every
+// keystroke, which drops focus after each digit.
+const Input = ({ label, value, onChange }: { label: string; value: string; onChange: (v: string) => void }) => (
+  <div><label className="block text-sm font-medium mb-2">{label}</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => onChange(e.target.value)} aria-label={label} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
+)
+
 export default function DivorceSettlementCalculator() {
   const [property, setProperty] = useState('350000')
   const [mortgage, setMortgage] = useState('150000')
@@ -28,9 +34,6 @@ export default function DivorceSettlementCalculator() {
 
   const result = useMemo(() => calculate(parseFloat(property.replace(/,/g,''))||0, parseFloat(mortgage.replace(/,/g,''))||0, parseFloat(pensions1.replace(/,/g,''))||0, parseFloat(pensions2.replace(/,/g,''))||0, parseFloat(savings.replace(/,/g,''))||0, parseFloat(debts.replace(/,/g,''))||0, parseInt(years)||0, children), [property,mortgage,pensions1,pensions2,savings,debts,years,children])
 
-  const Input = ({ label, value, onChange }: { label: string; value: string; onChange: (v: string) => void }) => (
-    <div><label className="block text-sm font-medium mb-2">{label}</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => onChange(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
-  )
 
   return (
     <div className="space-y-6">

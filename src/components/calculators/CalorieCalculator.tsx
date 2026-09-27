@@ -15,10 +15,17 @@ function calculate(gender: Gender, age: number, heightCm: number, weightKg: numb
 
   const tdee = bmr * ACTIVITY_MULTIPLIERS[activity]
 
+  const loseSlow = Math.round(tdee - 250)
+  const loseFast = Math.round(tdee - 500)
+  // NICE NG246: 800-1,200 kcal/day = low-energy diet, under 800 = very-low-energy diet (specialist support only)
+  const lowest = Math.min(loseSlow, loseFast)
+  const warning: 'none' | 'low' | 'veryLow' = lowest < 800 ? 'veryLow' : lowest < 1200 ? 'low' : 'none'
+
   return {
     bmr: Math.round(bmr), tdee: Math.round(tdee),
-    loseSlow: Math.round(tdee - 250), loseFast: Math.round(tdee - 500),
+    loseSlow, loseFast,
     gain: Math.round(tdee + 500),
+    warning,
   }
 }
 
@@ -71,6 +78,13 @@ export default function CalorieCalculator() {
             <div className="rounded-xl bg-green-100 dark:bg-green-950 p-4 text-center"><p className="text-xs text-muted-foreground">Loss (0.5kg/wk)</p><p className="text-lg font-bold text-green-700 dark:text-green-400">{result.loseFast}</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Gain (0.5kg/wk)</p><p className="text-lg font-bold">{result.gain}</p></div>
           </div>
+          {result.warning !== 'none' && (
+            <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-4 text-sm text-orange-800 dark:text-orange-300" role="alert">
+              {result.warning === 'veryLow'
+                ? 'A loss target under 800 kcal a day is a very-low-calorie diet. NICE says these should only be used within a specialist weight management service, so do not follow one without medical supervision.'
+                : 'A loss target under 1,200 kcal a day counts as a low-calorie diet. NICE advises these only with support from a specialist weight management service, so speak to your GP before eating this little.'}
+            </div>
+          )}
         </div>
       )}
     </div>

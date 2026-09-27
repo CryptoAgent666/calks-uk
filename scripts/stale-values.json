@@ -1150,6 +1150,216 @@
    "was": "compares three routes",
    "now": "boiler swap only",
    "what": "boiler replacement claim (calkcheck 2026-09-27 r5)"
+  },
+  {
+   "was": "Worker Protection Bill 2024",
+   "now": "Finance Act joint liability for agencies",
+   "what": "umbrella_paye_joint_liability_from (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "16, 24 and 30 hour thresholds used for Working Tax Credit",
+   "now": "no tax credits",
+   "what": "night-shift WTC (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "30 min break on any shift",
+   "now": "twenty-minute adult break",
+   "what": "adult_rest_break_minutes (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "unsociable hours supplements of 30% and 33%",
+   "now": "AfC unsocial hours by band",
+   "what": "night-shift NHS rates (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "predicted at 2.0-2.5% for 2026",
+   "now": "CPI to August",
+   "what": "cpi_12_month_rate (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "median UK pay settlement at 4.0%",
+   "now": "CIPD median expected award",
+   "what": "pay-rise CIPD (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "£2,680, or 67%",
+   "now": "pay rise example with pension relief",
+   "what": "pay-rise example (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "£52,430 in dividends",
+   "now": "director comparison recomputed",
+   "what": "dividend-income director example (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "£123.25 a week from day 4",
+   "now": "SSP from day one",
+   "what": "ssp_waiting_days (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "60-65% of contract value",
+   "now": "umbrella take-home from the calculator",
+   "what": "umbrella example (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "against £8,750 under standard rates and a saving of £2,500",
+   "now": "standard SDLT on the example price",
+   "what": "FTB SDLT example (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "charged at higher rates than on other assets",
+   "now": "same CGT rates for all assets",
+   "what": "property CGT rates (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "above the rates that apply to other assets",
+   "now": "same CGT rates for all assets",
+   "what": "property CGT rates FAQ (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "Letting Relief was abolished from April 2020",
+   "now": "letting relief only with shared occupancy",
+   "what": "letting_relief_max (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "The credit is fixed at 20% whatever your band",
+   "now": "credit capped by the lowest of three amounts",
+   "what": "section 24 credit (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "100% First Year Allowance until April 2026",
+   "now": "zero-emission car allowance to March/April next year",
+   "what": "ZEV FYA (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "became permanent from April 2026",
+   "now": "full expensing permanent since the Autumn Statement",
+   "what": "full expensing (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "Late payment attracts surcharges of 1 to 15%",
+   "now": "late payment penalties by day",
+   "what": "vat_late_payment_penalty_rates (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "Updated April 2025",
+   "now": "current rates",
+   "what": "FTB SDLT meta (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "Corporation Tax saved at 19% marginal rate",
+   "now": "marginal relief rate",
+   "what": "AIA example (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "Child Tax Credit (income under £16,190)",
+   "now": "no tax credit route",
+   "what": "fsm_child_tax_credit_income_threshold (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "Holiday food schemes have run since 2022",
+   "now": "HAF since the year before",
+   "what": "FSM HAF (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "can be worth over £1,000 per child per year",
+   "now": "meal value per child",
+   "what": "FSM value (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "£11,300 for a single person or £17,300",
+   "now": "Pension Credit annual at this year's rates",
+   "what": "FSM pension credit (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "a relief the UK removed in 1988",
+   "now": "relief only for the pre-April nineteen thirty-five born",
+   "what": "maintenance_payments_relief_max (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "one-third of the difference between the two incomes",
+   "now": "needs-based discretion",
+   "what": "spousal one-third (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "floor of 1,500 kcal a day for women and 1,800",
+   "now": "NICE low-calorie thresholds",
+   "what": "low_calorie_diet_threshold_kcal (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "= 1,421 kcal",
+   "now": "example BMR recomputed",
+   "what": "calorie example (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "£520/month x 36 + £2,800 deposit = £21,520",
+   "now": "HP payment at the stated APR",
+   "what": "car lease example (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "a saving of 30 to 50%",
+   "now": "EV salary sacrifice net of BiK",
+   "what": "car lease EV sacrifice (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "MEAL_VALUE = 2.65",
+   "now": "meal rate for this year",
+   "what": "FSM meal value (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "does not apply to BNPL at all",
+   "now": "Section seventy-five applies to regulated agreements",
+   "what": "bnpl_fca_regulation_start (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "From 2025, BNPL providers are expected",
+   "now": "regulated since mid-July",
+   "what": "bnpl_fca_regulation_start (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "Plan 4 in Scotland runs 35 years",
+   "now": "Plan four written off after thirty years",
+   "what": "student loan write-off (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "Klarna charging 18.9% APR",
+   "now": "no unverified brand interest claim",
+   "what": "bnpl brands (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "45% of your gross household income",
+   "now": "withdrawn housing-cost test, take-home basis",
+   "what": "shared ownership affordability (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "Help to Buy agent",
+   "now": "apply to the selling organisation or developer",
+   "what": "shared ownership / First Homes applications (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "at RPI-linked valuations",
+   "now": "one percent staircasing priced by HPI",
+   "what": "staircasing (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "on up to 25% of the pension",
+   "now": "quarter of total value",
+   "what": "tps_max_commutation_percent (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "Years worked between 1995 and 2015 accrued at 1/80th",
+   "now": "final salary sections by joining date",
+   "what": "teachers pension accrual (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "approx. 24% APR equivalent",
+   "now": "no invented APR equivalent",
+   "what": "bnpl example (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "For anyone starting now",
+   "now": "LISA open to new savers until the replacement ISA",
+   "what": "lisa FTB ISA (calkcheck 2026-09-28 r6)"
   }
  ]
 }

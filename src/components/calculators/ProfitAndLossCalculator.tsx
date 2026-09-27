@@ -1,6 +1,12 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, formatPercent } from '@/utils'
 
+// Defined at module level: a component declared inside render is remounted on every
+// keystroke, which drops focus after each digit.
+const Input = ({ label, value, onChange }: { label: string; value: string; onChange: (v: string) => void }) => (
+  <div><label className="block text-xs text-muted-foreground mb-1">{label}</label><div className="relative"><span className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground text-xs">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => onChange(e.target.value)} aria-label={label} className="w-full rounded-lg border border-input bg-background pl-6 pr-2 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
+)
+
 export default function ProfitAndLossCalculator() {
   const [revenue, setRevenue] = useState('120000')
   const [cogs, setCogs] = useState('45000')
@@ -26,9 +32,6 @@ export default function ProfitAndLossCalculator() {
   const netProfit = grossProfit - totalOverheads
   const netMargin = r > 0 ? (netProfit / r) * 100 : 0
 
-  const Input = ({ label, value, onChange }: { label: string; value: string; onChange: (v: string) => void }) => (
-    <div><label className="block text-xs text-muted-foreground mb-1">{label}</label><div className="relative"><span className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground text-xs">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => onChange(e.target.value)} className="w-full rounded-lg border border-input bg-background pl-6 pr-2 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div></div>
-  )
 
   return (
     <div className="space-y-6">

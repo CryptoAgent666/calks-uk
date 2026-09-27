@@ -10,6 +10,16 @@ function calculate(annualIncome: number, yearsToReplace: number, mortgage: numbe
   return { incomeReplacement, totalNeeds, totalResources, coverNeeded, mortgage, otherDebts, childrenCosts, funeralCosts }
 }
 
+// Defined at module level: a component declared inside render is remounted on every
+// keystroke, which drops focus after each digit.
+const Input = ({ label, value, onChange, placeholder }: { label: string; value: string; onChange: (v: string) => void; placeholder?: string }) => (
+  <div>
+    <label className="block text-sm font-medium mb-2">{label}</label>
+    <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
+      <input type="text" inputMode="numeric" value={value} onChange={(e) => onChange(e.target.value)} aria-label={label} placeholder={placeholder} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
+  </div>
+)
+
 export default function LifeInsuranceCalculator() {
   const [income, setIncome] = useState('35000')
   const [years, setYears] = useState('15')
@@ -27,13 +37,6 @@ export default function LifeInsuranceCalculator() {
     parseFloat(savings.replace(/,/g,''))||0, parseFloat(existing.replace(/,/g,''))||0
   ), [income, years, mortgage, debts, children, funeral, savings, existing])
 
-  const Input = ({ label, value, onChange, placeholder }: { label: string; value: string; onChange: (v: string) => void; placeholder?: string }) => (
-    <div>
-      <label className="block text-sm font-medium mb-2">{label}</label>
-      <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-        <input type="text" inputMode="numeric" value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" /></div>
-    </div>
-  )
 
   return (
     <div className="space-y-6">

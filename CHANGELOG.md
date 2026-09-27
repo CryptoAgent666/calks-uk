@@ -1,5 +1,33 @@
 # CHANGELOG — Calks.uk
 
+## 2026-09-28 (round 6) — Input focus bug, BNPL regulation, free school meals, landlord tax
+
+Sixth `/calkcheck` data-currency pass, 20 more calculators (report: `AUDIT-2026-09-28.md`).
+
+**Input bug in six calculators.** VAT return, profit and loss, debt-to-income, life insurance, divorce settlement
+and annual tax summary declared their money input as a component inside render, so React remounted it on every
+keystroke and focus dropped after the first digit. Moved to module scope; tested by typing in a browser.
+
+**Policy:** BNPL regulated by the FCA since 15 July 2026 (affordability checks, Ombudsman, Section 75). Free
+school meals for all Universal Credit families in England from September 2026, but pupil premium stays with the
+£7,400 targeted cohort. Umbrella PAYE liability moved to agencies from 6 April 2026 (Finance Act 2026). CPI 3.1%
+(August). VAT late payment penalties 3% + 3% + 10% a year.
+
+**Calculators corrected:** landlord tax (PA taper charged to the rent, Section 24 cap and carry-forward,
+Scotland), property CGT (basic band, PRR occupation period), annual investment allowance (full expensing, 40% FYA,
+sole traders), umbrella (NI on salary, weekly margin, levy, pensions), pay rise (take-home), freelance quote
+(margin not markup), dividend income (other income stacking), rent vs buy (amortised balance, SDLT, costs,
+opportunity cost), shared ownership (income cap, service charge, largest affordable share), student loan
+overpayment (income-linked interest, total-paid verdict, invest comparison), BNPL (fees, stacking, s75), teachers'
+pension (lump sum 30/7), car lease vs buy (term, APR), free school meals (targeted vs expanded), calorie (NICE
+low-calorie warnings), night shift (net premium).
+
+**Figures corrected:** FTB SDLT saving on £425k is £5,000; CGT rates the same for all assets; letting relief
+restricted not abolished; ZEV FYA to 2027; adult rest break 20 minutes; SSP from day one; spousal maintenance
+one-third rule and Maintenance Payments Relief; Scotland 3-year limit; Wales universal primary meals; Employers'
+Liability exemptions; shared ownership SDLT on staircasing, 1% HPI staircasing, applying through the seller (also
+First Homes and the other shared ownership page); First Time Buyer ISA to replace the LISA.
+
 ## 2026-09-27 (round 5) — Apprenticeship levy reforms, student loans, speeding bands, FSCS £120k
 
 Fifth `/calkcheck` data-currency pass, 20 more calculators (report: `AUDIT-2026-09-27-c.md`).
