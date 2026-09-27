@@ -1360,6 +1360,456 @@
    "was": "For anyone starting now",
    "now": "LISA open to new savers until the replacement ISA",
    "what": "lisa FTB ISA (calkcheck 2026-09-28 r6)"
+  },
+  {
+   "was": "38.8% at £150,000",
+   "now": "combined rate recomputed with correct NI",
+   "what": "income tax effective rate at 150k (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "a combined 32% to 47%",
+   "now": "basic plus current employee NI",
+   "what": "salary sacrifice combined relief (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "adding a further 20p in tax per £2 earned",
+   "now": "taper costs the lost allowance at the higher rate",
+   "what": "PA taper explanation (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "0T is the emergency code",
+   "now": "emergency code is the standard code on a week-one basis",
+   "what": "emergency tax code (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "until at least April 2028",
+   "now": "thresholds frozen to April of the early thirties",
+   "what": "threshold freeze end (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "12% until November 2023",
+   "now": "main NI rate cut in January then April of the following year",
+   "what": "NI rate history (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "CA4140 is the route to a refund",
+   "now": "proof of age, payroll correction or HMRC refund",
+   "what": "over-SPA NI refund (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "including apprentices under 25",
+   "now": "apprentice relief is employer NI only",
+   "what": "apprentice NI (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "crystallises gains against both allowances",
+   "now": "spousal transfer is no gain/no loss",
+   "what": "bed and spousing (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "brings a £100 penalty plus interest",
+   "now": "failure-to-notify penalty is a percentage of tax",
+   "what": "sole trader registration penalty (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "suitable for turnover under £150k",
+   "now": "cash basis default with no turnover limit",
+   "what": "cash basis limit (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "With turnover between £1,000 and £90,000",
+   "now": "trading allowance has no upper turnover limit",
+   "what": "trading allowance limit (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "You file once a year via Self Assessment",
+   "now": "Making Tax Digital quarterly updates above the threshold",
+   "what": "MTD for sole traders (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "leaving £53,498 net",
+   "now": "all-salary net recomputed",
+   "what": "dividend vs salary £100k comparison (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "saving of about £10k a year",
+   "now": "saving recomputed from the calculator",
+   "what": "dividend vs salary £100k saving (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "about £4,000 of employer NI",
+   "now": "dividends carry no employer NI",
+   "what": "pension instead of dividends (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "roughly £4,000 of employer NI",
+   "now": "dividends carry no employer NI",
+   "what": "pension instead of dividends FAQ (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "Take-home: \\u00a346,912",
+   "now": "take-home recomputed with employer NI and higher-rate slice",
+   "what": "sole trader vs ltd / dividend example (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "rates-and-thresholds-for-employers-2025-to-2026",
+   "now": "current employer rates page",
+   "what": "employer rates source link (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "Math.max(0, 50_270 - otherIncome)",
+   "now": "band measured in taxable income",
+   "what": "CGT band below the PA (code) (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "Math.max(0, BASIC_RATE_LIMIT - income)",
+   "now": "band measured in taxable income",
+   "what": "CGT band below the PA (code) (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "saves £2k or more in tax annually",
+   "now": "ISA saving grows with the balance",
+   "what": "ISA tax saving (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "Most prizes are £25",
+   "now": "fifty and hundred pound prizes are most common",
+   "what": "premium bonds prize mix (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "mainly £25, occasional £50+",
+   "now": "fifty and hundred pound prizes are most common",
+   "what": "premium bonds prize mix (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "several £25 prizes",
+   "now": "fifty and hundred pound prizes are most common",
+   "what": "premium bonds prize mix (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "four or five prizes of £100k",
+   "now": "current draw counts",
+   "what": "premium bonds high-value prizes (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "around 60 billion to 1",
+   "now": "jackpot odds recomputed",
+   "what": "premium bonds jackpot odds (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "£1,350 after higher-rate tax",
+   "now": "PSA applied before tax",
+   "what": "premium bonds FAQ comparison (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "NHS care home funding",
+   "now": "council means test",
+   "what": "equity release care funding (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "That standard has applied since 2014",
+   "now": "part of the SHIP code since the early nineties",
+   "what": "no-negative-equity guarantee history (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "7 day cooling-off period after completion",
+   "now": "neutral wording on withdrawal",
+   "what": "equity release cooling-off (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "often more favourable for first-time buyers",
+   "now": "England FTB relief is the most generous",
+   "what": "SDLT vs LBTT/LTT for FTBs (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "in a taxable account for basic rate taxpayers",
+   "now": "only when interest already uses the PSA",
+   "what": "premium bonds gross equivalent (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "released more than £6 billion",
+   "now": "ERC annual lending figures",
+   "what": "equity release market size (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "they pay to HMRC under the Common Reporting Standard",
+   "now": "tax code or Simple Assessment",
+   "what": "savings interest reporting (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "2,251.60",
+   "now": "current-year child benefit total",
+   "what": "child benefit example total (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "1,125.80",
+   "now": "current-year HICBC example",
+   "what": "child benefit HICBC example (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "phased out and replaced by UC by 2028",
+   "now": "tax credits ended",
+   "what": "tax credits status (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "foundation degrees but not university degrees",
+   "now": "advanced education excluded",
+   "what": "child benefit approved education (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "every £100 paid into a pension saves up to £50",
+   "now": "one percent per whole two hundred pounds",
+   "what": "HICBC pension saving (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "saves roughly £500 of HICBC",
+   "now": "one percent per whole two hundred pounds",
+   "what": "HICBC pension saving FAQ (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "ISAs and pension pots are counted as capital",
+   "now": "pension rights disregarded for UC",
+   "what": "UC capital rules (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "Managed migration is being rolled out between 2024 and 2028",
+   "now": "migration largely completed",
+   "what": "UC managed migration (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "£16,000 or more ends",
+   "now": "more than the upper capital limit",
+   "what": "UC capital limit wording (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "39-week grace period",
+   "now": "UC nine-month grace period",
+   "what": "benefit cap grace period (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "50 of the previous 52 weeks",
+   "now": "UC nine-month grace period",
+   "what": "benefit cap grace period (HB rule) (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "work allowance after the earnings taper exempts",
+   "now": "net earnings test",
+   "what": "benefit cap earnings exemption (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "Around 190,000 UK households",
+   "now": "DWP May statistics",
+   "what": "benefit cap households (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "working 16+ hrs/wk",
+   "now": "net earnings test",
+   "what": "benefit cap exemption label (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "a Discretionary Housing Payment can bridge it",
+   "now": "Crisis and Resilience Fund in England",
+   "what": "DHP replaced in England (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "£194.32 a week for 39 weeks",
+   "now": "lower of the flat rate or ninety percent of earnings",
+   "what": "maternity allowance rate (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "20 SPLIT days between them",
+   "now": "each parent can work their own SPLIT days",
+   "what": "SPLIT days (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "may end your SMP entitlement",
+   "now": "lose SMP for weeks worked beyond KIT days",
+   "what": "KIT days (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "daysSick * dpw / 7",
+   "now": "working days off sick input",
+   "what": "SSP calendar-day conversion (code) (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "HOUSING_ELEMENT_MAX",
+   "now": "no hidden UC housing cap",
+   "what": "UC hidden rent cap (code) (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "£488.40",
+   "now": "current NLW weekly figure",
+   "what": "NMW example weekly pay (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "2018 Supreme Court",
+   "now": "Supreme Court ruling of March in the early twenties",
+   "what": "Mencap ruling year (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "27288",
+   "now": "current NHS pension tier",
+   "what": "NHS pension tier 2024/25 (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "33247",
+   "now": "current NHS pension tier",
+   "what": "NHS pension tier 2024/25 (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "49913",
+   "now": "current NHS pension tier",
+   "what": "NHS pension tier 2024/25 (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "63994",
+   "now": "current NHS pension tier",
+   "what": "NHS pension tier 2024/25 (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "totalPension * 0.25 * 12",
+   "now": "lump sum is a quarter of capital value",
+   "what": "DB lump sum formula (code) (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "6-7% at age 65",
+   "now": "current best-buy annuity rates",
+   "what": "annuity rates (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "State Pension of £11,500",
+   "now": "full new State Pension",
+   "what": "drawdown example State Pension (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "approximately 28 years (to age 88)",
+   "now": "calculator's own depletion result",
+   "what": "drawdown example duration (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "reaching £695",
+   "now": "current VED band M",
+   "what": "VED old bands top rate (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "between £20 and £695",
+   "now": "current VED band range",
+   "what": "VED old bands range (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "kept their nil rate",
+   "now": "older EVs pay Band A",
+   "what": "EV VED (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "monthly by Direct Debit with a 10%",
+   "now": "Direct Debit surcharge is five percent",
+   "what": "VED Direct Debit surcharge (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "monthly Direct Debit carries 10%",
+   "now": "Direct Debit surcharge is five percent",
+   "what": "VED Direct Debit surcharge FAQ (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "255g/km and above",
+   "now": "over the top band threshold",
+   "what": "VED top first-year band wording (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "£5.84",
+   "now": "current taper per pound",
+   "what": "maintenance loan taper (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "8,262",
+   "now": "current maintenance loan example",
+   "what": "maintenance loan example (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "up to £15,610",
+   "now": "current Welsh maximum",
+   "what": "Wales student support maximum (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "pays up to £9,492",
+   "now": "loan plus grant",
+   "what": "NI student support (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "nothing for the vacations",
+   "now": "instalments meant to last the academic year",
+   "what": "maintenance loan coverage (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "Child Benefit Charge starts at £50,000",
+   "now": "current HICBC threshold",
+   "what": "HICBC threshold (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "Supreme Court is expected to rule in 2026",
+   "now": "ruling given and FCA scheme live",
+   "what": "motor finance redress (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "Compensation across the industry could exceed £30 billion",
+   "now": "FCA scheme estimate",
+   "what": "motor finance redress FAQ (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "same-sex children under 16 who could reasonably share",
+   "now": "children who cannot share because of a disability",
+   "what": "bedroom tax exemptions (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "up to about £17,800",
+   "now": "current LGPS bands",
+   "what": "LGPS contribution bands (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "12.5% above £203,000",
+   "now": "current LGPS top band",
+   "what": "LGPS top band (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "58,203",
+   "now": "combined tax and NI recomputed",
+   "what": "NI figures in effective-rate prose (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "10,486",
+   "now": "combined tax and NI recomputed",
+   "what": "NI figures in effective-rate prose (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "a marginal rate of 73%",
+   "now": "taper on net pay",
+   "what": "UC marginal rate (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "£25,000 of drawdown has £37,000",
+   "now": "full new State Pension",
+   "what": "pension lump sum example State Pension (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "50_270 - otherIncome",
+   "now": "band measured in taxable income",
+   "what": "CGT band (code) (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "nonDivIncome <= 50_270 ? taxableCGT",
+   "now": "CGT split across bands",
+   "what": "annual tax summary flat CGT (code) (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "Annual saving: \\u00a3901",
+   "now": "sole trader keeps more at this profit",
+   "what": "sole trader vs ltd example (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "a difference of £5,302",
+   "now": "company route recomputed with accountancy deducted",
+   "what": "sole trader vs ltd FAQ (calkcheck 2026-09-28 r7)"
   }
  ]
 }

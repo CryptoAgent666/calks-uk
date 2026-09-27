@@ -6,8 +6,30 @@ const SMP_RATE = 194.32 // per week (statutory rate)
 const SMP_HIGHER_WEEKS = 6
 const SMP_LOWER_WEEKS = 33
 const SMP_HIGHER_RATE = 0.90 // 90% of average weekly earnings
+const SMP_LEL = 129 // Lower Earnings Limit 2026/27: AWE below this means no SMP
+// Maternity Allowance 2026/27 (employed or recently stopped work): lower of the standard
+// rate or 90% of AWE for up to 39 weeks. The employed test is 26 of the 66 weeks before
+// the due week, earning at least £30 a week in any 13 of them.
+const MA_RATE = 194.32
+const MA_WEEKS = 39
+const MA_MIN_WEEKLY_EARNINGS = 30
+
+function maternityAllowance(weeklyPay: number) {
+  if (weeklyPay < MA_MIN_WEEKLY_EARNINGS) return { maWeekly: 0, maTotal: 0 }
+  const maWeekly = Math.round(Math.min(MA_RATE, weeklyPay * SMP_HIGHER_RATE) * 100) / 100
+  return { maWeekly, maTotal: Math.round(maWeekly * MA_WEEKS * 100) / 100 }
+}
 
 function calculate(weeklyPay: number) {
+  const eligible = weeklyPay >= SMP_LEL
+  if (!eligible) {
+    return {
+      eligible, weeklyPay, higherWeeklyRate: 0, lowerWeeklyRate: 0,
+      first6Weeks: 0, next33Weeks: 0, totalSMP: 0,
+      unpaidWeeks: 13, totalWeeksLeave: 52,
+      ...maternityAllowance(weeklyPay),
+    }
+  }
   const higherWeeklyRate = weeklyPay * SMP_HIGHER_RATE
   const actualLowerRate = Math.min(weeklyPay * SMP_HIGHER_RATE, SMP_RATE) // 90% of AWE or SMP rate, whichever is lower
 
@@ -16,15 +38,16 @@ function calculate(weeklyPay: number) {
   const totalSMP = first6Weeks + next33Weeks
 
   return {
-    weeklyPay, higherWeeklyRate, lowerWeeklyRate: actualLowerRate,
+    eligible, weeklyPay, higherWeeklyRate, lowerWeeklyRate: actualLowerRate,
     first6Weeks, next33Weeks, totalSMP,
     unpaidWeeks: 13, // 13 weeks unpaid
     totalWeeksLeave: 52,
+    maWeekly: 0, maTotal: 0,
   }
 }
 
 export default function MaternityPayCalculator() {
-  const [weeklyPay, setWeeklyPay] = useState('')
+  const [weeklyPay, setWeeklyPay] = useState('600')
 
   const w = parseFloat(weeklyPay.replace(/,/g, '')) || 0
   const result = useMemo(() => calculate(w), [w])
@@ -38,7 +61,28 @@ export default function MaternityPayCalculator() {
         <p className="text-xs text-muted-foreground mt-1">Based on your average earnings over the 8 weeks before the qualifying week</p>
       </div>
 
-      {w > 0 && (
+      {w > 0 && !result.eligible && (
+        <div className="space-y-4 animate-fade-in-up">
+          <div className="rounded-2xl bg-orange-100 dark:bg-orange-950 p-6 text-center">
+            <p className="text-lg font-bold text-orange-800 dark:text-orange-300">Not eligible for SMP</p>
+            <p className="text-sm text-orange-700 dark:text-orange-400 mt-1">Average weekly earnings of {formatCurrency(w)} are below the {formatCurrency(SMP_LEL)} Lower Earnings Limit, so Statutory Maternity Pay is £0. You may get Maternity Allowance instead.</p>
+          </div>
+          {result.maTotal > 0 ? (
+            <div className="rounded-xl bg-muted/50 p-4 text-center">
+              <p className="text-sm text-muted-foreground">Estimated Maternity Allowance ({MA_WEEKS} weeks)</p>
+              <p className="text-2xl font-bold mt-1">{formatCurrency(result.maTotal)}</p>
+              <p className="text-sm text-muted-foreground mt-1">{formatCurrency(result.maWeekly)}/week: the lower of {formatCurrency(MA_RATE)} or 90% of your average weekly earnings</p>
+            </div>
+          ) : (
+            <div className="rounded-xl bg-muted/50 p-4 text-sm text-muted-foreground">Maternity Allowance for employees needs earnings of at least {formatCurrency(MA_MIN_WEEKLY_EARNINGS)} a week in 13 of the 66 weeks before the due week. Check gov.uk/maternity-allowance for the self-employed and other routes.</div>
+          )}
+          <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
+            <p>To get Maternity Allowance you must have been employed or self-employed for at least 26 of the 66 weeks before the week your baby is due, earning at least £30 a week in any 13 of those weeks. You claim it from Jobcentre Plus on form MA1.</p>
+          </div>
+        </div>
+      )}
+
+      {w > 0 && result.eligible && (
         <div className="space-y-4 animate-fade-in-up">
           <div className="rounded-2xl bg-primary/10 p-6 text-center">
             <p className="text-sm text-muted-foreground">Total Statutory Maternity Pay (39 weeks)</p>
@@ -57,7 +101,7 @@ export default function MaternityPayCalculator() {
 
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-1">
             <p className="font-medium text-foreground">Key facts:</p>
-            <p>SMP is paid for up to 39 weeks.</p>
+            <p>SMP is paid for up to 39 weeks if your average weekly earnings are at least {formatCurrency(SMP_LEL)}.</p>
             <p>First 6 weeks: 90% of your average weekly earnings.</p>
             <p>Remaining 33 weeks: £{SMP_RATE}/week or 90% of AWE (whichever is lower).</p>
             <p>You can take up to 52 weeks maternity leave (last 13 weeks unpaid).</p>

@@ -62,7 +62,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'stamp-duty-calculator',
     title: 'Stamp Duty Calculator (SDLT)',
-    description: 'Calculate Stamp Duty Land Tax on property purchases in England and Northern Ireland. Updated for April 2025 threshold changes.',
+    description: 'Calculate Stamp Duty Land Tax in England and Northern Ireland, including first-time buyer relief and the 5% additional-property and 2% non-resident surcharges.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['stamp duty', 'SDLT', 'stamp duty land tax', 'property tax', 'house purchase tax'],
@@ -118,7 +118,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'corporation-tax-calculator',
     title: 'Corporation Tax Calculator',
-    description: 'Calculate your UK Corporation Tax. 25% main rate over £250k, 19% small profits under £50k, marginal relief 3/200 between. Updated 2026/27.',
+    description: 'Calculate UK Corporation Tax for 2026/27: 19% small profits rate, 25% main rate and 3/200 marginal relief, adjusted for associated companies and short periods.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['corporation tax', 'company tax', 'business tax', 'limited company'],

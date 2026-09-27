@@ -1,52 +1,70 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency, ukCorporationTax, ukDividendTax } from '@/utils'
+import { formatCurrency, ukCorporationTax, ukDividendTax, ukIncomeTax, ukPersonalAllowance } from '@/utils'
+
+const EMPLOYER_NI_RATE = 0.15
+const SECONDARY_THRESHOLD = 5_000
+
+function employerNI(salary: number) {
+  return Math.max(0, (salary - SECONDARY_THRESHOLD) * EMPLOYER_NI_RATE)
+}
+
+// Largest gross salary whose total cost (salary + employer NI) equals `cost`.
+// Employer NI is 15% only above the £5,000 Secondary Threshold, so
+// cost = salary + 0.15 × (salary − 5,000), i.e. salary = (cost + 750) / 1.15.
+function salaryFromCost(cost: number) {
+  if (cost <= SECONDARY_THRESHOLD) return Math.max(0, cost)
+  return (cost + SECONDARY_THRESHOLD * EMPLOYER_NI_RATE) / (1 + EMPLOYER_NI_RATE)
+}
+
+// Salary plus dividends drawn from the rest of the profit. The Personal
+// Allowance is tapered on TOTAL income (salary + dividends), so once the two
+// together pass £100,000 the salary itself starts to be taxed. Salary uses the
+// allowance and the basic rate band first; dividends are the top slice and
+// ukDividendTax picks up any allowance and band room the salary left over.
+function salaryPlusDividends(profit: number, salary: number) {
+  const corpProfit = profit - salary - employerNI(salary)
+  const corpTax = ukCorporationTax(corpProfit)
+  const dividends = Math.max(0, corpProfit - corpTax)
+  const pa = ukPersonalAllowance(salary + dividends)
+  const salaryIT = ukIncomeTax(salary, pa)
+  const salaryNI = calcNI(salary)
+  const divTax = ukDividendTax(dividends, salary)
+  const takeHome = salary - salaryIT - salaryNI + dividends - divTax
+  return { salary, dividends, corpTax, salaryIT, salaryNI, divTax, takeHome }
+}
 
 function calculate(profit: number) {
-  // Option 1: All salary
-  const allSalaryGross = profit / 1.15 // employer NI at 15% above £5k
-  const salaryIT = calcIT(allSalaryGross)
+  // Option 1: All salary. Profit is the total employment cost, so the gross
+  // salary is what is left after employer NI on the slice above £5,000.
+  const allSalaryGross = salaryFromCost(profit)
+  const salaryIT = ukIncomeTax(allSalaryGross)
   const salaryNI = calcNI(allSalaryGross)
   const salaryTakeHome = allSalaryGross - salaryIT - salaryNI
 
-  // Option 2: Optimal salary (£12,570) + dividends
-  const optSalary = 12_570
-  const corpTaxableProfit = profit - optSalary - Math.max(0, (optSalary - 5_000) * 0.15)
-  const corpTax = ukCorporationTax(corpTaxableProfit)
-  const availableDividends = corpTaxableProfit - corpTax
-  const divTax = ukDividendTax(availableDividends, optSalary)
-  const optTakeHome = optSalary + availableDividends - divTax
+  // Option 2: Optimal salary (£12,570) + dividends. On a very small profit the
+  // salary is capped at what the profit can fund after employer NI.
+  const optSalary = Math.min(12_570, salaryFromCost(profit))
+  const opt = salaryPlusDividends(profit, optSalary)
+  const availableDividends = opt.dividends
+  const optTakeHome = opt.takeHome
 
   // Option 3: Higher salary (£50,270) + dividends
-  const highSalary = Math.min(50_270, profit / 1.15)
-  const highEmployerNI = Math.max(0, (highSalary - 5_000) * 0.15)
-  const highCorpProfit = profit - highSalary - highEmployerNI
-  const highCorpTax = ukCorporationTax(highCorpProfit)
-  const highDividends = Math.max(0, highCorpProfit - highCorpTax)
-  const highSalaryIT = calcIT(highSalary)
-  const highSalaryNI = calcNI(highSalary)
-  const highDivTax = ukDividendTax(highDividends, highSalary)
-  const highTakeHome = highSalary - highSalaryIT - highSalaryNI + highDividends - highDivTax
+  const highSalary = Math.min(50_270, salaryFromCost(profit))
+  const high = salaryPlusDividends(profit, highSalary)
+  const highDividends = high.dividends
+  const highTakeHome = high.takeHome
 
   return {
     options: [
-      { name: 'Salary £12,570 + Dividends', salary: optSalary, dividends: availableDividends, takeHome: optTakeHome, tax: profit - optTakeHome },
+      { name: `Salary £${Math.round(optSalary).toLocaleString()} + Dividends`, salary: optSalary, dividends: availableDividends, takeHome: optTakeHome, tax: profit - optTakeHome },
       { name: `Salary £${Math.round(highSalary).toLocaleString()} + Dividends`, salary: highSalary, dividends: highDividends, takeHome: highTakeHome, tax: profit - highTakeHome },
       { name: 'All Salary (PAYE)', salary: allSalaryGross, dividends: 0, takeHome: salaryTakeHome, tax: profit - salaryTakeHome },
-    ].sort((a, b) => b.takeHome - a.takeHome),
+    ]
+      // On a small profit the two salary-plus-dividend options collapse into one
+      .filter((o, i, arr) => arr.findIndex((x) => x.name === o.name) === i)
+      .sort((a, b) => b.takeHome - a.takeHome),
     profit,
   }
-}
-
-function calcIT(income: number) {
-  let pa = 12_570
-  if (income > 100_000) pa = Math.max(0, 12_570 - Math.floor((income - 100_000) / 2))
-  let tax = 0
-  if (income > pa) {
-    if (income <= 50_270) tax = (income - pa) * 0.20
-    else if (income <= 125_140) tax = 37_700 * 0.20 + (income - pa - 37_700) * 0.40
-    else tax = 37_700 * 0.20 + (125_140 - 37_700) * 0.40 + (income - 125_140) * 0.45
-  }
-  return tax
 }
 
 function calcNI(income: number) {
@@ -56,7 +74,7 @@ function calcNI(income: number) {
 }
 
 export default function DividendVsSalaryCalculator() {
-  const [profit, setProfit] = useState('')
+  const [profit, setProfit] = useState('60000')
 
   const p = parseFloat(profit.replace(/,/g, '')) || 0
   const result = useMemo(() => p > 0 ? calculate(p) : null, [p])

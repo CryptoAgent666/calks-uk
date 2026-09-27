@@ -29,7 +29,7 @@ function calculateNI(gross: number) {
 }
 
 export default function NationalInsuranceCalculator() {
-  const [income, setIncome] = useState('')
+  const [income, setIncome] = useState('35000')
 
   const gross = parseFloat(income.replace(/,/g, '')) || 0
   const result = useMemo(() => calculateNI(gross), [gross])

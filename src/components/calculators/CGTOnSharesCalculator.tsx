@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency, formatPercent } from '@/utils'
+import { formatCurrency, formatPercent, ukPersonalAllowance, UK_BASIC_BAND } from '@/utils'
 
 const CGT_ALLOWANCE = 3_000
 
@@ -10,7 +10,11 @@ function calculate(purchasePrice: number, salePrice: number, fees: number, other
   const allowance = usedAllowance ? 0 : CGT_ALLOWANCE
   const taxableGain = Math.max(0, gain - allowance)
 
-  const remainingBasic = Math.max(0, 50_270 - otherIncome)
+  // Gains use whatever is left of the £37,700 basic-rate band after TAXABLE
+  // income. Unused personal allowance cannot be set against gains, so income
+  // below £12,570 does not widen the 18% band beyond £37,700.
+  const taxableIncome = Math.max(0, otherIncome - ukPersonalAllowance(otherIncome))
+  const remainingBasic = Math.max(0, UK_BASIC_BAND - taxableIncome)
   const gainAtBasic = Math.min(taxableGain, remainingBasic)
   const gainAtHigher = taxableGain - gainAtBasic
 

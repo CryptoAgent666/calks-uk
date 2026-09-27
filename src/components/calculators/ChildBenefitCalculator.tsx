@@ -6,19 +6,21 @@ const FIRST_CHILD_WEEKLY = 27.05
 const ADDITIONAL_CHILD_WEEKLY = 17.90
 const HICBC_START = 60_000
 const HICBC_END = 80_000
+const HICBC_STEP = 200 // 1% of the benefit for every whole £200 over £60,000
 
 function calculate(children: number, higherIncome: number) {
   const weeklyBenefit = (children >= 1 ? FIRST_CHILD_WEEKLY : 0) + Math.max(0, children - 1) * ADDITIONAL_CHILD_WEEKLY
   const annualBenefit = weeklyBenefit * 52
 
+  // ITEPA 2003 s681C: 1% for every whole £200 of adjusted net income over £60,000,
+  // capped at 100%. The percentage, the benefit total and the charge are each rounded
+  // down to a whole number (s681C(3)).
   let hicbcRate = 0
-  if (higherIncome > HICBC_START && higherIncome < HICBC_END) {
-    hicbcRate = ((higherIncome - HICBC_START) / (HICBC_END - HICBC_START)) * 100
-  } else if (higherIncome >= HICBC_END) {
-    hicbcRate = 100
+  if (higherIncome > HICBC_START) {
+    hicbcRate = Math.min(100, Math.floor((higherIncome - HICBC_START) / HICBC_STEP))
   }
 
-  const hicbcCharge = annualBenefit * (hicbcRate / 100)
+  const hicbcCharge = Math.floor(Math.floor(annualBenefit) * hicbcRate / 100)
   const netBenefit = annualBenefit - hicbcCharge
 
   return { weeklyBenefit, annualBenefit, hicbcRate, hicbcCharge, netBenefit }
@@ -26,7 +28,7 @@ function calculate(children: number, higherIncome: number) {
 
 export default function ChildBenefitCalculator() {
   const [children, setChildren] = useState('2')
-  const [income, setIncome] = useState('')
+  const [income, setIncome] = useState('70,000')
 
   const c = parseInt(children) || 0
   const i = parseFloat(income.replace(/,/g, '')) || 0
@@ -57,7 +59,7 @@ export default function ChildBenefitCalculator() {
           {result.hicbcRate > 0 && (
             <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-4 text-sm">
               <p className="font-medium text-orange-800 dark:text-orange-300">High Income Child Benefit Charge applies</p>
-              <p className="text-orange-700 dark:text-orange-400 mt-1">You'll repay {result.hicbcRate.toFixed(0)}% of child benefit ({formatCurrency(result.hicbcCharge)}/year) through self-assessment.</p>
+              <p className="text-orange-700 dark:text-orange-400 mt-1">You'll repay {result.hicbcRate}% of Child Benefit ({formatCurrency(result.hicbcCharge)}/year) through Self Assessment or, for employed people, through your tax code.</p>
             </div>
           )}
 
@@ -68,9 +70,9 @@ export default function ChildBenefitCalculator() {
           </div>
 
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-1">
-            <p>First child: <span className="font-medium text-foreground">£{FIRST_CHILD_WEEKLY}/week</span></p>
-            <p>Each additional child: <span className="font-medium text-foreground">£{ADDITIONAL_CHILD_WEEKLY}/week</span></p>
-            <p>HICBC: 1% clawback per £200 income between £{HICBC_START.toLocaleString()} and £{HICBC_END.toLocaleString()}</p>
+            <p>First child: <span className="font-medium text-foreground">{formatCurrency(FIRST_CHILD_WEEKLY)}/week</span></p>
+            <p>Each additional child: <span className="font-medium text-foreground">{formatCurrency(ADDITIONAL_CHILD_WEEKLY)}/week</span></p>
+            <p>HICBC: 1% of the benefit for every whole £{HICBC_STEP} of adjusted net income over £{HICBC_START.toLocaleString('en-GB')}, so all of it at £{HICBC_END.toLocaleString('en-GB')} or more. The percentage and the charge are rounded down.</p>
           </div>
         </div>
       )}
