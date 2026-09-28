@@ -1902,12 +1902,16 @@
         "computed"
       ],
       "used_by": [
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/calculate-your-business-rates",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/152/made",
       "status": "current",
       "change_frequency": "",
-      "note": "business-rates-calculator: higher multiplier 50.8p (RV £500,000+)"
+      "note": "business-rates-calculator: higher multiplier 50.8p (RV £500,000+)",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28"
     },
     {
       "key": "business_rates_large_multiplier",
@@ -1919,12 +1923,16 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/BusinessRatesCalculator.tsx"
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/152/made",
       "status": "current",
       "change_frequency": "",
-      "note": "BusinessRatesCalculator: new higher multiplier 50.8p for RV GBP500,000+ from April 2026."
+      "note": "BusinessRatesCalculator: new higher multiplier 50.8p for RV GBP500,000+ from April 2026.",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28"
     },
     {
       "key": "business_rates_large_multiplier_rv_threshold",
@@ -1958,12 +1966,12 @@
       "source_url": "https://www.gov.uk/government/news/valuation-office-new-rateable-values-come-into-effect-for-2026to-2029",
       "status": "current",
       "change_frequency": "",
-      "note": "Rateable Value based on 1 April 2021 valuation (2023 rating list) (business-rates-calculator)",
+      "note": "England and Wales 2026 lists: antecedent valuation date 1 April 2024; Scotland 2026 roll: tone date 1 April 2025. RV = rent the property might reasonably let for from year to year (LGFA 1988 Sch 6 para 2).",
       "official_value": "1 April 2024",
       "confidence": "high",
       "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). The 2026 rating list took effect 1 April 2026 with rateable values based on antecedent valuation date 1 April 2024; the 2023 list (valued at 1 April 2021) is now superseded. Old 1 April 2021 -> new 1 April 2024. Re-verified 2026-09-21 after a DataHub source-changed alert: the VOA news page (published 1 Apr 2026, no change history) still says the 2026 revaluation used a valuation date of 1 April 2024 and the list runs to 31 March 2029. Page-furniture change only.",
-      "verified_date": "2026-09-21",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28"
     },
     {
       "key": "business_rates_rhl_small_multiplier",
@@ -1975,12 +1983,16 @@
         "prose"
       ],
       "used_by": [
-        "src/components/calculators/BusinessRatesCalculator.tsx"
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/152/made",
       "status": "current",
       "change_frequency": "",
-      "note": "BusinessRatesCalculator: retail/hospitality/leisure (RHL) lower small multiplier 38.2p (code comment; not modelled in calculation)."
+      "note": "England 2026/27: RHL small multiplier 38.2p for occupied qualifying retail/hospitality/leisure properties with RV below £51,000 (SI 2026/152). BusinessRatesCalculator now models it (it did not before 2026-09-28).",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28"
     },
     {
       "key": "business_rates_rhl_standard_multiplier",
@@ -1992,12 +2004,16 @@
         "prose"
       ],
       "used_by": [
-        "src/components/calculators/BusinessRatesCalculator.tsx"
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/152/made",
       "status": "current",
       "change_frequency": "",
-      "note": "BusinessRatesCalculator: retail/hospitality/leisure (RHL) lower standard multiplier 43p (code comment; not modelled in calculation)."
+      "note": "England 2026/27: RHL standard multiplier 43.0p for qualifying RHL properties £51,000-£499,999; £500k+ pays the 50.8p high-value rate. Modelled from 2026-09-28.",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28"
     },
     {
       "key": "business_rates_small_business_multiplier",
@@ -2009,12 +2025,16 @@
         "computed"
       ],
       "used_by": [
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/calculate-your-business-rates",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/152/made",
       "status": "current",
       "change_frequency": "",
-      "note": "business-rates-calculator: small business multiplier 43.2p (RV below £51,000)"
+      "note": "business-rates-calculator: small business multiplier 43.2p (RV below £51,000)",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28"
     },
     {
       "key": "business_rates_small_multiplier",
@@ -2026,12 +2046,16 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/BusinessRatesCalculator.tsx"
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/152/made",
       "status": "current",
       "change_frequency": "",
-      "note": "BusinessRatesCalculator: small business multiplier 43.2p for RV below GBP51,000 (was 49.9p in 2025/26)."
+      "note": "Small business multiplier 43.2p applies to EVERY property with RV below £51,000, whether or not it gets SBRR (SI 2026/152 reg 3(5)). The calculator chose it from an SBRR checkbox until 2026-09-28.",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28"
     },
     {
       "key": "business_rates_standard_multiplier",
@@ -2044,12 +2068,15 @@
       ],
       "used_by": [
         "src/components/calculators/BusinessRatesCalculator.tsx",
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/calculate-your-business-rates",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/152/made",
       "status": "current",
       "change_frequency": "",
-      "note": "BusinessRatesCalculator: standard multiplier 48p for RV GBP51,000-GBP499,999 (was 55.5p in 2025/26)."
+      "note": "BusinessRatesCalculator: standard multiplier 48p for RV GBP51,000-GBP499,999 (was 55.5p in 2025/26).",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28"
     },
     {
       "key": "business_rates_standard_multiplier_rv_floor",
@@ -19077,20 +19104,22 @@
       "used_by": [
         "src/components/calculators/PremiumBondsCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/premium-bonds.ts",
+        "src/data/calculators.ts"
       ],
       "source_url": "https://www.nsandi.com/products/premium-bonds",
       "status": "current",
       "change_frequency": "",
-      "note": "PremiumBondsCalculator: PRIZE_RATE = 0.0435, annual prize fund rate (tax-free), September 2026 draw onward. Prose copies on ns-i-savings, offset-mortgage and savings-goal said 3.80% until 2026-09-27.",
+      "note": "Single source of truth moved to src/data/premium-bonds.ts (PRIZE_RATE, ODDS, PRIZES, AS_OF), which feeds the calculator, the odds table (rateTable), quick answer and FAQ. calculators.ts description also quotes 4.35%.",
       "fixed": true,
       "fixed_date": "2026-06-16",
       "volatile": true,
       "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)",
       "official_value": "4.35",
       "confidence": "high",
-      "verified_date": "2026-09-27",
-      "verify_method": "calkcheck-2026-09-27-r5",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
       "freshness_note": "Corrected 2026-08-29..31: NS&I raised the prize fund rate to 4.35% and shortened the odds to 21,000 to 1 for the SEPTEMBER 2026 draw (PR260818, 18 Aug 2026), up from 3.80% / 22,000 in July. Found by diffing duplicate ledger rows against each other and then against the live component — the technique calk-uz-2c described. Before the fix four surfaces disagreed: code 3.80%, ledger 4.0, a duplicate ledger row 4.15, and prose 4.00%."
     },
     {
@@ -20066,12 +20095,15 @@
       ],
       "used_by": [
         "src/components/calculators/BusinessRatesCalculator.tsx",
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/apply-for-business-rate-relief/small-business-rate-relief",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/152/made",
       "status": "current",
       "change_frequency": "",
-      "note": "BusinessRatesCalculator: RV at/below GBP12,000 gets 100% Small Business Rate Relief."
+      "note": "BusinessRatesCalculator: RV at/below GBP12,000 gets 100% Small Business Rate Relief.",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28"
     },
     {
       "key": "sbrr_taper_upper_threshold",
@@ -20084,12 +20116,15 @@
       ],
       "used_by": [
         "src/components/calculators/BusinessRatesCalculator.tsx",
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/apply-for-business-rate-relief/small-business-rate-relief",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/152/made",
       "status": "current",
       "change_frequency": "",
-      "note": "BusinessRatesCalculator: SBRR tapers from 100% to 0% between RV GBP12,000 and GBP15,000; also the 'small business' RV under GBP15,000 qualifying limit shown in UI prose."
+      "note": "BusinessRatesCalculator: SBRR tapers from 100% to 0% between RV GBP12,000 and GBP15,000; also the 'small business' RV under GBP15,000 qualifying limit shown in UI prose.",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28"
     },
     {
       "key": "scotland_ads_surcharge",
@@ -33288,6 +33323,381 @@
       "verified_date": "2026-09-28",
       "verify_method": "calkcheck-2026-09-28-r7",
       "confidence": "high"
+    },
+    {
+      "key": "business_rates_transitional_supplement_2026_27",
+      "value": "1",
+      "unit": "pence in £",
+      "law": "SI 2026/81 (Transitional Relief Supplement)",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/business-rates-relief/transitional-relief",
+      "status": "current",
+      "change_frequency": "",
+      "note": "England 2026/27 only: +1p on the multiplier for properties on the list on both 31/3/26 and 1/4/26 that get neither transitional relief nor Supporting Small Business relief; charged before other reliefs.",
+      "official_value": "1",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high",
+      "changes_next_fy": "Applies to 2026/27 only"
+    },
+    {
+      "key": "business_rates_transitional_caps_england_2026",
+      "value": "5% / 15% / 30%",
+      "unit": "percent",
+      "law": "SI 2026/81",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/business-rates-relief/transitional-relief",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Upward caps 2026/27: RV up to £20,000 (£28,000 London) 5%; to £100,000 15%; above 30%. 2027/28: 10%/25%/25% + inflation; 2028/29: 25%/40%/25% + inflation. Page previously quoted 2023-list caps (5%/7.5%/10%).",
+      "official_value": "5% / 15% / 30%",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high",
+      "changes_next_fy": "Year-2 caps apply from April 2027"
+    },
+    {
+      "key": "business_rates_supporting_small_business_relief",
+      "value": "greater of £800 or TR cap",
+      "unit": "rule",
+      "law": "SI 2026/81; SSB local authority guidance (26 May 2026)",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/business-rates-relief/supporting-small-business-relief",
+      "status": "current",
+      "change_frequency": "",
+      "note": "For those losing SBRR, rural relief or 2025/26 RHL relief: bill rise limited to the greater of £800 a year or the transitional cap vs 2025/26 bill after reliefs; 3 years; no 1p supplement; charities excluded.",
+      "official_value": "greater of £800 or TR cap",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high"
+    },
+    {
+      "key": "sbrr_second_property_grace_months",
+      "value": "36",
+      "unit": "months",
+      "law": "SI 2026/17",
+      "theme": "business",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/17/made",
+      "status": "current",
+      "change_frequency": "",
+      "note": "SBRR kept for 36 months after taking on a second property on or after 27 Nov 2025 (12 months before).",
+      "official_value": "36",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high"
+    },
+    {
+      "key": "business_rates_pubs_live_music_relief_2026_27",
+      "value": "15",
+      "unit": "percent",
+      "law": "Pubs and live music venues relief 2026/27",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/news/burnham-means-business-pm-slashes-business-rates-bills-for-pubs-clubs-and-live-music-venues",
+      "status": "current",
+      "change_frequency": "",
+      "note": "England 2026/27: 15% relief for pubs and live music venues on top of RHL multipliers (not nightclubs or theatres). Extra relief from 2027/28 announced 23 Jul 2026, details at the Budget.",
+      "official_value": "15",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high",
+      "changes_next_fy": "Watch Budget for 2027/28 pub relief"
+    },
+    {
+      "key": "business_rates_rural_relief_thresholds",
+      "value": "£8,500 shop/PO; £12,500 pub/petrol",
+      "unit": "GBP",
+      "law": "LGFA 1988 s43(6A)-(6B)",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/business-rates-relief/rural-rate-relief",
+      "status": "current",
+      "change_frequency": "",
+      "note": "100% rural rate relief in settlements under 3,000: only general store/food shop/post office RV up to £8,500; only pub or petrol station up to £12,500.",
+      "official_value": "£8,500 shop/PO; £12,500 pub/petrol",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high"
+    },
+    {
+      "key": "wales_ndr_multipliers_2026_27",
+      "value": "35.0p retail / 50.2p / 51.5p",
+      "unit": "pence in £",
+      "law": "Non-Domestic Rating (Multipliers) (Wales) 2026",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://businesswales.gov.wales/non-domestic-rates-multipliers",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Wales 2026/27: retail 35.0p (shops, kiosks, pharmacies, post offices below £51,000), standard 50.2p, higher 51.5p above £100,000.",
+      "official_value": "35.0p retail / 50.2p / 51.5p",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high"
+    },
+    {
+      "key": "wales_sbrr_thresholds_2026_27",
+      "value": "100% to £6,000, nil at £12,000",
+      "unit": "GBP",
+      "law": "Wales SBRR",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://businesswales.gov.wales/non-domestic-rates-small-business-rates-relief",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Taper (12,000 − RV)/6,000; post offices 100% to £9,000 and 50% £9,001-£12,000; childcare 100%.",
+      "official_value": "100% to £6,000, nil at £12,000",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high"
+    },
+    {
+      "key": "wales_food_drink_hospitality_relief_2026_27",
+      "value": "15",
+      "unit": "percent",
+      "law": "Wales Food and Drink Hospitality Rates Relief 2026/27",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://businesswales.gov.wales/topics-and-guidance/business-tax-rates-and-premises/non-domestic-rates-food-and-drink-hospitality-rates-relief-2026-27",
+      "status": "current",
+      "change_frequency": "",
+      "note": "15% for pubs, restaurants, cafés, bars and live music venues; cap £110,000; apply by 31 Mar 2027.",
+      "official_value": "15",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high",
+      "changes_next_fy": "2026/27 only"
+    },
+    {
+      "key": "scotland_ndr_poundage_2026_27",
+      "value": "48.1p / 53.5p / 54.8p",
+      "unit": "pence in £",
+      "law": "SSI 2026/39, SSI 2026/68",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ssi/2026/39/made",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Basic 48.1p to £51,000; intermediate 53.5p £51,001-£100,000; higher 54.8p above.",
+      "official_value": "48.1p / 53.5p / 54.8p",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high"
+    },
+    {
+      "key": "scotland_sbbs_2026_27",
+      "value": "100% to £12,000; 25% at £15,000; nil at £20,000",
+      "unit": "GBP",
+      "law": "SSI 2026/68; finance circular 7/2026",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.scot/publications/local-government-finance-circular-7-2026-non-domestic-rates-relief-guidance/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Single property: £12,001-£15,000 relief % = 100 − 75 × (1 − (15,000 − RV)/3,000); £15,001-£20,000: 25 × (20,000 − RV)/5,000. Multiple properties: combined RV to £35,000 rules.",
+      "official_value": "100% to £12,000; 25% at £15,000; nil at £20,000",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high"
+    },
+    {
+      "key": "scotland_rhl_relief_2026_27",
+      "value": "15% / 40%",
+      "unit": "percent",
+      "law": "SSI 2026/135",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.scot/publications/local-government-finance-circular-7-2026-non-domestic-rates-relief-guidance/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "RV up to £100,000: 15% retail/hospitality/leisure; 40% licensed premises and music venues; 100% islands and remote areas; cap £110,000. Order vs SBBS not stated in guidance: calculator applies it to the bill after SBBS.",
+      "official_value": "15% / 40%",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "medium",
+      "changes_next_fy": "Legislated for 2026/27 only (intended to 2029)"
+    },
+    {
+      "key": "holiday_let_business_rates_nights",
+      "value": "England/Scotland 140 available + 70 let; Wales 252 + 182",
+      "unit": "nights",
+      "law": "LGFA 1988 s66; SI 2026/692",
+      "theme": "business",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/introduction-to-business-rates/self-catering-and-holiday-let-accommodation",
+      "status": "current",
+      "change_frequency": "",
+      "note": "England also requires 140 nights available in the coming year; Scotland needs a short-term let licence; SI 2026/692 (24 Jul 2026) removes the previous-year tests for sites with 5+ units.",
+      "official_value": "England/Scotland 140 available + 70 let; Wales 252 + 182",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high"
+    },
+    {
+      "key": "attainment_8_structure",
+      "value": "English ×2 (if both sat), maths ×2, 3 EBacc, 3 open; max 90",
+      "unit": "rule",
+      "law": "DfE Secondary accountability measures 2025",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/GCSEGradeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/progress-8-school-performance-measure",
+      "status": "current",
+      "change_frequency": "",
+      "note": "English double weighted only if both English language and literature sat; lower English can fill an open slot; combined science averaged across 2 slots. GCSEGradeCalculator summed the top 8 grades (max 72) until 2026-09-28.",
+      "official_value": "English ×2 (if both sat), maths ×2, 3 EBacc, 3 open; max 90",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high"
+    },
+    {
+      "key": "attainment_8_national_average_2025",
+      "value": "46.0",
+      "unit": "points",
+      "law": "DfE Key stage 4 performance 2024/25",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/GCSEGradeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-performance/2024-25",
+      "status": "current",
+      "change_frequency": "",
+      "note": "State-funded schools, England, 2025: 46.0 (46.7 in 2019); 45.4% grade 5+ in English and maths; region range 44.1 (North East) to 50.8 (outer London).",
+      "official_value": "46.0",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high",
+      "changes_next_fy": "Update when 2025/26 KS4 statistics are published (October 2026 provisional)"
+    },
+    {
+      "key": "progress_8_not_published",
+      "value": "2025 and 2026 GCSEs",
+      "unit": "years",
+      "law": "DfE Secondary accountability measures 2025",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/GCSEGradeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/progress-8-school-performance-measure",
+      "status": "current",
+      "change_frequency": "",
+      "note": "No KS2 prior attainment (tests cancelled 2020 and 2021); no replacement; due back for 2027 GCSEs. Reformed Attainment 8/Progress 8 (2 science slots, breadth slots) proposed Nov 2025, consultation closed 4 May 2026, first applies to GCSEs sat in 2029.",
+      "official_value": "2025 and 2026 GCSEs",
+      "verified_date": "2026-09-28",
+      "verify_method": "site-improvement-2026-09-28",
+      "confidence": "high",
+      "changes_next_fy": "Check for the DfE consultation response on the reformed measure"
     }
   ],
   "status_summary": {

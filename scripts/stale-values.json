@@ -1771,6 +1771,56 @@
    "was": "a difference of £5,302",
    "now": "company route recomputed with accountancy deducted",
    "what": "sole trader vs ltd FAQ (calkcheck 2026-09-28 r7)"
+  },
+  {
+   "was": "7.5% in the second",
+   "now": "current transitional caps",
+   "what": "business rates transitional caps (2023 list) (site improvement 2026-09-28)"
+  },
+  {
+   "was": "It is worth up to £6,000 a year",
+   "now": "small business relief at most about the RV threshold times the small multiplier",
+   "what": "SBRR maximum value (site improvement 2026-09-28)"
+  },
+  {
+   "was": "A shop assessed at £20,000 sits below the £51,000 line",
+   "now": "shops pay the retail, hospitality and leisure multiplier",
+   "what": "business rates shop example (site improvement 2026-09-28)"
+  },
+  {
+   "was": "isSmall ? SMALL_MULTIPLIER",
+   "now": "multiplier chosen from rateable value",
+   "what": "business rates multiplier by checkbox (code) (site improvement 2026-09-28)"
+  },
+  {
+   "was": "(38.2p small / 43p standard) — not modelled here",
+   "now": "retail, hospitality and leisure multipliers modelled",
+   "what": "business rates RHL (code) (site improvement 2026-09-28)"
+  },
+  {
+   "was": "sorted.slice(0, 8).forEach",
+   "now": "DfE slot rules",
+   "what": "Attainment 8 as top-eight sum (code) (site improvement 2026-09-28)"
+  },
+  {
+   "was": "This calculator estimates your GCSE grade from raw marks",
+   "now": "calculator works out Attainment 8",
+   "what": "GCSE page described a different tool (site improvement 2026-09-28)"
+  },
+  {
+   "was": "the January session was cancelled in 2025",
+   "now": "resits in November or summer",
+   "what": "GCSE resit sessions (site improvement 2026-09-28)"
+  },
+  {
+   "was": "Grade boundary reference: Grade 7",
+   "now": "worked example on subject slots",
+   "what": "GCSE example on raw marks (site improvement 2026-09-28)"
+  },
+  {
+   "was": "Calculate UCAS tariff points from A-Level grades",
+   "now": "grade profile and offers",
+   "what": "A-level page competing with UCAS page (site improvement 2026-09-28)"
   }
  ]
 }
