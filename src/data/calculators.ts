@@ -995,7 +995,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'debt-free-calculator',
     title: 'Debt-Free Date Calculator',
-    description: 'Find out when you will be debt-free based on your balance, APR and monthly payments.',
+    description: 'Find out when you will be debt-free across several debts, and compare the avalanche and snowball repayment strategies side by side.',
     category: 'loans',
     icon: 'CreditCard',
     keywords: ['debt free', 'pay off debt', 'debt calculator', 'debt repayment'],
@@ -1397,7 +1397,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'moving-cost-calculator',
     title: 'Home Moving Cost Calculator',
-    description: 'Calculate the total costs of buying a home — solicitor, stamp duty, survey, mortgage fees and removals.',
+    description: 'Calculate the total cost of moving home: solicitor, searches, Land Registry, stamp duty, survey, mortgage fees, removals, mail redirection and estate agent fees if you are selling.',
     category: 'mortgage',
     icon: 'Home',
     keywords: ['moving cost', 'buying cost', 'conveyancing', 'survey cost', 'home buying'],
@@ -1581,7 +1581,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // ENERGY (additional)
   { slug: 'water-bill-calculator', title: 'Water Bill Calculator', description: 'Estimate your annual water bill for metered or unmetered supply including sewerage charges.', category: 'energy', icon: 'Zap', keywords: ['water bill', 'water rates', 'metered water', 'sewerage'], priority: 2 , metaTitle: 'UK Water Bill Calculator 2026' },
   // MORTGAGE (additional)
-  { slug: 'buy-to-let-yield-calculator', title: 'Buy-to-Let Yield Calculator', description: 'Calculate gross yield, net yield, return on deposit and monthly cashflow for buy-to-let investments.', category: 'mortgage', icon: 'Home', keywords: ['buy to let', 'BTL yield', 'rental return', 'property investment'], priority: 2, metaTitle: 'Buy-to-Let Yield Calculator UK 2026 — Gross & Net Rental Return' },
+  { slug: 'buy-to-let-yield-calculator', title: 'Buy-to-Let Yield Calculator', description: 'Calculate gross yield, net yield, monthly cash flow after mortgage interest and return on cash invested, including Stamp Duty, for buy-to-let investments.', category: 'mortgage', icon: 'Home', keywords: ['buy to let', 'BTL yield', 'rental return', 'property investment'], priority: 2, metaTitle: 'Buy-to-Let Yield Calculator UK 2026 — Gross & Net Rental Return' },
   { slug: 'ltv-calculator', title: 'Loan-to-Value (LTV) Calculator', description: 'Calculate your loan-to-value ratio and see exactly how much it cuts your mortgage rate across 60%/75%/85%/90%/95% tiers.', category: 'mortgage', icon: 'Home', keywords: ['LTV', 'loan to value', 'equity', 'mortgage ratio'], priority: 2, metaTitle: 'LTV Calculator UK 2026 — Loan-to-Value Ratio & Rate Tiers' },
   { slug: 'stamp-duty-additional-property-calculator', title: 'Stamp Duty Additional Property Calculator', description: 'Work out Stamp Duty on a buy-to-let or second home in England and Northern Ireland, with the 5% surcharge on every band and the extra over a main home.', category: 'tax', icon: 'Receipt', keywords: ['additional property', 'second home stamp duty', 'BTL stamp duty', '5% surcharge'], priority: 2 , metaTitle: 'Additional Property Stamp Duty 2026 (+5% Surcharge)' },
   { slug: 'remortgage-calculator', title: 'Remortgage Calculator', description: 'Compare current vs new mortgage rate. See monthly savings, break-even and total cost including fees.', category: 'mortgage', icon: 'Home', keywords: ['remortgage', 'switch mortgage', 'mortgage renewal', 'save on mortgage'], priority: 1 , metaTitle: 'UK Remortgage Calculator 2026 — Save on Switch' },
@@ -1775,7 +1775,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'pension-consolidation-calculator', title: 'Pension Consolidation Calculator', description: 'Compare keeping multiple pension pots vs consolidating into one. See fee savings over time.', category: 'pension', icon: 'PiggyBank', keywords: ['pension consolidation', 'combine pensions', 'pension fees', 'pension transfer'], priority: 2 , metaTitle: 'Pension Consolidation Calculator UK 2026' },
   { slug: 'employer-pension-contribution-calculator', title: 'Employer Pension Contribution Calculator', description: 'Calculate auto-enrolment pension contributions on qualifying earnings with tax relief.', category: 'pension', icon: 'PiggyBank', keywords: ['employer pension', 'auto enrolment', 'qualifying earnings', 'pension contribution'], priority: 2 , metaTitle: 'Employer Pension Contribution Calculator UK 2026/27' },
   // MORTGAGE
-  { slug: 'right-to-buy-calculator', title: 'Right to Buy Calculator', description: 'Calculate your Right to Buy discount for council/housing association properties. Up to 70% off.', category: 'mortgage', icon: 'Home', keywords: ['right to buy', 'council house', 'RTB', 'housing discount'], priority: 2 , metaTitle: 'Right to Buy Calculator UK 2026 — Discount' },
+  { slug: 'right-to-buy-calculator', title: 'Right to Buy Calculator', description: 'Calculate your Right to Buy discount on a council home in England, with the regional cash caps and the repayment if you sell within 5 years.', category: 'mortgage', icon: 'Home', keywords: ['right to buy', 'council house', 'RTB', 'housing discount'], priority: 2 , metaTitle: 'Right to Buy Calculator UK 2026 — Discount' },
   { slug: 'staircasing-calculator', title: 'Shared Ownership Staircasing Calculator', description: 'Calculate the cost of buying a bigger share of your shared ownership home and new rent.', category: 'mortgage', icon: 'Home', keywords: ['staircasing', 'shared ownership', 'buy more share', 'increase share'], priority: 2 , metaTitle: 'Shared Ownership Staircasing Calculator' },
   // PENSION
   { slug: 'pension-lump-sum-calculator', title: 'Pension Lump Sum Calculator (PCLS)', description: 'Compare taking 0-100% as lump sum. See tax-free portion, tax on excess and remaining pot for drawdown.', category: 'pension', icon: 'PiggyBank', keywords: ['pension lump sum', 'PCLS', 'tax free cash', '25% pension', 'pension withdrawal'], priority: 2 , metaTitle: 'Pension Lump Sum Calculator UK 2026/27 (25% Tax-Free)' },
@@ -1835,7 +1835,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // PAY
   { slug: 'minimum-wage-calculator', title: 'UK Minimum Wage Calculator', description: "Are you being paid the legal minimum? Check your hourly, weekly and annual pay against UK National Living Wage (£12.71/hr) and NMW rates by age for 2026.", category: 'pay', icon: 'Banknote', keywords: ['minimum wage', 'NMW', 'NLW', 'living wage', 'hourly rate'], priority: 1, metaTitle: "Minimum Wage Calculator 2026/27" },
   // MORTGAGE
-  { slug: 'first-homes-scheme-calculator', title: 'First Homes Scheme Calculator', description: 'Calculate First Homes discounted price (30-50% off). Check if you can afford with income and deposit.', category: 'mortgage', icon: 'Home', keywords: ['first homes', 'first homes scheme', 'discounted home', 'affordable housing'], priority: 2 , metaTitle: 'First Homes Scheme Calculator UK 2026 — 30% Discount' },
+  { slug: 'first-homes-scheme-calculator', title: 'First Homes Scheme Calculator', description: 'Calculate the First Homes discounted price (30-50% off), check the price and income caps, and estimate the mortgage and stamp duty.', category: 'mortgage', icon: 'Home', keywords: ['first homes', 'first homes scheme', 'discounted home', 'affordable housing'], priority: 2 , metaTitle: 'First Homes Scheme Calculator UK 2026 — 30% Discount' },
   { slug: 'shared-ownership-affordability-calculator', title: 'Shared Ownership Mortgage Affordability', description: 'Check if you can afford shared ownership: mortgage, rent and service charge against take-home pay, the income limit and the largest share that passes.', category: 'mortgage', icon: 'Home', keywords: ['shared ownership affordability', 'can I afford', 'shared ownership mortgage'], priority: 2 , metaTitle: 'Shared Ownership Affordability Calculator UK 2026' },
   // BUSINESS
   { slug: 'invoice-profit-calculator', title: 'Invoice & Job Profit Calculator', description: 'Calculate profit margin and markup on jobs. Add VAT and generate invoice total.', category: 'business', icon: 'Briefcase', keywords: ['invoice', 'job profit', 'margin', 'markup', 'quote'], priority: 2 , metaTitle: 'Invoice Profit Calculator UK 2026' },

@@ -1,5 +1,26 @@
 # CHANGELOG — Calks.uk
 
+## 2026-09-28 (round 8) — APR as an effective rate, payroll codes, leasehold status, Right to Buy
+
+Eighth `/calkcheck` pass: business, loans and property (report: `AUDIT-2026-09-28-c.md`). About 120 defects,
+17 calculators wrong.
+
+**Calculators corrected:** APR (true effective APR, fees), personal loan, car finance, debt consolidation and
+debt-free (monthly rate from the effective APR; debt-free gains avalanche/snowball across several debts; car
+finance gains a PCP/HP/loan table; consolidation warns when a payment never clears a debt), payroll (tax code
+parser incl. K/BR/D/SD codes and Scottish bands, pension methods, qualifying-earnings employer pension, Plan 5
+and PGL), CIS (labour clamp, ex-VAT), contractor day rate (PA taper, umbrella model), contractor vs perm
+(take-home for both, premium on working days), employee cost (qualifying earnings), invoice profit (VAT
+selector), late payment (defaults, daily interest), postgraduate loan (combined plan deductions), buy-to-let
+(net yield definition, SDLT surcharge in cash invested), moving cost (editable items, surcharges, HMLR fees),
+lease extension (1993 Act method), ground rent (full-term projection, London test), Right to Buy (local caps,
+repayment), First Homes (eligibility, SDLT, projection), service charge (double division).
+
+**Outside the sample:** workplace pension on qualifying earnings; IR35 small-client test on four pages; DMCC Act
+on the discount page; Master's loan per course.
+
+**Guards and ledger:** 67 new stale-value guards; ledger 1578 → 1593.
+
 ## 2026-09-28 — Business rates expansion, Attainment 8 fix, Premium Bonds odds table
 
 Search Console review of three content ideas (90-day data), then built.

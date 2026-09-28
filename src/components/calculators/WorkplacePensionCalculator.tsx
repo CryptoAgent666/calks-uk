@@ -1,9 +1,15 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-function calculate(salary: number, employeePct: number, employerPct: number, currentPot: number, yearsToRetirement: number, growthRate: number) {
-  const monthlyEmployee = (salary * employeePct / 100) / 12
-  const monthlyEmployer = (salary * employerPct / 100) / 12
+// Auto-enrolment minimums (5% from you, 3% from your employer) apply to qualifying
+// earnings between £6,240 and £50,270 in 2026/27; many schemes use full salary instead
+const QE_LOWER = 6_240
+const QE_UPPER = 50_270
+
+function calculate(salary: number, employeePct: number, employerPct: number, currentPot: number, yearsToRetirement: number, growthRate: number, qualifyingOnly: boolean) {
+  const base = qualifyingOnly ? Math.max(0, Math.min(salary, QE_UPPER) - QE_LOWER) : salary
+  const monthlyEmployee = (base * employeePct / 100) / 12
+  const monthlyEmployer = (base * employerPct / 100) / 12
   const monthlyTotal = monthlyEmployee + monthlyEmployer
   const monthlyGrowth = growthRate / 100 / 12
 
@@ -19,11 +25,14 @@ function calculate(salary: number, employeePct: number, employerPct: number, cur
     yearlyData.push({ year: y, contributions: totalContributions, growth: pot - totalContributions, total: pot })
   }
 
-  const annualEmployee = salary * employeePct / 100
-  const annualEmployer = salary * employerPct / 100
-  const taxRelief = annualEmployee * 0.20 // Basic rate relief at source
+  const annualEmployee = base * employeePct / 100
+  const annualEmployer = base * employerPct / 100
+  // Your percentage is the gross contribution. Under relief at source you pay 80% of it
+  // from net pay and basic-rate relief tops up the other 20%; it is not added on top.
+  const taxRelief = annualEmployee * 0.20
 
   return {
+    base, youPayMonthly: monthlyEmployee * 0.8,
     pot, totalContributions, totalGrowth: pot - totalContributions,
     annualEmployee, annualEmployer, annualTotal: annualEmployee + annualEmployer,
     monthlyEmployee, monthlyEmployer, monthlyTotal, taxRelief, yearlyData,
@@ -31,11 +40,12 @@ function calculate(salary: number, employeePct: number, employerPct: number, cur
 }
 
 export default function WorkplacePensionCalculator() {
-  const [salary, setSalary] = useState('35000')
+  const [salary, setSalary] = useState('40000')
   const [employeePct, setEmployeePct] = useState('5')
   const [employerPct, setEmployerPct] = useState('3')
   const [currentPot, setCurrentPot] = useState('0')
-  const [years, setYears] = useState('30')
+  const [years, setYears] = useState('37')
+  const [qualifyingOnly, setQualifyingOnly] = useState(true)
   const [growth, setGrowth] = useState('5')
 
   const s = parseFloat(salary.replace(/,/g, '')) || 0
@@ -44,7 +54,7 @@ export default function WorkplacePensionCalculator() {
   const cp = parseFloat(currentPot.replace(/,/g, '')) || 0
   const y = parseInt(years) || 0
   const g = parseFloat(growth) || 0
-  const result = useMemo(() => calculate(s, ep, erp, cp, y, g), [s, ep, erp, cp, y, g])
+  const result = useMemo(() => calculate(s, ep, erp, cp, y, g, qualifyingOnly), [s, ep, erp, cp, y, g, qualifyingOnly])
 
   return (
     <div className="space-y-6">
@@ -76,6 +86,7 @@ export default function WorkplacePensionCalculator() {
           <input type="number" min="0" max="15" step="0.5" value={growth} onChange={(e) => setGrowth(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Expected Growth (%)" />
         </div>
       </div>
+      <label className="flex items-start gap-3 cursor-pointer"><input type="checkbox" checked={qualifyingOnly} onChange={(e) => setQualifyingOnly(e.target.checked)} className="h-5 w-5 mt-0.5 rounded border-border" /><span className="text-sm">Contributions on qualifying earnings only (£6,240 to £50,270, the auto-enrolment basis) <span className="text-muted-foreground">— untick if your scheme uses your full salary</span></span></label>
 
       {s > 0 && y > 0 && (
         <div className="space-y-4 animate-fade-in-up">
@@ -86,10 +97,10 @@ export default function WorkplacePensionCalculator() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Your Monthly</p><p className="text-lg font-bold">{formatCurrency(result.monthlyEmployee)}</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Your Monthly (gross)</p><p className="text-lg font-bold">{formatCurrency(result.monthlyEmployee)}</p><p className="text-xs text-muted-foreground">you pay {formatCurrency(result.youPayMonthly)} after relief</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Employer Monthly</p><p className="text-lg font-bold">{formatCurrency(result.monthlyEmployer)}</p></div>
             <div className="rounded-xl bg-green-100 dark:bg-green-950 p-4 text-center"><p className="text-xs text-muted-foreground">Investment Growth</p><p className="text-lg font-bold text-green-700 dark:text-green-400">{formatCurrency(result.totalGrowth)}</p></div>
-            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Tax Relief (basic)</p><p className="text-lg font-bold">{formatCurrency(result.taxRelief)}/yr</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Tax Relief (basic, included)</p><p className="text-lg font-bold">{formatCurrency(result.taxRelief)}/yr</p></div>
           </div>
         </div>
       )}
