@@ -1,5 +1,27 @@
 # CHANGELOG — Calks.uk
 
+## 2026-09-28 — Business rates expansion, Attainment 8 fix, Premium Bonds odds table
+
+Search Console review of three content ideas (90-day data), then built.
+
+**Business rates:** retail, hospitality and leisure multipliers (38.2p / 43p) modelled; the small business
+multiplier is now chosen from rateable value (the calculator billed RV under £51,000 at 48p when the relief box
+was unticked); 1p transitional supplement; charity, rural, 15% pub relief, Supporting Small Business cap from last
+year's bill; Wales (35p / 50.2p / 51.5p, SBRR to £12,000, food and drink 15%) and Scotland (48.1p / 53.5p /
+54.8p, Small Business Bonus, 15% / 40% RHL relief); rent-based rateable value estimate. Prose: 2026
+transitional caps (was the 2023 schedule), shop example at 38.2p, holiday-let rules, multiplier table.
+
+**Attainment 8:** the GCSE calculator summed the best eight grades (max 72). Rebuilt on the DfE 2025 rules
+(English double only if both sat, maths double, 3 EBacc + 3 open, combined science averaged over 2 slots, max
+90) with the 2025 national average 46.0. Page text described a raw-mark grade estimator that did not exist;
+rewritten, with Progress 8 status (not published for 2025 and 2026) and the proposed 2029 model.
+
+**Premium Bonds:** shared data module `src/data/premium-bonds.ts`; server-rendered odds table £1,000-£50,000
+(prizes a month, chance of a prize, average and exact median winnings via Panjer recursion, jackpot odds),
+quick answer, FAQ, new title. A-level page repositioned away from UCAS points (links to the UCAS calculator).
+
+Ledger 1562 → 1578; 10 new stale-value guards.
+
 ## 2026-09-28 (round 7) — Core tax and benefit calculators: take-home, SSP, UC benefit cap, savings tax
 
 Seventh `/calkcheck` data-currency pass, 20 of the highest-traffic calculators that had not had their logic

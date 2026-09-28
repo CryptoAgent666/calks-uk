@@ -1364,12 +1364,12 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   {
     slug: 'premium-bonds-calculator',
-    title: 'Premium Bonds Calculator',
-    description: 'Calculate expected returns and prize odds for NS&I Premium Bonds based on your holding.',
+    title: 'Premium Bonds Odds Calculator',
+    description: 'Odds of winning Premium Bonds with £1,000 to £50,000: prizes a month, chance of a win, average vs typical winnings and jackpot odds at the 4.35% rate.',
     category: 'investment',
     icon: 'TrendingUp',
     keywords: ['premium bonds', 'NS&I', 'prize draw', 'tax free savings'],
-    metaTitle: 'Premium Bonds Calculator UK 2026 — Win Odds',
+    metaTitle: 'Premium Bonds Odds: Chances of Winning with £1k to £50k',
     priority: 2,
   },
   // BENEFITS (additional)
@@ -1567,7 +1567,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // LEGAL (additional)
   { slug: 'spousal-maintenance-calculator', title: 'Spousal Maintenance Calculator', description: 'Estimate spousal maintenance range for divorce. Based on income difference and length of marriage.', category: 'legal', icon: 'Scale', keywords: ['spousal maintenance', 'alimony', 'divorce maintenance', 'spousal support'], priority: 2 , metaTitle: 'Spousal Maintenance Calculator UK 2026' },
   // EDUCATION (additional)
-  { slug: 'gcse-grade-calculator', title: 'GCSE Grade Calculator (9-1)', description: 'Calculate Attainment 8 score, average grade and pass counts from your GCSE grades.', category: 'education', icon: 'GraduationCap', keywords: ['GCSE', 'GCSE grades', 'attainment 8', '9-1 grades', 'school results'], priority: 1 , metaTitle: 'GCSE Grade Calculator UK 2026 (9-1 Scale)' },
+  { slug: 'gcse-grade-calculator', title: 'Attainment 8 & GCSE Grade Calculator', description: 'Work out your Attainment 8 score the DfE way, with English and maths double weighted and EBacc and open slots, plus your GCSE average grade and passes.', category: 'education', icon: 'GraduationCap', keywords: ['GCSE', 'GCSE grades', 'attainment 8', '9-1 grades', 'school results'], priority: 1 , metaTitle: 'Attainment 8 Calculator 2026: GCSE Points & Average Grade' },
   { slug: 'university-cost-calculator', title: 'University Cost Calculator', description: 'Calculate the total cost of university including tuition fees, maintenance loan and living costs.', category: 'education', icon: 'GraduationCap', keywords: ['university cost', 'uni fees', 'student debt', 'tuition fees', 'student finance'], priority: 2 , metaTitle: 'UK University Cost Calculator 2026' },
   // GARDENING (additional)
   { slug: 'greenhouse-size-calculator', title: 'Greenhouse Size Calculator', description: 'Calculate greenhouse growing capacity. See how many plants fit by type with common size presets.', category: 'gardening', icon: 'Flower2', keywords: ['greenhouse', 'greenhouse size', 'growing space', 'greenhouse plants'], priority: 2 , metaTitle: 'Greenhouse Size Calculator UK' },
@@ -1607,7 +1607,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // TAX
   { slug: 'annual-tax-summary-calculator', title: 'Annual Tax Summary Calculator', description: 'Calculate your total tax bill from all income sources — salary, dividends, self-employment, rental and capital gains.', category: 'tax', icon: 'Receipt', keywords: ['annual tax', 'tax summary', 'total tax', 'all income', 'tax bill'], priority: 1 , metaTitle: 'Annual Tax Summary Calculator UK 2026/27' },
   // BUSINESS
-  { slug: 'business-rates-calculator', title: 'Business Rates Calculator', description: 'Calculate UK business rates from rateable value using the 2026/27 multiplier. Includes Small Business Rate Relief.', category: 'business', icon: 'Briefcase', keywords: ['business rates', 'rateable value', 'SBRR', 'commercial property'], priority: 2, metaTitle: 'Business Rates Calculator UK 2026/27' },
+  { slug: 'business-rates-calculator', title: 'Business Rates Calculator', description: 'Estimate 2026/27 business rates from rateable value, with the new retail, hospitality and leisure multipliers, small business relief, Wales and Scotland.', category: 'business', icon: 'Briefcase', keywords: ['business rates', 'rateable value', 'SBRR', 'small business rate relief', 'retail hospitality leisure multiplier', 'commercial property'], priority: 2, metaTitle: 'Business Rates & Rateable Value Calculator 2026/27' },
   { slug: 'rd-tax-credit-calculator', title: 'R&D Tax Credit Calculator', description: 'Estimate R&D tax credits for profitable and loss-making companies under the merged RDEC scheme.', category: 'business', icon: 'Briefcase', keywords: ['R&D', 'tax credits', 'RDEC', 'research development', 'innovation'], priority: 2 , metaTitle: 'R&D Tax Credit Calculator UK 2026' },
   { slug: 'cis-calculator', title: 'CIS Subcontractor Tax Calculator', description: 'Work out CIS deductions on a subcontractor invoice at 20% registered, 30% unverified or 0% gross status, with materials excluded and the net payment due.', category: 'business', icon: 'Briefcase', keywords: ['CIS', 'construction industry scheme', 'subcontractor', 'CIS deduction'], priority: 2 , metaTitle: 'CIS Calculator UK 2026/27' },
   // INSURANCE
@@ -1806,7 +1806,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // AUTO
   { slug: 'congestion-charge-calculator', title: 'London Congestion Charge Calculator', description: 'Calculate annual Congestion Charge cost. Check EV and Blue Badge exemptions.', category: 'auto', icon: 'Car', keywords: ['congestion charge', 'London driving', 'C-charge', 'central London'], priority: 2 , metaTitle: 'London Congestion Charge Calculator 2026 (£15)' },
   // EDUCATION
-  { slug: 'a-level-grade-calculator', title: 'A-Level Grade Calculator', description: 'Calculate UCAS tariff points from A-Level grades. See which universities your grades qualify for.', category: 'education', icon: 'GraduationCap', keywords: ['A-Level', 'UCAS points', 'A-Level grades', 'university entry'], priority: 1 , metaTitle: 'A-Level Grade Calculator UK 2026' },
+  { slug: 'a-level-grade-calculator', title: 'A-Level Grade Calculator', description: 'Turn your A-level grades into a grade profile such as ABB, see the points total and which typical university offers it meets.', category: 'education', icon: 'GraduationCap', keywords: ['A-Level', 'A-Level grades', 'grade profile', 'university offers'], priority: 1 , metaTitle: 'A-Level Grade Calculator 2026: Grade Profile & Offers' },
   // LOANS
   { slug: 'student-loan-plan4-calculator', title: 'Student Loan Plan 4 (Scotland) Calculator', description: 'Calculate Plan 4 (Scottish) student loan repayments at 9% above the £33,795 threshold for 2026/27. See monthly and annual deductions.', category: 'loans', icon: 'CreditCard', keywords: ['plan 4', 'Scotland loan', 'Scottish student loan', 'SAAS'], priority: 2 , metaTitle: 'Student Loan Plan 4 Calculator UK 2026/27 (Scotland)' },
   // TAX (trending)
