@@ -1,10 +1,15 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
+const COMPARE_YEARS = [1, 2, 3, 4, 5, 6, 7]
+
+// A UK APR is an annual effective rate, so the monthly rate is (1 + APR)^(1/12) - 1, not APR / 12
 function calculate(amount: number, rate: number, termMonths: number) {
-  if (amount <= 0 || rate <= 0 || termMonths <= 0) return null
-  const monthlyRate = rate / 100 / 12
-  const monthly = amount * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1)
+  if (amount <= 0 || rate < 0 || termMonths <= 0) return null
+  const monthlyRate = Math.pow(1 + rate / 100, 1 / 12) - 1
+  const monthly = monthlyRate === 0
+    ? amount / termMonths
+    : amount * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1)
   const totalRepaid = monthly * termMonths
   const totalInterest = totalRepaid - amount
 
@@ -20,6 +25,7 @@ export default function PersonalLoanCalculator() {
   const r = parseFloat(rate) || 0
   const t = parseInt(term) || 0
   const result = useMemo(() => calculate(a, r, t), [a, r, t])
+  const comparison = useMemo(() => COMPARE_YEARS.map((y) => ({ years: y, result: calculate(a, r, y * 12) })), [a, r])
 
   return (
     <div className="space-y-6">
@@ -49,6 +55,32 @@ export default function PersonalLoanCalculator() {
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Borrowed</p><p className="text-lg font-bold">{formatCurrency(result.amount)}</p></div>
             <div className="rounded-xl bg-destructive/10 p-4 text-center"><p className="text-xs text-muted-foreground">Total Interest</p><p className="text-lg font-bold text-destructive">{formatCurrency(result.totalInterest)}</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Total Repaid</p><p className="text-lg font-bold">{formatCurrency(result.totalRepaid)}</p></div>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold mb-2">Compare terms at {r}% APR</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border text-left text-muted-foreground">
+                    <th className="py-2 font-medium">Term</th>
+                    <th className="py-2 font-medium text-right">Monthly</th>
+                    <th className="py-2 font-medium text-right">Total interest</th>
+                    <th className="py-2 font-medium text-right">Total repaid</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparison.map(({ years, result: row }) => row && (
+                    <tr key={years} className={`border-b border-border/50 ${years * 12 === t ? 'bg-primary/10 font-semibold' : ''}`}>
+                      <td className="py-2.5 pl-1">{years} year{years !== 1 ? 's' : ''}</td>
+                      <td className="text-right tabular-nums">{formatCurrency(row.monthly)}</td>
+                      <td className="text-right tabular-nums">{formatCurrency(row.totalInterest)}</td>
+                      <td className="text-right tabular-nums pr-1">{formatCurrency(row.totalRepaid)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       )}

@@ -22,12 +22,12 @@ function calculate(invoiceAmount: number, daysLate: number) {
   const interest = invoiceAmount * dailyRate * daysLate
   const total = interest + fixedComp
 
-  return { interest, fixedComp, total, dailyRate: dailyRate * 100, statutoryRate: STATUTORY_RATE }
+  return { interest, dailyInterest: invoiceAmount * dailyRate, fixedComp, total, dailyRate: dailyRate * 100, statutoryRate: STATUTORY_RATE }
 }
 
 export default function LatePenaltyCalculator() {
-  const [amount, setAmount] = useState('')
-  const [days, setDays] = useState('30')
+  const [amount, setAmount] = useState('5500')
+  const [days, setDays] = useState('45')
 
   const a = parseFloat(amount.replace(/,/g,'')) || 0
   const d = parseInt(days) || 0
@@ -48,6 +48,7 @@ export default function LatePenaltyCalculator() {
           </div>
           <table className="w-full text-sm">
             <tbody>
+              <tr className="border-b border-border/50"><td className="py-2.5">Daily interest</td><td className="text-right tabular-nums font-medium">£{result.dailyInterest.toFixed(3)}</td></tr>
               <tr className="border-b border-border/50"><td className="py-2.5">Statutory interest ({result.statutoryRate}% pa)</td><td className="text-right tabular-nums font-medium">{formatCurrency(result.interest)}</td></tr>
               <tr className="border-b border-border/50"><td className="py-2.5">Fixed compensation</td><td className="text-right tabular-nums font-medium">{formatCurrency(result.fixedComp)}</td></tr>
               <tr className="font-semibold"><td className="py-2.5">Total claimable</td><td className="text-right tabular-nums text-primary">{formatCurrency(result.total)}</td></tr>

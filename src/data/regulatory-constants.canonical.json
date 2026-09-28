@@ -886,7 +886,11 @@
       "used_by": [
         "src/components/calculators/EmployerCostCalculator.tsx",
         "src/components/calculators/EmployerPensionCalculator.tsx",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/PayrollCalculator.tsx",
+        "src/components/calculators/ContractorVsPermCalculator.tsx",
+        "src/components/calculators/EmployeeCostBreakdownCalculator.tsx",
+        "src/components/calculators/WorkplacePensionCalculator.tsx"
       ],
       "source_url": "https://questions-statements.parliament.uk/written-statements/detail/2025-12-18/hcws1206",
       "status": "current",
@@ -895,8 +899,8 @@
       "official_value": "6240",
       "confidence": "high",
       "freshness_note": "DWP HCWS1206: qualifying earnings lower limit held at GBP 6,240 for 2026/27 (aligned to NI LEL).",
-      "verified_date": "2026-09-27",
-      "verify_method": "calkcheck-2026-09-27"
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8"
     },
     {
       "key": "auto_enrolment_qualifying_earnings_upper",
@@ -911,7 +915,11 @@
       "used_by": [
         "src/components/calculators/EmployerCostCalculator.tsx",
         "src/components/calculators/EmployerPensionCalculator.tsx",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/PayrollCalculator.tsx",
+        "src/components/calculators/ContractorVsPermCalculator.tsx",
+        "src/components/calculators/EmployeeCostBreakdownCalculator.tsx",
+        "src/components/calculators/WorkplacePensionCalculator.tsx"
       ],
       "source_url": "https://questions-statements.parliament.uk/written-statements/detail/2025-12-18/hcws1206",
       "status": "current",
@@ -920,8 +928,8 @@
       "official_value": "50270",
       "confidence": "high",
       "freshness_note": "DWP HCWS1206: qualifying earnings upper limit held at GBP 50,270 for 2026/27 (aligned to UEL/higher-rate threshold, which is frozen).",
-      "verified_date": "2026-09-27",
-      "verify_method": "calkcheck-2026-09-27"
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8"
     },
     {
       "key": "auto_enrolment_total_min_contribution",
@@ -8071,12 +8079,12 @@
       "source_url": "https://www.gov.uk/first-homes-scheme/how-the-scheme-works",
       "status": "current",
       "change_frequency": "",
-      "note": "FirstHomesSchemeCalculator: max post-discount purchase price cap outside London ('Max price: £250,000')",
+      "note": "Price after discount not more than £250,000 (£420,000 London); income not more than £80,000/£90,000; mortgage at least 50%. 25% planning requirement removed from the NPPF on 12 Dec 2024; \"Your First Home\" equity loan announced 26 Sep 2026 (details at the Budget). FirstHomesSchemeCalculator checks eligibility from 2026-09-28.",
       "official_value": "£250,000",
       "confidence": "high",
       "freshness_note": "gov.uk: a First Home cannot cost more than £250,000 after the discount (outside London).",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8"
     },
     {
       "key": "first_homes_max_price_london",
@@ -11194,14 +11202,18 @@
         "prose"
       ],
       "used_by": [
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/ContractorDayRateCalculator.tsx",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "Small client exemption turnover under GBP15m (IR35 status decided by contractor) (ir35, dividend-vs-salary)",
+      "note": "Small client = meets two of: turnover up to £15m, balance sheet up to £7.5m, 50 or fewer employees (Companies Act thresholds from 6 Apr 2025). Pages said \"turnover under £15M\" alone until 2026-09-28.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8"
     },
     {
       "key": "isa_annual_allowance",
@@ -11447,15 +11459,19 @@
         "prose"
       ],
       "used_by": [
-        "src/data/calculators.ts"
+        "src/data/calculators.ts",
+        "src/components/calculators/LatePenaltyCalculator.tsx",
+        "src/components/calculators/InvoiceProfitCalculator.tsx"
       ],
       "source_url": "https://www.legislation.gov.uk/uksi/2002/1675/article/4/made/data.html",
       "status": "current",
       "change_frequency": "",
-      "note": "late-payment-interest-calculator metaTitle: '(BoE+8%)' — statutory interest on overdue commercial invoices",
+      "note": "8% + Bank of England reference rate (base rate on 30 June for 1 Jul-31 Dec; on 31 Dec for 1 Jan-30 Jun). 1 Jul-31 Dec 2026: 3.75% + 8% = 11.75%. Commercial Payments Bill [HL] (introduced 19 May 2026, not law) would cap payment terms at 60 days and make interest mandatory.",
       "official_value": "Bank of England base rate + 8%",
       "confidence": "high",
-      "freshness_note": "Late Payment of Commercial Debts (Interest) Act 1998: statutory interest = 8% above BoE base rate for B2B debts. Reference rate set at 31 Dec / 30 Jun. Unchanged."
+      "freshness_note": "Late Payment of Commercial Debts (Interest) Act 1998: statutory interest = 8% above BoE base rate for B2B debts. Reference rate set at 31 Dec / 30 Jun. Unchanged.",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8"
     },
     {
       "key": "late_payment_statutory_interest_margin",
@@ -11712,12 +11728,15 @@
       ],
       "used_by": [
         "src/components/calculators/LeaseExtensionCalculator.tsx",
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/extend-your-lease",
       "status": "current",
       "change_frequency": "",
-      "note": "LeaseExtensionCalculator: marriage value applies only if remaining lease < 80 years (statutory threshold under Leasehold Reform Act); also stated in prose 'Under 80 years: marriage value applies'"
+      "note": "Marriage value payable (50%) when the unexpired term is 80 years or LESS (LRHUDA 1993 Sch 13 para 4(2A)); calculator used \"< 80\" until 2026-09-28. LFRA 2024 valuation reform (no marriage value) not in force at 28 Sep 2026.",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8"
     },
     {
       "key": "lease_extension_statutory_term_years",
@@ -16040,7 +16059,9 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "Ground Rent calculator: ground rent above 250 GBP/year (outside London) flagged as onerous (can convert a long lease into an assured shorthold tenancy); used in isOnerous test"
+      "note": "Housing Act 1988: ground rent above £250 a year (£1,000 in Greater London) can make a lease an assured tenancy. GroundRentCalculator applies £1,000 with a London toggle from 2026-09-28.",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8"
     },
     {
       "key": "p11d_filing_deadline",
@@ -18968,14 +18989,18 @@
         "prose"
       ],
       "used_by": [
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/components/calculators/PostgraduateLoanCalculator.tsx",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/masters-loan",
       "status": "current",
       "change_frequency": "",
-      "note": "student-budget-planner-calculator: Master's loan £13,206 ages 21-60",
+      "note": "Up to £13,206 in total for a course starting on or after 1 Aug 2026, split equally across the years of a longer course (pages said \"a year\" until 2026-09-28).",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8"
     },
     {
       "key": "ppr_final_period_exemption_months",
@@ -19967,14 +19992,14 @@
       "source_url": "https://www.legislation.gov.uk/uksi/2024/1073/made",
       "status": "current",
       "change_frequency": "",
-      "note": "RightToBuyCalculator: London regional cash cap £16,000 (SI 2024/1073, in force 21 Nov 2024). Calculator now has a region selector; banner corrected from the old '£38,400 (London)'.",
+      "note": "Regional caps from 21 Nov 2024 (SI 2024/1073), with local exceptions: Barking and Dagenham and Havering £38,000; Watford and eight South East districts £16,000. Social Housing Bill [HL] reforms (10-year qualifying period, 5-15% discount, 35-year new-build exemption) not in force.",
       "fixed": true,
       "fixed_date": "2026-07-08",
       "resolve_note": "FIXED 2026-07-08: SI 2024/1073 sets London at £16,000 (lowest region); Barking & Dagenham and Havering are the £38,000 exception. Regional caps £16,000-£38,000 now modelled in code.",
       "official_value": "16000",
       "official_source": "https://www.legislation.gov.uk/uksi/2024/1073/made",
-      "verified_date": "2026-07-08",
-      "verify_method": "tier2-llm"
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8"
     },
     {
       "key": "right_to_buy_max_discount_cap_outside_london",
@@ -30543,17 +30568,18 @@
       ],
       "used_by": [
         "src/components/calculators/HomeBuyingTotalCostCalculator.tsx",
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/components/calculators/MovingCostCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/guidance/hm-land-registry-registration-services-fees",
       "status": "current",
       "change_frequency": "",
-      "note": "Scale 1 portal whole-title fees: £20 (<=80k), £40 (<=100k), £100 (<=200k), £150 (<=500k), £295 (<=1m), £500 (>1m); post £45/95/230/330/655/1,105",
+      "note": "HMLR portal fees: up to £80k £20; to £100k £40; to £200k £100; to £500k £150; to £1m £295; over £1m £500. MovingCostCalculator boundary fixed 2026-09-28 (exactly £200,000 = £100).",
       "official_value": "150",
       "confidence": "high",
       "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
-      "verified_date": "2026-09-26",
-      "verify_method": "calkcheck-2026-09-26"
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8"
     },
     {
       "key": "tv_licence_colour_annual",
@@ -33698,6 +33724,349 @@
       "verify_method": "site-improvement-2026-09-28",
       "confidence": "high",
       "changes_next_fy": "Check for the DfE consultation response on the reformed measure"
+    },
+    {
+      "key": "apr_effective_annual_rate",
+      "value": "(1+APR)^(1/12)-1 monthly",
+      "unit": "rule",
+      "law": "CONC App 1.2 (APR formula)",
+      "theme": "loans",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/APRCalculator.tsx",
+        "src/components/calculators/PersonalLoanCalculator.tsx",
+        "src/components/calculators/DebtFreeCalculator.tsx",
+        "src/components/calculators/CarFinanceCalculator.tsx",
+        "src/components/calculators/DebtConsolidationCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://handbook.fca.org.uk/handbook/concapp1/concapp1s2",
+      "status": "current",
+      "change_frequency": "",
+      "note": "UK APR is an annual effective rate: the monthly rate is (1+APR)^(1/12)-1, not APR/12. Five calculators used APR/12 (and the APR calculator showed monthly rate x12) until 2026-09-28.",
+      "official_value": "(1+APR)^(1/12)-1 monthly",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "high"
+    },
+    {
+      "key": "cca_early_settlement_compensation",
+      "value": "1% (0.5% if a year or less remains), only above £8,000 in 12 months",
+      "unit": "rule",
+      "law": "Consumer Credit Act 1974 s95A",
+      "theme": "loans",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ukpga/1974/39/section/95A",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Compensation only if early repayments exceed £8,000 in any 12 months; never more than the interest that would have been paid. Settlement statement within 7 working days.",
+      "official_value": "1% (0.5% if a year or less remains), only above £8,000 in 12 months",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "high"
+    },
+    {
+      "key": "debt_relief_order_limits",
+      "value": "£50,000 debt; £75 surplus; £2,000 assets; £4,000 vehicle; free",
+      "unit": "rule",
+      "law": "Insolvency Act 1986 Sch 4ZA (as amended 2024)",
+      "theme": "loans",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/options-for-paying-off-your-debts/debt-relief-orders",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Fee abolished 6 Apr 2024; debt limit £30k→£50k and vehicle £2k→£4k from 28 Jun 2024. Page said \"debts under £30k ... fee £90\" until 2026-09-28.",
+      "official_value": "£50,000 debt; £75 surplus; £2,000 assets; £4,000 vehicle; free",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "high"
+    },
+    {
+      "key": "breathing_space_days",
+      "value": "60",
+      "unit": "days",
+      "law": "Debt Respite Scheme (Breathing Space) Regulations 2020",
+      "theme": "loans",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/debt-respite-scheme-breathing-space-guidance",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Standard breathing space 60 days; mental health crisis breathing space lasts for the crisis treatment plus 30 days.",
+      "official_value": "60",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "high"
+    },
+    {
+      "key": "cis_april_2026_changes",
+      "value": "nil returns required; GPS removal for fraud, 5-year bar, 30% penalty",
+      "unit": "rule",
+      "law": "Finance Act 2026; CIS 340",
+      "theme": "business",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/simplifying-and-improving-construction-industry-scheme-administration/simplification-and-administrative-improvements-to-the-construction-industry-scheme",
+      "status": "current",
+      "change_frequency": "",
+      "note": "From 6 Apr 2026: nil returns required unless inactivity notified; immediate GPS removal for fraud with 5-year reapplication bar and 30% penalty; payments to public bodies acting as subcontractors out of scope. Travel and subsistence ARE subject to CIS deduction (CIS 340 2.17).",
+      "official_value": "nil returns required; GPS removal for fraud, 5-year bar, 30% penalty",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "high"
+    },
+    {
+      "key": "companies_house_incorporation_fee_online",
+      "value": "100",
+      "unit": "GBP",
+      "law": "Companies House fees (from 1 Feb 2026)",
+      "theme": "business",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/companies-house-fees/companies-house-fees",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Online incorporation £100 (was £12 before May 2024, then £50).",
+      "official_value": "100",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "high"
+    },
+    {
+      "key": "paye_quarterly_payment_threshold_monthly",
+      "value": "1500",
+      "unit": "GBP/month",
+      "law": "PAYE regulations",
+      "theme": "pay",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/paye-for-employers",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Employers who expect to pay HMRC less than £1,500 a month can pay quarterly (FAQ said \"under £1.5m a year\").",
+      "official_value": "1500",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "high"
+    },
+    {
+      "key": "leasehold_reform_2024_status",
+      "value": "valuation reform not in force",
+      "unit": "status",
+      "law": "Leasehold and Freehold Reform Act 2024",
+      "theme": "property",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/LeaseExtensionCalculator.tsx",
+        "src/components/calculators/GroundRentCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/consultations/leasehold-enfranchisement-valuation-rates/leasehold-enfranchisement-valuation-rates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "In force: removal of the 2-year ownership rule (31 Jan 2025), right-to-manage changes (3 Mar 2025). Not in force: new valuation method (no marriage value, prescribed rates, 0.1% ground-rent cap) and 990-year extensions; rates consultation closes 21 Oct 2026; JR (ARC Time) lost by freeholders, under appeal. £250 ground-rent cap is a Jan 2026 proposal for a future Commonhold and Leasehold Reform Bill.",
+      "official_value": "valuation reform not in force",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "high",
+      "changes_next_fy": "Watch the Commonhold and Leasehold Reform Bill and the rates consultation response"
+    },
+    {
+      "key": "lease_extension_deferment_rate_flats",
+      "value": "5",
+      "unit": "percent",
+      "law": "Earl Cadogan v Sportelli (2007)",
+      "theme": "property",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/LeaseExtensionCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/consultations/leasehold-enfranchisement-valuation-rates/leasehold-enfranchisement-valuation-rates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Default deferment 5% for flats; capitalisation rate default 7% (editable); relativity default from an average of published graphs (estimate).",
+      "official_value": "5",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "medium"
+    },
+    {
+      "key": "leasehold_tribunal_fees",
+      "value": "£114 application + £227 hearing",
+      "unit": "GBP",
+      "law": "SI 2026/485 (in force 1 May 2026)",
+      "theme": "property",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/485/made",
+      "status": "current",
+      "change_frequency": "",
+      "note": "First-tier Tribunal (Property Chamber) leasehold application £114, hearing £227 (pages said £100).",
+      "official_value": "£114 application + £227 hearing",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "high"
+    },
+    {
+      "key": "service_charge_s20_thresholds",
+      "value": "£250 works; £100 a year long-term agreements",
+      "unit": "GBP",
+      "law": "Landlord and Tenant Act 1985 s20; SI 2003/1987",
+      "theme": "property",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/ServiceChargeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/leasehold-property",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Consultation needed if any leaseholder would pay more than £250 for works, or more than £100 a year under a long-term agreement. LFRA 2024 service-charge transparency measures not commenced (expected 2027).",
+      "official_value": "£250 works; £100 a year long-term agreements",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "high"
+    },
+    {
+      "key": "right_to_acquire_discount",
+      "value": "£9,000 to £16,000",
+      "unit": "GBP",
+      "law": "Housing Act 1996 s16",
+      "theme": "property",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/RightToBuyCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/right-to-acquire-buying-housing-association-home",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Housing association tenants: Right to Acquire fixed discount by area (£9,000-£16,000); not modelled by the Right to Buy calculator.",
+      "official_value": "£9,000 to £16,000",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "high"
+    },
+    {
+      "key": "dmcc_unfair_practices_commencement",
+      "value": "6 April 2025",
+      "unit": "date",
+      "law": "Digital Markets, Competition and Consumers Act 2024 Part 4 Ch 1",
+      "theme": "legal",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ukpga/2024/13/part/4/chapter/1",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Replaced the Consumer Protection from Unfair Trading Regulations 2008 (revoked 6 Apr 2025). Discount and late-payment pages cited the 2008 Regulations until 2026-09-28.",
+      "official_value": "6 April 2025",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "high"
+    },
+    {
+      "key": "royal_mail_redirection_12_months_one_adult",
+      "value": "95",
+      "unit": "GBP",
+      "law": "Royal Mail prices April 2026",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/MovingCostCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.royalmail.com/personal/receiving-mail/redirection",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Redirection from 7 Apr 2026: £45 (3 months), £66.50 (6), £95 (12) for one adult. Market price, re-check each April.",
+      "official_value": "95",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "medium",
+      "changes_next_fy": "Royal Mail reprices each April"
+    },
+    {
+      "key": "property_income_tax_rates_2027",
+      "value": "22% / 42% / 47%",
+      "unit": "percent",
+      "law": "Budget 2025 (from 6 April 2027)",
+      "theme": "property",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BuyToLetYieldCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income",
+      "status": "current",
+      "change_frequency": "",
+      "note": "From 6 Apr 2027 property income rates rise by 2 points (England, Wales, NI) with the finance-cost credit at 22%; 2026/27 remains 20/40/45 with a 20% credit.",
+      "official_value": "22% / 42% / 47%",
+      "verified_date": "2026-09-28",
+      "verify_method": "calkcheck-2026-09-28-r8",
+      "confidence": "high",
+      "changes_next_fy": "Apply 6 April 2027"
     }
   ],
   "status_summary": {

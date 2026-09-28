@@ -1821,6 +1821,341 @@
    "was": "Calculate UCAS tariff points from A-Level grades",
    "now": "grade profile and offers",
    "what": "A-level page competing with UCAS page (site improvement 2026-09-28)"
+  },
+  {
+   "was": "employers under £1.5m a year",
+   "now": "quarterly if under the monthly limit",
+   "what": "PAYE quarterly payment threshold (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "a duty in force since 2018",
+   "now": "auto-enrolment since October twenty-twelve",
+   "what": "auto-enrolment start date (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "supports weekly, fortnightly, four-weekly",
+   "now": "monthly payslip only",
+   "what": "payroll pay periods claim (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "travel and lodging unless",
+   "now": "travel and subsistence are subject to deduction",
+   "what": "CIS travel and subsistence (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "Invoice Amount (incl. materials)",
+   "now": "amount excluding VAT",
+   "what": "CIS invoice label (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "divides the salary by 1,000",
+   "now": "salary divided by working days",
+   "what": "day rate rule of thumb (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "£12 directly with Companies House",
+   "now": "current incorporation fee",
+   "what": "Companies House fee (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "converts in both directions",
+   "now": "one target take-home, IR35 toggle",
+   "what": "day rate tool description (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "a gap of more than £10k",
+   "now": "gap recomputed",
+   "what": "inside vs outside IR35 gap (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "approx. £49,500",
+   "now": "umbrella take-home recomputed",
+   "what": "day rate example (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "39 to 52 weeks paid",
+   "now": "maternity pay is paid for thirty-nine weeks",
+   "what": "maternity/paternity pay claim (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "gym membership and training on efficient terms",
+   "now": "optional remuneration rules",
+   "what": "salary sacrifice benefits (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "£3,400 of paid holiday",
+   "now": "holiday value recomputed",
+   "what": "contractor vs perm holiday (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "30-50% above perm equivalent",
+   "now": "premium computed",
+   "what": "contractor premium message (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "switch on the benefits that apply",
+   "now": "actual inputs",
+   "what": "employee cost tool description (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "parseInt(taxCode.replace(/[^\\d]/g, '')) || 1257",
+   "now": "tax code parser",
+   "what": "payroll tax code parsing (code) (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "const monthlyErPension = monthlyGross * 0.03",
+   "now": "qualifying earnings",
+   "what": "employer pension on whole salary (code) (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "banned for new sales in 2021",
+   "now": "point-of-sale ban in twenty-twelve",
+   "what": "PPI ban date (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "EAR applies to credit cards",
+   "now": "credit cards quote an APR",
+   "what": "EAR vs APR (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "roughly 7.4% APR",
+   "now": "fee example recomputed",
+   "what": "APR fee example (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "halve the monthly figure",
+   "now": "cut by about two fifths",
+   "what": "loan term effect (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "plus 28 days for loans under",
+   "now": "CCA s95A compensation rules",
+   "what": "early repayment charges (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "persistent debt rules also penalise",
+   "now": "revolving credit only",
+   "what": "persistent debt rules (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "Northwestern Kellogg",
+   "now": "Gal and McShane",
+   "what": "debt snowball study citation (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "Both are arranged free through StepChange",
+   "now": "IVAs carry fees",
+   "what": "IVA fees (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "unfair commercial practices rules of 2008",
+   "now": "DMCC Act rules",
+   "what": "revoked 2008 regulations (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "Judgments Act 1838 applies instead",
+   "now": "judgment interest rules",
+   "what": "late payment judgment interest (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "cash basis open to sole traders below £150k",
+   "now": "cash basis default with no limit",
+   "what": "cash basis limit (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "Markup: 79.9%",
+   "now": "markup recomputed",
+   "what": "invoice example markup (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "apply automatically after 30 days",
+   "now": "runs from the day after the due date",
+   "what": "late payment interest start (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "zero-rated under the reverse charge",
+   "now": "outside the scope",
+   "what": "VAT on overseas services (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "const apr = rate * 12 * 100",
+   "now": "effective annual rate",
+   "what": "APR as monthly rate times twelve (code) (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "£280/month + £9,500 balloon",
+   "now": "PCP example recomputed",
+   "what": "car finance example (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "The FCA paused all GAP sales",
+   "now": "insurers paused voluntarily",
+   "what": "GAP pause (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "Several hard searches inside 14 days",
+   "now": "UK agencies record each search",
+   "what": "credit search rate shopping (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "saves roughly £2,100 in interest",
+   "now": "saving recomputed",
+   "what": "debt consolidation saving (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "debts under £30k",
+   "now": "current DRO limits",
+   "what": "Debt Relief Order limit (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "The fee is £90",
+   "now": "DRO is free",
+   "what": "Debt Relief Order fee (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "24-32 months at 0%",
+   "now": "current longest balance transfer",
+   "what": "balance transfer length (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "clear the balance in 28 months",
+   "now": "twenty-nine payments",
+   "what": "balance transfer example (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "resident in the UK and taking a first Master",
+   "now": "living in England",
+   "what": "PGL eligibility (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "£36.99",
+   "now": "current Royal Mail redirection price",
+   "what": "mail redirection 3 months (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "according to a Which? survey",
+   "now": "unsourced average removed",
+   "what": "moving cost average (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "Net yield subtracts all the running costs: mortgage interest",
+   "now": "net yield excludes finance costs",
+   "what": "BTL net yield definition (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "apr / 100 / 12",
+   "now": "effective monthly rate from APR",
+   "what": "APR divided by twelve (code) (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "owned the flat for 2+ years",
+   "now": "two-year rule removed",
+   "what": "lease extension ownership rule (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "full implementation expected in 2026",
+   "now": "reform not yet in force",
+   "what": "leasehold valuation reform timing (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "could cut the cost by 30-50%",
+   "now": "timing uncertain",
+   "what": "leasehold reform savings claim (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "waiting for implementation could save 30-50%",
+   "now": "timing uncertain",
+   "what": "leasehold reform savings claim (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "Marriage value only applies when the unexpired lease is below 80 years",
+   "now": "eighty years or less",
+   "what": "marriage value threshold (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "transitional cap of £250",
+   "now": "proposal, not law",
+   "what": "ground rent cap (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "capping existing ground rent at £250 maximum",
+   "now": "proposal, not law",
+   "what": "ground rent cap FAQ (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "35% + 9% (years 4-12) = 44%",
+   "now": "discount recomputed",
+   "what": "Right to Buy example (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "£16,000 in Manchester",
+   "now": "North West cap",
+   "what": "Right to Buy regional cap (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "often worth £50k to £100k",
+   "now": "current regional maximums",
+   "what": "Right to Buy discount size (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "still triggers the repayment",
+   "now": "family transfers may be exempt",
+   "what": "Right to Buy family transfer (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "First Homes replaced Help to Buy in April 2023",
+   "now": "separate scheme launched twenty-twenty-one",
+   "what": "First Homes history (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "must always sell at the original percentage discount",
+   "now": "open-market route with consent",
+   "what": "First Homes resale (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "Transparency rules from 2024",
+   "now": "not yet commenced",
+   "what": "service charge transparency (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "leaseholdadvice.org.uk",
+   "now": "lease-advice.org",
+   "what": "LEASE website (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "const hasMV = currentLease < 80",
+   "now": "eighty years or less",
+   "what": "marriage value boundary (code) (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "(share === 100 ? 1 : u)",
+   "now": "building total times share",
+   "what": "service charge double division (code) (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "turnover under £15M",
+   "now": "two of three size tests",
+   "what": "IR35 small client test (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "Unfair Trading Regulations 2008 require honest reference pricing",
+   "now": "DMCC Act rules",
+   "what": "discount page regulations (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "£13,206 a year",
+   "now": "per course",
+   "what": "Master's loan wording (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "aged 21 to 60",
+   "now": "under sixty",
+   "what": "Master's loan age (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "Tax relief (basic rate): £41.67/month",
+   "now": "relief included in the percentage",
+   "what": "workplace pension example relief (calkcheck 2026-09-28 r8)"
   }
  ]
 }
