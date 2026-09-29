@@ -1617,7 +1617,9 @@
       "source_url": "https://www.gov.uk/guidance/delinked-payments-replacing-the-basic-payment-scheme",
       "status": "current",
       "change_frequency": "",
-      "note": "elm-payment/farm-operating: BPS phased to 0% by 2027 (2024 50%, 2025 40%, 2026 30%), replaced by ELM/SFI"
+      "note": "elm-payment/farm-operating: BPS phased to 0% by 2027 (2024 50%, 2025 40%, 2026 30%), replaced by ELM/SFI",
+      "freshness_note": "Re-verified 2026-09-29 (DataHub alert = SFI collection page update: SFI26 closed 22 Sep 2026). Delinked payments final year 2027 unchanged.",
+      "verified_date": "2026-09-29"
     },
     {
       "key": "building_regs_2r_plus_g_max",
@@ -7357,7 +7359,9 @@
       "status": "current",
       "change_frequency": "",
       "note": "elm-payment-calculator: SFI 2026 rates e.g. cover crops £163/ha, hedgerow £24/100m, arable soils £36/ha; BPS phased out 2021 100%->0% by 2027; woodland creation £8,500/ha",
-      "resolve_note": "Live gov.uk SFI rate for the multi-species winter cover-crop action is £129/ha/yr; could not confirm £163 was ever the rate for this action. Cover-crop rate doe"
+      "resolve_note": "Live gov.uk SFI rate for the multi-species winter cover-crop action is £129/ha/yr; could not confirm £163 was ever the rate for this action. Cover-crop rate doe",
+      "freshness_note": "Re-verified 2026-09-29: SFI26 CSAM2 multi-species winter cover crop £129/ha unchanged (£163 is summer SOH3).",
+      "verified_date": "2026-09-29"
     },
     {
       "key": "employer_ni_secondary_rate",
@@ -11690,8 +11694,8 @@
       "note": "lease-extension-calculator: 'lease extension premium including marriage value, ground rent and professional fees'",
       "official_value": "marriage value (still payable)",
       "confidence": "medium",
-      "freshness_note": "Marriage value is still a live premium component for leases under 80 years; the Leasehold and Freehold Reform Act 2024 abolishes it but the valuation provisions are NOT yet commenced (expected 2025/26), so it remains current as of Jun 2026.",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-09-29: LAFRA 2024 s.8 still 'Prospective' on legislation.gov.uk; only 3 commencement regs made (none touch valuation); freeholder appeals pending at the Court of Appeal. Marriage value still payable at 80 years or less.",
+      "verified_date": "2026-09-29",
       "verify_method": "tier2-tail"
     },
     {
@@ -11712,8 +11716,8 @@
       "note": "LeaseExtensionCalculator: landlord receives 50% of marriage value (marriageValue * 0.5); statutory split; shown in prose 'Marriage value (50%)'",
       "official_value": "50%",
       "confidence": "medium",
-      "freshness_note": "Under the 1993 Act (Sch 6) the landlord's share of marriage value is 50% and remains in force; LAFRA 2024 abolition of marriage value is not yet commenced as of Jun 2026 (watch item).",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-09-29: 1993 Act Sch 13 50% share still in force; LAFRA 2024 valuation provisions uncommenced (s.8 'Prospective').",
+      "verified_date": "2026-09-29",
       "verify_method": "tier2-tail"
     },
     {

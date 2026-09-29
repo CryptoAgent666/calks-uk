@@ -45,7 +45,7 @@ export default function ELMPaymentCalculator() {
         </div>
       )}
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p>Sustainable Farming Incentive 2026 (SFI26) rates for England. SFI26 has no management payment and caps each agreement at £100,000 a year. Apply through the Rural Payments service.</p>
+        <p>Sustainable Farming Incentive 2026 (SFI26) rates for England. SFI26 has no management payment and caps each agreement at £100,000 a year. Both SFI26 application windows have closed (the second on 22 September 2026); agreements are managed through the Rural Payments service.</p>
       </div>
     </div>
   )
