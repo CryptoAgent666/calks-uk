@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-const DEFAULT_ELEC_STANDING = 57.19 // p/day
-const DEFAULT_GAS_STANDING = 29.04
+const DEFAULT_ELEC_STANDING = 54.83 // p/day, Ofgem price cap 1 Oct–31 Dec 2026
+const DEFAULT_GAS_STANDING = 29.68
 
 function calculate(elecStanding: number, gasStanding: number, hasGas: boolean) {
   const dailyTotal = elecStanding + (hasGas ? gasStanding : 0)
@@ -11,8 +11,8 @@ function calculate(elecStanding: number, gasStanding: number, hasGas: boolean) {
 
   // Zero standing charge tariffs typically charge ~2-3p/kWh more
   const extraPerKwh = 2.5
-  const avgElecKwh = 2700
-  const avgGasKwh = hasGas ? 11500 : 0
+  const avgElecKwh = 2500 // Ofgem typical consumption (TDCV) from 1 Jul 2026
+  const avgGasKwh = hasGas ? 9500 : 0
   const extraUnitCost = (avgElecKwh + avgGasKwh) * extraPerKwh / 100
   const saving = annualStanding - extraUnitCost
 

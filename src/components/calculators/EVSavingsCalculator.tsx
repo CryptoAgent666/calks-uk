@@ -31,11 +31,11 @@ export default function EVSavingsCalculator() {
   const [mpg, setMpg] = useState('40')
   const [petrolP, setPetrolP] = useState('172') // UK average petrol, DESNZ w/c 21 Sep 2026 (172.01p)
   const [evEff, setEvEff] = useState('3.5')
-  const [homeElec, setHomeElec] = useState('26.11')
+  const [homeElec, setHomeElec] = useState('26.32')
   const [publicElec, setPublicElec] = useState('70')
   const [homePct, setHomePct] = useState('80')
 
-  const result = useMemo(() => calculate(parseFloat(miles)||0, parseFloat(mpg)||40, parseFloat(petrolP)||172, parseFloat(evEff)||3.5, parseFloat(homeElec)||26.11, parseFloat(publicElec)||70, parseFloat(homePct)||80), [miles, mpg, petrolP, evEff, homeElec, publicElec, homePct])
+  const result = useMemo(() => calculate(parseFloat(miles)||0, parseFloat(mpg)||40, parseFloat(petrolP)||172, parseFloat(evEff)||3.5, parseFloat(homeElec)||26.32, parseFloat(publicElec)||70, parseFloat(homePct)||80), [miles, mpg, petrolP, evEff, homeElec, publicElec, homePct])
 
   return (
     <div className="space-y-6">

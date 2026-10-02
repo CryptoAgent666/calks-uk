@@ -94,6 +94,45 @@
    "what": "wtc_disability_element"
   },
   {
+   "was": "26.11",
+   "now": "26.32",
+   "what": "ofgem_price_cap_electricity_unit_rate (Jul-Sep 2026 cap; roll this entry every quarter)"
+  },
+  {
+   "was": "57.19",
+   "now": "54.83",
+   "what": "ofgem_price_cap_electricity_standing_charge (Jul-Sep 2026 cap)"
+  },
+  {
+   "was": "7.33",
+   "now": "7.97",
+   "what": "ofgem_price_cap_gas_unit_rate (Jul-Sep 2026 cap)",
+   "ctx": "kWh|gas|GAS|p/|useState"
+  },
+  {
+   "was": "29.04",
+   "now": "29.68",
+   "what": "ofgem_price_cap_gas_standing_charge (Jul-Sep 2026 cap)"
+  },
+  {
+   "was": "6.76",
+   "now": "7.97",
+   "what": "ofgem_price_cap_gas_unit_rate (Apr-Jun 2025 value left in prose)",
+   "ctx": "kWh|gas"
+  },
+  {
+   "was": "11500",
+   "now": "9,500",
+   "what": "Ofgem TDCV gas kWh (revised 1 Jul 2026)",
+   "ctx": "kWh|useState|GasKwh"
+  },
+  {
+   "was": "2700",
+   "now": "2,500",
+   "what": "Ofgem TDCV electricity kWh (revised 1 Jul 2026)",
+   "ctx": "kWh|useState|ElecKwh"
+  },
+  {
    "was": "4.75%",
    "now": "3.75%",
    "what": "boe_base_rate (current since 18 Dec 2025)",

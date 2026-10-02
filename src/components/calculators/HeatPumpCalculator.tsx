@@ -48,14 +48,14 @@ export default function HeatPumpCalculator() {
   const [fuel, setFuel] = useState('gas')
   const [boilerEff, setBoilerEff] = useState('85')
   const [cop, setCop] = useState('3.0')
-  const [elec, setElec] = useState('26.11')
-  const [gas, setGas] = useState('7.33')
+  const [elec, setElec] = useState('26.32')
+  const [gas, setGas] = useState('7.97')
   const [oil, setOil] = useState(String(DEFAULT_OIL))
   const [installCost, setInstallCost] = useState('12000')
   const [lpg, setLpg] = useState(String(DEFAULT_LPG))
   const [useGrant, setUseGrant] = useState(true)
 
-  const result = useMemo(() => calculate(parseFloat(size)||0, fuel, parseFloat(boilerEff)||85, parseFloat(cop)||3, parseFloat(elec)||26.11, parseFloat(gas)||7.33, parseFloat(oil)||DEFAULT_OIL, parseFloat(lpg)||DEFAULT_LPG, parseFloat(installCost.replace(/,/g,''))||0, useGrant), [size, fuel, boilerEff, cop, elec, gas, oil, lpg, installCost, useGrant])
+  const result = useMemo(() => calculate(parseFloat(size)||0, fuel, parseFloat(boilerEff)||85, parseFloat(cop)||3, parseFloat(elec)||26.32, parseFloat(gas)||7.97, parseFloat(oil)||DEFAULT_OIL, parseFloat(lpg)||DEFAULT_LPG, parseFloat(installCost.replace(/,/g,''))||0, useGrant), [size, fuel, boilerEff, cop, elec, gas, oil, lpg, installCost, useGrant])
 
   return (
     <div className="space-y-6">

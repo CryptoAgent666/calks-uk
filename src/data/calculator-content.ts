@@ -625,8 +625,8 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
 
   'energy-bill-calculator': {
     howItWorks: [
-      'Your energy bill is made up of two components, a daily standing charge and a unit rate for the energy you actually use. The standing charge covers the cost of maintaining your connection to the gas and electricity networks. The unit rate is the price per kilowatt-hour (kWh) of energy consumed. Typical household consumption is approximately 2,700 kWh of electricity and 11,500 kWh of gas per year, and those two figures together with the four rates are all the arithmetic requires.',
-      'The Ofgem energy price cap sets the maximum unit rates and standing charges that suppliers can charge on default tariffs, and it is reset quarterly in January, April, July and October. Around 50 to 60% of the level it allows reflects wholesale energy costs, with networks taking 20 to 25%, policy costs 10 to 15% and the supplier\'s margin 3 to 5%. In 2026 the cap sits at roughly 24p per kWh for electricity plus 53p a day, and about 6p per kWh for gas plus 32p a day. An average dual-fuel household pays £1,600 to £1,800 a year, down from a peak of about £3,500 in early 2023.',
+      'Your energy bill is made up of two components, a daily standing charge and a unit rate for the energy you actually use. The standing charge covers the cost of maintaining your connection to the gas and electricity networks. The unit rate is the price per kilowatt-hour (kWh) of energy consumed. Ofgem\'s typical household uses 2,500 kWh of electricity and 9,500 kWh of gas a year (figures revised down from 2,700 and 11,500 in July 2026), and those two numbers together with the four rates are all the arithmetic requires.',
+      'The Ofgem energy price cap sets the maximum unit rates and standing charges that suppliers can charge on default tariffs, and it is reset quarterly in January, April, July and October. Around 50 to 60% of the level it allows reflects wholesale energy costs, with networks taking 20 to 25%, policy costs 10 to 15% and the supplier\'s margin 3 to 5%. From 1 October to 31 December 2026 the cap is 26.32p per kWh for electricity plus 54.83p a day, and 7.97p per kWh for gas plus 29.68p a day, for Direct Debit customers averaged across Great Britain. That puts a typical dual-fuel household at £1,723 a year. Electricity carries no VAT from 1 October 2026 to 31 March 2027, while gas still carries 5%, so the electricity figures are not directly comparable with earlier quarters. For scale, the Energy Price Guarantee held a typical bill to £2,500 through the winter of 2022-23.',
       'Enter your actual meter readings or an estimate of consumption and you get the expected annual bill, split between unit costs and standing charges for each fuel, with the option to compare tariff rates and see what switching would save. Working from real readings rather than the typical household figures is worth the effort, because consumption varies far more between homes than prices vary between suppliers.',
       'Whether to fix is the question most people arrive with. Fixed deals carry a premium of 5 to 15% above the current cap, so you gain if the cap then rises by 20% or more, and lose if it falls, as it has done several times across 2024 and 2025. Wholesale gas futures and Ofgem announcements are the only real guide. Fixing buys certainty when prices are stable or drifting down, whereas staying on the cap makes sense when prices are volatile but trending lower. Octopus, EDF, OVO, Eon and British Gas all offer fixed deals, and uSwitch or MoneySavingExpert will compare them.',
       'Homes with a smart meter can go further with a time-of-use tariff. Octopus Agile tracks the wholesale market every half hour, ranging from 0 to 30p per kWh and occasionally going negative on sunny, windy days. Octopus Go, built around electric vehicles, charges 7 to 9p per kWh between 00:30 and 05:30 and around 30p at peak, saving EV drivers £600 to £1,200 a year against a flat rate. Octopus Cosy does the same job for heat pumps, cheap in the morning and evening and expensive at midday. Owners of solar panels on these tariffs sell their surplus back at 15 to 20p per kWh.',
@@ -635,16 +635,16 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     example: {
       title: 'Example: Average household consumption',
       steps: [
-        'Electricity: 2,700 kWh × 26.11p = £704.97',
-        'Electricity standing charge: 365 × 57.19p = £208.74',
-        'Gas: 11,500 kWh × 6.76p = £777.40',
-        'Gas standing charge: 365 × 29.04p = £106.00',
-        'Total annual bill: ~£1,797',
+        'Electricity: 2,500 kWh × 26.32p = £658.00',
+        'Electricity standing charge: 365 × 54.83p = £200.13',
+        'Gas: 9,500 kWh × 7.97p = £757.15',
+        'Gas standing charge: 365 × 29.68p = £108.33',
+        'Total annual bill: £1,723.61, the Ofgem typical bill for October to December 2026',
       ],
     },
     sourceUrl: 'https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you',
     sourceName: 'Ofgem, Energy price cap',
-    lastUpdated: 'September 2026',
+    lastUpdated: 'October 2026',
   },
 
   'solar-panel-calculator': {
@@ -660,16 +660,16 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       title: 'Example: 4 kW system in central England',
       steps: [
         'Annual generation: ~3,200 kWh',
-        'Self-consumption (50%): 1,600 kWh × 26.11p = £418 saved',
+        'Self-consumption (50%): 1,600 kWh × 26.32p = £421 saved',
         'Export (50%): 1,600 kWh × 10p (SEG) = £160 income',
-        'Total annual benefit: ~£578',
+        'Total annual benefit: ~£581',
         'System cost: £6,500',
         'Simple payback: ~11.2 years',
       ],
     },
     sourceUrl: 'https://energysavingtrust.org.uk/advice/solar-panels/',
     sourceName: 'Energy Saving Trust, Solar panels',
-    lastUpdated: 'September 2026',
+    lastUpdated: 'October 2026',
   },
 
   'fuel-cost-calculator': {
@@ -1886,7 +1886,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'ev-charging-calculator': {
     howItWorks: [
-      'Electric vehicle charging costs depend on where and how you charge. Home charging using a 7 kW wallbox is the cheapest option at around 24 to 25p per kWh on a standard electricity tariff, or as low as 7 to 10p per kWh on an off-peak EV tariff such as Octopus Go or Intelligent Octopus. A typical EV with a 60 kWh battery costs £14 to £15 for a full charge at home on standard rates, and roughly £4.20 if the whole session lands inside an Octopus Go window at 7p between 00:30 and 05:30. At 4 miles per kWh that £4.20 buys about 240 miles, or 1.75p a mile.',
+      'Electric vehicle charging costs depend on where and how you charge. Home charging using a 7 kW wallbox is the cheapest option at around 26p per kWh on a standard electricity tariff (26.32p under the October to December 2026 cap), or as low as 7 to 10p per kWh on an off-peak EV tariff such as Octopus Go or Intelligent Octopus. A typical EV with a 60 kWh battery costs about £15.80 for a full charge at home on standard rates, and roughly £4.20 if the whole session lands inside an Octopus Go window at 7p between 00:30 and 05:30. At 4 miles per kWh that £4.20 buys about 240 miles, or 1.75p a mile.',
       'Public rapid chargers rated 50 to 150 kW are significantly more expensive, typically 60 to 80p per kWh, while ultra-rapid units of 150 to 350 kW can reach 70 to 85p. Filling the same 60 kWh battery at 60p on a network such as Ionity or BP Pulse Rapid costs about £36, which works out at roughly 15p a mile. Workplace charging is often free or subsidised by the employer, and some supermarket chargers still offer free slow charging while you shop.',
       'This calculator estimates your charging costs across different scenarios. It takes your annual mileage, your vehicle\'s efficiency in miles per kWh, the split between home and public charging, and your electricity tariff, then works out running costs you can set against petrol or diesel. Driving 10,000 miles a year at 3.5 miles per kWh needs 2,857 kWh; charging 80% of that at home on a 10p off-peak rate costs £228.60, the remaining 571 kWh at a 70p public rate adds £399.70, and the annual total comes to £628.30 against about £1,955 for a 40 MPG petrol car at £1.72 a litre (the UK average in the week commencing 21 September 2026), a saving of roughly £1,327.',
       'Choosing the right tariff moves the number more than almost anything else you can control. Octopus Go charges 7 to 9p per kWh in a five-hour window between 00:30 and 05:30, Octopus Intelligent varies the timing to suit grid conditions and charges when power is cheapest, EDF GoElectric Overnight sits at 9p, Eon Next Drive at 6.7p and the British Gas EV tariff at 7.9p. Most of these need a smart meter, which suppliers fit free. Pair a tariff with solar panels and a sunny day can charge the car for virtually nothing.',
@@ -1906,7 +1906,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     },
     sourceUrl: 'https://www.gov.uk/government/collections/government-grants-for-low-emission-vehicles',
     sourceName: 'GOV.UK — Government grants for low-emission vehicles',
-    lastUpdated: 'September 2026',
+    lastUpdated: 'October 2026',
   },
   'commute-cost-calculator': {
     howItWorks: [
@@ -2123,7 +2123,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     howItWorks: [
       'Heat pumps extract heat from outdoor air (air source) or the ground (ground source) and deliver it to your home. They are highly efficient, producing 2.5 to 4 units of heat for every unit of electricity consumed. This ratio is the Coefficient of Performance, so a heat pump with a COP of 3 produces 3 kWh of heat for each 1 kWh of electricity used. Air source units manage that using a refrigeration cycle rather than combustion and keep working down to -15°C, while ground source machines reach a COP of 4 to 5 because the ground holds a steadier temperature.',
       'An air source heat pump (ASHP) typically costs £8,000 to £15,000 installed, rising to £12k to £18k on a five-bedroom house, while a ground source heat pump (GSHP) costs £15,000 to £35,000 including ground works, with the installation alone at £20k to £30k. In England and Wales the Boiler Upgrade Scheme pays £7,500 towards either (£2,500 for an air-to-air heat pump), plus £1,500 until March 2027 for off-gas-grid homes heated by oil or LPG, and the Warm Homes Plan funds it to 2030. That brings a typical ASHP down to roughly £500 to £7,500. Against a replacement gas boiler at £3k to £4k, the net difference runs from about £3,500 in the heat pump\'s favour to £4,500 against it.',
-      'Running costs depend on your electricity tariff and the heat pump\'s seasonal COP. At 26.11p per kWh for electricity and a SCOP of 3, the effective heating cost is 8.7p per kWh of heat, compared with 7.5p per kWh from a 90% efficient gas boiler burning gas at 6.76p. Priced another way, gas at £0.06 per kWh through a 90% boiler works out at £0.067 per kWh of heat while a heat pump with a COP of 3.5 on electricity at £0.26 per kWh comes to £0.074, which is close enough to call the two roughly equivalent on a standard tariff.',
+      'Running costs depend on your electricity tariff and the heat pump\'s seasonal COP. At the October to December 2026 cap of 26.32p per kWh for electricity and a SCOP of 3, the effective heating cost is 8.8p per kWh of heat, compared with 8.9p per kWh from a 90% efficient gas boiler burning gas at 7.97p. A better installation with a SCOP of 3.5 brings the heat pump down to 7.5p. On a standard tariff the two are therefore close to level, with a well-designed heat pump slightly ahead while electricity carries no VAT (1 October 2026 to 31 March 2027).',
       'Enter your floor area (the calculator assumes a heat demand of 120 kWh per m² a year), the COP you expect and your fuel prices, and you get annual running costs against your existing heating along with the payback on the installation after the grant. The tariff moves that answer more than anything else. On a time-of-use tariff such as Octopus Cosy, which is cheap in the morning and evening and expensive at midday, a heat pump runs 20 to 30% cheaper than a gas boiler. Paired with solar panels it costs almost nothing to run in summer, when heating demand is low in any case. Insulation matters more than the heat source itself, because a poorly insulated house is expensive to heat whatever is producing the heat, and a hybrid system working alongside an existing gas boiler makes a reasonable transitional step.',
       'Taking the grant and the running-cost difference together, payback typically lands somewhere between 5 and 15 years, driven mostly by tariff and insulation. Policy is pushing in one direction, with the government\'s Heat in Buildings strategy aiming to phase out new gas boiler installations from 2035, which is why heat pumps are shifting from unusual to routine.',
       'The physical requirements are worth checking before you go any further. The outdoor unit needs a space of roughly 0.8m by 1.0m by 0.6m, ideally 1m from the boundary, and runs at 40 to 60 dB at 1m, which is quieter than a gas boiler in most homes. Indoors you need a hot water cylinder, since heat pumps work best with a tank rather than a combi. Poorly insulated homes usually need radiators 1.5 to 2 times their current size, adding £1k to £3k. Underfloor heating suits them particularly well, running at a flow temperature of 35 to 45°C against the 65 to 75°C radiators expect. In England, installations under 0.6m³ generally fall within permitted development rights.',
@@ -2133,15 +2133,15 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       steps: [
         'Heat demand: 100 m² x 120 kWh/m² = 12,000 kWh/year',
         'ASHP electricity needed (COP 3): 4,000 kWh',
-        'Electricity cost: 4,000 x 26.11p = £1,044',
-        'Previous gas cost: 12,000 / 0.9 x 6.76p = £901',
+        'Electricity cost: 4,000 x 26.32p = £1,053',
+        'Previous gas cost: 12,000 / 0.9 x 7.97p = £1,063',
         'ASHP install cost: £12,000 minus £7,500 BUS grant = £4,500',
         'Payback vs gas: break-even depends on tariff and gas price trends',
       ],
     },
     sourceUrl: 'https://www.gov.uk/apply-boiler-upgrade-scheme',
     sourceName: 'GOV.UK, Boiler Upgrade Scheme',
-    lastUpdated: 'September 2026',
+    lastUpdated: 'October 2026',
   },
   'savings-goal-calculator': {
     howItWorks: [
@@ -2586,10 +2586,10 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'electricity-cost-calculator': {
     howItWorks: [
-      'Working out what a single appliance costs to run starts with one formula: kWh = (watts x hours used per day) / 1,000. Multiply the kWh figure by your unit rate and you have the daily cost. The average UK electricity unit rate under the Ofgem price cap is approximately 26.11p per kWh, plus a daily standing charge of around 57.19p. That standing charge applies whatever you do, so it sits outside any per-appliance sum and belongs in the bill total rather than in the cost of one device.',
-      'Common household appliances vary dramatically in running costs. A tumble dryer (2,500W) costs about 61p per hour, an electric oven (2,000W) about 49p per hour, a washing machine (500W average) about 12p per cycle, while an LED light bulb (10W) costs just 0.25p per hour. Always check the wattage on the appliance\'s rating plate, since that figure is what the whole calculation rests on and it varies between models of the same kind.',
-      'Short bursts at high power often cost less than they look. A 3kW kettle boiling for 3 min comes to about 4p, and an electric shower at 9kW for 8 minutes costs around 30p. Low-wattage devices left on for hours behave the other way round. A 100W television across 4 hours is 10p, a 60W laptop over 8 hours is 12p, and an LED bulb at 10W for 4 hours is about 1p. An energy-efficient fridge-freezer, which never switches off, still accounts for only £40 to £70 a year, while a 3kW heat pump running 12 hours a day in winter reaches £8.40 a day.',
-      'Enter any appliance by wattage and usage pattern, and the daily, weekly, monthly and annual running costs appear together. Several devices can be lined up side by side to find the biggest consumers in your home and see where a more efficient model would repay itself fastest. Cap rates move, so treat the defaults as a starting point. The Ofgem unit rate has run at roughly 24 to 28p per kWh depending on season and quarter, with a standing charge of 50 to 65p a day, which is £182 to £237 a year for each fuel. A typical household uses 2,700 to 3,500 kWh of electricity a year, or £650 to £1,000 before standing charges.',
+      'Working out what a single appliance costs to run starts with one formula: kWh = (watts x hours used per day) / 1,000. Multiply the kWh figure by your unit rate and you have the daily cost. Under the Ofgem price cap for 1 October to 31 December 2026 the average electricity unit rate is 26.32p per kWh, with no VAT on electricity until 31 March 2027, plus a daily standing charge of 54.83p. That standing charge applies whatever you do, so it sits outside any per-appliance sum and belongs in the bill total rather than in the cost of one device.',
+      'Common household appliances vary dramatically in running costs. A tumble dryer (2,500W) costs about 66p per hour, an electric oven (2,000W) about 53p per hour, a washing machine (500W average) about 13p per cycle, while an LED light bulb (10W) costs just 0.26p per hour. Always check the wattage on the appliance\'s rating plate, since that figure is what the whole calculation rests on and it varies between models of the same kind.',
+      'Short bursts at high power often cost less than they look. A 3kW kettle boiling for 3 min comes to about 4p, and an electric shower at 9kW for 8 minutes costs around 32p. Low-wattage devices left on for hours behave the other way round. A 100W television across 4 hours is 11p, a 60W laptop over 8 hours is 13p, and an LED bulb at 10W for 4 hours is about 1p. An energy-efficient fridge-freezer, which never switches off, still accounts for only £40 to £70 a year, while a 3kW heat pump running 12 hours a day in winter reaches £9.48 a day.',
+      'Enter any appliance by wattage and usage pattern, and the daily, weekly, monthly and annual running costs appear together. Several devices can be lined up side by side to find the biggest consumers in your home and see where a more efficient model would repay itself fastest. Cap rates move, so treat the defaults as a starting point. The Ofgem unit rate has run at roughly 24 to 28p per kWh depending on the quarter, with an electricity standing charge of 50 to 65p a day, or £182 to £237 a year. Ofgem\'s typical household uses 2,500 kWh of electricity a year, about £658 at the October 2026 rate before the standing charge, and larger or all-electric homes use far more.',
       'Fixed tariffs typically sit 1 to 3p per kWh below the price cap and buy longer-term certainty. With a smart meter and appliances you can schedule, time-of-use deals change the picture more sharply. Octopus Agile prices every half hour against the wholesale market, usually 10 to 25p per kWh and occasionally negative. Octopus Tracker sets a daily rate on the same basis, and Octopus Cosy, aimed at heat pumps, charges 12 to 15p at peak against 3 to 7p off-peak. The legacy Economy 7 arrangement gives cheap units between 11pm and 6am for storage heaters. Off-peak windows across these tariffs run 5 to 15p per kWh against 30 to 60p at peak, which is why overnight EV charging at 7 to 10p beats a daytime 30p.',
       'Standing charges roughly doubled between 2020 and 2025, from an average 25p a day to 60p, and they apply whether you use anything or not. Critics argue that this penalises low users such as small households and pensioners, and gives no incentive to cut consumption. Ofgem has been reviewing the structure, and zero standing charge tariffs have appeared (Utilita, and an OVO trial in 2024), though the unit rate rises to compensate. They suit holiday homes and genuinely low-use households, and work against heavy users. Energy Helpline and the MoneySavingExpert Cheap Energy Club compare both shapes against your own consumption.',
       'On the savings side, swapping a 60W incandescent for a 10W LED is worth £8 to £15 per bulb a year in heavy use, and A-rated appliances save £30 to £100 a year against D-rated ones over a 10 to 15 year life. A smart thermostat such as Nest or Hive takes £50 to £150 a year off heating, and the Energy Saving Trust puts standby draw at roughly 5 to 10% of a household bill. Insulation makes the largest difference, with 270mm of loft insulation and cavity wall work saving £200 to £500 a year. A 3.5kW solar system at £6 to £8k generates 3,000 to 3,500 kWh a year, worth £400 to £700 plus £80 to £200 in SEG export payments.',
@@ -2598,22 +2598,22 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       title: 'Example: Running a tumble dryer and LED lights',
       steps: [
         'Tumble dryer: 2,500W x 1 hour x 3 times/week',
-        'Weekly kWh: 7.5 kWh x 26.11p = £1.96/week',
-        'Annual tumble dryer cost: £95.55',
+        'Weekly kWh: 7.5 kWh x 26.32p = £1.97/week',
+        'Annual tumble dryer cost: 7.5 x 52 x 26.32p = £102.65',
         'LED bulbs (10 x 10W): 100W x 6 hours/day = 0.6 kWh/day',
-        'Annual LED lighting cost: 0.6 x 365 x 26.11p = £57.18',
+        'Annual LED lighting cost: 0.6 x 365 x 26.32p = £57.64',
         'Comparison: tumble dryer costs 78% more than all LED lights',
       ],
     },
     sourceUrl: 'https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you',
     sourceName: 'Ofgem; Energy price cap',
-    lastUpdated: 'September 2026',
+    lastUpdated: 'October 2026',
   },
   'led-savings-calculator': {
     howItWorks: [
       'LED bulbs use 75 to 85% less electricity than traditional incandescent bulbs and 50 to 60% less than halogen bulbs for the same brightness. A 10W LED produces the same light, 800 lumens, as a 60W incandescent or a 42W halogen. The difference in working life is wider still, since an LED runs for 15,000 to 25,000 hours where an incandescent gives up after roughly 1,000. That single gap is what makes the swap pay, even though the LED costs more on the shelf.',
-      'At an electricity rate of 26.11p per kWh, replacing one 60W incandescent used four hours a day with a 10W LED saves £19.06 a year. Do that across 20 bulbs and the household saving passes £350, against an upfront cost of £2 to £8 a bulb that is recouped within a few months. Over a full 25,000 hours the arithmetic is starker. The LED burns £62.50 of electricity against £375 for the incandescent, a saving of £312 a bulb, and you avoid buying the five replacement incandescents (£5 to £10) needed to cover the same hours. Spread across the 30 or more fittings in an average home, that is £9,000 of lifetime savings.',
-      'This calculator asks for the number and type of bulbs you have now, incandescent, halogen or CFL, along with their wattage and average daily use. It returns the annual saving, the payback period and the total saved across the lifespan of the LED replacements. Household lighting follows the same pattern at scale. A home on old bulbs burns 800 to 1,200 kWh a year on lighting alone, falling to 80 to 150 kWh once every fitting is LED. That is worth about £175 a year, or £250 to £400 where the lights are on for long stretches, with the bulb cost usually repaid in 12 to 24 months and a return of 100 to 200% over five years.',
+      'At an electricity rate of 26.32p per kWh, replacing one 60W incandescent used four hours a day with a 10W LED saves £19.21 a year. Do that across 20 bulbs and the household saving passes £350, against an upfront cost of £2 to £8 a bulb that is recouped within a few months. Over a full 25,000 hours the arithmetic is starker. The LED burns £65.80 of electricity against £394.80 for the incandescent, a saving of £329 a bulb, and you avoid buying the five replacement incandescents (£5 to £10) needed to cover the same hours. Spread across the 30 or more fittings in an average home, that is close to £10,000 of lifetime savings.',
+      'This calculator asks for the number and type of bulbs you have now, incandescent, halogen or CFL, along with their wattage and average daily use. It returns the annual saving, the payback period and the total saved across the lifespan of the LED replacements. Household lighting follows the same pattern at scale. A home on old bulbs burns 800 to 1,200 kWh a year on lighting alone, falling to 80 to 150 kWh once every fitting is LED. That is worth about £190 a year, or £250 to £400 where the lights are on for long stretches, with the bulb cost usually repaid in 12 to 24 months and a return of 100 to 200% over five years.',
       'Lifespan claims on the box deserve a close look. Quality bulbs are rated for 25,000 to 50,000 hours, which in a UK home works out at 20 to 40 years of use, while cheap ones manage 5,000 to 15,000 hours, or four to eight years. Unbranded eBay and AliExpress bulbs often fail after 1,000 to 3,000 hours, which wipes out the payback the calculator shows. Look for an L80 rating, meaning the bulb still gives 80% of its original brightness after 25,000 hours, a five-year manufacturer warranty from the likes of Philips, Osram or Crompton, and a colour rendering index of 80 or above for natural-looking light.',
       'Colour temperature changes how a room feels rather than what it costs to run. 2700K reads as warm and suits living rooms, 4000K is neutral and works well in kitchens and bathrooms, and 6500K daylight belongs in workshops and retail spaces. Downlights are where the savings concentrate, because a GU10 spotlight swaps a 50W halogen for a 5W LED at roughly ten times the efficiency, for £4 to £10 a bulb. Bathroom fittings need an IP65 rating for water resistance, and on a dimmed circuit the bulb has to match the switch, since most modern LED dimmers are leading-edge. Older fittings take bayonet or screw caps, B22 and E27, and both are easy to find. Building Regulations Part L has required LED lighting in new builds and major refurbishments since 2022.',
       'Smart bulbs sit on top of all this rather than replacing it. Philips Hue is the premium option at £15 to £35 a bulb plus a hub costing £40 to £60, controlled by app and voice assistant. IKEA Tradfri undercuts it at £8 to £15, LIFX and Govee connect straight to WiFi with no hub for £12 to £25, and Sengled and Yeelight sit lower again. What you buy is scheduling, dimming, colour change and away-mode, which matter most for security and accessibility. The catch is that a connected bulb draws 0.3 to 0.5W even when it is off, so 20 or more of them add £8 to £15 a year. Smart switches at £15 to £40 give similar control over ordinary bulbs.',
@@ -2622,16 +2622,16 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
       title: 'Example: Replacing 15 halogen downlights (50W each)',
       steps: [
         'Current halogen usage: 15 x 50W x 4 hours/day = 3 kWh/day',
-        'Annual halogen cost: 3 x 365 x 26.11p = £285.90',
+        'Annual halogen cost: 3 x 365 x 26.32p = £288.20',
         'LED replacement (5W each): 15 x 5W x 4 hours = 0.3 kWh/day',
-        'Annual LED cost: 0.3 x 365 x 26.11p = £28.59',
-        'Annual saving: £241.45',
+        'Annual LED cost: 0.3 x 365 x 26.32p = £28.82',
+        'Annual saving: £259.38',
         'LED bulb cost (15 x £4): £60, payback: 3 months',
       ],
     },
     sourceUrl: 'https://energysavingtrust.org.uk/advice/lighting/',
     sourceName: 'Energy Saving Trust, Lighting',
-    lastUpdated: 'September 2026',
+    lastUpdated: 'October 2026',
   },
   'lbtt-ltt-calculator': {
     howItWorks: [
@@ -4862,17 +4862,17 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     example: {
       title: 'Example: Average household switching to a smart meter',
       steps: [
-        'Typical use (Ofgem, from July 2026): 2,500 kWh electricity, 9,500 kWh gas; July to September 2026 cap rates',
-        'Electricity saving (3%): 2,500 kWh x 3% x 26.11p = £19.58',
-        'Gas saving (4%): 9,500 kWh x 4% x 7.33p = £27.85',
-        'Awareness savings total: £47.43/year',
+        'Current annual energy bill: £1,723 (Ofgem typical, October to December 2026 cap)',
+        'Electricity saving (3%): 2,500 kWh x 3% x 26.32p = £19.74',
+        'Gas saving (4%): 9,500 kWh x 4% x 7.97p = £30.29',
+        'Awareness savings total: £50.03/year',
         'Time-of-use tariff (additional saving): £30-£80/year',
-        'Total potential saving: £77-£127/year',
+        'Total potential saving: £80-£130/year',
       ],
     },
     sourceUrl: 'https://www.gov.uk/guidance/smart-meters-how-they-work',
     sourceName: 'GOV.UK; Smart meters',
-    lastUpdated: 'September 2026',
+    lastUpdated: 'October 2026',
   },
   'gpa-calculator': {
     howItWorks: [
@@ -5886,7 +5886,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     howItWorks: [
       'Underfloor heating (UFH) distributes heat evenly across a room from beneath the floor surface. There are two main types: wet systems, in which warm water is piped through the floor and connected to a boiler or heat pump, and electric systems, which use heating cables or mats laid beneath the floor. Wet systems are more efficient for whole-house heating, while electric systems are better for individual rooms. Within the electric family, mats suit regular rooms such as bathrooms and kitchens and are the most common UK retrofit, while loose-wire cable is used for irregular shapes and costs more up front. Hot air systems exist but are rare in Britain, being more common in Scandinavia and the US.',
       'Installation costs vary significantly. Electric UFH costs £50-£80 per square metre for materials plus installation, making it affordable for bathrooms and kitchens, and a typical bathroom mat retrofit of 5-10 m² comes to about £400-£900 fitted. Wet UFH costs £100-£200 per square metre installed and is best fitted during new builds or major renovations when the floor is being replaced anyway. As a guide, piping a 100 m² bungalow with pipes, manifold and screed runs to £8,000-£14,000, and adding wet UFH to a typical 25 m² extension costs £4,000-£8,000. Retrofitting a wet system into an existing house is often impractical, because it needs 50-65mm of screed plus insulation, so floor levels rise by 80-100mm and door clearances and stairs become a problem.',
-      'Running costs depend on insulation, floor covering and heat source. UFH operates at lower water temperatures (35-45 C against 60-80 C for radiators), making it particularly efficient when paired with a heat pump: a wet system on a heat pump costs 50-70% less to run than the same floor fed by a gas boiler, and a wet system on a gas boiler costs about the same as standard radiators while feeling more comfortable. Electric is a different story. At 28p/kWh, a typical 100W/m² system running 4 hours a day in a 30 m² room costs about £4 a day, which is expensive for whole-house heating. Used sparingly it is cheap: a bathroom mat drawing 200W for 1 hour daily costs roughly £0.06 a day.',
+      'Running costs depend on insulation, floor covering and heat source. UFH operates at lower water temperatures (35-45 C against 60-80 C for radiators), making it particularly efficient when paired with a heat pump: a wet system on a heat pump costs 50-70% less to run than the same floor fed by a gas boiler, and a wet system on a gas boiler costs about the same as standard radiators while feeling more comfortable. Electric is a different story. At 26.32p/kWh, the October 2026 cap rate, a typical 100W/m² system running 4 hours a day in a 30 m² room uses 12 kWh and costs about £3.16 a day, which is expensive for whole-house heating. Used sparingly it is cheap: a bathroom mat drawing 200W for 1 hour daily costs roughly 5p a day.',
       'The calculator estimates installation and running costs for a single room or a whole-house setup and compares them against a traditional radiator system. You choose the system type, enter the floor area and the hours of use, and it applies the per-square-metre cost and the electricity price to produce a total install figure, an annual running cost and the premium or saving against radiators. If you are also sizing a boiler or heat pump, its output needs to match the UFH heat output of 50-100 W/m², which is well below what a radiator circuit demands.',
       'Floor covering changes the result more than most people expect. Tile and stone have high thermal conductivity and give the most even heat distribution, engineered wood is designed for the stability UFH demands, and luxury vinyl tile (LVT) combines excellent conductivity with comfort underfoot. Carpet is the worst choice, since it acts as an insulating layer and reduces heat output by 30-50%. Solid wood is not ideal because of expansion and contraction, and laminate is usable only with a UFH-rated underlay. Check the floor manufacturer\'s UFH compatibility before you install anything.',
       'Building Regulations Part L sets insulation levels that must support the efficiency of the system, and a minimum of 50mm of insulation under a wet floor is typical. A manifold with zone controls gives each room its own thermostat, which matters for efficiency as much as for comfort. NHBC and LABC warranties require a pressure test certificate for wet UFH. Manufacturer warranties typically run 10 years on pipes and 5 years on controls, and they usually depend on installation by an accredited specialist, NICEIC for electric systems or APHC for plumbing, so choosing a certified installer protects the cover as well as the workmanship.',
@@ -5898,14 +5898,14 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
         'Materials: 25 x £55/m2 = £1,375',
         'Installation: £500',
         'Total cost: £1,875',
-        'Running cost: 5 kW x 6 hours/day x 26.11p x 180 days = £1,410/year',
-        'Radiator equivalent: ~£1,050/year (gas at current rates)',
-        'Electric UFH premium: ~£273/year (offset by even heat distribution)',
+        'Running cost: 5 kW x 6 hours/day x 26.32p x 180 days = £1,421/year',
+        'Same 5,400 kWh of heat from a 90% gas boiler: 6,000 kWh x 7.97p = £478/year',
+        'Electric UFH premium: ~£943/year, which is why electric mats suit small rooms used in short spells',
       ],
     },
     sourceUrl: 'https://energysavingtrust.org.uk/advice/underfloor-heating/',
     sourceName: 'Energy Saving Trust; Underfloor heating',
-    lastUpdated: 'September 2026',
+    lastUpdated: 'October 2026',
   },
   'student-allowance-calculator': {
     howItWorks: [
@@ -7307,7 +7307,7 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
   },
   'standing-charge-savings-calculator': {
     howItWorks: [
-      'Standing charges are daily fixed fees that appear on your energy bill regardless of how much energy you use. The average standing charge is approximately 57.19p per day for electricity and 29.04p per day for gas under the Ofgem price cap, totalling around £315 per year before you use a single unit of energy. Across the market the electricity charge sits between 50 and 65p a day, or £182 to £237 a year, and gas between 30 and 40p a day, or £110 to £146, giving a combined £290 to £385.',
+      'Standing charges are daily fixed fees that appear on your energy bill regardless of how much energy you use. Under the Ofgem price cap for 1 October to 31 December 2026 the average standing charge is 54.83p per day for electricity and 29.68p per day for gas, totalling around £308 per year before you use a single unit of energy. Standing charges are set by region, so your own figure can sit some way above or below that average.',
       'The charge has doubled since 2020, when the combined figure was 25 to 30p a day. It funds network maintenance and transmission costs, and it also spreads the cost of supplier failures across every customer, a bill that grew heavily after Bulb collapsed in 2021. The households that feel it hardest are low-energy users, pensioners and second-home owners, because the fee takes no account of how little actually passes through the meter.',
       'Some suppliers offer tariffs with lower or zero standing charges, compensating with slightly higher unit rates. Utilita and OVO have offered them since 2024, typically adding 2 to 3p per kWh in exchange. These tariffs benefit low-usage households such as small homes, holiday homes and properties with solar panels, and they suit anyone drawing under 1,500 kWh of electricity a year. High-usage households may pay more overall, so a typical 3-bed family home on 3,000 kWh or more, or any house on electric heating, is usually better off keeping the standing charge.',
       'This calculator compares your current standing charge costs against tariffs offering lower or zero standing charges. By entering your actual consumption, it shows whether switching to a low-standing-charge tariff would save or cost you money. The arithmetic behind the breakeven point is simple enough to check by hand, since dividing the annual standing charge by the extra pence per unit gives the annual kWh below which the zero-charge tariff wins. A £200 standing charge against 2.5p extra per kWh breaks even at 8,000 kWh, which is why most homes still come out ahead paying the charge.',
@@ -7317,43 +7317,43 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     example: {
       title: 'Example: Low-usage household (solar panels installed)',
       steps: [
-        'Current standing charges: (57.19p + 29.04p) x 365 = £314.74/year',
-        'Current unit costs: 1,200 kWh elec x 26.11p + 8,000 kWh gas x 6.76p = £854.12',
-        'Zero standing charge tariff (elec 28p, gas 7.5p):',
-        'New unit costs: 1,200 x 28p + 8,000 x 7.5p = £936.00',
-        'Saving on standing charges: £340.51',
-        'Extra unit cost: £101.20',
-        'Net annual saving: £239.31',
+        'Current standing charges: (54.83p + 29.68p) x 365 = £308.46/year',
+        'Current unit costs: 1,200 kWh elec x 26.32p + 8,000 kWh gas x 7.97p = £953.44',
+        'Zero standing charge tariff, 2.5p more per kWh (elec 28.82p, gas 10.47p):',
+        'New unit costs: 1,200 x 28.82p + 8,000 x 10.47p = £1,183.44',
+        'Saving on standing charges: £308.46',
+        'Extra unit cost: £230.00',
+        'Net annual saving: £78.46',
       ],
     },
     sourceUrl: 'https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you',
     sourceName: 'Ofgem — Energy price cap',
-    lastUpdated: 'September 2026',
+    lastUpdated: 'October 2026',
   },
   'gas-cost-calculator': {
     howItWorks: [
-      'Gas heating is the most common form of central heating in the UK, used by around 23 million households. The cost depends on your boiler efficiency, thermostat settings, insulation levels and the size of your home. The average gas unit rate is approximately 6.76p per kWh, with a daily standing charge of around 29.04p. Under the Ofgem price cap the unit rate shifts between 5.5 and 7p per kWh from one quarter to the next, and fixed tariffs typically sit 1 to 2p per kWh below it. Smart meter tariffs look much like their electricity equivalents, but with far less time-of-use variation.',
+      'Gas heating is the most common form of central heating in the UK, used by around 23 million households. The cost depends on your boiler efficiency, thermostat settings, insulation levels and the size of your home. Under the Ofgem price cap for 1 October to 31 December 2026 the average gas unit rate is 7.97p per kWh, including 5% VAT, with a daily standing charge of 29.68p. The cap is reset every quarter, so a rate from last winter can be well out of date, and fixed tariffs typically sit 1 to 2p per kWh below it. Smart meter tariffs look much like their electricity equivalents, but with far less time-of-use variation.',
       'A modern condensing boiler operates at 90 to 94% efficiency, meaning 90 to 94p of every pound spent on gas is converted to useful heat. Older boilers may be only 60 to 75% efficient, wasting 25 to 40% of the gas consumed. Reducing your thermostat by just 1 degree C can save up to 10% on your heating bill, typically £80 to £120 per year, and the usual move is from 20°C to 19°C rather than anything drastic.',
-      'This calculator estimates your gas costs based on your boiler type and efficiency, thermostat setting, insulation level and property size. It shows monthly and annual costs and models the saving from upgrading your boiler or improving thermostat management. Take a 3-bed semi with an 80% efficient boiler and the thermostat at 21°C. That comes to about 12,000 kWh a year, or £811.20 of gas plus £106.00 of standing charge, giving £917.20 in total, of which roughly £130 is available from a 93% efficient boiler and £93 from turning the dial down.',
-      'Consumption varies far more by building than by habit. A well-insulated 1-bed flat burns 6,000 to 8,000 kWh a year, worth £350 to £550 of gas. A typical 3-bed semi uses 12,000 to 14,000 kWh at £700 to £950, a 4-bed detached 16,000 to 20,000 kWh at £900 to £1,400, and a solid-wall Victorian terrace with poor insulation 18,000 to 25,000 kWh at £1,000 to £1,750. That last figure explains why insulation usually beats a new boiler as the first place to spend.',
+      'This calculator estimates your gas costs based on your boiler type and efficiency, thermostat setting, insulation level and property size. It shows monthly and annual costs and models the saving from upgrading your boiler or improving thermostat management. Take a 3-bed semi with an 80% efficient boiler and the thermostat at 21°C. That comes to about 12,000 kWh a year, or £956.40 of gas plus £108.33 of standing charge, giving £1,064.73 in total, of which roughly £134 is available from a 93% efficient boiler and £96 from turning the dial down.',
+      'Consumption varies far more by building than by habit. At the October 2026 rate, a well-insulated 1-bed flat burns 6,000 to 8,000 kWh a year, worth £480 to £640 of gas. A typical 3-bed semi uses 12,000 to 14,000 kWh at £960 to £1,120, a 4-bed detached 16,000 to 20,000 kWh at £1,280 to £1,590, and a solid-wall Victorian terrace with poor insulation 18,000 to 25,000 kWh at £1,430 to £1,990. That last figure explains why insulation usually beats a new boiler as the first place to spend.',
       'Cutting the bill is mostly a question of the fabric of the house. Loft insulation at 270mm saves £200 to £500 a year and cavity wall insulation £300 to £500. Draught-proofing returns £40 to £120, insulating the hot water tank £50, and thermostatic radiator valves £100 to £200 where rooms can be heated independently. A smart thermostat from Nest or Hive is worth £50 to £150. Combine them and a typical UK home saves £600 to £1,200 a year, a bigger prize than any single piece of kit.',
-      'Comparing fuels on the headline unit rate alone is misleading. Electricity at 28p per kWh looks about 4.5 times more expensive than gas, but a heat pump delivers 3 to 4 kWh of heat for every 1 kWh of electricity it draws, which brings the effective cost down to 7 to 9p per kWh of heat. On a tariff such as Octopus Cosy, with off-peak electricity at 12p, a heat pump can reach 3 to 4p per kWh of heat and beat gas outright. Storage heaters on Economy 7 run at 11p per kWh off-peak, roughly twice the cost of gas, but need no installation work.',
+      'Comparing fuels on the headline unit rate alone is misleading. Electricity at 26.32p per kWh looks more than three times as expensive as gas at 7.97p, but a heat pump delivers 3 to 4 kWh of heat for every 1 kWh of electricity it draws, which brings the effective cost down to 7 to 9p per kWh of heat. On a tariff such as Octopus Cosy, with off-peak electricity at 12p, a heat pump can reach 3 to 4p per kWh of heat and beat gas outright. Storage heaters on Economy 7 run at around 11p per kWh off-peak, still dearer than gas, but need no installation work.',
       'The Boiler Upgrade Scheme pays a grant of £7,500 towards an air source heat pump, raised from £5,000 in October 2023. A typical installation costs £8,000 to £14,000 before the grant, leaving £500 to £6,500 to find. Eligibility means replacing fossil-fuel or electric heating in England or Wales, and since 2024 there has been no insulation or EPC condition. A heat pump cuts gas use by 75 to 80%, and because it runs 3 to 4 times more efficiently than direct electric heat, running costs usually land close to or slightly below gas. The best fit is a well-insulated home with underfloor heating or large radiators.',
     ],
     example: {
       title: 'Example: 3-bed semi, old boiler (80% efficiency), thermostat at 21 C',
       steps: [
         'Estimated annual gas consumption: 12,000 kWh',
-        'Gas cost: 12,000 x 6.76p = £811.20',
-        'Standing charge: 365 x 29.04p = £106.00',
-        'Total annual gas bill: £917.20',
-        'Upgrade to 93% efficient boiler: saves ~£130/year',
-        'Reduce thermostat by 1 C: saves ~£93/year',
+        'Gas cost: 12,000 x 7.97p = £956.40',
+        'Standing charge: 365 x 29.68p = £108.33',
+        'Total annual gas bill: £1,064.73',
+        'Upgrade to 93% efficient boiler: saves ~£134/year',
+        'Reduce thermostat by 1 C: saves ~£96/year',
       ],
     },
     sourceUrl: 'https://www.ofgem.gov.uk/check-if-energy-price-cap-affects-you',
     sourceName: 'Ofgem, Energy price cap',
-    lastUpdated: 'September 2026',
+    lastUpdated: 'October 2026',
   },
   'exponent-calculator': {
     howItWorks: [

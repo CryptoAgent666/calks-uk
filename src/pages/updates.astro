@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-09-28'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-10-01'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -24,6 +24,35 @@ const schemas = [
     <p class="text-sm text-muted-foreground mb-8">Rate changes, new calculators and site improvements</p>
 
     <div class="space-y-8">
+      <!-- October 2026 — Ofgem price cap 1 Oct–31 Dec 2026 + electricity VAT cut + revised TDCV -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            October 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Energy calculators moved to the October 2026 price cap</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">New Ofgem cap from 1 October to 31 December 2026.</strong> The <a href="/calculator/energy-bill-calculator/" class="text-primary hover:underline">energy bill calculator</a> and nine related tools now use electricity at <strong class="text-foreground">26.32p per kWh plus 54.83p a day</strong> and gas at <strong class="text-foreground">7.97p per kWh plus 29.68p a day</strong>, Direct Debit averages for Great Britain. A typical household pays £1,723 a year, 4% more than in the summer quarter.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">No VAT on electricity until 31 March 2027.</strong> The government has removed the 5% VAT from household electricity for six months. The cap already reflects it, so nothing is added on top; gas still carries 5% VAT.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Typical usage now matches Ofgem.</strong> Ofgem cut its typical household figures in July to <strong class="text-foreground">2,500 kWh of electricity and 9,500 kWh of gas</strong> a year. Our calculators still started from the older 2,700 and 11,500, which overstated the typical bill by about £210.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Worked examples recalculated.</strong> Several examples no longer added up. The <a href="/calculator/standing-charge-savings-calculator/" class="text-primary hover:underline">standing charge example</a> claimed a £239 saving from a zero standing charge tariff that actually saves £78, and the <a href="/calculator/underfloor-heating-calculator/" class="text-primary hover:underline">underfloor heating example</a> put the extra cost of electric heating over gas at £273 a year when it is about £943.</span>
+          </li>
+        </ul>
+      </article>
+
       <!-- September 2026 — calkcheck round 8 (28 Sep) -->
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
