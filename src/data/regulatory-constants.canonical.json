@@ -15954,7 +15954,9 @@
       "confidence": "high",
       "freshness_note": "Applied at the 1 Oct 2026 quarterly rollover (previous Jul-Sep 2026 value 57.19). Source: Ofgem rates page (both quarters side by side) + Summary of changes 1 Oct-31 Dec 2026 (typical DD bill GBP1,723, +4%). Electricity VAT cut 5%->0% for 1 Oct 2026-31 Mar 2027 (gov.uk \"Breathing space on your energy bill\", 26 Aug 2026) is already inside the electricity figures. TDCV 2,500 kWh elec / 9,500 kWh gas since 1 Jul 2026; site defaults moved to match. Next reset 1 Jan 2027 (Ofgem announces late Nov); VAT reverts 1 Apr 2027.",
       "verified_date": "2026-09-21",
-      "verify_method": "tier2 calendar re-verify (Ofgem rates page + Oct-Dec summary PDF)"
+      "verify_method": "tier2 calendar re-verify (Ofgem rates page + Oct-Dec summary PDF)",
+      "last_verified": "2026-10-06",
+      "verified_source": "Ofgem energy price cap unit rates and standing charges, 1 October to 31 December 2026 (read 2026-10-06): electricity 26.32p/kWh + 54.83p/day (no VAT 1 Oct 2026-31 Mar 2027), gas 7.97p/kWh + 29.68p/day (5% VAT)"
     },
     {
       "key": "ofgem_price_cap_electricity_unit_rate",
@@ -15988,7 +15990,9 @@
       "confidence": "high",
       "freshness_note": "Applied at the 1 Oct 2026 quarterly rollover (previous Jul-Sep 2026 value 26.11). Source: Ofgem rates page (both quarters side by side) + Summary of changes 1 Oct-31 Dec 2026 (typical DD bill GBP1,723, +4%). Electricity VAT cut 5%->0% for 1 Oct 2026-31 Mar 2027 (gov.uk \"Breathing space on your energy bill\", 26 Aug 2026) is already inside the electricity figures. TDCV 2,500 kWh elec / 9,500 kWh gas since 1 Jul 2026; site defaults moved to match. Next reset 1 Jan 2027 (Ofgem announces late Nov); VAT reverts 1 Apr 2027.",
       "verified_date": "2026-09-21",
-      "verify_method": "tier2 calendar re-verify (Ofgem rates page + Oct-Dec summary PDF)"
+      "verify_method": "tier2 calendar re-verify (Ofgem rates page + Oct-Dec summary PDF)",
+      "last_verified": "2026-10-06",
+      "verified_source": "Ofgem energy price cap unit rates and standing charges, 1 October to 31 December 2026 (read 2026-10-06): electricity 26.32p/kWh + 54.83p/day (no VAT 1 Oct 2026-31 Mar 2027), gas 7.97p/kWh + 29.68p/day (5% VAT)"
     },
     {
       "key": "ofgem_price_cap_gas_standing_charge",
@@ -16017,7 +16021,9 @@
       "confidence": "high",
       "freshness_note": "Applied at the 1 Oct 2026 quarterly rollover (previous Jul-Sep 2026 value 29.04). Source: Ofgem rates page (both quarters side by side) + Summary of changes 1 Oct-31 Dec 2026 (typical DD bill GBP1,723, +4%). Electricity VAT cut 5%->0% for 1 Oct 2026-31 Mar 2027 (gov.uk \"Breathing space on your energy bill\", 26 Aug 2026) is already inside the electricity figures. TDCV 2,500 kWh elec / 9,500 kWh gas since 1 Jul 2026; site defaults moved to match. Next reset 1 Jan 2027 (Ofgem announces late Nov); VAT reverts 1 Apr 2027.",
       "verified_date": "2026-09-21",
-      "verify_method": "tier2 calendar re-verify (Ofgem rates page + Oct-Dec summary PDF)"
+      "verify_method": "tier2 calendar re-verify (Ofgem rates page + Oct-Dec summary PDF)",
+      "last_verified": "2026-10-06",
+      "verified_source": "Ofgem energy price cap unit rates and standing charges, 1 October to 31 December 2026 (read 2026-10-06): electricity 26.32p/kWh + 54.83p/day (no VAT 1 Oct 2026-31 Mar 2027), gas 7.97p/kWh + 29.68p/day (5% VAT)"
     },
     {
       "key": "ofgem_price_cap_gas_unit_rate",
@@ -16046,7 +16052,9 @@
       "confidence": "high",
       "freshness_note": "Applied at the 1 Oct 2026 quarterly rollover (previous Jul-Sep 2026 value 7.33). Source: Ofgem rates page (both quarters side by side) + Summary of changes 1 Oct-31 Dec 2026 (typical DD bill GBP1,723, +4%). Electricity VAT cut 5%->0% for 1 Oct 2026-31 Mar 2027 (gov.uk \"Breathing space on your energy bill\", 26 Aug 2026) is already inside the electricity figures. TDCV 2,500 kWh elec / 9,500 kWh gas since 1 Jul 2026; site defaults moved to match. Next reset 1 Jan 2027 (Ofgem announces late Nov); VAT reverts 1 Apr 2027.",
       "verified_date": "2026-09-21",
-      "verify_method": "tier2 calendar re-verify (Ofgem rates page + Oct-Dec summary PDF)"
+      "verify_method": "tier2 calendar re-verify (Ofgem rates page + Oct-Dec summary PDF)",
+      "last_verified": "2026-10-06",
+      "verified_source": "Ofgem energy price cap unit rates and standing charges, 1 October to 31 December 2026 (read 2026-10-06): electricity 26.32p/kWh + 54.83p/day (no VAT 1 Oct 2026-31 Mar 2027), gas 7.97p/kWh + 29.68p/day (5% VAT)"
     },
     {
       "key": "onerous_ground_rent_threshold",
