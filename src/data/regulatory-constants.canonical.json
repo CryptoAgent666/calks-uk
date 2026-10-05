@@ -18770,16 +18770,17 @@
         "prose"
       ],
       "used_by": [
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/calculator-content.ts"
       ],
-      "source_url": "https://www.gov.uk/guidance/check-if-you-need-to-tell-hmrc-about-your-income-from-online-platforms",
+      "source_url": "https://www.gov.uk/guidance/check-if-you-need-to-register-as-a-digital-platform-operator",
       "status": "current",
       "change_frequency": "",
-      "note": "Platform reporting triggers at 30+ sales or EUR2,000+/year (side-hustle-tax-calculator)",
+      "note": "Goods sellers are not reported with fewer than 30 sales AND EUR2,000 (about GBP1,700) or less a year; services, transport and property rentals are reported regardless (side-hustle prose + faqs)",
       "official_value": "30",
       "confidence": "high",
-      "freshness_note": "Digital platform 'excluded seller' threshold: fewer than 30 sales of goods AND not more than EUR2,000 total in the reportable period.",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-06 on the HMRC digital platform operator page (monitor source re-pointed there from the online-platforms income page, which never carried the figure).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2-tail"
     },
     {
