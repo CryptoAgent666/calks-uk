@@ -600,7 +600,8 @@
       ],
       "official_value": "15000",
       "confidence": "high",
-      "freshness_note": "HMRC 'Rates and thresholds for employers 2026 to 2027' (updated 6 Apr 2026) states 'Apprenticeship Levy allowance £15,000' and charge 0.5%. The £15,000 annual allowance is unchanged for 2026-27. confl"
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "apprenticeship_levy_government_topup_rate",
@@ -3059,7 +3060,8 @@
       "note": "high-income-child-benefit-calculator: 'HICBC clawback between £60K-£80K'; metaTitle '(Threshold £60k)'",
       "official_value": "60000",
       "confidence": "high",
-      "freshness_note": "HICBC starts when adjusted net income exceeds GBP60,000 (tax years from 2024-25). Income-tax thresholds frozen; unchanged for 2026-27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "child_benefit_hicbc_upper_threshold",
@@ -3079,7 +3081,8 @@
       "note": "high-income-child-benefit-calculator: 'clawback between £60K-£80K' — full clawback at £80,000",
       "official_value": "80000",
       "confidence": "high",
-      "freshness_note": "HICBC equals 100% of Child Benefit at adjusted net income of GBP80,000 (1% per GBP200 over GBP60k). Unchanged for 2026-27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "child_maintenance_1child_rate",
@@ -7930,8 +7933,8 @@
       "note": "EVSavingsCalculator calculate(): comment 'from April 2025 EVs pay the same £200 standard VED as petrol/diesel' (vedSaving set to 0)",
       "official_value": "200",
       "confidence": "high",
-      "freshness_note": "From April 2025 EVs pay the standard VED rate, which is 200 for 2026-27 (uprated from 195 in 2025-26); stored 200 matches current.",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2-tail"
     },
     {
@@ -9058,7 +9061,8 @@
       "note": "HICBC 1% of Child Benefit per GBP200 over GBP60,000 (high-income-child-benefit-calculator)",
       "official_value": "1",
       "confidence": "high",
-      "freshness_note": "HICBC = 1% of Child Benefit for every GBP200 of adjusted net income over GBP60,000. Unchanged for 2026-27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "hicbc_clawback_per_income_step",
@@ -9078,7 +9082,8 @@
       "note": "Child Benefit calc: HICBC clawback is 1% per GBP200 of income between 60000 and 80000",
       "official_value": "1% per GBP200",
       "confidence": "high",
-      "freshness_note": "Same rule as hicbc_charge_rate_per_200: 1% of Child Benefit per GBP200 of income above GBP60k."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "hicbc_household_income_basis_date",
@@ -9123,7 +9128,8 @@
       "note": "child-benefit/high-income-child-benefit: HICBC starts £60,000 (raised from £50k Apr 2024); 1% per £200 over; household-income basis from Apr 2026",
       "official_value": "60000",
       "confidence": "high",
-      "freshness_note": "HICBC lower threshold GBP60,000 (from 2024-25). Frozen; current for 2026-27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "hicbc_threshold_end",
@@ -9144,7 +9150,8 @@
       "note": "Child Benefit calc: HICBC_END = 80000, income at which 100% of benefit is clawed back; also in prose",
       "official_value": "80000",
       "confidence": "high",
-      "freshness_note": "HICBC upper bound GBP80,000 (charge = 100% of Child Benefit). Current for 2026-27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "hicbc_threshold_start",
@@ -9165,7 +9172,8 @@
       "note": "Child Benefit calc: HICBC_START = 60000, HICBC taper start (higher earner adjusted net income); also in prose",
       "official_value": "60000",
       "confidence": "high",
-      "freshness_note": "HICBC starts at GBP60,000 adjusted net income. Current for 2026-27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "hicbc_upper_threshold",
@@ -9187,7 +9195,8 @@
       "note": "high-income-child-benefit-calculator: full 100% clawback at £80,000+",
       "official_value": "80000",
       "confidence": "high",
-      "freshness_note": "HICBC upper threshold GBP80,000. Current for 2026-27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "high_income_self_assessment_threshold",
@@ -13836,8 +13845,8 @@
       "note": "MakingTaxDigitalCalculator: MTD for Income Tax phase-1 start date (April 2026 for income over £50K)",
       "official_value": "April 2026",
       "confidence": "high",
-      "freshness_note": "MTD for Income Tax Phase 1 mandatory from 6 April 2026 for qualifying income over GBP50,000.",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2-tail"
     },
     {
@@ -13875,8 +13884,8 @@
       "note": "MakingTaxDigitalCalculator: MTD for Income Tax phase-2 start date (April 2027 for income over £30K)",
       "official_value": "April 2027",
       "confidence": "high",
-      "freshness_note": "MTD for Income Tax Phase 2 from April 2027 for qualifying income over GBP30,000 (Phase 3 Apr 2028 over GBP20,000).",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2-tail"
     },
     {
@@ -13916,7 +13925,9 @@
       "source_url": "https://www.gov.uk/guidance/making-tax-digital-for-income-tax",
       "status": "current",
       "change_frequency": "",
-      "note": "making-tax-digital/mtd-readiness/vat-return: MTD ITSA mandatory April 2026 for self-employed/landlords £50,000+; £30,000+ from April 2027"
+      "note": "making-tax-digital/mtd-readiness/vat-return: MTD ITSA mandatory April 2026 for self-employed/landlords £50,000+; £30,000+ from April 2027",
+      "verified_date": "2026-10-06",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged)."
     },
     {
       "key": "mtd_itsa_threshold_2027",
@@ -13933,7 +13944,9 @@
       "source_url": "https://www.gov.uk/guidance/making-tax-digital-for-income-tax",
       "status": "current",
       "change_frequency": "",
-      "note": "making-tax-digital-calculator: MTD ITSA extends to £30,000+ income from April 2027"
+      "note": "making-tax-digital-calculator: MTD ITSA extends to £30,000+ income from April 2027",
+      "verified_date": "2026-10-06",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged)."
     },
     {
       "key": "national_living_wage_21_plus",
@@ -14924,7 +14937,8 @@
       "note": "ContractorDayRateCalculator calcNI(): primary threshold 12570 below which no employee NI",
       "official_value": "12570",
       "confidence": "high",
-      "freshness_note": "Primary threshold GBP 12,570/year (GBP 242/week) for 2026/27. Frozen to 2028. Confirmed on HMRC employer rates page."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_class1_employee_upper_earnings_limit",
@@ -14945,7 +14959,8 @@
       "note": "ContractorDayRateCalculator calcNI(): upper earnings limit 50270 (main rate up to UEL, then lower)",
       "official_value": "50270",
       "confidence": "high",
-      "freshness_note": "Upper earnings limit GBP 50,270/year (GBP 967/week) for 2026/27. Frozen. Confirmed on HMRC employer rates page."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_class1_employee_upper_rate",
@@ -15021,7 +15036,8 @@
       "note": "IR35Calculator: employer (secondary) NI rate (0.15) on earnings above secondary threshold",
       "official_value": "15",
       "confidence": "high",
-      "freshness_note": "Employer (secondary) Class 1 rate is 15% for 2026/27 (rose from 13.8% on 6 April 2025). Confirmed on HMRC employer rates page."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_class1_employer_secondary_threshold",
@@ -15042,7 +15058,8 @@
       "note": "IR35Calculator: employer NI secondary threshold (5,000), reduced per Apr 2025 changes; employer NI charged on gross above this",
       "official_value": "5000",
       "confidence": "high",
-      "freshness_note": "Secondary (employer) threshold GBP 5,000/year for 2026/27 (cut from GBP 9,100 on 6 April 2025). Confirmed on HMRC employer rates page."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_class1_main_rate",
@@ -15121,7 +15138,8 @@
       "note": "Class 1 employee NI primary threshold £12,570 (no NI below). BonusTaxCalculator calcNI()",
       "official_value": "12570",
       "confidence": "high",
-      "freshness_note": "Primary threshold GBP 12,570 for 2026/27. Frozen. Current."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_class1_primary_threshold_prose",
@@ -15141,7 +15159,8 @@
       "note": "NationalInsuranceCalculator 'How it's calculated' — 'No NI on the first £12,570 (Primary Threshold)'",
       "official_value": "£12,570",
       "confidence": "high",
-      "freshness_note": "Prose restatement of primary threshold. Current."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_class1_secondary_threshold",
@@ -15161,7 +15180,8 @@
       "note": "Salary+Pension calc: employer (secondary) NI threshold £5,000 in calcEmployerNI (from Apr 2025)",
       "official_value": "5000",
       "confidence": "high",
-      "freshness_note": "Secondary (employer) threshold GBP 5,000 for 2026/27. Current."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_class1_upper_earnings_limit",
@@ -15192,7 +15212,8 @@
       "note": "Class 1 employee NI Upper Earnings Limit £50,270 (rate drops to 2% above). BonusTaxCalculator calcNI()",
       "official_value": "50270",
       "confidence": "high",
-      "freshness_note": "Upper earnings limit GBP 50,270 for 2026/27. Frozen. Current."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_class1_upper_earnings_limit_prose",
@@ -15212,7 +15233,8 @@
       "note": "NationalInsuranceCalculator 'How it's calculated' — Upper Earnings Limit cited as £50,270 in prose",
       "official_value": "£50,270",
       "confidence": "high",
-      "freshness_note": "Prose restatement of UEL. Current."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_class1_upper_rate",
@@ -15501,7 +15523,8 @@
       "note": "Class 1A employer NI on benefits in kind = 15% (from April 2025). BenefitsInKindCalculator calculate() niOnBiK = totalBiK * 0.15",
       "official_value": "15",
       "confidence": "high",
-      "freshness_note": "Class 1A rate on benefits in kind is 15% for 2026/27 (tracks the secondary rate). Confirmed on HMRC employer rates page."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_employer_secondary_rate",
@@ -15522,7 +15545,9 @@
       "source_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026",
       "status": "current",
       "change_frequency": "",
-      "note": "ContractorDayRateCalculator: employer (secondary) NI rate 0.15 applied to inside-IR35 grossing up"
+      "note": "ContractorDayRateCalculator: employer (secondary) NI rate 0.15 applied to inside-IR35 grossing up",
+      "verified_date": "2026-10-06",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged)."
     },
     {
       "key": "ni_employer_secondary_threshold",
@@ -15544,7 +15569,8 @@
       "note": "ContractorDayRateCalculator: employer NI secondary threshold (gross - 5000) for inside-IR35 calc",
       "official_value": "5000",
       "confidence": "high",
-      "freshness_note": "Secondary (employer) threshold GBP 5,000 for 2026/27. Current."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_lower_earnings_limit",
@@ -15565,7 +15591,8 @@
       "note": "state-pension/salary-sacrifice-pension: Lower Earnings Limit £6,708/year (qualifies for State Pension NI credit). national-insurance prose also cites £6,708 LEL; dividend-vs-salary cites £6,396",
       "official_value": "6708",
       "confidence": "high",
-      "freshness_note": "Lower earnings limit GBP 6,708/year (GBP 129/week) for 2026/27, UPRATED from GBP 6,500 in 2025/26. Confirmed verbatim on HMRC employer rates page. Site already holds the new figure - current, not stal"
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_primary_threshold",
@@ -15590,7 +15617,8 @@
       "note": "Class 1 employee NI primary threshold in AgencyWorkerCalculator",
       "official_value": "12570",
       "confidence": "high",
-      "freshness_note": "Primary threshold GBP 12,570 for 2026/27. Frozen. Current."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_salary_sacrifice_change_year",
@@ -15676,7 +15704,8 @@
       "note": "PayrollCalculator: employer (secondary) NI rate 15% from Apr 2025 (* 0.15); also labelled 'Employer NI (15%)' in prose",
       "official_value": "15",
       "confidence": "high",
-      "freshness_note": "Employer secondary rate 15% for 2026/27. Current."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_secondary_threshold",
@@ -15716,7 +15745,8 @@
       "note": "PayrollCalculator: employer (secondary) NI threshold £5,000/yr from Apr 2025 (monthlyErNI uses 5_000/12)",
       "official_value": "5000",
       "confidence": "high",
-      "freshness_note": "Secondary (employer) threshold GBP 5,000 for 2026/27. Current."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ni_secondary_threshold_prior",
@@ -15761,7 +15791,8 @@
       "note": "Class 1 NI upper earnings limit (UEL) in AgencyWorkerCalculator",
       "official_value": "50270",
       "confidence": "high",
-      "freshness_note": "Upper earnings limit GBP 50,270 for 2026/27. Frozen. Current."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "nmw_underpayment_penalty_pct",
@@ -16192,7 +16223,8 @@
       "note": "PensionAnnualAllowanceCalculator: adjusted income at which AA reaches the minimum, £360,000 (TAPER_END); also in prose",
       "official_value": "360000",
       "confidence": "high",
-      "freshness_note": "Adjusted income at which taper reaches the GBP 10,000 floor = 260,000 + 2*(60,000-10,000) = 360,000. Consistent with HMRC taper since 2023/24; unchanged 2026/27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "pension_aa_taper_reduction_ratio",
@@ -16212,7 +16244,8 @@
       "note": "PensionAnnualAllowanceCalculator: AA reduced by £1 for every £2 of adjusted income over taper start (reduction = (income - 260000) / 2)",
       "official_value": "2",
       "confidence": "high",
-      "freshness_note": "Allowance reduces by GBP 1 for every GBP 2 of adjusted income over the threshold (ratio 2). Unchanged for 2026/27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "pension_aa_taper_threshold_adjusted_income",
@@ -16232,7 +16265,8 @@
       "note": "PensionAnnualAllowanceCalculator: adjusted income above which AA tapers, £260,000 (TAPER_START); also in prose",
       "official_value": "260000",
       "confidence": "high",
-      "freshness_note": "Taper begins at adjusted income above GBP 260,000 (threshold income above GBP 200,000). HMRC level since 2023/24; unchanged for 2026/27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "pension_aa_tapered_minimum",
@@ -16252,7 +16286,8 @@
       "note": "PensionAnnualAllowanceCalculator: minimum tapered annual allowance £10,000 (MIN_ALLOWANCE); also in prose",
       "official_value": "10000",
       "confidence": "high",
-      "freshness_note": "Minimum tapered annual allowance GBP 10,000. HMRC level since 2023/24; unchanged for 2026/27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "pension_access_age",
@@ -16917,7 +16952,8 @@
       "note": "PensionAnnualAllowanceCalculator: Money Purchase Annual Allowance (MPAA) £10,000 (MONEY_PURCHASE_AA); '£10,000 limit' in label and prose",
       "official_value": "10000",
       "confidence": "high",
-      "freshness_note": "MPAA GBP 10,000 (since 2023/24). Unchanged for 2026/27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "pension_mpaa",
@@ -16937,7 +16973,8 @@
       "note": "Money Purchase Annual Allowance GBP10,000 (pension, pension-annual-allowance)",
       "official_value": "10000",
       "confidence": "high",
-      "freshness_note": "MPAA GBP 10,000 for 2026/27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "pension_pcls_lifetime_cap",
@@ -17038,7 +17075,8 @@
       "note": "Minimum tapered annual allowance GBP10,000 (pension, pension-tax-relief)",
       "official_value": "10000",
       "confidence": "high",
-      "freshness_note": "Minimum tapered annual allowance GBP 10,000 (since 2023/24). Unchanged for 2026/27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "pension_taper_threshold_income",
@@ -20301,7 +20339,8 @@
       "note": "PostgraduateLoanRepaymentCalculator: PLAN4_RATE = 0.09 (9% of income above threshold); also in prose",
       "official_value": "9",
       "confidence": "high",
-      "freshness_note": "Plan 4 student loan deduction rate is 9% of income above the threshold (same as Plans 1/2). Unchanged for 2026-27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "scotland_plan4_repayment_threshold",
@@ -20321,8 +20360,8 @@
       "note": "PostgraduateLoanRepaymentCalculator (mislabeled; actually Plan 4 Scotland): PLAN4_THRESHOLD = 33795, repay 9% above; also in prose",
       "official_value": "33795",
       "confidence": "high",
-      "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
-      "verified_date": "2026-09-10",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
     },
     {
@@ -20917,7 +20956,8 @@
       "note": "StampDutyAdditionalCalculator: band 1 upper limit (0% base + 5% surcharge) — SDLT rates from April 2025",
       "official_value": "125000",
       "confidence": "high",
-      "freshness_note": "Higher-rate (additional property) bands from 1 Apr 2025 mirror standard thresholds: up to 125k at 5%. Band 1 ceiling 125000 confirmed."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "sdlt_additional_band2_threshold",
@@ -20937,7 +20977,8 @@
       "note": "StampDutyAdditionalCalculator: band 2 upper limit (2% base) — SDLT rates from April 2025",
       "official_value": "250000",
       "confidence": "high",
-      "freshness_note": "Additional-property band 125,001-250,000 at 7%. Threshold 250000 confirmed (effective 1 Apr 2025, unchanged 2026-27)."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "sdlt_additional_band3_threshold",
@@ -20957,7 +20998,8 @@
       "note": "StampDutyAdditionalCalculator: band 3 upper limit (5% base) — SDLT rates from April 2025",
       "official_value": "925000",
       "confidence": "high",
-      "freshness_note": "Additional-property band 250,001-925,000 at 10%. Threshold 925000 confirmed."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "sdlt_additional_band4_threshold",
@@ -20977,7 +21019,8 @@
       "note": "StampDutyAdditionalCalculator: band 4 upper limit (10% base); above is 12% base — SDLT rates from April 2025",
       "official_value": "1500000",
       "confidence": "high",
-      "freshness_note": "Additional-property band 925,001-1.5m at 15%; above 1.5m at 17%. Threshold 1500000 confirmed."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "sdlt_additional_property_surcharge",
@@ -21370,7 +21413,8 @@
       "note": "Corporate bodies/funds 17% flat rate above GBP500,000 (stamp-duty-calculator)",
       "official_value": "17",
       "confidence": "high",
-      "freshness_note": "Flat 17% on residential dwellings over 500,000 bought by certain non-natural persons (companies). Rose 15% -> 17% on 31 Oct 2024; still 17% for 2026-27."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "sdlt_ftb_band1_threshold",
@@ -22859,9 +22903,10 @@
       "note": "SMP eligibility: earn GBP125+/week (maternity-pay; paternity-pay; sick-pay use same GBP125 LEL-style figure)",
       "official_value": "129",
       "confidence": "high",
-      "freshness_note": "SMP eligibility requires average weekly earnings at/above the Lower Earnings Limit, which rose to £129/week for 2026-27 (was £125 in 2025-26). Held value is the 2025-26 figure.",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "smp_employer_reclaim_rate",
@@ -23021,9 +23066,10 @@
       "note": "maternity-pay/paternity-pay: must earn at least £125/week (LEL) to qualify; 26 weeks continuous service",
       "official_value": "129",
       "confidence": "high",
-      "freshness_note": "Lower Earnings Limit for 2026-27 is £129/week (£559/month, £6,708/year) per gov.uk employer rates. Held value £125 is the 2025-26 LEL.",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "smp_lower_rate_weeks",
@@ -23092,7 +23138,8 @@
       ],
       "official_value": "194.32",
       "confidence": "high",
-      "freshness_note": "CONFLICT resolved: 2026-27 SMP standard rate is £194.32 (was £187.18 in 2025-26). Held value 194.32 is the current figure; 187.18 is the stale prior-year value."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "smp_total_paid_weeks",
@@ -23972,9 +24019,10 @@
       "note": "Eligibility: must earn at least £125/week (Lower Earnings Limit); Paternity Pay Calculator",
       "official_value": "129",
       "confidence": "high",
-      "freshness_note": "SPP eligibility requires AWE at/above the LEL, which is £129/week for 2026-27. Held value £125 is the 2025-26 LEL.",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "spp_notice_weeks_before_due_date",
@@ -24018,7 +24066,8 @@
       "note": "SPP weekly rate £194.32 or 90% of AWE whichever lower; also repeated in prose; Paternity Pay Calculator",
       "official_value": "194.32",
       "confidence": "high",
-      "freshness_note": "Statutory Paternity Pay weekly rate for 2026-27 is £194.32 (lower of that or 90% of AWE). Was £187.18 in 2025-26."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "spp_weeks",
@@ -24086,7 +24135,8 @@
       "note": "Maximum SSP GBP3,451 over 28 weeks (sick-pay-calculator)",
       "official_value": "3451",
       "confidence": "high",
-      "freshness_note": "Max SSP = 28 weeks x £123.25 = £3,451.00 for 2026-27 (applies to employees whose 80%-of-AWE exceeds the flat rate)."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ssp_max_weeks",
@@ -24186,7 +24236,8 @@
       "note": "SSP_RATE constant (2026/27) - statutory sick pay weekly rate; also displayed in prose results text.",
       "official_value": "123.25",
       "confidence": "high",
-      "freshness_note": "SSP weekly rate for 2026-27 is £123.25 (or 80% of AWE if lower). Was £118.75 in 2025-26."
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "ssp_weekly_rate_alt",
@@ -24206,10 +24257,10 @@
       "note": "SSP £123.25 or 80% of AWE if lower, from day one (waiting days abolished 6 Apr 2026). umbrella FAQ said \"from day 4\" until 2026-09-28.",
       "official_value": "123.25",
       "confidence": "high",
-      "freshness_note": "£116.75 was the 2024-25 SSP rate (two years out of date). The 2026-27 rate is £123.25; the immediate prior-year (2025-26) rate was £118.75. Held 'alt' value matches neither the current nor the prior y",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
       "fixed": true,
       "fixed_date": "2026-06-16",
-      "verified_date": "2026-09-28",
+      "verified_date": "2026-10-06",
       "verify_method": "calkcheck-2026-09-28-r6"
     },
     {
@@ -26224,8 +26275,8 @@
       "note": "WorkingTaxCreditHoursCalculator: prior-year reference 'GBP1,524 in 2025/26' for UC AET couple in code comment",
       "official_value": "£1,534 per month",
       "confidence": "high",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). 2025/26 couple AET was £1,534 (29h x £12.21 NLW x 52/12), not £1,524; stored value off by £10 (1524 -> 1534).",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2-tail"
     },
     {
@@ -26246,8 +26297,8 @@
       "note": "WorkingTaxCreditHoursCalculator: prior-year reference 'GBP952 in 2025/26' for UC AET single in code comment",
       "official_value": "£952 per month",
       "confidence": "high",
-      "freshness_note": "Confirmed: 2025/26 single AET was £952 (18h x £12.21 NLW x 52/12).",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2-tail"
     },
     {
@@ -26268,8 +26319,8 @@
       "note": "WorkingTaxCreditHoursCalculator: aetCoupleMonthly = 1617, UC Administrative Earnings Threshold couple 2026/27 (was GBP1,524 in 2025/26)",
       "official_value": "£1,597 per month",
       "confidence": "high",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). From 1 Apr 2026 couple AET is £1,597 (29h x £12.71 NLW x 52/12); stored 1617 is stale (1617 -> 1597).",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2-tail"
     },
     {
@@ -26290,8 +26341,8 @@
       "note": "WorkingTaxCreditHoursCalculator: aetSingleMonthly = 1009, UC Administrative Earnings Threshold single 2026/27 (was GBP952 in 2025/26)",
       "official_value": "£991 per month",
       "confidence": "high",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). From 1 Apr 2026 single AET is £991 (18h x £12.71 NLW x 52/12) per gov.uk guidance (updated 1 Apr 2026); stored 1009 is stale (1009 -> 991).",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2-tail"
     },
     {
@@ -26328,7 +26379,9 @@
       "source_url": "https://www.gov.uk/universal-credit/what-youll-get",
       "status": "current",
       "change_frequency": "",
-      "note": "universal-credit-calculator: capital over £16,000 ends claim; £6,000-£16,000 tariff income £4.35/month per £250 over £6,000"
+      "note": "universal-credit-calculator: capital over £16,000 ends claim; £6,000-£16,000 tariff income £4.35/month per £250 over £6,000",
+      "verified_date": "2026-10-06",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged)."
     },
     {
       "key": "uc_carer_element",
@@ -26436,8 +26489,8 @@
       "note": "UC child element (post-2017 / additional) GBP303.94/month (universal-credit, child-benefit)",
       "official_value": "£303.94 per month",
       "confidence": "high",
-      "freshness_note": "Confirmed: 2026/27 UC child element (post-2017 / additional children) is £303.94/month.",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2-tail"
     },
     {
@@ -26460,8 +26513,8 @@
       "note": "universal-credit-calculator: child element first child born pre-6-Apr-2017 £351.88; post-2017 & additional £303.94",
       "official_value": "£351.88 per month",
       "confidence": "high",
-      "freshness_note": "Confirmed: 2026/27 UC first child element (born before 6 Apr 2017) is £351.88/month.",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2-tail"
     },
     {
@@ -26482,8 +26535,8 @@
       "note": "universal-credit/childcare-cost: 85% of childcare reimbursed, max £1,031 one child / £1,768 two+. (Earlier prose cites £1,014.63)",
       "official_value": "£1,071.09 per month",
       "confidence": "high",
-      "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). 2026/27 UC childcare max for one child is £1,071.09/month per official rates; stored 1031 is the old 2025/26 figure (1031 -> 1071.09).",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2-tail"
     },
     {
@@ -26548,8 +26601,8 @@
       "note": "UC childcare reimburses up to 85% of costs (universal-credit, childcare-cost)",
       "official_value": "85%",
       "confidence": "high",
-      "freshness_note": "Confirmed: UC reimburses up to 85% of childcare costs.",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2-tail"
     },
     {
@@ -26627,7 +26680,9 @@
       "source_url": "https://www.gov.uk/universal-credit/what-youll-get",
       "status": "current",
       "change_frequency": "",
-      "note": "universal-credit-calculator: single 25+ standard allowance; single <25 £338.58; couple both <25 £528.34; couple 25+ £666.97"
+      "note": "universal-credit-calculator: single 25+ standard allowance; single <25 £338.58; couple both <25 £528.34; couple 25+ £666.97",
+      "verified_date": "2026-10-06",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged)."
     },
     {
       "key": "uc_standard_allowance_single_25plus",
@@ -26685,7 +26740,9 @@
       "source_url": "https://www.gov.uk/universal-credit/what-youll-get",
       "status": "current",
       "change_frequency": "",
-      "note": "UC earnings taper rate (0.55) applied to earnings above work allowance; also shown in prose 'Earnings deduction (55%)'"
+      "note": "UC earnings taper rate (0.55) applied to earnings above work allowance; also shown in prose 'Earnings deduction (55%)'",
+      "verified_date": "2026-10-06",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged)."
     },
     {
       "key": "uc_tariff_income_per_250",
@@ -26727,7 +26784,9 @@
       "source_url": "https://www.gov.uk/universal-credit/what-youll-get",
       "status": "current",
       "change_frequency": "",
-      "note": "UC higher work allowance (no housing support), 2026/27 monthly (WORK_ALLOWANCE_NO_HOUSING)"
+      "note": "UC higher work allowance (no housing support), 2026/27 monthly (WORK_ALLOWANCE_NO_HOUSING)",
+      "verified_date": "2026-10-06",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged)."
     },
     {
       "key": "uc_work_allowance_with_housing",
@@ -26747,7 +26806,9 @@
       "source_url": "https://www.gov.uk/universal-credit/what-youll-get",
       "status": "current",
       "change_frequency": "",
-      "note": "UC lower work allowance (claimant receiving housing support), 2026/27 monthly (WORK_ALLOWANCE_HOUSING)"
+      "note": "UC lower work allowance (claimant receiving housing support), 2026/27 monthly (WORK_ALLOWANCE_HOUSING)",
+      "verified_date": "2026-10-06",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged)."
     },
     {
       "key": "ucas_alevel_a_points",
@@ -27205,7 +27266,8 @@
       "note": "Housing Benefit calculator: code comment notes 55% taper for Universal Credit (vs 65% for legacy Housing Benefit)",
       "official_value": "55",
       "confidence": "high",
-      "freshness_note": "UC earnings taper rate is 55% (UC reduced by 55p per GBP 1 of net earnings above any work allowance). Unchanged for 2026-27. Key name says 'housing_taper_rate' but the 55% is the single UC earnings ta"
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06"
     },
     {
       "key": "universal_infant_fsm_year_groups",
@@ -28886,8 +28948,8 @@
       "note": "CarImportDutyCalculator: first-year VED for electric vehicles = GBP10 (2025/26 rates).",
       "official_value": "10",
       "confidence": "high",
-      "freshness_note": "Zero-emission cars pay a 10 first-year rate, frozen at 10 until 2029-30 (Budget 2024); 0 g/km on the live 2026-27 table is also 10. Current.",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "verified_date": "2026-10-06",
       "verify_method": "tier2-tail"
     },
     {
