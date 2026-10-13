@@ -1,6 +1,6 @@
 # CALK-UK (calks.uk) — project context
 
-UK tax/finance calculator site. **Astro 6 + React 19 + Capacitor 8**, English-only, **343 calculator
+UK tax/finance calculator site. **Astro 6 + React 19 + Capacitor 8**, English-only, **350 calculator
 components** (`src/components/calculators/*.tsx`). Hosting: **Cloudflare Pages** + self-hosted Capgo OTA
 (`https://calks.uk/app/`). Git: `github.com/CryptoAgent666/calks-uk`. iOS + Android both ready.
 
@@ -20,7 +20,7 @@ The site hard-codes hundreds of government-set values. They are inventoried + fr
   (key, value, unit, law, theme, surfaces[], used_by[], status, source_url, conflict). ⚠️ This JSON is
   an **audit ledger — NOT imported by the site.** Live values are hardcoded per-component, so apply
   fixes to the `.tsx` / content files (authoritative), then reconcile the ledger.
-- **Two surfaces:** computed consts in the 343 `src/components/calculators/*.tsx` (e.g.
+- **Two surfaces:** computed consts in the 350 `src/components/calculators/*.tsx` (e.g.
   `PERSONAL_ALLOWANCE = 12570`, `MIN_WAGE = 12.71`) **and** prose/FAQ in `src/data/calculator-content.ts`
   & `src/data/faqs.ts`. No central rates module. NB the `.ts` source uses `£` escapes for some `£` —
   grep both forms; recompute derived illustrative sums when a rate changes.
