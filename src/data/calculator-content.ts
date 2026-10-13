@@ -128,7 +128,6 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     sourceName: 'HMRC',
     lastUpdated: 'October 2026',
   },
-
   'budget-2026-calculator': {
     quickAnswer: `Budget 2026 is on <strong>Wednesday 28 October 2026</strong>. Until then this calculator models what current law already changes in April 2027: petrol and diesel duty rising from 52.95p to <strong>55.95p on 1 January</strong> and <strong>57.95p on 1 March 2027</strong>, a <strong>£12,000 cash ISA limit</strong> for savers under 65, Making Tax Digital for self-employed and rental income over <strong>£30,000</strong>, unused pensions counted for inheritance tax, and income tax thresholds frozen until April 2031. Nothing on this page is a forecast; it is revised on Budget day.`,
     rateTable: { title: `April 2027 schedule: in law, announced, or still to be decided`, html: scheduleTableHtml() },

@@ -38,6 +38,8 @@ export const CALCULATORS: CalculatorMeta[] = [
     priority: 2,
     financialYear: '2026-27',
     isTrending: true,
+  },
+  {
     slug: 'budget-2026-calculator',
     title: 'Budget 2026 Calculator: What It Means for Your Money',
     description: 'Your 2026/27 take-home and what current law changes in April 2027: fuel duty, the £12,000 cash ISA cap, MTD and pensions in IHT. Revised on Budget day.',
