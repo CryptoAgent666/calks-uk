@@ -3,7 +3,8 @@
  * Used to enrich SEO content depth on individual calculator pages.
  */
 
-import { premiumBondOdds, premiumBondOddsTableHtml, PRIZE_RATE, ODDS } from './premium-bonds'
+import { premiumBondOdds, premiumBondOddsTableHtml, premiumBondOddsSections, PRIZE_RATE, ODDS } from './premium-bonds'
+import { carInsuranceGroupTableHtml } from './car-insurance-model'
 
 const PB50K = premiumBondOdds(50_000)
 const PB10K = premiumBondOdds(10_000)
@@ -13,6 +14,8 @@ export interface CalculatorContent {
   quickAnswer?: string
   /** Optional HTML table (rates, thresholds, tiers), easier for LLMs to cite than prose */
   rateTable?: { title: string; html: string }
+  /** Optional anchored sections rendered after How It Works, each under an <h3 id> so they can be deep-linked (e.g. odds per holding) */
+  sections?: { id: string; title: string; html: string }[]
   /** Heading for the explanation section */
   howItWorks: string[]
   /** A worked example with specific numbers */
@@ -2848,8 +2851,9 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     lastUpdated: 'September 2026',
   },
   'premium-bonds-calculator': {
-    quickAnswer: `With <strong>£50,000</strong> in Premium Bonds you can expect about <strong>${PB50K.expectedPrizesPerMonth.toFixed(1)} prizes a month</strong>, a ${Math.round(PB50K.chanceMonth * 100)}% chance of at least one prize each month and average winnings of <strong>£${PB50K.expectedAnnual.toLocaleString('en-GB')} a year</strong> (${(PRIZE_RATE * 100).toFixed(2)}%), though the typical holder wins nearer £${PB50K.medianAnnual.toLocaleString('en-GB')}. With £10,000 it is about ${PB10K.expectedPrizesPerMonth.toFixed(2)} prizes a month and £${PB10K.medianAnnual.toLocaleString('en-GB')} in a typical year. Every £1 bond has a 1 in ${ODDS.toLocaleString('en-GB')} chance in each monthly draw.`,
+    quickAnswer: `With <strong>£50,000</strong> in Premium Bonds you can expect about <strong>${PB50K.expectedPrizesPerMonth.toFixed(1)} prizes a month</strong>, a ${Math.round(PB50K.chanceMonth * 100)}% chance of at least one prize each month and average winnings of <strong>£${PB50K.expectedAnnual.toLocaleString('en-GB')} a year</strong> (${(PRIZE_RATE * 100).toFixed(2)}%), though the typical holder wins nearer £${PB50K.medianAnnual.toLocaleString('en-GB')}. With £10,000 it is about ${PB10K.expectedPrizesPerMonth.toFixed(2)} prizes a month and £${PB10K.medianAnnual.toLocaleString('en-GB')} in a typical year. Every £1 bond has a 1 in ${ODDS.toLocaleString('en-GB')} chance in each monthly draw. Jump to the odds with <a href="#odds-1000" class="text-primary underline">£1,000</a>, <a href="#odds-5000" class="text-primary underline">£5,000</a>, <a href="#odds-10000" class="text-primary underline">£10,000</a>, <a href="#odds-20000" class="text-primary underline">£20,000</a>, <a href="#odds-25000" class="text-primary underline">£25,000</a> or <a href="#odds-50000" class="text-primary underline">£50,000</a>, or see the <a href="#odds-1-million" class="text-primary underline">odds of winning £1 million</a>.`,
     rateTable: { title: `Odds of winning Premium Bonds with £1,000 to £50,000`, html: premiumBondOddsTableHtml() },
+    sections: premiumBondOddsSections(),
     howItWorks: [
       'Premium Bonds do not pay interest. Each £1 bond instead enters a monthly prize draw funded by a prize fund rate set by NS&I, currently 4.35% from the September 2026 draw after a rise from 3.80% on 18 August 2026. That rate fixes the total value of prizes shared across all bondholders rather than promising anything to any individual. The September 2026 draw pays out over £497 million, around £63 million more than August, in prizes ranging from £25 to £1 million.',
       'Every £1 bond has an equal and independent chance of winning each month, with the numbers produced by ERNIE, the Electronic Random Number Indicator Equipment. The odds on a single bond winning anything in a given month are 1 in 21,000, shortened from 22,000 to 1 for the September 2026 draw. The expected return equals the prize fund rate, though the word expected is doing a great deal of work in that sentence. Individual results scatter widely around it, and on a small holding the chance of winning nothing across a whole year is substantial.',
@@ -5291,6 +5295,14 @@ export const CALCULATOR_CONTENT: Record<string, CalculatorContent> = {
     lastUpdated: 'September 2026',
   },
   'car-insurance-estimate-calculator': {
+    rateTable: { title: 'Estimated annual premium by insurance group (1-50)', html: carInsuranceGroupTableHtml() },
+    sections: [
+      {
+        id: 'insurance-group-letters',
+        title: 'What the letter after your insurance group means',
+        html: `<p>Insurance groups run from 1 to 50 and are advisory. The ABI Group Rating Panel sets them from Thatcham Research's assessment of each model's repair costs, parts prices, new price, performance, safety equipment and security, and insurers treat the group as one input alongside their own claims experience. The letter after the number is Thatcham's security rating for that model against the standard expected of its group, and the standard rises as the group rises.</p><ul class="list-disc pl-5 space-y-1"><li><strong>E</strong> (exceeds): the standard security is better than the group requires, so the car has been moved down a group. A car that would otherwise be group 9 is listed as 8E.</li><li><strong>A</strong> (acceptable): the security meets the requirement for the group.</li><li><strong>D</strong> (does not meet): the security falls short, so the car has been moved up a group. A group 9 car with weaker security is listed as 10D.</li><li><strong>P</strong> (provisional): the data needed for a full rating was incomplete when the model was launched.</li><li><strong>U</strong> (unacceptable): Thatcham regards the standard security as unacceptable. The car is not uninsurable, but an insurer may insist on upgraded security before it provides cover.</li><li><strong>G</strong> (import): a parallel or grey import. Thatcham lists these cars but only rates vehicles built for the UK market.</li></ul><p>The same model can therefore sit two groups apart on its security kit alone. This calculator uses the number only, so enter 21 for a car rated 21E and 34 for one rated 34E. Thatcham began replacing the 1 to 50 scheme with its Vehicle Risk Rating in September 2024, running both systems side by side for 18 months. The letter definitions follow Thatcham Research's published guide to the group rating system.</p>`,
+      },
+    ],
     howItWorks: [
       'Car insurance premiums in the UK are calculated from a long list of risk factors, and the main ones are your age, where you live, the car\'s insurance group, your claims history and your no-claims bonus. Younger drivers pay dramatically more, urban addresses cost more than rural ones, and vehicles are rated from group 1 to group 50. The ABI puts the average price paid for comprehensive cover at £566 in Q2 2026, up from £560 in Q1, but that figure hides an enormous spread between driver profiles, which is why one person\'s renewal tells you very little about what the next will pay.',
       'No-claims bonus is the single biggest discount factor. The first claim-free year typically takes off 25-30% and each year after adds less, building to around 60% at five years, with a few insurers going higher after nine or more. The calculator uses 25% after one year, rising to 60% from year five. Protecting the bonus costs extra, usually £30-£80, and lets you make one or two claims without losing it, which starts to look worthwhile once the discount is fully built up. After an at-fault claim, expect 4-5 years to rebuild what was lost. The bonus belongs to you rather than the insurer, so it transfers when you switch, though some companies want a letter from the previous insurer as proof.',
