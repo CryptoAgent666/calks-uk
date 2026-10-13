@@ -16,6 +16,18 @@ export const CALCULATORS: CalculatorMeta[] = [
     metaTitle: 'UK Income Tax Calculator 2026/27 — Free HMRC Calculator',
   },
   {
+    slug: 'budget-2026-calculator',
+    title: 'Budget 2026 Calculator: What It Means for Your Money',
+    description: 'Your 2026/27 take-home and what current law changes in April 2027: fuel duty, the £12,000 cash ISA cap, MTD and pensions in IHT. Revised on Budget day.',
+    category: 'tax',
+    icon: 'Receipt',
+    keywords: ['budget 2026', 'autumn budget 2026', 'how does the budget affect me', 'budget calculator', 'april 2027 tax changes', 'fuel duty 2027', 'cash isa limit 2027'],
+    metaTitle: 'Budget 2026 Calculator: What Changes for Your Money',
+    priority: 1,
+    isTrending: true,
+    financialYear: '2027-28',
+  },
+  {
     slug: 'scottish-income-tax-calculator',
     title: 'Scottish Income Tax Calculator',
     description: 'Calculate Scottish income tax with all 6 bands: Starter, Basic, Intermediate, Higher, Advanced and Top rate for 2026/27.',

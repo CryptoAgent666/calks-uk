@@ -69,7 +69,9 @@
         "src/components/calculators/FreelanceTaxCalculator.tsx",
         "src/components/calculators/LandlordTaxCalculator.tsx",
         "src/components/calculators/UmbrellaCompanyCalculator.tsx",
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/income-tax-rates",
       "status": "current",
@@ -1100,7 +1102,9 @@
         "src/components/calculators/SideHustleTaxCalculator.tsx",
         "src/components/calculators/SoleTraderTaxCalculator.tsx",
         "src/components/calculators/SoleTraderVsLtdCalculator.tsx",
-        "src/components/calculators/SoleTraderVsLtdComparisonCalculator.tsx"
+        "src/components/calculators/SoleTraderVsLtdComparisonCalculator.tsx",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/income-tax-rates",
       "status": "current",
@@ -4863,7 +4867,8 @@
         "src/components/calculators/SoleTraderVsLtdComparisonCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/budget-2025-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances",
       "status": "current",
@@ -5067,7 +5072,8 @@
         "src/components/calculators/SoleTraderVsLtdComparisonCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/budget-2025-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances",
       "status": "current",
@@ -7068,7 +7074,9 @@
         "src/components/calculators/SoleTraderVsLtdCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income/change-to-tax-rates-for-property-savings-and-dividend-income-technical-note",
       "status": "current",
@@ -7133,7 +7141,9 @@
         "src/components/calculators/StocksSharesIsaCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-dividend-income/changes-to-tax-rates-for-property-savings-dividend-income",
       "status": "current",
@@ -7161,7 +7171,9 @@
         "src/components/calculators/SoleTraderVsLtdCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-dividend-income/changes-to-tax-rates-for-property-savings-dividend-income",
       "status": "current",
@@ -7376,7 +7388,9 @@
         "src/components/calculators/EmployeeCostBreakdownCalculator.tsx",
         "src/components/calculators/EmployeeVsContractorCalculator.tsx",
         "src/components/calculators/EmployerCostCalculator.tsx",
-        "src/components/calculators/EmployerNICalculator.tsx"
+        "src/components/calculators/EmployerNICalculator.tsx",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "",
       "status": "current",
@@ -7430,7 +7444,9 @@
         "src/components/calculators/EmployeeCostBreakdownCalculator.tsx",
         "src/components/calculators/EmployeeVsContractorCalculator.tsx",
         "src/components/calculators/EmployerCostCalculator.tsx",
-        "src/components/calculators/EmployerNICalculator.tsx"
+        "src/components/calculators/EmployerNICalculator.tsx",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "",
       "status": "current",
@@ -8733,7 +8749,10 @@
         "prose"
       ],
       "used_by": [
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/amended-fuel-duty-rates-for-2026-to-2027/amended-fuel-duty-rates-2026-to-2027",
       "status": "current",
@@ -8755,7 +8774,9 @@
       ],
       "used_by": [
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/amended-fuel-duty-rates-for-2026-to-2027/amended-fuel-duty-rates-2026-to-2027",
       "status": "current",
@@ -9300,7 +9321,10 @@
         "src/components/calculators/SoleTraderTaxCalculator.tsx",
         "src/components/calculators/SoleTraderVsLtdCalculator.tsx",
         "src/components/calculators/UmbrellaCompanyCalculator.tsx",
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/income-tax-rates",
       "status": "current",
@@ -9899,7 +9923,9 @@
         "src/components/calculators/InheritanceTaxPensionCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/inheritance-tax-nil-rate-band-and-residence-nil-rate-band-thresholds-from-6-april-2026/inheritance-tax-nil-rate-band-and-residence-nil-rate-band-thresholds-from-6-april-2026-to-5-april-2028",
       "status": "current",
@@ -11234,7 +11260,9 @@
         "src/components/calculators/StocksSharesIsaCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/individual-savings-accounts",
       "status": "current",
@@ -13850,7 +13878,9 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/MakingTaxDigitalCalculator.tsx"
+        "src/components/calculators/MakingTaxDigitalCalculator.tsx",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "",
       "status": "current",
@@ -13928,7 +13958,10 @@
         "prose"
       ],
       "used_by": [
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/guidance/making-tax-digital-for-income-tax",
       "status": "current",
@@ -13969,7 +14002,9 @@
       ],
       "used_by": [
         "src/components/calculators/MinimumWageCalculator.tsx",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/the-national-minimum-wage-in-2026/the-national-minimum-wage-in-2026",
       "status": "current",
@@ -15582,7 +15617,9 @@
         "src/components/calculators/DividendVsSalaryCalculator.tsx",
         "src/components/calculators/NhsPayCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
       "status": "current",
@@ -15753,7 +15790,9 @@
         "src/components/calculators/DividendVsSalaryCalculator.tsx",
         "src/components/calculators/NhsPayCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
       "status": "current",
@@ -17216,7 +17255,9 @@
         "src/components/calculators/TeacherPayCalculator.tsx",
         "src/components/calculators/UmbrellaCompanyCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/income-tax-rates",
       "status": "current",
@@ -17707,7 +17748,9 @@
       ],
       "used_by": [
         "src/components/calculators/SavingsInterestTaxCalculator.tsx",
-        "src/components/calculators/IsaCalculator.tsx"
+        "src/components/calculators/IsaCalculator.tsx",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "",
       "status": "current",
@@ -17728,7 +17771,9 @@
         "src/components/calculators/SavingsInterestTaxCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/faqs.ts",
-        "src/components/calculators/IsaCalculator.tsx"
+        "src/components/calculators/IsaCalculator.tsx",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/apply-tax-free-interest-on-savings",
       "status": "current",
@@ -17747,7 +17792,9 @@
       "used_by": [
         "src/components/calculators/SavingsInterestTaxCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/components/calculators/IsaCalculator.tsx"
+        "src/components/calculators/IsaCalculator.tsx",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/apply-tax-free-interest-on-savings",
       "status": "current",
@@ -18095,7 +18142,8 @@
       ],
       "used_by": [
         "src/components/calculators/StudentLoanCalculator.tsx",
-        "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx"
+        "src/components/calculators/StudentLoanEarlyRepayCalculator.tsx",
+        "src/data/budget-2026.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
@@ -30509,7 +30557,9 @@
       "used_by": [
         "src/components/calculators/MakingTaxDigitalCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/guidance/check-if-youre-eligible-for-making-tax-digital-for-income-tax",
       "status": "current",
@@ -31083,7 +31133,9 @@
       "used_by": [
         "src/components/calculators/InheritanceTaxPensionCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/inheritance-tax-on-pensions-technical-note/technical-note-inheritance-tax-on-pensions",
       "status": "current",
@@ -31128,7 +31180,11 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/IsaCalculator.tsx"
+        "src/components/calculators/IsaCalculator.tsx",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income/change-to-tax-rates-for-property-savings-and-dividend-income-technical-note",
       "status": "current",
@@ -31150,7 +31206,11 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/IsaCalculator.tsx"
+        "src/components/calculators/IsaCalculator.tsx",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income/change-to-tax-rates-for-property-savings-and-dividend-income-technical-note",
       "status": "current",
@@ -31172,7 +31232,11 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/IsaCalculator.tsx"
+        "src/components/calculators/IsaCalculator.tsx",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income/change-to-tax-rates-for-property-savings-and-dividend-income-technical-note",
       "status": "current",
@@ -31196,7 +31260,10 @@
       ],
       "used_by": [
         "src/components/calculators/IsaCalculator.tsx",
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/reduction-in-the-cash-individual-savings-account-isa-limit/cash-individual-savings-account-isa-limit-reduction",
       "status": "current",
@@ -31204,9 +31271,9 @@
       "note": "Cash ISA cap within the £20,000 allowance (ISA input hint + prose)",
       "official_value": "12000",
       "confidence": "high",
-      "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
-      "verified_date": "2026-09-26",
-      "verify_method": "browser-qa 2026-09-26: primary source read"
+      "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source. 2026-10-13: now law. The Individual Savings Account (Amendment) (No. 2) Regulations 2026, SI 2026/1018, made 10 Sep 2026, laid 14 Sep 2026, in force 6 Apr 2027: GBP12,000 cash limit where the individual is 64 or under at the end of the year (reg 6, new para 1ZA). https://www.legislation.gov.uk/uksi/2026/1018/made",
+      "verified_date": "2026-10-13",
+      "verify_method": "budget-2026-calculator build 2026-10-13: primary source read"
     },
     {
       "key": "spouse_visa_in_uk_extension_fee",
@@ -32452,7 +32519,8 @@
       ],
       "used_by": [
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx",
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/budget-2026.ts"
       ],
       "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/student-loan-forecasts-for-england/2025-26",
       "status": "current",
@@ -34068,7 +34136,8 @@
       "used_by": [
         "src/components/calculators/BuyToLetYieldCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/budget-2026.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income",
       "status": "current",
@@ -34079,10 +34148,161 @@
       "verify_method": "calkcheck-2026-09-28-r8",
       "confidence": "high",
       "changes_next_fy": "Apply 6 April 2027"
+    },
+    {
+      "key": "fuel_duty_2027_01_01_rate",
+      "value": "55.95",
+      "unit": "pence/litre",
+      "law": "HMRC Fuel Duty (legislative default from 1 Jan 2027)",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/amended-fuel-duty-rates-for-2026-to-2027/amended-fuel-duty-rates-2026-to-2027",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Petrol/diesel duty from 1 January 2027 when the 5p cut ends: 55.95p (gov.uk Amended Fuel Duty rates 2026 to 2027 table, published 22 May 2026). Government says final rates will be confirmed at Budget 2026.",
+      "official_value": "55.95",
+      "confidence": "high",
+      "changes_next_fy": "Re-check on 28 Oct 2026 (Budget 2026): the government said final rates would be confirmed there. If changed, update budget-2026.ts FUEL_DUTY_PENCE_JAN_2027 + prose.",
+      "verified_date": "2026-10-13",
+      "verify_method": "budget-2026-calculator build 2026-10-13: primary source read"
+    },
+    {
+      "key": "fuel_duty_2027_03_01_rate",
+      "value": "57.95",
+      "unit": "pence/litre",
+      "law": "HMRC Fuel Duty (legislative default from 1 Mar 2027)",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/amended-fuel-duty-rates-for-2026-to-2027/amended-fuel-duty-rates-2026-to-2027",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Petrol/diesel duty from 1 March 2027: 57.95p, the pre-23 March 2022 rate restored (gov.uk Amended Fuel Duty rates 2026 to 2027 table, published 22 May 2026).",
+      "official_value": "57.95",
+      "confidence": "high",
+      "changes_next_fy": "Re-check on 28 Oct 2026 (Budget 2026). If changed, update budget-2026.ts FUEL_DUTY_PENCE_MAR_2027 + prose.",
+      "verified_date": "2026-10-13",
+      "verify_method": "budget-2026-calculator build 2026-10-13: primary source read"
+    },
+    {
+      "key": "budget_2026_date",
+      "value": "2026-10-28",
+      "unit": "date",
+      "law": "HM Treasury fiscal event",
+      "theme": "other",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/chancellor-letter-to-the-treasury-select-committee-tsc-budget-2026-date/chancellor-letter-to-the-treasury-select-committee-tsc",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Budget 2026 on Wednesday 28 October 2026 with the OBR forecast the same day (Chancellor letter to the TSC, published 31 July 2026). budget-2026-calculator dated line + prose.",
+      "official_value": "2026-10-28",
+      "confidence": "high",
+      "changes_next_fy": "On 28 Oct 2026 bump PAGE_UPDATED in budget-2026.ts and revise the schedule.",
+      "verified_date": "2026-10-13",
+      "verify_method": "budget-2026-calculator build 2026-10-13: primary source read"
+    },
+    {
+      "key": "income_tax_pa_brl_frozen_until",
+      "value": "5 April 2031",
+      "unit": "date",
+      "law": "Finance Act 2026 s.10 (PA GBP12,570 / basic rate limit GBP37,700 for 2028-29 to 2030-31)",
+      "theme": "income_tax",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/budget-2026.ts",
+        "src/components/calculators/Budget2026Calculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/maintaining-income-tax-and-equivalent-national-insurance-contributions-thresholds-until-5-april-2031/income-tax-maintaining-the-personal-allowance-and-the-basic-rate-limit-for-income-tax-and-equivalent-national-insurance-contributions-thresholds-unt",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Personal Allowance and basic-rate limit maintained until 5 April 2031; higher-rate threshold GBP50,270 and NI PT/UEL aligned for the same years (HMRC TIIN 26 Nov 2025; FA 2026 s.10). Fiscal-drag note in budget-2026-calculator.",
+      "official_value": "5 April 2031",
+      "confidence": "high",
+      "verified_date": "2026-10-13",
+      "verify_method": "budget-2026-calculator build 2026-10-13: primary source read"
+    },
+    {
+      "key": "corporation_tax_main_rate_fy2027",
+      "value": "25",
+      "unit": "%",
+      "law": "Finance Act 2026 s.11",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/budget-2026.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ukpga/2026/11/section/11",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Corporation Tax main rate for the financial year 2027 (from 1 April 2027): 25%, fixed by FA 2026 s.11. budget-2026-calculator schedule row.",
+      "official_value": "25",
+      "confidence": "high",
+      "verified_date": "2026-10-13",
+      "verify_method": "budget-2026-calculator build 2026-10-13: primary source read"
+    },
+    {
+      "key": "corporation_tax_small_profits_rate_fy2027",
+      "value": "19",
+      "unit": "%",
+      "law": "Finance Act 2026 s.12",
+      "theme": "business",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/budget-2026.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ukpga/2026/11/section/12",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Standard small profits rate 19% and marginal relief fraction 3/200ths for the financial year 2027 (FA 2026 s.12). budget-2026-calculator schedule row.",
+      "official_value": "19",
+      "confidence": "high",
+      "verified_date": "2026-10-13",
+      "verify_method": "budget-2026-calculator build 2026-10-13: primary source read"
     }
   ],
   "status_summary": {
-    "current": 1481,
+    "current": 1487,
     "retired": 24,
     "superseded_by_component": 4,
     "historical": 14,
