@@ -98,6 +98,7 @@ const calculators: Record<string, React.LazyExoticComponent<() => JSX.Element>> 
   'gcse-grade-calculator': lazy(() => import('./calculators/GCSEGradeCalculator')),
   'progress-8-calculator': lazy(() => import('./calculators/Progress8Calculator')),
   'university-cost-calculator': lazy(() => import('./calculators/UniversityCostCalculator')),
+  'ks2-sats-scaled-score-calculator': lazy(() => import('./calculators/KS2SatsScaledScoreCalculator')),
   // Pay (additional)
   'mileage-allowance-calculator': lazy(() => import('./calculators/MileageAllowanceCalculator')),
   // Benefits
@@ -445,6 +446,7 @@ const calculators: Record<string, React.LazyExoticComponent<() => JSX.Element>> 
   'care-cost-calculator': lazy(() => import('./calculators/CareCostCalculator')),
   // Pay
   'minimum-wage-calculator': lazy(() => import('./calculators/MinimumWageCalculator')),
+  'minimum-wage-2027-calculator': lazy(() => import('./calculators/MinimumWage2027Calculator')),
   // Mortgage
   'first-homes-scheme-calculator': lazy(() => import('./calculators/FirstHomesSchemeCalculator')),
   'shared-ownership-affordability-calculator': lazy(() => import('./calculators/SharedOwnershipMortgageAffordabilityCalculator')),

@@ -13,7 +13,8 @@
         "prose"
       ],
       "used_by": [
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/minimum-wage.ts"
       ],
       "source_url": "https://www.gov.uk/national-minimum-wage-accommodation",
       "status": "current",
@@ -7455,7 +7456,8 @@
         "src/components/calculators/EmployerCostCalculator.tsx",
         "src/components/calculators/EmployerNICalculator.tsx",
         "src/data/budget-2026.ts",
-        "src/components/calculators/Budget2026Calculator.tsx"
+        "src/components/calculators/Budget2026Calculator.tsx",
+        "src/components/calculators/MinimumWage2027Calculator.tsx"
       ],
       "source_url": "",
       "status": "current",
@@ -14051,7 +14053,9 @@
         "src/components/calculators/MinimumWageCalculator.tsx",
         "src/data/faqs.ts",
         "src/data/budget-2026.ts",
-        "src/components/calculators/Budget2026Calculator.tsx"
+        "src/components/calculators/Budget2026Calculator.tsx",
+        "src/data/minimum-wage.ts",
+        "src/components/calculators/MinimumWage2027Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/the-national-minimum-wage-in-2026/the-national-minimum-wage-in-2026",
       "status": "current",
@@ -14071,7 +14075,8 @@
         "prose"
       ],
       "used_by": [
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/minimum-wage.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/the-national-minimum-wage-in-2026/the-national-minimum-wage-in-2026",
       "status": "current",
@@ -14091,7 +14096,8 @@
         "prose"
       ],
       "used_by": [
-        "src/components/calculators/MinimumWageCalculator.tsx"
+        "src/components/calculators/MinimumWageCalculator.tsx",
+        "src/data/minimum-wage.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/the-national-minimum-wage-in-2026/the-national-minimum-wage-in-2026",
       "status": "current",
@@ -14151,7 +14157,9 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/MinimumWageCalculator.tsx"
+        "src/components/calculators/MinimumWageCalculator.tsx",
+        "src/data/minimum-wage.ts",
+        "src/components/calculators/MinimumWage2027Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/the-national-minimum-wage-in-2026/the-national-minimum-wage-in-2026",
       "status": "current",
@@ -14171,7 +14179,8 @@
         "prose"
       ],
       "used_by": [
-        "src/components/calculators/MinimumWageCalculator.tsx"
+        "src/components/calculators/MinimumWageCalculator.tsx",
+        "src/data/minimum-wage.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/the-national-minimum-wage-in-2026/the-national-minimum-wage-in-2026",
       "status": "current",
@@ -14213,7 +14222,9 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/MinimumWageCalculator.tsx"
+        "src/components/calculators/MinimumWageCalculator.tsx",
+        "src/data/minimum-wage.ts",
+        "src/components/calculators/MinimumWage2027Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/the-national-minimum-wage-in-2026/the-national-minimum-wage-in-2026",
       "status": "current",
@@ -14233,7 +14244,8 @@
         "prose"
       ],
       "used_by": [
-        "src/components/calculators/MinimumWageCalculator.tsx"
+        "src/components/calculators/MinimumWageCalculator.tsx",
+        "src/data/minimum-wage.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/the-national-minimum-wage-in-2026/the-national-minimum-wage-in-2026",
       "status": "current",
@@ -14253,7 +14265,9 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/MinimumWageCalculator.tsx"
+        "src/components/calculators/MinimumWageCalculator.tsx",
+        "src/data/minimum-wage.ts",
+        "src/components/calculators/MinimumWage2027Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/the-national-minimum-wage-in-2026/the-national-minimum-wage-in-2026",
       "status": "current",
@@ -14293,7 +14307,8 @@
         "prose"
       ],
       "used_by": [
-        "src/components/calculators/MinimumWageCalculator.tsx"
+        "src/components/calculators/MinimumWageCalculator.tsx",
+        "src/data/minimum-wage.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/the-national-minimum-wage-in-2026/the-national-minimum-wage-in-2026",
       "status": "current",
@@ -34597,7 +34612,9 @@
         "src/data/budget-2026.ts",
         "src/components/calculators/Budget2026Calculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/minimum-wage.ts",
+        "src/components/calculators/MinimumWage2027Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/chancellor-letter-to-the-treasury-select-committee-tsc-budget-2026-date/chancellor-letter-to-the-treasury-select-committee-tsc",
       "status": "current",
@@ -34681,6 +34698,949 @@
       "confidence": "high",
       "verified_date": "2026-10-13",
       "verify_method": "budget-2026-calculator build 2026-10-13: primary source read"
+    },
+    {
+      "key": "ks2_expected_standard_scaled_score",
+      "value": "100",
+      "unit": "scaled score",
+      "law": "STA key stage 2 national curriculum tests",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/understanding-scaled-scores-at-key-stage-2",
+      "status": "current",
+      "change_frequency": "fixed",
+      "note": "KS2 SATs: scaled score of 100 = expected standard met; range 80-120 fixed since 2016",
+      "official_value": "100",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_higher_standard_scaled_score",
+      "value": "110",
+      "unit": "scaled score",
+      "law": "DfE KS2 attainment statistics definition",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "fixed",
+      "note": "KS2 SATs: scaled score of 110 or more = higher standard (reading and maths tests); writing higher standard = GDS teacher assessment",
+      "official_value": "110",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_scaled_score_min",
+      "value": "80",
+      "unit": "scaled score",
+      "law": "STA key stage 2 national curriculum tests",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/understanding-scaled-scores-at-key-stage-2",
+      "status": "current",
+      "change_frequency": "fixed",
+      "note": "Lowest KS2 scaled score; at least 3 raw marks needed, otherwise N",
+      "official_value": "80",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_scaled_score_max",
+      "value": "120",
+      "unit": "scaled score",
+      "law": "STA key stage 2 national curriculum tests",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/understanding-scaled-scores-at-key-stage-2",
+      "status": "current",
+      "change_frequency": "fixed",
+      "note": "Highest KS2 scaled score",
+      "official_value": "120",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_min_raw_marks_for_scaled_score",
+      "value": "3",
+      "unit": "marks",
+      "law": "STA 2026 KS2 scaled score conversion tables",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-scaled-scores/2026-key-stage-2-scaled-score-conversion-tables",
+      "status": "current",
+      "change_frequency": "annual (July)",
+      "note": "2026: all three tests award the lowest scaled score from 3 raw marks (0-2 = no scaled score)",
+      "official_value": "3",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_2026_raw_marks_for_100_reading",
+      "value": "25",
+      "unit": "marks",
+      "law": "STA 2026 KS2 conversion table (reading, 50 marks)",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-scaled-scores/2026-key-stage-2-scaled-score-conversion-tables",
+      "status": "current",
+      "change_frequency": "annual (July)",
+      "note": "2026 KS2 reading: lowest raw mark giving scaled score 100 (out of 50); full table stored in src/data/ks2-scaled-scores.ts",
+      "official_value": "25",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_2026_raw_marks_for_110_reading",
+      "value": "39",
+      "unit": "marks",
+      "law": "STA 2026 KS2 conversion table (reading, 50 marks)",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-scaled-scores/2026-key-stage-2-scaled-score-conversion-tables",
+      "status": "current",
+      "change_frequency": "annual (July)",
+      "note": "2026 KS2 reading: lowest raw mark giving scaled score 110 (higher standard)",
+      "official_value": "39",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_2026_raw_marks_for_120_reading",
+      "value": "47",
+      "unit": "marks",
+      "law": "STA 2026 KS2 conversion table (reading, 50 marks)",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-scaled-scores/2026-key-stage-2-scaled-score-conversion-tables",
+      "status": "current",
+      "change_frequency": "annual (July)",
+      "note": "2026 KS2 reading: lowest raw mark giving the maximum scaled score 120",
+      "official_value": "47",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_2026_raw_marks_for_100_maths",
+      "value": "56",
+      "unit": "marks",
+      "law": "STA 2026 KS2 conversion table (maths, 110 marks)",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-scaled-scores/2026-key-stage-2-scaled-score-conversion-tables",
+      "status": "current",
+      "change_frequency": "annual (July)",
+      "note": "2026 KS2 maths: lowest raw mark giving scaled score 100 (out of 110); full table stored in src/data/ks2-scaled-scores.ts",
+      "official_value": "56",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_2026_raw_marks_for_110_maths",
+      "value": "94",
+      "unit": "marks",
+      "law": "STA 2026 KS2 conversion table (maths, 110 marks)",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-scaled-scores/2026-key-stage-2-scaled-score-conversion-tables",
+      "status": "current",
+      "change_frequency": "annual (July)",
+      "note": "2026 KS2 maths: lowest raw mark giving scaled score 110 (higher standard)",
+      "official_value": "94",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_2026_raw_marks_for_120_maths",
+      "value": "109",
+      "unit": "marks",
+      "law": "STA 2026 KS2 conversion table (maths, 110 marks)",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-scaled-scores/2026-key-stage-2-scaled-score-conversion-tables",
+      "status": "current",
+      "change_frequency": "annual (July)",
+      "note": "2026 KS2 maths: lowest raw mark giving the maximum scaled score 120",
+      "official_value": "109",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_2026_raw_marks_for_100_gps",
+      "value": "34",
+      "unit": "marks",
+      "law": "STA 2026 KS2 conversion table (gps, 70 marks)",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-scaled-scores/2026-key-stage-2-scaled-score-conversion-tables",
+      "status": "current",
+      "change_frequency": "annual (July)",
+      "note": "2026 KS2 gps: lowest raw mark giving scaled score 100 (out of 70); full table stored in src/data/ks2-scaled-scores.ts",
+      "official_value": "34",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_2026_raw_marks_for_110_gps",
+      "value": "55",
+      "unit": "marks",
+      "law": "STA 2026 KS2 conversion table (gps, 70 marks)",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-scaled-scores/2026-key-stage-2-scaled-score-conversion-tables",
+      "status": "current",
+      "change_frequency": "annual (July)",
+      "note": "2026 KS2 gps: lowest raw mark giving scaled score 110 (higher standard)",
+      "official_value": "55",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_2026_raw_marks_for_120_gps",
+      "value": "66",
+      "unit": "marks",
+      "law": "STA 2026 KS2 conversion table (gps, 70 marks)",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-scaled-scores/2026-key-stage-2-scaled-score-conversion-tables",
+      "status": "current",
+      "change_frequency": "annual (July)",
+      "note": "2026 KS2 gps: lowest raw mark giving the maximum scaled score 120",
+      "official_value": "66",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_2026_rwm_expected_pct",
+      "value": "63",
+      "unit": "%",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "% meeting expected standard in reading, writing and maths combined, 2026 (62% in 2025); PROVISIONAL, revised release due December 2026",
+      "official_value": "63",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_2026_rwm_higher_pct",
+      "value": "9",
+      "unit": "%",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "% reaching the higher standard in RWM combined, 2026 (8% in 2025); PROVISIONAL, revised release due December 2026",
+      "official_value": "9",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_2026_reading_expected_pct",
+      "value": "75",
+      "unit": "%",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "% meeting expected standard in the reading test, 2026; PROVISIONAL, revised release due December 2026",
+      "official_value": "75",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_2026_reading_higher_pct",
+      "value": "31",
+      "unit": "%",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "% scoring 110+ in reading, 2026 (33% in 2025); PROVISIONAL, revised release due December 2026",
+      "official_value": "31",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_2026_maths_expected_pct",
+      "value": "75",
+      "unit": "%",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "% meeting expected standard in the maths test, 2026 (74% in 2025); PROVISIONAL, revised release due December 2026",
+      "official_value": "75",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_2026_maths_higher_pct",
+      "value": "27",
+      "unit": "%",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "% scoring 110+ in maths, 2026 (26% in 2025); PROVISIONAL, revised release due December 2026",
+      "official_value": "27",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_2026_writing_expected_pct",
+      "value": "73",
+      "unit": "%",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "% EXS or GDS in writing teacher assessment, 2026 (72% in 2025); PROVISIONAL, revised release due December 2026",
+      "official_value": "73",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_2026_writing_greater_depth_pct",
+      "value": "13",
+      "unit": "%",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "% GDS in writing teacher assessment, 2026; PROVISIONAL, revised release due December 2026",
+      "official_value": "13",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_2026_gps_expected_pct",
+      "value": "74",
+      "unit": "%",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "% meeting expected standard in grammar, punctuation and spelling, 2026 (73% in 2025); PROVISIONAL, revised release due December 2026",
+      "official_value": "74",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_2026_science_expected_pct",
+      "value": "82",
+      "unit": "%",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "% meeting expected standard in science teacher assessment, 2026; PROVISIONAL, revised release due December 2026",
+      "official_value": "82",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_2026_avg_scaled_score_reading",
+      "value": "106",
+      "unit": "scaled score",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "Average scaled score, reading, 2026; PROVISIONAL, revised release due December 2026",
+      "official_value": "106",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_2026_avg_scaled_score_maths",
+      "value": "105",
+      "unit": "scaled score",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "Average scaled score, maths, 2026; PROVISIONAL, revised release due December 2026",
+      "official_value": "105",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_2026_avg_scaled_score_gps",
+      "value": "105",
+      "unit": "scaled score",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "Average scaled score, GPS, 2026; PROVISIONAL, revised release due December 2026",
+      "official_value": "105",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_2026_pupils_not_meeting_rwm",
+      "value": "182167",
+      "unit": "pupils",
+      "law": "DfE Key stage 2 attainment (provisional): 2026, published 10 Sep 2026",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional",
+      "status": "current",
+      "change_frequency": "annual (Sep provisional, Dec revised)",
+      "note": "Pupils assessed as not meeting the expected standard in RWM, 2026; PROVISIONAL, revised release due December 2026",
+      "official_value": "182167",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high",
+      "changes_next_fy": "Revised figures December 2026; 2027 provisional September 2027"
+    },
+    {
+      "key": "ks2_tests_2026_dates",
+      "value": "11-14 May 2026",
+      "unit": "date",
+      "law": "STA primary assessments: future dates (archived page, 27 Feb 2026 capture) + review ToR",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/primary-assessments-future-dates",
+      "status": "historical",
+      "change_frequency": "annual",
+      "note": "KS2 tests 2026: Mon 11 May GPS, Tue 12 reading, Wed 13 maths 1+2, Thu 14 maths 3",
+      "official_value": "11-14 May 2026",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_results_2026_date",
+      "value": "16 July 2026",
+      "unit": "date",
+      "law": "STA KS2 tests: how to access results (2026)",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/key-stage-2-tests-how-to-access-results-and-test-scripts",
+      "status": "historical",
+      "change_frequency": "annual",
+      "note": "2026 results returned 16 July 2026 after a 9-day delay from the planned 7 July (Pearson); independent review led by Dame Christine Gilbert",
+      "official_value": "16 July 2026",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_tests_2027_dates",
+      "value": "10-13 May 2027",
+      "unit": "date",
+      "law": "STA primary assessments: future dates",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/primary-assessments-future-dates",
+      "status": "current",
+      "change_frequency": "annual",
+      "note": "KS2 tests 2027: Mon 10 May GPS, Tue 11 reading, Wed 12 maths 1+2, Thu 13 maths 3",
+      "official_value": "10-13 May 2027",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "ks2_results_2027_date",
+      "value": "6 July 2027",
+      "unit": "date",
+      "law": "2027 KS2 assessment and reporting arrangements",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/ks2-scaled-scores.ts",
+        "src/components/calculators/KS2SatsScaledScoreCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/key-stage-2-assessment-and-reporting-arrangements-ara/2027-key-stage-2-assessment-and-reporting-arrangements",
+      "status": "current",
+      "change_frequency": "annual",
+      "note": "2027 results available to schools from 7:30am Tuesday 6 July 2027; marking review deadline Fri 16 July 2027; test materials published Fri 21 May 2027",
+      "official_value": "6 July 2027",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "lpc_nlw_april_2027_central_estimate",
+      "value": "13.18",
+      "unit": "GBP/hour",
+      "law": "Low Pay Commission indicative projection (not a rate)",
+      "theme": "minimum_wage",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/minimum-wage.ts",
+        "src/components/calculators/MinimumWage2027Calculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts",
+        "src/data/calculators.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/consultations/low-pay-commission-consultation-2026/lpc-consultation-letter-2026",
+      "status": "uncertain",
+      "change_frequency": "one-off",
+      "note": "LPC consultation letter 1 Apr 2026: central estimate for NLW at two-thirds of median earnings in April 2027 (+3.7%). INDICATIVE ONLY; LPC recommends by end Oct 2026, government confirms (Budget 28 Oct 2026); replace with the confirmed April 2027 rate when announced",
+      "official_value": "13.18",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "medium",
+      "changes_next_fy": "Confirmed April 2027 rates expected 28 Oct 2026; rates apply 1 Apr 2027"
+    },
+    {
+      "key": "lpc_nlw_april_2027_low_estimate",
+      "value": "13.02",
+      "unit": "GBP/hour",
+      "law": "Low Pay Commission indicative projection (not a rate)",
+      "theme": "minimum_wage",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/minimum-wage.ts",
+        "src/components/calculators/MinimumWage2027Calculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts",
+        "src/data/calculators.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/consultations/low-pay-commission-consultation-2026/lpc-consultation-letter-2026",
+      "status": "uncertain",
+      "change_frequency": "one-off",
+      "note": "LPC consultation letter 1 Apr 2026: low end of the indicative April 2027 NLW range (+2.4%). INDICATIVE ONLY; LPC recommends by end Oct 2026, government confirms (Budget 28 Oct 2026); replace with the confirmed April 2027 rate when announced",
+      "official_value": "13.02",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "medium",
+      "changes_next_fy": "Confirmed April 2027 rates expected 28 Oct 2026; rates apply 1 Apr 2027"
+    },
+    {
+      "key": "lpc_nlw_april_2027_high_estimate",
+      "value": "13.34",
+      "unit": "GBP/hour",
+      "law": "Low Pay Commission indicative projection (not a rate)",
+      "theme": "minimum_wage",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/minimum-wage.ts",
+        "src/components/calculators/MinimumWage2027Calculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts",
+        "src/data/calculators.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/consultations/low-pay-commission-consultation-2026/lpc-consultation-letter-2026",
+      "status": "uncertain",
+      "change_frequency": "one-off",
+      "note": "LPC consultation letter 1 Apr 2026: high end of the indicative April 2027 NLW range (+5.0%; letter also prints 4.9%). INDICATIVE ONLY; LPC recommends by end Oct 2026, government confirms (Budget 28 Oct 2026); replace with the confirmed April 2027 rate when announced",
+      "official_value": "13.34",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "medium",
+      "changes_next_fy": "Confirmed April 2027 rates expected 28 Oct 2026; rates apply 1 Apr 2027"
+    },
+    {
+      "key": "accommodation_offset_daily",
+      "value": "11.1",
+      "unit": "GBP/day",
+      "law": "NMW Accommodation Offset",
+      "theme": "minimum_wage",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/minimum-wage.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/national-minimum-wage-accommodation",
+      "status": "current",
+      "change_frequency": "annual (1 April)",
+      "note": "NMW accommodation offset from 1 April 2026: £11.10/day (£77.70/week); 2025 was £10.66/day",
+      "official_value": "11.1",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
+    },
+    {
+      "key": "lpc_remit_2026_date",
+      "value": "16 March 2026",
+      "unit": "date",
+      "law": "Low Pay Commission remit 2026",
+      "theme": "minimum_wage",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/minimum-wage.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/national-minimum-wage-and-national-living-wage-low-pay-commission-remit-2026/low-pay-commission-remit-2026-national-living-wage-and-national-minimum-wage",
+      "status": "current",
+      "change_frequency": "annual",
+      "note": "Remit published 16 Mar 2026: recommend NLW/NMW/accommodation offset for 1 Apr 2027 by end Oct 2026; two-thirds of median earnings remains the key reference point",
+      "official_value": "16 March 2026",
+      "verified_date": "2026-10-13",
+      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "confidence": "high"
     }
   ],
   "status_summary": {
