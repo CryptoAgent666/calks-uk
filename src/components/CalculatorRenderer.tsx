@@ -3,6 +3,8 @@ import { lazy, Suspense } from 'react'
 const calculators: Record<string, React.LazyExoticComponent<() => JSX.Element>> = {
   // Tax & HMRC
   'income-tax-calculator': lazy(() => import('./calculators/IncomeTaxCalculator')),
+  'sixty-percent-tax-trap-calculator': lazy(() => import('./calculators/SixtyPercentTaxTrapCalculator')),
+  'second-job-tax-calculator': lazy(() => import('./calculators/SecondJobTaxCalculator')),
   'scottish-income-tax-calculator': lazy(() => import('./calculators/ScottishIncomeTaxCalculator')),
   'national-insurance-calculator': lazy(() => import('./calculators/NationalInsuranceCalculator')),
   'employer-ni-calculator': lazy(() => import('./calculators/EmployerNICalculator')),

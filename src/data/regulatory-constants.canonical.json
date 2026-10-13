@@ -732,7 +732,8 @@
         "prose"
       ],
       "used_by": [
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "https://questions-statements.parliament.uk/written-statements/detail/2025-12-18/hcws1206",
       "status": "current",
@@ -1030,7 +1031,10 @@
         "computed"
       ],
       "used_by": [
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/tax-trap.ts",
+        "src/data/second-job.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://commonslibrary.parliament.uk/research-briefings/cbp-10618/",
       "status": "current",
@@ -7376,7 +7380,9 @@
         "src/components/calculators/EmployeeCostBreakdownCalculator.tsx",
         "src/components/calculators/EmployeeVsContractorCalculator.tsx",
         "src/components/calculators/EmployerCostCalculator.tsx",
-        "src/components/calculators/EmployerNICalculator.tsx"
+        "src/components/calculators/EmployerNICalculator.tsx",
+        "src/components/calculators/SixtyPercentTaxTrapCalculator.tsx",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "",
       "status": "current",
@@ -8252,7 +8258,10 @@
         "prose"
       ],
       "used_by": [
-        "src/data/calculators.ts"
+        "src/data/calculators.ts",
+        "src/components/calculators/SixtyPercentTaxTrapCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/free-childcare-if-working/what-youll-get",
       "status": "current",
@@ -8428,7 +8437,11 @@
         "prose"
       ],
       "used_by": [
-        "src/components/calculators/ChildcareEntitlementCalculator.tsx"
+        "src/components/calculators/ChildcareEntitlementCalculator.tsx",
+        "src/data/tax-trap.ts",
+        "src/components/calculators/SixtyPercentTaxTrapCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/free-childcare-if-working/check-youre-eligible",
       "status": "current",
@@ -8450,7 +8463,8 @@
         "prose"
       ],
       "used_by": [
-        "src/components/calculators/ChildcareEntitlementCalculator.tsx"
+        "src/components/calculators/ChildcareEntitlementCalculator.tsx",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/free-childcare-if-working",
       "status": "current",
@@ -8582,7 +8596,8 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/ChildcareCostCalculator.tsx"
+        "src/components/calculators/ChildcareCostCalculator.tsx",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/free-childcare-if-working/what-youll-get",
       "status": "current",
@@ -8858,7 +8873,10 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/AnnualTaxSummaryCalculator.tsx"
+        "src/components/calculators/AnnualTaxSummaryCalculator.tsx",
+        "src/data/tax-trap.ts",
+        "src/components/calculators/SixtyPercentTaxTrapCalculator.tsx",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "",
       "status": "current",
@@ -10608,7 +10626,10 @@
         "src/components/calculators/TaxCodeCheckerCalculator.tsx",
         "src/components/calculators/WorkFromHomeTaxReliefCalculator.tsx",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/tax-trap.ts",
+        "src/data/second-job.ts",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/income-tax-rates",
       "status": "current",
@@ -10654,7 +10675,10 @@
         "src/components/calculators/ContractorDayRateCalculator.tsx",
         "src/components/calculators/NISalarySacrificeCalculator.tsx",
         "src/components/calculators/PensionTaxReliefCalculator.tsx",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/tax-trap.ts",
+        "src/data/second-job.ts",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/income-tax-rates",
       "status": "current",
@@ -10722,7 +10746,10 @@
         "src/components/calculators/WorkFromHomeTaxReliefCalculator.tsx",
         "src/components/calculators/ZeroHoursCalculator.tsx",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/tax-trap.ts",
+        "src/data/second-job.ts",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/income-tax-rates",
       "status": "current",
@@ -10878,7 +10905,10 @@
         "src/components/calculators/WorkFromHomeTaxReliefCalculator.tsx",
         "src/components/calculators/ZeroHoursCalculator.tsx",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/tax-trap.ts",
+        "src/data/second-job.ts",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/income-tax-rates",
       "status": "current",
@@ -10949,7 +10979,11 @@
         "src/components/calculators/PensionTaxReliefCalculator.tsx",
         "src/components/calculators/TakeHomePayCalculator.tsx",
         "src/components/calculators/TaxBracketVisualizerCalculator.tsx",
-        "src/components/calculators/ZeroHoursCalculator.tsx"
+        "src/components/calculators/ZeroHoursCalculator.tsx",
+        "src/data/second-job.ts",
+        "src/components/calculators/SecondJobTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/income-tax-rates",
       "status": "current",
@@ -14895,7 +14929,8 @@
         "src/components/calculators/UmbrellaCompanyCalculator.tsx",
         "src/components/calculators/ZeroHoursCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/tax-trap.ts"
       ],
       "source_url": "https://www.gov.uk/national-insurance-rates-letters",
       "status": "current",
@@ -14969,7 +15004,8 @@
         "src/components/calculators/UmbrellaCompanyCalculator.tsx",
         "src/components/calculators/ZeroHoursCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/tax-trap.ts"
       ],
       "source_url": "https://www.gov.uk/national-insurance-rates-letters",
       "status": "current",
@@ -15113,7 +15149,11 @@
         "src/components/calculators/SalarySacrificeCalculator.tsx",
         "src/components/calculators/TakeHomePayCalculator.tsx",
         "src/components/calculators/TeacherPayCalculator.tsx",
-        "src/components/calculators/UmbrellaCompanyCalculator.tsx"
+        "src/components/calculators/UmbrellaCompanyCalculator.tsx",
+        "src/data/tax-trap.ts",
+        "src/components/calculators/SecondJobTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
       "status": "current",
@@ -15184,7 +15224,11 @@
         "src/components/calculators/SalarySacrificeCalculator.tsx",
         "src/components/calculators/TakeHomePayCalculator.tsx",
         "src/components/calculators/TeacherPayCalculator.tsx",
-        "src/components/calculators/UmbrellaCompanyCalculator.tsx"
+        "src/components/calculators/UmbrellaCompanyCalculator.tsx",
+        "src/data/tax-trap.ts",
+        "src/components/calculators/SecondJobTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
       "status": "current",
@@ -16302,7 +16346,9 @@
         "src/components/calculators/PensionAnnualAllowanceCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/tax-trap.ts",
+        "src/components/calculators/SixtyPercentTaxTrapCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/tax-on-your-private-pension/annual-allowance",
       "status": "current",
@@ -17216,7 +17262,11 @@
         "src/components/calculators/TeacherPayCalculator.tsx",
         "src/components/calculators/UmbrellaCompanyCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/tax-trap.ts",
+        "src/data/second-job.ts",
+        "src/components/calculators/SixtyPercentTaxTrapCalculator.tsx",
+        "src/components/calculators/SecondJobTaxCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/income-tax-rates",
       "status": "current",
@@ -17258,7 +17308,11 @@
         "prose"
       ],
       "used_by": [
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/tax-trap.ts",
+        "src/components/calculators/SixtyPercentTaxTrapCalculator.tsx",
+        "src/data/faqs.ts",
+        "src/data/calculators.ts"
       ],
       "source_url": "https://www.gov.uk/income-tax-rates",
       "status": "current",
@@ -17278,7 +17332,12 @@
         "prose"
       ],
       "used_by": [
-        "src/components/calculators/TaxBracketVisualizerCalculator.tsx"
+        "src/components/calculators/TaxBracketVisualizerCalculator.tsx",
+        "src/data/tax-trap.ts",
+        "src/components/calculators/SixtyPercentTaxTrapCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts",
+        "src/data/calculators.ts"
       ],
       "source_url": "https://commonslibrary.parliament.uk/research-briefings/cbp-10618/",
       "status": "current",
@@ -17303,7 +17362,10 @@
         "src/components/calculators/LandlordTaxCalculator.tsx",
         "src/components/calculators/NonDomTaxCalculator.tsx",
         "src/components/calculators/SideHustleTaxCalculator.tsx",
-        "src/components/calculators/UmbrellaCompanyCalculator.tsx"
+        "src/components/calculators/UmbrellaCompanyCalculator.tsx",
+        "src/data/tax-trap.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/income-tax-rates",
       "status": "current",
@@ -17347,7 +17409,10 @@
         "src/components/calculators/TaxBracketVisualizerCalculator.tsx",
         "src/components/calculators/UmbrellaCompanyCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/tax-trap.ts",
+        "src/components/calculators/SixtyPercentTaxTrapCalculator.tsx",
+        "src/data/calculators.ts"
       ],
       "source_url": "https://www.gov.uk/income-tax-rates",
       "status": "current",
@@ -17885,7 +17950,8 @@
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx",
         "src/components/calculators/TakeHomePayCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/second-job.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
@@ -18145,7 +18211,9 @@
       "used_by": [
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx",
         "src/components/calculators/TakeHomePayCalculator.tsx",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/second-job.ts",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
@@ -18170,7 +18238,9 @@
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx",
         "src/components/calculators/TakeHomePayCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/second-job.ts",
+        "src/components/calculators/SecondJobTaxCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
@@ -18333,7 +18403,8 @@
         "src/components/calculators/PayrollCalculator.tsx",
         "src/components/calculators/TakeHomePayCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/second-job.ts"
       ],
       "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
@@ -18663,7 +18734,8 @@
         "src/components/calculators/StudentLoanTotalCostCalculator.tsx",
         "src/components/calculators/TakeHomePayCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/second-job.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/student-loans-a-guide-to-terms-and-conditions/student-loans-a-guide-to-terms-and-conditions-2026-to-2027",
       "status": "current",
@@ -18909,7 +18981,9 @@
         "src/components/calculators/PostgraduateLoanCalculator.tsx",
         "src/components/calculators/PostgraduateLoanCostCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/calculators.ts"
+        "src/data/calculators.ts",
+        "src/data/second-job.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
       "status": "current",
@@ -18955,7 +19029,8 @@
       "used_by": [
         "src/data/calculator-content.ts",
         "src/data/calculators.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/second-job.ts"
       ],
       "source_url": "https://www.gov.uk/guidance/special-rules-for-student-loans",
       "status": "current",
@@ -20380,7 +20455,8 @@
       "used_by": [
         "src/components/calculators/ScottishIncomeTaxCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/SixtyPercentTaxTrapCalculator.tsx"
       ],
       "source_url": "https://www.gov.scot/publications/scottish-income-tax-technical-factsheet/",
       "status": "current",
@@ -24962,7 +25038,10 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/TaxCodeCheckerCalculator.tsx"
+        "src/components/calculators/TaxCodeCheckerCalculator.tsx",
+        "src/data/second-job.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "",
       "status": "current",
@@ -24979,7 +25058,11 @@
         "prose"
       ],
       "used_by": [
-        "src/data/calculators.ts"
+        "src/data/calculators.ts",
+        "src/data/second-job.ts",
+        "src/components/calculators/SecondJobTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/p9x-tax-codes/p9x-tax-codes-to-use-from-6-april-2026",
       "status": "current",
@@ -25065,7 +25148,8 @@
       ],
       "used_by": [
         "src/components/calculators/ChildcareCostCalculator.tsx",
-        "src/components/calculators/ChildcareEntitlementCalculator.tsx"
+        "src/components/calculators/ChildcareEntitlementCalculator.tsx",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "",
       "status": "current",
@@ -25082,7 +25166,10 @@
         "prose"
       ],
       "used_by": [
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/tax-trap.ts",
+        "src/components/calculators/SixtyPercentTaxTrapCalculator.tsx",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "",
       "status": "current",
@@ -25102,7 +25189,8 @@
       "used_by": [
         "src/components/calculators/ChildcareCostCalculator.tsx",
         "src/components/calculators/ChildcareEntitlementCalculator.tsx",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "",
       "status": "current",
@@ -34079,6 +34167,236 @@
       "verify_method": "calkcheck-2026-09-28-r8",
       "confidence": "high",
       "changes_next_fy": "Apply 6 April 2027"
+    },
+    {
+      "key": "ni_class1_primary_threshold_weekly",
+      "value": "242",
+      "unit": "GBP/week",
+      "law": "NI Class 1 (2026/27)",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/second-job.ts",
+        "src/components/calculators/SecondJobTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/national-insurance/how-much-you-pay",
+      "official_value": "242",
+      "note": "Second job: each employer applies its own weekly Primary Threshold (242/week = 12,570/year, 1,048/month).",
+      "freshness_note": "gov.uk/national-insurance/how-much-you-pay (2026 to 2027): 8% on 242 to 967 a week, 2% above. Frozen with the annual thresholds to April 2031.",
+      "theme": "tax",
+      "status": "current",
+      "verified_date": "2026-10-13",
+      "verify_method": "gov.uk read 2026-10-13 (new calculators sixty-percent-tax-trap / second-job)",
+      "confidence": "high",
+      "change_frequency": ""
+    },
+    {
+      "key": "ni_class1_upper_earnings_limit_weekly",
+      "value": "967",
+      "unit": "GBP/week",
+      "law": "NI Class 1 (2026/27)",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/second-job.ts",
+        "src/components/calculators/SecondJobTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/national-insurance/how-much-you-pay",
+      "official_value": "967",
+      "note": "Second job: deferment possible once one job pays 967/week or more (gov.uk/defer-national-insurance).",
+      "freshness_note": "967/week = 50,270/year UEL for 2026 to 2027 (gov.uk rates-and-thresholds-for-employers-2026-to-2027).",
+      "theme": "tax",
+      "status": "current",
+      "verified_date": "2026-10-13",
+      "verify_method": "gov.uk read 2026-10-13 (new calculators sixty-percent-tax-trap / second-job)",
+      "confidence": "high",
+      "change_frequency": ""
+    },
+    {
+      "key": "simple_assessment_debt_threshold",
+      "value": "3000",
+      "unit": "GBP",
+      "law": "PAYE underpayment collection (Simple Assessment)",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/tax-overpayments-and-underpayments",
+      "official_value": "3000",
+      "note": "Second job page: a Simple Assessment letter is used when tax cannot be taken from income or you owe HMRC more than 3,000.",
+      "freshness_note": "gov.uk/tax-overpayments-and-underpayments read 2026-10-13: Simple Assessment if you \"owe HMRC more than 3,000\". P800 letters sent June to March of the following tax year.",
+      "theme": "tax",
+      "status": "current",
+      "verified_date": "2026-10-13",
+      "verify_method": "gov.uk read 2026-10-13 (new calculators sixty-percent-tax-trap / second-job)",
+      "confidence": "high",
+      "change_frequency": ""
+    },
+    {
+      "key": "second_job_flat_tax_codes",
+      "value": "BR 20% / D0 40% / D1 45%",
+      "unit": "rule",
+      "law": "PAYE tax codes",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/second-job.ts",
+        "src/components/calculators/SecondJobTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts",
+        "src/data/calculators.ts"
+      ],
+      "source_url": "https://www.gov.uk/tax-codes/what-your-tax-code-means",
+      "official_value": "BR 20% / D0 40% / D1 45%",
+      "note": "BR, D0 and D1 tax all income from a job or pension at basic/higher/additional rate; \"usually used if you have got more than one job or pension\". Personal Allowance usually allocated to the job that pays most (gov.uk/guidance/how-tax-works-if-you-have-more-than-one-job, 26 May 2026).",
+      "freshness_note": "Codes follow the main rates; would change only if the 20/40/45 rates change.",
+      "theme": "tax",
+      "status": "current",
+      "verified_date": "2026-10-13",
+      "verify_method": "gov.uk read 2026-10-13 (new calculators sixty-percent-tax-trap / second-job)",
+      "confidence": "high",
+      "change_frequency": ""
+    },
+    {
+      "key": "personal_allowance_split_between_jobs_rule",
+      "value": "on request to HMRC",
+      "unit": "rule",
+      "law": "PAYE coding",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/second-job.ts",
+        "src/components/calculators/SecondJobTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/how-tax-works-if-you-have-more-than-one-job",
+      "official_value": "on request to HMRC",
+      "note": "gov.uk: contact HMRC to check \"if your Personal Allowance can be split between your jobs\"; Tax Confident: two jobs each under 12,570 -> ask HMRC to share the allowance. Modelled as the SPLIT option (unused allowance from job 1 moves to job 2).",
+      "freshness_note": "Rule only; no numeric value.",
+      "theme": "tax",
+      "status": "current",
+      "verified_date": "2026-10-13",
+      "verify_method": "gov.uk read 2026-10-13 (new calculators sixty-percent-tax-trap / second-job)",
+      "confidence": "high",
+      "change_frequency": ""
+    },
+    {
+      "key": "national_insurance_per_employment_rule",
+      "value": "worked out separately for each job",
+      "unit": "rule",
+      "law": "NI Class 1",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/second-job.ts",
+        "src/components/calculators/SecondJobTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts",
+        "src/data/calculators.ts"
+      ],
+      "source_url": "https://taxconfident.campaign.gov.uk/working-life/changing-work-income/multiple-jobs/",
+      "official_value": "worked out separately for each job",
+      "note": "Each employer applies its own PT/UEL; HMRC does not aggregate. Deferment (CA72A) when one job is over the UEL: gov.uk/defer-national-insurance.",
+      "freshness_note": "Rule only; thresholds tracked under ni_class1_* keys.",
+      "theme": "tax",
+      "status": "current",
+      "verified_date": "2026-10-13",
+      "verify_method": "gov.uk read 2026-10-13 (new calculators sixty-percent-tax-trap / second-job)",
+      "confidence": "high",
+      "change_frequency": ""
+    },
+    {
+      "key": "student_loan_repayment_per_job_rule",
+      "value": "only from jobs paid over the threshold, not combined income",
+      "unit": "rule",
+      "law": "Student loan repayment (PAYE)",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/second-job.ts",
+        "src/components/calculators/SecondJobTaxCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "official_value": "only from jobs paid over the threshold, not combined income",
+      "note": "gov.uk: \"You will only make repayments from jobs where you are paid over the threshold for your plan type, not your combined income.\" Self Assessment recalculates on total income.",
+      "freshness_note": "Rule only; thresholds tracked under plan*_student_loan_threshold keys.",
+      "theme": "tax",
+      "status": "current",
+      "verified_date": "2026-10-13",
+      "verify_method": "gov.uk read 2026-10-13 (new calculators sixty-percent-tax-trap / second-job)",
+      "confidence": "high",
+      "change_frequency": ""
+    },
+    {
+      "key": "p800_tax_calculation_window",
+      "value": "June to March of the following tax year",
+      "unit": "rule",
+      "law": "PAYE end-of-year reconciliation",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/tax-overpayments-and-underpayments",
+      "official_value": "June to March of the following tax year",
+      "note": "P800 tax calculation letters (or Simple Assessment) issued after the tax year ends.",
+      "freshness_note": "Read 2026-10-13.",
+      "theme": "tax",
+      "status": "current",
+      "verified_date": "2026-10-13",
+      "verify_method": "gov.uk read 2026-10-13 (new calculators sixty-percent-tax-trap / second-job)",
+      "confidence": "high",
+      "change_frequency": ""
+    },
+    {
+      "key": "childcare_income_cap_cliff_rule",
+      "value": "either parent expected adjusted net income over 100000 ends 30 hours and Tax-Free Childcare",
+      "unit": "rule",
+      "law": "Free childcare for working parents (England) / Tax-Free Childcare",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/tax-trap.ts",
+        "src/components/calculators/SixtyPercentTaxTrapCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/check-eligible-free-childcare-if-youre-working",
+      "official_value": "either parent expected adjusted net income over 100000 ends 30 hours and Tax-Free Childcare",
+      "note": "gov.uk: not eligible if \"you or your partner's expected adjusted net income (including any foreign income) is over 100,000 for the current tax year\"; same test on gov.uk/tax-free-childcare/check-if-youre-eligible. Cliff edge, no taper. Numeric cap tracked under free_childcare_max_earnings_per_parent / tax_free_childcare_income_cap.",
+      "freshness_note": "Read 2026-10-13.",
+      "theme": "tax",
+      "status": "current",
+      "verified_date": "2026-10-13",
+      "verify_method": "gov.uk read 2026-10-13 (new calculators sixty-percent-tax-trap / second-job)",
+      "confidence": "high",
+      "change_frequency": ""
     }
   ],
   "status_summary": {
