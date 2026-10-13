@@ -10335,8 +10335,8 @@
       "note": "ILRCalculator: maximum total days absent for 10-year long residence route (~18 months)",
       "official_value": "548 days",
       "confidence": "medium",
-      "freshness_note": "Long Residence guidance: up to 18 months (548 days) total absence (and 184 days max single absence) applies to the portion of the 10-year period before 11 April 2024; from 11 April 2024 the 180-days-per-12-months rule applies. 548 still operative for the legacy portion (Home Office clarified 9 Jul 2024).",
-      "verified_date": "2026-06-28",
+      "freshness_note": "Re-verified 2026-10-13 against Long Residence caseworker guidance v26.0 (8 Oct 2026): 184 days in one absence / 548 days in total still apply to absences before 11 April 2024; the 8 Oct change concerned varying applications to Appendix FM / Private Life.",
+      "verified_date": "2026-10-13",
       "verify_method": "tier2-tail"
     },
     {
@@ -11697,14 +11697,14 @@
       "used_by": [
         "src/data/calculators.ts"
       ],
-      "source_url": "https://www.legislation.gov.uk/uksi/2025/57/contents/made",
+      "source_url": "https://www.legislation.gov.uk/ukpga/2024/22/section/37",
       "status": "current",
       "change_frequency": "",
       "note": "lease-extension-calculator: 'lease extension premium including marriage value, ground rent and professional fees'",
       "official_value": "marriage value (still payable)",
       "confidence": "medium",
-      "freshness_note": "Re-verified 2026-09-29: LAFRA 2024 s.8 still 'Prospective' on legislation.gov.uk; only 3 commencement regs made (none touch valuation); freeholder appeals pending at the Court of Appeal. Marriage value still payable at 80 years or less.",
-      "verified_date": "2026-09-29",
+      "freshness_note": "Re-verified 2026-10-13: LAFRA 2024 s.37 (new price method) and Sch 4 para 17 ('no marriage or hope value') are both still 'Prospective' on legislation.gov.uk, so marriage value is still payable at 80 years or less. (Earlier notes citing s.8 were wrong: s.8 is about permitted leases of houses.)",
+      "verified_date": "2026-10-13",
       "verify_method": "tier2-tail"
     },
     {
@@ -11719,14 +11719,14 @@
       "used_by": [
         "src/components/calculators/LeaseExtensionCalculator.tsx"
       ],
-      "source_url": "https://www.legislation.gov.uk/uksi/2025/57/contents/made",
+      "source_url": "https://www.legislation.gov.uk/ukpga/2024/22/section/37",
       "status": "current",
       "change_frequency": "",
       "note": "LeaseExtensionCalculator: landlord receives 50% of marriage value (marriageValue * 0.5); statutory split; shown in prose 'Marriage value (50%)'",
       "official_value": "50%",
       "confidence": "medium",
-      "freshness_note": "Re-verified 2026-09-29: 1993 Act Sch 13 50% share still in force; LAFRA 2024 valuation provisions uncommenced (s.8 'Prospective').",
-      "verified_date": "2026-09-29",
+      "freshness_note": "Re-verified 2026-10-13: the 1993 Act Sch 13 50% share is still in force; LAFRA 2024 s.37 / Sch 4 para 17 are uncommenced ('Prospective').",
+      "verified_date": "2026-10-13",
       "verify_method": "tier2-tail"
     },
     {
