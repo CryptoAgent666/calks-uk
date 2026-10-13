@@ -31845,6 +31845,7 @@
       ],
       "used_by": [
         "src/components/calculators/CarInsuranceEstimateCalculator.tsx",
+        "src/data/car-insurance-model.ts",
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],

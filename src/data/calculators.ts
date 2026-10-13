@@ -1365,11 +1365,11 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'premium-bonds-calculator',
     title: 'Premium Bonds Odds Calculator',
-    description: 'Odds of winning Premium Bonds with £1,000 to £50,000: prizes a month, chance of a win, average vs typical winnings and jackpot odds at the 4.35% rate.',
+    description: 'Odds of winning Premium Bonds with £50,000, £10,000 or £1,000: prizes a month, average and typical winnings, and your chance of the £1 million jackpot.',
     category: 'investment',
     icon: 'TrendingUp',
     keywords: ['premium bonds', 'NS&I', 'prize draw', 'tax free savings'],
-    metaTitle: 'Premium Bonds Odds: Chances of Winning with £1k to £50k',
+    metaTitle: 'Premium Bonds Odds of Winning: £1k to £50k and £1 Million',
     priority: 2,
   },
   // BENEFITS (additional)
@@ -1607,7 +1607,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // TAX
   { slug: 'annual-tax-summary-calculator', title: 'Annual Tax Summary Calculator', description: 'Calculate your total tax bill from all income sources — salary, dividends, self-employment, rental and capital gains.', category: 'tax', icon: 'Receipt', keywords: ['annual tax', 'tax summary', 'total tax', 'all income', 'tax bill'], priority: 1 , metaTitle: 'Annual Tax Summary Calculator UK 2026/27' },
   // BUSINESS
-  { slug: 'business-rates-calculator', title: 'Business Rates Calculator', description: 'Estimate 2026/27 business rates from rateable value, with the new retail, hospitality and leisure multipliers, small business relief, Wales and Scotland.', category: 'business', icon: 'Briefcase', keywords: ['business rates', 'rateable value', 'SBRR', 'small business rate relief', 'retail hospitality leisure multiplier', 'commercial property'], priority: 2, metaTitle: 'Business Rates & Rateable Value Calculator 2026/27' },
+  { slug: 'business-rates-calculator', title: 'Business Rates Calculator', description: 'Business rates 2026/27 from rateable value after the April 2026 revaluation: retail, hospitality and leisure multipliers and small business rate relief.', category: 'business', icon: 'Briefcase', keywords: ['business rates', 'rateable value', 'SBRR', 'small business rate relief', 'retail hospitality leisure multiplier', 'commercial property'], priority: 2, metaTitle: 'Business Rates Calculator 2026/27: Rateable Value & Relief' },
   { slug: 'rd-tax-credit-calculator', title: 'R&D Tax Credit Calculator', description: 'Estimate R&D tax credits for profitable and loss-making companies under the merged RDEC scheme.', category: 'business', icon: 'Briefcase', keywords: ['R&D', 'tax credits', 'RDEC', 'research development', 'innovation'], priority: 2 , metaTitle: 'R&D Tax Credit Calculator UK 2026' },
   { slug: 'cis-calculator', title: 'CIS Subcontractor Tax Calculator', description: 'Work out CIS deductions on a subcontractor invoice at 20% registered, 30% unverified or 0% gross status, with materials excluded and the net payment due.', category: 'business', icon: 'Briefcase', keywords: ['CIS', 'construction industry scheme', 'subcontractor', 'CIS deduction'], priority: 2 , metaTitle: 'CIS Calculator UK 2026/27' },
   // INSURANCE
@@ -1693,7 +1693,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'birthday-calculator', title: 'Birthday Calculator', description: 'Find your day of birth, star sign, Chinese zodiac, days alive and upcoming milestone birthdays.', category: 'tools', icon: 'Wrench', keywords: ['birthday', 'star sign', 'zodiac', 'born on', 'days alive'], priority: 2 , metaTitle: 'Birthday Calculator — Next Birthday Countdown' },
   // INSURANCE
   { slug: 'employers-liability-calculator', title: "Employers' Liability Insurance Calculator", description: "Estimate employers' liability insurance premiums by industry and annual wages. Legal requirement for UK businesses.", category: 'insurance', icon: 'ShieldCheck', keywords: ['employers liability', 'EL insurance', 'business insurance', 'employee insurance'], priority: 2 , metaTitle: 'Employers\' Liability Insurance Calculator UK 2026' },
-  { slug: 'car-insurance-estimate-calculator', title: 'Car Insurance Estimate Calculator', description: 'Estimate car insurance premiums by age, cover level, no claims bonus, insurance group and mileage.', category: 'insurance', icon: 'ShieldCheck', keywords: ['car insurance', 'motor insurance', 'NCB', 'insurance group', 'insurance quote'], priority: 1 , metaTitle: 'Car Insurance Estimate Calculator UK 2026' },
+  { slug: 'car-insurance-estimate-calculator', title: 'Car Insurance Estimate Calculator', description: 'Car insurance calculator for a UK estimate by age, cover level, no-claims years, insurance group 1-50 and mileage, with the estimated cost for every group.', category: 'insurance', icon: 'ShieldCheck', keywords: ['car insurance', 'motor insurance', 'NCB', 'insurance group', 'insurance quote'], priority: 1 , metaTitle: 'Car Insurance Calculator UK: Cost by Age & Insurance Group' },
   { slug: 'home-insurance-calculator', title: 'Home Insurance Estimate Calculator', description: 'Estimate home insurance premiums for buildings, contents or combined cover by property type.', category: 'insurance', icon: 'ShieldCheck', keywords: ['home insurance', 'buildings insurance', 'contents insurance', 'house insurance'], priority: 2 , metaTitle: 'Home Insurance Calculator UK 2026' },
   { slug: 'critical-illness-calculator', title: 'Critical Illness Cover Calculator', description: 'Estimate critical illness insurance premiums by age, cover amount, term and smoker status.', category: 'insurance', icon: 'ShieldCheck', keywords: ['critical illness', 'CI cover', 'serious illness', 'cancer cover'], priority: 2 , metaTitle: 'Critical Illness Cover Calculator UK 2026' },
   // AUTO

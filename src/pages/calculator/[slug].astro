@@ -148,6 +148,14 @@ const schemas = [
           </section>
         )}
 
+        <!-- Anchored sections (deep-linkable, e.g. odds per holding or a group table) -->
+        {content?.sections?.map((s) => (
+          <section class="rounded-2xl border border-border bg-card p-6 shadow-sm scroll-mt-24">
+            <h3 id={s.id} class="text-xl font-semibold mb-3">{s.title}</h3>
+            <div class="space-y-3 text-sm text-muted-foreground leading-relaxed overflow-x-auto rate-table-wrapper" set:html={s.html} />
+          </section>
+        ))}
+
         <!-- FAQ Section -->
         {faqs.length > 0 && (
           <section class="rounded-2xl border border-border bg-card p-6 shadow-sm print:hidden">
