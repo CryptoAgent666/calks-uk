@@ -1,8 +1,16 @@
 ---
 import { CATEGORIES } from '@/data/categories'
-import type { CategoryId } from '@/data/types'
+import { CALCULATORS } from '@/data/calculators'
+import { POPULAR_SLUGS } from '@/data/site'
+import type { CategoryId, CalculatorMeta } from '@/data/types'
 
 const currentYear = new Date().getFullYear()
+// Same source as the homepage "Popular" block (Search Console clicks), top six.
+const bySlug = new Map(CALCULATORS.map((c) => [c.slug, c]))
+const footerPopular = POPULAR_SLUGS
+  .map((slug) => bySlug.get(slug))
+  .filter((c): c is CalculatorMeta => Boolean(c))
+  .slice(0, 6)
 const FOOTER_CATEGORIES: CategoryId[] = ['tax', 'pay', 'pension', 'mortgage', 'loans', 'business', 'investment', 'benefits', 'auto', 'health', 'building', 'energy', 'education', 'tools']
 ---
 
@@ -102,12 +110,9 @@ const FOOTER_CATEGORIES: CategoryId[] = ['tax', 'pay', 'pension', 'mortgage', 'l
           Popular
         </h3>
         <ul class="space-y-2.5">
-          <li><a href="/calculator/income-tax-calculator/" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 inline-block">Income Tax Calculator</a></li>
-          <li><a href="/calculator/take-home-pay-calculator/" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 inline-block">Take-Home Pay Calculator</a></li>
-          <li><a href="/calculator/vat-calculator/" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 inline-block">VAT Calculator</a></li>
-          <li><a href="/calculator/stamp-duty-calculator/" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 inline-block">Stamp Duty Calculator</a></li>
-          <li><a href="/calculator/mortgage-repayment-calculator/" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 inline-block">Mortgage Calculator</a></li>
-          <li><a href="/calculator/national-insurance-calculator/" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 inline-block">National Insurance Calculator</a></li>
+          {footerPopular.map((calc) => (
+            <li><a href={`/calculator/${calc.slug}/`} class="text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 inline-block">{calc.title}</a></li>
+          ))}
         </ul>
       </div>
 

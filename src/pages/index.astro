@@ -2,12 +2,17 @@
 import Layout from '@/layouts/Layout.astro'
 import { CATEGORIES, CATEGORY_IDS } from '@/data/categories'
 import { CALCULATORS } from '@/data/calculators'
-import { RATES_VERIFIED } from '@/data/site'
+import { RATES_VERIFIED, POPULAR_SLUGS } from '@/data/site'
 import { getOrganizationSchema, getWebSiteSchema, getWebPageSchema } from '@/utils/seo'
 import HomeSearch from '@/components/HomeSearch'
 import RecentsRow from '@/components/RecentsRow'
+import type { CalculatorMeta } from '@/data/types'
 
-const popularCalculators = CALCULATORS.filter((c) => c.priority === 1).slice(0, 12)
+// Real usage (Search Console clicks), not editorial priority — see site.ts.
+const bySlug = new Map(CALCULATORS.map((c) => [c.slug, c]))
+const popularCalculators = POPULAR_SLUGS
+  .map((slug) => bySlug.get(slug))
+  .filter((c): c is CalculatorMeta => Boolean(c))
 
 const schemas = [
   getOrganizationSchema(),

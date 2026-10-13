@@ -32,6 +32,8 @@ export interface CalculatorMeta {
   metaTitle?: string // override for <title> tag
   isNew?: boolean
   isTrending?: boolean
+  /** Hand-picked slugs shown first in "Related Calculators"; the rest is scored by keyword overlap. */
+  related?: string[]
 }
 
 export interface Category {

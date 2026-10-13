@@ -1878,11 +1878,51 @@ export function getCalculatorsByCategory(categoryId: string): CalculatorMeta[] {
   return CALCULATORS.filter((c) => c.category === categoryId).sort((a, b) => a.priority - b.priority)
 }
 
+// Words that carry no topical signal when comparing calculators.
+const RELATED_STOP = new Set(['calculator', 'calculators', 'converter', 'uk', 'and', 'the', 'for', 'with', 'your', 'how', 'much', 'vs', 'from', 'free', 'online', 'estimate', 'cost', 'costs'])
+const relatedTokenCache = new Map<string, Set<string>>()
+
+function relatedTokens(c: CalculatorMeta): Set<string> {
+  let t = relatedTokenCache.get(c.slug)
+  if (!t) {
+    t = new Set(
+      [c.title, ...c.keywords]
+        .join(' ')
+        .toLowerCase()
+        .replace(/[^a-z0-9£ ]+/g, ' ')
+        .split(/\s+/)
+        .filter((w) => w.length > 2 && !RELATED_STOP.has(w)),
+    )
+    relatedTokenCache.set(c.slug, t)
+  }
+  return t
+}
+
+/**
+ * Related calculators across the whole site, not only the same category.
+ * Explicit `related` slugs come first; the rest are scored by shared title and
+ * keyword words (2 points each) plus a same-category bonus (3), so a leasehold
+ * page in "mortgage" still reaches ground rent in "legal". Before October 2026
+ * this returned the top six of the same category by priority only, which gave
+ * every page the same six neighbours and ~1.15 pages per session.
+ */
 export function getRelatedCalculators(slug: string, limit = 6): CalculatorMeta[] {
   const calc = getCalculatorBySlug(slug)
   if (!calc) return []
-  return CALCULATORS
-    .filter((c) => c.category === calc.category && c.slug !== slug)
-    .sort((a, b) => a.priority - b.priority)
-    .slice(0, limit)
+  const explicit = (calc.related ?? [])
+    .map((s) => getCalculatorBySlug(s))
+    .filter((c): c is CalculatorMeta => Boolean(c) && c!.slug !== slug)
+  const taken = new Set(explicit.map((c) => c.slug))
+  const mine = relatedTokens(calc)
+  const scored = CALCULATORS
+    .filter((c) => c.slug !== slug && !taken.has(c.slug))
+    .map((c) => {
+      let score = c.category === calc.category ? 3 : 0
+      for (const w of relatedTokens(c)) if (mine.has(w)) score += 2
+      return { c, score }
+    })
+    .filter((s) => s.score > 0)
+    .sort((a, b) => b.score - a.score || a.c.priority - b.c.priority || a.c.title.localeCompare(b.c.title))
+    .map((s) => s.c)
+  return [...explicit, ...scored].slice(0, limit)
 }
