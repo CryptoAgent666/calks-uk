@@ -3545,7 +3545,9 @@
         "prose"
       ],
       "used_by": [
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/voluntary-ni.ts",
+        "src/components/calculators/VoluntaryNiCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/voluntary-national-insurance-contributions/rates",
       "status": "current",
@@ -3555,7 +3557,9 @@
       "confidence": "high",
       "freshness_note": "gov.uk voluntary NI page (read twice) states for 2026-27: Class 3 = GBP 18.40/week. 17.45 was the 2024/25 rate; 2025/26 was 17.75. Corroborated by Which.co.uk (18.40, up from 17.75).",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-10-13",
+      "verify_method": "voluntary-ni-calculator build 2026-10-13: re-read gov.uk live page"
     },
     {
       "key": "client_entertaining_gift_deductible_limit",
@@ -8816,7 +8820,9 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/StatePensionCalculator.tsx"
+        "src/components/calculators/StatePensionCalculator.tsx",
+        "src/data/voluntary-ni.ts",
+        "src/components/calculators/VoluntaryNiCalculator.tsx"
       ],
       "source_url": "https://assets.publishing.service.gov.uk/media/69285a30ce50d215cae96148/proposed-benefit-and-pension-rates-2026-2027.pdf",
       "status": "current",
@@ -8824,7 +8830,9 @@
       "note": "State Pension Calculator: full new State Pension 2026/27 (triple lock uprating), used in computation and displayed in prose",
       "official_value": "241.30",
       "confidence": "high",
-      "freshness_note": "DWP proposed benefit and pension rates 2026/27: New State Pension full rate GBP 241.30/week (up from 230.25), triple-lock uprating 4.8% (AWE). Effective from first payday on/after 6 Apr 2026."
+      "freshness_note": "DWP proposed benefit and pension rates 2026/27: New State Pension full rate GBP 241.30/week (up from 230.25), triple-lock uprating 4.8% (AWE). Effective from first payday on/after 6 Apr 2026.",
+      "verified_date": "2026-10-13",
+      "verify_method": "voluntary-ni-calculator build 2026-10-13: re-read gov.uk live page"
     },
     {
       "key": "gcse_strong_pass_grade",
@@ -15281,7 +15289,9 @@
       "confidence": "high",
       "freshness_note": "gov.uk self-employed NI page states the small profits threshold for 2026/27 is GBP 7,105 ('If your profits are less than 7,105 a year'). 6,725 was the 2024/25 figure (2025/26 was 6,845). Stale.",
       "fixed": true,
-      "fixed_date": "2026-07-28"
+      "fixed_date": "2026-07-28",
+      "verified_date": "2026-10-13",
+      "verify_method": "voluntary-ni-calculator build 2026-10-13: re-read gov.uk live page"
     },
     {
       "key": "ni_class2_threshold",
@@ -15315,7 +15325,9 @@
       ],
       "used_by": [
         "src/components/calculators/SoleTraderVsLtdCalculator.tsx",
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/data/voluntary-ni.ts",
+        "src/components/calculators/VoluntaryNiCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/self-employed-national-insurance-rates",
       "status": "current",
@@ -15330,7 +15342,9 @@
       "confidence": "high",
       "freshness_note": "conflict=true; conflict_values [3.5, 3.45] are BOTH stale. gov.uk states verbatim 'The Class 2 rate for tax year 2026 to 2027 is 3.65 a week.' 3.45 = 2024/25, 3.50 = 2025/26, 3.65 = 2026/27. Correct v",
       "fixed": true,
-      "fixed_date": "2026-07-28"
+      "fixed_date": "2026-07-28",
+      "verified_date": "2026-10-13",
+      "verify_method": "voluntary-ni-calculator build 2026-10-13: re-read gov.uk live page"
     },
     {
       "key": "ni_class3_voluntary_weekly_rate",
@@ -24492,7 +24506,9 @@
       "used_by": [
         "src/components/calculators/StatePensionCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/voluntary-ni.ts",
+        "src/components/calculators/VoluntaryNiCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/new-state-pension/your-national-insurance-record-and-your-state-pension",
       "status": "current",
@@ -24500,7 +24516,9 @@
       "note": "State Pension Calculator: 35 qualifying NI years needed for full new State Pension (also stated in prose)",
       "official_value": "35",
       "confidence": "high",
-      "freshness_note": "Usually 35 qualifying years needed for the full new State Pension. Unchanged. Current."
+      "freshness_note": "Usually 35 qualifying years needed for the full new State Pension. Unchanged. Current.",
+      "verified_date": "2026-10-13",
+      "verify_method": "voluntary-ni-calculator build 2026-10-13: re-read gov.uk live page"
     },
     {
       "key": "state_pension_qualifying_years_min",
@@ -24512,7 +24530,9 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/StatePensionCalculator.tsx"
+        "src/components/calculators/StatePensionCalculator.tsx",
+        "src/data/voluntary-ni.ts",
+        "src/components/calculators/VoluntaryNiCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/new-state-pension/your-national-insurance-record-and-your-state-pension",
       "status": "current",
@@ -24520,7 +24540,9 @@
       "note": "State Pension Calculator: minimum 10 qualifying years to get any State Pension (also stated in prose)",
       "official_value": "10",
       "confidence": "high",
-      "freshness_note": "Duplicate of minimum 10 qualifying years for new State Pension. Current."
+      "freshness_note": "Duplicate of minimum 10 qualifying years for new State Pension. Current.",
+      "verified_date": "2026-10-13",
+      "verify_method": "voluntary-ni-calculator build 2026-10-13: re-read gov.uk live page"
     },
     {
       "key": "state_pension_triple_lock_floor",
@@ -34079,10 +34101,111 @@
       "verify_method": "calkcheck-2026-09-28-r8",
       "confidence": "high",
       "changes_next_fy": "Apply 6 April 2027"
+    },
+    {
+      "key": "voluntary_ni_backdate_years",
+      "value": "6",
+      "unit": "years",
+      "law": "Social Security (Contributions) Regulations: time limit for voluntary NICs",
+      "theme": "national_insurance",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/voluntary-ni.ts",
+        "src/components/calculators/VoluntaryNiCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/voluntary-national-insurance-contributions/deadlines",
+      "status": "current",
+      "change_frequency": "",
+      "note": "voluntary-ni-calculator: gaps can be filled for the past 6 tax years; deadline 5 April each year",
+      "official_value": "6",
+      "confidence": "high",
+      "freshness_note": "gov.uk deadlines page (updated 30 Sep 2026): 'You can only pay voluntary contributions for the past 6 years. The deadline is 5 April each year. For example, you have until 5 April 2032 to make up gaps for the tax year 2025 to 2026.'",
+      "verified_date": "2026-10-13",
+      "verify_method": "voluntary-ni-calculator build 2026-10-13"
+    },
+    {
+      "key": "voluntary_ni_extended_window_closed",
+      "value": "2025-04-05",
+      "unit": "date",
+      "law": "HMRC extended deadline for 2006-2016 NI gaps",
+      "theme": "national_insurance",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/voluntary-ni.ts",
+        "src/components/calculators/VoluntaryNiCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/news/deadline-for-voluntary-national-insurance-contributions-extended-to-april-2025",
+      "status": "current",
+      "change_frequency": "",
+      "note": "voluntary-ni-calculator: the extended window for filling gaps back to April 2006 closed on 5 April 2025; only the normal 6-year window remains",
+      "official_value": "5 April 2025",
+      "confidence": "high",
+      "freshness_note": "HMRC news 12 Jun 2023: taxpayers 'now have until 5 April 2025 to fill gaps in their National Insurance record from April 2006'. The current gov.uk guide no longer mentions the extension, confirming it has ended. Historical fact; will not change.",
+      "verified_date": "2026-10-13",
+      "verify_method": "voluntary-ni-calculator build 2026-10-13"
+    },
+    {
+      "key": "state_pension_per_qualifying_year_weekly",
+      "value": "6.89",
+      "unit": "GBP/week",
+      "law": "DWP new State Pension (1/35 of full rate)",
+      "theme": "pension",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/voluntary-ni.ts",
+        "src/components/calculators/VoluntaryNiCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/new-state-pension/what-youll-get",
+      "status": "current",
+      "change_frequency": "",
+      "note": "voluntary-ni-calculator: each qualifying year below the 35-year cap adds 241.30 / 35 = 6.894 a week (358.50 a year). Derived; moves with the full rate every April.",
+      "official_value": "6.89",
+      "confidence": "high",
+      "freshness_note": "Derived from gov.uk full rate 241.30/week for 2026/27 and 35 qualifying years. Re-derive when the April 2027 uprating is confirmed.",
+      "verified_date": "2026-10-13",
+      "verify_method": "voluntary-ni-calculator build 2026-10-13"
+    },
+    {
+      "key": "voluntary_ni_class3_prior_year_rates",
+      "value": "17.45; 17.75",
+      "unit": "GBP/week",
+      "law": "NI Class 3 (voluntary) rates for 2024/25 and 2025/26",
+      "theme": "national_insurance",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/voluntary-ni.ts",
+        "src/components/calculators/VoluntaryNiCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/rates-and-allowances-national-insurance-contributions/rates-and-allowances-national-insurance-contributions",
+      "status": "current",
+      "change_frequency": "",
+      "note": "voluntary-ni-calculator: Class 3 gaps for the previous 2 tax years are charged at the original rate for those years (gov.uk rates page); earlier years at the 2026/27 rate 18.40",
+      "official_value": "2024/25 GBP 17.45; 2025/26 GBP 17.75",
+      "confidence": "high",
+      "freshness_note": "gov.uk rates and allowances table: Class 3 17.45 (2024 to 2025), 17.75 (2025 to 2026), 18.40 (2026 to 2027). Class 2: 3.45, 3.50, 3.65. Historical rates; fixed.",
+      "verified_date": "2026-10-13",
+      "verify_method": "voluntary-ni-calculator build 2026-10-13"
     }
   ],
   "status_summary": {
-    "current": 1481,
+    "current": 1485,
     "retired": 24,
     "superseded_by_component": 4,
     "historical": 14,
@@ -34096,13 +34219,13 @@
     "scottish_income_tax": 36,
     "business_tax": 61,
     "mileage": 19,
-    "pension": 106,
+    "pension": 107,
     "benefits": 162,
     "public_pay": 46,
     "cgt": 13,
     "vat": 69,
     "isa_savings": 64,
-    "national_insurance": 40,
+    "national_insurance": 43,
     "corporation_tax": 13,
     "council_tax": 55,
     "dividend": 4,
