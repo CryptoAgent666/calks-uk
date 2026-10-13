@@ -384,6 +384,18 @@ export const CALCULATORS: CalculatorMeta[] = [
     financialYear: '2026-27',
   },
   {
+    slug: 'voluntary-ni-calculator',
+    title: 'Voluntary National Insurance Calculator: Class 3 Top-Up vs State Pension',
+    description: 'Is paying voluntary Class 3 or Class 2 National Insurance worth it? Cost per gap year, extra State Pension, payback period and break-even age for 2026/27.',
+    category: 'pension',
+    icon: 'PiggyBank',
+    keywords: ['voluntary national insurance', 'class 3 NI', 'class 2 voluntary contributions', 'NI gaps', 'state pension top up', 'buy NI years'],
+    metaTitle: 'Voluntary NI Calculator 2026/27: Class 3 Top-Up Payback',
+    priority: 2,
+    isTrending: true,
+    financialYear: '2026-27',
+  },
+  {
     slug: 'pension-tax-relief-calculator',
     title: 'Pension Tax Relief Calculator',
     description: 'See how much tax relief you get on UK pension contributions for 2026/27. Basic 20%, Higher 40%, Additional 45%. Annual allowance £60,000.',
@@ -1163,6 +1175,17 @@ export const CALCULATORS: CalculatorMeta[] = [
     keywords: ['UCAS', 'tariff points', 'A-level points', 'university', 'BTEC points'],
     metaTitle: 'UCAS Points Calculator UK 2026 — A-Level Grades',
     priority: 1,
+  },
+  {
+    slug: 'degree-classification-calculator',
+    title: 'Degree Classification Calculator (First, 2:1, 2:2, Third)',
+    description: 'UK honours degree classification from module marks and credits with the common Level 5 to Level 6 weightings, plus the marks you need for a First or 2:1.',
+    category: 'education',
+    icon: 'GraduationCap',
+    keywords: ['degree classification', 'first class degree', '2:1 calculator', 'weighted average degree', 'honours degree', 'university grades'],
+    metaTitle: 'Degree Classification Calculator UK: First, 2:1, 2:2',
+    priority: 2,
+    isTrending: true,
   },
   // AUTO (additional)
   {

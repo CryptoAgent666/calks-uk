@@ -52,6 +52,7 @@ const calculators: Record<string, React.LazyExoticComponent<() => JSX.Element>> 
   // Pensions
   'pension-calculator': lazy(() => import('./calculators/WorkplacePensionCalculator')),
   'state-pension-calculator': lazy(() => import('./calculators/StatePensionCalculator')),
+  'voluntary-ni-calculator': lazy(() => import('./calculators/VoluntaryNiCalculator')),
   'pension-tax-relief-calculator': lazy(() => import('./calculators/PensionTaxReliefCalculator')),
   'pension-drawdown-calculator': lazy(() => import('./calculators/PensionDrawdownCalculator')),
   'annuity-calculator': lazy(() => import('./calculators/AnnuityCalculator')),
@@ -94,6 +95,7 @@ const calculators: Record<string, React.LazyExoticComponent<() => JSX.Element>> 
   'mpg-calculator': lazy(() => import('./calculators/MilesPerGallonCalculator')),
   // Education
   'ucas-points-calculator': lazy(() => import('./calculators/UcasPointsCalculator')),
+  'degree-classification-calculator': lazy(() => import('./calculators/DegreeClassificationCalculator')),
   'student-budget-calculator': lazy(() => import('./calculators/StudentBudgetCalculator')),
   'gcse-grade-calculator': lazy(() => import('./calculators/GCSEGradeCalculator')),
   'progress-8-calculator': lazy(() => import('./calculators/Progress8Calculator')),
