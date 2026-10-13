@@ -93,6 +93,7 @@ const calculators: Record<string, React.LazyExoticComponent<() => JSX.Element>> 
   'ucas-points-calculator': lazy(() => import('./calculators/UcasPointsCalculator')),
   'student-budget-calculator': lazy(() => import('./calculators/StudentBudgetCalculator')),
   'gcse-grade-calculator': lazy(() => import('./calculators/GCSEGradeCalculator')),
+  'progress-8-calculator': lazy(() => import('./calculators/Progress8Calculator')),
   'university-cost-calculator': lazy(() => import('./calculators/UniversityCostCalculator')),
   // Pay (additional)
   'mileage-allowance-calculator': lazy(() => import('./calculators/MileageAllowanceCalculator')),
