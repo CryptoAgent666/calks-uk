@@ -357,8 +357,8 @@ export const WATCH_LIST: WatchItem[] = [
   },
   {
     id: 'benefits',
-    label: 'Benefits and tax credits replacement rates',
-    line: 'April 2027 uprating follows September CPI; the rates are confirmed after the Budget.',
+    label: 'Benefit uprating for April 2027',
+    line: 'The April 2027 uprating of working-age and disability benefits follows September CPI; the rates are confirmed after the Budget.',
   },
   {
     id: 'isa',

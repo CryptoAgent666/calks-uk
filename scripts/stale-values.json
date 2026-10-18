@@ -2195,6 +2195,202 @@
    "was": "Tax relief (basic rate): £41.67/month",
    "now": "relief included in the percentage",
    "what": "workplace pension example relief (calkcheck 2026-09-28 r8)"
+  },
+  {
+   "was": "182167",
+   "now": "DfE EES provisional figure as updated mid-September",
+   "what": "ks2_pupils_not_meeting_rwm_2026",
+   "ctx": "pupils|expected standard"
+  },
+  {
+   "was": "33,500",
+   "now": "39,200",
+   "what": "cost-of-living_median_disposable_income_fye2025",
+   "ctx": "median household disposable|in 2024"
+  },
+  {
+   "was": "2,792",
+   "now": "3,267",
+   "what": "cost-of-living_median_disposable_income_monthly",
+   "ctx": "disposable income|a month"
+  },
+  {
+   "was": "£1,200 a month in England",
+   "now": "£1,459 in England, £1,400 UK (ONS Aug 2026)",
+   "what": "cost-of-living_average_rent_england",
+   "ctx": "rent"
+  },
+  {
+   "was": "£900 across the UK",
+   "now": "£1,400 across the UK (ONS Aug 2026)",
+   "what": "cost-of-living_average_rent_uk",
+   "ctx": "rent"
+  },
+  {
+   "was": "£750/month",
+   "now": "£1,000/month",
+   "what": "cost-of-living_example_manchester_rent",
+   "ctx": "Rent|1-bed"
+  },
+  {
+   "was": "1,310",
+   "now": "1,560",
+   "what": "cost-of-living_example_monthly_total",
+   "ctx": "monthly total|discretionary"
+  },
+  {
+   "was": "Travelcard is £193",
+   "now": "£201.60 (TfL fares frozen to March 2027)",
+   "what": "cost-of-living_tfl_zone1-3_monthly_travelcard"
+  },
+  {
+   "was": "Travelcard is £3,000",
+   "now": "£3,264",
+   "what": "cost-of-living_tfl_zone1-6_annual_travelcard"
+  },
+  {
+   "was": "50-65% below London",
+   "now": "at half to two thirds of London costs (not below)",
+   "what": "cost-of-living_regional_ratio_direction"
+  },
+  {
+   "was": "30-40% below the peak",
+   "now": "£1,723 typical bill, roughly 60% below the £4,279 peak",
+   "what": "cost-of-living_energy_vs_peak",
+   "ctx": "energy"
+  },
+  {
+   "was": "avg: 180",
+   "now": "199 (England Band D 2026/27 £2,392 / 12)",
+   "what": "cost-of-living_default_council_tax_monthly",
+   "ctx": "council_tax"
+  },
+  {
+   "was": "Finance Act 2021",
+   "now": "Finance Act 2023 section 5",
+   "what": "budget-2026_thresholds_2027-28_act",
+   "ctx": "2027/28|threshold|allowance"
+  },
+  {
+   "was": "put back twice",
+   "now": "three times (April 2020 to 2023, 2024, 2026)",
+   "what": "budget-2026_mtd_postponements"
+  },
+  {
+   "was": "Benefits and tax credits replacement rates",
+   "now": "Benefit uprating for April 2027",
+   "what": "budget-2026_watch_list_benefits_label"
+  },
+  {
+   "was": "Tax Confident",
+   "now": "gov.uk How tax works if you have more than one job",
+   "what": "second-job_hmrc_source"
+  },
+  {
+   "was": "waiting 35 days",
+   "now": "check the code on the first payslip",
+   "what": "second-job_new_job_wait_claim"
+  },
+  {
+   "was": "1674",
+   "now": "2,068",
+   "what": "cost_of_living_comparison_council_tax_london_band_d",
+   "ctx": "council tax|Band D"
+  },
+  {
+   "was": "1588",
+   "now": "2,312.04",
+   "what": "cost_of_living_comparison_council_tax_manchester_band_d",
+   "ctx": "council tax|Band D"
+  },
+  {
+   "was": "2514",
+   "now": "about £480",
+   "what": "cost_of_living_comparison_50k_london_shortfall",
+   "ctx": "shortfall"
+  },
+  {
+   "was": "13486",
+   "now": "about £15,520",
+   "what": "cost_of_living_comparison_50k_manchester_spare",
+   "ctx": "spare|Manchester"
+  },
+  {
+   "was": "32000",
+   "now": "30,350",
+   "what": "cost_of_living_comparison_equivalent_salary_manchester",
+   "ctx": "London salary.{0,60}Manchester"
+  },
+  {
+   "was": "1600",
+   "now": "1,800",
+   "what": "cost_of_living_comparison_example_rent_london",
+   "ctx": "Rent \\(1-bed\\)"
+  },
+  {
+   "was": "750",
+   "now": "1,000",
+   "what": "cost_of_living_comparison_example_rent_manchester",
+   "ctx": "Rent \\(1-bed\\)"
+  },
+  {
+   "was": "160",
+   "now": "170",
+   "what": "cost_of_living_comparison_example_transport_london",
+   "ctx": "Monthly transport"
+  },
+  {
+   "was": "350-£500",
+   "now": "54.60 a month, 655.20 a year (42 × 1.0 × 1.3)",
+   "what": "pet_insurance_example_labrador_annual_premium",
+   "ctx": "premium"
+  },
+  {
+   "was": "7000",
+   "now": "12,000+",
+   "what": "pet_insurance_example_vet_fee_limit",
+   "ctx": "vet fee limit"
+  },
+  {
+   "was": "800",
+   "now": "685",
+   "what": "pet_insurance_average_claim_abi_2024",
+   "ctx": "pet-owning[^.]{0,80}average claim|average of £800"
+  },
+  {
+   "was": "Finance Act 2017",
+   "now": "the 2015 Finance (No. 2) Act, phased in from April 2017",
+   "what": "rental_yield_section_24_act_citation",
+   "ctx": "Section 24"
+  },
+  {
+   "was": "77.1",
+   "now": "77.05",
+   "what": "kg_to_stone_faq_plus_one_lb_from_76_6",
+   "ctx": "1\\.9 lb at 77\\.1"
+  },
+  {
+   "was": "76.2",
+   "now": "76.15",
+   "what": "kg_to_stone_faq_minus_one_lb_from_76_6",
+   "ctx": "13\\.9 lb at 76\\.2"
+  },
+  {
+   "was": "1835 retired",
+   "now": "made fourteen pounds the legal trade stone; the eight-pound meat stone lingered at Smithfield into the nineteen-thirties",
+   "what": "lbs_to_stone_faq_1835_act_wording"
+  },
+  {
+   "was": "according to Companies House data",
+   "now": "ONS Business demography: five-year survival of the twenty-nineteen cohort",
+   "what": "break_even_survival_statistic_source",
+   "ctx": "break-even"
+  },
+  {
+   "was": "1.15).toFixed(2)",
+   "now": "toLocaleString with two decimals (code)",
+   "what": "minimum_wage_2027_employer_cost_thousands_separator (code)",
+   "ctx": "LPC_APRIL_2027"
   }
  ]
 }

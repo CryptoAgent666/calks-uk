@@ -10,8 +10,11 @@ export default function StoneToKgConverter() {
   // ?st=10&lb=5 is applied after mount by useUrlParam (never read the URL during render: React #418)
   const [st, setSt] = useUrlParam('st', '10')
   const [lb, setLb] = useUrlParam('lb', '5')
-  const stones = Math.max(0, Math.floor(parseFloat(st) || 0))
-  const pounds = Math.max(0, parseFloat(lb) || 0)
+  const stRaw = Math.max(0, parseFloat(st) || 0)
+  const stones = Math.floor(stRaw)
+  // A decimal stone is a fraction of 14 lb (10.5 st = 10 st 7 lb), so the fraction is carried into the pounds
+  const fractionLb = (stRaw - stones) * LB_PER_ST
+  const pounds = Math.max(0, parseFloat(lb) || 0) + fractionLb
 
   const r = useMemo(() => {
     const totalLb = stLbToLb(stones, pounds)
@@ -28,7 +31,7 @@ export default function StoneToKgConverter() {
         <div>
           <label htmlFor="stone-input" className="block text-sm font-medium mb-2">Stone</label>
           <div className="relative">
-            <input id="stone-input" type="number" inputMode="numeric" min="0" step="1" value={st} onChange={(e) => setSt(e.target.value)} className={inputClass} aria-label="Whole stones" />
+            <input id="stone-input" type="number" inputMode="decimal" min="0" step="any" value={st} onChange={(e) => setSt(e.target.value)} className={inputClass} aria-label="Stones" />
             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground">st</span>
           </div>
         </div>
@@ -55,6 +58,9 @@ export default function StoneToKgConverter() {
             <p className="text-2xl sm:text-3xl font-bold text-primary">{`${shown} = ${fmtKg(r.kg)} kg`}</p>
             {pounds >= LB_PER_ST && (
               <p className="text-xs text-muted-foreground mt-2">14 lb makes a stone, so the extra pounds have been carried into the stone figure.</p>
+            )}
+            {fractionLb > 0 && (
+              <p className="text-xs text-muted-foreground mt-2">{`${fmtNum(stRaw)} st is read as ${stones} st ${fmtNum(fractionLb)} lb, because a decimal stone is a fraction of 14 lb.`}</p>
             )}
           </div>
 

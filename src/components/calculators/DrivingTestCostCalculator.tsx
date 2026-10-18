@@ -35,7 +35,7 @@ export default function DrivingTestCostCalculator() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Number of Lessons</label><input type="number" min="0" max="100" value={lessons} onChange={(e) => setLessons(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Number of Lessons" /><p className="text-xs text-muted-foreground mt-1">DVSA average: {COSTS.avgLessonsNeeded} hours</p></div>
+        <div><label className="block text-sm font-medium mb-2">Number of Lessons</label><input type="number" min="0" max="100" value={lessons} onChange={(e) => setLessons(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Number of Lessons" /><p className="text-xs text-muted-foreground mt-1">Learners average about {COSTS.avgLessonsNeeded} hours of lessons plus private practice (DVSA research)</p></div>
         <div><label className="block text-sm font-medium mb-2">Lesson Rate (£/hour)</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="number" min="0" step="1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Lesson Rate (£/hour)" /></div></div>
       </div>
       <div className="space-y-2">

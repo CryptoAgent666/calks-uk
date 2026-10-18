@@ -3,6 +3,7 @@ import ShareRow, { useUrlParam } from '@/components/ShareRow'
 import {
   KS2_SUBJECTS,
   KS2_YEAR,
+  KS2_TABLES_PUBLISHED,
   KS2_NATIONAL_2026,
   KS2_DATES,
   EXPECTED_STANDARD,
@@ -254,7 +255,7 @@ export default function KS2SatsScaledScoreCalculator() {
       </div>
 
       <p className="text-xs text-muted-foreground">
-        Conversions use the Standards and Testing Agency tables for the {KS2_YEAR} tests, published {'16 July 2026'}. Each year has its own table, so {KS2_YEAR} raw marks cannot be read across to 2027 papers; the scaled scores themselves are comparable between years. Writing and science are teacher assessed and have no scaled score.
+        Conversions use the Standards and Testing Agency tables for the {KS2_YEAR} tests, published {KS2_TABLES_PUBLISHED}. Each year has its own table, so {KS2_YEAR} raw marks cannot be read across to 2027 papers; the scaled scores themselves are comparable between years. Writing and science are teacher assessed and have no scaled score.
       </p>
     </div>
   )

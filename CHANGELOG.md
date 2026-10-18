@@ -1,5 +1,26 @@
 # CHANGELOG — Calks.uk
 
+## 2026-10-19 (round 9) — First audit of the 13 October calculators, stale market figures on older pages
+
+Ninth `/calkcheck` pass (report: `AUDIT-2026-10-19.md`): the 11 calculators added on 13 October plus 9 older
+pages. 26 defects on 13 of 20 pages, 4 HIGH; 7 pages clean. Every statutory table on the new pages matched its
+primary source line by line (170 DfE Progress 8 averages, 224 STA scaled-score rows, Class 3 and State Pension
+rates, fuel duty and ISA legislation, the LPC April 2027 letter).
+
+**Calculators corrected:** Budget 2026 (band-position panel ended the allowance taper at £137,710 instead of
+£125,140; FAQ cited Finance Act 2021 for 2027/28 amounts, now FA 2023 s.5), divorce settlement (years-married
+input had no effect; now explains how marriage length is weighed and that the illustrative split does not move),
+cost of living (ONS median income £39,200 FYE 2025, rents £1,400 UK / £1,459 England Aug 2026, Travelcards
+£201.60 / £3,264, energy relative to the £4,279 peak, defaults council tax £199 and water £53, prose describing
+inputs the tool lacks), cost of living comparison (council tax London £2,068 vs Manchester £2,312.04 for 2026/27
+with the conclusion corrected, net-pay arithmetic, example aligned with the widget, moved to the tools category),
+pet insurance (example aligned with the tool, ABI 2024 claim figures), rental yield (Finance (No. 2) Act 2015
+s.24, net-of-mortgage definition, 19%/25% corporation tax), break-even (merged RDEC 20%, ONS 38.4% five-year
+survival), KS2 SATs (181,771 pupils), driving test (DVSA/NAO waiting times), second job (gov.uk citation, 0T code),
+stone to kg (fractional stones carried into pounds), minimum wage 2027 (formatting, apprentice NI caveat).
+
+**Guards and ledger:** 36 new stale-value guards; byline and disclaimer overrides for five pages.
+
 ## 2026-09-28 (round 8) — APR as an effective rate, payroll codes, leasehold status, Right to Buy
 
 Eighth `/calkcheck` pass: business, loans and property (report: `AUDIT-2026-09-28-c.md`). About 120 defects,

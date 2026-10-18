@@ -121,7 +121,7 @@ export const KS2_NATIONAL_2026 = {
   writingGreaterDepth: 13,
   gpsExpected: 74,
   scienceExpected: 82,
-  pupilsNotMeetingRwm: 182_167,
+  pupilsNotMeetingRwm: 181_771,
   published: '10 September 2026',
   sourceUrl: 'https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-2-attainment/2025-26-provisional',
 }

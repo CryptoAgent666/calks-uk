@@ -1,14 +1,13 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-function calculate(property: number, mortgage: number, pensions1: number, pensions2: number, savings: number, debts: number, yearsMarried: number, hasChildren: boolean) {
+function calculate(property: number, mortgage: number, pensions1: number, pensions2: number, savings: number, debts: number, hasChildren: boolean) {
   const equity = property - mortgage
   const totalAssets = equity + pensions1 + pensions2 + savings - debts
   const halfShare = totalAssets / 2
 
   // Needs-based adjustment (simplified)
   const childAdjustment = hasChildren ? totalAssets * 0.05 : 0 // primary carer gets slightly more
-  const longerMarriageAdj = yearsMarried > 15 ? 0 : yearsMarried > 10 ? 0.02 : 0.05 // shorter = may not be 50/50
 
   const share1 = halfShare + childAdjustment
   const share2 = halfShare - childAdjustment
@@ -32,7 +31,9 @@ export default function DivorceSettlementCalculator() {
   const [years, setYears] = useState('12')
   const [children, setChildren] = useState(true)
 
-  const result = useMemo(() => calculate(parseFloat(property.replace(/,/g,''))||0, parseFloat(mortgage.replace(/,/g,''))||0, parseFloat(pensions1.replace(/,/g,''))||0, parseFloat(pensions2.replace(/,/g,''))||0, parseFloat(savings.replace(/,/g,''))||0, parseFloat(debts.replace(/,/g,''))||0, parseInt(years)||0, children), [property,mortgage,pensions1,pensions2,savings,debts,years,children])
+  const result = useMemo(() => calculate(parseFloat(property.replace(/,/g,''))||0, parseFloat(mortgage.replace(/,/g,''))||0, parseFloat(pensions1.replace(/,/g,''))||0, parseFloat(pensions2.replace(/,/g,''))||0, parseFloat(savings.replace(/,/g,''))||0, parseFloat(debts.replace(/,/g,''))||0, children), [property,mortgage,pensions1,pensions2,savings,debts,children])
+  // Years married drives the note below only; the illustrative split does not change with it
+  const yearsNum = parseInt(years) || 0
 
 
   return (
@@ -54,7 +55,7 @@ export default function DivorceSettlementCalculator() {
           <p className="text-3xl font-bold text-primary mt-1">{formatCurrency(result.totalAssets)}</p>
         </div>
         <div className="grid grid-cols-2 gap-4">
-          <div className="rounded-xl bg-muted/50 p-5 text-center"><p className="text-sm font-medium">Person 1 (primary carer)</p><p className="text-2xl font-bold mt-1">{formatCurrency(result.share1)}</p></div>
+          <div className="rounded-xl bg-muted/50 p-5 text-center"><p className="text-sm font-medium">{children ? 'Person 1 (primary carer)' : 'Person 1'}</p><p className="text-2xl font-bold mt-1">{formatCurrency(result.share1)}</p></div>
           <div className="rounded-xl bg-muted/50 p-5 text-center"><p className="text-sm font-medium">Person 2</p><p className="text-2xl font-bold mt-1">{formatCurrency(result.share2)}</p></div>
         </div>
         <table className="w-full text-sm">
@@ -65,6 +66,11 @@ export default function DivorceSettlementCalculator() {
             <tr className="border-b border-border/50"><td className="py-2 text-destructive">Debts</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(parseFloat(debts.replace(/,/g,''))||0)}</td></tr>
           </tbody>
         </table>
+        <div className="rounded-xl bg-muted/30 p-4 text-sm text-muted-foreground space-y-1">
+          {yearsNum < 5 && <p>Under 5 years of marriage the courts more often depart from equal sharing and give weight to what each party brought in, especially where there are no children.</p>}
+          {yearsNum >= 20 && <p>After 20 years or more of marriage, equal sharing of everything, including assets that predate the marriage, is more likely.</p>}
+          <p>The illustrative split above does not change with the number of years entered; the only adjustment it applies is the 5% primary-carer uplift when dependent children are ticked.</p>
+        </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
           <p>England & Wales: the starting point is 50/50, but courts consider needs, contributions, earning capacity and welfare of children. This is a simplified guide — seek legal advice for your specific circumstances.</p>
         </div>

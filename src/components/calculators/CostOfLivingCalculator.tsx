@@ -4,9 +4,9 @@ import { formatCurrency, ukIncomeTax } from '@/utils'
 // UK average costs 2026
 const AVERAGES: Record<string, { label: string; avg: number }> = {
   rent: { label: 'Rent / Mortgage', avg: 1200 },
-  council_tax: { label: 'Council Tax', avg: 180 },
+  council_tax: { label: 'Council Tax', avg: 199 }, // England average Band D 2026/27 £2,392 / 12
   energy: { label: 'Energy (gas + electric)', avg: 135 },
-  water: { label: 'Water', avg: 40 },
+  water: { label: 'Water', avg: 53 }, // Water UK 2026/27 average bill £639 / 12
   broadband: { label: 'Broadband + Phone', avg: 45 },
   food: { label: 'Food & Groceries', avg: 350 },
   transport: { label: 'Transport / Car', avg: 250 },

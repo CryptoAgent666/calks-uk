@@ -37,6 +37,8 @@ type Rates = { basic: number; higher: number; additional: number }
 
 const num = (s: string) => parseFloat(s.replace(/,/g, '')) || 0
 const pence = (p: number) => `${p.toFixed(2)}p`
+// Adjusted net income at which the allowance is fully withdrawn (£100,000 + 2 x £12,570 = £125,140).
+const PA_TAPER_END = PA_TAPER_START + 2 * PERSONAL_ALLOWANCE
 
 function taperedAllowance(adjustedNetIncome: number) {
   if (adjustedNetIncome <= PA_TAPER_START) return PERSONAL_ALLOWANCE
@@ -123,10 +125,21 @@ function calculate(i: Inputs) {
     marginalTaxNI = 42
     headroom = PA_TAPER_START - totalIncome
     next = 'the allowance taper (60% effective)'
-  } else if (totalIncome < PERSONAL_ALLOWANCE + HIGHER_RATE_LIMIT) {
+  } else if (totalIncome < PA_TAPER_END) {
+    // Adjusted net income between £100,000 and £125,140: the allowance is still being withdrawn,
+    // so each £1 of pay adds £1.50 of taxable income (the £1 plus 50p of lost allowance). The pay
+    // that reaches the 45% band is the rest of the taper plus any taxable earnings still short of
+    // £125,140 once the allowance is nil (that second part is only non-zero with dividends).
     band = 'Higher rate inside the allowance taper (60% effective)'
     marginalTaxNI = 62
-    headroom = PERSONAL_ALLOWANCE + HIGHER_RATE_LIMIT - totalIncome
+    const taperLeft = PA_TAPER_END - totalIncome
+    headroom = taperLeft + Math.max(0, HIGHER_RATE_LIMIT - (earnings + taperLeft))
+    next = 'the 45% additional rate'
+  } else if (taxableEarnings < HIGHER_RATE_LIMIT) {
+    // Allowance nil, but taxable pay is still below £125,140 because dividends carried income past the taper.
+    band = 'Higher rate (40%)'
+    marginalTaxNI = 42
+    headroom = HIGHER_RATE_LIMIT - taxableEarnings
     next = 'the 45% additional rate'
   } else {
     band = 'Additional rate (45%)'

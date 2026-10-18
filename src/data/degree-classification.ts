@@ -6,13 +6,16 @@
  * The weighting presets were checked against published regulations on 13 October 2026:
  *  - University of Nottingham, Quality Manual, course specification regulations: "The
  *    standardised weighting for a Bachelor's degree must be 33/67 for Parts I and II".
- *  - University of Exeter, SID "How your award is calculated": Stage 1 does not normally
- *    count; Stage 2 is one third and Stage 3 two thirds of the final mark; a mark within
- *    2% of the higher boundary with at least 50% of credits in the higher band may be raised.
+ *  - University of Exeter, TQA Manual 2026/27 chapter 9 and SID "How your award is
+ *    calculated": Stage 1 does not normally count; Stage 2 is one third and Stage 3 two
+ *    thirds of the final mark; a First is a weighted average of 69.50% or more, or 68.00%
+ *    or more where at least 50% of weighted credits are at 69.50% or more.
  *  - Sheffield Hallam University, Standard Assessment Regulations, Regulation 10: Method 1
  *    is 25% of the Level 5 weighted average plus 75% of the Level 6 weighted average,
- *    Method 2 is 100% of Level 6; borderline 68.01% to 69.99% with 70% or more in at least
- *    60 Level 6 credits is a First.
+ *    Method 2 is 100% of Level 6. Each level's average uses the 100 highest-marked credits
+ *    of 120 for results confirmed before 2 November 2026 and all 120 credits from then on;
+ *    this module models all credits. Borderline 68.01% to 69.99% with 70% or more in at
+ *    least 60 Level 6 credits is a First.
  *  - Manchester Metropolitan University student hub: Level 5 25%, Level 6 75%, or final
  *    year marks only, whichever is better; "Rounding is never used".
  *  - UWE Bristol: Level 6 marks weighted three times Level 5; automatic uplift when the

@@ -341,7 +341,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'rental-yield-calculator',
     title: 'Rental Yield Calculator',
-    description: 'Calculate gross and net rental yield on UK buy-to-let property. Accounts for management fees, mortgage interest, maintenance and tax. Free calculator.',
+    description: 'Work out gross and net rental yield on a UK buy-to-let from the purchase price, monthly rent and one monthly running-costs figure, with annual profit.',
     category: 'mortgage',
     icon: 'Home',
     keywords: ['rental yield', 'buy to let', 'property investment', 'BTL'],
@@ -1795,7 +1795,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // EDUCATION
   { slug: 'weighted-grade-calculator', title: 'Weighted Average Grade Calculator', description: 'Calculate weighted average from assessment components with different weightings. See UK degree classification.', category: 'education', icon: 'GraduationCap', keywords: ['weighted average', 'weighted grade', 'module grades', 'assessment weighting'], priority: 2 , metaTitle: 'Weighted Grade Calculator UK' },
   // IMMIGRATION
-  { slug: 'cost-of-living-comparison-calculator', title: 'UK Cost of Living Comparison', description: 'Compare cost of living between UK cities. See rent, food, transport differences and equivalent salary.', category: 'immigration', icon: 'Globe', keywords: ['cost of living', 'city comparison', 'relocation', 'UK cities'], priority: 2 , metaTitle: 'UK Cost of Living Comparison Calculator 2026' },
+  { slug: 'cost-of-living-comparison-calculator', title: 'UK Cost of Living Comparison', description: 'Compare cost of living between UK cities. See rent, food, transport differences and equivalent salary.', category: 'tools', icon: 'Globe', keywords: ['cost of living', 'city comparison', 'relocation', 'UK cities'], priority: 2 , metaTitle: 'UK Cost of Living Comparison Calculator 2026' },
   // PENSION
   { slug: 'pension-annual-allowance-calculator', title: 'Pension Annual Allowance Calculator', description: 'Check your pension annual allowance (£60K), tapered allowance and MPAA. See if you face a tax charge.', category: 'pension', icon: 'PiggyBank', keywords: ['annual allowance', 'pension limit', 'taper', 'MPAA', 'pension tax charge'], priority: 2, financialYear: '2026-27', metaTitle: 'Pension Annual Allowance Calculator 2026' },
   { slug: 'state-pension-age-calculator', title: 'State Pension Age Calculator', description: 'Find your State Pension age based on date of birth. See exact date and days remaining.', category: 'pension', icon: 'PiggyBank', keywords: ['state pension age', 'SPA', 'pension age', 'when can I retire'], priority: 1, metaTitle: 'UK State Pension Age Calculator — Check Your Pension Date' },

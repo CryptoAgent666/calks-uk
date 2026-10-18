@@ -34457,7 +34457,7 @@
       ],
       "source_url": "https://www.gov.uk/guidance/how-tax-works-if-you-have-more-than-one-job",
       "official_value": "on request to HMRC",
-      "note": "gov.uk: contact HMRC to check \"if your Personal Allowance can be split between your jobs\"; Tax Confident: two jobs each under 12,570 -> ask HMRC to share the allowance. Modelled as the SPLIT option (unused allowance from job 1 moves to job 2).",
+      "note": "gov.uk: contact HMRC to check \"if your Personal Allowance can be split between your jobs\"; gov.uk (How tax works if you have more than one job): two jobs each under 12,570 -> ask HMRC to share the allowance. Modelled as the SPLIT option (unused allowance from job 1 moves to job 2).",
       "freshness_note": "Rule only; no numeric value.",
       "theme": "tax",
       "status": "current",

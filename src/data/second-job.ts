@@ -56,8 +56,13 @@ export function payeTax(taxablePay: number, allowance: number): number {
   return basic * BASIC_RATE + higher * HIGHER_RATE + additional * ADDITIONAL_RATE
 }
 
-/** 12,570 -> 1257L; 3,570 -> 357L (gov.uk: multiply the code number by 10 for the allowance). */
+/**
+ * 12,570 -> 1257L; 3,570 -> 357L (gov.uk: multiply the code number by 10 for the allowance).
+ * No allowance -> 0T, the code HMRC uses when none is available and a flat BR/D0/D1 code does
+ * not apply ("0L" is not a real code).
+ */
 export function codeForAllowance(allowance: number): string {
+  if (allowance < 10) return '0T'
   return `${Math.floor(allowance / 10)}L`
 }
 

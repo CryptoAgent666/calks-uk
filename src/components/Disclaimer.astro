@@ -46,9 +46,15 @@ const SOURCE_BY_SLUG: Record<string, string> = {
   'gpa-calculator': 'UK degree classification conventions and UK ENIC',
   'exam-score-calculator': '',
   'weighted-grade-calculator': '',
+  'progress-8-calculator': 'DfE and Standards and Testing Agency publications',
+  'ks2-sats-scaled-score-calculator': 'DfE and Standards and Testing Agency publications',
+  'degree-classification-calculator': "universities' published regulations",
+  // not student finance, lending or UKVI: statute and statistics instead
+  'cost-of-living-comparison-calculator': 'ONS and GOV.UK council tax data',
+  'service-charge-calculator': 'the Landlord and Tenant Act 1985 and GOV.UK leasehold guidance',
 }
 
-const GRADE_SLUGS = new Set(['gcse-grade-calculator', 'a-level-grade-calculator', 'gpa-calculator', 'exam-score-calculator', 'weighted-grade-calculator'])
+const GRADE_SLUGS = new Set(['gcse-grade-calculator', 'a-level-grade-calculator', 'gpa-calculator', 'exam-score-calculator', 'weighted-grade-calculator', 'progress-8-calculator', 'ks2-sats-scaled-score-calculator', 'degree-classification-calculator'])
 
 const TAX_YEAR_SLUGS = new Set([
   'student-loan-repayment-calculator',

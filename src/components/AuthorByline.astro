@@ -16,6 +16,11 @@ const VERIFICATION_BY_SLUG: Record<string, string> = {
   'gpa-calculator': 'Checked against UK degree classifications and UK ENIC guidance',
   'exam-score-calculator': 'Methodology reviewed for 2026',
   'weighted-grade-calculator': 'Methodology reviewed for 2026',
+  'progress-8-calculator': 'Checked against DfE and Standards and Testing Agency publications, 2026',
+  'ks2-sats-scaled-score-calculator': 'Checked against DfE and Standards and Testing Agency publications, 2026',
+  'degree-classification-calculator': 'Checked against published university regulations, 2026; classification is indicative',
+  'cost-of-living-comparison-calculator': 'Checked against ONS and GOV.UK council tax data, 2026',
+  'service-charge-calculator': 'Checked against the Landlord and Tenant Act 1985 and GOV.UK leasehold guidance',
 }
 
 // Money/regulatory categories carry a dated verification badge; utility
@@ -24,7 +29,14 @@ const DATED_BADGE_CATEGORIES = new Set([
   'tax', 'pay', 'pension', 'mortgage', 'loans', 'business', 'investment',
   'benefits', 'auto', 'energy', 'education', 'immigration', 'legal', 'farming',
 ])
-const showDatedBadge = !!category && DATED_BADGE_CATEGORIES.has(category) && !(slug in VERIFICATION_BY_SLUG)
+// A slug override changes the wording only; the dated badge goes only where there are
+// no government rates behind the page (grade and exam tools).
+const NO_BADGE_SLUGS = new Set([
+  'gcse-grade-calculator', 'a-level-grade-calculator', 'gpa-calculator', 'exam-score-calculator',
+  'weighted-grade-calculator', 'progress-8-calculator', 'ks2-sats-scaled-score-calculator',
+  'degree-classification-calculator',
+])
+const showDatedBadge = !!category && DATED_BADGE_CATEGORIES.has(category) && !NO_BADGE_SLUGS.has(slug)
 
 const VERIFICATION_BY_CATEGORY: Record<string, string> = {
   tax: 'Verified against HMRC and GOV.UK 2026/27 rates',

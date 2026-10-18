@@ -52,8 +52,14 @@ export default function CostOfLivingComparisonCalculator() {
       {result && (
         <div className="space-y-4 animate-fade-in-up">
           <div className={`rounded-2xl p-6 text-center ${result.difference > 0 ? 'bg-destructive/10' : 'bg-green-100 dark:bg-green-950'}`}>
-            <p className="text-sm text-muted-foreground">{city2} is {Math.abs(result.pctDiff).toFixed(0)}% {result.difference > 0 ? 'more expensive' : 'cheaper'} than {city1}</p>
-            <p className={`text-2xl font-bold mt-1 ${result.difference > 0 ? 'text-destructive' : 'text-green-700 dark:text-green-400'}`}>{result.difference > 0 ? '+' : ''}{formatCurrency(result.difference)}/month</p>
+            {city1 === city2 ? (
+              <p className="text-sm text-muted-foreground">Pick two different cities to compare</p>
+            ) : (
+              <>
+                <p className="text-sm text-muted-foreground">{city2} is {Math.abs(result.pctDiff).toFixed(0)}% {result.difference > 0 ? 'more expensive' : 'cheaper'} than {city1}</p>
+                <p className={`text-2xl font-bold mt-1 ${result.difference > 0 ? 'text-destructive' : 'text-green-700 dark:text-green-400'}`}>{result.difference > 0 ? '+' : ''}{formatCurrency(result.difference)}/month</p>
+              </>
+            )}
           </div>
 
           <div className="grid grid-cols-2 gap-4">
