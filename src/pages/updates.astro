@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-10-01'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-10-19'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -24,6 +24,39 @@ const schemas = [
     <p class="text-sm text-muted-foreground mb-8">Rate changes, new calculators and site improvements</p>
 
     <div class="space-y-8">
+      <!-- October 2026 — round 10 audit: tribunal time limit, tax codes, VAT flat rate, child maintenance, Help to Save -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            October 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Tribunal time limit now six months, and twenty employment, tax and family pages re-checked</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Employment tribunal claims: six months.</strong> For dismissals and other events on or after 1 October 2026 the time limit is six months, not three (Employment Rights Act 2025). The <a href="/calculator/employment-tribunal-calculator/" class="text-primary hover:underline">tribunal</a>, <a href="/calculator/redundancy-pay-calculator/" class="text-primary hover:underline">redundancy</a> and <a href="/calculator/notice-period-calculator/" class="text-primary hover:underline">notice period</a> pages now say so. The tribunal calculator also applies the 52-weeks'-pay limb of the compensatory cap and warns below two years' service (six months from 1 January 2027).</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground"><a href="/calculator/tax-code-checker/" class="text-primary hover:underline">Tax code checker</a> reads every code.</strong> K codes (K475), Scottish and Welsh prefixes (S1257L, SD2, C1257L, CBR) and emergency markers (1257L M1) were rejected before. The <a href="/calculator/vat-flat-rate-calculator/" class="text-primary hover:underline">VAT flat rate calculator</a> gains the 16.5% limited-cost rate, the first-year 1% discount and an input-VAT comparison; management consultancy and real estate are 14%, not 12% and 10%.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Company car at 120 g/km is 30% for 2026/27.</strong> The worked example on the <a href="/calculator/company-car-tax-calculator/" class="text-primary hover:underline">company car</a> page used the old 29% band (BiK £10,500, tax £4,200 at 40%), and a 180 g/km car on the benefits-in-kind page sits at the 37% maximum, not 30%. The <a href="/calculator/self-assessment-tax-calculator/" class="text-primary hover:underline">Self Assessment</a> page now shows payments on account and the correct £10, £18 or £26 simplified home-working expenses.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground"><a href="/calculator/child-maintenance-calculator/" class="text-primary hover:underline">Child maintenance</a> and <a href="/calculator/childcare-entitlement-calculator/" class="text-primary hover:underline">childcare hours</a>.</strong> The CMS calculator now handles equal care (175 or more nights: half the amount, less £7 a week per child), the £7 weekly minimum and a paying parent on benefits. The childcare calculator asks for the household route, so 30 funded hours only show for working parents who pass the earnings test, and the 1,140 hours can be stretched over more than 38 weeks.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Help to Save is permanent; agency, overtime, settlement and spouse visa pages corrected.</strong> HMRC made <a href="/calculator/help-to-save-calculator/" class="text-primary hover:underline">Help to Save</a> permanent on 21 September 2026 (open to all Universal Credit claimants from 2028). <a href="/calculator/agency-worker-calculator/" class="text-primary hover:underline">Agency workers</a>: the Swedish derogation ended in April 2020 and rolled-up holiday pay has been lawful for irregular-hours workers since April 2024. The <a href="/calculator/settlement-agreement-calculator/" class="text-primary hover:underline">settlement</a> calculator charges NI per pay period, the <a href="/calculator/overtime-calculator/" class="text-primary hover:underline">overtime</a> calculator shows net pay and a custom multiplier, and the <a href="/calculator/spouse-visa-calculator/" class="text-primary hover:underline">spouse visa</a> page notes B2 English for settlement from 26 March 2027. The redundancy example for a 45-year-old with 12 years' service is £9,100 (14 weeks), not £9,425.</span>
+          </li>
+        </ul>
+      </article>
+
       <!-- October 2026 — seven new calculators: Budget 2026, 60% trap, second job, voluntary NI, degree class, KS2 SATs, NLW 2027 -->
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>

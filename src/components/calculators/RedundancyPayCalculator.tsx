@@ -87,6 +87,7 @@ export default function RedundancyPayCalculator() {
             <p>22 to 40: <span className="font-medium text-foreground">1 week</span> per year of service</p>
             <p>41 and over: <span className="font-medium text-foreground">1.5 weeks</span> per year of service</p>
             <p>Weekly pay capped at <span className="font-medium text-foreground">£{WEEKLY_PAY_CAP}</span>. Maximum <span className="font-medium text-foreground">{MAX_YEARS} years</span> counted.</p>
+            <p>England, Scotland and Wales figures. In Northern Ireland the week's pay limit is £783 (maximum £23,490).</p>
           </div>
 
           <ShareRow params={{ age, years, pay: weeklyPay }} />

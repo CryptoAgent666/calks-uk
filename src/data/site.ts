@@ -4,7 +4,7 @@
 // gov sources (weekly Tier-1 monitor + reconcile). Shown as the trust badge
 // on calculator pages. ⚠️ Update this on every constants-fix deploy —
 // it is part of the DATA_HUB loop (see CLAUDE.md "Regulatory constants").
-export const RATES_VERIFIED = '28 September 2026'
+export const RATES_VERIFIED = '19 October 2026'
 
 // Calculators shown as "Popular" on the homepage and in the footer, ordered by
 // Search Console clicks over the 28 days to 13 October 2026 (gcse 286, premium

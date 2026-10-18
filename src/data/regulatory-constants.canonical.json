@@ -417,7 +417,7 @@
       "freshness_note": "Re-verified 2026-08-29 on the live source: gov.uk EIM31240 states 55p per mile for the first 10,000 miles from 2026-27 onwards (45p for 2025-26 and earlier), 25p above 10,000. official_value had been left at the pre-change 0.45, which made every audit and loop-closer run re-flag this row.",
       "canonical_reconciled": true,
       "conflict": null,
-      "verified_date": "2026-08-29",
+      "verified_date": "2026-10-19",
       "verify_method": "loop-closer inconsistency resolved against live gov source"
     },
     {
@@ -1456,12 +1456,14 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim25580",
       "status": "current",
       "change_frequency": "",
-      "note": "Car fuel benefit charge multiplier GBP29,200 in 2026/27 (company-car-tax-calculator)",
+      "note": "2026/27 £29,200 (SI 2025/1254); 2025/26 £28,200",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "official_value": 29200,
+      "verified_date": "2026-10-19"
     },
     {
       "key": "blind_persons_allowance",
@@ -1563,7 +1565,7 @@
     },
     {
       "key": "boe_base_rate",
-      "value": "3.75",
+      "value": 3.75,
       "unit": "%",
       "law": "Bank of England base rate",
       "theme": "other",
@@ -1576,16 +1578,16 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.bankofengland.co.uk/boeapps/database/Bank-Rate.asp",
+      "source_url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate",
       "status": "current",
       "change_frequency": "",
-      "note": "LatePenaltyCalculator BOE_BASE_RATE + statutory late-payment interest (base + 8% = 11.75%); also prose on late-payment, annuity, inflation, mortgage-rate pages",
+      "note": "3.75%, held 17 Sep 2026 (next decision 5 Nov 2026)",
       "fixed": true,
       "fixed_date": "2026-06-16",
       "volatile": true,
       "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)",
-      "official_value": "3.75",
-      "verified_date": "2026-09-26",
+      "official_value": 3.75,
+      "verified_date": "2026-10-19",
       "verify_method": "calkcheck-2026-09-26",
       "confidence": "high",
       "freshness_note": "Bank Rate 3.75% since 18 Dec 2025 (BoE database, re-checked 26 Sep 2026). Code already held 3.75; ledger still said 4.25 and six prose spots (late payment x2, annuity x2, inflation x2) said 4.75%/4.5%, fixed 2026-09-26."
@@ -3784,7 +3786,9 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "Collect & Pay 20% surcharge to paying parent (child-maintenance-calculator)"
+      "note": "20% still current 2026-10-19. DWP response 23 Jun 2025: Direct Pay to be withdrawn, fees 2%/2% (20% for non-compliant), aimed 2027–28, needs legislation",
+      "changes_next_fy": "2%/2% fees and end of Direct Pay, aimed 2027–28 (legislation pending)",
+      "verified_date": "2026-10-19"
     },
     {
       "key": "cms_collect_and_pay_receiving_deduction",
@@ -4288,14 +4292,14 @@
       "used_by": [
         "src/components/calculators/ChildMaintenanceCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/how-child-maintenance-is-worked-out",
+      "source_url": "https://www.gov.uk/how-child-maintenance-is-worked-out/how-the-child-maintenance-service-works-out-child-maintenance",
       "status": "current",
       "change_frequency": "",
-      "note": "Child Maintenance calc: shared care reduction 3/7 for 3+ nights/week; in code and UI",
+      "note": "3/7 (42.86%) for 156–174 nights a year only; 175+ nights = 50% plus £7/week per child (separate key). Fixed in ChildMaintenanceCalculator.tsx round 10",
       "official_value": "3/7 (156-174 nights/yr = 42.86%)",
       "confidence": "high",
       "freshness_note": "Verified 2026-09-26: fixed in Child Support Act 1991 Sch 1 Pt I (no outstanding effects on these amounts) and gov.uk rates page; not uprated annually, unchanged for 2026/27.",
-      "verified_date": "2026-09-26",
+      "verified_date": "2026-10-19",
       "verify_method": "primary source read (Child Support Act 1991 Sch 1 Pt I latest version + gov.uk rates page)"
     },
     {
@@ -4750,12 +4754,14 @@
       "used_by": [
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://www.gov.uk/tax-on-company-benefits",
+      "source_url": "https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim25580",
       "status": "current",
       "change_frequency": "",
-      "note": "company-car-tax-calculator: fuel benefit charge multiplier £29,200 for 2026/27",
+      "note": "2026/27 £29,200 (SI 2025/1254); 2025/26 £28,200",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "official_value": 29200,
+      "verified_date": "2026-10-19"
     },
     {
       "key": "compulsory_maternity_leave_weeks",
@@ -7714,7 +7720,7 @@
     },
     {
       "key": "employment_tribunal_claim_window_months",
-      "value": "3",
+      "value": 6,
       "unit": "months",
       "law": "Employment tribunal",
       "theme": "other",
@@ -7722,16 +7728,17 @@
         "prose"
       ],
       "used_by": [
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/data/calculator-content.ts"
       ],
-      "source_url": "https://www.gov.uk/dismissal/what-to-do-if-youre-dismissed",
+      "source_url": "https://www.gov.uk/employment-tribunals/make-a-claim",
       "status": "current",
       "change_frequency": "",
-      "note": "Claim within 3 months of dismissal (employment-tribunal, redundancy-pay, date)",
-      "official_value": "3 months (less 1 day)",
+      "note": "6 months for matters arising on or after 1 Oct 2026 (ERA 2025 s.152 + Sch 12, SI 2026/954); 3 months for earlier events. Round 10 2026-10-19: fixed on employment-tribunal, redundancy-pay, notice-period, date-calculator, time-duration pages",
+      "official_value": 6,
       "confidence": "high",
       "freshness_note": "Standard ET time limit remains 3 months (minus 1 day) from dismissal; ACAS early conciliation can extend; unchanged.",
-      "verified_date": "2026-06-28",
+      "verified_date": "2026-10-19",
       "verify_method": "tier2-tail"
     },
     {
@@ -7748,20 +7755,21 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://employmentcasesupdate.co.uk/content/employment-rights-increase-of-limits-order-2026.b1c037a265804d2680d2de8b799da3e4.htm",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/310/made",
       "status": "current",
       "change_frequency": "",
-      "note": "employment-tribunal-calculator: compensatory award cap lower of 52 weeks pay or £115,115 (howItWorks[1]); prose uses £123,785 (inconsistent)",
+      "note": "SI 2026/310 Schedule, in force 6 Apr 2026 (was £118,223). NB a memory note once said £123,785: wrong.",
       "conflict": true,
       "conflict_values": [
         115115,
         123785
       ],
-      "official_value": "123543",
+      "official_value": 123543,
       "confidence": "high",
       "freshness_note": "Employment Rights (Increase of Limits) Order 2026 raised the max compensatory award for unfair dismissal to GBP 123,543 from GBP 118,223, effective for terminations on/after 6 April 2026. Our value 11",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-10-19"
     },
     {
       "key": "employment_tribunal_unfair_dismissal_cap",
@@ -7775,12 +7783,14 @@
       "used_by": [
         "src/data/calculators.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/310/made",
       "status": "current",
       "change_frequency": "",
-      "note": "employment-tribunal-calculator metaTitle: '(£123,543 Cap)' (2026/27; was £123,785)",
+      "note": "SI 2026/310 Schedule, in force 6 Apr 2026 (was £118,223). NB a memory note once said £123,785: wrong.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "official_value": 123543,
+      "verified_date": "2026-10-19"
     },
     {
       "key": "employment_tribunal_unfair_dismissal_qualifying_service",
@@ -7794,15 +7804,16 @@
       "used_by": [
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/dismissal/what-to-do-if-youre-dismissed",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/559/made",
       "status": "current",
       "change_frequency": "",
       "note": "2 years' service for ordinary unfair dismissal claim (employment-tribunal-calculator)",
       "official_value": "2 years",
       "confidence": "high",
       "freshness_note": "2 years' continuous service still in force as of June 2026; Employment Rights Act 2025 cuts it to 6 months but only from 1 Jan 2027 (not yet live).",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-10-19",
+      "verify_method": "tier2-tail",
+      "changes_next_fy": "6 months from 1 January 2027 (ERA 2025 s.25/Sch 3, SI 2026/559); page prose dated"
     },
     {
       "key": "employment_tribunal_vento_lower_band",
@@ -7816,14 +7827,14 @@
       "used_by": [
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://www.judiciary.uk/wp-content/uploads/2026/03/Vento-bands-presidential-guidance-April-2026-addendum-1.pdf",
+      "source_url": "https://www.judiciary.uk/",
       "status": "current",
       "change_frequency": "",
-      "note": "employment-tribunal-calculator: Vento bands lower £1,200-£11,200, middle £11,200-£33,700, upper £33,700-£56,200",
+      "note": "Ninth Addendum to Presidential Guidance, 30 Mar 2026, claims presented on/after 6 Apr 2026: lower £1,300–£12,600, middle £12,600–£37,700, upper £37,700–£62,900",
       "official_value": "lower 1200-11200 -> 1300-12600 (middle 11200-33700 -> 12600-37700; upper 33700-56200 -> 37700-62900)",
       "confidence": "high",
       "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). Ninth Addendum (signed 30 Mar 2026) uprated Vento bands for claims on/after 6 Apr 2026: lower GBP1,300-GBP12,600, middle GBP12,600-GBP37,700, upper GBP37,700-GBP62,900; stored bands are the older (2024-25) figures.",
-      "verified_date": "2026-06-28",
+      "verified_date": "2026-10-19",
       "verify_method": "tier2-tail"
     },
     {
@@ -8427,7 +8438,7 @@
       "official_value": "15",
       "confidence": "high",
       "freshness_note": "All 3-4 year olds get a universal 15 funded hours/week (38 weeks) regardless of working status; matches stored value.",
-      "verified_date": "2026-06-28",
+      "verified_date": "2026-10-19",
       "verify_method": "tier2-tail"
     },
     {
@@ -8449,7 +8460,7 @@
       "official_value": "30",
       "confidence": "high",
       "freshness_note": "Working families get 30 funded hours/week (term-time); matches stored value.",
-      "verified_date": "2026-06-28",
+      "verified_date": "2026-10-19",
       "verify_method": "tier2-tail"
     },
     {
@@ -8564,7 +8575,7 @@
       "official_value": "1140",
       "confidence": "high",
       "freshness_note": "30 hours x 38 term-time weeks = 1140 funded hours/year; matches stored value.",
-      "verified_date": "2026-06-28",
+      "verified_date": "2026-10-19",
       "verify_method": "tier2-tail"
     },
     {
@@ -8981,7 +8992,7 @@
       "confidence": "high",
       "freshness_note": "Applied 2026-09-13: calculator, content and FAQ now state the UC £1 take-home pay test from 6 Apr 2025 (scheme extended to April 2027).",
       "resolve_note": "HelpToSave prose already describes Apr-2025 reform (UC + 16h-NLW-equiv); minor threshold nuance only",
-      "verified_date": "2026-09-13",
+      "verified_date": "2026-10-19",
       "verify_method": "phase4 apply (tier2 2026-09-13 verdicts)",
       "fixed": true,
       "fixed_date": "2026-09-13"
@@ -17866,7 +17877,7 @@
       "official_value": "275",
       "confidence": "high",
       "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). Stored 240 is the original 2021 Table 1 figure (whiplash only, not more than 3 months); the Whiplash Injury (Amendment) Regulations 2025 (SI 2025/615) inserted Table 2 raising it to GBP 275 for accidents on or after 31 May 2025 (full new range 275 to 4,830 whiplash-only / up to 4,975 with minor psychological); 240 to 275.",
-      "verified_date": "2026-06-28",
+      "verified_date": "2026-10-19",
       "verify_method": "tier2-tail"
     },
     {
@@ -19820,7 +19831,8 @@
       "note": "RedundancyPayCalculator: WEEKLY_PAY_CAP = 751, capped weekly pay for statutory redundancy from 6 April 2026 (was 719 in 2025/26). Also repeated in prose 'Weekly pay capped at £751'.",
       "official_value": "751",
       "confidence": "high",
-      "freshness_note": "£751 week's-pay cap effective 6 April 2026 (was £719 in 2025-26)."
+      "freshness_note": "£751 week's-pay cap effective 6 April 2026 (was £719 in 2025-26).",
+      "verified_date": "2026-10-19"
     },
     {
       "key": "redundancy_weekly_pay_cap_prior_year",
@@ -23925,7 +23937,8 @@
       "confidence": "medium",
       "freshness_note": "The partner/spouse entry-clearance (outside UK) fee under Appendix FM has risen twice since GBP 1,846: to GBP 1,938, then to GBP 2,064 effective 8 April 2026. The site's GBP 1,846 is two upratings out",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_date": "2026-10-19"
     },
     {
       "key": "spouse_visa_first_child_income_add",
@@ -25039,7 +25052,8 @@
       "note": "Weekly pay cap GBP751 (redundancy-pay, employment-tribunal)",
       "official_value": "751",
       "confidence": "high",
-      "freshness_note": "gov.uk: for redundancies on or after 6 April 2026 weekly pay is capped at GBP 751. Uprated from GBP 719 in 2025-26 (Employment Rights (Increase of Limits) Order 2026). CURRENT for 2026-27."
+      "freshness_note": "gov.uk: for redundancies on or after 6 April 2026 weekly pay is capped at GBP 751. Uprated from GBP 719 in 2025-26 (Employment Rights (Increase of Limits) Order 2026). CURRENT for 2026-27.",
+      "verified_date": "2026-10-19"
     },
     {
       "key": "structures_buildings_allowance_rate",
@@ -26312,7 +26326,7 @@
       "official_value": "£22,530 (£751 weekly cap x 30)",
       "confidence": "medium",
       "freshness_note": "Non-motoring item: from 6 Apr 2026 the week's-pay cap rose to £751, giving max basic award £22,530; consistent across multiple legal sources (Employment Rights (Increase of Limits) Order 2026).",
-      "verified_date": "2026-06-28",
+      "verified_date": "2026-10-19",
       "verify_method": "tier2-tail"
     },
     {
@@ -26371,12 +26385,14 @@
       "used_by": [
         "src/components/calculators/EmploymentTribunalCalculator.tsx"
       ],
-      "source_url": "",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/310/made",
       "status": "current",
       "change_frequency": "",
-      "note": "COMPENSATORY_AWARD_CAP — unfair dismissal compensatory award cap £123,543 for 2026/27, uprated from £118,223 (2025/26). Also shown in prose disclaimer.",
+      "note": "SI 2026/310 Schedule, in force 6 Apr 2026 (was £118,223). NB a memory note once said £123,785: wrong.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "official_value": 123543,
+      "verified_date": "2026-10-19"
     },
     {
       "key": "tribunal_compensatory_award_weeks_pay_cap",
@@ -26390,10 +26406,12 @@
       "used_by": [
         "src/components/calculators/EmploymentTribunalCalculator.tsx"
       ],
-      "source_url": "",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/310/made",
       "status": "current",
       "change_frequency": "",
-      "note": "Compensatory award also capped at 52 weeks' gross pay (whichever is lower) — stated in prose disclaimer."
+      "note": "Lower of £123,543 and 52 weeks gross pay; enforced in EmploymentTribunalCalculator.tsx from round 10",
+      "official_value": 52,
+      "verified_date": "2026-10-19"
     },
     {
       "key": "tribunal_weekly_pay_cap",
@@ -27412,15 +27430,16 @@
       "used_by": [
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://www.gov.uk/dismissal/what-to-do-if-youre-dismissed",
+      "source_url": "https://www.legislation.gov.uk/uksi/2026/559/made",
       "status": "current",
       "change_frequency": "",
       "note": "employment-tribunal-calculator: 2 years continuous service for ordinary unfair dismissal; 3-month claim limit; ACAS Early Conciliation; tribunal fees abolished Jul 2017",
       "official_value": "2 years",
       "confidence": "high",
       "freshness_note": "2 years' continuous service for ordinary unfair dismissal still in force June 2026; Employment Rights Act 2025 reduction to 6 months takes effect 1 Jan 2027 (not yet live).",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-10-19",
+      "verify_method": "tier2-tail",
+      "changes_next_fy": "6 months from 1 January 2027 (ERA 2025 s.25/Sch 3, SI 2026/559); page prose dated"
     },
     {
       "key": "universal_credit_housing_taper_rate",
@@ -27617,12 +27636,15 @@
         "prose"
       ],
       "used_by": [
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/VatFlatRateCalculator.tsx"
       ],
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "Limited Cost Trader flat rate 16.5% on gross (vat-flat-rate, vat-return)"
+      "note": "Limited cost business checkbox added to the calculator in round 10; 1% first-year discount also modelled",
+      "official_value": 16.5,
+      "verified_date": "2026-10-19"
     },
     {
       "key": "vat_flat_rate_scheme_eligibility_threshold",
@@ -27702,12 +27724,15 @@
         "computed"
       ],
       "used_by": [
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/components/calculators/VatFlatRateCalculator.tsx"
       ],
       "source_url": "https://www.gov.uk/vat-flat-rate-scheme",
       "status": "current",
       "change_frequency": "",
-      "note": "vat-flat-rate-calculator: Limited Cost Trader rate 16.5% (goods <2% of turnover or <£1,000); first-year 1% discount; capital goods >£2,000 reclaimable"
+      "note": "Limited cost business checkbox added to the calculator in round 10; 1% first-year discount also modelled",
+      "official_value": 16.5,
+      "verified_date": "2026-10-19"
     },
     {
       "key": "vat_frs_rate_accountancy_bookkeeping",
@@ -28087,7 +28112,7 @@
     },
     {
       "key": "vat_frs_rate_management_consultancy",
-      "value": "14",
+      "value": 14,
       "unit": "%",
       "law": "VAT Flat Rate Scheme",
       "theme": "vat",
@@ -28095,12 +28120,15 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/VatFlatRateCalculator.tsx"
+        "src/components/calculators/VatFlatRateCalculator.tsx",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "HMRC Flat Rate Scheme percentage for Management consultancy (FLAT_RATES)"
+      "note": "Prose said 12% until round 10",
+      "official_value": 14,
+      "verified_date": "2026-10-19"
     },
     {
       "key": "vat_frs_rate_manufacturing",
@@ -28274,7 +28302,7 @@
     },
     {
       "key": "vat_frs_rate_real_estate",
-      "value": "14",
+      "value": 14,
       "unit": "%",
       "law": "VAT Flat Rate Scheme",
       "theme": "vat",
@@ -28282,12 +28310,15 @@
         "computed"
       ],
       "used_by": [
-        "src/components/calculators/VatFlatRateCalculator.tsx"
+        "src/components/calculators/VatFlatRateCalculator.tsx",
+        "src/data/calculator-content.ts"
       ],
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "HMRC Flat Rate Scheme percentage for Real estate (FLAT_RATES)"
+      "note": "Prose said 10% until round 10",
+      "official_value": 14,
+      "verified_date": "2026-10-19"
     },
     {
       "key": "vat_frs_rate_repairing_personal_goods",
@@ -28614,7 +28645,8 @@
       "note": "FreelanceTaxCalculator: VAT registration turnover threshold (grossRevenue > 90_000); also prose 'Revenue exceeds £90K — you must register for VAT'",
       "official_value": "90000",
       "confidence": "high",
-      "freshness_note": "Registration threshold £90,000 (taxable turnover) since 1 April 2024 (raised from £85,000). Frozen at this level; confirmed current for 2026-27 on the gov.uk VAT thresholds page."
+      "freshness_note": "Registration threshold £90,000 (taxable turnover) since 1 April 2024 (raised from £85,000). Frozen at this level; confirmed current for 2026-27 on the gov.uk VAT thresholds page.",
+      "verified_date": "2026-10-19"
     },
     {
       "key": "vat_solar_residential_rate",
@@ -29987,8 +30019,8 @@
       "source_url": "https://www.gov.uk/tax-relief-for-employees/working-at-home",
       "status": "current",
       "change_frequency": "",
-      "note": "WorkFromHomeTaxReliefCalculator: FLAT_RATE_WEEKLY = 6, HMRC flat-rate working-from-home tax relief without evidence (2026/27)",
-      "verified_date": "2026-09-13",
+      "note": "Employee deduction for homeworking costs abolished from 6 Apr 2026 (FA 2026 s.21 inserting s.360B ITEPA); £6/wk still applies to look-back claims for 2022/23–2025/26 (2022/23 closes 5 Apr 2027) and to the employer s.316A payment, which continues. Verified gov.uk/tax-relief-for-employees/working-at-home 2026-10-19",
+      "verified_date": "2026-10-19",
       "verify_method": "phase4 apply (tier2 2026-09-13 verdicts)",
       "official_value": "6",
       "freshness_note": "Applied 2026-09-13: £6/week now applies only to backdated employee claims (2022/23-2025/26) and the employer s316A payment; employee relief is £0 from 6 Apr 2026 (s360B ITEPA).",
@@ -30022,13 +30054,16 @@
         "prose"
       ],
       "used_by": [
-        "src/data/calculators.ts"
+        "src/data/calculators.ts",
+        "src/components/calculators/WorkFromHomeTaxReliefCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/tax-relief-for-employees/working-at-home",
       "status": "current",
       "change_frequency": "",
-      "note": "work-from-home-tax-relief-calculator: '£6/week flat rate or actual costs claim'",
-      "verified_date": "2026-09-13",
+      "note": "Employee deduction for homeworking costs abolished from 6 Apr 2026 (FA 2026 s.21 inserting s.360B ITEPA); £6/wk still applies to look-back claims for 2022/23–2025/26 (2022/23 closes 5 Apr 2027) and to the employer s.316A payment, which continues. Verified gov.uk/tax-relief-for-employees/working-at-home 2026-10-19",
+      "verified_date": "2026-10-19",
       "verify_method": "phase4 apply (tier2 2026-09-13 verdicts)",
       "official_value": "6",
       "freshness_note": "Applied 2026-09-13: calculators.ts description now states employee relief ended April 2026 and cites the £6/week employer allowance.",
@@ -31086,7 +31121,7 @@
     },
     {
       "key": "settlement_english_level",
-      "value": "B1",
+      "value": "B1 before 26 Mar 2027; B2 on or after",
       "unit": "CEFR",
       "law": "Immigration Rules HC 1691",
       "theme": "other",
@@ -31095,16 +31130,17 @@
       ],
       "used_by": [
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/SpouseVisaCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/publications/statement-of-changes-to-the-immigration-rules-hc-1619-5-march-2026/statement-of-changes-to-the-immigration-rules-hc-1691-5-march-2026-accessible-version",
+      "source_url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-koll",
       "status": "current",
       "change_frequency": "",
       "note": "Settlement English B1 today; B2 for settlement applications on/after 26 March 2027 (HC 1691)",
-      "official_value": "B1",
+      "official_value": "B1 before 26 Mar 2027; B2 on or after (Appendix KoLL 2.2, 3.3)",
       "confidence": "high",
       "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
-      "verified_date": "2026-09-26",
+      "verified_date": "2026-10-19",
       "verify_method": "calkcheck-2026-09-26",
       "changes_next_fy": "26 March 2027: settlement English rises to B2; update ilr-calculator and skilled-worker settlement prose/FAQ tense."
     },
@@ -31484,7 +31520,7 @@
       "official_value": "1407",
       "confidence": "high",
       "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
-      "verified_date": "2026-09-26",
+      "verified_date": "2026-10-19",
       "verify_method": "browser-qa 2026-09-26: primary source read"
     },
     {
@@ -31596,9 +31632,9 @@
       "source_url": "https://www.legislation.gov.uk/ukpga/2026/15/enacted",
       "status": "current",
       "change_frequency": "",
-      "note": "Pension salary sacrifice up to £2,000 a tax year stays free of employee and employer NI from 6 April 2029; the excess is earnings for Class 1 primary and secondary NI. First regulations must set £2,000; can be changed by regulations.",
+      "note": "£2,000/yr NI-free from 6 Apr 2029 (NICs (Employer Pensions Contributions) Act 2026); sentence added to employer-pension page round 10",
       "official_value": "2000",
-      "verified_date": "2026-09-27",
+      "verified_date": "2026-10-19",
       "verify_method": "calkcheck-2026-09-27",
       "confidence": "high",
       "changes_next_fy": "Takes effect 6 April 2029 (tax year 2029-30); design details (e.g. multiple employers) to come in secondary legislation - re-check when regulations are laid."
@@ -35764,6 +35800,364 @@
       "freshness_note": "gov.uk rates and allowances table: Class 3 17.45 (2024 to 2025), 17.75 (2025 to 2026), 18.40 (2026 to 2027). Class 2: 3.45, 3.50, 3.65. Historical rates; fixed.",
       "verified_date": "2026-10-13",
       "verify_method": "voluntary-ni-calculator build 2026-10-13"
+    },
+    {
+      "key": "help_to_save_scheme_end",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": "permanent",
+      "unit": "text",
+      "official_value": "permanent (HMRC release 21 Sep 2026); from 2028 open to all Universal Credit claimants, earnings test removed for carers",
+      "law": "Help to Save",
+      "theme": "savings",
+      "surfaces": [
+        "component",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/HelpToSaveCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/news/more-than-300-million-paid-out-through-help-to-save-with-thousands-more-savers-set-to-benefit",
+      "note": "Site said \"until April 2027\" until round 10"
+    },
+    {
+      "key": "cms_shared_care_reduction_175plus_nights",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": "50% plus 7 GBP/week per child",
+      "unit": "text",
+      "official_value": "50% plus an extra £7 a week reduction (175 nights or more)",
+      "law": "Child Support Act 1991 Sch 1 para 7",
+      "theme": "child_maintenance",
+      "surfaces": [
+        "component",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/how-child-maintenance-is-worked-out/how-the-child-maintenance-service-works-out-child-maintenance"
+    },
+    {
+      "key": "cms_minimum_weekly_after_shared_care",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": 7,
+      "unit": "GBP/week",
+      "official_value": 7,
+      "law": "Child Support Act 1991 Sch 1 para 7(7)",
+      "theme": "child_maintenance",
+      "surfaces": [
+        "component",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/ChildMaintenanceCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/how-child-maintenance-is-worked-out/how-the-child-maintenance-service-works-out-child-maintenance",
+      "note": "\"The child maintenance payments cannot go below £7 a week\""
+    },
+    {
+      "key": "company_car_bik_rate_120_124gkm",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": 30,
+      "unit": "percent",
+      "official_value": 30,
+      "law": "ITEPA 2003 s.139 (2026/27 table)",
+      "theme": "company_car",
+      "surfaces": [
+        "component",
+        "prose",
+        "example"
+      ],
+      "used_by": [
+        "src/components/calculators/CompanyCarTaxCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/company-car-benefit-the-appropriate-percentage-480-appendix-2",
+      "note": "Prose example said 29% (2022/23–2024/25 rate) until round 10; benefits-in-kind page said 180 g/km = 30% (37% in 2026/27)"
+    },
+    {
+      "key": "van_benefit_charge",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": 4170,
+      "unit": "GBP/year",
+      "official_value": 4170,
+      "law": "ITEPA 2003 s.155",
+      "theme": "company_car",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/expenses-and-benefits-company-vans/work-out-the-value",
+      "note": "Zero-emission vans nil; van fuel benefit £798"
+    },
+    {
+      "key": "van_fuel_benefit_charge",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": 798,
+      "unit": "GBP/year",
+      "official_value": 798,
+      "law": "ITEPA 2003 s.161",
+      "theme": "company_car",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/expenses-and-benefits-company-vans/work-out-the-value"
+    },
+    {
+      "key": "hmrc_aer_home_charging",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": 7,
+      "unit": "pence/mile",
+      "official_value": 7,
+      "law": "HMRC advisory electricity rate (from 1 Sep 2026, quarterly)",
+      "theme": "mileage",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/advisory-fuel-rates",
+      "change_frequency": "quarterly"
+    },
+    {
+      "key": "hmrc_aer_public_charging",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": 15,
+      "unit": "pence/mile",
+      "official_value": 15,
+      "law": "HMRC advisory electricity rate (from 1 Sep 2026, quarterly)",
+      "theme": "mileage",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/advisory-fuel-rates",
+      "change_frequency": "quarterly"
+    },
+    {
+      "key": "ni_class1_primary_threshold_monthly",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": 1048,
+      "unit": "GBP/month",
+      "official_value": 1048,
+      "law": "NI Class 1 2026/27",
+      "theme": "national_insurance",
+      "surfaces": [
+        "component"
+      ],
+      "used_by": [
+        "src/components/calculators/SettlementAgreementCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027"
+    },
+    {
+      "key": "ni_class1_upper_earnings_limit_monthly",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": 4189,
+      "unit": "GBP/month",
+      "official_value": 4189,
+      "law": "NI Class 1 2026/27",
+      "theme": "national_insurance",
+      "surfaces": [
+        "component"
+      ],
+      "used_by": [
+        "src/components/calculators/SettlementAgreementCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027"
+    },
+    {
+      "key": "redundancy_weekly_pay_cap_northern_ireland",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "medium",
+      "value": 783,
+      "unit": "GBP/week",
+      "official_value": 783,
+      "law": "Employment Rights (NI) Order 1996 limits",
+      "theme": "employment",
+      "surfaces": [
+        "component",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/RedundancyPayCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.nidirect.gov.uk/articles/redundancy-pay",
+      "note": "Maximum £23,490 (30 × £783); nidirect page shows no effective date"
+    },
+    {
+      "key": "hmrc_late_payment_interest_rate",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": 7.75,
+      "unit": "percent",
+      "official_value": 7.75,
+      "law": "HMRC late payment interest = Bank Rate + 4% (from 6 Apr 2025)",
+      "theme": "self_assessment",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/rates-and-allowances-hmrc-interest-rates-for-late-and-early-payments/rates-and-allowances-hmrc-interest-rates",
+      "note": "7.75% from 9 Jan 2026 (base 3.75%); repayment 2.75%",
+      "change_frequency": "with Bank Rate"
+    },
+    {
+      "key": "rd_claim_notification_deadline_months",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": 6,
+      "unit": "months",
+      "official_value": 6,
+      "law": "R&D claim notification (first-time or lapsed claimants)",
+      "theme": "corporation_tax",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/tell-hmrc-that-youre-planning-to-claim-research-and-development-rd-tax-relief"
+    },
+    {
+      "key": "rd_payable_credit_paye_cap",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": "20000 + 300% of PAYE/NIC",
+      "unit": "text",
+      "official_value": "£20,000 plus 300% of the company PAYE and NIC liability",
+      "law": "CTA 2009 (merged scheme and ERIS)",
+      "theme": "corporation_tax",
+      "surfaces": [
+        "component",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/RDTaxCreditCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/research-and-development-rd-tax-relief-the-merged-scheme-and-enhanced-rd-intensive-support",
+      "note": "Optional PAYE/NIC input added round 10"
+    },
+    {
+      "key": "pi_discount_rate_england_wales",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": 0.5,
+      "unit": "percent",
+      "official_value": 0.5,
+      "law": "Personal injury discount rate (Damages Act 1996), from 11 Jan 2025",
+      "theme": "legal",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/news/personal-injury-discount-rate-set-at-plus-0-5-percent"
+    },
+    {
+      "key": "paye_flat_rate_expenses_max",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": 185,
+      "unit": "GBP/year",
+      "official_value": 185,
+      "law": "EIM32712 flat rate expenses (ambulance staff highest)",
+      "theme": "income_tax",
+      "surfaces": [
+        "component",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/TaxRefundCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim32712",
+      "note": "Most trades £60–£140"
+    },
+    {
+      "key": "self_assessment_simplified_expenses_wfh_monthly",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "high",
+      "value": "10/18/26",
+      "unit": "GBP/month",
+      "official_value": "£10 (25–50 h), £18 (51–100 h), £26 (101+ h)",
+      "law": "Simplified expenses (ITTOIA 2005 s.94H)",
+      "theme": "self_assessment",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/simpler-income-tax-simplified-expenses/working-from-home",
+      "note": "Prose said \"£25 to £26 a month\" until round 10"
+    },
+    {
+      "key": "employment_tribunal_loss_of_statutory_rights",
+      "status": "current",
+      "verified_date": "2026-10-19",
+      "confidence": "medium",
+      "value": 500,
+      "unit": "GBP",
+      "official_value": "conventional sum, typically £350–£600",
+      "law": "Case law (conventional award)",
+      "theme": "employment",
+      "surfaces": [
+        "component",
+        "example"
+      ],
+      "used_by": [
+        "src/components/calculators/EmploymentTribunalCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/employment-tribunals"
     }
   ],
   "status_summary": {

@@ -16,6 +16,12 @@ const CLASS4_UPPER = 50_270
 const CLASS4_MAIN_RATE = 0.06 // 6%
 const CLASS4_ADDITIONAL_RATE = 0.02 // 2%
 
+// Payments on account (gov.uk/understand-self-assessment-bill/payments-on-account):
+// due when the Self Assessment bill is over £1,000 and less than 80% of the year's
+// tax was collected at source. Each is 50% of this year's bill (income tax plus
+// Class 4 NI), due 31 January and 31 July following the tax year.
+const POA_THRESHOLD = 1_000
+
 function calculate(profit: number) {
   let pa = PA
   if (profit > PA_TAPER) pa = Math.max(0, PA - Math.floor((profit - PA_TAPER) / 2))
@@ -36,10 +42,14 @@ function calculate(profit: number) {
   }
 
   const totalTax = incomeTax + class4
+  const paymentOnAccount = totalTax > POA_THRESHOLD ? totalTax / 2 : 0
   return {
     profit, incomeTax, class4, totalTax,
     takeHome: profit - totalTax,
     effectiveRate: profit > 0 ? (totalTax / profit) * 100 : 0,
+    paymentOnAccount,
+    // 31 January 2028: the 2026/27 balance plus the first payment on account for 2027/28
+    dueJanuary: totalTax + paymentOnAccount,
   }
 }
 
@@ -91,6 +101,16 @@ export default function SelfAssessmentCalculator() {
               <p className="text-lg font-bold">{formatPercent(result.effectiveRate)}</p>
             </div>
           </div>
+
+          {result.paymentOnAccount > 0 ? (
+            <div className="rounded-xl border border-border p-4 text-sm space-y-1">
+              <p className="font-medium">Payments on account for 2027/28: 2 × {formatCurrency(result.paymentOnAccount)} (31 January and 31 July 2028)</p>
+              <p className="text-muted-foreground">Each is half of this year's bill. They apply because the bill is over £1,000, unless more than 80% of your tax for the year was collected at source.</p>
+              <p className="text-muted-foreground">Due 31 January 2028: balance {formatCurrency(result.totalTax)} + first payment on account {formatCurrency(result.paymentOnAccount)} = <span className="font-semibold text-foreground">{formatCurrency(result.dueJanuary)}</span>, assuming no payments on account were made towards 2026/27.</p>
+            </div>
+          ) : (
+            <p className="text-sm text-muted-foreground">No payments on account: they only apply once the Self Assessment bill is over £1,000. The whole {formatCurrency(result.totalTax)} is due by 31 January 2028.</p>
+          )}
         </div>
       )}
     </div>

@@ -30,7 +30,8 @@ const INJURY_TYPES: Record<string, { name: string; tariff?: boolean; ranges: Ran
     { severity: 'Severe (i)', min: 195_970, max: 195_970 },
   ]},
   back: { name: 'Back Injury', ranges: [
-    { severity: 'Minor (iii), recovery within 3 months (approx.)', min: 0, max: 3_240 },
+    { severity: 'Minor (iv), recovery within 3 months (approx.)', min: 0, max: 3_240 },
+    { severity: 'Minor (iii), recovery within 1 year (approx.)', min: 3_240, max: 5_750 },
     { severity: 'Minor (ii), recovery within 2 years', min: 5_750, max: 10_420 },
     { severity: 'Minor (i), recovery within 5 years', min: 10_420, max: 16_520 },
     { severity: 'Moderate (ii)', min: 16_520, max: 36_680 },
@@ -100,9 +101,10 @@ export default function PersonalInjuryCalculator() {
   const tariffAmount = injury.tariff && withPsych && range.withPsych ? range.withPsych : null
   const gdMin = tariffAmount ?? range.min
   const gdMax = tariffAmount ?? range.max
-  const le = parseFloat(lostEarnings.replace(/,/g,'')) || 0
-  const mc = parseFloat(medicalCosts.replace(/,/g,'')) || 0
-  const tc = parseFloat(travelCosts.replace(/,/g,'')) || 0
+  // Losses cannot be negative; a minus sign would otherwise pull the total below the tariff
+  const le = Math.max(0, parseFloat(lostEarnings.replace(/,/g,'')) || 0)
+  const mc = Math.max(0, parseFloat(medicalCosts.replace(/,/g,'')) || 0)
+  const tc = Math.max(0, parseFloat(travelCosts.replace(/,/g,'')) || 0)
   const specialDamages = le + mc + tc
   const totalMin = gdMin + specialDamages
   const totalMax = gdMax + specialDamages

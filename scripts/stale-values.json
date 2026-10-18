@@ -2391,6 +2391,344 @@
    "now": "toLocaleString with two decimals (code)",
    "what": "minimum_wage_2027_employer_cost_thousands_separator (code)",
    "ctx": "LPC_APRIL_2027"
+  },
+  {
+   "was": "10150",
+   "now": "10500",
+   "what": "company_car_bik_example_120gkm_benefit (29%->30% 2026/27, round 10)",
+   "ctx": "BiK|benefit|35,000|company car"
+  },
+  {
+   "was": "4060",
+   "now": "4200",
+   "what": "company_car_bik_example_tax_at_40 (round 10)",
+   "ctx": "BiK|benefit|10,500|company car"
+  },
+  {
+   "was": "1,522.50",
+   "now": "1,575",
+   "what": "company_car_bik_example_class_1a (round 10)"
+  },
+  {
+   "was": "11350",
+   "now": "11700",
+   "what": "benefits_in_kind_example_total (round 10)",
+   "ctx": "BiK|benefit|P11D"
+  },
+  {
+   "was": "2270",
+   "now": "2340",
+   "what": "benefits_in_kind_example_tax (round 10)",
+   "ctx": "BiK|benefit|P11D|month"
+  },
+  {
+   "was": "29%",
+   "now": "thirty percent for the current year",
+   "what": "company_car_bik_120gkm_rate (round 10)",
+   "ctx": "^(?=.*120 ?g/km).*(?<!old )29%"
+  },
+  {
+   "was": "12000",
+   "now": "14800",
+   "what": "benefits_in_kind_180gkm_benefit (30%->37%, round 10)",
+   "ctx": "180 ?g/km"
+  },
+  {
+   "was": "5,400",
+   "now": "6,660",
+   "what": "benefits_in_kind_180gkm_tax_at_45 (round 10)",
+   "ctx": "180 ?g/km"
+  },
+  {
+   "was": "14% to 37%",
+   "now": "seventeen to thirty-seven percent from fifty-one g/km",
+   "what": "benefits_in_kind_petrol_range (round 10)"
+  },
+  {
+   "was": "10 times cheaper",
+   "now": "roughly nine times cheaper",
+   "what": "benefits_in_kind_electric_comparison (round 10)"
+  },
+  {
+   "was": "12% for management consultancy",
+   "now": "fourteen percent for management consultancy",
+   "what": "vat_frs_rate_management_consultancy (round 10)"
+  },
+  {
+   "was": "10% for real estate",
+   "now": "fourteen percent for real estate activity",
+   "what": "vat_frs_rate_real_estate (round 10)"
+  },
+  {
+   "was": "85k",
+   "now": "90k",
+   "what": "vat_registration_threshold_abbrev (round 10)",
+   "ctx": "85k.{0,12}150k|150k.{0,12}85k"
+  },
+  {
+   "was": "Waste/recycling",
+   "now": "removed: not an HMRC flat-rate sector",
+   "what": "vat_frs_sector_waste_recycling (round 10)"
+  },
+  {
+   "was": "account for VAT on closing stock",
+   "now": "claim input VAT on stock when leaving the scheme",
+   "what": "vat_frs_leaving_stock_rule (round 10)"
+  },
+  {
+   "was": "more than £2,000",
+   "now": "two thousand pounds or more including VAT",
+   "what": "vat_frs_capital_asset_threshold_wording (round 10)",
+   "ctx": "capital|flat rate|single purchase"
+  },
+  {
+   "was": "25 to £26 a month",
+   "now": "flat ten, eighteen or twenty-six pounds a month",
+   "what": "self_assessment_simplified_expenses_wfh (round 10)"
+  },
+  {
+   "was": "a company director in most cases",
+   "now": "directors file only with untaxed income",
+   "what": "self_assessment_who_must_file_director (round 10)"
+  },
+  {
+   "was": "Registering late brings its own £100 charge",
+   "now": "failure-to-notify percentage penalty",
+   "what": "self_assessment_late_registration_penalty (round 10)"
+  },
+  {
+   "was": "60 to £140",
+   "now": "60 to £185 a year depending on trade",
+   "what": "paye_flat_rate_expenses_range (round 10)",
+   "ctx": "trade|uniform|flat-rate|flat rate"
+  },
+  {
+   "was": "60–£140/year",
+   "now": "60 to £185 a year",
+   "what": "paye_flat_rate_expenses_range_component (round 10)"
+  },
+  {
+   "was": "1257M",
+   "now": "1383M",
+   "what": "tax_code_marriage_allowance_recipient (round 10)"
+  },
+  {
+   "was": "K100",
+   "now": "K475",
+   "what": "tax_code_k_example (round 10)",
+   "ctx": "code|format|quick"
+  },
+  {
+   "was": "reviewing your affairs",
+   "now": "T means other calculations are built into the allowance",
+   "what": "tax_code_T_meaning (round 10)"
+  },
+  {
+   "was": "9425",
+   "now": "9100",
+   "what": "redundancy_example_45yo_12yrs_total (round 10)",
+   "ctx": "^(?=.*(redundan|£650|weeks)).*(?<!not £)9,?425"
+  },
+  {
+   "was": "4550",
+   "now": "5200",
+   "what": "redundancy_example_22_40_band (round 10)",
+   "ctx": "redundan|£650|week"
+  },
+  {
+   "was": "4875",
+   "now": "3900",
+   "what": "redundancy_example_41plus_band (round 10)",
+   "ctx": "redundan|£650|week"
+  },
+  {
+   "was": "within 3 months",
+   "now": "within six months, three for events before October twenty twenty-six",
+   "what": "employment_tribunal_claim_window (ERA 2025 s.152, 1 Oct 2026; round 10)",
+   "ctx": "tribunal|acas|dismiss|claim"
+  },
+  {
+   "was": "3 months less 1 day",
+   "now": "six months since October twenty twenty-six",
+   "what": "employment_tribunal_claim_window_less_one_day (round 10)"
+  },
+  {
+   "was": "Williams v Brunel",
+   "now": "Dudley MBC v Willetts, the real voluntary-overtime authority",
+   "what": "overtime_holiday_pay_case_law (round 10)"
+  },
+  {
+   "was": "doctors-in-training",
+   "now": "no such exclusion; under-eighteens have a separate limit",
+   "what": "wtr_opt_out_exclusions (round 10)"
+  },
+  {
+   "was": "5-12%",
+   "now": "about a quarter to thirty percent of pay",
+   "what": "umbrella_deduction_wedge (round 10)",
+   "ctx": "umbrella"
+  },
+  {
+   "was": "17-£18",
+   "now": "fifteen to sixteen pounds gross",
+   "what": "umbrella_chain_illustration (round 10)",
+   "ctx": "umbrella|£25"
+  },
+  {
+   "was": "30% to 50% of what an employer",
+   "now": "removed: unsourced statistic",
+   "what": "settlement_opening_offer_statistic (round 10)"
+  },
+  {
+   "was": "1,500",
+   "now": "1,538",
+   "what": "settlement_example_accrued_holiday (round 10)",
+   "ctx": "accrued holiday"
+  },
+  {
+   "was": "25,255",
+   "now": "25,293",
+   "what": "settlement_example_total_low (round 10)"
+  },
+  {
+   "was": "35,255",
+   "now": "35,293",
+   "what": "settlement_example_total_high (round 10)"
+  },
+  {
+   "was": "1 week per year of service",
+   "now": "one week after a month, then one per complete year from two years",
+   "what": "statutory_notice_wording (round 10)",
+   "ctx": "notice"
+  },
+  {
+   "was": "4353",
+   "now": "5203",
+   "what": "mileage_example_total_45p_leftover (round 10)",
+   "ctx": "mileage|allowance"
+  },
+  {
+   "was": "3825",
+   "now": "4675",
+   "what": "mileage_example_car_component_45p (round 10)",
+   "ctx": "mileage|miles"
+  },
+  {
+   "was": "1 June 2026",
+   "now": "HMRC's current advisory electricity rate from September twenty twenty-six",
+   "what": "aer_split_rate_start_date_claim (round 10)",
+   "ctx": "7p|15p|electric|charging"
+  },
+  {
+   "was": "2p a mile",
+   "now": "seven pence a mile home-charging AER",
+   "what": "ev_running_cost_claim (round 10)",
+   "ctx": "surplus|AMAP|55p a mile"
+  },
+  {
+   "was": "turns £60 into £350",
+   "now": "turns £72 into £350",
+   "what": "salary_sacrifice_net_cost_basic_rate (round 10)"
+  },
+  {
+   "was": "19,000 claims",
+   "now": "removed: undated statistic",
+   "what": "specified_adult_childcare_credits_statistic (round 10)"
+  },
+  {
+   "was": "3+ nights",
+   "now": "three nights (156 to 174) and equal care 175+ at half plus seven pounds per child",
+   "what": "cms_shared_care_options (round 10)",
+   "ctx": "maintenance|shared|CMS|nights"
+  },
+  {
+   "was": "Before 2022, anyone working from home could claim",
+   "now": "pandemic-years easement, not a looser test",
+   "what": "wfh_pre_2022_claim (round 10)"
+  },
+  {
+   "was": "This calculator checks your eligibility for each scheme",
+   "now": "describes the household route inputs",
+   "what": "childcare_entitlement_inputs_claim (round 10)"
+  },
+  {
+   "was": "A basic-rate taxpayer sees the same effect",
+   "now": "72 for basic rate, 58 for higher",
+   "what": "salary_sacrifice_basic_rate_claim (round 10)"
+  },
+  {
+   "was": "Self-employed individuals cannot use AMAP rates",
+   "now": "self-employed use the same per-mile figures via simplified expenses",
+   "what": "mileage_self_employed_rates (round 10)"
+  },
+  {
+   "was": "75% of claims",
+   "now": "most claims settle before a hearing",
+   "what": "employment_tribunal_settlement_statistic (round 10)"
+  },
+  {
+   "was": "until April 2027",
+   "now": "permanent since September twenty twenty-six",
+   "what": "help_to_save_scheme_end (HMRC 21 Sep 2026; round 10)",
+   "ctx": "Help to Save|bonus|account"
+  },
+  {
+   "was": "30% annualised",
+   "now": "25% a year",
+   "what": "help_to_save_annualised_return (round 10)"
+  },
+  {
+   "was": "in prison",
+   "now": "UK residence condition only",
+   "what": "help_to_save_eligibility_exclusions (round 10)",
+   "ctx": "Help to Save|account"
+  },
+  {
+   "was": "Neither the bonuses nor any interest",
+   "now": "bonuses tax-free, no interest paid",
+   "what": "help_to_save_interest_claim (round 10)"
+  },
+  {
+   "was": "340",
+   "now": "570",
+   "what": "spouse_visa_english_tests_cost (round 10)",
+   "ctx": "English test"
+  },
+  {
+   "was": "12780",
+   "now": "13010",
+   "what": "spouse_visa_5yr_total (round 10)",
+   "ctx": "visa|5-year|route"
+  },
+  {
+   "was": "B1 by the time of settlement",
+   "now": "B-one before late March twenty twenty-seven, B-two after",
+   "what": "spouse_visa_settlement_english (round 10)"
+  },
+  {
+   "was": "33% before April 2023",
+   "now": "33p per pound under the old SME scheme",
+   "what": "rd_eris_history_wording (round 10)"
+  },
+  {
+   "was": "pre-notify",
+   "now": "claim notification within six months of period end",
+   "what": "rd_claim_notification (round 10)"
+  },
+  {
+   "was": "rejection rates above 50%",
+   "now": "removed: unsourced",
+   "what": "rd_rejection_statistic (round 10)"
+  },
+  {
+   "was": "Minor (iii), recovery within 3 months",
+   "now": "Minor (iv) within three months; (iii) within a year added",
+   "what": "pi_back_minor_brackets (round 10)"
+  },
+  {
+   "was": "Four routes lead to that figure",
+   "now": "several routes under Appendix FM-SE",
+   "what": "spouse_visa_income_routes (round 10)"
   }
  ]
 }

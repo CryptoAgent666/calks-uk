@@ -15,7 +15,7 @@ function calculate(monthly: number) {
 
 export default function HelpToSaveCalculator() {
   const [monthly, setMonthly] = useState('50')
-  const m = parseFloat(monthly) || 0
+  const m = Math.max(0, parseFloat(monthly) || 0)
   const result = useMemo(() => calculate(m), [m])
 
   return (
@@ -27,7 +27,7 @@ export default function HelpToSaveCalculator() {
         <p className="text-sm text-muted-foreground mt-1">You save {formatCurrency(result.totalSaved)} + 50% govt bonus {formatCurrency(result.bonus)}</p>
       </div>
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p>Help to Save: 50% government bonus on savings up to £50/month for 4 years. Since 6 April 2025 anyone on Universal Credit with take-home pay of £1 or more in their last monthly assessment period can open an account, and the scheme runs on these terms until April 2027. Max bonus: £1,200.</p>
+        <p>Help to Save: 50% government bonus on savings up to £50/month for 4 years. Since 6 April 2025 anyone on Universal Credit with take-home pay of £1 or more in their last monthly assessment period can open an account. The scheme was made permanent in September 2026; from 2028 it opens to all Universal Credit claimants, with the earnings test removed for carers. Max bonus: £1,200.</p>
       </div>
     </div>
   )

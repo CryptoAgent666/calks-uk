@@ -62,6 +62,7 @@ export default function EmployerPensionCalculator() {
           </table>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
             <p>Auto-enrolment minimums: {MIN_EMPLOYEE}% employee + {MIN_EMPLOYER}% employer = {MIN_TOTAL}% total on qualifying earnings (£{QUALIFYING_LOWER.toLocaleString()} – £{QUALIFYING_UPPER.toLocaleString()}).</p>
+            <p className="mt-1">Shows basic-rate relief at source; higher-rate taxpayers reclaim more through Self Assessment (or get it automatically in a net-pay scheme).</p>
           </div>
         </div>
       )}

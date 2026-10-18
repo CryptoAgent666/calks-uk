@@ -13,10 +13,15 @@ const EV_RANGE_BANDS = [
   { key: 'under30', label: 'Under 30 miles', rate: 16 },
 ]
 
+// Employer Class 1A NI on the cash equivalent of the benefit (15% from April 2025).
+const CLASS_1A_RATE = 0.15
+
 function getBikRate(co2: number, fuelType: string, evRange: string): number {
   if (fuelType === 'electric' || co2 === 0) return 4
-  // 4% diesel supplement, non-RDE2 diesel only; the 37% ceiling still applies.
-  const base = fuelType === 'diesel-nonrde2' ? 4 : 0
+  // 4% diesel supplement for a car propelled solely by diesel that does not meet
+  // RDE2 (ITEPA 2003 s.141). A 1-50 g/km car is a plug-in hybrid, so it never
+  // carries the supplement. The 37% ceiling still applies.
+  const base = fuelType === 'diesel-nonrde2' && co2 > 50 ? 4 : 0
   if (co2 <= 50) {
     const band = EV_RANGE_BANDS.find(b => b.key === evRange) ?? EV_RANGE_BANDS[EV_RANGE_BANDS.length - 1]
     return Math.min(37, band.rate + base)
@@ -35,8 +40,9 @@ function calculate(listPrice: number, co2: number, fuelType: string, taxBand: st
   const taxRate = taxBand === 'higher' ? 0.40 : taxBand === 'additional' ? 0.45 : 0.20
   const annualTax = bikValue * taxRate
   const monthlyTax = annualTax / 12
+  const employerNi = bikValue * CLASS_1A_RATE
 
-  return { bikRate, bikValue, annualTax, monthlyTax, taxRate: taxRate * 100 }
+  return { bikRate, bikValue, annualTax, monthlyTax, taxRate: taxRate * 100, employerNi }
 }
 
 export default function CompanyCarTaxCalculator() {
@@ -47,10 +53,12 @@ export default function CompanyCarTaxCalculator() {
   const [evRange, setEvRange] = useState('40-69')
 
   const lp = parseFloat(listPrice.replace(/,/g, '')) || 0
-  const c = parseInt(co2) || 0
+  // The input's min="0" is not enforced on typed values, so clamp here.
+  const c = Math.max(0, parseInt(co2) || 0)
   const result = useMemo(() => calculate(lp, c, fuelType, taxBand, evRange), [lp, c, fuelType, taxBand, evRange])
   // 1-50 g/km cars are banded by electric range, so ask for it only when it matters.
   const needsRange = fuelType !== 'electric' && c > 0 && c <= 50
+  const noSupplement = fuelType === 'diesel-nonrde2' && c > 0 && c <= 50
 
   return (
     <div className="space-y-6">
@@ -73,6 +81,7 @@ export default function CompanyCarTaxCalculator() {
             <option value="hybrid">Plug-in Hybrid</option>
             <option value="electric">Electric (0g CO2)</option>
           </select>
+          {noSupplement && <p className="text-xs text-muted-foreground mt-1">No diesel supplement at 1 to 50 g/km: a car in that range is a plug-in hybrid and is banded by electric range.</p>}
         </div>
         {needsRange && (
           <div>
@@ -99,10 +108,11 @@ export default function CompanyCarTaxCalculator() {
             <p className="text-3xl font-bold text-destructive mt-1">{formatCurrency(result.annualTax)}</p>
             <p className="text-sm text-muted-foreground mt-1">{formatCurrency(result.monthlyTax)}/month</p>
           </div>
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">BiK Rate</p><p className="text-lg font-bold">{result.bikRate}%</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">BiK Value</p><p className="text-lg font-bold">{formatCurrency(result.bikValue)}</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Your Tax Rate</p><p className="text-lg font-bold">{result.taxRate}%</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Employer Class 1A NI (15%)</p><p className="text-lg font-bold">{formatCurrency(result.employerNi)}</p></div>
           </div>
         </div>
       )}

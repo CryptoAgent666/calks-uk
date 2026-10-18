@@ -1,10 +1,15 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, ukIncomeTax } from '@/utils'
 
-// Employee Class 1 NI for 2026/27 on annual earnings: 8% between £12,570 and £50,270, 2% above
-function employeeNI(pay: number) {
-  if (pay <= 12_570) return 0
-  return (Math.min(pay, 50_270) - 12_570) * 0.08 + Math.max(0, pay - 50_270) * 0.02
+// Employee Class 1 NI for 2026/27 on a MONTHLY earnings period: 8% between the primary threshold
+// (£1,048 a month) and the upper earnings limit (£4,189 a month), 2% above. Class 1 NI is assessed
+// per pay period, not on the year, so the taxable parts of the settlement are added to one month's
+// salary on the assumption that they are paid with the final monthly pay.
+const NI_PT_MONTHLY = 1_048
+const NI_UEL_MONTHLY = 4_189
+function monthlyNI(pay: number) {
+  if (pay <= NI_PT_MONTHLY) return 0
+  return (Math.min(pay, NI_UEL_MONTHLY) - NI_PT_MONTHLY) * 0.08 + Math.max(0, pay - NI_UEL_MONTHLY) * 0.02
 }
 
 function calculate(salary: number, yearsService: number, age: number, noticePeriod: number, outstandingHoliday: number, bonusOwed: number, exGratia: number) {
@@ -14,7 +19,9 @@ function calculate(salary: number, yearsService: number, age: number, noticePeri
   // Statutory redundancy (min element)
   // Statutory redundancy needs at least 2 full years' service
   let redWeeks = 0
-  const years = yearsService >= 2 ? Math.min(yearsService, 20) : 0
+  // Service cannot predate age 16, so clamp years to age - 16 before the 2-year and 20-year rules
+  const serviceYears = Math.min(yearsService, Math.max(0, age - 16))
+  const years = serviceYears >= 2 ? Math.min(serviceYears, 20) : 0
   for (let y = 0; y < years; y++) {
     // A year counts at the higher rate only if you were that age throughout it (ERA 1996 s162/s119),
     // so each year is judged by your age at its start
@@ -39,9 +46,11 @@ function calculate(salary: number, yearsService: number, age: number, noticePeri
   // (so the higher rate and the personal allowance taper are picked up)
   const taxOnSettlement = ukIncomeTax(salary + taxable) - ukIncomeTax(salary)
   // Employee NI applies to notice, holiday and bonus pay; termination payments over £30,000
-  // attract employer NI only
+  // attract employer NI only. Worked per monthly earnings period: the earnings are added to one
+  // month's salary and the extra NI in that month is the NI on the settlement.
   const earnings = noticePay + holidayPay + bonusOwed
-  const niOnSettlement = employeeNI(salary + earnings) - employeeNI(salary)
+  const monthlySalary = salary / 12
+  const niOnSettlement = monthlyNI(monthlySalary + earnings) - monthlyNI(monthlySalary)
   const netSettlement = totalGross - taxOnSettlement - niOnSettlement
 
   return { statutoryRedundancy, noticePay, holidayPay, exGratia, totalGross, taxFree, taxable, taxOnSettlement, niOnSettlement, netSettlement, redWeeks }
@@ -93,12 +102,12 @@ export default function SettlementAgreementCalculator() {
               <tr className="border-b border-border font-medium"><td className="py-2">Total Gross</td><td className="text-right tabular-nums">{formatCurrency(result.totalGross)}</td></tr>
               <tr className="border-b border-border/50"><td className="py-2 text-green-600">Tax-free (first £30K)</td><td className="text-right tabular-nums text-green-600">{formatCurrency(result.taxFree)}</td></tr>
               <tr className="border-b border-border/50"><td className="py-2 text-destructive">Income tax on the rest</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.taxOnSettlement)}</td></tr>
-              <tr className="border-b border-border/50"><td className="py-2 text-destructive">NI on notice, holiday and bonus pay</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.niOnSettlement)}</td></tr>
+              <tr className="border-b border-border/50"><td className="py-2 text-destructive">NI on notice, holiday and bonus pay (paid with your final monthly pay)</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.niOnSettlement)}</td></tr>
               <tr className="font-semibold"><td className="py-2 text-primary">Net Settlement</td><td className="text-right tabular-nums text-primary">{formatCurrency(result.netSettlement)}</td></tr>
             </tbody>
           </table>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>The first £30,000 of statutory redundancy and ex-gratia pay is tax-free. Notice pay, holiday pay and bonus are taxed as earnings. Statutory redundancy needs at least 2 years' service; the ex-gratia sum is whatever your employer offers. A settlement agreement is only binding once you've had independent legal advice, which employers usually pay towards. Tax is estimated on top of a full year's salary; if you leave part-way through the year you may pay less.</p>
+            <p>The first £30,000 of statutory redundancy and ex-gratia pay is tax-free. Notice pay, holiday pay and bonus are taxed as earnings. Statutory redundancy needs at least 2 years' service; the ex-gratia sum is whatever your employer offers. A settlement agreement is only binding once you've had independent legal advice, which employers usually pay towards. Tax is estimated on top of a full year's salary; if you leave part-way through the year you may pay less. NI on notice, holiday and bonus pay assumes they are paid with your final monthly salary, using the monthly thresholds of £1,048 and £4,189; a weekly-paid employee would pay a little less.</p>
           </div>
         </div>
       )}

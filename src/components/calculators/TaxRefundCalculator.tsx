@@ -44,7 +44,7 @@ function annualTax(income: number, region: Region): number {
 }
 
 const REBATE_CHECKLIST = [
-  { label: 'Uniform / work clothing flat-rate allowance', detail: '£60–£140/year depending on trade — claim 4 back years', href: null },
+  { label: 'Uniform / work clothing flat-rate allowance', detail: '£60 to £185 a year depending on trade (most trades £60–£140); claim 4 back years', href: null },
   { label: 'Business mileage paid below 55p/mile', detail: 'Claim relief on the shortfall vs HMRC approved rates', href: '/calculator/mileage-allowance-calculator/' },
   { label: 'Working-from-home relief', detail: '£6/week for 2022/23 to 2025/26 if required to work from home (ended April 2026)', href: '/calculator/work-from-home-tax-relief-calculator/' },
   { label: 'Marriage Allowance not claimed', detail: 'Up to £252/year, backdatable 4 years', href: '/calculator/marriage-allowance-calculator/' },
@@ -108,14 +108,24 @@ export default function TaxRefundCalculator() {
       {result && (
         <div className="space-y-4 animate-fade-in-up">
           <div className={`rounded-2xl p-6 text-center ${result.refund > 0 ? 'bg-green-100/60 dark:bg-green-950/60' : 'bg-muted/50 border border-border'}`}>
-            <p className="text-sm text-muted-foreground">{result.refund > 0 ? 'Estimated Tax Refund' : result.refund < 0 ? 'Estimated Underpayment' : 'Nothing Owed Either Way'}</p>
-            <p className={`text-3xl font-bold mt-1 ${result.refund > 0 ? 'text-green-700 dark:text-green-400' : ''}`}>{formatCurrency(Math.abs(result.refund))}</p>
+            <p className="text-sm text-muted-foreground">
+              {f > 0 ? 'Estimated position for the year' : result.refund > 0 ? 'Estimated Tax Refund' : result.refund < 0 ? 'Estimated Underpayment' : 'Nothing Owed Either Way'}
+            </p>
+            <p className={`text-3xl font-bold mt-1 ${result.refund > 0 ? 'text-green-700 dark:text-green-400' : ''}`}>
+              {formatCurrency(Math.abs(result.refund))}
+              {f > 0 && <span className="block text-base font-medium text-muted-foreground mt-1">{result.refund > 0 ? 'overpaid so far' : result.refund < 0 ? 'still to be collected' : 'balanced'}</span>}
+            </p>
             <p className="text-sm text-muted-foreground mt-1">
               Tax due on a full-year income of {formatCurrency(result.annualTotal)}: {formatCurrency(result.due)} · deducted so far: {formatCurrency(t)}
             </p>
+            {f > 0 && (
+              <p className="text-sm text-muted-foreground mt-2">
+                The tax on your further earnings is collected by your new employer through your cumulative tax code, so any under- or over-payment shown here normally works itself out in your payslip rather than through a separate claim.
+              </p>
+            )}
           </div>
 
-          {result.refund > 0 && (
+          {f === 0 && result.refund > 0 && (
             <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
               <p className="font-medium text-foreground">How to claim</p>
               <p className="mt-1">

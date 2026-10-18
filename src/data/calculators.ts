@@ -197,7 +197,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'company-car-tax-calculator',
     title: 'Company Car Tax (BiK) Calculator',
-    description: 'Calculate benefit-in-kind tax on your company car based on list price, CO2 emissions and fuel type.',
+    description: 'Calculate benefit-in-kind tax on a company car from its P11D price, CO2 and fuel type. BiK rates 4% (electric) to 37% for 2026/27, plus employer NI.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['company car', 'BiK', 'benefit in kind', 'P11D', 'car tax'],
@@ -673,7 +673,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'vat-flat-rate-calculator',
     title: 'VAT Flat Rate Scheme Calculator',
-    description: 'Compare VAT Flat Rate Scheme vs standard VAT for your business sector. See if you save or lose.',
+    description: 'Compare the VAT Flat Rate Scheme with standard VAT for your sector, plus the 16.5% limited cost rate and first-year 1% discount. See if you save or lose.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['VAT flat rate', 'flat rate scheme', 'FRS', 'VAT scheme'],
@@ -1004,7 +1004,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'mileage-allowance-calculator',
     title: 'Mileage Allowance Calculator (HMRC)',
-    description: 'Calculate HMRC approved mileage allowance payments for car, motorcycle or bicycle. 55p/25p per mile rates.',
+    description: 'HMRC approved mileage allowance for car, motorcycle or bicycle: 55p a mile for the first 10,000 miles, 25p after, 24p motorcycle, 20p bicycle.',
     category: 'pay',
     icon: 'Banknote',
     keywords: ['mileage allowance', 'AMAP', 'HMRC mileage', '55p per mile', '45p per mile', 'business mileage'],
@@ -1369,7 +1369,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'tax-code-checker',
     title: 'Tax Code Checker — HMRC Code Lookup',
-    description: 'Enter your HMRC tax code and find out what it means, your Personal Allowance and if it\'s correct.',
+    description: 'Enter your HMRC tax code, including S, C and K prefixes and W1/M1 emergency markers, to see what it means and how much tax-free pay it gives you.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['tax code', 'HMRC tax code', '1257L', 'tax code meaning', 'check tax code'],
@@ -1465,7 +1465,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'child-maintenance-calculator',
     title: 'Child Maintenance (CMS) Calculator',
-    description: 'Calculate child maintenance using CMS rules. Accounts for income, shared care nights and other children.',
+    description: 'Estimate CMS child maintenance from gross weekly income: 12%, 16% or 19% basic rate, shared-care nights, other children and the £7 flat rate.',
     category: 'benefits',
     icon: 'Shield',
     keywords: ['child maintenance', 'CMS', 'child support', 'maintenance payments'],
@@ -1508,7 +1508,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'notice-period-calculator',
     title: 'Notice Period Calculator',
-    description: 'Calculate your statutory and contractual notice period based on years of service.',
+    description: 'Work out your statutory notice (1 week after a month\'s service, 1 week per year from 2 to 12 years), compare it with your contract and see notice pay.',
     category: 'pay',
     icon: 'Banknote',
     keywords: ['notice period', 'resignation', 'notice', 'leaving job'],
@@ -1571,7 +1571,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'overtime-calculator',
     title: 'Overtime Pay Calculator',
-    description: 'Calculate overtime earnings at time-and-a-half, double time or custom rates.',
+    description: 'Overtime pay at time-and-a-half, double time or a custom multiplier from your salary and hours, with the 20% tax and 8% NI a basic-rate taxpayer pays.',
     category: 'pay',
     icon: 'Banknote',
     keywords: ['overtime', 'overtime pay', 'time and a half', 'double time', 'extra hours'],
@@ -1666,7 +1666,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // TAX (additional)
   { slug: 'side-hustle-tax-calculator', title: 'Side Hustle / Trading Allowance Calculator', description: 'Work out the tax on side hustle income on top of your salary, using the £1,000 trading allowance or actual expenses, with Class 4 NI only where it applies.', category: 'tax', icon: 'Receipt', keywords: ['side hustle', 'trading allowance', 'extra income', 'freelance tax'], priority: 2 , metaTitle: 'Side Hustle Tax Calculator UK 2026 (£1,000 Allowance)' },
   // LEGAL (additional)
-  { slug: 'employment-tribunal-calculator', title: 'Employment Tribunal Award Calculator', description: 'Estimate unfair dismissal tribunal awards — basic award and compensatory award.', category: 'legal', icon: 'Scale', keywords: ['employment tribunal', 'unfair dismissal', 'tribunal award', 'compensation'], priority: 2 , metaTitle: 'Employment Tribunal Calculator UK 2026/27 (£123,543 Cap)' },
+  { slug: 'employment-tribunal-calculator', title: 'Employment Tribunal Award Calculator', description: 'Estimate an unfair dismissal award for 2026/27: basic award on pay capped at £751 a week, compensatory award capped at £123,543 or 52 weeks\' pay.', category: 'legal', icon: 'Scale', keywords: ['employment tribunal', 'unfair dismissal', 'tribunal award', 'compensation'], priority: 2 , metaTitle: 'Employment Tribunal Calculator UK 2026/27 (£123,543 Cap)' },
   // CONSTRUCTION (additional)
   { slug: 'roof-tiles-calculator', title: 'Roof Tiles Calculator', description: 'Calculate roof tiles, ridge tiles, batten and felt needed based on roof dimensions and pitch.', category: 'building', icon: 'Hammer', keywords: ['roof tiles', 'roofing', 'slate', 'ridge tiles', 'roof area'], priority: 2 , metaTitle: 'Roof Tiles Calculator UK' },
   // ENERGY (additional)
@@ -1699,7 +1699,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'annual-tax-summary-calculator', title: 'Annual Tax Summary Calculator', description: 'Calculate your total tax bill from all income sources — salary, dividends, self-employment, rental and capital gains.', category: 'tax', icon: 'Receipt', keywords: ['annual tax', 'tax summary', 'total tax', 'all income', 'tax bill'], priority: 1 , metaTitle: 'Annual Tax Summary Calculator UK 2026/27' },
   // BUSINESS
   { slug: 'business-rates-calculator', title: 'Business Rates Calculator', description: 'Business rates 2026/27 from rateable value after the April 2026 revaluation: retail, hospitality and leisure multipliers and small business rate relief.', category: 'business', icon: 'Briefcase', keywords: ['business rates', 'rateable value', 'SBRR', 'small business rate relief', 'retail hospitality leisure multiplier', 'commercial property'], priority: 2, metaTitle: 'Business Rates Calculator 2026/27: Rateable Value & Relief' },
-  { slug: 'rd-tax-credit-calculator', title: 'R&D Tax Credit Calculator', description: 'Estimate R&D tax credits for profitable and loss-making companies under the merged RDEC scheme.', category: 'business', icon: 'Briefcase', keywords: ['R&D', 'tax credits', 'RDEC', 'research development', 'innovation'], priority: 2 , metaTitle: 'R&D Tax Credit Calculator UK 2026' },
+  { slug: 'rd-tax-credit-calculator', title: 'R&D Tax Credit Calculator', description: 'Estimate R&D tax relief under the merged scheme: a 20% credit worth 15p per £1 for profitable companies, 16.2p for loss-makers and about 27p under ERIS.', category: 'business', icon: 'Briefcase', keywords: ['R&D', 'tax credits', 'RDEC', 'research development', 'innovation'], priority: 2 , metaTitle: 'R&D Tax Credit Calculator UK 2026' },
   { slug: 'cis-calculator', title: 'CIS Subcontractor Tax Calculator', description: 'Work out CIS deductions on a subcontractor invoice at 20% registered, 30% unverified or 0% gross status, with materials excluded and the net payment due.', category: 'business', icon: 'Briefcase', keywords: ['CIS', 'construction industry scheme', 'subcontractor', 'CIS deduction'], priority: 2 , metaTitle: 'CIS Calculator UK 2026/27' },
   // INSURANCE
   { slug: 'pet-insurance-calculator', title: 'Pet Insurance Calculator', description: 'Estimate pet insurance premiums for dogs and cats by age, breed and cover level.', category: 'insurance', icon: 'ShieldCheck', keywords: ['pet insurance', 'dog insurance', 'cat insurance', 'vet fees'], priority: 2 , metaTitle: 'Pet Insurance Calculator UK 2026' },
@@ -1738,7 +1738,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // FARMING
   { slug: 'farm-operating-cost-calculator', title: 'Farm Operating Cost Calculator', description: 'Calculate per-hectare costs and profitability for arable farming. See break-even price per tonne.', category: 'farming', icon: 'Wheat', keywords: ['farm costs', 'arable', 'farming profit', 'cost per hectare', 'break even'], priority: 1 , metaTitle: 'Farm Operating Cost Calculator UK 2026' },
   // LEGAL
-  { slug: 'personal-injury-calculator', title: 'Personal Injury Compensation Calculator', description: 'Estimate personal injury compensation based on Judicial College Guidelines for common injury types.', category: 'legal', icon: 'Scale', keywords: ['personal injury', 'compensation', 'whiplash claim', 'accident claim'], priority: 2 , metaTitle: 'Personal Injury Compensation Calculator UK 2026 (JCG)' },
+  { slug: 'personal-injury-calculator', title: 'Personal Injury Compensation Calculator', description: 'Estimate personal injury compensation from the Judicial College Guidelines, 18th edition, and the £275 to £4,830 whiplash tariff, plus lost earnings.', category: 'legal', icon: 'Scale', keywords: ['personal injury', 'compensation', 'whiplash claim', 'accident claim'], priority: 2 , metaTitle: 'Personal Injury Compensation Calculator UK 2026 (JCG)' },
   // INVESTMENT
   { slug: 'investment-return-calculator', title: 'Investment Return Calculator', description: 'Calculate nominal and real (inflation-adjusted) investment returns with monthly contributions over time.', category: 'investment', icon: 'TrendingUp', keywords: ['investment return', 'portfolio growth', 'nominal return', 'real return'], priority: 1 , metaTitle: 'Investment Return Calculator UK 2026' },
   { slug: 'savings-interest-tax-calculator', title: 'Savings Interest Tax Calculator', description: 'Calculate tax on savings interest above your Personal Savings Allowance. See max tax-free savings.', category: 'investment', icon: 'TrendingUp', keywords: ['savings interest', 'PSA', 'personal savings allowance', 'tax on savings'], priority: 2 , metaTitle: 'Savings Interest Tax Calculator UK 2026/27' },
@@ -1767,7 +1767,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'free-school-meals-calculator', title: 'Free School Meals Eligibility Calculator', description: 'Check if your children qualify for free school meals. See annual savings and qualifying benefits.', category: 'benefits', icon: 'Shield', keywords: ['free school meals', 'FSM', 'school dinners', 'pupil premium'], priority: 2 , metaTitle: 'Free School Meals Eligibility Calculator UK 2026' },
   { slug: 'loft-conversion-calculator', title: 'Loft Conversion Cost Calculator', description: 'Estimate loft conversion costs by type (Velux, dormer, hip-to-gable, mansard). See ROI and value added.', category: 'building', icon: 'Hammer', keywords: ['loft conversion', 'attic conversion', 'dormer', 'loft extension'], priority: 2 , metaTitle: 'Loft Conversion Cost Calculator UK 2026' },
   { slug: 'extension-cost-calculator', title: 'Extension Cost Calculator', description: 'Estimate home extension costs per m² for single/double storey, side return and wrap-around extensions.', category: 'building', icon: 'Hammer', keywords: ['extension cost', 'house extension', 'rear extension', 'building costs'], priority: 2 , metaTitle: 'House Extension Cost Calculator UK 2026' },
-  { slug: 'childcare-entitlement-calculator', title: '30 Hours Free Childcare Calculator', description: 'Check free childcare entitlement by age (15/30 hours). See savings with Tax-Free Childcare.', category: 'benefits', icon: 'Shield', keywords: ['30 hours', 'free childcare', 'childcare entitlement', '15 hours', 'working parents'], priority: 1 , metaTitle: 'Childcare Entitlement Calculator UK 2026 (30 Hrs)' },
+  { slug: 'childcare-entitlement-calculator', title: '30 Hours Free Childcare Calculator', description: 'Check funded childcare hours by child age and household: 30 hours for working parents from 9 months, 15 universal or on benefits, plus Tax-Free Childcare.', category: 'benefits', icon: 'Shield', keywords: ['30 hours', 'free childcare', 'childcare entitlement', '15 hours', 'working parents'], priority: 1 , metaTitle: 'Childcare Entitlement Calculator UK 2026 (30 Hrs)' },
   { slug: 'stock-unit-calculator', title: 'Livestock Stock Unit Calculator', description: 'Calculate total livestock units for cattle, sheep, pigs and horses. See land requirement at 2 SU/ha.', category: 'farming', icon: 'Wheat', keywords: ['stock units', 'livestock units', 'stocking rate', 'cattle sheep'], priority: 2 , metaTitle: 'Stock Unit Calculator — Inventory' },
   { slug: 'agricultural-worker-wage-calculator', title: 'Agricultural Worker Minimum Wage Calculator', description: 'Calculate farm worker pay in England (minimum wage), Wales (grades A-E) and Scotland, with overtime and holiday entitlement.', category: 'farming', icon: 'Wheat', keywords: ['agricultural wages', 'AWO', 'farm worker pay', 'agricultural minimum wage'], priority: 2 , metaTitle: 'Agricultural Worker Wage Calculator UK 2026' },
   // MATH
@@ -1808,8 +1808,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'junior-isa-calculator', title: 'Junior ISA Calculator', description: 'Calculate how much a Junior ISA will be worth when your child turns 18. Tax-free growth with £9,000/year limit.', category: 'investment', icon: 'TrendingUp', keywords: ['junior ISA', 'JISA', 'child savings', 'under 18'], priority: 2, metaTitle: 'Junior ISA Calculator UK 2026/27 — £9,000 Annual Allowance' },
   // PAY
   { slug: 'zero-hours-calculator', title: 'Zero-Hours Contract Earnings Calculator', description: 'Calculate annual earnings, tax and holiday pay accrual on a zero-hours contract. NMW check included.', category: 'pay', icon: 'Banknote', keywords: ['zero hours', 'zero-hours contract', 'casual work', 'flexible work'], priority: 2 , metaTitle: 'Zero Hours Contract Calculator UK 2026' },
-  { slug: 'agency-worker-calculator', title: 'Agency Worker Pay Calculator', description: 'Calculate take-home pay as an agency worker. See what you actually earn after agency margin and deductions.', category: 'pay', icon: 'Banknote', keywords: ['agency worker', 'temp work', 'agency pay', 'charge rate'], priority: 2 , metaTitle: 'Agency Worker Pay Calculator UK 2026 (AWR)' },
-  { slug: 'settlement-agreement-calculator', title: 'Settlement Agreement Calculator', description: 'Estimate settlement package: redundancy, notice, holiday, ex-gratia and tax treatment (£30K tax-free).', category: 'pay', icon: 'Banknote', keywords: ['settlement agreement', 'compromise agreement', 'redundancy package', 'termination'], priority: 2 , metaTitle: 'Settlement Agreement Calculator UK 2026' },
+  { slug: 'agency-worker-calculator', title: 'Agency Worker Pay Calculator', description: 'Agency worker take-home pay from the charge rate, agency margin, hours and weeks, after tax, NI and 5% pension, plus the equal-pay uplift after 12 weeks.', category: 'pay', icon: 'Banknote', keywords: ['agency worker', 'temp work', 'agency pay', 'charge rate'], priority: 2 , metaTitle: 'Agency Worker Pay Calculator UK 2026 (AWR)' },
+  { slug: 'settlement-agreement-calculator', title: 'Settlement Agreement Calculator', description: 'Estimate a settlement package: statutory redundancy at the £751 weekly cap, notice, holiday and ex-gratia pay, and the tax due above the £30,000 exemption.', category: 'pay', icon: 'Banknote', keywords: ['settlement agreement', 'compromise agreement', 'redundancy package', 'termination'], priority: 2 , metaTitle: 'Settlement Agreement Calculator UK 2026' },
   // MORTGAGE
   { slug: 'buy-to-let-mortgage-calculator', title: 'Buy-to-Let Mortgage Calculator', description: 'Calculate BTL mortgage payments (interest-only and repayment). Check rental coverage stress test.', category: 'mortgage', icon: 'Home', keywords: ['buy to let mortgage', 'BTL mortgage', 'rental coverage', 'landlord mortgage'], priority: 2 , metaTitle: 'Buy-to-Let Mortgage Calculator UK 2026' },
   { slug: 'house-price-sqft-calculator', title: 'House Price per Square Foot Calculator', description: 'Calculate price per square foot/metre to compare property value. See how it compares to UK averages.', category: 'mortgage', icon: 'Home', keywords: ['price per sqft', 'price per square foot', 'property value', 'house price'], priority: 2 , metaTitle: 'UK House Price per Sq Ft Calculator' },
@@ -1854,7 +1854,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // ENERGY
   { slug: 'epc-rating-comparison-calculator', title: 'EPC Band Comparison Calculator', description: 'Compare energy costs between EPC bands. See annual savings from upgrading your rating.', category: 'energy', icon: 'Zap', keywords: ['EPC comparison', 'EPC upgrade', 'energy cost', 'EPC band'], priority: 2 , metaTitle: 'EPC Rating Comparison Calculator UK 2026' },
   // INVESTMENT
-  { slug: 'help-to-save-calculator', title: 'Help to Save Calculator', description: 'Calculate Help to Save returns with the 50% government bonus. Max £50/month for 4 years.', category: 'investment', icon: 'TrendingUp', keywords: ['help to save', 'government bonus', '50% bonus', 'low income savings'], priority: 2 , metaTitle: 'Help to Save Calculator UK 2026 — 50% Bonus' },
+  { slug: 'help-to-save-calculator', title: 'Help to Save Calculator', description: 'Calculate Help to Save bonuses: 50% of the highest balance, up to £50 a month for 4 years and £1,200 in total, for Universal Credit claimants in work.', category: 'investment', icon: 'TrendingUp', keywords: ['help to save', 'government bonus', '50% bonus', 'low income savings'], priority: 2 , metaTitle: 'Help to Save Calculator UK 2026 — 50% Bonus' },
   { slug: 'ns-i-savings-calculator', title: 'NS&I Savings Calculator', description: 'Calculate savings interest with different compounding frequencies or paid out monthly. See AER and interest after tax.', category: 'investment', icon: 'TrendingUp', keywords: ['NS&I', 'savings interest', 'compounding', 'AER', 'interest rate'], priority: 2 , metaTitle: 'NS&I Savings Calculator UK 2026' },
   // HEALTH
   { slug: 'bmi-children-calculator', title: 'BMI Calculator for Children', description: "Work out your child's BMI centile from age in months, sex, height and weight, using the UK growth reference behind NHS charts, for ages 2 to 18.", category: 'health', icon: 'Heart', keywords: ['child BMI', 'children BMI', 'child weight', 'paediatric BMI'], priority: 2 , metaTitle: 'Children\'s BMI Calculator UK — Centile' },
@@ -1864,7 +1864,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'service-charge-calculator', title: 'Service Charge Calculator', description: 'Estimate your leasehold service charge from building costs. Includes insurance, maintenance and reserve fund.', category: 'mortgage', icon: 'Home', keywords: ['service charge', 'leasehold costs', 'management fee', 'building insurance'], priority: 2 , metaTitle: 'Service Charge Calculator UK 2026' },
   // PENSION
   { slug: 'pension-consolidation-calculator', title: 'Pension Consolidation Calculator', description: 'Compare keeping multiple pension pots vs consolidating into one. See fee savings over time.', category: 'pension', icon: 'PiggyBank', keywords: ['pension consolidation', 'combine pensions', 'pension fees', 'pension transfer'], priority: 2 , metaTitle: 'Pension Consolidation Calculator UK 2026' },
-  { slug: 'employer-pension-contribution-calculator', title: 'Employer Pension Contribution Calculator', description: 'Calculate auto-enrolment pension contributions on qualifying earnings with tax relief.', category: 'pension', icon: 'PiggyBank', keywords: ['employer pension', 'auto enrolment', 'qualifying earnings', 'pension contribution'], priority: 2 , metaTitle: 'Employer Pension Contribution Calculator UK 2026/27' },
+  { slug: 'employer-pension-contribution-calculator', title: 'Employer Pension Contribution Calculator', description: 'Auto-enrolment pension contributions on qualifying earnings of £6,240 to £50,270: 3% employer, 5% employee with 20% basic-rate relief, 8% in total.', category: 'pension', icon: 'PiggyBank', keywords: ['employer pension', 'auto enrolment', 'qualifying earnings', 'pension contribution'], priority: 2 , metaTitle: 'Employer Pension Contribution Calculator UK 2026/27' },
   // MORTGAGE
   { slug: 'right-to-buy-calculator', title: 'Right to Buy Calculator', description: 'Calculate your Right to Buy discount on a council home in England, with the regional cash caps and the repayment if you sell within 5 years.', category: 'mortgage', icon: 'Home', keywords: ['right to buy', 'council house', 'RTB', 'housing discount'], priority: 2 , metaTitle: 'Right to Buy Calculator UK 2026 — Discount' },
   { slug: 'staircasing-calculator', title: 'Shared Ownership Staircasing Calculator', description: 'Calculate the cost of buying a bigger share of your shared ownership home and new rent.', category: 'mortgage', icon: 'Home', keywords: ['staircasing', 'shared ownership', 'buy more share', 'increase share'], priority: 2 , metaTitle: 'Shared Ownership Staircasing Calculator' },

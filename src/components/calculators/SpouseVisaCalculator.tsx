@@ -52,7 +52,7 @@ export default function SpouseVisaCalculator() {
   const [partIncome, setPartIncome] = useState('0')
   const [savings, setSavings] = useState('5000')
   const [children, setChildren] = useState(false)
-  const [numChildren, setNumChildren] = useState('0')
+  const [numChildren, setNumChildren] = useState('1') // only used once the children box is ticked, so ticking it prices one child straight away
   const [route, setRoute] = useState<Route>('outside')
 
   const ai = parseFloat(appIncome.replace(/,/g,'')) || 0

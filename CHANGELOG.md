@@ -1,5 +1,31 @@
 # CHANGELOG — Calks.uk
 
+## 2026-10-19 (round 10) — Tribunal time limit six months, tax codes, VAT flat rate, child maintenance, Help to Save
+
+Tenth `/calkcheck` pass (report: `AUDIT-2026-10-19-b.md`): 20 never-hand-checked regulated pages (tax, pay, benefits,
+legal, immigration, pension, R&D, savings). 105 defects on 20 of 20 pages, 12 HIGH; 8 calculators gave wrong answers.
+
+**Law and policy changes applied:** employment tribunal time limit 6 months for matters from 1 October 2026 (Employment
+Rights Act 2025 s.152; five pages), Help to Save made permanent on 21 September 2026 (all Universal Credit claimants from
+2028), B2 English for settlement from 26 March 2027, the 23 June 2025 CMS fee-reform announcement noted.
+
+**Calculators corrected:** tax code checker (K, S, C codes and W1/M1/X markers now parse; 1383M/1131N), VAT flat rate
+(16.5% limited-cost rate, first-year 1% discount, input-VAT comparison; management consultancy and real estate 14%),
+employment tribunal (52-weeks'-pay limb of the compensatory cap, 2-year warning, £500 statutory rights), company car
+(120 g/km = 30% for 2026/27, employer Class 1A tile, no diesel supplement on hybrids), child maintenance (equal care
+175+ nights, £7 floor, benefit flat rate), childcare entitlement (household route, stretched 1,140 hours, TFC for
+working households only), settlement agreement (NI per monthly pay period), agency worker (pension on qualifying
+earnings, comparator rate; Swedish derogation abolished 2020, rolled-up holiday pay lawful since April 2024), notice
+period (salary and date inputs), overtime (tax/NI/net rows, custom multiplier), self-assessment (payments on account),
+R&D (PAYE/NIC cap input), personal injury (missing JCG back bracket), tax refund (further-income wording), work from
+home (weeks guard, self-employed apportionment), mileage (example £5,203), employer pension (£72 net cost at basic
+rate), redundancy (example £9,100, NI cap), spouse visa (B2, Category B, 10-year route), Help to Save (permanent).
+
+**Out of sample:** benefits-in-kind (180 g/km = 37%), business-mileage-record, childcare-cost, visa-points,
+commute-cost, date and time-duration pages, take-home-pay FAQ.
+
+**Guards and ledger:** 62 new stale-value guards; 18 new and ~20 updated ledger entries; `RATES_VERIFIED` 19 Oct 2026.
+
 ## 2026-10-19 (round 9) — First audit of the 13 October calculators, stale market figures on older pages
 
 Ninth `/calkcheck` pass (report: `AUDIT-2026-10-19.md`): the 11 calculators added on 13 October plus 9 older
