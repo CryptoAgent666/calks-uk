@@ -17,23 +17,29 @@ function calculate(monthlyDeposit: number, currentBalance: number, years: number
   let totalDeposited = currentBalance
   let totalDividends = 0
   let totalGrowth = 0
+  let yearDividends = 0
+  let yearGrowth = 0
+  let totalTaxSaved = 0
 
-  for (let m = 0; m < years * 12; m++) {
+  // Indicative tax saved vs a general investment account: basic-rate taxpayer, all gains realised each
+  // year. Neither the £500 dividend allowance nor the £3,000 CGT annual exempt amount carries over, so
+  // each is netted off that year's dividends and growth only
+  for (let m = 1; m <= years * 12; m++) {
     const growth = balance * monthlyGrowth
     const dividend = balance * monthlyDivYield
     totalGrowth += growth
     totalDividends += dividend
+    yearGrowth += growth
+    yearDividends += dividend
     balance += growth + dividend + effectiveMonthly
     totalDeposited += effectiveMonthly
+    if (m % 12 === 0) {
+      totalTaxSaved += Math.max(0, yearDividends - DIVIDEND_ALLOWANCE) * DIVIDEND_BASIC_RATE
+      totalTaxSaved += Math.max(0, yearGrowth - CGT_ANNUAL_EXEMPT) * CGT_BASIC_RATE
+      yearDividends = 0
+      yearGrowth = 0
+    }
   }
-
-  // Indicative tax saved vs a general investment account: basic-rate taxpayer, with the £500 dividend
-  // allowance and the £3,000 CGT annual exempt amount netted off for each year, and all gains realised
-  const dividendTaxable = Math.max(0, totalDividends - DIVIDEND_ALLOWANCE * years)
-  const cgtTaxable = Math.max(0, totalGrowth - CGT_ANNUAL_EXEMPT * years)
-  const cgtSaved = cgtTaxable * CGT_BASIC_RATE
-  const dividendTaxSaved = dividendTaxable * DIVIDEND_BASIC_RATE
-  const totalTaxSaved = cgtSaved + dividendTaxSaved
 
   return { balance, totalDeposited, totalGrowth, totalDividends, totalReturn: totalGrowth + totalDividends, totalTaxSaved }
 }
@@ -75,7 +81,7 @@ export default function StocksSharesIsaCalculator() {
             <div className="rounded-xl bg-green-100 dark:bg-green-950 p-3 text-center"><p className="text-xs text-muted-foreground">Dividends</p><p className="text-lg font-bold text-green-700 dark:text-green-400">{formatCurrency(result.totalDividends)}</p></div>
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Indicative tax saved vs a general account</p><p className="text-lg font-bold">{formatCurrency(result.totalTaxSaved)}</p></div>
           </div>
-          <p className="text-xs text-muted-foreground">Tax saved assumes a basic-rate taxpayer, £{DIVIDEND_ALLOWANCE} dividend allowance and £{CGT_ANNUAL_EXEMPT.toLocaleString('en-GB')} CGT exemption netted off each year, all gains realised. Enter a growth rate net of platform and fund charges.</p>
+          <p className="text-xs text-muted-foreground">Tax saved assumes a basic-rate taxpayer, all gains realised each year, and the £{DIVIDEND_ALLOWANCE} dividend allowance and £{CGT_ANNUAL_EXEMPT.toLocaleString('en-GB')} CGT exemption set against each year's dividends and growth; unused allowance cannot be carried forward. Enter a growth rate net of platform and fund charges.</p>
         </div>
       )}
     </div>
