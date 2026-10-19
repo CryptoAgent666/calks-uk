@@ -3436,6 +3436,31 @@
    "was": "Below three days a week in the office, daily tickets often win",
    "now": "three days pays only over many weeks; contactless caps",
    "what": "commute_annual_season_breakeven_days prose (r11 follow-up)"
+  },
+  {
+   "was": "the monthly £313.40). Twelve monthly",
+   "now": "contactless and Oyster cap caveat after the paper Travelcard comparison",
+   "what": "train_season_ticket_payg_caveat prose (r11 leftovers)"
+  },
+  {
+   "was": "where the annual saves twelve.`",
+   "now": "London pay-as-you-go cap caveat appended",
+   "what": "train_season_ticket_payg_caveat FAQ (r11 leftovers)"
+  },
+  {
+   "was": "0.2 to 0.45%",
+   "now": "platform fee range from Vanguard to the HL rate after its March cut",
+   "what": "sipp_platform_fee_range (r11 leftovers)"
+  },
+  {
+   "was": "net of 0.4% platform fee",
+   "now": "growth net of platform and fund charges",
+   "what": "sipp_example_platform_fee (r11 leftovers)"
+  },
+  {
+   "was": "approx £4,700 in tax",
+   "now": "tax saved derived from dividend tax and CGT with stated split",
+   "what": "isa_example_tax_saved_vs_gia (r11 leftovers)"
   }
  ]
 }
