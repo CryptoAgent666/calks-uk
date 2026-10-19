@@ -6,20 +6,32 @@ import { formatCurrency } from '@/utils'
 // Term-time-only (TTO): scales by hours ratio AND paid weeks. Statutory
 // holiday accrues at 5.6/46.4 of weeks worked; most employers (and local
 // authorities for school staff) annualise over 52.14 weeks (365 ÷ 7).
+// The weekly and hourly figures use 52 weeks, the same basis as the
+// hourly-to-salary calculator, so a full-time salary at the National Living
+// Wage (£12.71 × 37.5 × 52 = £24,784.50) shows as £12.71 an hour.
 const HOLIDAY_ACCRUAL = 5.6 / 46.4
 const YEAR_WEEKS = 52.14
+const PAY_WEEKS = 52
+const MAX_WEEKS_WORKED = 48
+
+// National Minimum Wage rates from 1 April 2026 (gov.uk/national-minimum-wage-rates)
+const NLW_21_PLUS = 12.71
+const NMW_18_20 = 10.85
+const NMW_UNDER_18_APPRENTICE = 8.0
 
 type Mode = 'part-time' | 'term-time'
 
 function calculate(fte: number, ftHours: number, hours: number, weeksWorked: number, mode: Mode) {
-  if (fte <= 0 || ftHours <= 0 || hours <= 0) return null
+  if (fte <= 0 || ftHours <= 0 || hours <= 0) return { error: 'Enter a full-time salary, full-time weekly hours and your weekly hours, all above zero.', result: null }
+  if (mode === 'term-time' && (weeksWorked <= 0 || weeksWorked > MAX_WEEKS_WORKED)) {
+    return { error: `Enter between 1 and ${MAX_WEEKS_WORKED} weeks worked a year. A school year is typically 38 to 39 weeks.`, result: null }
+  }
   const hoursRatio = Math.min(hours / ftHours, 2)
 
   let annual: number
   let paidWeeks = YEAR_WEEKS
   let holidayWeeks = 0
   if (mode === 'term-time') {
-    if (weeksWorked <= 0 || weeksWorked > 48) return null
     holidayWeeks = weeksWorked * HOLIDAY_ACCRUAL
     paidWeeks = weeksWorked + holidayWeeks
     annual = fte * hoursRatio * (paidWeeks / YEAR_WEEKS)
@@ -28,13 +40,17 @@ function calculate(fte: number, ftHours: number, hours: number, weeksWorked: num
   }
 
   const monthly = annual / 12
-  const weekly = annual / YEAR_WEEKS
-  const hourly = fte / (ftHours * YEAR_WEEKS)
+  const weekly = annual / PAY_WEEKS
+  const hourly = fte / (ftHours * PAY_WEEKS)
   const fteFraction = annual / fte
   // Statutory minimum holiday for part-time staff, expressed in hours
   const holidayHours = 5.6 * hours
+  // Compare in whole pence so £24,784.50 on 37.5 hours (exactly £12.71) is not flagged by float rounding
+  const pence = Math.round(hourly * 100)
+  const belowNLW = pence < Math.round(NLW_21_PLUS * 100)
+  const belowAllNMW = pence < Math.round(NMW_UNDER_18_APPRENTICE * 100)
 
-  return { annual, monthly, weekly, hourly, fteFraction, paidWeeks, holidayWeeks, holidayHours }
+  return { error: null, result: { annual, monthly, weekly, hourly, fteFraction, paidWeeks, holidayWeeks, holidayHours, belowNLW, belowAllNMW } }
 }
 
 export default function ProRataSalaryCalculator() {
@@ -48,7 +64,7 @@ export default function ProRataSalaryCalculator() {
   const fh = parseFloat(ftHours) || 0
   const h = parseFloat(hours) || 0
   const w = parseFloat(weeks) || 0
-  const result = useMemo(() => calculate(f, fh, h, w, mode), [f, fh, h, w, mode])
+  const { result, error } = useMemo(() => calculate(f, fh, h, w, mode), [f, fh, h, w, mode])
 
   return (
     <div className="space-y-6">
@@ -76,11 +92,15 @@ export default function ProRataSalaryCalculator() {
         {mode === 'term-time' && (
           <div>
             <label className="block text-sm font-medium mb-2">Weeks Worked/Year</label>
-            <input type="number" min="1" max="48" step="0.5" value={weeks} onChange={(e) => setWeeks(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Weeks Worked per Year" />
+            <input type="number" min="1" max={MAX_WEEKS_WORKED} step="0.5" value={weeks} onChange={(e) => setWeeks(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Weeks Worked per Year" />
             <p className="text-xs text-muted-foreground mt-1">School year is typically 38–39 weeks</p>
           </div>
         )}
       </div>
+
+      {error && (
+        <div className="rounded-xl border border-orange-300 bg-orange-50 dark:bg-orange-950/40 dark:border-orange-900 p-4 text-sm text-orange-800 dark:text-orange-300" role="alert">{error}</div>
+      )}
 
       {result && (
         <div className="space-y-4 animate-fade-in-up">
@@ -94,9 +114,18 @@ export default function ProRataSalaryCalculator() {
 
           <div className="grid grid-cols-3 gap-3">
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Monthly</p><p className="text-lg font-bold">{formatCurrency(result.monthly)}</p></div>
-            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Weekly</p><p className="text-lg font-bold">{formatCurrency(result.weekly)}</p></div>
+            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Weekly (÷ 52)</p><p className="text-lg font-bold">{formatCurrency(result.weekly)}</p></div>
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Hourly</p><p className="text-lg font-bold">{`£${result.hourly.toFixed(2)}`}</p></div>
           </div>
+          <p className="text-xs text-muted-foreground">Hourly rate = full-time salary ÷ (full-time hours × 52 weeks). It is the same for part-time and full-time staff in the role.</p>
+
+          {result.belowNLW && (
+            <div className="rounded-xl border border-orange-300 bg-orange-50 dark:bg-orange-950/40 dark:border-orange-900 p-4 text-sm text-orange-800 dark:text-orange-300" role="alert">
+              {result.belowAllNMW
+                ? <>£{result.hourly.toFixed(2)} an hour is below every National Minimum Wage rate, including the £{NMW_UNDER_18_APPRENTICE.toFixed(2)} apprentice and under-18 rate. Check the salary and hours you entered.</>
+                : <>£{result.hourly.toFixed(2)} an hour is below the National Living Wage of £{NLW_21_PLUS.toFixed(2)} for workers aged 21 and over (from 1 April 2026). Lower minimums apply at 18 to 20 (£{NMW_18_20.toFixed(2)}) and for under-18s and apprentices (£{NMW_UNDER_18_APPRENTICE.toFixed(2)}).</>}
+            </div>
+          )}
 
           {mode === 'term-time' ? (
             <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
@@ -104,7 +133,7 @@ export default function ProRataSalaryCalculator() {
                 Paid for <strong className="text-foreground">{result.paidWeeks.toFixed(1)} weeks</strong>: {w} weeks worked + {result.holidayWeeks.toFixed(1)} weeks statutory holiday
                 (accrued at 5.6 ÷ 46.4 of worked weeks, taken during school holidays).
               </p>
-              <p className="mt-1">Formula: FTE × (your hours ÷ full-time hours) × (paid weeks ÷ 52.14). Some employers use slightly different divisors — check your contract.</p>
+              <p className="mt-1">Formula: FTE × (your hours ÷ full-time hours) × (paid weeks ÷ 52.14). Some employers use slightly different divisors, and contracts with more than the statutory 5.6 weeks of leave pay more, so check your contract.</p>
             </div>
           ) : (
             <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">

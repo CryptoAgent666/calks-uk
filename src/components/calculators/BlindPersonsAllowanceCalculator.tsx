@@ -47,7 +47,7 @@ function calculate(income: number, isRegistered: boolean, region: Region = 'ruk'
 
   const saving = taxWithout - taxWithBPA
 
-  return { totalAllowance, bpa: BPA, saving, taxWithBPA, taxWithout }
+  return { basePA, totalAllowance, bpa: BPA, saving, taxWithBPA, taxWithout }
 }
 
 export default function BlindPersonsAllowanceCalculator() {
@@ -55,12 +55,12 @@ export default function BlindPersonsAllowanceCalculator() {
   const [registered, setRegistered] = useState(true)
   const [region, setRegion] = useState<Region>('ruk')
 
-  const i = parseFloat(income.replace(/,/g,'')) || 0
+  const i = Math.max(0, parseFloat(income.replace(/,/g,'')) || 0)
   const result = useMemo(() => calculate(i, registered, region), [i, registered, region])
 
   return (
     <div className="space-y-6">
-      <div><label className="block text-sm font-medium mb-2">Annual Income</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={income} onChange={(e) => setIncome(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Income" /></div></div>
+      <div><label className="block text-sm font-medium mb-2">Annual Income</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="decimal" value={income} onChange={(e) => setIncome(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Income" /></div></div>
       <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={registered} onChange={(e) => setRegistered(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Registered blind or severely sight impaired (Scotland and NI: unable to do work for which eyesight is essential)</span></label>
       <div>
         <label className="block text-sm font-medium mb-2">Where do you pay tax?</label>
@@ -77,11 +77,11 @@ export default function BlindPersonsAllowanceCalculator() {
             <p className="text-3xl font-bold text-green-700 dark:text-green-400 mt-1">{formatCurrency(result.saving)}</p>
           </div>
           <div className="grid grid-cols-2 gap-3">
-            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Total Allowance</p><p className="text-lg font-bold">{formatCurrency(result.totalAllowance)}</p><p className="text-xs text-muted-foreground">PA £{PA.toLocaleString()} + BPA £{BPA.toLocaleString()}</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Total Allowance</p><p className="text-lg font-bold">{formatCurrency(result.totalAllowance)}</p><p className="text-xs text-muted-foreground">PA £{result.basePA.toLocaleString()}{registered ? ` + BPA £${BPA.toLocaleString()}` : ''}{result.basePA < PA ? ' (tapered above £100,000)' : ''}</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Tax With BPA</p><p className="text-lg font-bold">{formatCurrency(result.taxWithBPA)}</p><p className="text-xs text-muted-foreground">vs {formatCurrency(result.taxWithout)} without</p></div>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>Blind Person's Allowance (£{BPA.toLocaleString()}) is added to your Personal Allowance. In England and Wales you must be registered as blind or severely sight impaired with your local council. In Scotland and Northern Ireland you qualify if you cannot do work for which eyesight is essential. Unused BPA can be transferred to a spouse.</p>
+            <p>Blind Person's Allowance (£{BPA.toLocaleString()}) is added to your Personal Allowance. In England and Wales you must be registered as blind or severely sight impaired with your local council. In Scotland and Northern Ireland you qualify if you cannot do work for which eyesight is essential. Unused BPA can be transferred to a spouse or civil partner you live with.</p>
           </div>
         </div>
       )}

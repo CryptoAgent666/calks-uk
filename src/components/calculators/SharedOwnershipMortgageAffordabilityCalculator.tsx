@@ -63,7 +63,7 @@ export default function SharedOwnershipMortgageAffordabilityCalculator() {
   const [deposit, setDeposit] = useState('7500')
   const [salary, setSalary] = useState('30000')
   const [partner, setPartner] = useState('0')
-  const [rate, setRate] = useState('5.73')
+  const [rate, setRate] = useState('5.93')
   const [rentPct, setRentPct] = useState('2.75')
   const [service, setService] = useState('100')
   const [london, setLondon] = useState(false)
@@ -91,7 +91,7 @@ export default function SharedOwnershipMortgageAffordabilityCalculator() {
         <div><label className="block text-sm font-medium mb-2">Deposit</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={deposit} onChange={(e) => setDeposit(e.target.value)} className={moneyClass} aria-label="Deposit" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Your Salary</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={salary} onChange={(e) => setSalary(e.target.value)} className={moneyClass} aria-label="Your Salary" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Partner Salary</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={partner} onChange={(e) => setPartner(e.target.value)} className={moneyClass} aria-label="Partner Salary" /></div></div>
-        <div><label className="block text-sm font-medium mb-2">Mortgage Rate (%)</label><input type="number" min="0" max="15" step="0.01" value={rate} onChange={(e) => setRate(e.target.value)} className={inputClass} aria-label="Mortgage Rate (%)" /><p className="text-xs text-muted-foreground mt-1">5.73% = average 2-year fix, Moneyfacts, 15 Sep 2026</p></div>
+        <div><label className="block text-sm font-medium mb-2">Mortgage Rate (%)</label><input type="number" min="0" max="15" step="0.01" value={rate} onChange={(e) => setRate(e.target.value)} className={inputClass} aria-label="Mortgage Rate (%)" /><p className="text-xs text-muted-foreground mt-1">5.93% = average 2-year fix, Moneyfacts, start of Oct 2026</p></div>
         <div><label className="block text-sm font-medium mb-2">Rent (% of unsold share/yr)</label><input type="number" min="0" max="5" step="0.05" value={rentPct} onChange={(e) => setRentPct(e.target.value)} className={inputClass} aria-label="Rent (% of unsold share per year)" /></div>
         <div><label className="block text-sm font-medium mb-2">Service Charge (£/month)</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={service} onChange={(e) => setService(e.target.value)} className={moneyClass} aria-label="Service Charge per month" /></div></div>
       </div>

@@ -4,7 +4,8 @@ import { formatCurrency } from '@/utils'
 // Compounding periods per year. Contributions are always monthly, so interest
 // is applied each month at the rate equivalent to the chosen frequency:
 // (1 + r/n)^(n/12) − 1. With no contributions this reproduces P(1 + r/n)^(nt)
-// exactly at each year end.
+// exactly at each year end. Contributions are added at the end of each month,
+// after that month's interest. Part years are rounded to the nearest month.
 const COMPOUNDING: { value: number; label: string }[] = [
   { value: 365, label: 'Daily' },
   { value: 12, label: 'Monthly' },
@@ -15,7 +16,7 @@ const COMPOUNDING: { value: number; label: string }[] = [
 function calculate(principal: number, monthlyDeposit: number, annualRate: number, years: number, periodsPerYear = 12) {
   const n = periodsPerYear > 0 ? periodsPerYear : 12
   const monthlyRate = Math.pow(1 + annualRate / 100 / n, n / 12) - 1
-  const months = years * 12
+  const months = Math.round(years * 12)
   let balance = principal
   let totalDeposits = principal
 
@@ -25,9 +26,9 @@ function calculate(principal: number, monthlyDeposit: number, annualRate: number
     balance = balance * (1 + monthlyRate) + monthlyDeposit
     totalDeposits += monthlyDeposit
 
-    if (m % 12 === 0) {
+    if (m % 12 === 0 || m === months) {
       data.push({
-        year: m / 12,
+        year: Math.round((m / 12) * 100) / 100,
         balance,
         deposits: totalDeposits,
         interest: balance - totalDeposits,
@@ -36,6 +37,7 @@ function calculate(principal: number, monthlyDeposit: number, annualRate: number
   }
 
   return {
+    months,
     finalBalance: balance,
     totalDeposits,
     totalInterest: balance - totalDeposits,
@@ -50,13 +52,15 @@ export default function CompoundInterestCalculator() {
   const [years, setYears] = useState('10')
   const [frequency, setFrequency] = useState('12')
 
-  const p = parseFloat(principal.replace(/,/g, '')) || 0
-  const m = parseFloat(monthly.replace(/,/g, '')) || 0
-  const r = parseFloat(rate) || 0
-  const y = parseInt(years) || 0
+  // Negative entries are treated as 0; the term is capped at 100 years.
+  const p = Math.max(0, parseFloat(principal.replace(/,/g, '')) || 0)
+  const m = Math.max(0, parseFloat(monthly.replace(/,/g, '')) || 0)
+  const r = Math.max(0, parseFloat(rate) || 0)
+  const y = Math.min(100, Math.max(0, parseFloat(years) || 0))
   const n = parseInt(frequency) || 12
 
   const result = useMemo(() => calculate(p, m, r, y, n), [p, m, r, y, n])
+  const termYears = Math.round((result.months / 12) * 100) / 100
 
   return (
     <div className="space-y-6">
@@ -81,7 +85,7 @@ export default function CompoundInterestCalculator() {
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Time Period (years)</label>
-          <input type="number" min="1" max="50" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Time Period (years)" />
+          <input type="number" min="0" max="100" step="any" value={years} onChange={(e) => setYears(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Time Period (years)" />
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Compounding</label>
@@ -90,11 +94,12 @@ export default function CompoundInterestCalculator() {
           </select>
         </div>
       </div>
+      <p className="text-xs text-muted-foreground">Monthly contributions are added at the end of each month. Part years are allowed and are rounded to the nearest month.</p>
 
-      {y > 0 && (
+      {result.months > 0 && (
         <div className="space-y-4 animate-fade-in-up">
           <div className="rounded-2xl bg-primary/10 p-6 text-center">
-            <p className="text-sm text-muted-foreground">Final Balance after {y} years</p>
+            <p className="text-sm text-muted-foreground">Final Balance after {termYears} {termYears === 1 ? 'year' : 'years'}</p>
             <p className="text-3xl font-bold text-primary mt-1">{formatCurrency(result.finalBalance)}</p>
           </div>
 

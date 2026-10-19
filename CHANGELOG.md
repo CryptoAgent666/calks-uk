@@ -1,5 +1,36 @@
 # CHANGELOG — Calks.uk
 
+## 2026-10-19 (round 12) — VAT rates, employer NI reliefs, pension annual allowance, mortgage averages, standing charges, home insurance
+
+Twelfth `/calkcheck` pass (report: `AUDIT-2026-10-19-d.md`): 20 never-hand-checked money pages (tax, pay, benefits,
+pension, mortgage, energy, investment, insurance, auto). 154 defects on 20 of 20 pages, 9 HIGH; 9 calculators gave wrong
+answers.
+
+**Policy and figures corrected:** sanitary products zero-rated (since 2021); no VAT on household electricity in Great
+Britain 1 October 2026 – 31 March 2027; private school fees 20%; VAT late-return penalty points; employer NI 0% to £50,270
+for under-21s, apprentices under 25 and veterans, and to £25,000 for freeport / investment zone staff; Employment
+Allowance claimed every year; Moneyfacts averages 5.93% / 5.95% (start of October 2026) on about 15 pages; Mortgage
+Guarantee Scheme permanent since July 2025; State Pension age rising from 66 since May 2026 (10 places); ABI average home
+premium £383; FCA ban on renewal price-walking since January 2022 (home and car); new-build warranties do not replace
+buildings insurance; Ofgem lower standing charge pilot from June 2026; DWP Pension Credit average over £4,500; pensioner
+Council Tax Reduction taper 20p per £1; GHIC scope.
+
+**Calculators corrected:** employer NI (category select, per-month payroll figures), VAT (duplicate mode removed,
+decimal keypad), SDLT first-time buyer and additional property (non-resident 2%, company 17% flat rate, whole pounds,
+rate display), Blind Person's Allowance (tapered PA shown), Council Tax Reduction (Scotland and Wales band ratios),
+hourly to salary (Scottish tax, days per week), pro-rata (52-week hourly, NLW warning), State Pension age (29 February,
+days), pension annual allowance (salary sacrifice in threshold income, banded charge, Scotland, carry forward), mortgage
+early repayment (compared with keeping cash in savings until the ERC ends), house price per sq ft (HPI benchmarks, m²
+input, local comparison), standing charge (usage and pilot terms), rule of 72 (0% handling), travel insurance (over-65
+loading per traveller, trip-length bands), home insurance (ABI basis, rebuild and contents inputs), car depreciation
+(curve matches the prose).
+
+**Out of sample:** mortgage-affordability, rent-vs-buy, shared-ownership-affordability, ltv, remortgage, debt-to-income,
+mortgage-repayment, mortgage-interest-rate, first-home-buyer, car-insurance-estimate, depreciation, pension, retirement
+and age pages.
+
+**Guards and ledger:** 94 new stale-value guards; 17 new and 9 updated ledger entries.
+
 ## 2026-10-19 (round 11) — Congestion Charge EV discount, MOT early-test date, season tickets, energy, education, investments
 
 Eleventh `/calkcheck` pass (report: `AUDIT-2026-10-19-c.md`): 20 never-hand-checked regulated pages (auto, insurance,

@@ -39,12 +39,34 @@ function band<T extends number[]>(rows: T[], y: number, m: number, d: number): T
   return rows.find(r => r[0] === by && r[1] === bm)
 }
 
-// Birthday plus whole years and months; a day that doesn't exist in the target month becomes its last day
+// Birthday plus whole years and months; a day that doesn't exist in the target month becomes its
+// last day (the statutory rule for the 66-and-N-months table: born 31 Jul 1960 -> 30 Nov 2026)
 function addYearsMonths(y: number, m: number, d: number, years: number, months: number) {
   const total = (y + years) * 12 + (m - 1) + months
   const ty = Math.floor(total / 12), tm = total % 12
   const last = new Date(Date.UTC(ty, tm + 1, 0)).getUTCDate()
   return new Date(Date.UTC(ty, tm, Math.min(d, last)))
+}
+
+// A birthday at a whole-year age. Someone born on 29 February reaches the age on 1 March when the
+// year is not a leap year, which is what the gov.uk tool returns (born 29 Feb 1964 -> 1 March 2031)
+function birthdayAt(y: number, m: number, d: number, years: number) {
+  const ty = y + years
+  const isLeap = (ty % 4 === 0 && ty % 100 !== 0) || ty % 400 === 0
+  if (m === 2 && d === 29 && !isLeap) return new Date(Date.UTC(ty, 2, 1))
+  return addYearsMonths(y, m, d, years, 0)
+}
+
+const plural = (n: number, unit: string) => `${n} ${unit}${n === 1 ? '' : 's'}`
+
+// Exact age on a date, as "67 years, 8 months, 5 days" (zero months or days left out)
+function ageOn(y: number, m: number, d: number, on: Date) {
+  let months = (on.getUTCFullYear() - y) * 12 + (on.getUTCMonth() + 1 - m)
+  if (on.getUTCDate() < d) months -= 1
+  const anniversary = addYearsMonths(y, m, d, 0, months)
+  const days = Math.round((on.getTime() - anniversary.getTime()) / 86_400_000)
+  const yrs = Math.floor(months / 12), mths = months % 12
+  return [plural(yrs, 'year'), mths ? plural(mths, 'month') : '', days ? plural(days, 'day') : ''].filter(Boolean).join(', ')
 }
 
 function calculate(dob: string, gender: string) {
@@ -57,7 +79,7 @@ function calculate(dob: string, gender: string) {
   let ageLabel: string
   if (k < key(1953, 12, 6) && (gender === 'male' || k < key(1950, 4, 6))) {
     const years = gender === 'male' ? 65 : 60
-    spaDate = addYearsMonths(y, mo, d, years, 0); ageLabel = String(years)
+    spaDate = birthdayAt(y, mo, d, years); ageLabel = String(years)
   } else if (k < key(1953, 12, 6)) {
     const r = band(WOMEN_1950_1953, y, mo, d)!
     spaDate = new Date(Date.UTC(r[2], r[3] - 1, 6)); ageLabel = ''
@@ -65,26 +87,21 @@ function calculate(dob: string, gender: string) {
     const r = band(BOTH_1953_1954, y, mo, d)!
     spaDate = new Date(Date.UTC(r[2], r[3] - 1, 6)); ageLabel = ''
   } else if (k < key(1960, 4, 6)) {
-    spaDate = addYearsMonths(y, mo, d, 66, 0); ageLabel = '66'
+    spaDate = birthdayAt(y, mo, d, 66); ageLabel = '66'
   } else if (k < key(1961, 3, 6)) {
     const extra = band(MONTHS_OVER_66, y, mo, d)![2]
-    spaDate = addYearsMonths(y, mo, d, 66, extra); ageLabel = `66 years ${extra} month${extra > 1 ? 's' : ''}`
+    spaDate = addYearsMonths(y, mo, d, 66, extra); ageLabel = `66 years, ${plural(extra, 'month')}`
   } else if (k < key(1977, 4, 6)) {
-    spaDate = addYearsMonths(y, mo, d, 67, 0); ageLabel = '67'
+    spaDate = birthdayAt(y, mo, d, 67); ageLabel = '67'
   } else if (k < key(1978, 4, 6)) {
     const r = band(BOTH_1977_1978, y, mo, d)!
     spaDate = new Date(Date.UTC(r[2], r[3] - 1, 6)); ageLabel = ''
   } else {
-    spaDate = addYearsMonths(y, mo, d, 68, 0); ageLabel = '68'
+    spaDate = birthdayAt(y, mo, d, 68); ageLabel = '68'
   }
 
   // Age on the SPA date, for the rows set by a fixed date rather than an age
-  if (!ageLabel) {
-    let months = (spaDate.getUTCFullYear() - y) * 12 + (spaDate.getUTCMonth() + 1 - mo)
-    if (spaDate.getUTCDate() < d) months -= 1
-    const yrs = Math.floor(months / 12), mths = months % 12
-    ageLabel = mths ? `${yrs} years ${mths} month${mths > 1 ? 's' : ''}` : String(yrs)
-  }
+  if (!ageLabel) ageLabel = ageOn(y, mo, d, spaDate)
 
   const now = new Date()
   const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate())
@@ -123,7 +140,7 @@ export default function StatePensionAgeCalculator() {
             <p>Born 6 October 1954 – 5 April 1960: <span className="font-medium text-foreground">66</span></p>
             <p>Born 6 April 1960 – 5 March 1961: <span className="font-medium text-foreground">66 plus 1 to 11 months</span> (reached from May 2026)</p>
             <p>Born 6 March 1961 – 5 April 1977: <span className="font-medium text-foreground">67</span></p>
-            <p>Born 6 April 1977 – 5 April 1978: <span className="font-medium text-foreground">between 67 and 68</span> (2044 to 2046)</p>
+            <p>Born 6 April 1977 – 5 April 1978: <span className="font-medium text-foreground">a fixed date between 6 May 2044 and 6 March 2046</span> (aged 67 and 1 month to 67 and 11 months)</p>
             <p>Born after 5 April 1978: <span className="font-medium text-foreground">68</span> (the timing is under review)</p>
             <p className="mt-1">Check your exact date at gov.uk/state-pension-age</p>
           </div>

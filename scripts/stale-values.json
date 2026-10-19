@@ -3476,6 +3476,484 @@
    "was": "CGT exemption netted off each year, all gains realised",
    "now": "footnote says gains realised each year and unused allowance cannot be carried forward",
    "what": "ss_isa_tax_saved_footnote"
+  },
+  {
+   "was": "close to £900 per employee",
+   "now": "about a thousand pounds at forty thousand",
+   "what": "employer_ni_rise_per_head_40k (round 12)"
+  },
+  {
+   "was": "roughly £900",
+   "now": "about a thousand pounds",
+   "what": "employer_ni_rise_faq_40k (round 12)",
+   "ctx": "employer|NI|National Insurance"
+  },
+  {
+   "was": "two directors who both earn above the Secondary Threshold",
+   "now": "other employee paid above the Secondary Threshold",
+   "what": "employment_allowance_director_rule (round 12)"
+  },
+  {
+   "was": "applied automatically once eligibility is recorded",
+   "now": "claim it every tax year on the EPS",
+   "what": "employment_allowance_claim_each_year (round 12)"
+  },
+  {
+   "was": "compared to the previous year",
+   "now": "link to the employer NI rise calculator",
+   "what": "employer_ni_tool_claim (round 12)"
+  },
+  {
+   "was": "Previous year (13.8%",
+   "now": "rules for the earlier tax year (thirteen point eight)",
+   "what": "employer_ni_example_label (round 12)"
+  },
+  {
+   "was": "children car seats",
+   "now": "children's car seats",
+   "what": "vat_rate_table_typo (round 12)"
+  },
+  {
+   "was": "mobility aids, sanitary products",
+   "now": "sanitary protection products zero-rated",
+   "what": "vat_sanitary_products_zero_rate (round 12)"
+  },
+  {
+   "was": "Reverse VAT extracts",
+   "now": "Remove VAT, also called reverse VAT",
+   "what": "vat_duplicate_mode (round 12)"
+  },
+  {
+   "was": "£200 penalty plus surcharges",
+   "now": "points-based late-return penalties",
+   "what": "vat_late_return_surcharge_abolished (round 12)"
+  },
+  {
+   "was": "deregister if turnover drops below",
+   "now": "expected taxable turnover in the next twelve months",
+   "what": "vat_deregistration_test (round 12)"
+  },
+  {
+   "was": "temporary cut to 15% between 2008 and 2010",
+   "now": "the fifteen per cent rate from December to December",
+   "what": "vat_2008_cut_dates (round 12)"
+  },
+  {
+   "was": "A minimum 5% deposit applies",
+   "now": "a mortgage for at least half the price",
+   "what": "first_homes_deposit_rule (round 12)"
+  },
+  {
+   "was": "a saving of £25k",
+   "now": "a third off market value, no SDLT either way",
+   "what": "first_homes_example_saving (round 12)"
+  },
+  {
+   "was": "The deposit is 5% of the discounted price",
+   "now": "a mortgage for at least half the price",
+   "what": "first_homes_deposit_rule_fhb (round 12)"
+  },
+  {
+   "was": "Companies and trusts buying residential property pay the same higher rates",
+   "now": "companies pay a flat seventeen per cent over half a million",
+   "what": "sdlt_company_17pc (round 12)"
+  },
+  {
+   "was": "Companies and trusts pay the higher rates too",
+   "now": "companies pay a flat seventeen per cent over half a million",
+   "what": "sdlt_company_17pc_faq (round 12)"
+  },
+  {
+   "was": "the allowance is yours for life",
+   "now": "carries on while you stay registered",
+   "what": "bpa_for_life (round 12)"
+  },
+  {
+   "was": "Once granted it runs for life",
+   "now": "carries on while you stay registered",
+   "what": "bpa_for_life_faq (round 12)"
+  },
+  {
+   "was": "free for everyone aged 60 and over since 1999",
+   "now": "free in England from sixty, free for all in Scotland",
+   "what": "nhs_eye_test_claim (round 12)"
+  },
+  {
+   "was": "single person discount is automatic",
+   "now": "you apply to your council for the single person discount",
+   "what": "ctr_spd_not_automatic (round 12)"
+  },
+  {
+   "was": "council-specific ceiling",
+   "now": "national twenty pence taper for pensioners",
+   "what": "ctr_pensioner_taper_national (round 12)"
+  },
+  {
+   "was": "upper limit set by your council",
+   "now": "national twenty pence taper for pensioners",
+   "what": "ctr_pensioner_taper_national_faq (round 12)"
+  },
+  {
+   "was": "£3,000 to £4,000 a year",
+   "now": "more than four and a half thousand on average (DWP)",
+   "what": "pension_credit_average_award (round 12)",
+   "ctx": "Pension Credit"
+  },
+  {
+   "was": "backdated one month, or three months where you can show good cause",
+   "now": "pension-age claims backdated up to three months",
+   "what": "ctr_backdating (round 12)"
+  },
+  {
+   "was": "£32.69",
+   "now": "Band B at the current England average",
+   "what": "ctr_example_band_b (round 12)"
+  },
+  {
+   "was": "£24.52",
+   "now": "Band B after single person discount, current year",
+   "what": "ctr_example_after_spd (round 12)"
+  },
+  {
+   "was": "most common statutory approach",
+   "now": "statutory minimum only; contractual leave pays more",
+   "what": "pro_rata_holiday_method (round 12)"
+  },
+  {
+   "was": "0.4 weeks of unplanned absence",
+   "now": "about nine-tenths of a week (ONS)",
+   "what": "hourly_sickness_absence (round 12)"
+  },
+  {
+   "was": "£17.39",
+   "now": "about seventeen pounds fifty-eight",
+   "what": "hourly_true_rate_30k (round 12)"
+  },
+  {
+   "was": "really costs the employer about £35k",
+   "now": "statutory costs alone about thirty-four and a half thousand",
+   "what": "employee_cost_30k (round 12)"
+  },
+  {
+   "was": "~28% deductions",
+   "now": "deductions depend on monthly or weekly pay",
+   "what": "spp_net_deductions (round 12)"
+  },
+  {
+   "was": "deductions of about 28%",
+   "now": "deductions depend on monthly or weekly pay",
+   "what": "spp_net_deductions_faq (round 12)"
+  },
+  {
+   "was": "risks a discrimination claim",
+   "now": "complain to an employment tribunal",
+   "what": "antenatal_time_off_remedy (round 12)"
+  },
+  {
+   "was": "The current age is 66",
+   "now": "began rising from sixty-six in May",
+   "what": "spa_current_66 (round 12)"
+  },
+  {
+   "was": "currently stands at 66",
+   "now": "began rising from sixty-six in May",
+   "what": "spa_current_66_faq (round 12)"
+  },
+  {
+   "was": "State Pension age is currently 66",
+   "now": "began rising from sixty-six in May",
+   "what": "spa_current_66_sweep (round 12)"
+  },
+  {
+   "was": "is currently 66, moving to 67",
+   "now": "began rising from sixty-six in May",
+   "what": "spa_current_66_sweep2 (round 12)"
+  },
+  {
+   "was": "arriving between 2044 and 2046",
+   "now": "fixed dates for the late-seventies cohort, sixty-eight after",
+   "what": "spa_68_timing (round 12)"
+  },
+  {
+   "was": "Current age (April 2026): 55",
+   "now": "dated illustration from October",
+   "what": "spa_example_age (round 12)"
+  },
+  {
+   "was": "State Pension age at 66 stretches",
+   "now": "sixty-six, rising to sixty-seven",
+   "what": "spa_66_drawdown_faq (round 12)"
+  },
+  {
+   "was": "separate thing and starts at 66",
+   "now": "starts at State Pension age, rising",
+   "what": "spa_66_pension_faq (round 12)"
+  },
+  {
+   "was": "The State Pension follows at 66,",
+   "now": "sixty-six to sixty-seven by date of birth",
+   "what": "spa_66_birthday_prose (round 12)"
+  },
+  {
+   "was": "credit card balances compound daily",
+   "now": "interest worked out daily, added monthly",
+   "what": "card_interest_compounding (round 12)"
+  },
+  {
+   "was": "Above 15% the Rule of 70 gets closer",
+   "now": "the seventy rule is closer only at low rates",
+   "what": "rule_of_70_direction (round 12)"
+  },
+  {
+   "was": "least reliable above 15%, where the Rule of 70",
+   "now": "the seventy rule is closer only at low rates",
+   "what": "rule_of_70_direction_faq (round 12)"
+  },
+  {
+   "was": "£25/month from 22 outperforms",
+   "now": "fifty a month from twenty-two",
+   "what": "rule72_early_saver_example (round 12)"
+  },
+  {
+   "was": "loses £1,000 of purchasing power every 5 years",
+   "now": "about four hundred and ninety over five years",
+   "what": "rule72_negative_real_return (round 12)"
+  },
+  {
+   "was": "An interest-only mortgage at 5% doubles",
+   "now": "lifetime mortgage roll-up example",
+   "what": "rule72_interest_only_claim (round 12)"
+  },
+  {
+   "was": "penalty interest of 36%",
+   "now": "BNPL is interest-free, late fees",
+   "what": "rule72_bnpl_claim (round 12)"
+  },
+  {
+   "was": "Any traveller over 65",
+   "now": "number of travellers aged sixty-five or over",
+   "what": "travel_age_loading_all (round 12)"
+  },
+  {
+   "was": "£20-£50 an hour",
+   "now": "twenty to thirty pounds per twelve hours",
+   "what": "travel_delay_cover (round 12)"
+  },
+  {
+   "was": "the card does nothing at all beyond Europe",
+   "now": "GHIC also covers Australia and Montenegro",
+   "what": "ghic_scope (round 12)"
+  },
+  {
+   "was": "need no separate cover for the first",
+   "now": "warranty does not replace buildings insurance",
+   "what": "nhbc_warranty_claim (round 12)"
+  },
+  {
+   "was": "increases of that size on auto-renewal are common",
+   "now": "FCA renewal pricing rule since January",
+   "what": "home_insurance_loyalty_penalty (round 12)"
+  },
+  {
+   "was": "auto-renewal prices drift upwards",
+   "now": "FCA renewal pricing rule since January",
+   "what": "car_insurance_loyalty_penalty (round 12)"
+  },
+  {
+   "was": "Cap HPI data puts the average new car",
+   "now": "around half after three years, sixty per cent after five",
+   "what": "car_depreciation_cap_hpi (round 12)"
+  },
+  {
+   "was": "Cap HPI data shows an average new car",
+   "now": "around half after three years, sixty per cent after five",
+   "what": "depreciation_cap_hpi (round 12)"
+  },
+  {
+   "was": "12,000-mile industry benchmark",
+   "now": "ten thousand miles in valuation guides",
+   "what": "car_depreciation_mileage (round 12)"
+  },
+  {
+   "was": "depreciated faster than petrol equivalents through 2024 to 2026",
+   "now": "faster in earlier years; used EV prices firmed this year",
+   "what": "ev_depreciation_2026 (round 12)"
+  },
+  {
+   "was": "They have done through 2024 to 2026",
+   "now": "faster in earlier years; used EV prices firmed this year",
+   "what": "ev_depreciation_2026_faq (round 12)"
+  },
+  {
+   "was": "leases for roughly £420 a month",
+   "now": "about five hundred a month plus initial rental",
+   "what": "lease_depreciation_example (round 12)"
+  },
+  {
+   "was": "5.73%",
+   "now": "October Moneyfacts average two-year fix",
+   "what": "moneyfacts_2yr_avg_sep2026 (round 12)",
+   "ctx": "^(?!.*(?:&rsquo;|text-foreground)).*"
+  },
+  {
+   "was": "5.78%",
+   "now": "October Moneyfacts average five-year fix",
+   "what": "moneyfacts_5yr_avg_sep2026 (round 12)",
+   "ctx": "^(?!.*(?:&rsquo;|text-foreground)).*"
+  },
+  {
+   "was": "£1,695.33",
+   "now": "monthly payment at the October average",
+   "what": "rent_vs_buy_example_payment (round 12)"
+  },
+  {
+   "was": "£791.15",
+   "now": "shared ownership mortgage at the October average",
+   "what": "shared_ownership_example_40 (round 12)"
+  },
+  {
+   "was": "£1,302.62",
+   "now": "shared ownership monthly cost at the October average",
+   "what": "shared_ownership_example_35 (round 12)"
+  },
+  {
+   "was": "£15,926",
+   "now": "borrowing removed per hundred a month at the October average",
+   "what": "remortgage_borrowing_per_100 (round 12)"
+  },
+  {
+   "was": "typical 2-year fix, May 2026",
+   "now": "Moneyfacts October averages by LTV",
+   "what": "ltv_rate_table_may2026 (round 12)"
+  },
+  {
+   "was": "extended to June 2026",
+   "now": "Mortgage Guarantee Scheme permanent from July",
+   "what": "mgs_extended_june_2026 (round 12)",
+   "ctx": "Guarantee|scheme"
+  },
+  {
+   "was": "expected to be replaced by",
+   "now": "Mortgage Guarantee Scheme permanent from July",
+   "what": "mgs_freedom_to_buy (round 12)",
+   "ctx": "Freedom to Buy"
+  },
+  {
+   "was": "at 90% by 0.5-1.0%",
+   "now": "Moneyfacts October LTV gaps",
+   "what": "ltv_gap_90 (round 12)"
+  },
+  {
+   "was": "95% LTV might attract 5.5-6%",
+   "now": "Moneyfacts October average at the top LTV tier",
+   "what": "deposit_faq_95ltv_rate (round 12)"
+  },
+  {
+   "was": "typically cost 0.5-1.0% more than 90% LTV",
+   "now": "about a quarter of a point (Moneyfacts)",
+   "what": "ltv_gap_95_vs_90 (round 12)"
+  },
+  {
+   "was": "carried forward, oldest year first",
+   "now": "current year first, then the earliest earlier year",
+   "what": "aa_carry_forward_order (round 12)"
+  },
+  {
+   "was": "typically 40 or 45% for anyone in taper territory",
+   "now": "top slice at your own rates, almost always the additional rate",
+   "what": "aa_charge_rate_taper (round 12)"
+  },
+  {
+   "was": "could pay in £130k in one go",
+   "now": "relief limited to relevant earnings",
+   "what": "aa_carry_forward_relief_limit (round 12)"
+  },
+  {
+   "was": "keeps a separate £50,000 allowance",
+   "now": "alternative allowance is the tapered allowance less the MPAA",
+   "what": "aa_alternative_aa (round 12)"
+  },
+  {
+   "was": "Paying off early saves money!",
+   "now": "neutral comparison against keeping the cash in savings",
+   "what": "erc_verdict_ignores_savings (round 12)"
+  },
+  {
+   "was": "Clearing it comes out ahead here",
+   "now": "comparison against savings interest",
+   "what": "erc_example_conclusion (round 12)"
+  },
+  {
+   "was": "£6,000 however much you actually repay",
+   "now": "unconfirmed whole-balance ERC claim removed",
+   "what": "erc_whole_balance_claim (round 12)"
+  },
+  {
+   "was": "Below UK average — good value",
+   "now": "Below UK average",
+   "what": "sqft_good_value_label (round 12)"
+  },
+  {
+   "was": "~£350/sq ft",
+   "now": "UK HPI average divided by the EHS floor area",
+   "what": "sqft_uk_avg_350 (round 12)"
+  },
+  {
+   "was": "£260-£320",
+   "now": "UK HPI average divided by the EHS floor area",
+   "what": "sqft_uk_range (round 12)",
+   "ctx": "sq ?ft|sqft|square foot"
+  },
+  {
+   "was": "£400,520",
+   "now": "price at the local average per square foot",
+   "what": "sqft_example_value (round 12)"
+  },
+  {
+   "was": "against 113 m²",
+   "now": "Cambridge study comparison, dated",
+   "what": "sqft_new_build_europe (round 12)"
+  },
+  {
+   "was": "Utilita and OVO have offered them",
+   "now": "Ofgem lower standing charge pilot suppliers",
+   "what": "standing_charge_suppliers (round 12)"
+  },
+  {
+   "was": "which is why most homes still come out ahead paying the charge",
+   "now": "pilot break-even consumption",
+   "what": "standing_charge_breakeven_logic (round 12)"
+  },
+  {
+   "was": "about 45p a day combined",
+   "now": "lowest of any large supplier (no figure)",
+   "what": "octopus_standing_charge_claim (round 12)"
+  },
+  {
+   "was": "4 million Bulb customers",
+   "now": "about one point seven million in special administration",
+   "what": "bulb_customers (round 12)"
+  },
+  {
+   "was": "10 to 20% by 2028",
+   "now": "unsourced forecast removed",
+   "what": "standing_charge_forecast (round 12)",
+   "ctx": "standing charge"
+  },
+  {
+   "was": "£78.46",
+   "now": "net saving on pilot terms",
+   "what": "standing_charge_example_net (round 12)"
+  },
+  {
+   "was": "Zero standing charge tariff would save you",
+   "now": "costs more at typical use on pilot terms",
+   "what": "standing_charge_default_result (round 12)"
+  },
+  {
+   "was": "check-if-energy-price-cap-affects-you",
+   "now": "energy price cap and standing charges explained page",
+   "what": "ofgem_url_301 (round 12)"
   }
  ]
 }

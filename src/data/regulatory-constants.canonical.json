@@ -1493,8 +1493,8 @@
       "fixed_date": "2026-06-16",
       "verified": "2026-08-15",
       "verified_source": "https://www.gov.uk/blind-persons-allowance/what-youll-get",
-      "verified_date": "2026-09-27",
-      "verify_method": "calkcheck-2026-09-27-r4"
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
     },
     {
       "key": "blind_persons_allowance_plus_pa_total",
@@ -13777,18 +13777,16 @@
       "surfaces": [
         "prose"
       ],
-      "used_by": [
-        "src/data/calculator-content.ts"
-      ],
+      "used_by": [],
       "source_url": "https://www.gov.uk/government/publications/2025-mortgage-guarantee-scheme",
-      "status": "current",
+      "status": "uncertain",
       "change_frequency": "",
-      "note": "first-home-buyer-calculator: Mortgage Guarantee Scheme 95% LTV on properties up to £600,000 (extended to June 2026)",
+      "note": "Prose no longer states a property cap. The 2025 Mortgage Guarantee Scheme rules (gov.uk, 14 Jul 2025; PDF and accessible HTML) contain no property-value limit: eligibility rule 3.1 has an empty (g) in the PDF and no cap in the HTML, and LTV must be >90% and <=95% (rule 7.1). The scheme is permanent from July 2025. Earlier note said \"cap unchanged at £600,000\" from secondary sources; unconfirmed in the rules.",
       "official_value": "£600,000",
       "confidence": "high",
       "freshness_note": "The new permanent 2025 Mortgage Guarantee Scheme (launched 3 Jul 2025) supports 91-95% LTV mortgages on homes up to £600,000; cap unchanged. (Note: scheme is now permanent, superseding the old 'extended to June 2026' framing.)",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
     },
     {
       "key": "mot_annual_test_interval_years",
@@ -21571,9 +21569,12 @@
       "law": "SDLT (corporate purchasers)",
       "theme": "sdlt",
       "surfaces": [
+        "computed",
         "prose"
       ],
       "used_by": [
+        "src/components/calculators/StampDutyAdditionalCalculator.tsx",
+        "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/guidance/stamp-duty-land-tax-corporate-bodies",
@@ -21583,7 +21584,8 @@
       "official_value": "17",
       "confidence": "high",
       "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
-      "verified_date": "2026-10-06"
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
     },
     {
       "key": "sdlt_ftb_band1_threshold",
@@ -24555,7 +24557,7 @@
     },
     {
       "key": "state_pension_age_current",
-      "value": "66",
+      "value": "66 rising to 67",
       "unit": "years",
       "law": "DWP State Pension age",
       "theme": "pension",
@@ -24563,15 +24565,19 @@
         "prose"
       ],
       "used_by": [
+        "src/components/calculators/StatePensionAgeCalculator.tsx",
+        "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://commonslibrary.parliament.uk/research-briefings/sn06546/",
+      "source_url": "https://www.legislation.gov.uk/ukpga/1995/26/schedule/4",
       "status": "current",
       "change_frequency": "",
-      "note": "State Pension age currently 66 (state-pension, state-pension-age, age, national-insurance)",
-      "official_value": "66",
+      "note": "SPA was 66 until May 2026; people born 6 Apr 1960 - 5 Mar 1961 reach it at 66 + 1..11 months (6 May 2026 - Mar 2028); born on/after 6 Mar 1961: 67. \"Currently 66\" prose removed from ~10 places (state-pension-age, pension, retirement, age, NI FAQ, drawdown). 29 Feb births reach a whole-years SPA on 1 March in non-leap years (gov.uk tool).",
+      "official_value": "66 until 6 May 2026, then 66 + 1..11 months, 67 from Mar 2028",
       "confidence": "high",
-      "freshness_note": "Current State Pension age base is 66 (phasing to 67 from 6 Apr 2026). Current."
+      "freshness_note": "Current State Pension age base is 66 (phasing to 67 from 6 Apr 2026). Current.",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
     },
     {
       "key": "state_pension_age_rising_to_67",
@@ -24583,15 +24589,19 @@
         "prose"
       ],
       "used_by": [
+        "src/components/calculators/StatePensionAgeCalculator.tsx",
+        "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://assets.publishing.service.gov.uk/media/5a7f02e640f0b62305b84929/spa-timetable.pdf",
+      "source_url": "https://www.legislation.gov.uk/ukpga/1995/26/schedule/4",
       "status": "current",
       "change_frequency": "",
-      "note": "SPA rises to 67 between 6 Apr 2026 and 5 Apr 2028 (state-pension-age-calculator)",
+      "note": "Pensions Act 1995 Sch 4 Table 3 (as amended 2014): 66y1m for 6 Apr-5 May 1960 up to 66y11m for 6 Feb-5 Mar 1961; last-day-of-month rule where the date does not exist (31 Jul 1960 -> 30 Nov 2026). 67 from 6 Mar 1961.",
       "official_value": "67",
       "confidence": "high",
-      "freshness_note": "Legislated SPA rises from 66 to 67 between 6 Apr 2026 and Mar 2028. Current."
+      "freshness_note": "Legislated SPA rises from 66 to 67 between 6 Apr 2026 and Mar 2028. Current.",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
     },
     {
       "key": "state_pension_age_rising_to_68",
@@ -24603,15 +24613,19 @@
         "prose"
       ],
       "used_by": [
+        "src/components/calculators/StatePensionAgeCalculator.tsx",
+        "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://commonslibrary.parliament.uk/research-briefings/sn06546/",
+      "source_url": "https://www.legislation.gov.uk/ukpga/1995/26/schedule/4",
       "status": "current",
       "change_frequency": "",
-      "note": "SPA rise to 68 scheduled 2044-2046 (under review) (state-pension-age-calculator)",
+      "note": "Sch 4 Table 4: born 6 Apr 1977 - 5 Apr 1978 reach SPA on fixed dates 6 May 2044 - 6 Mar 2046 (67y1m to 67y11m); born after 5 Apr 1978: 68. 2017 review proposed 2037-39 (not legislated); third review (Dr Suzy Morrissey, launched Jul 2025) still taking evidence Oct 2026.",
       "official_value": "68",
       "confidence": "high",
-      "freshness_note": "Legislated SPA rises to 68 between 2044 and 2046 (current statutory timetable; no change enacted to bring forward). Current."
+      "freshness_note": "Legislated SPA rises to 68 between 2044 and 2046 (current statutory timetable; no change enacted to bring forward). Current.",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
     },
     {
       "key": "state_pension_deferral_uplift_per_9_weeks",
@@ -32095,7 +32109,7 @@
     },
     {
       "key": "mortgage_avg_two_year_fix_moneyfacts",
-      "value": "5.73",
+      "value": "5.93",
       "unit": "%",
       "law": "Moneyfacts UK Mortgage Trends (market)",
       "theme": "mortgage",
@@ -32105,16 +32119,18 @@
       ],
       "used_by": [
         "src/components/calculators/MortgageAffordabilityCalculator.tsx",
+        "src/components/calculators/RentVsBuyCalculator.tsx",
+        "src/components/calculators/SharedOwnershipMortgageAffordabilityCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://moneyfactsgroup.co.uk/",
+      "source_url": "https://moneyfactsgroup.co.uk/media-centre/group/mortgage-deals-lasting-just-13-days-as-market-faces-sustained-volatility/",
       "status": "current",
       "change_frequency": "",
-      "note": "Average 2-year fix 15 Sep 2026 (5-year 5.78%, SVR 7.13%). Used for the affordability monthly payment and commitments factor (£15,926 per £100/month over 25 years). Stress test: FPC 3-point test withdrawn Aug 2022; lenders set their own rate; FCA MCOB 11.6.18R not required on 5-year+ fixes.",
-      "official_value": "5.73",
-      "verified_date": "2026-09-27",
-      "verify_method": "calkcheck-2026-09-27",
+      "note": "Average 2-year fix at the start of October 2026 (Moneyfacts release 19 Oct 2026; 5-year 5.95%, SVR 7.13%, 2-year tracker 4.54%; 95% LTV 6.37/6.30, 90% 6.15/6.04, 60% 5.42/5.60). Affordability default and RentVsBuy/SharedOwnership defaults; commitments factor £15,624 per £100/month over 25 years. Was 5.73% (15 Sep 2026). Market rate: re-check each cycle.",
+      "official_value": "5.93",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12",
       "confidence": "medium",
       "volatile": true,
       "changes_next_fy": "Market figure - refresh each calkcheck cycle"
@@ -33374,7 +33390,9 @@
         "prose"
       ],
       "used_by": [
+        "src/components/calculators/StampDutyAdditionalCalculator.tsx",
         "src/components/calculators/StampDutyCalculator.tsx",
+        "src/components/calculators/StampDutyFTBCalculator.tsx",
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
@@ -33383,8 +33401,8 @@
       "change_frequency": "",
       "note": "2% on the whole price for non-UK-resident buyers, on top of standard, first-time buyer and higher rates.",
       "official_value": "2",
-      "verified_date": "2026-09-28",
-      "verify_method": "calkcheck-2026-09-28-r7",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12",
       "confidence": "high"
     },
     {
@@ -36573,15 +36591,397 @@
       "confidence": "high",
       "status": "current",
       "verified_date": "2026-10-19"
+    },
+    {
+      "key": "mortgage_avg_five_year_fix_moneyfacts",
+      "value": "5.95",
+      "unit": "%",
+      "law": "Moneyfacts UK Mortgage Trends (market)",
+      "theme": "mortgage",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://moneyfactsgroup.co.uk/media-centre/group/mortgage-deals-lasting-just-13-days-as-market-faces-sustained-volatility/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Average 5-year fix at the start of October 2026 (was 5.78% on 15 Sep 2026). Market rate.",
+      "official_value": "5.95",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "mortgage_avg_by_ltv_moneyfacts_oct_2026",
+      "value": "6.37/6.15/5.42",
+      "unit": "%",
+      "law": "Moneyfacts UK Mortgage Trends (market)",
+      "theme": "mortgage",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://moneyfactsgroup.co.uk/media-centre/group/mortgage-deals-lasting-just-13-days-as-market-faces-sustained-volatility/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Average 2-year fix by LTV at the start of October 2026: 95% 6.37%, 90% 6.15%, 60% 5.42% (5-year 6.30/6.04/5.60). Used for LTV-tier gaps on ltv, mortgage-interest-rate, first-home-buyer pages and the deposit FAQ. Market rate.",
+      "official_value": "6.37/6.15/5.42",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "employer_ni_upper_secondary_threshold",
+      "value": "50270",
+      "unit": "GBP/year",
+      "law": "SSCBA 1992 s.9A/9B (UST, AUST, VUST)",
+      "theme": "ni",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/EmployerNICalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Employer NI 0% up to £50,270 (£4,189 a month) for under-21s (cat. M), apprentices under 25 (H) and veterans in first 12 months of civilian work (V); 15% above.",
+      "official_value": "50270 (4189/month)",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "employer_ni_freeport_iz_upper_threshold",
+      "value": "25000",
+      "unit": "GBP/year",
+      "law": "NICA 2022 (FUST/IZUST)",
+      "theme": "ni",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/EmployerNICalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/check-if-you-can-claim-national-insurance-relief-in-uk-freeport-or-investment-zone-special-tax-sites",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Employer NI 0% up to £25,000 (£2,083 a month) for new freeport / investment zone employees, first 36 months, 60%+ of working time at the site.",
+      "official_value": "25000 (2083/month)",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "vat_sanitary_protection_zero_rate",
+      "value": "0",
+      "unit": "%",
+      "law": "VATA 1994 Sch 8 Group 19 (from 1 Jan 2021)",
+      "theme": "vat",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/rates-of-vat-on-different-goods-and-services",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Women's sanitary protection products zero-rated since 1 Jan 2021 (VAT Notice 701/18). VAT page listed them at 5% until 19 Oct 2026.",
+      "official_value": "0",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "vat_domestic_electricity_temporary_zero",
+      "value": "0",
+      "unit": "%",
+      "law": "Temporary zero rate, domestic electricity (GB)",
+      "theme": "vat",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/news/breathing-space-on-your-energy-bill",
+      "status": "current",
+      "change_frequency": "",
+      "note": "No VAT on household electricity in Great Britain 1 Oct 2026 - 31 Mar 2027 (gov.uk 26 Aug 2026; Ofgem cap figures already exclude it); Northern Ireland stays 5%; gas 5%. NB the gov.uk rates-by-goods page still shows 5% (not updated, 19 Oct 2026).",
+      "official_value": "0",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12",
+      "changes_next_fy": "Reverts to 5% on 1 Apr 2027 unless extended: update vat-calculator rate table and energy pages."
+    },
+    {
+      "key": "vat_private_school_fees",
+      "value": "20",
+      "unit": "%",
+      "law": "Finance (No. 2) Act 2024 (from 1 Jan 2025)",
+      "theme": "vat",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/rates-of-vat-on-different-goods-and-services",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Private school fees standard-rated from 1 Jan 2025; other education by eligible bodies exempt.",
+      "official_value": "20",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "vat_late_return_points_thresholds",
+      "value": "2/4/5",
+      "unit": "points",
+      "law": "FA 2021 Sch 24 (periods from 1 Jan 2023)",
+      "theme": "vat",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/penalty-points-and-penalties-if-you-submit-your-vat-return-late",
+      "status": "current",
+      "change_frequency": "",
+      "note": "One point per late return; £200 penalty at 2 (annual) / 4 (quarterly) / 5 (monthly) points and £200 for each further late return. Late payment 3% at day 15, +3% at day 30, then 10% a year. Default surcharge abolished.",
+      "official_value": "2/4/5",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "abi_average_home_premium_paid",
+      "value": "383",
+      "unit": "GBP/year",
+      "law": "ABI Property Insurance Premium Tracker (market)",
+      "theme": "insurance",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/HomeInsuranceCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.abi.org.uk/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Average combined buildings and contents premium paid Q2 2026 £383 (buildings only £309, contents only £118), incl. 12% IPT (reported by Selectra UK 18 Oct 2026; Which?). Home-insurance tool re-based on these.",
+      "official_value": "383 (309 buildings, 118 contents)",
+      "confidence": "medium",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "fca_gi_renewal_pricing_rule",
+      "value": "2022-01-01",
+      "unit": "date",
+      "law": "FCA PS21/5 (ICOBS 6B)",
+      "theme": "insurance",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.fca.org.uk/publication/policy/ps21-5.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Home and motor renewal price may not exceed the equivalent new-business price from 1 Jan 2022. Home and car insurance prose claiming a 30-50% loyalty penalty removed 19 Oct 2026.",
+      "official_value": "2022-01-01",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "ofgem_lower_standing_charge_pilot",
+      "value": "2026-06",
+      "unit": "start",
+      "law": "Ofgem lower standing charge tariff pilot (one year)",
+      "theme": "energy",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/StandingChargeSavingsCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.ofgem.gov.uk/policy/lower-standing-charge-tariffs-next-steps",
+      "status": "current",
+      "change_frequency": "",
+      "note": "One-year pilot from June 2026 (moved from April); Sep 2025 consultation on a mandatory lower standing charge tariff closed 23 Oct 2025. Pilot terms (MSE 8 Jul 2026): about £150 a year lower standing charges for dual fuel, E.ON about +3.5p/kWh elec and +1p gas, break-even roughly 1,800 kWh elec / 7,500 kWh gas.",
+      "official_value": "2026-06",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12",
+      "changes_next_fy": "Pilot due to end about June 2027; Ofgem decision on a permanent requirement and the cost allocation review to follow."
+    },
+    {
+      "key": "pension_credit_average_award",
+      "value": "4500",
+      "unit": "GBP/year",
+      "law": "DWP press release (statistic)",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/news/hundreds-of-thousands-of-pensioners-urged-to-check-theyre-not-missing-out-on-vital-pension-credit",
+      "status": "current",
+      "change_frequency": "",
+      "note": "DWP: Pension Credit worth more than £4,500 a year on average (19 Oct 2026).",
+      "official_value": ">4500",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "ctr_pensioner_taper_rate",
+      "value": "20",
+      "unit": "%",
+      "law": "SI 2012/2885 Sch 1 para 3(f)",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2012/2885/schedule/1",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Pensioner Council Tax Reduction (England) is national: award reduced by 20p per £1 of income above the applicable amount. Guarantee Credit passports to maximum award.",
+      "official_value": "20",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "council_tax_band_ratios_scotland",
+      "value": "240:280:320:360:473:585:705:882",
+      "unit": "ratio",
+      "law": "LGFA 1992 s.74 (Scotland)",
+      "theme": "council_tax",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/CouncilTaxReductionCalculator.tsx"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ukpga/1992/14/section/74",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Scottish band proportions A-H used for the disabled band reduction (Band E £2,000 -> £1,522.20).",
+      "official_value": "240:280:320:360:473:585:705:882",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "aa_threshold_income_salary_sacrifice_addback",
+      "value": "2015-07-09",
+      "unit": "date",
+      "law": "FA 2004 s.228ZA(5)",
+      "theme": "pension",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/PensionAnnualAllowanceCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ukpga/2004/12/section/228ZA",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Threshold income adds back salary sacrificed / flexible remuneration under arrangements made on or after 9 Jul 2015. AA charge = excess taxed as top slice of income at the member's rates (s.227(4)); Scheme Pays mandatory if charge > £2,000 and that scheme's input > £60,000.",
+      "official_value": "2015-07-09",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "uk_hpi_average_price_july_2026",
+      "value": "273000",
+      "unit": "GBP",
+      "law": "UK House Price Index (official statistic)",
+      "theme": "property",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/HousePriceSqFtCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/statistics/uk-house-price-index-for-july-2026",
+      "status": "current",
+      "change_frequency": "monthly",
+      "note": "UK average £273,000 July 2026 (England £293,479, London £550,037, NW £221,445, NE £166,943). House-price-per-sq-ft benchmarks = HPI / ~96 m² (1,033 sq ft, English Housing Survey average). August data due 21 Oct 2026.",
+      "official_value": "273000",
+      "confidence": "high",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "ons_sickness_absence_days_2025",
+      "value": "4.4",
+      "unit": "days/worker",
+      "law": "ONS Sickness absence in the UK labour market 2025",
+      "theme": "pay",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/articles/sicknessabsenceinthelabourmarket/2025",
+      "status": "current",
+      "change_frequency": "",
+      "note": "ONS: 4.4 days lost per worker in 2025 (about 0.9 weeks); hourly-to-salary \"true hourly rate\" uses 45.5 working weeks.",
+      "official_value": "4.4",
+      "confidence": "medium",
+      "verified_date": "2026-10-19",
+      "verify_method": "calkcheck-2026-10-19-r12"
     }
   ],
   "status_summary": {
-    "current": 1481,
+    "current": 1638,
     "retired": 24,
+    "historical": 17,
     "superseded_by_component": 4,
-    "historical": 14,
-    "superseded": 11,
-    "uncertain": 6
+    "superseded": 12,
+    "uncertain": 10
   },
   "theme_counts": {
     "minimum_wage": 18,

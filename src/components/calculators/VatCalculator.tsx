@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-type VatMode = 'add' | 'remove' | 'reverse'
+type VatMode = 'add' | 'remove'
 type VatRate = 20 | 5 | 0
 
 export default function VatCalculator() {
@@ -19,11 +19,7 @@ export default function VatCalculator() {
         return { net: value, vat, gross: value + vat }
       }
       case 'remove': {
-        const net = value / (1 + vatRate)
-        const vat = value - net
-        return { net, vat, gross: value }
-      }
-      case 'reverse': {
+        // Also called reverse VAT: take the VAT back out of a VAT-inclusive price
         const net = value / (1 + vatRate)
         const vat = value - net
         return { net, vat, gross: value }
@@ -38,11 +34,10 @@ export default function VatCalculator() {
       {/* Mode Selection */}
       <div>
         <label className="block text-sm font-medium mb-2">What do you want to do?</label>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-2 gap-2">
           {([
             { value: 'add' as VatMode, label: 'Add VAT' },
             { value: 'remove' as VatMode, label: 'Remove VAT' },
-            { value: 'reverse' as VatMode, label: 'Reverse VAT' },
           ]).map((option) => (
             <button
               key={option.value}
@@ -89,7 +84,7 @@ export default function VatCalculator() {
           <input
             id="vat-amount"
             type="text"
-            inputMode="numeric"
+            inputMode="decimal"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             placeholder="1,000"

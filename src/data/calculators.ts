@@ -76,7 +76,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'employer-ni-calculator',
     title: 'Employer National Insurance Calculator',
-    description: 'Calculate employer NI contributions at the new 15% rate from April 2025, with the reduced £5,000 secondary threshold.',
+    description: 'Calculate employer NI at the 15% rate (since April 2025) above the £5,000 Secondary Threshold, with under-21, apprentice and freeport reliefs.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['employer NI', 'employer national insurance', 'secondary threshold', 'employer contributions'],
@@ -88,7 +88,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'vat-calculator',
     title: 'VAT Calculator',
-    description: 'Add or remove VAT at 20%, 5% or 0%. Calculate VAT-inclusive and VAT-exclusive amounts instantly.',
+    description: 'Add or remove UK VAT at 20%, 5% or 0% and see the net, VAT and gross amounts, with what each rate covers and the £90,000 registration threshold.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['VAT', 'value added tax', 'VAT calculator', '20%', 'reverse VAT', 'add VAT', 'remove VAT'],
@@ -110,7 +110,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'stamp-duty-first-time-buyer-calculator',
     title: 'Stamp Duty First-Time Buyer Calculator',
-    description: 'Calculate stamp duty relief for first-time buyers in England and Northern Ireland at 2026/27 rates.',
+    description: 'Work out first-time buyer Stamp Duty in England and NI at 2026/27 rates: 0% to £300,000, 5% to £500,000, plus the 2% non-resident surcharge.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['first time buyer', 'stamp duty relief', 'FTB', 'first home'],
@@ -234,7 +234,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'hourly-to-salary-calculator',
     title: 'Hourly to Annual Salary Calculator',
-    description: 'Convert your hourly rate to an annual salary, or find out what your salary works out to per hour.',
+    description: 'Convert an hourly rate to an annual salary, or a salary to an hourly rate, with 2026/27 income tax, NI and take-home pay for the UK or Scotland.',
     category: 'pay',
     icon: 'Banknote',
     keywords: ['hourly rate', 'annual salary', 'salary conversion', 'hourly to annual'],
@@ -351,7 +351,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'rent-vs-buy-calculator',
     title: 'Rent vs Buy Calculator',
-    description: 'Compare the financial costs of renting versus buying a property over time in the UK.',
+    description: 'Compare renting with buying a UK home over the years you choose, counting stamp duty, mortgage, maintenance, selling costs and investment returns.',
     category: 'mortgage',
     icon: 'Home',
     keywords: ['rent vs buy', 'rent or buy', 'renting vs buying'],
@@ -416,7 +416,7 @@ export const CALCULATORS: CalculatorMeta[] = [
     category: 'investment',
     icon: 'TrendingUp',
     keywords: ['compound interest', 'interest calculator', 'savings growth', 'investment growth'],
-    metaTitle: 'Compound Interest Calculator UK — Daily/Monthly/Annual Compounding',
+    metaTitle: 'Compound Interest Calculator UK — Daily, Monthly or Annual',
     priority: 1,
   },
   {
@@ -1497,7 +1497,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'paternity-pay-calculator',
     title: 'Statutory Paternity Pay Calculator',
-    description: 'Calculate SPP entitlement — 2 weeks at £194.32/week or 90% of AWE (whichever is lower).',
+    description: 'Work out Statutory Paternity Pay for 2026/27: 2 weeks at £194.32 a week or 90% of average weekly earnings, whichever is lower, and who qualifies.',
     category: 'pay',
     icon: 'Banknote',
     keywords: ['paternity pay', 'SPP', 'statutory paternity pay', 'paternity leave'],
@@ -1623,7 +1623,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'car-depreciation-calculator',
     title: 'Car Depreciation Calculator',
-    description: 'Estimate your car\'s value over time using average UK depreciation curves.',
+    description: 'Estimate what a new or used car will be worth year by year on an average UK depreciation curve, with the annual loss and the total value lost.',
     category: 'auto',
     icon: 'Car',
     keywords: ['car depreciation', 'car value', 'vehicle depreciation', 'resale value'],
@@ -1652,7 +1652,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   },
   // INSURANCE (additional)
   { slug: 'income-protection-calculator', title: 'Income Protection Calculator', description: 'Calculate the income protection cover you need and estimate monthly premiums by age, cover level and deferred period, from 4 to 52 weeks.', category: 'insurance', icon: 'ShieldCheck', keywords: ['income protection', 'income insurance', 'sick cover', 'disability insurance'], priority: 2 , metaTitle: 'Income Protection Calculator UK 2026' },
-  { slug: 'travel-insurance-calculator', title: 'Travel Insurance Calculator', description: 'Estimate travel insurance premiums for Europe and worldwide trips. Compare cover levels.', category: 'insurance', icon: 'ShieldCheck', keywords: ['travel insurance', 'holiday insurance', 'medical cover', 'trip insurance'], priority: 2 , metaTitle: 'Travel Insurance Calculator UK 2026' },
+  { slug: 'travel-insurance-calculator', title: 'Travel Insurance Calculator', description: 'Estimate UK travel insurance premiums for single trips or annual cover in Europe or worldwide, by cover level, trip length and travellers aged 65 or over.', category: 'insurance', icon: 'ShieldCheck', keywords: ['travel insurance', 'holiday insurance', 'medical cover', 'trip insurance'], priority: 2 , metaTitle: 'Travel Insurance Calculator UK 2026' },
   // LEGAL (additional)
   { slug: 'spousal-maintenance-calculator', title: 'Spousal Maintenance Calculator', description: 'Estimate spousal maintenance range for divorce. Based on income difference and length of marriage.', category: 'legal', icon: 'Scale', keywords: ['spousal maintenance', 'alimony', 'divorce maintenance', 'spousal support'], priority: 2 , metaTitle: 'Spousal Maintenance Calculator UK 2026' },
   // EDUCATION (additional)
@@ -1675,8 +1675,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'buy-to-let-yield-calculator', title: 'Buy-to-Let Yield Calculator', description: 'Calculate gross yield, net yield, monthly cash flow after mortgage interest and return on cash invested, including Stamp Duty, for buy-to-let investments.', category: 'mortgage', icon: 'Home', keywords: ['buy to let', 'BTL yield', 'rental return', 'property investment'], priority: 2, metaTitle: 'Buy-to-Let Yield Calculator UK 2026 — Gross & Net Rental Return' },
   { slug: 'ltv-calculator', title: 'Loan-to-Value (LTV) Calculator', description: 'Calculate your loan-to-value ratio and see exactly how much it cuts your mortgage rate across 60%/75%/85%/90%/95% tiers.', category: 'mortgage', icon: 'Home', keywords: ['LTV', 'loan to value', 'equity', 'mortgage ratio'], priority: 2, metaTitle: 'LTV Calculator UK 2026 — Loan-to-Value Ratio & Rate Tiers' },
   { slug: 'stamp-duty-additional-property-calculator', title: 'Stamp Duty Additional Property Calculator', description: 'Work out Stamp Duty on a buy-to-let or second home in England and Northern Ireland, with the 5% surcharge on every band and the extra over a main home.', category: 'tax', icon: 'Receipt', keywords: ['additional property', 'second home stamp duty', 'BTL stamp duty', '5% surcharge'], priority: 2 , metaTitle: 'Additional Property Stamp Duty 2026 (+5% Surcharge)' },
-  { slug: 'remortgage-calculator', title: 'Remortgage Calculator', description: 'Compare current vs new mortgage rate. See monthly savings, break-even and total cost including fees.', category: 'mortgage', icon: 'Home', keywords: ['remortgage', 'switch mortgage', 'mortgage renewal', 'save on mortgage'], priority: 1 , metaTitle: 'UK Remortgage Calculator 2026 — Save on Switch' },
-  { slug: 'debt-to-income-calculator', title: 'Debt-to-Income Ratio Calculator', description: 'Calculate your DTI ratio to see if lenders will approve your mortgage or loan application.', category: 'mortgage', icon: 'Home', keywords: ['debt to income', 'DTI', 'affordability', 'lending ratio'], priority: 2 , metaTitle: 'Debt-to-Income Ratio Calculator UK' },
+  { slug: 'remortgage-calculator', title: 'Remortgage Calculator', description: 'Compare your current mortgage rate with a new deal: monthly saving, break-even point and net saving after the early repayment charge and fees.', category: 'mortgage', icon: 'Home', keywords: ['remortgage', 'switch mortgage', 'mortgage renewal', 'save on mortgage'], priority: 1 , metaTitle: 'UK Remortgage Calculator 2026 — Save on Switch' },
+  { slug: 'debt-to-income-calculator', title: 'Debt-to-Income Ratio Calculator', description: 'Work out your debt-to-income ratio from gross monthly income and debt payments, with and without the mortgage, and see how lenders are likely to view it.', category: 'mortgage', icon: 'Home', keywords: ['debt to income', 'DTI', 'affordability', 'lending ratio'], priority: 2 , metaTitle: 'Debt-to-Income Ratio Calculator UK' },
   // LOANS (additional)
   { slug: 'apr-calculator', title: 'APR Calculator — True Interest Rate', description: 'Calculate the true Annual Percentage Rate of any loan from the amount borrowed and total repaid.', category: 'loans', icon: 'CreditCard', keywords: ['APR', 'annual percentage rate', 'true cost', 'interest rate'], priority: 2 , metaTitle: 'APR Calculator UK 2026 — True Loan Cost' },
   { slug: 'bnpl-calculator', title: 'Buy Now Pay Later Calculator', description: 'Calculate BNPL instalments for Pay in 3, Pay in 4 and interest-bearing plans, with late fees and your total monthly BNPL commitment.', category: 'loans', icon: 'CreditCard', keywords: ['BNPL', 'buy now pay later', 'Klarna', 'Clearpay', 'instalments'], priority: 2 , metaTitle: 'Buy Now Pay Later (BNPL) Cost Calculator UK 2026' },
@@ -1743,7 +1743,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'investment-return-calculator', title: 'Investment Return Calculator', description: 'Calculate nominal and real (inflation-adjusted) investment returns with monthly contributions, and see what the final pot is worth in today\'s money.', category: 'investment', icon: 'TrendingUp', keywords: ['investment return', 'portfolio growth', 'nominal return', 'real return'], priority: 1 , metaTitle: 'Investment Return Calculator UK 2026' },
   { slug: 'savings-interest-tax-calculator', title: 'Savings Interest Tax Calculator', description: 'Calculate tax on savings interest above your Personal Savings Allowance. See max tax-free savings.', category: 'investment', icon: 'TrendingUp', keywords: ['savings interest', 'PSA', 'personal savings allowance', 'tax on savings'], priority: 2 , metaTitle: 'Savings Interest Tax Calculator UK 2026/27' },
   { slug: 'real-return-calculator', title: 'Real Return Calculator (After Inflation)', description: 'Calculate the real return on investments after accounting for inflation. See purchasing power impact.', category: 'investment', icon: 'TrendingUp', keywords: ['real return', 'after inflation', 'purchasing power', 'inflation adjusted'], priority: 2 , metaTitle: 'Real Return Calculator UK 2026 (After Inflation)' },
-  { slug: 'rule-of-72-calculator', title: 'Rule of 72 Calculator', description: 'Estimate how long it takes to double your money at a given interest rate using the Rule of 72.', category: 'investment', icon: 'TrendingUp', keywords: ['rule of 72', 'doubling time', 'compound interest', 'money double'], priority: 2 , metaTitle: 'Rule of 72 Calculator — Investment Doubling' },
+  { slug: 'rule-of-72-calculator', title: 'Rule of 72 Calculator', description: 'Estimate how long it takes to double your money at a given interest rate with the Rule of 72, and compare it with the exact doubling time.', category: 'investment', icon: 'TrendingUp', keywords: ['rule of 72', 'doubling time', 'compound interest', 'money double'], priority: 2 , metaTitle: 'Rule of 72 Calculator — Investment Doubling' },
   { slug: 'cost-of-delay-calculator', title: 'Cost of Delay Calculator', description: 'See how much you lose by waiting to invest. Compare starting now vs delaying by 1-10+ years.', category: 'investment', icon: 'TrendingUp', keywords: ['cost of delay', 'start investing', 'compound growth', 'time in market'], priority: 2 , metaTitle: 'Cost of Delay Calculator — Not Investing' },
   // PAY
   { slug: 'teacher-pay-calculator', title: 'Teacher Pay Calculator', description: 'Calculate teacher salary by pay scale (M1-M6, UPS, Leadership). Includes London weighting and take-home pay.', category: 'pay', icon: 'Banknote', keywords: ['teacher pay', 'teacher salary', 'MPS', 'UPS', 'leadership pay'], priority: 2, metaTitle: 'UK Teacher Pay Calculator 2026/27 — M1-UPS3 Scales' },
@@ -1785,20 +1785,20 @@ export const CALCULATORS: CalculatorMeta[] = [
   // INSURANCE
   { slug: 'employers-liability-calculator', title: "Employers' Liability Insurance Calculator", description: "Estimate employers' liability insurance premiums by industry and annual wages. Legal requirement for UK businesses.", category: 'insurance', icon: 'ShieldCheck', keywords: ['employers liability', 'EL insurance', 'business insurance', 'employee insurance'], priority: 2 , metaTitle: 'Employers\' Liability Insurance Calculator UK 2026' },
   { slug: 'car-insurance-estimate-calculator', title: 'Car Insurance Estimate Calculator', description: 'Car insurance calculator for a UK estimate by age, cover level, no-claims years, insurance group 1-50 and mileage, with the estimated cost for every group.', category: 'insurance', icon: 'ShieldCheck', keywords: ['car insurance', 'motor insurance', 'NCB', 'insurance group', 'insurance quote'], priority: 1 , metaTitle: 'Car Insurance Calculator UK: Cost by Age & Insurance Group' },
-  { slug: 'home-insurance-calculator', title: 'Home Insurance Estimate Calculator', description: 'Estimate home insurance premiums for buildings, contents or combined cover by property type.', category: 'insurance', icon: 'ShieldCheck', keywords: ['home insurance', 'buildings insurance', 'contents insurance', 'house insurance'], priority: 2 , metaTitle: 'Home Insurance Calculator UK 2026' },
+  { slug: 'home-insurance-calculator', title: 'Home Insurance Estimate Calculator', description: 'Estimate UK home insurance premiums for buildings, contents or combined cover by property type, rebuild cost and contents value, based on ABI averages.', category: 'insurance', icon: 'ShieldCheck', keywords: ['home insurance', 'buildings insurance', 'contents insurance', 'house insurance'], priority: 2 , metaTitle: 'Home Insurance Calculator UK 2026' },
   { slug: 'critical-illness-calculator', title: 'Critical Illness Cover Calculator', description: 'Estimate critical illness insurance premiums by age, cover amount, term and smoker status.', category: 'insurance', icon: 'ShieldCheck', keywords: ['critical illness', 'CI cover', 'serious illness', 'cancer cover'], priority: 2 , metaTitle: 'Critical Illness Cover Calculator UK 2026' },
   // AUTO
   { slug: 'ev-savings-calculator', title: 'EV vs Petrol Running Cost Calculator', description: 'Compare annual running costs of an electric car vs petrol. See fuel, VED and servicing savings plus CO2 reduction.', category: 'auto', icon: 'Car', keywords: ['EV vs petrol', 'electric car savings', 'EV running cost', 'petrol vs electric'], priority: 1, isTrending: true , metaTitle: 'EV vs Petrol Running Cost Calculator UK 2026' },
   // TAX
-  { slug: 'blind-persons-allowance-calculator', title: "Blind Person's Allowance Calculator", description: "Calculate tax saving from Blind Person's Allowance (£3,250 extra tax-free income).", category: 'tax', icon: 'Receipt', keywords: ['blind person', 'BPA', 'sight impaired', 'disability allowance'], priority: 2 , metaTitle: 'Blind Person\'s Allowance Calculator UK 2026/27' },
+  { slug: 'blind-persons-allowance-calculator', title: "Blind Person's Allowance Calculator", description: "Work out the tax saved by Blind Person's Allowance in 2026/27: £3,250 added to your Personal Allowance, for England, Wales, NI and Scottish taxpayers.", category: 'tax', icon: 'Receipt', keywords: ['blind person', 'BPA', 'sight impaired', 'disability allowance'], priority: 2 , metaTitle: 'Blind Person\'s Allowance Calculator UK 2026/27' },
   { slug: 'property-cgt-calculator', title: 'Capital Gains Tax on Property Calculator', description: 'Calculate CGT on residential property sales with PPR relief, costs and improvements deductions.', category: 'tax', icon: 'Receipt', keywords: ['property CGT', 'house sale tax', 'PPR relief', 'residential CGT'], priority: 1 , metaTitle: 'Property CGT Calculator UK 2026/27 (24% Higher Rate)' },
   // EDUCATION
   { slug: 'weighted-grade-calculator', title: 'Weighted Average Grade Calculator', description: 'Calculate weighted average from assessment components with different weightings. See UK degree classification.', category: 'education', icon: 'GraduationCap', keywords: ['weighted average', 'weighted grade', 'module grades', 'assessment weighting'], priority: 2 , metaTitle: 'Weighted Grade Calculator UK' },
   // IMMIGRATION
   { slug: 'cost-of-living-comparison-calculator', title: 'UK Cost of Living Comparison', description: 'Compare cost of living between UK cities. See rent, food, transport differences and equivalent salary.', category: 'tools', icon: 'Globe', keywords: ['cost of living', 'city comparison', 'relocation', 'UK cities'], priority: 2 , metaTitle: 'UK Cost of Living Comparison Calculator 2026' },
   // PENSION
-  { slug: 'pension-annual-allowance-calculator', title: 'Pension Annual Allowance Calculator', description: 'Check your pension annual allowance (£60K), tapered allowance and MPAA. See if you face a tax charge.', category: 'pension', icon: 'PiggyBank', keywords: ['annual allowance', 'pension limit', 'taper', 'MPAA', 'pension tax charge'], priority: 2, financialYear: '2026-27', metaTitle: 'Pension Annual Allowance Calculator 2026' },
-  { slug: 'state-pension-age-calculator', title: 'State Pension Age Calculator', description: 'Find your State Pension age based on date of birth. See exact date and days remaining.', category: 'pension', icon: 'PiggyBank', keywords: ['state pension age', 'SPA', 'pension age', 'when can I retire'], priority: 1, metaTitle: 'UK State Pension Age Calculator — Check Your Pension Date' },
+  { slug: 'pension-annual-allowance-calculator', title: 'Pension Annual Allowance Calculator', description: 'Check your 2026/27 pension annual allowance: £60,000 standard, tapered allowance, MPAA and carry forward, and the tax charge on any excess at your rates.', category: 'pension', icon: 'PiggyBank', keywords: ['annual allowance', 'pension limit', 'taper', 'MPAA', 'pension tax charge'], priority: 2, financialYear: '2026-27', metaTitle: 'Pension Annual Allowance Calculator 2026' },
+  { slug: 'state-pension-age-calculator', title: 'State Pension Age Calculator', description: 'Find your State Pension age and the exact date you reach it from your date of birth, including the 2026 to 2028 rise to 67, with days remaining.', category: 'pension', icon: 'PiggyBank', keywords: ['state pension age', 'SPA', 'pension age', 'when can I retire'], priority: 1, metaTitle: 'UK State Pension Age Calculator — Check Your Pension Date' },
   // LOANS
   { slug: 'student-loan-early-repay-calculator', title: 'Should I Repay Student Loan Early?', description: 'Compare the total you pay with and without a lump sum, and repaying vs investing it. See if early repayment saves money or wastes it.', category: 'loans', icon: 'CreditCard', keywords: ['early repayment', 'student loan overpay', 'write off', 'plan 2 repay'], priority: 1 , metaTitle: 'Student Loan Early Repayment Calculator UK' },
   // PENSION
@@ -1812,7 +1812,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'settlement-agreement-calculator', title: 'Settlement Agreement Calculator', description: 'Estimate a settlement package: statutory redundancy at the £751 weekly cap, notice, holiday and ex-gratia pay, and the tax due above the £30,000 exemption.', category: 'pay', icon: 'Banknote', keywords: ['settlement agreement', 'compromise agreement', 'redundancy package', 'termination'], priority: 2 , metaTitle: 'Settlement Agreement Calculator UK 2026' },
   // MORTGAGE
   { slug: 'buy-to-let-mortgage-calculator', title: 'Buy-to-Let Mortgage Calculator', description: 'Calculate BTL mortgage payments (interest-only and repayment). Check rental coverage stress test.', category: 'mortgage', icon: 'Home', keywords: ['buy to let mortgage', 'BTL mortgage', 'rental coverage', 'landlord mortgage'], priority: 2 , metaTitle: 'Buy-to-Let Mortgage Calculator UK 2026' },
-  { slug: 'house-price-sqft-calculator', title: 'House Price per Square Foot Calculator', description: 'Calculate price per square foot/metre to compare property value. See how it compares to UK averages.', category: 'mortgage', icon: 'Home', keywords: ['price per sqft', 'price per square foot', 'property value', 'house price'], priority: 2 , metaTitle: 'UK House Price per Sq Ft Calculator' },
+  { slug: 'house-price-sqft-calculator', title: 'House Price per Square Foot Calculator', description: 'Work out price per square foot or square metre for any UK home, compare it with a UK average of about £265/sq ft and see what a local £/sq ft implies.', category: 'mortgage', icon: 'Home', keywords: ['price per sqft', 'price per square foot', 'property value', 'house price'], priority: 2 , metaTitle: 'UK House Price per Sq Ft Calculator' },
   { slug: 'lease-extension-calculator', title: 'Leasehold Extension Calculator', description: 'Estimate lease extension premium including marriage value, ground rent and professional fees.', category: 'mortgage', icon: 'Home', keywords: ['lease extension', 'leasehold', 'marriage value', 'ground rent', 'lease premium'], priority: 2 , metaTitle: 'Lease Extension Calculator UK 2026 — 90-Year Premium' },
   // LOANS
   { slug: 'student-loan-interest-calculator', title: 'Student Loan Interest Calculator', description: 'Calculate your student loan interest rate by income. See how fast your balance grows with compound interest.', category: 'loans', icon: 'CreditCard', keywords: ['student loan interest', 'RPI', 'loan balance', 'interest rate'], priority: 2 , metaTitle: 'Student Loan Interest Calculator UK 2026/27' },
@@ -1912,13 +1912,13 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'sole-trader-vs-ltd-comparison-calculator', title: 'Sole Trader vs Ltd Comparison Table', description: 'Side-by-side take-home pay comparison at 7 different profit levels (£20K-£100K).', category: 'business', icon: 'Briefcase', keywords: ['sole trader vs ltd table', 'comparison table', 'profit levels', 'when to incorporate'], priority: 1 , metaTitle: 'Sole Trader vs Ltd Side-by-Side Comparison UK 2026' },
   { slug: 'apprenticeship-levy-calculator', title: 'Apprenticeship Levy Calculator', description: 'Calculate apprenticeship levy at 0.5% of pay bill over £3M. See the monthly levy and the training fund it gives you.', category: 'business', icon: 'Briefcase', keywords: ['apprenticeship levy', 'training levy', 'pay bill', 'digital apprenticeship'], priority: 2 , metaTitle: 'Apprenticeship Levy Calculator UK 2026 (0.5%)' },
   // MORTGAGE
-  { slug: 'mortgage-early-repayment-calculator', title: 'Mortgage Early Repayment Calculator', description: 'Compare paying off your mortgage now (including ERC) vs continuing payments. See if it\'s worth it.', category: 'mortgage', icon: 'Home', keywords: ['early repayment', 'ERC', 'pay off mortgage', 'repayment charge'], priority: 2 , metaTitle: 'Mortgage Early Repayment Charge Calculator UK 2026' },
+  { slug: 'mortgage-early-repayment-calculator', title: 'Mortgage Early Repayment Calculator', description: 'Compare paying off your mortgage now with the early repayment charge against saving the cash until the ERC ends, then repaying with no charge.', category: 'mortgage', icon: 'Home', keywords: ['early repayment', 'ERC', 'pay off mortgage', 'repayment charge'], priority: 2 , metaTitle: 'Mortgage Early Repayment Charge Calculator UK 2026' },
   // PAY
   { slug: 'shared-parental-pay-calculator', title: 'Shared Parental Pay (ShPP) Quick Calculator', description: 'Quick calculation of Shared Parental Pay at £194.32/week or 90% of salary.', category: 'pay', icon: 'Banknote', keywords: ['shared parental pay', 'ShPP', 'parental leave pay'], priority: 2 , metaTitle: 'UK Shared Parental Pay Calculator 2026/27' },
   // MORTGAGE
   { slug: 'home-buying-total-cost-calculator', title: 'Home Buying Total Cost Calculator', description: 'Calculate every cost of buying a home — deposit, stamp duty, solicitor, survey, searches, and monthly mortgage.', category: 'mortgage', icon: 'Home', keywords: ['home buying cost', 'buying a house', 'total cost', 'first time buyer costs'], priority: 1 , metaTitle: 'UK Home Buying Total Cost Calculator 2026' },
   // TAX
-  { slug: 'council-tax-reduction-calculator', title: 'Council Tax Reduction Calculator', description: 'Check which council tax discounts and exemptions you qualify for — single person, student, disabled, care leaver.', category: 'tax', icon: 'Receipt', keywords: ['council tax reduction', 'CT discount', 'single person discount', 'student exemption'], priority: 2 , metaTitle: 'Council Tax Reduction Calculator UK 2026' },
+  { slug: 'council-tax-reduction-calculator', title: 'Council Tax Reduction Calculator', description: 'Estimate your council tax bill after discounts, exemptions and Council Tax Reduction, with the disabled band reduction for England, Scotland and Wales.', category: 'tax', icon: 'Receipt', keywords: ['council tax reduction', 'CT discount', 'single person discount', 'student exemption'], priority: 2 , metaTitle: 'Council Tax Reduction Calculator UK 2026' },
   // EDUCATION
   { slug: 'student-budget-planner-calculator', title: 'Student Budget Planner', description: 'Plan your weekly student budget with income from loan, job and parents against term-time expenses.', category: 'education', icon: 'GraduationCap', keywords: ['student budget', 'university budget', 'term budget', 'weekly budget'], priority: 2 , metaTitle: 'Student Budget Planner UK 2026' },
   // BENEFITS
@@ -1933,7 +1933,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'invoice-profit-calculator', title: 'Invoice & Job Profit Calculator', description: 'Calculate profit margin and markup on jobs. Add VAT and generate invoice total.', category: 'business', icon: 'Briefcase', keywords: ['invoice', 'job profit', 'margin', 'markup', 'quote'], priority: 2 , metaTitle: 'Invoice Profit Calculator UK 2026' },
   { slug: 'employee-vs-contractor-calculator', title: 'Employee vs Contractor Calculator', description: 'Compare take-home pay as an employee vs contractor for the same total cost to the hiring company.', category: 'business', icon: 'Briefcase', keywords: ['employee vs contractor', 'perm vs contract', 'PAYE vs Ltd', 'employment status'], priority: 2 , metaTitle: 'Employee vs Contractor Calculator UK 2026' },
   // ENERGY
-  { slug: 'standing-charge-savings-calculator', title: 'Standing Charge Savings Calculator', description: 'Calculate how much you pay in standing charges alone. Compare zero standing charge tariffs.', category: 'energy', icon: 'Zap', keywords: ['standing charge', 'zero standing', 'fixed charge', 'energy standing'], priority: 2 , metaTitle: 'Standing Charge Savings Calculator UK 2026' },
+  { slug: 'standing-charge-savings-calculator', title: 'Standing Charge Savings Calculator', description: 'See what UK standing charges cost you a year and whether a lower standing charge tariff, with higher unit rates, would save money at your usage.', category: 'energy', icon: 'Zap', keywords: ['standing charge', 'zero standing', 'fixed charge', 'energy standing'], priority: 2 , metaTitle: 'Standing Charge Savings Calculator UK 2026' },
   { slug: 'gas-cost-calculator', title: 'Gas Cost Calculator', description: 'Calculate annual gas bill from kWh usage, unit rate and standing charge.', category: 'energy', icon: 'Zap', keywords: ['gas cost', 'gas bill', 'gas calculator', 'gas usage'], priority: 2 , metaTitle: 'Gas Cost Calculator UK 2026' },
   // MATH
   { slug: 'exponent-calculator', title: 'Exponent / Power Calculator', description: 'Calculate any number raised to any power. See common powers of your base number.', category: 'math', icon: 'Calculator', keywords: ['exponent', 'power', 'raised to', 'indices', 'powers'], priority: 2 , metaTitle: 'Exponent Calculator — Powers and Roots' },
@@ -1953,7 +1953,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'freelance-quote-calculator', title: 'Freelance Quote Calculator', description: 'Build a quote from hourly rate, hours and materials. Add profit margin and VAT.', category: 'business', icon: 'Briefcase', keywords: ['freelance quote', 'job quote', 'estimate', 'pricing'], priority: 2 , metaTitle: 'Freelance Quote Calculator UK 2026' },
   // ADDED JULY 2026
   { slug: 'winter-fuel-payment-calculator', title: 'Winter Fuel Payment Calculator', description: 'Check if you get the 2026/27 Winter Fuel Payment, how much — and whether HMRC claws it back over the £35,000 income limit.', category: 'benefits', icon: 'Shield', keywords: ['winter fuel payment', 'winter fuel allowance', '£35000 threshold', 'pensioner payment', 'WFP opt out', 'pension age winter heating'], priority: 1, financialYear: '2026-27', isNew: true, isTrending: true, metaTitle: 'Winter Fuel Payment Calculator 2026/27 — £35k Income Test' },
-  { slug: 'pro-rata-salary-calculator', title: 'Pro-Rata Salary Calculator', description: 'Work out part-time or term-time-only pay from a full-time salary — with holiday entitlement and hourly rate.', category: 'pay', icon: 'Banknote', keywords: ['pro rata', 'pro rata salary', 'part time salary', 'term time only', 'TTO pay', 'FTE salary', 'reduced hours'], priority: 1, isNew: true, metaTitle: 'Pro-Rata Salary Calculator UK 2026 — Part-Time & Term-Time Pay' },
+  { slug: 'pro-rata-salary-calculator', title: 'Pro-Rata Salary Calculator', description: 'Work out part-time or term-time-only pay from a full-time salary, with statutory holiday, the hourly rate and a check against the 2026 minimum wage.', category: 'pay', icon: 'Banknote', keywords: ['pro rata', 'pro rata salary', 'part time salary', 'term time only', 'TTO pay', 'FTE salary', 'reduced hours'], priority: 1, isNew: true, metaTitle: 'Pro-Rata Salary Calculator UK — Part-Time and Term-Time Pay' },
   { slug: 'pension-emergency-tax-calculator', title: 'Pension Emergency Tax Calculator', description: 'See how much emergency Month-1 tax is withheld from your first pension withdrawal, your real tax due — and which form (P55, P53Z, P50Z) gets the refund.', category: 'pension', icon: 'PiggyBank', keywords: ['emergency tax pension', 'pension withdrawal tax', 'month 1 tax code', 'P55', 'P53Z', 'P50Z', 'pension lump sum tax refund'], priority: 1, financialYear: '2026-27', isNew: true, metaTitle: 'Pension Emergency Tax Calculator 2026/27 — Month-1 Refund' },
   { slug: 'tax-refund-calculator', title: 'Tax Refund Calculator', description: 'Estimate your PAYE tax refund if you stopped working mid-year — plus a checklist of rebates people commonly miss.', category: 'tax', icon: 'Receipt', keywords: ['tax refund', 'tax rebate', 'PAYE refund', 'P800', 'P50', 'overpaid tax', 'am I owed tax back'], priority: 1, financialYear: '2026-27', isNew: true, metaTitle: 'UK Tax Refund Calculator 2026/27 — Am I Owed a Rebate?' },
   { slug: 'tax-year-comparison-calculator', title: 'Tax Year Comparison Calculator', description: 'Compare your take-home pay in 2025/26 vs 2026/27 side by side — income tax, NI, student loan and dividend changes.', category: 'tax', icon: 'Receipt', keywords: ['tax year comparison', '2025/26 vs 2026/27', 'april 2026 changes', 'fiscal drag', 'new tax year'], priority: 1, financialYear: '2026-27', isNew: true, metaTitle: 'Tax Year Comparison 2025/26 vs 2026/27 — What Changed in April' },

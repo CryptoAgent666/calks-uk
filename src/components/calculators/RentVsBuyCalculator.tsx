@@ -95,7 +95,7 @@ const moneyClass = 'w-full rounded-xl border border-input bg-background px-8 py-
 export default function RentVsBuyCalculator() {
   const [price, setPrice] = useState('300000')
   const [deposit, setDeposit] = useState('30000')
-  const [rate, setRate] = useState('5.73')
+  const [rate, setRate] = useState('5.93')
   const [term, setTerm] = useState('25')
   const [rent, setRent] = useState('1200')
   const [hGrowth, setHGrowth] = useState('3')
@@ -122,7 +122,7 @@ export default function RentVsBuyCalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div><label className="block text-sm font-medium mb-2">Property Price</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={price} onChange={(e) => setPrice(e.target.value)} className={moneyClass} aria-label="Property Price" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Deposit</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={deposit} onChange={(e) => setDeposit(e.target.value)} className={moneyClass} aria-label="Deposit" /></div></div>
-        <div><label className="block text-sm font-medium mb-2">Mortgage Rate (%)</label><input type="number" min="0" max="15" step="0.01" value={rate} onChange={(e) => setRate(e.target.value)} className={inputClass} aria-label="Mortgage Rate (%)" /><p className="text-xs text-muted-foreground mt-1">5.73% = average 2-year fix, Moneyfacts, 15 Sep 2026</p></div>
+        <div><label className="block text-sm font-medium mb-2">Mortgage Rate (%)</label><input type="number" min="0" max="15" step="0.01" value={rate} onChange={(e) => setRate(e.target.value)} className={inputClass} aria-label="Mortgage Rate (%)" /><p className="text-xs text-muted-foreground mt-1">5.93% = average 2-year fix, Moneyfacts, start of Oct 2026</p></div>
         <div><label className="block text-sm font-medium mb-2">Mortgage Term (years)</label><input type="number" min="1" max="40" value={term} onChange={(e) => setTerm(e.target.value)} className={inputClass} aria-label="Mortgage Term (years)" /></div>
         <div><label className="block text-sm font-medium mb-2">Monthly Rent</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={rent} onChange={(e) => setRent(e.target.value)} className={moneyClass} aria-label="Monthly Rent" /></div></div>
         <div><label className="block text-sm font-medium mb-2">House Price Growth (%/yr)</label><input type="number" min="-5" max="15" step="0.5" value={hGrowth} onChange={(e) => setHGrowth(e.target.value)} className={inputClass} aria-label="House Price Growth (%/yr)" /></div>

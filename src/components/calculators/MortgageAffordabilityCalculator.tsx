@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-const AVG_RATE = 5.73 // Moneyfacts average 2-year fixed rate, 15 Sep 2026
+const AVG_RATE = 5.93 // Moneyfacts average 2-year fixed rate, start of October 2026 (data as at 1st of month)
 const TERM_YEARS = 25
 const MIN_DEPOSIT_PCT = 5 // most lenders stop at 95% loan-to-value
 
@@ -104,7 +104,7 @@ export default function MortgageAffordabilityCalculator() {
             ) : (
               <p><span className="font-medium text-foreground">Limited by your income.</span> {m}x combined income of {formatCurrency(result.totalIncome)} is {formatCurrency(result.incomeBorrow)}{result.commitmentCut > 0 ? `, less ${formatCurrency(result.commitmentCut)} for ${formatCurrency(c)} a month of commitments` : ''}, plus your {formatCurrency(d)} deposit.</p>
             )}
-            <p className="mt-1">Monthly payment on a {TERM_YEARS}-year repayment mortgage at {AVG_RATE}%, the Moneyfacts average two-year fixed rate (15 Sep 2026). Commitments are deducted as the loan the same monthly sum would repay at that rate.</p>
+            <p className="mt-1">Monthly payment on a {TERM_YEARS}-year repayment mortgage at {AVG_RATE}%, the Moneyfacts average two-year fixed rate at the start of October 2026. Commitments are deducted as the loan the same monthly sum would repay at that rate.</p>
             <p className="mt-1">Most UK lenders offer 4-4.5x income, and some high-street lenders go to 5-5.5x for higher earners. Each lender also runs its own affordability check, so real offers vary.</p>
           </div>
         </div>

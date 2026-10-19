@@ -2,13 +2,16 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 function calculate(balance: number, rate: number, termYears: number, monthlyOverpayment: number) {
-  const monthlyRate = rate / 100 / 12
-  const totalPayments = termYears * 12
+  const monthlyRate = Math.max(0, rate) / 100 / 12
+  const totalPayments = Math.round(termYears * 12)
+  monthlyOverpayment = Math.max(0, monthlyOverpayment)
 
-  if (monthlyRate === 0 || balance <= 0) return null
+  if (balance <= 0 || totalPayments <= 0) return null
 
-  // Without overpayment
-  const normalMonthly = balance * (monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) / (Math.pow(1 + monthlyRate, totalPayments) - 1)
+  // Without overpayment (a 0% rate simply splits the balance over the term)
+  const normalMonthly = monthlyRate > 0
+    ? balance * (monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) / (Math.pow(1 + monthlyRate, totalPayments) - 1)
+    : balance / totalPayments
   const normalTotalPaid = normalMonthly * totalPayments
   const normalInterest = normalTotalPaid - balance
 
@@ -18,7 +21,7 @@ function calculate(balance: number, rate: number, termYears: number, monthlyOver
   let totalInterestWithOP = 0
   const totalMonthlyWithOP = normalMonthly + monthlyOverpayment
 
-  while (bal > 0 && monthsPaid < totalPayments) {
+  while (bal > 0.005 && monthsPaid < totalPayments) {
     const interest = bal * monthlyRate
     totalInterestWithOP += interest
     const principalPayment = totalMonthlyWithOP - interest
@@ -55,8 +58,8 @@ export default function MortgageOverpaymentCalculator() {
 
   const b = parseFloat(balance.replace(/,/g, '')) || 0
   const r = parseFloat(rate) || 0
-  const t = parseInt(term) || 0
-  const o = parseFloat(overpayment.replace(/,/g, '')) || 0
+  const t = parseFloat(term) || 0
+  const o = Math.max(0, parseFloat(overpayment.replace(/,/g, '')) || 0)
   const result = useMemo(() => calculate(b, r, t, o), [b, r, t, o])
 
   return (
