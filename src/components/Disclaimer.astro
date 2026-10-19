@@ -52,6 +52,11 @@ const SOURCE_BY_SLUG: Record<string, string> = {
   // not student finance, lending or UKVI: statute and statistics instead
   'cost-of-living-comparison-calculator': 'ONS and GOV.UK council tax data',
   'service-charge-calculator': 'the Landlord and Tenant Act 1985 and GOV.UK leasehold guidance',
+  // London road-user charges are TfL's, not DVLA's
+  'ulez-calculator': 'Transport for London (TfL)',
+  'congestion-charge-calculator': 'Transport for London (TfL)',
+  // legal minimums from HSE and the 1969 Act; premium rates are the site's own indicative assumptions
+  'employers-liability-calculator': "HSE guidance and the Employers' Liability (Compulsory Insurance) Act 1969, with indicative premium rates,",
 }
 
 const GRADE_SLUGS = new Set(['gcse-grade-calculator', 'a-level-grade-calculator', 'gpa-calculator', 'exam-score-calculator', 'weighted-grade-calculator', 'progress-8-calculator', 'ks2-sats-scaled-score-calculator', 'degree-classification-calculator'])

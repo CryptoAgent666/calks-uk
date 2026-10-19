@@ -21,6 +21,11 @@ const VERIFICATION_BY_SLUG: Record<string, string> = {
   'degree-classification-calculator': 'Checked against published university regulations, 2026; classification is indicative',
   'cost-of-living-comparison-calculator': 'Checked against ONS and GOV.UK council tax data, 2026',
   'service-charge-calculator': 'Checked against the Landlord and Tenant Act 1985 and GOV.UK leasehold guidance',
+  // London road-user charges are set by TfL, not DVLA
+  'ulez-calculator': 'Checked against Transport for London (TfL) 2026 charges',
+  'congestion-charge-calculator': 'Checked against Transport for London (TfL) 2026 charges',
+  // the legal figures come from HSE and the 1969 Act; the premium rates are the site's own indicative assumptions
+  'employers-liability-calculator': 'Checked against HSE guidance and the 1969 Act; premium rates are indicative',
 }
 
 // Money/regulatory categories carry a dated verification badge; utility

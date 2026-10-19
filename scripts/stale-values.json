@@ -2729,6 +2729,678 @@
    "was": "Four routes lead to that figure",
    "now": "several routes under Appendix FM-SE",
    "what": "spouse_visa_income_routes (round 10)"
+  },
+  {
+   "was": "Calculator 2026 (£15)",
+   "now": "eighteen pounds a day in the title",
+   "what": "congestion_charge_meta_title (round 11)"
+  },
+  {
+   "was": "exempt through the Cleaner Vehicle Discount",
+   "now": "EVs get a quarter off on Auto Pay, not an exemption",
+   "what": "congestion_charge_ev_exemption_prose (round 11)"
+  },
+  {
+   "was": "registered with TfL are exempt",
+   "now": "EVs get a quarter off on Auto Pay, not an exemption",
+   "what": "congestion_charge_ev_exemption_faq (round 11)"
+  },
+  {
+   "was": "hybrid models qualify for a discount",
+   "now": "no hybrid discount exists",
+   "what": "congestion_charge_hybrid_discount (round 11)"
+  },
+  {
+   "was": "Some hybrids qualify",
+   "now": "no hybrid discount exists",
+   "what": "congestion_charge_hybrid_discount_faq (round 11)"
+  },
+  {
+   "was": "four to five years",
+   "now": "residents' discount renewed yearly with a registration fee",
+   "what": "congestion_charge_residents_duration (round 11)",
+   "ctx": "[Rr]esident"
+  },
+  {
+   "was": "Bath charges £9 a day for private cars",
+   "now": "Bath Class C does not charge private cars",
+   "what": "caz_bath_private_cars (round 11)"
+  },
+  {
+   "was": "Bath asks £9 a day from private cars",
+   "now": "Bath Class C does not charge private cars",
+   "what": "caz_bath_private_cars_faq (round 11)"
+  },
+  {
+   "was": "Manchester cancelled its scheme",
+   "now": "Greater Manchester paused, then dropped charging",
+   "what": "caz_manchester_status (round 11)"
+  },
+  {
+   "was": "Auto Pay saves vs daily payment",
+   "now": "Auto Pay costs the same, avoids the late rate",
+   "what": "congestion_charge_autopay_note (round 11)"
+  },
+  {
+   "was": "CVD ended Dec 2025",
+   "now": "quarter-off Cleaner Vehicle Discount on Auto Pay",
+   "what": "congestion_charge_ev_label (round 11)"
+  },
+  {
+   "was": "up to 1 month before the due date",
+   "now": "a month minus a day before",
+   "what": "mot_early_window_component (round 11)"
+  },
+  {
+   "was": "up to one month before the expiry",
+   "now": "a month minus a day before",
+   "what": "mot_early_window_prose (round 11)"
+  },
+  {
+   "was": "exempt from emissions testing specifically",
+   "now": "pre-March-twenty-fifteen electric goods vehicles need no MOT",
+   "what": "mot_electric_goods_exemption (round 11)"
+  },
+  {
+   "was": "skip emissions testing",
+   "now": "pre-March-twenty-fifteen electric goods vehicles need no MOT",
+   "what": "mot_electric_goods_exemption_faq (round 11)"
+  },
+  {
+   "was": "Estimated total MOT cost: £180",
+   "now": "date example replaces the cost example",
+   "what": "mot_cost_example (round 11)"
+  },
+  {
+   "was": "8-year-old Ford Fiesta",
+   "now": "date example replaces the cost example",
+   "what": "mot_cost_example_title (round 11)"
+  },
+  {
+   "was": "estimates the test fee plus likely repairs",
+   "now": "tool shows due date and earliest keep-date test",
+   "what": "mot_tool_description (round 11)"
+  },
+  {
+   "was": "5 times the daily anytime",
+   "now": "three to four times the Anytime Day Return",
+   "what": "rail_weekly_multiplier_prose (round 11)"
+  },
+  {
+   "was": "Annual with 26-30 Railcard",
+   "now": "adult Railcards do not discount season tickets",
+   "what": "rail_railcard_season_example (round 11)"
+  },
+  {
+   "was": "discounts can be applied to annual season tickets",
+   "now": "adult Railcards do not discount season tickets",
+   "what": "rail_railcard_season_prose (round 11)"
+  },
+  {
+   "was": "2872",
+   "now": "adult Railcards do not discount season tickets",
+   "what": "rail_railcard_season_figure (round 11)",
+   "ctx": "Railcard|annual"
+  },
+  {
+   "was": "£34.90",
+   "now": "Brighton Anytime Day Return at the October fare",
+   "what": "rail_brighton_day_return (round 11)",
+   "ctx": "Brighton|anytime|Anytime"
+  },
+  {
+   "was": "£107.70",
+   "now": "Brighton seven-day season at the October fare",
+   "what": "rail_brighton_weekly (round 11)",
+   "ctx": "season|weekly|Weekly"
+  },
+  {
+   "was": "£413.60",
+   "now": "Brighton monthly from the standard ratio",
+   "what": "rail_brighton_monthly (round 11)"
+  },
+  {
+   "was": "4308",
+   "now": "Brighton annual from forty weeks",
+   "what": "rail_brighton_annual (round 11)",
+   "ctx": "annual|Annual|season|Brighton"
+  },
+  {
+   "was": "£2,392.80",
+   "now": "Brighton saving recomputed",
+   "what": "rail_brighton_saving (round 11)"
+  },
+  {
+   "was": "each cost £30 a year",
+   "now": "Railcards thirty-five pounds, Disabled Persons twenty",
+   "what": "railcard_price (round 11)"
+  },
+  {
+   "was": "Railcard costs £30 a year",
+   "now": "Railcards thirty-five pounds a year",
+   "what": "railcard_price_student_pages (round 11)"
+  },
+  {
+   "was": "£24.10",
+   "now": "TfL Zones one to six Day Anytime at the twenty-twenty-six fare",
+   "what": "tfl_z16_day_travelcard (round 11)",
+   "ctx": "Travelcard|Zone"
+  },
+  {
+   "was": "5302",
+   "now": "TfL Zones one to six daily total recomputed",
+   "what": "tfl_z16_daily_total (round 11)",
+   "ctx": "Travelcard|working days|daily"
+  },
+  {
+   "was": "four or more people travelling",
+   "now": "GroupSave is for three to nine people",
+   "what": "rail_groupsave_size (round 11)"
+  },
+  {
+   "was": "around 20% against",
+   "now": "Flexi is at least a fifth below the monthly season",
+   "what": "rail_flexi_benchmark (round 11)",
+   "ctx": "[Ff]lexi|daily"
+  },
+  {
+   "was": "dailyCost * 5 * 0.85",
+   "now": "weekly at three point six times the day return",
+   "what": "rail_weekly_multiplier_code (round 11)"
+  },
+  {
+   "was": "* 52 / 12 * 0.92",
+   "now": "monthly at three point eight four times weekly",
+   "what": "rail_monthly_multiplier_code (round 11)"
+  },
+  {
+   "was": "worth 8 to 12 weeks a year",
+   "now": "twelve monthlies cost about forty-six weeks",
+   "what": "rail_monthly_saving_weeks (round 11)"
+  },
+  {
+   "was": "the equivalent of 8 to 12 weeks a year",
+   "now": "twelve monthlies cost about forty-six weeks",
+   "what": "rail_monthly_saving_weeks_faq (round 11)"
+  },
+  {
+   "was": "50 to 60%",
+   "now": "Ofgem Annex one shares for the quarter",
+   "what": "ofgem_cap_breakdown (round 11)",
+   "ctx": "wholesale"
+  },
+  {
+   "was": "premium of 5 to 15%",
+   "now": "fixes priced off the wholesale curve",
+   "what": "fixed_tariff_premium_claim (round 11)"
+  },
+  {
+   "was": "5 to 15% over the current cap",
+   "now": "fixes priced off the wholesale curve",
+   "what": "fixed_tariff_premium_claim_faq (round 11)"
+  },
+  {
+   "was": "see what switching would save",
+   "now": "tool shows per-fuel totals and standing charges",
+   "what": "energy_bill_tool_description (round 11)"
+  },
+  {
+   "was": "watts: 150, defaultHours: 24",
+   "now": "fridge-freezer average draw thirty watts",
+   "what": "fridge_freezer_preset (round 11)"
+  },
+  {
+   "was": "61p an hour",
+   "now": "tumble dryer at the October cap",
+   "what": "electricity_cost_faq_dryer (round 11)",
+   "ctx": "dryer"
+  },
+  {
+   "was": "£8.40 a day",
+   "now": "heat pump day cost at the October cap",
+   "what": "electricity_cost_faq_heat_pump (round 11)",
+   "ctx": "heat pump"
+  },
+  {
+   "was": "£285.90",
+   "now": "LED example at the October cap",
+   "what": "led_faq_running_cost (round 11)"
+  },
+  {
+   "was": "£241.45",
+   "now": "LED example at the October cap",
+   "what": "led_faq_saving (round 11)",
+   "ctx": "LED|bulb|outlay"
+  },
+  {
+   "was": "12 and 24 months",
+   "now": "LED payback a few months",
+   "what": "led_payback_months (round 11)",
+   "ctx": "bulb|LED|payback"
+  },
+  {
+   "was": "return of 100 to 200%",
+   "now": "LED payback a few months",
+   "what": "led_return_claim (round 11)"
+  },
+  {
+   "was": "50 to 60% less",
+   "now": "around four-fifths less than halogen",
+   "what": "led_vs_halogen (round 11)",
+   "ctx": "halogen"
+  },
+  {
+   "was": "required LED lighting",
+   "now": "Part L lumens per circuit-watt",
+   "what": "led_part_l (round 11)"
+  },
+  {
+   "was": "semi: 160",
+   "now": "EST figure for a single-glazed semi",
+   "what": "double_glazing_semi_saving (round 11)"
+  },
+  {
+   "was": "detached: 235",
+   "now": "scaled from the EST semi figure",
+   "what": "double_glazing_detached_saving (round 11)"
+  },
+  {
+   "was": "£100 to £200",
+   "now": "EST figure for a single-glazed semi",
+   "what": "double_glazing_est_saving (round 11)",
+   "ctx": "Energy Saving Trust|single glazing|glaz"
+  },
+  {
+   "was": "1990s units to modern A++",
+   "now": "EST publishes no figure for old double glazing",
+   "what": "double_glazing_1990s_claim (round 11)"
+  },
+  {
+   "was": "A++ down to G",
+   "now": "A++ down to E",
+   "what": "double_glazing_wer_scale (round 11)"
+  },
+  {
+   "was": "DCLG-approved",
+   "now": "government-authorised competent person scheme",
+   "what": "double_glazing_cps_name (round 11)"
+  },
+  {
+   "was": "visible from the highway need planning permission",
+   "now": "check Article Four directions",
+   "what": "double_glazing_conservation_area (round 11)"
+  },
+  {
+   "was": "36.7 years",
+   "now": "example rebuilt from the EST figure",
+   "what": "double_glazing_example_payback (round 11)"
+  },
+  {
+   "was": "every UK home at EPC C",
+   "now": "PRS and fuel-poor targets, wider aspiration later",
+   "what": "epc_whole_stock_target (round 11)"
+  },
+  {
+   "was": "39% of UK homes",
+   "now": "English Housing Survey shares",
+   "what": "epc_stock_share (round 11)"
+  },
+  {
+   "was": "illegal since 2018",
+   "now": "new tenancies from April, all tenancies two years later",
+   "what": "mees_fg_dates (round 11)",
+   "ctx": "F or G|F and G"
+  },
+  {
+   "was": "will require every privately rented home",
+   "now": "Band C equivalent is a target, regulations not laid",
+   "what": "mees_band_c_as_law (round 11)"
+  },
+  {
+   "was": "Yes, by 1 October 2030",
+   "now": "Band C equivalent is a target, regulations not laid",
+   "what": "mees_band_c_as_law_faq (round 11)"
+  },
+  {
+   "was": "must reach Band C by 1 October 2030",
+   "now": "Band C equivalent is a target, regulations not laid",
+   "what": "mees_band_c_as_law_epc_page (round 11)"
+  },
+  {
+   "was": "confirmed that every privately rented home",
+   "now": "Band C equivalent is a target, regulations not laid",
+   "what": "mees_band_c_as_law_epc_prose (round 11)"
+  },
+  {
+   "was": "up to three properties side by side",
+   "now": "tool compares two bands",
+   "what": "epc_tool_description (round 11)"
+  },
+  {
+   "was": "costs £2,000 more even after upgrades",
+   "now": "example rebuilt from tool figures",
+   "what": "epc_example_last_step (round 11)"
+  },
+  {
+   "was": "4855",
+   "now": "Northern Ireland fee cap for the current year",
+   "what": "ni_tuition_fee_cap (round 11)",
+   "ctx": "Northern Ir"
+  },
+  {
+   "was": "worth 56 at A and 48 at B",
+   "now": "Welsh Bacc on the A-level scale",
+   "what": "ucas_welsh_bacc (round 11)"
+  },
+  {
+   "was": "120 for a Merit to 72 for a Pass",
+   "now": "T Level pass split at C",
+   "what": "ucas_t_level_pass (round 11)"
+  },
+  {
+   "was": "UCAT or BMAT",
+   "now": "UCAT only",
+   "what": "ucas_bmat_withdrawn (round 11)"
+  },
+  {
+   "was": "ENGAA or NSAA",
+   "now": "ESAT or TMUA",
+   "what": "ucas_cambridge_tests (round 11)"
+  },
+  {
+   "was": "Adjustment works the other way",
+   "now": "Adjustment no longer exists",
+   "what": "ucas_adjustment (round 11)"
+  },
+  {
+   "was": "30,000 places",
+   "now": "Clearing placed more than seventy thousand",
+   "what": "ucas_clearing_places (round 11)",
+   "ctx": "Clearing|places"
+  },
+  {
+   "was": "third Thursday of August",
+   "now": "a Thursday in mid-August",
+   "what": "ucas_results_day (round 11)"
+  },
+  {
+   "was": "144 to 160 band",
+   "now": "band arithmetic corrected",
+   "what": "ucas_band_top (round 11)"
+  },
+  {
+   "was": "96 to 128, roughly CCC to BBC",
+   "now": "CCC to ABB",
+   "what": "ucas_band_low (round 11)"
+  },
+  {
+   "was": "128 to 144, or AAB",
+   "now": "AAB is one-three-six",
+   "what": "ucas_band_mid (round 11)"
+  },
+  {
+   "was": "held at the 6% ceiling",
+   "now": "temporary cap to end of August twenty twenty-seven",
+   "what": "pg_interest_cap_wording (round 11)"
+  },
+  {
+   "was": "which the 6% ceiling currently holds",
+   "now": "temporary cap to end of August twenty twenty-seven",
+   "what": "pg_interest_cap_wording_other_pages (round 11)"
+  },
+  {
+   "was": "RPI + 3% ({PG_INTEREST}%)",
+   "now": "RPI plus three, temporarily capped",
+   "what": "pg_interest_label_code (round 11)"
+  },
+  {
+   "was": "sits on Plan 3",
+   "now": "Postgraduate Loan plan",
+   "what": "pg_plan_name (round 11)"
+  },
+  {
+   "was": "spread across three years",
+   "now": "split equally across the course years",
+   "what": "doctoral_loan_split (round 11)",
+   "ctx": "[Dd]octoral"
+  },
+  {
+   "was": "five to eight years",
+   "now": "five to nine years",
+   "what": "pg_clear_years (round 11)",
+   "ctx": "postgraduate|clears"
+  },
+  {
+   "was": "Year 10 (salary ~£42,300)",
+   "now": "year eleven",
+   "what": "pg_example_year (round 11)"
+  },
+  {
+   "was": "Most graduates never repay in full",
+   "now": "just over half of Plan Five borrowers repay",
+   "what": "plan5_repay_share_prose (round 11)"
+  },
+  {
+   "was": "Most graduates won't repay in full",
+   "now": "just over half of Plan Five borrowers repay",
+   "what": "plan5_repay_share_note (round 11)"
+  },
+  {
+   "was": "~£62,400",
+   "now": "example total recomputed",
+   "what": "university_cost_example_total (round 11)"
+  },
+  {
+   "was": "You need to be a UK resident, under 60",
+   "now": "normally live in England",
+   "what": "pg_eligibility_faq (round 11)"
+  },
+  {
+   "was": "towards farm equipment",
+   "now": "FETF per theme; round closed in May",
+   "what": "fetf_wording (round 11)"
+  },
+  {
+   "was": "up to £35,000 per business",
+   "now": "per application for the boundaries group",
+   "what": "capital_grants_cap_wording (round 11)"
+  },
+  {
+   "was": "£33 for a three-month",
+   "now": "three-month PPC at thirty-two pounds five",
+   "what": "prescription_ppc_3m (round 11)"
+  },
+  {
+   "was": "£311,000",
+   "now": "JISA six per cent projection recomputed",
+   "what": "jisa_p2_total (round 11)"
+  },
+  {
+   "was": "149,000 is <a",
+   "now": "JISA six per cent projection recomputed",
+   "what": "jisa_p2_return (round 11)",
+   "ctx": "investment-return-calculator"
+  },
+  {
+   "was": "£103,400",
+   "now": "JISA example recomputed",
+   "what": "jisa_example_total (round 11)"
+  },
+  {
+   "was": "£49,400 tax-free",
+   "now": "JISA example recomputed",
+   "what": "jisa_example_gain (round 11)"
+  },
+  {
+   "was": "£70,100",
+   "now": "JISA cash example recomputed",
+   "what": "jisa_example_cash (round 11)"
+  },
+  {
+   "was": "£33,300 less",
+   "now": "JISA example gap recomputed",
+   "what": "jisa_example_gap (round 11)"
+  },
+  {
+   "was": "£42,500",
+   "now": "JISA seven per cent figure recomputed",
+   "what": "jisa_7pct_figure (round 11)",
+   "ctx": "JISA|Junior|pot|7%"
+  },
+  {
+   "was": "£30,500",
+   "now": "JISA cash figure recomputed",
+   "what": "jisa_cash_figure (round 11)",
+   "ctx": "JISA|cash|Cash"
+  },
+  {
+   "was": "takes ownership at 18",
+   "now": "control from sixteen, withdrawal from eighteen",
+   "what": "jisa_control_age (round 11)"
+  },
+  {
+   "was": "parental settlement rule",
+   "now": "all interest taxed once over the limit",
+   "what": "jisa_parental_rule (round 11)"
+  },
+  {
+   "was": "£352,365",
+   "now": "real value by division",
+   "what": "investment_real_value_p2 (round 11)"
+  },
+  {
+   "was": "£132,000",
+   "now": "one per cent charge cost recomputed",
+   "what": "investment_charge_cost (round 11)",
+   "ctx": "charge|growth"
+  },
+  {
+   "was": "0.94%",
+   "now": "Fundsmith OCF",
+   "what": "fundsmith_ocf (round 11)",
+   "ctx": "Fundsmith|active funds"
+  },
+  {
+   "was": "£11.99 a month",
+   "now": "ii Core plan fee",
+   "what": "ii_platform_fee (round 11)"
+  },
+  {
+   "was": "flat £12 a month",
+   "now": "ii Core plan fee",
+   "what": "ii_platform_fee_flat (round 11)"
+  },
+  {
+   "was": "approximately £199,000",
+   "now": "real value by division",
+   "what": "investment_example_real (round 11)"
+  },
+  {
+   "was": "£321,000",
+   "now": "monthly compounding total",
+   "what": "investment_200pm_total (round 11)",
+   "ctx": "£200 a month|30 years"
+  },
+  {
+   "was": "£239,000",
+   "now": "monthly compounding growth",
+   "what": "investment_200pm_growth (round 11)"
+  },
+  {
+   "was": "monthlyReturn - monthlyInflation",
+   "now": "real value by division",
+   "what": "investment_real_value_code (round 11)"
+  },
+  {
+   "was": "£341,200",
+   "now": "S&S example at higher charges recomputed",
+   "what": "ss_isa_example_high_charges (round 11)"
+  },
+  {
+   "was": "£383,500",
+   "now": "S&S example recomputed",
+   "what": "ss_isa_example_total (round 11)"
+  },
+  {
+   "was": "£158,500",
+   "now": "S&S example growth recomputed",
+   "what": "ss_isa_example_growth (round 11)"
+  },
+  {
+   "was": "holds around 9,000",
+   "now": "VWRL holdings and TER",
+   "what": "vwrl_holdings (round 11)"
+  },
+  {
+   "was": "at 4% reaches £67k",
+   "now": "five per cent gives the sixty-seven k",
+   "what": "ss_isa_cash_vs_equity (round 11)"
+  },
+  {
+   "was": "£67k at 4%",
+   "now": "five per cent gives the sixty-seven k",
+   "what": "ss_isa_cash_vs_equity_faq (round 11)"
+  },
+  {
+   "was": "0.15% to 0.45%",
+   "now": "platform fees up to HL's cut rate",
+   "what": "platform_fee_range (round 11)",
+   "ctx": "platform"
+  },
+  {
+   "was": "cheapest option below £80k",
+   "now": "Vanguard minimum fee wording",
+   "what": "vanguard_cheapest_claim (round 11)"
+  },
+  {
+   "was": "Monte Carlo option",
+   "now": "tool shows a single path",
+   "what": "ss_isa_monte_carlo_claim (round 11)"
+  },
+  {
+   "was": "totalGrowth * 0.18",
+   "now": "allowances netted off each year",
+   "what": "ss_isa_tax_saved_code (round 11)"
+  },
+  {
+   "was": "£25 to £400",
+   "now": "Club Lloyds pay-in cap",
+   "what": "club_lloyds_cap (round 11)"
+  },
+  {
+   "was": "Atom, Coventry",
+   "now": "open-to-all regular savers from building societies",
+   "what": "regular_saver_open_to_all (round 11)"
+  },
+  {
+   "was": "£1,800, giving about £126",
+   "now": "average balance recomputed",
+   "what": "regular_saver_average_balance (round 11)"
+  },
+  {
+   "was": "£107 / £3,600",
+   "now": "example at the AER-consistent monthly rate",
+   "what": "regular_saver_example (round 11)"
+  },
+  {
+   "was": "£2,440 a month",
+   "now": "seventy per cent band recomputed",
+   "what": "income_protection_cover_range (round 11)"
+  },
+  {
+   "was": "92% of income protection claims",
+   "now": "uncited ABI figure removed",
+   "what": "income_protection_abi_paid (round 11)"
+  },
+  {
+   "was": "About 1 in 4 workers",
+   "now": "uncited ABI figure removed",
+   "what": "income_protection_abi_sickness (round 11)"
+  },
+  {
+   "was": "£20-£60 a month for",
+   "now": "premium range from the model",
+   "what": "income_protection_premium_range (round 11)"
   }
  ]
 }

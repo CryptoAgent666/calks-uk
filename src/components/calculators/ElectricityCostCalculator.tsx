@@ -12,7 +12,8 @@ const APPLIANCES = [
   { name: 'Laptop', watts: 65, defaultHours: 6 },
   { name: 'Desktop PC', watts: 300, defaultHours: 6 },
   { name: 'Games Console', watts: 150, defaultHours: 2 },
-  { name: 'Fridge-Freezer', watts: 150, defaultHours: 24 },
+  // 24-hour average draw, not the compressor's running watts: 30 W x 24 h = 263 kWh a year (~£69 at 26.32p)
+  { name: 'Fridge-Freezer (average draw)', watts: 30, defaultHours: 24 },
   { name: 'Electric Shower', watts: 8500, defaultHours: 0.17 },
   { name: 'Hair Dryer', watts: 2200, defaultHours: 0.17 },
   { name: 'Iron', watts: 2400, defaultHours: 0.25 },
@@ -30,14 +31,17 @@ export default function ElectricityCostCalculator() {
   const [watts, setWatts] = useState('2000')
   const [hours, setHours] = useState('1')
   const [rate, setRate] = useState('26.32')
+  const [preset, setPreset] = useState('')
 
-  const w = parseFloat(watts) || 0
-  const h = parseFloat(hours) || 0
-  const r = parseFloat(rate) || 0
+  const w = Math.max(0, parseFloat(watts) || 0)
+  const h = Math.max(0, parseFloat(hours) || 0)
+  const r = Math.max(0, parseFloat(rate) || 0)
   const result = useMemo(() => calculate(w, h, r), [w, h, r])
 
-  const selectAppliance = (idx: number) => {
-    const a = APPLIANCES[idx]
+  const selectAppliance = (value: string) => {
+    setPreset(value)
+    const a = APPLIANCES[parseInt(value)]
+    if (!a) return
     setWatts(a.watts.toString())
     setHours(a.defaultHours.toString())
   }
@@ -46,15 +50,15 @@ export default function ElectricityCostCalculator() {
     <div className="space-y-6">
       <div>
         <label className="block text-sm font-medium mb-2">Quick Select Appliance</label>
-        <select onChange={(e) => selectAppliance(parseInt(e.target.value))} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Quick Select Appliance">
+        <select value={preset} onChange={(e) => selectAppliance(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Quick Select Appliance">
           <option value="">-- Select an appliance --</option>
           {APPLIANCES.map((a, i) => <option key={a.name} value={i}>{a.name} ({a.watts}W)</option>)}
         </select>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Power (Watts)</label><input type="number" min="0" max="20000" value={watts} onChange={(e) => setWatts(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Power (Watts)" /></div>
-        <div><label className="block text-sm font-medium mb-2">Hours per Day</label><input type="number" min="0" max="24" step="0.25" value={hours} onChange={(e) => setHours(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Hours per Day" /></div>
+        <div><label className="block text-sm font-medium mb-2">Power (Watts)</label><input type="number" min="0" max="20000" value={watts} onChange={(e) => { setWatts(e.target.value); setPreset('') }} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Power (Watts)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Hours per Day</label><input type="number" min="0" max="24" step="0.25" value={hours} onChange={(e) => { setHours(e.target.value); setPreset('') }} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Hours per Day" /></div>
         <div><label className="block text-sm font-medium mb-2">Electricity Rate (p/kWh)</label><input type="number" min="0" max="60" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Electricity Rate (p/kWh)" /></div>
       </div>
 

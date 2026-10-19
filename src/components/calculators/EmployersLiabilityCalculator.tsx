@@ -46,7 +46,7 @@ export default function EmployersLiabilityCalculator() {
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Per Employee</p><p className="text-lg font-bold">{formatCurrency(result.premiumPerEmployee)}</p></div>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>Employers' Liability Insurance is a legal requirement for most UK businesses with employees. Minimum cover: £5 million. Fine for non-compliance: up to £2,500 per day. Rates vary by industry risk and claims history.</p>
+            <p>Employers' Liability Insurance is a legal requirement for most UK businesses with employees. Minimum cover: £5 million per occurrence, including costs. Fine for non-compliance: up to £2,500 per day (up to £1,000 for not displaying or producing the certificate). Rates vary by industry risk and claims history. Quotes include Insurance Premium Tax at 12%; the figures here are before IPT.</p>
           </div>
         </div>
       )}

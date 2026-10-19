@@ -82,7 +82,7 @@ export default function PostgraduateLoanCalculator() {
           </div>
           {result.growingBalance && <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-3 text-sm text-orange-800 dark:text-orange-300 text-center">Your balance is growing — interest ({formatCurrency(result.annualInterest)}/yr) exceeds repayments ({formatCurrency(result.annualRepayment)}/yr)</div>}
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>Postgraduate loan: 6% above £{PG_THRESHOLD.toLocaleString()}, interest at RPI + 3% ({PG_INTEREST}%). Any balance left is written off 30 years after repayments start, which is the April after you finish or leave the course; the repayment time above assumes repayments start now at this salary. Repaid alongside Plan 1/2/4/5 (not instead of). Covers Student Finance England loans.</p>
+            <p>Postgraduate loan: 6% above £{PG_THRESHOLD.toLocaleString()}, interest at RPI + 3% (7.1% from 1 September 2026), temporarily capped at {PG_INTEREST}% until 31 August 2027. Any balance left is written off 30 years after repayments start, which is the April after you finish or leave the course; the repayment time above assumes repayments start now at this salary. Repaid alongside Plan 1/2/4/5 (not instead of). Covers Student Finance England loans.</p>
           </div>
         </div>
       )}

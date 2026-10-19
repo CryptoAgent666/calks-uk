@@ -2,6 +2,10 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 const ISA_ALLOWANCE = 20_000
+const DIVIDEND_ALLOWANCE = 500 // 2026/27
+const CGT_ANNUAL_EXEMPT = 3_000 // 2026/27
+const CGT_BASIC_RATE = 0.18 // all assets since 30 Oct 2024
+const DIVIDEND_BASIC_RATE = 0.1075 // 2026/27
 
 function calculate(monthlyDeposit: number, currentBalance: number, years: number, growthRate: number, dividendYield: number) {
   const yearlyDeposit = Math.min(monthlyDeposit * 12, ISA_ALLOWANCE)
@@ -23,9 +27,12 @@ function calculate(monthlyDeposit: number, currentBalance: number, years: number
     totalDeposited += effectiveMonthly
   }
 
-  // Tax savings vs taxable account
-  const cgtSaved = totalGrowth * 0.18 // approx 18% CGT saved (basic rate, post-Oct 2024 Budget)
-  const dividendTaxSaved = totalDividends * 0.1075 // basic rate
+  // Indicative tax saved vs a general investment account: basic-rate taxpayer, with the £500 dividend
+  // allowance and the £3,000 CGT annual exempt amount netted off for each year, and all gains realised
+  const dividendTaxable = Math.max(0, totalDividends - DIVIDEND_ALLOWANCE * years)
+  const cgtTaxable = Math.max(0, totalGrowth - CGT_ANNUAL_EXEMPT * years)
+  const cgtSaved = cgtTaxable * CGT_BASIC_RATE
+  const dividendTaxSaved = dividendTaxable * DIVIDEND_BASIC_RATE
   const totalTaxSaved = cgtSaved + dividendTaxSaved
 
   return { balance, totalDeposited, totalGrowth, totalDividends, totalReturn: totalGrowth + totalDividends, totalTaxSaved }
@@ -66,8 +73,9 @@ export default function StocksSharesIsaCalculator() {
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Deposited</p><p className="text-lg font-bold">{formatCurrency(result.totalDeposited)}</p></div>
             <div className="rounded-xl bg-green-100 dark:bg-green-950 p-3 text-center"><p className="text-xs text-muted-foreground">Capital Growth</p><p className="text-lg font-bold text-green-700 dark:text-green-400">{formatCurrency(result.totalGrowth)}</p></div>
             <div className="rounded-xl bg-green-100 dark:bg-green-950 p-3 text-center"><p className="text-xs text-muted-foreground">Dividends</p><p className="text-lg font-bold text-green-700 dark:text-green-400">{formatCurrency(result.totalDividends)}</p></div>
-            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Tax Saved (vs GIA)</p><p className="text-lg font-bold">{formatCurrency(result.totalTaxSaved)}</p></div>
+            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Indicative tax saved vs a general account</p><p className="text-lg font-bold">{formatCurrency(result.totalTaxSaved)}</p></div>
           </div>
+          <p className="text-xs text-muted-foreground">Tax saved assumes a basic-rate taxpayer, £{DIVIDEND_ALLOWANCE} dividend allowance and £{CGT_ANNUAL_EXEMPT.toLocaleString('en-GB')} CGT exemption netted off each year, all gains realised. Enter a growth rate net of platform and fund charges.</p>
         </div>
       )}
     </div>

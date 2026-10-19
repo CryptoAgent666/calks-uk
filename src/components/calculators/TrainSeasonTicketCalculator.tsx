@@ -3,9 +3,11 @@ import { formatCurrency } from '@/utils'
 
 function calculate(singleFare: number, daysPerWeek: number, weeksPerYear: number) {
   const dailyCost = singleFare * 2 // return
-  const weeklyTicket = dailyCost * 5 * 0.85 // ~15% discount vs daily
-  const monthlyTicket = weeklyTicket * 52 / 12 * 0.92 // ~8% discount vs weekly
-  const annualTicket = weeklyTicket * 40 // annual = ~40 weeks of weekly
+  // There is no national daily-to-weekly formula: a 7-day season is typically 3 to 4 times the Anytime Day
+  // Return (TfL Zones 1-6 2026: £81.60 / £23.60 = 3.46; London Terminals-Brighton Oct 2026: £154.10 / £42.70 = 3.61)
+  const weeklyTicket = dailyCost * 3.6
+  const monthlyTicket = weeklyTicket * 3.84 // industry convention: monthly = 3.84 x weekly (TfL 2026: £313.40 / £81.60)
+  const annualTicket = weeklyTicket * 40 // annual = 40 x weekly (TfL 2026: £81.60 x 40 = £3,264)
 
   const payAsYouGo = dailyCost * daysPerWeek * weeksPerYear
   const weeklyCost = weeklyTicket * weeksPerYear
@@ -59,6 +61,7 @@ export default function TrainSeasonTicketCalculator() {
           <div className="rounded-xl bg-primary/10 p-4 text-center text-sm">
             <p>Best option saves you <span className="font-bold text-primary">{formatCurrency(result.saving)}/year</span> vs worst option</p>
           </div>
+          <p className="text-xs text-muted-foreground text-center">Estimates based on typical season-ticket ratios (weekly 3.6 × the day return, monthly 3.84 × weekly, annual 40 × weekly); check the National Rail season ticket calculator for your route.</p>
         </div>
       )}
     </div>

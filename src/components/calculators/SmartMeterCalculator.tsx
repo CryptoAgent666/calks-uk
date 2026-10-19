@@ -2,7 +2,8 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 const APPLIANCES = [
-  { name: 'Fridge-Freezer', watts: 150, hours: 24, always: true },
+  // 24-hour average draw, not the compressor's running watts: 30 W x 24 h = 263 kWh a year
+  { name: 'Fridge-Freezer (avg)', watts: 30, hours: 24, always: true },
   { name: 'Washing Machine', watts: 500, hours: 1, always: false },
   { name: 'Tumble Dryer', watts: 2500, hours: 0.5, always: false },
   { name: 'Dishwasher', watts: 1800, hours: 1, always: false },

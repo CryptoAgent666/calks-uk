@@ -6,13 +6,14 @@ const CC_DAILY = 18.00 // London Congestion Charge from 2 January 2026 (was £15
 // Cleaner Vehicle Discount from 2 Jan 2026: electric cars on Auto Pay pay 25% less (12.5% from 4 Mar 2030)
 const CC_EV_DISCOUNT = 0.25
 
-function calculate(euroStandard: string, fuelType: string, daysInULEZ: number, inCongestionZone: boolean, daysInCC: number) {
+function calculate(euroStandard: string, fuelType: string, daysInULEZ: number, inCongestionZone: boolean, daysInCC: number, hasAutoPay = true) {
   const petrolCompliant = parseInt(euroStandard) >= 4
   const dieselCompliant = parseInt(euroStandard) >= 6
   const isCompliant = fuelType === 'electric' ? true : fuelType === 'petrol' ? petrolCompliant : dieselCompliant
 
   const ulezAnnual = isCompliant ? 0 : daysInULEZ * ULEZ_DAILY * 52
-  const ccDaily = fuelType === 'electric' ? CC_DAILY * (1 - CC_EV_DISCOUNT) : CC_DAILY
+  // TfL applies the Cleaner Vehicle Discount only to vehicles registered for Auto Pay; an EV paying day by day owes £18
+  const ccDaily = fuelType === 'electric' && hasAutoPay ? CC_DAILY * (1 - CC_EV_DISCOUNT) : CC_DAILY
   const ccAnnual = inCongestionZone ? daysInCC * ccDaily * 52 : 0
 
   const totalAnnual = ulezAnnual + ccAnnual
@@ -27,10 +28,11 @@ export default function ULEZCalculator() {
   const [days, setDays] = useState('5')
   const [cc, setCc] = useState(false)
   const [ccDays, setCcDays] = useState('3')
+  const [autopay, setAutopay] = useState(true)
 
   const d = parseInt(days) || 0
   const cd = parseInt(ccDays) || 0
-  const result = useMemo(() => calculate(euro, fuel, d, cc, cd), [euro, fuel, d, cc, cd])
+  const result = useMemo(() => calculate(euro, fuel, d, cc, cd, autopay), [euro, fuel, d, cc, cd, autopay])
 
   return (
     <div className="space-y-6">
@@ -39,8 +41,9 @@ export default function ULEZCalculator() {
         <div><label className="block text-sm font-medium mb-2">Euro Standard</label><select value={euro} onChange={(e) => setEuro(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Euro Standard"><option value="3">Euro 3 (pre-2006)</option><option value="4">Euro 4 (2006-2011)</option><option value="5">Euro 5 (2011-2015)</option><option value="6">Euro 6 (2015+)</option></select></div>
         <div><label className="block text-sm font-medium mb-2">Days/Week in ULEZ</label><input type="number" min="0" max="7" value={days} onChange={(e) => setDays(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Days/Week in ULEZ" /></div>
       </div>
-      <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={cc} onChange={(e) => setCc(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Also enter Congestion Charge zone (£{result.ccDaily % 1 ? result.ccDaily.toFixed(2) : result.ccDaily}/day{fuel === 'electric' ? ' with the EV discount' : ''})</span></label>
+      <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={cc} onChange={(e) => setCc(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Also enter Congestion Charge zone (£{result.ccDaily % 1 ? result.ccDaily.toFixed(2) : result.ccDaily}/day{fuel === 'electric' ? (autopay ? ' with the EV Auto Pay discount' : ' without Auto Pay') : ''})</span></label>
       {cc && <div><label className="block text-sm font-medium mb-2">Days/Week in CC Zone</label><input type="number" min="0" max="7" value={ccDays} onChange={(e) => setCcDays(e.target.value)} className="w-32 rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Days/Week in CC Zone" /></div>}
+      {cc && fuel === 'electric' && <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={autopay} onChange={(e) => setAutopay(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Registered for Auto Pay (the 25% EV discount applies only on Auto Pay)</span></label>}
 
       <div className="space-y-4 animate-fade-in-up">
         <div className={`rounded-xl p-3 text-center text-sm font-medium ${result.isCompliant ? 'bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-400' : 'bg-destructive/10 text-destructive'}`}>

@@ -648,7 +648,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'energy-bill-calculator',
     title: 'Energy Bill Calculator',
-    description: 'Estimate your annual gas and electricity bills using Ofgem price cap rates. See monthly and daily costs.',
+    description: 'Estimate your annual gas and electricity bills at Ofgem price cap rates, with monthly and daily costs and the standing charge for each fuel.',
     category: 'energy',
     icon: 'Zap',
     keywords: ['energy bill', 'gas bill', 'electricity bill', 'Ofgem', 'price cap'],
@@ -1169,7 +1169,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'ucas-points-calculator',
     title: 'UCAS Tariff Points Calculator',
-    description: 'Calculate your UCAS tariff points from A-Levels, AS-Levels, BTEC and EPQ qualifications.',
+    description: 'Calculate your UCAS tariff points from A-Levels, AS-Levels, BTEC and EPQ qualifications. Uses the UCAS Tariff tables for 2026 entry.',
     category: 'education',
     icon: 'GraduationCap',
     keywords: ['UCAS', 'tariff points', 'A-level points', 'university', 'BTEC points'],
@@ -1338,7 +1338,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'led-savings-calculator',
     title: 'LED Bulb Savings Calculator',
-    description: 'Calculate how much you save by switching from old bulbs to LED. See payback period and annual savings.',
+    description: 'Calculate how much you save by switching from old bulbs to LED at the current Ofgem rate. See the payback period, annual and lifetime savings.',
     category: 'energy',
     icon: 'Zap',
     keywords: ['LED savings', 'LED bulb', 'light bulb', 'energy saving'],
@@ -1603,7 +1603,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'mot-date-calculator',
     title: 'MOT Date Calculator',
-    description: 'Find when your next MOT is due. First MOT 3 years after registration, then annual.',
+    description: 'Find when your next MOT is due and the earliest test date that keeps your renewal date. First MOT at three years in Great Britain, then every year.',
     category: 'auto',
     icon: 'Car',
     keywords: ['MOT', 'MOT date', 'MOT due', 'car MOT', 'vehicle test'],
@@ -1613,7 +1613,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'train-season-ticket-calculator',
     title: 'Train Season Ticket Calculator',
-    description: 'Compare daily, weekly, monthly and annual season ticket costs to find the best value.',
+    description: 'Compare day returns with weekly, monthly and annual rail season tickets, using the standard 3.84× monthly and 40× annual ratios, to find the best value.',
     category: 'auto',
     icon: 'Car',
     keywords: ['season ticket', 'train ticket', 'rail pass', 'commuter ticket'],
@@ -1651,14 +1651,14 @@ export const CALCULATORS: CalculatorMeta[] = [
     priority: 2,
   },
   // INSURANCE (additional)
-  { slug: 'income-protection-calculator', title: 'Income Protection Calculator', description: 'Calculate income protection cover needed and estimate monthly premiums by age and deferral period.', category: 'insurance', icon: 'ShieldCheck', keywords: ['income protection', 'income insurance', 'sick cover', 'disability insurance'], priority: 2 , metaTitle: 'Income Protection Calculator UK 2026' },
+  { slug: 'income-protection-calculator', title: 'Income Protection Calculator', description: 'Calculate the income protection cover you need and estimate monthly premiums by age, cover level and deferred period, from 4 to 52 weeks.', category: 'insurance', icon: 'ShieldCheck', keywords: ['income protection', 'income insurance', 'sick cover', 'disability insurance'], priority: 2 , metaTitle: 'Income Protection Calculator UK 2026' },
   { slug: 'travel-insurance-calculator', title: 'Travel Insurance Calculator', description: 'Estimate travel insurance premiums for Europe and worldwide trips. Compare cover levels.', category: 'insurance', icon: 'ShieldCheck', keywords: ['travel insurance', 'holiday insurance', 'medical cover', 'trip insurance'], priority: 2 , metaTitle: 'Travel Insurance Calculator UK 2026' },
   // LEGAL (additional)
   { slug: 'spousal-maintenance-calculator', title: 'Spousal Maintenance Calculator', description: 'Estimate spousal maintenance range for divorce. Based on income difference and length of marriage.', category: 'legal', icon: 'Scale', keywords: ['spousal maintenance', 'alimony', 'divorce maintenance', 'spousal support'], priority: 2 , metaTitle: 'Spousal Maintenance Calculator UK 2026' },
   // EDUCATION (additional)
   { slug: 'gcse-grade-calculator', title: 'Attainment 8 & GCSE Grade Calculator', description: 'Work out your Attainment 8 score the DfE way, with English and maths double weighted and EBacc and open slots, plus your GCSE average grade and passes.', category: 'education', icon: 'GraduationCap', keywords: ['GCSE', 'GCSE grades', 'attainment 8', '9-1 grades', 'school results'], priority: 1 , metaTitle: 'Attainment 8 Calculator 2026: GCSE Points & Average Grade' },
   { slug: 'progress-8-calculator', title: 'Progress 8 Calculator', description: 'Work out a pupil Progress 8 score from Attainment 8 and KS2 scaled scores using the DfE prior attainment averages, see the band it falls in, and why 2025 and 2026 have no official score.', category: 'education', icon: 'GraduationCap', keywords: ['Progress 8', 'Progress 8 score', 'attainment 8', 'KS2 scaled score', 'school performance tables'], priority: 2 , metaTitle: 'Progress 8 Calculator: Score from Attainment 8 & KS2' },
-  { slug: 'university-cost-calculator', title: 'University Cost Calculator', description: 'Calculate the total cost of university including tuition fees, maintenance loan and living costs.', category: 'education', icon: 'GraduationCap', keywords: ['university cost', 'uni fees', 'student debt', 'tuition fees', 'student finance'], priority: 2 , metaTitle: 'UK University Cost Calculator 2026' },
+  { slug: 'university-cost-calculator', title: 'University Cost Calculator', description: 'Calculate the total cost of university including tuition fees, maintenance loan and living costs. England 2026/27: £9,790 fees, Plan 5.', category: 'education', icon: 'GraduationCap', keywords: ['university cost', 'uni fees', 'student debt', 'tuition fees', 'student finance'], priority: 2 , metaTitle: 'UK University Cost Calculator 2026' },
   { slug: 'ks2-sats-scaled-score-calculator', title: 'KS2 SATs Scaled Score Calculator (Raw to Scaled, 2026)', description: 'Turn KS2 SATs raw marks into 2026 scaled scores with the official STA tables for reading, maths and GPS, and see the 100 and 110 thresholds.', category: 'education', icon: 'GraduationCap', keywords: ['KS2 SATs', 'scaled score', 'raw score to scaled score', 'SATs results', 'expected standard', 'year 6 SATs'], priority: 2, isTrending: true, metaTitle: 'KS2 SATs Scaled Score Calculator 2026: Raw to Scaled' },
   // GARDENING (additional)
   { slug: 'greenhouse-size-calculator', title: 'Greenhouse Size Calculator', description: 'Calculate greenhouse growing capacity. See how many plants fit by type with common size presets.', category: 'gardening', icon: 'Flower2', keywords: ['greenhouse', 'greenhouse size', 'growing space', 'greenhouse plants'], priority: 2 , metaTitle: 'Greenhouse Size Calculator UK' },
@@ -1704,10 +1704,10 @@ export const CALCULATORS: CalculatorMeta[] = [
   // INSURANCE
   { slug: 'pet-insurance-calculator', title: 'Pet Insurance Calculator', description: 'Estimate pet insurance premiums for dogs and cats by age, breed and cover level.', category: 'insurance', icon: 'ShieldCheck', keywords: ['pet insurance', 'dog insurance', 'cat insurance', 'vet fees'], priority: 2 , metaTitle: 'Pet Insurance Calculator UK 2026' },
   // EDUCATION
-  { slug: 'student-maintenance-loan-calculator', title: 'Student Maintenance Loan Calculator', description: 'Estimate your maintenance loan based on household income and living situation. England 2026/27 rates.', category: 'education', icon: 'GraduationCap', keywords: ['maintenance loan', 'student loan', 'student finance', 'living costs loan'], priority: 1 , metaTitle: 'Student Maintenance Loan Calculator UK 2026/27' },
+  { slug: 'student-maintenance-loan-calculator', title: 'Student Maintenance Loan Calculator', description: 'Estimate your maintenance loan based on household income and living situation. England 2026/27 rates for a dependent student not on benefits.', category: 'education', icon: 'GraduationCap', keywords: ['maintenance loan', 'student loan', 'student finance', 'living costs loan'], priority: 1 , metaTitle: 'Student Maintenance Loan Calculator UK 2026/27' },
   // ENERGY
   { slug: 'boiler-replacement-calculator', title: 'Boiler Replacement Cost Calculator', description: 'Compare old vs new boiler efficiency. Calculate installation cost, annual savings and payback period.', category: 'energy', icon: 'Zap', keywords: ['boiler', 'boiler replacement', 'gas boiler', 'new boiler cost'], priority: 2 , metaTitle: 'Boiler Replacement Cost Calculator UK 2026' },
-  { slug: 'double-glazing-calculator', title: 'Double Glazing Savings Calculator', description: 'Calculate double glazing costs and annual energy savings by house type. See payback period.', category: 'energy', icon: 'Zap', keywords: ['double glazing', 'windows', 'energy saving', 'UPVC'], priority: 2 , metaTitle: 'Double Glazing Savings Calculator UK 2026' },
+  { slug: 'double-glazing-calculator', title: 'Double Glazing Savings Calculator', description: 'Work out double glazing costs and annual energy savings by house type from Energy Saving Trust figures. See the payback period and 20-year net saving.', category: 'energy', icon: 'Zap', keywords: ['double glazing', 'windows', 'energy saving', 'UPVC'], priority: 2 , metaTitle: 'Double Glazing Savings Calculator UK 2026' },
   // HEALTH
   { slug: 'weight-loss-calculator', title: 'Weight Loss Calculator', description: 'Calculate how long to reach your target weight with milestones and daily calorie deficit.', category: 'health', icon: 'Heart', keywords: ['weight loss', 'lose weight', 'diet calculator', 'calorie deficit'], priority: 2 , metaTitle: 'Weight Loss Calculator UK — Calorie Deficit' },
   { slug: 'protein-intake-calculator', title: 'Protein Intake Calculator', description: 'Calculate daily protein needs by weight and goal. See common protein sources per serving.', category: 'health', icon: 'Heart', keywords: ['protein', 'protein intake', 'daily protein', 'macros', 'muscle building'], priority: 2 , metaTitle: 'Protein Intake Calculator UK — By Goal' },
@@ -1740,7 +1740,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // LEGAL
   { slug: 'personal-injury-calculator', title: 'Personal Injury Compensation Calculator', description: 'Estimate personal injury compensation from the Judicial College Guidelines, 18th edition, and the £275 to £4,830 whiplash tariff, plus lost earnings.', category: 'legal', icon: 'Scale', keywords: ['personal injury', 'compensation', 'whiplash claim', 'accident claim'], priority: 2 , metaTitle: 'Personal Injury Compensation Calculator UK 2026 (JCG)' },
   // INVESTMENT
-  { slug: 'investment-return-calculator', title: 'Investment Return Calculator', description: 'Calculate nominal and real (inflation-adjusted) investment returns with monthly contributions over time.', category: 'investment', icon: 'TrendingUp', keywords: ['investment return', 'portfolio growth', 'nominal return', 'real return'], priority: 1 , metaTitle: 'Investment Return Calculator UK 2026' },
+  { slug: 'investment-return-calculator', title: 'Investment Return Calculator', description: 'Calculate nominal and real (inflation-adjusted) investment returns with monthly contributions, and see what the final pot is worth in today\'s money.', category: 'investment', icon: 'TrendingUp', keywords: ['investment return', 'portfolio growth', 'nominal return', 'real return'], priority: 1 , metaTitle: 'Investment Return Calculator UK 2026' },
   { slug: 'savings-interest-tax-calculator', title: 'Savings Interest Tax Calculator', description: 'Calculate tax on savings interest above your Personal Savings Allowance. See max tax-free savings.', category: 'investment', icon: 'TrendingUp', keywords: ['savings interest', 'PSA', 'personal savings allowance', 'tax on savings'], priority: 2 , metaTitle: 'Savings Interest Tax Calculator UK 2026/27' },
   { slug: 'real-return-calculator', title: 'Real Return Calculator (After Inflation)', description: 'Calculate the real return on investments after accounting for inflation. See purchasing power impact.', category: 'investment', icon: 'TrendingUp', keywords: ['real return', 'after inflation', 'purchasing power', 'inflation adjusted'], priority: 2 , metaTitle: 'Real Return Calculator UK 2026 (After Inflation)' },
   { slug: 'rule-of-72-calculator', title: 'Rule of 72 Calculator', description: 'Estimate how long it takes to double your money at a given interest rate using the Rule of 72.', category: 'investment', icon: 'TrendingUp', keywords: ['rule of 72', 'doubling time', 'compound interest', 'money double'], priority: 2 , metaTitle: 'Rule of 72 Calculator — Investment Doubling' },
@@ -1831,7 +1831,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'night-shift-calculator', title: 'Night Shift Allowance Calculator', description: 'Calculate night shift premium at 15-100% rates. See annual extra earnings from night work.', category: 'pay', icon: 'Banknote', keywords: ['night shift', 'night premium', 'unsocial hours', 'shift pay'], priority: 2 , metaTitle: 'Night Shift Allowance Calculator UK 2026' },
   { slug: 'benefits-in-kind-calculator', title: 'Benefits in Kind (P11D) Calculator', description: 'Calculate tax on company benefits — car, medical insurance, gym, phone and more. See monthly tax impact.', category: 'pay', icon: 'Banknote', keywords: ['benefits in kind', 'P11D', 'BiK tax', 'company benefits', 'perks tax'], priority: 2 , metaTitle: 'Benefits in Kind Tax Calculator 2026/27' },
   // INVESTMENT
-  { slug: 'regular-savings-calculator', title: 'Regular Savings Calculator', description: 'Calculate returns on a regular saver account with monthly deposits. See effective vs headline rate.', category: 'investment', icon: 'TrendingUp', keywords: ['regular saver', 'monthly savings', 'savings account', 'AER'], priority: 2 , metaTitle: 'Regular Savings Calculator UK 2026' },
+  { slug: 'regular-savings-calculator', title: 'Regular Savings Calculator', description: 'Calculate returns on a regular saver account with monthly deposits, and see the interest as a share of what you pay in vs the headline AER.', category: 'investment', icon: 'TrendingUp', keywords: ['regular saver', 'monthly savings', 'savings account', 'AER'], priority: 2 , metaTitle: 'Regular Savings Calculator UK 2026' },
   // PAY
   { slug: 'business-mileage-calculator', title: 'Business Mileage Calculator', description: 'Compare HMRC mileage allowance vs actual fuel costs. See if you profit or lose from the 55p/25p rates.', category: 'pay', icon: 'Banknote', keywords: ['business mileage', 'HMRC mileage', 'mileage profit', '55p rate', 'fuel vs allowance'], priority: 2 , metaTitle: 'Business Mileage Calculator UK (HMRC 55p/25p)' },
   // INVESTMENT
@@ -1850,9 +1850,9 @@ export const CALCULATORS: CalculatorMeta[] = [
   // BENEFITS
   { slug: 'tax-credits-calculator', title: 'Tax Credits Calculator (Legacy)', description: 'Legacy calculator for Working Tax Credit and Child Tax Credit, which ended in April 2025. Check an old award on the final 2024/25 rules.', category: 'benefits', icon: 'Shield', keywords: ['tax credits', 'working tax credit', 'child tax credit', 'WTC', 'CTC'], priority: 2, metaTitle: 'Tax Credits Calculator UK 2026/27 — Migrated to UC' },
   // INVESTMENT
-  { slug: 'stocks-shares-isa-calculator', title: 'Stocks & Shares ISA Calculator', description: 'Project Stocks & Shares ISA growth with capital appreciation and dividends. See tax saved vs taxable account.', category: 'investment', icon: 'TrendingUp', keywords: ['stocks and shares ISA', 'S&S ISA', 'equity ISA', 'investment ISA'], priority: 1 , metaTitle: 'Stocks & Shares ISA Calculator UK 2026/27' },
+  { slug: 'stocks-shares-isa-calculator', title: 'Stocks & Shares ISA Calculator', description: 'Project Stocks & Shares ISA growth with capital appreciation and dividends, and see the indicative tax saved vs a general account.', category: 'investment', icon: 'TrendingUp', keywords: ['stocks and shares ISA', 'S&S ISA', 'equity ISA', 'investment ISA'], priority: 1 , metaTitle: 'Stocks & Shares ISA Calculator UK 2026/27' },
   // ENERGY
-  { slug: 'epc-rating-comparison-calculator', title: 'EPC Band Comparison Calculator', description: 'Compare energy costs between EPC bands. See annual savings from upgrading your rating.', category: 'energy', icon: 'Zap', keywords: ['EPC comparison', 'EPC upgrade', 'energy cost', 'EPC band'], priority: 2 , metaTitle: 'EPC Rating Comparison Calculator UK 2026' },
+  { slug: 'epc-rating-comparison-calculator', title: 'EPC Band Comparison Calculator', description: 'Compare typical energy costs between EPC bands A to G. See the yearly and 10-year savings from upgrading and the payback on what the upgrade costs.', category: 'energy', icon: 'Zap', keywords: ['EPC comparison', 'EPC upgrade', 'energy cost', 'EPC band'], priority: 2 , metaTitle: 'EPC Rating Comparison Calculator UK 2026' },
   // INVESTMENT
   { slug: 'help-to-save-calculator', title: 'Help to Save Calculator', description: 'Calculate Help to Save bonuses: 50% of the highest balance, up to £50 a month for 4 years and £1,200 in total, for Universal Credit claimants in work.', category: 'investment', icon: 'TrendingUp', keywords: ['help to save', 'government bonus', '50% bonus', 'low income savings'], priority: 2 , metaTitle: 'Help to Save Calculator UK 2026 — 50% Bonus' },
   { slug: 'ns-i-savings-calculator', title: 'NS&I Savings Calculator', description: 'Calculate savings interest with different compounding frequencies or paid out monthly. See AER and interest after tax.', category: 'investment', icon: 'TrendingUp', keywords: ['NS&I', 'savings interest', 'compounding', 'AER', 'interest rate'], priority: 2 , metaTitle: 'NS&I Savings Calculator UK 2026' },
@@ -1871,14 +1871,14 @@ export const CALCULATORS: CalculatorMeta[] = [
   // PENSION
   { slug: 'pension-lump-sum-calculator', title: 'Pension Lump Sum Calculator (PCLS)', description: 'Compare taking 0-100% as lump sum. See tax-free portion, tax on excess and remaining pot for drawdown.', category: 'pension', icon: 'PiggyBank', keywords: ['pension lump sum', 'PCLS', 'tax free cash', '25% pension', 'pension withdrawal'], priority: 2 , metaTitle: 'Pension Lump Sum Calculator UK 2026/27 (25% Tax-Free)' },
   // FARMING
-  { slug: 'elm-payment-calculator', title: 'ELM Payment Calculator', description: 'Calculate Sustainable Farming Incentive (SFI26) payments for common environmental actions.', category: 'farming', icon: 'Wheat', keywords: ['ELM', 'SFI', 'environmental land management', 'farming payments', 'BPS'], priority: 1 , metaTitle: 'ELM Payment Calculator UK 2026 — DEFRA' },
+  { slug: 'elm-payment-calculator', title: 'ELM Payment Calculator', description: 'Calculate Sustainable Farming Incentive (SFI26) payments for common environmental actions. England, 2026 rates; £100,000 agreement cap.', category: 'farming', icon: 'Wheat', keywords: ['ELM', 'SFI', 'environmental land management', 'farming payments', 'BPS'], priority: 1 , metaTitle: 'ELM Payment Calculator UK 2026 — DEFRA' },
   { slug: 'farm-tenancy-calculator', title: 'Farm Tenancy Rent Review Calculator', description: 'Compare your farm rent to market rates. See rent as percentage of revenue for rent review preparation.', category: 'farming', icon: 'Wheat', keywords: ['farm tenancy', 'rent review', 'agricultural rent', 'farm rent'], priority: 2 , metaTitle: 'Farm Tenancy Calculator UK 2026' },
   // EDUCATION
   { slug: 'student-loan-total-cost-calculator', title: 'Student Loan Total Cost Calculator', description: 'Calculate total amount you\'ll actually repay over the loan lifetime with salary growth projections.', category: 'education', icon: 'GraduationCap', keywords: ['student loan cost', 'total repaid', 'loan lifetime', 'write off'], priority: 1 , metaTitle: 'Student Loan Total Cost Calculator UK 2026' },
   // PAY
   { slug: 'ev-salary-sacrifice-calculator', title: 'EV Salary Sacrifice Calculator', description: 'Calculate savings from EV salary sacrifice. See tax/NI savings, BiK at 4% and effective monthly cost.', category: 'pay', icon: 'Banknote', keywords: ['EV salary sacrifice', 'electric car scheme', 'BiK EV', 'salary sacrifice car'], priority: 1, isTrending: true, metaTitle: 'EV Salary Sacrifice Calculator UK 2026/27 — 4% BiK Rate' },
   // AUTO
-  { slug: 'ulez-calculator', title: 'ULEZ Compliance Checker', description: 'Check if your car is ULEZ compliant and calculate annual ULEZ and Congestion Charge costs.', category: 'auto', icon: 'Car', keywords: ['ULEZ', 'ultra low emission', 'London', 'congestion charge', 'euro standard'], priority: 1, metaTitle: 'ULEZ Calculator UK 2026 — Charge & Compliance by Euro Standard' },
+  { slug: 'ulez-calculator', title: 'ULEZ Compliance Checker', description: 'Check ULEZ compliance and annual ULEZ and Congestion Charge costs: £12.50 a day for pre-Euro 4 petrol and pre-Euro 6 diesel cars, £180 penalty.', category: 'auto', icon: 'Car', keywords: ['ULEZ', 'ultra low emission', 'London', 'congestion charge', 'euro standard'], priority: 1, metaTitle: 'ULEZ Calculator UK 2026 — Charge & Compliance by Euro Standard' },
   { slug: 'car-import-duty-calculator', title: 'Car Import Duty Calculator', description: 'Calculate total UK landing cost for imported cars — duty, VAT, VED and type approval.', category: 'auto', icon: 'Car', keywords: ['car import', 'import duty', 'vehicle import', 'customs duty'], priority: 2 , metaTitle: 'Car Import Duty Calculator UK 2026' },
   { slug: 'road-trip-cost-calculator', title: 'Road Trip Cost Calculator', description: "Estimate the cost of a UK road trip from the distance, your car's MPG and the pump price, add tolls and parking, and split the total per person.", category: 'auto', icon: 'Car', keywords: ['road trip', 'journey cost', 'fuel cost trip', 'travel cost'], priority: 2 , metaTitle: 'Road Trip Cost Calculator UK 2026' },
   // TAX
@@ -1895,7 +1895,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // BUSINESS
   { slug: 'mtd-readiness-calculator', title: 'MTD Readiness Checklist', description: 'Score your Making Tax Digital readiness across 10 checks, from software to quarterly updates due on the 7th, and see what to fix before the next deadline.', category: 'business', icon: 'Briefcase', keywords: ['MTD checklist', 'tax digital readiness', 'quarterly reporting', 'MTD preparation'], priority: 2, isTrending: true , metaTitle: 'Making Tax Digital Readiness Calculator UK 2026' },
   // AUTO
-  { slug: 'congestion-charge-calculator', title: 'London Congestion Charge Calculator', description: 'Calculate annual Congestion Charge cost. Check EV and Blue Badge exemptions.', category: 'auto', icon: 'Car', keywords: ['congestion charge', 'London driving', 'C-charge', 'central London'], priority: 2 , metaTitle: 'London Congestion Charge Calculator 2026 (£15)' },
+  { slug: 'congestion-charge-calculator', title: 'London Congestion Charge Calculator', description: 'Work out your annual London Congestion Charge at £18 a day, with the 25% electric-car Auto Pay discount, the 90% residents\' rate and Blue Badge exemption.', category: 'auto', icon: 'Car', keywords: ['congestion charge', 'London driving', 'C-charge', 'central London'], priority: 2 , metaTitle: 'London Congestion Charge Calculator 2026 (£18/day)' },
   // EDUCATION
   { slug: 'a-level-grade-calculator', title: 'A-Level Grade Calculator', description: 'Turn your A-level grades into a grade profile such as ABB, see the points total and which typical university offers it meets.', category: 'education', icon: 'GraduationCap', keywords: ['A-Level', 'A-Level grades', 'grade profile', 'university offers'], priority: 1 , metaTitle: 'A-Level Grade Calculator 2026: Grade Profile & Offers' },
   // LOANS
@@ -1942,7 +1942,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'employee-cost-breakdown-calculator', title: 'Employee Cost Breakdown Calculator', description: 'Calculate true cost of employment including NI, pension, training, equipment and recruitment.', category: 'business', icon: 'Briefcase', keywords: ['employee cost', 'true cost', 'cost of hiring', 'employment overhead'], priority: 2 , metaTitle: 'Employee Cost Breakdown Calculator UK 2026/27' },
   { slug: 'contractor-vs-perm-calculator', title: 'Contractor vs Permanent Salary Calculator', description: 'Compare contractor day rate vs permanent salary. See the premium needed to match perm benefits.', category: 'business', icon: 'Briefcase', keywords: ['contractor vs perm', 'day rate vs salary', 'contract premium', 'freelance vs employed'], priority: 2 , metaTitle: 'Contractor vs Permanent Calculator UK 2026' },
   // EDUCATION
-  { slug: 'postgraduate-loan-cost-calculator', title: 'Postgraduate Loan Total Cost Calculator', description: 'Calculate total postgraduate loan repayment over 30 years with salary growth projections.', category: 'education', icon: 'GraduationCap', keywords: ['PG loan cost', 'postgrad total', 'masters loan cost', 'PhD loan'], priority: 2 , metaTitle: 'Postgraduate Loan Total Cost Calculator UK' },
+  { slug: 'postgraduate-loan-cost-calculator', title: 'Postgraduate Loan Total Cost Calculator', description: 'Calculate total postgraduate loan repayment over 30 years with salary growth projections. 6% above £21,000, England 2026/27.', category: 'education', icon: 'GraduationCap', keywords: ['PG loan cost', 'postgrad total', 'masters loan cost', 'PhD loan'], priority: 2 , metaTitle: 'Postgraduate Loan Total Cost Calculator UK' },
   // TOOLS
   { slug: 'wedding-cost-calculator', title: 'Wedding Cost Calculator (Detailed)', description: 'Calculate detailed wedding costs across 17 categories with per-guest items. See cost per guest.', category: 'tools', icon: 'Wrench', keywords: ['wedding cost', 'wedding budget', 'wedding planning', 'wedding price'], priority: 2 , metaTitle: 'UK Wedding Cost Calculator 2026' },
   { slug: 'time-duration-calculator', title: 'Time Duration Calculator', description: 'Calculate hours and minutes between two times. Includes decimal hours for timesheets.', category: 'tools', icon: 'Wrench', keywords: ['time duration', 'hours between', 'time calculator', 'timesheet'], priority: 2 , metaTitle: 'Time Duration Calculator — Hours & Minutes' },

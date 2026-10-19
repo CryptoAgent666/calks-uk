@@ -12457,7 +12457,7 @@
     },
     {
       "key": "london_congestion_charge_disabled_blue_badge_exemption",
-      "value": "0",
+      "value": "100% discount",
       "unit": "GBP",
       "law": "TfL Congestion Charge",
       "theme": "other",
@@ -12467,10 +12467,12 @@
       "used_by": [
         "src/components/calculators/CongestionChargeCalculator.tsx"
       ],
-      "source_url": "",
+      "source_url": "https://tfl.gov.uk/modes/driving/congestion-charge/discounts-and-exemptions",
       "status": "current",
       "change_frequency": "",
-      "note": "CongestionChargeCalculator: disabled person's (Blue Badge) exemption — zero charge"
+      "note": "CongestionChargeCalculator: Blue Badge -> no charge, labelled \"100% discount after a £10 registration\" (round 11).",
+      "official_value": "100% discount on Congestion Charge and tunnels after a £10 registration (up to two vehicles)",
+      "verified_date": "2026-10-19"
     },
     {
       "key": "london_congestion_charge_ev_autopay_cleaner_vehicle_discount",
@@ -13577,11 +13579,11 @@
       "source_url": "https://www.gov.uk/government/consultations/improving-the-energy-performance-of-privately-rented-homes-2025-update",
       "status": "current",
       "change_frequency": "",
-      "note": "EPC Calculator: prose 'Band C from 2028 for new tenancies' (proposed/planned uplift to minimum rental EPC)",
-      "official_value": "EPC band C from 1 October 2030 (single compliance date, all tenancies)",
+      "note": "epc-rating-comparison + epc-calculator prose/FAQ/footnote reworded in round 11 so the 2030 Band C standard is a target, not law (4 + 2 places).",
+      "official_value": "Target: equivalent of EPC C under the reformed EPC by 1 October 2030 (single date), £10,000 cost cap; government response 21 Jan 2026; regulations not laid, expected in force 2027. Legal minimum today: E.",
       "confidence": "high",
       "freshness_note": "APPLIED 2026-06/07 (phase4-reconcile 2026-07-03; code fixed in commit 9023ed9 + residual prose 2026-07-03). Band C is correct but the DATE is stale: the government response (published 21 Jan 2026) confirmed a single compliance date of 1 Oct 2030 for ALL privately rented homes — not 2028 'for new tenancies'. Old: C from 2028 (new tenancies) -> New: C from 1 Oct 2030 (all tenancies). 2026-09-26: prose/FAQ on epc-calculator and epc-rating pages still said \"C for new tenancies by 2028 / April 2025+2028\"; fixed to the single 1 Oct 2030 date with the £10,000 cost cap (gov response 21 Jan 2026).",
-      "verified_date": "2026-09-26",
+      "verified_date": "2026-10-19",
       "verify_method": "calkcheck-2026-09-26-r2"
     },
     {
@@ -13803,11 +13805,11 @@
       "source_url": "https://www.gov.uk/getting-an-mot",
       "status": "current",
       "change_frequency": "",
-      "note": "MOTDateCalculator: subsequent MOT due annually (lastMOT + 1 year)",
+      "note": "MOTDateCalculator (round 11): the due date is now the expiry date on the current certificate (no +1 year from the last test date); first test = third anniversary of registration.",
       "official_value": "1 year",
       "confidence": "high",
       "freshness_note": "gov.uk confirms subsequent MOTs are due annually (last MOT anniversary) for vehicles over 3 years old.",
-      "verified_date": "2026-06-28",
+      "verified_date": "2026-10-19",
       "verify_method": "tier2-tail"
     },
     {
@@ -13834,7 +13836,7 @@
     },
     {
       "key": "mot_early_renewal_window_months",
-      "value": "1",
+      "value": "1 month minus a day",
       "unit": "month",
       "law": "DVSA MOT",
       "theme": "other",
@@ -13847,11 +13849,11 @@
       "source_url": "https://www.gov.uk/getting-an-mot",
       "status": "current",
       "change_frequency": "",
-      "note": "MOTDateCalculator: you can take the MOT up to 1 month before the due date without losing the renewal date (computed earliestBooking and stated in prose)",
+      "note": "MOTDateCalculator earliestKeepDate(): due date minus one month (clamped to month end) plus one day; 15 May -> 16 April, 31 Mar -> 1 Mar. Round 11 fixed the old setMonth(-1) code (one day early, and month-end overflow) and the prose/FAQ \"up to one month\".",
       "official_value": "1 month (minus a day)",
       "confidence": "high",
       "freshness_note": "gov.uk: you can get an MOT up to a month (minus a day) before it runs out and keep the same renewal date.",
-      "verified_date": "2026-06-28",
+      "verified_date": "2026-10-19",
       "verify_method": "tier2-tail"
     },
     {
@@ -19062,17 +19064,18 @@
         "src/components/calculators/PostgraduateLoanCalculator.tsx",
         "src/components/calculators/PostgraduateLoanCostCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/repaying-your-student-loan/what-you-pay",
+      "source_url": "https://www.gov.uk/guidance/how-interest-is-calculated-plan-2",
       "status": "current",
       "change_frequency": "",
-      "note": "PostgraduateLoanCalculator: PG_INTEREST = 7.3 (RPI + 3%); stated in prose as 'RPI + 3% (7.3%)'",
-      "official_value": "6",
+      "note": "PostgraduateLoanCalculator / PostgraduateLoanCostCalculator use 6%. Round 11: prose on postgraduate-loan-cost, postgraduate-loan and student-loan-interest no longer calls 6% a permanent \"ceiling\"; the PostgraduateLoanCalculator label shows RPI+3% (7.1%) capped at 6% until 31 Aug 2027.",
+      "official_value": "6 (RPI 4.1% + 3% = 7.1%, temporarily capped at 6% from 1 Sep 2026 to 31 Aug 2027)",
       "confidence": "high",
       "freshness_note": "Re-verified 2026-09-10 against gov.uk 'Repaying your student loan: what you pay'. The applicable RPI rate for 1 September 2026 to 31 August 2027 is 4.1% (Plan 1, Plan 4 and Plan 5 charge it flat; Plan 2 runs 4.1% at or below GBP 29,385 to the capped 6% at GBP 52,885 and above; Postgraduate loans sit at the capped 6%). Thresholds 26,900 / 29,385 / 33,795 / 25,000 / 21,000 unchanged. The Tier-1 alert fired because saas.gov.uk moved 3.2% -> 4.1%; the ledger and the calculators already held 4.1%, but prose across 9 calculators still quoted the old rate and was corrected in this pass.",
       "fixed": true,
       "fixed_date": "2026-06-16",
-      "verified_date": "2026-09-10",
-      "verify_method": "tier2 monitor-alert re-verify (official source read in full)"
+      "verified_date": "2026-10-19",
+      "verify_method": "tier2 monitor-alert re-verify (official source read in full)",
+      "changes_next_fy": "Cap review for 1 Sep 2027: if the 6% cap lapses the rate becomes RPI(Mar 2027)+3%."
     },
     {
       "key": "postgraduate_loan_rate",
@@ -26445,9 +26448,11 @@
       "source_url": "https://www.gov.uk/student-finance/new-fulltime-students",
       "status": "current",
       "change_frequency": "",
-      "note": "university-cost-calculator: home undergraduate tuition fee cap £9,790 (raised from £9,250 in 2024); NI students £4,855; Scottish students free in Scotland",
+      "note": "university-cost-calculator: home undergraduate tuition fee cap £9,790 for 2026/27 (raised from £9,535); NI students at an NI university up to £4,985 (2025/26 £4,855, fixed round 11); Scottish students free in Scotland",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "verified_source": "https://www.gov.uk/student-finance/new-fulltime-students",
+      "verified_date": "2026-10-19"
     },
     {
       "key": "uc_2025_26_aet_couple_monthly",
@@ -30904,11 +30909,11 @@
       "source_url": "https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs",
       "status": "current",
       "change_frequency": "annual (1 April)",
-      "note": "3-month PPC £32.05, 12-month £114.50 (page said £33/£114)",
+      "note": "Carer pages had £32.05; student-budget-planner said £33 until round 11.",
       "official_value": "32.05",
       "confidence": "high",
       "freshness_note": "Added by calkcheck 2026-09-26 after a stale value was found on the page; verified against the source URL.",
-      "verified_date": "2026-09-26",
+      "verified_date": "2026-10-19",
       "verify_method": "calkcheck-2026-09-26"
     },
     {
@@ -31492,11 +31497,11 @@
       "source_url": "https://www.gov.uk/government/publications/reduction-in-the-cash-individual-savings-account-isa-limit/cash-individual-savings-account-isa-limit-reduction",
       "status": "current",
       "change_frequency": "",
-      "note": "Cash ISA cap within the £20,000 allowance (ISA input hint + prose)",
+      "note": "Cash ISA cap within the £20,000 allowance from 6 Apr 2027 for those aged 64 or under at the end of the tax year (SI 2026/1018, made 10 Sep 2026); 65+ keep £20,000 cash. Round 11 added the caveat on regular-savings (prose + FAQ).",
       "official_value": "12000",
       "confidence": "high",
       "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source. 2026-10-13: now law. The Individual Savings Account (Amendment) (No. 2) Regulations 2026, SI 2026/1018, made 10 Sep 2026, laid 14 Sep 2026, in force 6 Apr 2027: GBP12,000 cash limit where the individual is 64 or under at the end of the year (reg 6, new para 1ZA). https://www.legislation.gov.uk/uksi/2026/1018/made",
-      "verified_date": "2026-10-13",
+      "verified_date": "2026-10-19",
       "verify_method": "budget-2026-calculator build 2026-10-13: primary source read"
     },
     {
@@ -36158,6 +36163,416 @@
         "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/employment-tribunals"
+    },
+    {
+      "key": "ni_tuition_fee_cap_2026_27",
+      "value": 4985,
+      "unit": "GBP/year",
+      "official_value": "Up to £4,985 (2025/26 £4,855)",
+      "law": "DfE(NI) tuition fee cap",
+      "theme": "education",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://studentfinanceni.co.uk/types-of-finance/undergraduate/full-time/tuition-fee-and-living-cost-students/help-with-tuition-fee-costs/tuition-fee-loan/how-much-can-i-get/",
+      "confidence": "high",
+      "changes_next_fy": "Uprated each academic year (DfE(NI) Rates Memorandum, July).",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "ucas_tariff_welsh_bacc_skills_challenge",
+      "value": "A*=56, A=48, B=40, C=32, D=24, E=16",
+      "unit": "UCAS points",
+      "official_value": "same as an A level (size band 4)",
+      "law": "UCAS Tariff tables 2026 entry",
+      "theme": "education",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.ucas.com/media/205211/download",
+      "confidence": "high",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "ucas_tlevel_pass_c_or_above_points",
+      "value": 96,
+      "unit": "UCAS points",
+      "official_value": "Pass (C or above) 96; Pass (D or E) 72",
+      "law": "UCAS Tariff tables 2026 entry",
+      "theme": "education",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.ucas.com/media/205211/download",
+      "confidence": "high",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "congestion_charge_cvd_ev_van_discount",
+      "value": 50,
+      "unit": "%",
+      "official_value": "Electric cars 25% (£13.50), electric vans/HGVs/quadricycles 50% (£9), Auto Pay only, from 2 Jan 2026; 12.5% / 25% from 4 Mar 2030",
+      "law": "TfL Congestion Charge scheme order",
+      "theme": "transport",
+      "surfaces": [
+        "prose",
+        "component"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts",
+        "src/components/calculators/ULEZCalculator.tsx"
+      ],
+      "source_url": "https://tfl.gov.uk/modes/driving/congestion-charge/discounts-and-exemptions",
+      "confidence": "high",
+      "changes_next_fy": "Discount halves on 4 March 2030.",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "congestion_charge_residents_discount",
+      "value": 90,
+      "unit": "%",
+      "official_value": "90% (£1.80/day) after £10 annual registration, Auto Pay; from 1 Mar 2027 new applicants EV only",
+      "law": "TfL Congestion Charge scheme order",
+      "theme": "transport",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://tfl.gov.uk/modes/driving/congestion-charge/congestion-charge-changes",
+      "confidence": "high",
+      "changes_next_fy": "1 Mar 2027: new residents' discount applications only for electric vehicles.",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "railcard_annual_price",
+      "value": 35,
+      "unit": "GBP/year",
+      "official_value": "£35 (3-year £80 where sold); Disabled Persons £20 (3-year £54)",
+      "law": "Rail Delivery Group Railcard scheme",
+      "theme": "transport",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.railcard.co.uk/",
+      "confidence": "high",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "railcard_season_ticket_discount",
+      "value": "none",
+      "unit": "",
+      "official_value": "Most Railcard discounts not available on Season tickets; 16-17 Saver and child rate 50%",
+      "law": "National Rail Conditions / Railcard terms",
+      "theme": "transport",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.nationalrail.co.uk/tickets-railcards-and-offers/ticket-types/season-tickets/",
+      "confidence": "high",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "tfl_travelcard_z1_6_2026",
+      "value": "day £23.60 / 7-day £81.60 / monthly £313.40 / annual £3,264",
+      "unit": "GBP",
+      "official_value": "Adult rate prices 2026 (from 2 Mar 2026)",
+      "law": "TfL fares",
+      "theme": "transport",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://tfl.gov.uk/cdn/static/cms/documents/adult-fares.pdf",
+      "confidence": "high",
+      "changes_next_fy": "TfL fares change each March.",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "rail_regulated_fares_freeze_2026",
+      "value": "frozen",
+      "unit": "",
+      "official_value": "Regulated fares in England frozen from 2 Mar 2026 until March 2027 (first freeze in 30 years)",
+      "law": "DfT fares policy",
+      "theme": "transport",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/news/passengers-save-millions-as-rail-fare-freeze-starts",
+      "confidence": "high",
+      "changes_next_fy": "March 2027 fares decision.",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "mot_dangerous_defect_fine",
+      "value": 2500,
+      "unit": "GBP",
+      "official_value": "up to £2,500, driving ban and 3 penalty points for driving with a dangerous defect",
+      "law": "Road Traffic Act 1988 / DVSA",
+      "theme": "transport",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/getting-an-mot/after-the-test",
+      "confidence": "high",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "employers_liability_certificate_fine",
+      "value": 1000,
+      "unit": "GBP",
+      "official_value": "up to £1,000 (level 3) for failing to display or produce the certificate",
+      "law": "Employers' Liability (Compulsory Insurance) Act 1969 s4(3)",
+      "theme": "insurance",
+      "surfaces": [
+        "prose",
+        "component"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts",
+        "src/components/calculators/EmployersLiabilityCalculator.tsx"
+      ],
+      "source_url": "https://www.hse.gov.uk/pubns/hse40.pdf",
+      "confidence": "high",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "insurance_premium_tax_standard_rate",
+      "value": 12,
+      "unit": "%",
+      "official_value": "12% standard (20% higher rate for travel and some add-ons)",
+      "law": "Finance Act 1994 Part III",
+      "theme": "insurance",
+      "surfaces": [
+        "prose",
+        "component"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/components/calculators/EmployersLiabilityCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/guidance/insurance-premium-tax",
+      "confidence": "high",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "est_double_glazing_saving_semi",
+      "value": 85,
+      "unit": "GBP/year",
+      "official_value": "£85 a year in GB (£140 NI) for an entirely single-glazed semi; set of A-rated windows ~£4,800; rating scale A++ to E",
+      "law": "Energy Saving Trust (advisory)",
+      "theme": "energy",
+      "surfaces": [
+        "component",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/DoubleGlazingCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://energysavingtrust.org.uk/advice/windows-and-doors/",
+      "confidence": "medium",
+      "changes_next_fy": "EST updates savings with fuel prices; no date on the page.",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "ofgem_cap_breakdown_oct_dec_2026",
+      "value": "wholesale 47 / networks 24 / operating 17 / policy 6 / EBIT 2.7",
+      "unit": "% of DD cap",
+      "official_value": "Annex 1, Ofgem summary of changes 1 Oct - 31 Dec 2026",
+      "law": "Ofgem default tariff cap",
+      "theme": "energy",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.ofgem.gov.uk/sites/default/files/2026-08/Summary-of-changes-to-energy-price-cap-1-October-to-31-December-2026.pdf",
+      "confidence": "high",
+      "changes_next_fy": "Changes each quarter (next 1 Jan 2027, announced ~25 Nov 2026).",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "sfi26_cnum3_legume_fallow_rate",
+      "value": 532,
+      "unit": "GBP/ha",
+      "official_value": "£532/ha (reduced 3 Jun 2026)",
+      "law": "SFI26",
+      "theme": "farming",
+      "surfaces": [
+        "component",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/ELMPaymentCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/find-funding-for-land-or-farms/cnum3-legume-fallow",
+      "confidence": "high",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "sfi26_cnum2_legumes_improved_grassland_rate",
+      "value": 102,
+      "unit": "GBP/ha",
+      "official_value": "£102/ha",
+      "law": "SFI26",
+      "theme": "farming",
+      "surfaces": [
+        "component"
+      ],
+      "used_by": [
+        "src/components/calculators/ELMPaymentCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/find-funding-for-land-or-farms/cnum2-legumes-on-improved-grassland",
+      "confidence": "high",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "sfi26_clig3_very_low_input_grassland_rate",
+      "value": 151,
+      "unit": "GBP/ha",
+      "official_value": "£151/ha",
+      "law": "SFI26",
+      "theme": "farming",
+      "surfaces": [
+        "component"
+      ],
+      "used_by": [
+        "src/components/calculators/ELMPaymentCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/find-funding-for-land-or-farms/clig3-manage-grassland-with-very-low-nutrient-inputs",
+      "confidence": "high",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "sfi26_bfs1_watercourse_buffer_rate",
+      "value": 707,
+      "unit": "GBP/ha",
+      "official_value": "£707/ha (12-24 m buffer on cultivated land)",
+      "law": "SFI26",
+      "theme": "farming",
+      "surfaces": [
+        "component"
+      ],
+      "used_by": [
+        "src/components/calculators/ELMPaymentCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/sustainable-farming-incentive-2026-sfi26/sfi26-actions-print-version",
+      "confidence": "high",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "isa_cash_interest_charge_from_2027",
+      "value": 22,
+      "unit": "%",
+      "official_value": "22% flat charge on interest on cash held in non-cash ISAs from 6 Apr 2027",
+      "law": "ISA reform 2027 (anti-circumvention)",
+      "theme": "savings",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/fiscal-events-2026-factsheets/isa-reform-2027-anti-circumvention-rules-factsheet",
+      "confidence": "high",
+      "changes_next_fy": "Takes effect 6 April 2027.",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "plan5_forecast_full_repayment_share",
+      "value": 55,
+      "unit": "%",
+      "official_value": "55% of 2025/26 Plan 5 starters forecast to repay in full",
+      "law": "DfE student loan forecasts (9 Jul 2026)",
+      "theme": "student_loan",
+      "surfaces": [
+        "prose",
+        "component"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/components/calculators/UniversityCostCalculator.tsx"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/student-loan-forecasts-for-england/2025-26",
+      "confidence": "medium",
+      "status": "current",
+      "verified_date": "2026-10-19"
+    },
+    {
+      "key": "scotland_lez_penalty",
+      "value": 60,
+      "unit": "GBP",
+      "official_value": "£60, £30 if paid within 14 days, doubling for repeat breaches up to £480 (cars/LGVs)",
+      "law": "Low Emission Zones (Scotland) Regulations 2021",
+      "theme": "transport",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.mygov.scot/low-emission-zones/fines",
+      "confidence": "high",
+      "status": "current",
+      "verified_date": "2026-10-19"
     }
   ],
   "status_summary": {

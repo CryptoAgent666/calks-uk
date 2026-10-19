@@ -3,11 +3,12 @@ import { formatCurrency } from '@/utils'
 
 function calculate(salary: number, coverPct: number, deferredWeeks: number, retireAge: number, currentAge: number) {
   const monthlyCover = (salary * coverPct / 100) / 12
-  const yearsOfCover = retireAge - currentAge
+  const yearsOfCover = Math.max(0, retireAge - currentAge)
 
   // Indicative premium: ~3-5% of benefit amount depending on age/deferral
   const baseRate = currentAge < 30 ? 0.025 : currentAge < 40 ? 0.035 : currentAge < 50 ? 0.05 : 0.07
-  const deferralDiscount = deferredWeeks >= 26 ? 0.6 : deferredWeeks >= 13 ? 0.75 : deferredWeeks >= 4 ? 0.9 : 1
+  // Deferred-period factor: 4 weeks 1.0, 8 weeks 0.9, 13 weeks 0.75, 26 weeks 0.6, 52 weeks 0.5
+  const deferralDiscount = deferredWeeks >= 52 ? 0.5 : deferredWeeks >= 26 ? 0.6 : deferredWeeks >= 13 ? 0.75 : deferredWeeks >= 8 ? 0.9 : 1
   const annualPremium = monthlyCover * 12 * baseRate * deferralDiscount
   const monthlyPremium = annualPremium / 12
   const totalPremiums = annualPremium * yearsOfCover

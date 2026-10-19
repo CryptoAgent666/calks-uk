@@ -2,7 +2,8 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 function calculate(monthlyDeposit: number, annualRate: number, termMonths: number) {
-  const monthlyRate = annualRate / 100 / 12
+  // AER-consistent monthly rate: 12 months of compounding give exactly the AER
+  const monthlyRate = Math.pow(1 + annualRate / 100, 1 / 12) - 1
   let balance = 0
   let totalDeposited = 0
   const schedule: { month: number; deposited: number; interest: number; balance: number }[] = []
@@ -52,7 +53,7 @@ export default function RegularSavingsCalculator() {
           <div className="grid grid-cols-3 gap-3">
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Total Deposited</p><p className="text-lg font-bold">{formatCurrency(result.totalDeposited)}</p></div>
             <div className="rounded-xl bg-green-100 dark:bg-green-950 p-3 text-center"><p className="text-xs text-muted-foreground">Interest Earned</p><p className="text-lg font-bold text-green-700 dark:text-green-400">{formatCurrency(result.totalInterest)}</p></div>
-            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Effective Return</p><p className="text-lg font-bold">{result.effectiveRate.toFixed(2)}%</p></div>
+            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Interest as % of deposits</p><p className="text-lg font-bold">{result.effectiveRate.toFixed(2)}%</p></div>
           </div>
 
           {result.schedule.length > 0 && (
@@ -67,7 +68,7 @@ export default function RegularSavingsCalculator() {
           )}
 
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>Note: regular saver accounts typically have a 12-month term with a fixed monthly deposit limit (often £25-£500). The effective return on a 12-month regular saver at {r}% AER is roughly half the headline rate because you only earn interest on the average balance.</p>
+            <p>Note: regular saver accounts typically have a 12-month term with a fixed monthly deposit limit (often £25-£500). The effective return on a 12-month regular saver at {r}% AER is roughly half the headline rate because you only earn interest on the average balance. Interest is added monthly at the rate that compounds to exactly {r}% over a year.</p>
           </div>
         </div>
       )}

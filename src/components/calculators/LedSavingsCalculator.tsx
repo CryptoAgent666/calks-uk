@@ -1,15 +1,22 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
+const LED_LIFE_HOURS = 25000 // rated life of a quality LED
+
 function calculate(oldWatts: number, newWatts: number, bulbs: number, hoursPerDay: number, elecRate: number, ledCost: number) {
   const oldKwhYear = (oldWatts * hoursPerDay * 365 * bulbs) / 1000
   const newKwhYear = (newWatts * hoursPerDay * 365 * bulbs) / 1000
   const savedKwh = oldKwhYear - newKwhYear
   const annualSaving = savedKwh * (elecRate / 100)
+  const oldCostYear = oldKwhYear * (elecRate / 100)
+  const newCostYear = newKwhYear * (elecRate / 100)
   const totalLedCost = ledCost * bulbs
   const paybackMonths = annualSaving > 0 ? (totalLedCost / annualSaving) * 12 : 0
+  // Years a 25,000-hour LED lasts at this daily use, and the saving over that life
+  const lifeYears = hoursPerDay > 0 ? LED_LIFE_HOURS / (hoursPerDay * 365) : 0
+  const lifetimeSaving = annualSaving * lifeYears
 
-  return { oldKwhYear, newKwhYear, savedKwh, annualSaving, totalLedCost, paybackMonths }
+  return { oldKwhYear, newKwhYear, savedKwh, annualSaving, oldCostYear, newCostYear, totalLedCost, paybackMonths, lifeYears, lifetimeSaving }
 }
 
 export default function LedSavingsCalculator() {
@@ -39,13 +46,17 @@ export default function LedSavingsCalculator() {
             <p className="text-sm text-muted-foreground">Annual Saving</p>
             <p className="text-3xl font-bold text-green-700 dark:text-green-400 mt-1">{formatCurrency(result.annualSaving)}</p>
             <p className="text-sm text-muted-foreground mt-1">{result.savedKwh.toFixed(0)} kWh saved &middot; Payback: {result.paybackMonths.toFixed(1)} months</p>
+            <p className="text-sm text-muted-foreground mt-1">{formatCurrency(result.lifetimeSaving)} over a 25,000-hour LED life ({result.lifeYears.toFixed(1)} years at {hours} hours a day)</p>
           </div>
           <div className="grid grid-cols-3 gap-3">
-            <div className="rounded-xl bg-destructive/10 p-4 text-center"><p className="text-xs text-muted-foreground">Old Cost/Year</p><p className="text-lg font-bold text-destructive">{formatCurrency(result.oldKwhYear * (parseFloat(rate)/100))}</p></div>
-            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">LED Cost/Year</p><p className="text-lg font-bold">{formatCurrency(result.newKwhYear * (parseFloat(rate)/100))}</p></div>
+            <div className="rounded-xl bg-destructive/10 p-4 text-center"><p className="text-xs text-muted-foreground">Old Cost/Year</p><p className="text-lg font-bold text-destructive">{formatCurrency(result.oldCostYear)}</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">LED Cost/Year</p><p className="text-lg font-bold">{formatCurrency(result.newCostYear)}</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">LED Purchase</p><p className="text-lg font-bold">{formatCurrency(result.totalLedCost)}</p></div>
           </div>
         </div>
+      )}
+      {(parseFloat(oldW) || 0) > 0 && (parseFloat(newW) || 0) >= (parseFloat(oldW) || 0) && (
+        <div className="rounded-xl border border-border p-4 text-center text-sm text-muted-foreground">No saving: the new bulb uses as much power as the old one, or more.</div>
       )}
     </div>
   )

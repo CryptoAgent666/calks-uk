@@ -1,5 +1,31 @@
 # CHANGELOG — Calks.uk
 
+## 2026-10-19 (round 11) — Congestion Charge EV discount, MOT early-test date, season tickets, energy, education, investments
+
+Eleventh `/calkcheck` pass (report: `AUDIT-2026-10-19-c.md`): 20 never-hand-checked regulated pages (auto, insurance,
+energy, education, farming, investment). 146 defects on 20 of 20 pages, 9 HIGH; 8 calculators gave wrong answers.
+
+**Policy and figures corrected:** electric cars pay the Congestion Charge since 2 January 2026 (25% Auto Pay discount,
+vans 50%, halving on 4 March 2030; page title £18); MOT early test up to a month minus a day before expiry; Railcards
+do not discount season tickets and cost £35 (Disabled Persons £20); regulated rail fares frozen to March 2027; TfL
+Zones 1–6 2026 fares; Northern Ireland tuition fee £4,985; Welsh Baccalaureate certificate on the A-level tariff scale;
+UCAS Adjustment, BMAT and ENGAA/NSAA retired; postgraduate interest 6% is a temporary cap to 31 August 2027; the 2030
+EPC Band C standard for landlords is a target, not law; Energy Saving Trust double-glazing saving £85 a year.
+
+**Calculators corrected:** MOT date (exact early-test date, certificate expiry as due date), ULEZ (EV discount only
+with Auto Pay), Congestion Charge (weeks input), train season ticket (3.6× / 3.84× / 40× ratios), electricity cost and
+smart meter (fridge-freezer preset 30 W), double glazing (EST basis, pro-rata saving), energy bill (no-gas option,
+standing-charge split), EPC comparison (upgrade cost and payback), LED savings (lifetime saving), investment return
+(real value = pot ÷ (1 + inflation)^years; real return a year), Stocks and Shares ISA (allowances netted off tax saved),
+regular savings (AER-consistent monthly rate), income protection (52-week deferral, clamped cover years), university
+cost (living-costs gap, living-with-parents option), maintenance loan (minimum from the exact threshold), ELM (four
+SFI26 actions, quarterly payment).
+
+**Out of sample:** smart-meter, gas-cost, epc, sipp, commute-cost, student-allowance, student-budget-planner,
+student-loan-interest, postgraduate-loan.
+
+**Guards and ledger:** 129 new stale-value guards; 21 new and 9 updated ledger entries.
+
 ## 2026-10-19 (round 10) — Tribunal time limit six months, tax codes, VAT flat rate, child maintenance, Help to Save
 
 Tenth `/calkcheck` pass (report: `AUDIT-2026-10-19-b.md`): 20 never-hand-checked regulated pages (tax, pay, benefits,

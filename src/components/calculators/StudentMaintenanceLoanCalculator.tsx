@@ -21,8 +21,11 @@ function calculate(householdIncome: number, living: LivingSituation) {
 
   // The published tables round the income assessment down to whole pounds;
   // doing the same here reproduces them exactly.
+  // SLC pays the basic rate from the published income (minFrom) upwards, even
+  // where the £1-per-taperPer rule would still leave a few pounds more.
   let loan: number
   if (householdIncome <= FULL_AWARD_CEILING) loan = max
+  else if (householdIncome >= minFrom) loan = min
   else {
     const assessment = Math.floor((householdIncome - FULL_AWARD_CEILING) / taperPer)
     loan = Math.max(min, max - assessment)
@@ -56,7 +59,7 @@ export default function StudentMaintenanceLoanCalculator() {
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Maximum Loan</p><p className="text-lg font-bold">{formatCurrency(result.max)}</p><p className="text-xs text-muted-foreground">Income under £25K</p></div>
-          <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Minimum Loan</p><p className="text-lg font-bold">{formatCurrency(result.min)}</p><p className="text-xs text-muted-foreground">Income over {formatCurrency(result.minFrom)}</p></div>
+          <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Minimum Loan</p><p className="text-lg font-bold">{formatCurrency(result.min)}</p><p className="text-xs text-muted-foreground">Income from {formatCurrency(result.minFrom)}</p></div>
         </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
           <p>England rates 2026/27, for a dependent full-year student who is not entitled to benefits. Scotland, Wales and NI have different rates. Above £25,000 the loan falls by £1 for roughly every £6.36 to £6.54 of household income, then stops falling at the basic rate shown. Final-year students and students entitled to benefits are assessed on different figures. Apply via Student Finance England.</p>
