@@ -3461,6 +3461,21 @@
    "was": "approx £4,700 in tax",
    "now": "tax saved derived from dividend tax and CGT with stated split",
    "what": "isa_example_tax_saved_vs_gia (r11 leftovers)"
+  },
+  {
+   "was": "DIVIDEND_ALLOWANCE * years",
+   "now": "dividend allowance netted off each year's dividends separately",
+   "what": "ss_isa_tax_saved_per_year_dividend (allowance cannot be carried between tax years)"
+  },
+  {
+   "was": "CGT_ANNUAL_EXEMPT * years",
+   "now": "CGT annual exempt amount netted off each year's growth separately",
+   "what": "ss_isa_tax_saved_per_year_cgt (exemption cannot be carried between tax years)"
+  },
+  {
+   "was": "CGT exemption netted off each year, all gains realised",
+   "now": "footnote says gains realised each year and unused allowance cannot be carried forward",
+   "what": "ss_isa_tax_saved_footnote"
   }
  ]
 }
