@@ -422,7 +422,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'isa-calculator',
     title: 'ISA Calculator — Tax-Free Savings Growth',
-    description: 'Calculate your tax-free ISA savings growth with the £20,000 annual allowance. Compare Cash ISA and Stocks & Shares ISA.',
+    description: 'Calculate your tax-free ISA savings growth within the £20,000 annual allowance, and the tax the same interest would cost in an ordinary savings account.',
     category: 'investment',
     icon: 'TrendingUp',
     keywords: ['ISA', 'individual savings account', 'ISA allowance', 'tax free savings'],

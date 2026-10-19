@@ -3401,6 +3401,41 @@
    "was": "£20-£60 a month for",
    "now": "premium range from the model",
    "what": "income_protection_premium_range (round 11)"
+  },
+  {
+   "was": "models growth at multiple assumed rates",
+   "now": "single rate, one path; run it at several rates",
+   "what": "isa_calculator_range_of_outcomes_claim (r11 follow-up)"
+  },
+  {
+   "was": "Platform fees (0.15-0.45%)",
+   "now": "platform fees up to the HL rate after its March cut",
+   "what": "isa_platform_fee_range (r11 follow-up)"
+  },
+  {
+   "was": "are deducted in the projection",
+   "now": "no charges field: enter growth net of charges",
+   "what": "isa_calculator_charges_claim (r11 follow-up)"
+  },
+  {
+   "was": "compounds interest annually or monthly depending on the product",
+   "now": "entered rate compounded monthly, nominal not AER",
+   "what": "isa_calculator_compounding_claim (r11 follow-up)"
+  },
+  {
+   "was": "Compare Cash ISA and Stocks & Shares ISA",
+   "now": "no Cash vs Stocks comparison in the tool",
+   "what": "isa_calculator_meta_description (r11 follow-up)"
+  },
+  {
+   "was": "Usually yes at three days or more",
+   "now": "three days pays only over many weeks; contactless caps",
+   "what": "commute_annual_season_breakeven_days (r11 follow-up)"
+  },
+  {
+   "was": "Below three days a week in the office, daily tickets often win",
+   "now": "three days pays only over many weeks; contactless caps",
+   "what": "commute_annual_season_breakeven_days prose (r11 follow-up)"
   }
  ]
 }

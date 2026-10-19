@@ -36302,7 +36302,7 @@
     },
     {
       "key": "tfl_travelcard_z1_6_2026",
-      "value": "day £23.60 / 7-day £81.60 / monthly £313.40 / annual £3,264",
+      "value": "day £23.60 / 7-day £81.60 / monthly £313.40 / annual £3,264; pay-as-you-go cap £16.30 a day, £81.60 Monday to Sunday",
       "unit": "GBP",
       "official_value": "Adult rate prices 2026 (from 2 Mar 2026)",
       "law": "TfL fares",
