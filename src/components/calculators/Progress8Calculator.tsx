@@ -97,7 +97,7 @@ export default function Progress8Calculator() {
         {a8Mode === 'score' ? (
           <div>
             <input type="number" inputMode="decimal" min={0} max={90} step={0.5} value={a8Input} onChange={(e) => setA8Input(e.target.value)} placeholder="56" aria-label="Attainment 8 score, 0 to 90" className={inputCls} />
-            <p className="text-xs text-muted-foreground mt-1">0 to 90. English and maths count twice; the national average for state-funded schools was {NATIONAL_A8} in 2025.</p>
+            <p className="text-xs text-muted-foreground mt-1">0 to 90. English and maths count twice; the national average for state-funded schools was {NATIONAL_A8} in 2026 (provisional).</p>
           </div>
         ) : (
           <div className="space-y-2">

@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-10-19'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-10-20'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -24,6 +24,35 @@ const schemas = [
     <p class="text-sm text-muted-foreground mb-8">Rate changes, new calculators and site improvements</p>
 
     <div class="space-y-8">
+      <!-- October 2026 — round 13 audit: farm wages and livestock units, pension vs ISA, health guidance, GCSE and A-level figures, student budgets -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            October 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Farm wages, pension against ISA, health guidance and twenty more pages re-checked</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Health pages follow NHS and NICE guidance.</strong> The <a href="/calculator/alcohol-units-calculator/" class="text-primary hover:underline">alcohol units</a> page no longer suggests how many pints keep you under the drink-drive limit: as gov.uk says, it is impossible to tell, so if you are driving, do not drink. The <a href="/calculator/bmi-calculator/" class="text-primary hover:underline">BMI</a> and <a href="/calculator/ideal-weight-calculator/" class="text-primary hover:underline">ideal weight</a> tools now apply NICE's lower thresholds for people of South Asian, Chinese, other Asian, Middle Eastern, Black African or African-Caribbean background. The <a href="/calculator/water-intake-calculator/" class="text-primary hover:underline">water intake</a> tool is for adults and gives the separate figures for children. The <a href="/calculator/ovulation-calculator/" class="text-primary hover:underline">ovulation</a> and <a href="/calculator/pregnancy-due-date-calculator/" class="text-primary hover:underline">due date</a> tools fix their dates and follow the March 2026 NICE fertility guideline, and the due date now adjusts for cycle length.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Pension against ISA, corrected for higher-rate taxpayers.</strong> The <a href="/calculator/pension-vs-isa-calculator/" class="text-primary hover:underline">pension vs ISA</a> tool undercounted higher- and additional-rate relief. It now compares the two at the same monthly cost to you, adds Scottish rates and a retirement tax rate, and says that ISA savings count as capital for means-tested benefits. The <a href="/calculator/profit-and-loss-calculator/" class="text-primary hover:underline">profit and loss</a> page's Corporation Tax examples left out part of the marginal relief calculation (the right figure on £75,000 of profit is £16,125), and sole traders over £50,000 now see their Making Tax Digital obligations.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Farm pay, rents and livestock units.</strong> The <a href="/calculator/agricultural-worker-wage-calculator/" class="text-primary hover:underline">agricultural wage</a> tool now follows the Welsh and Scottish Orders on overtime and annual leave (31 days for a five-day week in Wales) and adds Northern Ireland. The <a href="/calculator/stock-unit-calculator/" class="text-primary hover:underline">livestock unit</a> tool uses the RPA grazing livestock unit table and shows stocking per hectare. <a href="/calculator/farm-tenancy-calculator/" class="text-primary hover:underline">Farm rents</a> are compared with Defra's 2024/25 averages.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Exams, students and weddings.</strong> The <a href="/calculator/gcse-grade-calculator/" class="text-primary hover:underline">Attainment 8</a> page uses the 2026 national average of 46.2 (provisional) and this summer's grade boundaries, and the <a href="/calculator/a-level-grade-calculator/" class="text-primary hover:underline">A-level</a> tool now bands your best three grades. The <a href="/calculator/student-budget-calculator/" class="text-primary hover:underline">student budget</a> counts rent for the whole tenancy, not just term time. The <a href="/calculator/wedding-cost-calculator/" class="text-primary hover:underline">wedding cost</a> pages use the 2026 Hitched and Bridebook averages.</span>
+          </li>
+        </ul>
+      </article>
+
       <!-- October 2026 — round 12 audit: VAT rates, employer NI reliefs, pension annual allowance, mortgage averages, standing charges, home insurance, State Pension age -->
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>

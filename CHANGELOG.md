@@ -1,5 +1,34 @@
 # CHANGELOG — Calks.uk
 
+## 2026-10-20 (round 13) — Health guidance, pension vs ISA, farm wages and livestock units, exams, student budgets
+
+Thirteenth `/calkcheck` pass (report: `AUDIT-2026-10-20.md`): 20 never-hand-checked pages (tax, business, legal,
+farming, insurance, education, life events, health). 205 defects on 20 of 20 pages, 11 HIGH; 11 calculators gave
+wrong answers.
+
+**Policy and figures corrected:** drink-drive limit no longer converted into pints (gov.uk: impossible to say);
+NICE NG246 lower BMI thresholds for higher-risk ethnic groups; NICE NG257 fertility advice (every 2–3 days, IVF
+cycles); EFSA/BNF fluid figures for children; ISA savings count as capital for means-tested benefits; LISA withdrawal
+rules; CT marginal relief examples (£16,125 on £75k, £36,000 on £150k); MTD for Income Tax for sole traders; small
+companies may omit the P&L at Companies House until April 2028; separating spouses' CGT no gain/no loss; FPR first
+appointment timetable; Scottish agricultural overtime £19.07; Welsh agricultural leave (31 days for a five-day week);
+Northern Ireland agricultural grades; Defra farm rents 2024/25; RPA GLU coefficients; NVZ about 55% of England;
+Attainment 8 national average 46.2 (2026, provisional); JCQ 2026 GCSE results; June 2026 grade boundaries; NI
+maintenance grant £3,569; Hitched 2026 and Bridebook 2026 wedding averages; NHS antenatal schedule.
+
+**Calculators corrected:** pension vs ISA (equal net-cost relief, Scottish rates, retirement rate), profit and loss
+(interest and CT lines), sole trader vs Ltd (tax columns), CGT on shares (allowance used, defaults), spousal
+maintenance (child age, Scotland), agricultural wage (overtime base, holiday by nation, 39-hour cap, NI), farm tenancy
+(yield and price inputs, Defra comparison), fertiliser (custom rate, pack size), livestock units (GLU table, stocking
+per hectare, mobile layout), life insurance (inputs labelled), A-level (best three grades), GCSE (2026 average),
+student budget (rent weeks), wedding cost (guest clamp, fees line), pregnancy due date (cycle length, conception date,
+trimester), alcohol units (custom drinks counted, session warning), BMI (background selector), ideal weight
+(background, ft/in), water intake (adults only), ovulation (window, local dates).
+
+**Out of sample:** wedding-budget, exam-score, student-allowance, progress-8, body-fat.
+
+**Guards and ledger:** 69 new stale-value guards; 14 new and 3 updated ledger entries.
+
 ## 2026-10-19 (round 12) — VAT rates, employer NI reliefs, pension annual allowance, mortgage averages, standing charges, home insurance
 
 Twelfth `/calkcheck` pass (report: `AUDIT-2026-10-19-d.md`): 20 never-hand-checked money pages (tax, pay, benefits,

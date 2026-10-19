@@ -136,12 +136,17 @@
         "prose"
       ],
       "used_by": [
+        "src/components/calculators/AgricultureWorkerWageCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts",
         "src/data/calculators.ts"
       ],
-      "source_url": "",
+      "source_url": "https://www.gov.scot/publications/agricultural-wages-scotland-order-no-73-2026/",
       "status": "current",
       "change_frequency": "",
-      "note": "agricultural-worker-wage-calculator: 'overtime at 1.5x and holiday entitlement' (AWO grades 1-6)"
+      "note": "Wales (AWO 2025 art 12) and Scotland (AWSO No. 73 2026 arts 8-9) overtime 1.5 x the MINIMUM rate (Scotland: no SCQF/Lantra premium in the base, so £19.07 for all). Wales: beyond basic hours (max 39) and public holidays. Scotland: over 8 a day or 39 a week (48 in first 26 weeks). Northern Ireland (AWB Order No 106): overtime at the normal hourly rate. England: no Order since Oct 2013.",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
     },
     {
       "key": "agricultural_wage_grade1_initial",
@@ -33117,8 +33122,8 @@
       "change_frequency": "",
       "note": "Maintenance Payments Relief only where either party was born before 6 April 1935: 10% of up to £4,530 (2026/27 MCA minimum) = £453. gov.uk page still showed 2025/26 £4,360/£436 on 2026-09-28. Page said the relief was \"removed in 1988\".",
       "official_value": "453",
-      "verified_date": "2026-09-28",
-      "verify_method": "calkcheck-2026-09-28-r6",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13",
       "confidence": "medium",
       "changes_next_fy": "Uprated each April with the MCA minimum"
     },
@@ -34019,12 +34024,12 @@
         "src/data/faqs.ts"
       ],
       "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-performance/2024-25",
-      "status": "current",
+      "status": "superseded",
       "change_frequency": "",
-      "note": "State-funded schools, England, 2025: 46.0 (46.7 in 2019); 45.4% grade 5+ in English and maths; region range 44.1 (North East) to 50.8 (outer London).",
+      "note": "2025 figure 46.0 superseded by 2025/26 provisional 46.2 (see attainment_8_national_average_2026).",
       "official_value": "46.0",
-      "verified_date": "2026-09-28",
-      "verify_method": "site-improvement-2026-09-28",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13",
       "confidence": "high",
       "changes_next_fy": "Update when 2025/26 KS4 statistics are published (October 2026 provisional)"
     },
@@ -36973,14 +36978,339 @@
       "confidence": "medium",
       "verified_date": "2026-10-19",
       "verify_method": "calkcheck-2026-10-19-r12"
+    },
+    {
+      "key": "wales_agricultural_annual_leave_5_days",
+      "value": "31",
+      "unit": "days",
+      "law": "Agricultural Wages (Wales) Order 2025 (SI 2025/293) Sch 2",
+      "theme": "pay",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/AgricultureWorkerWageCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/wsi/2025/293/schedule/2/made",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Annual leave by days worked a week: >6 = 38; >5-6 = 35; >4-5 = 31 (6.2 weeks); >3-4 = 25; >2-3 = 20; >1-2 = 13; 1 or less = 7.5. AWO 2025 continues for 2026 with NMW/NLW uplifts.",
+      "official_value": "31",
+      "confidence": "high",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
+    },
+    {
+      "key": "scotland_agricultural_annual_leave_table",
+      "value": "8/13/18/23/28/33/38",
+      "unit": "days",
+      "law": "Agricultural Wages (Scotland) (No. 73) Order 2026 Table 3",
+      "theme": "pay",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/AgricultureWorkerWageCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.scot/publications/agricultural-wages-scotland-order-no-73-2026/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Days of leave for 1-7 days worked a week; Christmas Day and New Year's Day on top. Minimum rate £12.71 all ages; apprentice £8.00 for 18 months; SCQF 6+/Lantra premium £1.91.",
+      "official_value": "8/13/18/23/28/33/38",
+      "confidence": "high",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
+    },
+    {
+      "key": "ni_agricultural_wage_grades_2026",
+      "value": "12.71/13.30/13.66/13.89/14.44",
+      "unit": "GBP/hour",
+      "law": "Agricultural Wages Board for NI Order No 106 (1 Apr 2026)",
+      "theme": "pay",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/AgricultureWorkerWageCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.daera-ni.gov.uk/news/pay-increase-agricultural-workers-190326",
+      "status": "current",
+      "change_frequency": "annual (April)",
+      "note": "Grade 1 trainee £8.00 (<18) / £10.85 (18-20) / £12.71 (21+); Grade 2 £13.30; 3 £13.66; 4 £13.89; 5 £14.44; overtime at the normal hourly rate; accommodation offset £60.00/week.",
+      "official_value": "12.71/13.30/13.66/13.89/14.44",
+      "confidence": "high",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
+    },
+    {
+      "key": "defra_farm_rents_england_2024_25_fbt",
+      "value": "230",
+      "unit": "GBP/ha",
+      "law": "Defra Farm Rents in England 2024/25 (official statistic)",
+      "theme": "farming",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/FarmTenancyCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/statistics/farm-rents/farm-rents-in-england-202425-statistics-notice",
+      "status": "current",
+      "change_frequency": "annual",
+      "note": "FBT average £230/ha; 1986 Act (FAT) £174; seasonal £166; informal £253; LFA grazing £93; dairy £285 (dairy FBT £296); general cropping FBT £205; East Midlands FBT £301; London & South East £293. Updated 12 Mar 2026.",
+      "official_value": "230",
+      "confidence": "high",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
+    },
+    {
+      "key": "sfi26_grazing_livestock_units",
+      "value": "1.0/0.6/0.12/0.08/0.12/0.8/1.0",
+      "unit": "GLU",
+      "law": "SFI26 / Countryside Stewardship GLU table (RPA)",
+      "theme": "farming",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/StockUnitCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/find-funding-for-land-or-farms/upl3-limited-livestock-grazing-on-moorland",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Cattle >2 yrs 1.0; 6 months-2 yrs 0.6; lowland ewe and lamb or ram 0.12; store lamb, hill ewe and lamb, hogg or teg 0.08; goat 0.12; pony or donkey 0.8; horse 1.0; lambs at foot no separate allocation. UPL3 limit 0.04 GLU/ha (£111/ha). Page updated 17 Jun 2026. Cross compliance ended in England 1 Jan 2024.",
+      "official_value": "1.0/0.6/0.12/0.08/0.12/0.8/1.0",
+      "confidence": "high",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
+    },
+    {
+      "key": "nvz_share_of_england",
+      "value": "55",
+      "unit": "%",
+      "law": "Nitrate Pollution Prevention Regulations 2015 (2025-2028 designations)",
+      "theme": "farming",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/collections/nitrate-vulnerable-zones",
+      "status": "current",
+      "change_frequency": "",
+      "note": "About 55% of England designated NVZ for 2025-2028.",
+      "official_value": "55",
+      "confidence": "medium",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
+    },
+    {
+      "key": "attainment_8_national_average_2026",
+      "value": "46.2",
+      "unit": "points",
+      "law": "DfE Key stage 4 performance 2025/26 (provisional)",
+      "theme": "education",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/data/attainment8.ts",
+        "src/components/calculators/GCSEGradeCalculator.tsx",
+        "src/components/calculators/Progress8Calculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-performance",
+      "status": "current",
+      "change_frequency": "annual (October provisional, revised in Jan/Feb)",
+      "note": "State-funded schools, England, summer 2026 provisional (published 15 Oct 2026): 46.2; regions 44.1 (North East) to 51.2 (Outer London); 46.3% grade 5+ in English and maths, 64.8% grade 4+. Revised figures due early 2027.",
+      "official_value": "46.2",
+      "confidence": "high",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
+    },
+    {
+      "key": "jcq_gcse_2026_grade4_plus_uk",
+      "value": "67.3",
+      "unit": "%",
+      "law": "JCQ GCSE results summer 2026 (UK, all ages)",
+      "theme": "education",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.jcq.org.uk/",
+      "status": "current",
+      "change_frequency": "annual (August)",
+      "note": "67.3% at 4/C or above, 22.0% at 7/A or above (2025: 67.4% / 21.9%). Published 20 Aug 2026.",
+      "official_value": "67.3",
+      "confidence": "high",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
+    },
+    {
+      "key": "aqa_gcse_maths_higher_boundaries_2026",
+      "value": "219/63 of 240",
+      "unit": "marks",
+      "law": "AQA GCSE Maths 8300H grade boundaries June 2026",
+      "theme": "education",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.aqa.org.uk/exams-administration/results-days/grade-boundaries",
+      "status": "current",
+      "change_frequency": "annual",
+      "note": "Grade 9 219/240 (91%), grade 4 63 (26%), allowed grade 3 46. Same as June 2025. A-level June 2026: Chemistry A 220/300, A* 255; Physics A* 186-191/250 by option.",
+      "official_value": "219/63 of 240",
+      "confidence": "high",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
+    },
+    {
+      "key": "ni_maintenance_grant_2026_27",
+      "value": "3569",
+      "unit": "GBP/year",
+      "law": "Student Finance NI Maintenance Grant 2026/27",
+      "theme": "education",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.nidirect.gov.uk/articles/maintenance-grant",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Full grant £3,569 for household income £19,203 or less; partial up to £41,065 (was £3,475).",
+      "official_value": "3569",
+      "confidence": "high",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
+    },
+    {
+      "key": "nice_bme_bmi_thresholds",
+      "value": "23/27.5",
+      "unit": "kg/m2",
+      "law": "NICE NG246 (Jan 2025, replaces NG7)",
+      "theme": "health",
+      "surfaces": [
+        "computed",
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/BmiCalculator.tsx",
+        "src/components/calculators/IdealWeightCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.nice.org.uk/guidance/ng246",
+      "status": "current",
+      "change_frequency": "",
+      "note": "South Asian, Chinese, other Asian, Middle Eastern, Black African or African-Caribbean family background: overweight 23-27.4, obesity 27.5+ (classes 2/3 at 32.5/37.5). Waist-to-height ratio 0.5 (0.6 high).",
+      "official_value": "23/27.5",
+      "confidence": "high",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
+    },
+    {
+      "key": "drink_drive_limit_england_wales_ni",
+      "value": "80",
+      "unit": "mg/100ml blood",
+      "law": "Road Traffic Act 1988 s.11 (Scotland 50 since 5 Dec 2014)",
+      "theme": "health",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/drink-drive-limit",
+      "status": "current",
+      "change_frequency": "",
+      "note": "80 mg blood / 35 µg breath / 107 mg urine in England, Wales and NI; Scotland 50 / 22 / 67. gov.uk: impossible to say how many drinks equal the limit. DfT consulted 7 Jan - 11 May 2026 on lowering the England and Wales limit; no outcome by 20 Oct 2026.",
+      "official_value": "80",
+      "confidence": "high",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13",
+      "changes_next_fy": "Watch for the consultation outcome (proposed lower England and Wales limit) - update alcohol-units and any driving pages."
+    },
+    {
+      "key": "nice_ng257_ivf_cycles_under_40",
+      "value": "3",
+      "unit": "cycles",
+      "law": "NICE NG257 Fertility problems (31 Mar 2026, replaces CG156)",
+      "theme": "health",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.nice.org.uk/guidance/ng257",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Under 40: an initial 3 full IVF cycles, consider up to 3 more; 40-41 with no previous IVF: 1 full cycle. Sex every 2-3 days (1.5.1); earlier referral at 36+ (1.16.8). Local ICB criteria apply.",
+      "official_value": "3",
+      "confidence": "high",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
+    },
+    {
+      "key": "hitched_average_wedding_cost_2025",
+      "value": "21990",
+      "unit": "GBP",
+      "law": "Hitched Wedding Industry Report 2026 (market survey)",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.hitched.co.uk/",
+      "status": "current",
+      "change_frequency": "annual (January)",
+      "note": "Average 2025 wedding £21,990 (~£272/guest), London £24,622, Scotland £22,123. Bridebook 2026: £20,604 excl. honeymoon and ring (£278/guest), London £26,986, Scotland £22,987, North East £18,410. Market figure.",
+      "official_value": "21990",
+      "confidence": "medium",
+      "verified_date": "2026-10-20",
+      "verify_method": "calkcheck-2026-10-20-r13"
     }
   ],
   "status_summary": {
-    "current": 1638,
+    "current": 1651,
     "retired": 24,
     "historical": 17,
     "superseded_by_component": 4,
-    "superseded": 12,
+    "superseded": 13,
     "uncertain": 10
   },
   "theme_counts": {

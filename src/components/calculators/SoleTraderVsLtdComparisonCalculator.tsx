@@ -38,22 +38,24 @@ export default function SoleTraderVsLtdComparisonCalculator() {
 
   return (
     <div className="space-y-6">
-      <p className="text-sm text-muted-foreground">Side-by-side comparison at different profit levels (2026/27 rates)</p>
+      <p className="text-sm text-muted-foreground">Side-by-side comparison at different profit levels (2026/27 rates). The last column is the Ltd take-home minus the sole trader take-home.</p>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
-          <thead><tr className="border-b border-border"><th className="text-left py-2 font-medium text-muted-foreground">Profit</th><th className="text-right py-2 font-medium text-muted-foreground">Sole Trader</th><th className="text-right py-2 font-medium text-muted-foreground">Ltd Company</th><th className="text-right py-2 font-medium text-muted-foreground">Saving</th></tr></thead>
+          <thead><tr className="border-b border-border"><th className="text-left py-2 pr-2 font-medium text-muted-foreground">Profit</th><th className="text-right py-2 px-2 font-medium text-muted-foreground">Sole trader tax &amp; NI</th><th className="text-right py-2 px-2 font-medium text-muted-foreground">Sole trader take-home</th><th className="text-right py-2 px-2 font-medium text-muted-foreground">Ltd tax &amp; costs</th><th className="text-right py-2 px-2 font-medium text-muted-foreground">Ltd take-home</th><th className="text-right py-2 pl-2 font-medium text-muted-foreground">Ltd vs sole trader</th></tr></thead>
           <tbody>{results.map(r => (
             <tr key={r.profit} className="border-b border-border/50">
-              <td className="py-2.5 font-medium">{formatCurrency(r.profit)}</td>
-              <td className="text-right tabular-nums">{formatCurrency(r.stTakeHome)}</td>
-              <td className="text-right tabular-nums">{formatCurrency(r.ltdTakeHome)}</td>
-              <td className={`text-right tabular-nums font-medium ${r.saving > 0 ? 'text-green-700 dark:text-green-400' : r.saving < 0 ? 'text-destructive' : ''}`}>{r.saving > 0 ? '+' : ''}{formatCurrency(r.saving)}</td>
+              <td className="py-2.5 pr-2 font-medium">{formatCurrency(r.profit)}</td>
+              <td className="text-right tabular-nums px-2 text-muted-foreground">{formatCurrency(r.stTotal)}</td>
+              <td className="text-right tabular-nums px-2">{formatCurrency(r.stTakeHome)}</td>
+              <td className="text-right tabular-nums px-2 text-muted-foreground">{formatCurrency(r.ltdTotal)}</td>
+              <td className="text-right tabular-nums px-2">{formatCurrency(r.ltdTakeHome)}</td>
+              <td className={`text-right tabular-nums pl-2 font-medium ${r.saving > 0 ? 'text-green-700 dark:text-green-400' : r.saving < 0 ? 'text-destructive' : ''}`}>{r.saving > 0 ? '+' : ''}{formatCurrency(r.saving)}</td>
             </tr>
           ))}</tbody>
         </table>
       </div>
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p>Ltd assumes: £12,570 salary (£1,135.50 employer NI) with the rest drawn as dividends, and £1,200 accountancy deducted before Corporation Tax. Since Class 4 NI was cut to 6% (April 2024), a sole trader keeps more at every profit level in this table when all the profit is drawn out: £2,274 more at £50K and £4,668 more at £100K. A company pays off mainly when profit is left in it or paid into a pension. Always weigh IR35, mortgage implications and the extra admin, and check the figures against your own circumstances.</p>
+        <p>Ltd tax &amp; costs = Corporation Tax + dividend tax + employer NI + accountancy. Ltd assumes: £12,570 salary (£1,135.50 employer NI) with the rest drawn as dividends, and £1,200 accountancy deducted before Corporation Tax. The employer NI is due because the £10,500 Employment Allowance cannot be claimed when the director is the company's only employee paid above the £5,000 secondary threshold. The sole trader column carries no accountancy cost, although a sole trader who uses an accountant pays for that too. Since Class 4 NI was cut to 6% (April 2024), a sole trader keeps more at every profit level in this table when all the profit is drawn out: £2,274 more at £50K and £4,668 more at £100K. A company pays off mainly when profit is left in it or paid into a pension. Always weigh IR35, mortgage implications and the extra admin, and check the figures against your own circumstances.</p>
       </div>
     </div>
   )

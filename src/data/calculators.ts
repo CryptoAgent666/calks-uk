@@ -546,12 +546,12 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'bmi-calculator',
     title: 'BMI Calculator',
-    description: 'Calculate your Body Mass Index using metric or imperial measurements. See your BMI category and healthy weight range.',
+    description: 'Work out your adult BMI in metric or imperial units, see your category and healthy weight range, with NICE thresholds for higher-risk family backgrounds.',
     category: 'health',
     icon: 'Heart',
     keywords: ['BMI', 'body mass index', 'weight', 'healthy weight'],
     priority: 1,
-    metaTitle: 'BMI Calculator — Body Mass Index Calculator (Metric & Imperial)',
+    metaTitle: 'BMI Calculator — Body Mass Index (Metric & Imperial)',
   },
   {
     slug: 'calorie-calculator',
@@ -761,7 +761,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'pregnancy-due-date-calculator',
     title: 'Pregnancy Due Date Calculator',
-    description: 'Calculate your estimated due date from your last menstrual period. See key milestones and trimester progress.',
+    description: 'Work out your due date from your last period, adjusted for cycle length, or from a conception date, with weeks pregnant, trimesters and scan dates.',
     category: 'health',
     icon: 'Heart',
     keywords: ['pregnancy', 'due date', 'pregnancy calculator', 'maternity'],
@@ -771,7 +771,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'alcohol-units-calculator',
     title: 'Alcohol Units Calculator',
-    description: 'Calculate alcohol units in your drinks. Track against the NHS guideline of 14 units per week.',
+    description: 'Work out the alcohol units in your drinks, add your own by volume and ABV, and compare the total with the UK guideline of 14 units a week.',
     category: 'health',
     icon: 'Heart',
     keywords: ['alcohol units', 'drink calculator', 'NHS units', 'alcohol intake'],
@@ -907,7 +907,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'life-insurance-calculator',
     title: 'Life Insurance Needs Calculator',
-    description: 'Calculate how much life insurance cover you need based on income, mortgage, debts and family costs.',
+    description: 'Work out how much life insurance cover you need from your mortgage, debts, living costs to replace, children\'s and funeral costs, less savings and cover.',
     category: 'insurance',
     icon: 'ShieldCheck',
     keywords: ['life insurance', 'life cover', 'insurance needs', 'death in service'],
@@ -1052,7 +1052,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'water-intake-calculator',
     title: 'Water Intake Calculator',
-    description: 'Calculate your recommended daily water intake based on weight, activity level and climate.',
+    description: 'Estimate how much water an adult needs a day from weight, activity and hot weather, split into total water and drinks, with NHS and EFSA guidance.',
     category: 'health',
     icon: 'Heart',
     keywords: ['water intake', 'hydration', 'daily water', 'how much water'],
@@ -1221,7 +1221,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'ideal-weight-calculator',
     title: 'Ideal Weight Calculator',
-    description: 'Calculate your ideal weight using Robinson, Miller, Devine and Hamwi formulas. See your healthy BMI range.',
+    description: 'Compare the Robinson, Miller, Devine and Hamwi ideal weight formulas for your height and sex, and see the healthy weight range from BMI bands.',
     category: 'health',
     icon: 'Heart',
     keywords: ['ideal weight', 'healthy weight', 'target weight', 'weight range'],
@@ -1232,11 +1232,11 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'fertiliser-calculator',
     title: 'Fertiliser Calculator',
-    description: 'Calculate fertiliser needed for lawns, gardens and allotments based on area and application rate.',
+    description: 'Work out how much fertiliser a lawn, border or allotment needs from its area and the g/m² rate on the pack, with packs needed and the coverage of each.',
     category: 'farming',
     icon: 'Wheat',
     keywords: ['fertiliser', 'fertilizer', 'NPK', 'lawn feed', 'garden feed'],
-    metaTitle: 'Fertiliser Calculator UK — kg/ha',
+    metaTitle: 'Fertiliser Calculator UK — Garden Feed in g/m²',
     priority: 1,
   },
   {
@@ -1306,7 +1306,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'student-budget-calculator',
     title: 'Student Budget Calculator',
-    description: 'Plan your university budget. Track income from loans, grants and jobs against monthly expenses.',
+    description: 'Plan a UK student budget: loan, grant and job income against monthly costs, with rent counted over your tenancy and the work hours needed to close a gap.',
     category: 'education',
     icon: 'GraduationCap',
     keywords: ['student budget', 'university budget', 'student finance', 'uni budget'],
@@ -1433,7 +1433,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'pension-vs-isa-calculator',
     title: 'Pension vs ISA Calculator',
-    description: 'Compare pension and ISA over time. See which gives you more after tax relief and withdrawal tax.',
+    description: 'Compare a pension and an ISA at the same monthly cost: tax relief at UK or Scottish rates, the 25% tax-free lump sum and tax on withdrawals.',
     category: 'pension',
     icon: 'PiggyBank',
     keywords: ['pension vs ISA', 'pension or ISA', 'tax relief', 'retirement savings'],
@@ -1654,7 +1654,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'income-protection-calculator', title: 'Income Protection Calculator', description: 'Calculate the income protection cover you need and estimate monthly premiums by age, cover level and deferred period, from 4 to 52 weeks.', category: 'insurance', icon: 'ShieldCheck', keywords: ['income protection', 'income insurance', 'sick cover', 'disability insurance'], priority: 2 , metaTitle: 'Income Protection Calculator UK 2026' },
   { slug: 'travel-insurance-calculator', title: 'Travel Insurance Calculator', description: 'Estimate UK travel insurance premiums for single trips or annual cover in Europe or worldwide, by cover level, trip length and travellers aged 65 or over.', category: 'insurance', icon: 'ShieldCheck', keywords: ['travel insurance', 'holiday insurance', 'medical cover', 'trip insurance'], priority: 2 , metaTitle: 'Travel Insurance Calculator UK 2026' },
   // LEGAL (additional)
-  { slug: 'spousal-maintenance-calculator', title: 'Spousal Maintenance Calculator', description: 'Estimate spousal maintenance range for divorce. Based on income difference and length of marriage.', category: 'legal', icon: 'Scale', keywords: ['spousal maintenance', 'alimony', 'divorce maintenance', 'spousal support'], priority: 2 , metaTitle: 'Spousal Maintenance Calculator UK 2026' },
+  { slug: 'spousal-maintenance-calculator', title: 'Spousal Maintenance Calculator', description: 'Rough guide to spousal maintenance after divorce in England, Wales or Scotland: rule-of-thumb shares of the net income gap and an indicative term.', category: 'legal', icon: 'Scale', keywords: ['spousal maintenance', 'alimony', 'divorce maintenance', 'spousal support'], priority: 2 , metaTitle: 'Spousal Maintenance Calculator UK 2026' },
   // EDUCATION (additional)
   { slug: 'gcse-grade-calculator', title: 'Attainment 8 & GCSE Grade Calculator', description: 'Work out your Attainment 8 score the DfE way, with English and maths double weighted and EBacc and open slots, plus your GCSE average grade and passes.', category: 'education', icon: 'GraduationCap', keywords: ['GCSE', 'GCSE grades', 'attainment 8', '9-1 grades', 'school results'], priority: 1 , metaTitle: 'Attainment 8 Calculator 2026: GCSE Points & Average Grade' },
   { slug: 'progress-8-calculator', title: 'Progress 8 Calculator', description: 'Work out a pupil Progress 8 score from Attainment 8 and KS2 scaled scores using the DfE prior attainment averages, see the band it falls in, and why 2025 and 2026 have no official score.', category: 'education', icon: 'GraduationCap', keywords: ['Progress 8', 'Progress 8 score', 'attainment 8', 'KS2 scaled score', 'school performance tables'], priority: 2 , metaTitle: 'Progress 8 Calculator: Score from Attainment 8 & KS2' },
@@ -1711,7 +1711,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // HEALTH
   { slug: 'weight-loss-calculator', title: 'Weight Loss Calculator', description: 'Calculate how long to reach your target weight with milestones and daily calorie deficit.', category: 'health', icon: 'Heart', keywords: ['weight loss', 'lose weight', 'diet calculator', 'calorie deficit'], priority: 2 , metaTitle: 'Weight Loss Calculator UK — Calorie Deficit' },
   { slug: 'protein-intake-calculator', title: 'Protein Intake Calculator', description: 'Calculate daily protein needs by weight and goal. See common protein sources per serving.', category: 'health', icon: 'Heart', keywords: ['protein', 'protein intake', 'daily protein', 'macros', 'muscle building'], priority: 2 , metaTitle: 'Protein Intake Calculator UK — By Goal' },
-  { slug: 'ovulation-calculator', title: 'Ovulation Calculator', description: 'Estimate ovulation date and fertile window based on your last period and cycle length. See 3 cycles ahead.', category: 'health', icon: 'Heart', keywords: ['ovulation', 'fertile window', 'conception', 'period tracker', 'fertility'], priority: 2 , metaTitle: 'Ovulation Calculator UK — Fertile Window' },
+  { slug: 'ovulation-calculator', title: 'Ovulation Calculator', description: 'Estimate your ovulation date and six-day fertile window from your last period and cycle length, for this cycle and the next two. Not for contraception.', category: 'health', icon: 'Heart', keywords: ['ovulation', 'fertile window', 'conception', 'period tracker', 'fertility'], priority: 2 , metaTitle: 'Ovulation Calculator UK — Fertile Window' },
   // AUTO
   { slug: 'car-lease-vs-buy-calculator', title: 'Car Lease vs Buy Calculator', description: 'Compare leasing vs buying a car on finance. See which is cheaper after depreciation and interest.', category: 'auto', icon: 'Car', keywords: ['lease vs buy', 'car lease', 'PCH', 'car finance comparison'], priority: 2 , metaTitle: 'Car Lease vs Buy Calculator UK 2026' },
   // BUSINESS
@@ -1768,8 +1768,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'loft-conversion-calculator', title: 'Loft Conversion Cost Calculator', description: 'Estimate loft conversion costs by type (Velux, dormer, hip-to-gable, mansard). See ROI and value added.', category: 'building', icon: 'Hammer', keywords: ['loft conversion', 'attic conversion', 'dormer', 'loft extension'], priority: 2 , metaTitle: 'Loft Conversion Cost Calculator UK 2026' },
   { slug: 'extension-cost-calculator', title: 'Extension Cost Calculator', description: 'Estimate home extension costs per m² for single/double storey, side return and wrap-around extensions.', category: 'building', icon: 'Hammer', keywords: ['extension cost', 'house extension', 'rear extension', 'building costs'], priority: 2 , metaTitle: 'House Extension Cost Calculator UK 2026' },
   { slug: 'childcare-entitlement-calculator', title: '30 Hours Free Childcare Calculator', description: 'Check funded childcare hours by child age and household: 30 hours for working parents from 9 months, 15 universal or on benefits, plus Tax-Free Childcare.', category: 'benefits', icon: 'Shield', keywords: ['30 hours', 'free childcare', 'childcare entitlement', '15 hours', 'working parents'], priority: 1 , metaTitle: 'Childcare Entitlement Calculator UK 2026 (30 Hrs)' },
-  { slug: 'stock-unit-calculator', title: 'Livestock Stock Unit Calculator', description: 'Calculate total livestock units for cattle, sheep, pigs and horses. See land requirement at 2 SU/ha.', category: 'farming', icon: 'Wheat', keywords: ['stock units', 'livestock units', 'stocking rate', 'cattle sheep'], priority: 2 , metaTitle: 'Stock Unit Calculator — Inventory' },
-  { slug: 'agricultural-worker-wage-calculator', title: 'Agricultural Worker Minimum Wage Calculator', description: 'Calculate farm worker pay in England (minimum wage), Wales (grades A-E) and Scotland, with overtime and holiday entitlement.', category: 'farming', icon: 'Wheat', keywords: ['agricultural wages', 'AWO', 'farm worker pay', 'agricultural minimum wage'], priority: 2 , metaTitle: 'Agricultural Worker Wage Calculator UK 2026' },
+  { slug: 'stock-unit-calculator', title: 'Livestock Unit (GLU) Calculator', description: 'Count grazing livestock units (GLU) for cattle, sheep, goats and horses with the GOV.UK SFI26 values, and work out your stocking rate per hectare.', category: 'farming', icon: 'Wheat', keywords: ['stock units', 'livestock units', 'grazing livestock units', 'GLU', 'stocking rate', 'cattle sheep'], priority: 2 , metaTitle: 'Livestock Unit Calculator UK — GLU and Stocking Rate' },
+  { slug: 'agricultural-worker-wage-calculator', title: 'Agricultural Worker Minimum Wage Calculator', description: 'Calculate 2026/27 farm worker pay in England (minimum wage), Wales (grades A-E), Scotland and Northern Ireland, with overtime and holiday entitlement.', category: 'farming', icon: 'Wheat', keywords: ['agricultural wages', 'AWO', 'farm worker pay', 'agricultural minimum wage'], priority: 2 , metaTitle: 'Agricultural Worker Wage Calculator UK 2026' },
   // MATH
   { slug: 'mean-median-mode-calculator', title: 'Mean, Median & Mode Calculator', description: 'Calculate mean, median, mode, range, sum, min and max from a set of numbers. Shows sorted data.', category: 'math', icon: 'Calculator', keywords: ['mean', 'median', 'mode', 'average', 'statistics'], priority: 1 , metaTitle: 'Mean Median Mode Calculator — Free Online' },
   { slug: 'prime-number-calculator', title: 'Prime Number Checker', description: 'Check if a number is prime, find prime factorisation, and list primes up to N.', category: 'math', icon: 'Calculator', keywords: ['prime number', 'prime checker', 'factorisation', 'prime factor'], priority: 2 , metaTitle: 'Prime Number Calculator — Check & List' },
@@ -1836,7 +1836,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'business-mileage-calculator', title: 'Business Mileage Calculator', description: 'Compare HMRC mileage allowance vs actual fuel costs. See if you profit or lose from the 55p/25p rates.', category: 'pay', icon: 'Banknote', keywords: ['business mileage', 'HMRC mileage', 'mileage profit', '55p rate', 'fuel vs allowance'], priority: 2 , metaTitle: 'Business Mileage Calculator UK (HMRC 55p/25p)' },
   // INVESTMENT
   { slug: 'wealth-growth-calculator', title: 'Wealth Growth Projector', description: 'Project wealth growth over time with annual savings and compound returns. See milestones (£100K, £1M).', category: 'investment', icon: 'TrendingUp', keywords: ['wealth growth', 'wealth projector', 'net worth', 'millionaire calculator'], priority: 2 , metaTitle: 'Wealth Growth Calculator UK 2026' },
-  { slug: 'cgt-on-shares-calculator', title: 'CGT on Shares Calculator', description: 'Calculate capital gains tax on share sales. Includes annual exempt amount, basic/higher rates and ISA tip.', category: 'investment', icon: 'TrendingUp', keywords: ['CGT shares', 'share tax', 'stock tax', 'investment tax', 'capital gains shares'], priority: 1 , metaTitle: 'CGT on Shares Calculator UK 2026/27' },
+  { slug: 'cgt-on-shares-calculator', title: 'CGT on Shares Calculator', description: 'Work out capital gains tax on a share sale for 2026/27: the £3,000 annual exempt amount, 18% and 24% rates, dealing costs and the £50,000 reporting rule.', category: 'investment', icon: 'TrendingUp', keywords: ['CGT shares', 'share tax', 'stock tax', 'investment tax', 'capital gains shares'], priority: 1 , metaTitle: 'CGT on Shares Calculator UK 2026/27' },
   { slug: 'dividend-income-calculator', title: 'Dividend Income Calculator', description: 'Calculate annual dividend income, estimate 2026/27 dividend tax on top of your other income, and project growth with or without DRIP.', category: 'investment', icon: 'TrendingUp', keywords: ['dividend income', 'dividend yield', 'DRIP', 'passive income', 'dividend investing'], priority: 2 , metaTitle: 'Dividend Income Calculator UK 2026/27' },
   // TAX
   { slug: 'non-dom-tax-calculator', title: 'Non-Dom Tax Calculator (FIG Regime)', description: 'Compare UK tax with and without a claim under the 4-year foreign income and gains (FIG) regime for new UK residents.', category: 'tax', icon: 'Receipt', keywords: ['non-dom', 'FIG', 'foreign income', 'non-domiciled', 'remittance basis'], priority: 2, isTrending: true , metaTitle: 'UK Non-Dom Tax Calculator 2026/27 (New Rules)' },
@@ -1872,7 +1872,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'pension-lump-sum-calculator', title: 'Pension Lump Sum Calculator (PCLS)', description: 'Compare taking 0-100% as lump sum. See tax-free portion, tax on excess and remaining pot for drawdown.', category: 'pension', icon: 'PiggyBank', keywords: ['pension lump sum', 'PCLS', 'tax free cash', '25% pension', 'pension withdrawal'], priority: 2 , metaTitle: 'Pension Lump Sum Calculator UK 2026/27 (25% Tax-Free)' },
   // FARMING
   { slug: 'elm-payment-calculator', title: 'ELM Payment Calculator', description: 'Calculate Sustainable Farming Incentive (SFI26) payments for common environmental actions. England, 2026 rates; £100,000 agreement cap.', category: 'farming', icon: 'Wheat', keywords: ['ELM', 'SFI', 'environmental land management', 'farming payments', 'BPS'], priority: 1 , metaTitle: 'ELM Payment Calculator UK 2026 — DEFRA' },
-  { slug: 'farm-tenancy-calculator', title: 'Farm Tenancy Rent Review Calculator', description: 'Compare your farm rent to market rates. See rent as percentage of revenue for rent review preparation.', category: 'farming', icon: 'Wheat', keywords: ['farm tenancy', 'rent review', 'agricultural rent', 'farm rent'], priority: 2 , metaTitle: 'Farm Tenancy Calculator UK 2026' },
+  { slug: 'farm-tenancy-calculator', title: 'Farm Tenancy Rent Review Calculator', description: 'Compare your farm rent per hectare with Defra 2024/25 averages for England by tenancy, farm type and region, and see rent as a share of crop revenue.', category: 'farming', icon: 'Wheat', keywords: ['farm tenancy', 'rent review', 'agricultural rent', 'farm rent'], priority: 2 , metaTitle: 'Farm Tenancy Calculator UK 2026' },
   // EDUCATION
   { slug: 'student-loan-total-cost-calculator', title: 'Student Loan Total Cost Calculator', description: 'Calculate total amount you\'ll actually repay over the loan lifetime with salary growth projections.', category: 'education', icon: 'GraduationCap', keywords: ['student loan cost', 'total repaid', 'loan lifetime', 'write off'], priority: 1 , metaTitle: 'Student Loan Total Cost Calculator UK 2026' },
   // PAY
@@ -1909,7 +1909,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'high-council-tax-calculator', title: 'High-Value Council Tax Surcharge Calculator (2028)', description: 'Estimate the proposed surcharge on homes worth £2m+ (from April 2028) — £2,500 to £7,500 a year on top of Council Tax.', category: 'tax', icon: 'Receipt', keywords: ['high value council tax', 'council tax surcharge', 'mansion tax', '£2 million home', 'HVCTS'], priority: 2, isTrending: true , metaTitle: 'High-Value Council Tax Surcharge Calculator 2028' },
   { slug: 'ni-salary-sacrifice-2029-calculator', title: 'NI on Salary Sacrifice Calculator (2029)', description: 'Compare salary sacrifice NI savings now vs from April 2029, when only the first £2,000 stays NI-free. See how much you\'ll lose.', category: 'tax', icon: 'Receipt', keywords: ['NI salary sacrifice', '2029 pension', 'salary sacrifice change', 'pension NI'], priority: 2, isTrending: true , metaTitle: 'NI Salary Sacrifice 2029 Calculator UK' },
   // BUSINESS
-  { slug: 'sole-trader-vs-ltd-comparison-calculator', title: 'Sole Trader vs Ltd Comparison Table', description: 'Side-by-side take-home pay comparison at 7 different profit levels (£20K-£100K).', category: 'business', icon: 'Briefcase', keywords: ['sole trader vs ltd table', 'comparison table', 'profit levels', 'when to incorporate'], priority: 1 , metaTitle: 'Sole Trader vs Ltd Side-by-Side Comparison UK 2026' },
+  { slug: 'sole-trader-vs-ltd-comparison-calculator', title: 'Sole Trader vs Ltd Comparison Table', description: 'Sole trader vs limited company at seven profit levels from £20,000 to £100,000: tax, take-home pay and the difference on 2026/27 rates.', category: 'business', icon: 'Briefcase', keywords: ['sole trader vs ltd table', 'comparison table', 'profit levels', 'when to incorporate'], priority: 1 , metaTitle: 'Sole Trader vs Ltd Comparison Table UK 2026/27' },
   { slug: 'apprenticeship-levy-calculator', title: 'Apprenticeship Levy Calculator', description: 'Calculate apprenticeship levy at 0.5% of pay bill over £3M. See the monthly levy and the training fund it gives you.', category: 'business', icon: 'Briefcase', keywords: ['apprenticeship levy', 'training levy', 'pay bill', 'digital apprenticeship'], priority: 2 , metaTitle: 'Apprenticeship Levy Calculator UK 2026 (0.5%)' },
   // MORTGAGE
   { slug: 'mortgage-early-repayment-calculator', title: 'Mortgage Early Repayment Calculator', description: 'Compare paying off your mortgage now with the early repayment charge against saving the cash until the ERC ends, then repaying with no charge.', category: 'mortgage', icon: 'Home', keywords: ['early repayment', 'ERC', 'pay off mortgage', 'repayment charge'], priority: 2 , metaTitle: 'Mortgage Early Repayment Charge Calculator UK 2026' },
@@ -1944,12 +1944,12 @@ export const CALCULATORS: CalculatorMeta[] = [
   // EDUCATION
   { slug: 'postgraduate-loan-cost-calculator', title: 'Postgraduate Loan Total Cost Calculator', description: 'Calculate total postgraduate loan repayment over 30 years with salary growth projections. 6% above £21,000, England 2026/27.', category: 'education', icon: 'GraduationCap', keywords: ['PG loan cost', 'postgrad total', 'masters loan cost', 'PhD loan'], priority: 2 , metaTitle: 'Postgraduate Loan Total Cost Calculator UK' },
   // TOOLS
-  { slug: 'wedding-cost-calculator', title: 'Wedding Cost Calculator (Detailed)', description: 'Calculate detailed wedding costs across 17 categories with per-guest items. See cost per guest.', category: 'tools', icon: 'Wrench', keywords: ['wedding cost', 'wedding budget', 'wedding planning', 'wedding price'], priority: 2 , metaTitle: 'UK Wedding Cost Calculator 2026' },
+  { slug: 'wedding-cost-calculator', title: 'Wedding Cost Calculator (Detailed)', description: 'Add up UK wedding costs line by line, with catering and drinks priced per guest, and see the total, cost per guest and how it compares with UK averages.', category: 'tools', icon: 'Wrench', keywords: ['wedding cost', 'wedding budget', 'wedding planning', 'wedding price'], priority: 2 , metaTitle: 'UK Wedding Cost Calculator 2026' },
   { slug: 'time-duration-calculator', title: 'Time Duration Calculator', description: 'Calculate hours and minutes between two times. Includes decimal hours for timesheets.', category: 'tools', icon: 'Wrench', keywords: ['time duration', 'hours between', 'time calculator', 'timesheet'], priority: 2 , metaTitle: 'Time Duration Calculator — Hours & Minutes' },
   { slug: 'split-bill-calculator', title: 'Split Bill Calculator', description: 'Split a bill between multiple people with itemised costs. Add people and items dynamically.', category: 'tools', icon: 'Wrench', keywords: ['split bill', 'bill splitter', 'share cost', 'divide bill'], priority: 2 , metaTitle: 'Split Bill Calculator — Restaurant Group' },
   { slug: 'speed-distance-time-calculator', title: 'Speed, Distance & Time Calculator', description: 'Calculate speed, distance or time from the other two. Miles and km with the SDT triangle formula.', category: 'tools', icon: 'Wrench', keywords: ['speed distance time', 'SDT', 'how long', 'how far', 'how fast'], priority: 2 , metaTitle: 'Speed Distance Time Calculator UK' },
   // BUSINESS
-  { slug: 'profit-and-loss-calculator', title: 'Profit & Loss Calculator', description: 'Build a simple P&L statement. Enter revenue, COGS and overheads to see gross and net profit margins.', category: 'business', icon: 'Briefcase', keywords: ['profit and loss', 'P&L', 'income statement', 'business profit'], priority: 1 , metaTitle: 'Profit and Loss Calculator UK 2026' },
+  { slug: 'profit-and-loss-calculator', title: 'Profit & Loss Calculator', description: 'Build a simple profit and loss statement from revenue, cost of sales, overheads and interest, with gross, operating and net margins and Corporation Tax.', category: 'business', icon: 'Briefcase', keywords: ['profit and loss', 'P&L', 'income statement', 'business profit'], priority: 1 , metaTitle: 'Profit and Loss Calculator UK 2026' },
   { slug: 'freelance-quote-calculator', title: 'Freelance Quote Calculator', description: 'Build a quote from hourly rate, hours and materials. Add profit margin and VAT.', category: 'business', icon: 'Briefcase', keywords: ['freelance quote', 'job quote', 'estimate', 'pricing'], priority: 2 , metaTitle: 'Freelance Quote Calculator UK 2026' },
   // ADDED JULY 2026
   { slug: 'winter-fuel-payment-calculator', title: 'Winter Fuel Payment Calculator', description: 'Check if you get the 2026/27 Winter Fuel Payment, how much — and whether HMRC claws it back over the £35,000 income limit.', category: 'benefits', icon: 'Shield', keywords: ['winter fuel payment', 'winter fuel allowance', '£35000 threshold', 'pensioner payment', 'WFP opt out', 'pension age winter heating'], priority: 1, financialYear: '2026-27', isNew: true, isTrending: true, metaTitle: 'Winter Fuel Payment Calculator 2026/27 — £35k Income Test' },

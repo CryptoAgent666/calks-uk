@@ -157,6 +157,7 @@ export default function GCSEGradeCalculator() {
               <span key={old} className="px-2 py-1 rounded bg-muted text-xs">{old} = {newG}</span>
             ))}
           </div>
+          <p className="text-xs mt-2">Grade 4 matches the bottom of the old C and grade 7 the bottom of the old A. Grade 5 sits across a high C and a low B. Wales and Northern Ireland still grade most GCSEs A* to G.</p>
         </div>
       </div>
     </div>

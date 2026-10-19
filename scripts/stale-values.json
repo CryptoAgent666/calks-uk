@@ -3954,6 +3954,355 @@
    "was": "check-if-energy-price-cap-affects-you",
    "now": "energy price cap and standing charges explained page",
    "what": "ofgem_url_301 (round 12)"
+  },
+  {
+   "was": "now in its 30th edition",
+   "now": "the numbered Scottish Order, with the SAWB guide",
+   "what": "awso_order_name (round 13)",
+   "ctx": "Scotland|Scottish"
+  },
+  {
+   "was": "Overtime is paid at 1.5x the hourly rate",
+   "now": "overtime on the minimum rate only, no premium",
+   "what": "awso_overtime_base (round 13)"
+  },
+  {
+   "was": "full security and succession rights",
+   "now": "succession only for tenancies granted before mid-eighties reform",
+   "what": "aha_succession (round 13)"
+  },
+  {
+   "was": "The minimum is 2 years, below which",
+   "now": "no minimum term; twelve months' notice for longer FBTs",
+   "what": "fbt_minimum_term (round 13)"
+  },
+  {
+   "was": "typically 1 to 2 years",
+   "now": "one year's rent plus four years' additional",
+   "what": "aha_disturbance_comp (round 13)",
+   "ctx": "isturbance"
+  },
+  {
+   "was": "seasonal grazing lets go for",
+   "now": "Defra seasonal average",
+   "what": "seasonal_grazing_rent (round 13)"
+  },
+  {
+   "was": "about 58% of England",
+   "now": "about fifty-five per cent (current designations)",
+   "what": "nvz_share_england (round 13)"
+  },
+  {
+   "was": "£20 to £40 through the RHS",
+   "now": "RHS soil analysis per sample",
+   "what": "rhs_soil_test_price (round 13)"
+  },
+  {
+   "was": "For liquid feeds, it converts to litres",
+   "now": "granular feeds only",
+   "what": "fertiliser_liquid_claim (round 13)"
+  },
+  {
+   "was": "beef suckler cow at 0.75",
+   "now": "gov.uk GLU table",
+   "what": "glu_suckler (round 13)"
+  },
+  {
+   "was": "cross-compliance checks",
+   "now": "SFI and Countryside Stewardship GLU limits",
+   "what": "cross_compliance_ended (round 13)",
+   "ctx": "stock|livestock|LU|GLU"
+  },
+  {
+   "was": "94.5 LU",
+   "now": "GLU total on the gov.uk table",
+   "what": "glu_example_total (round 13)"
+  },
+  {
+   "was": "Smoking pushes the premium up by 80 to 150%",
+   "now": "softened smoking loading",
+   "what": "life_smoking_loading (round 13)"
+  },
+  {
+   "was": "funeral costs, which average £4,000 to £8,000",
+   "now": "SunLife Cost of Dying figures",
+   "what": "funeral_cost_range (round 13)"
+  },
+  {
+   "was": "Life insurance provides a tax-free lump sum",
+   "now": "free of income tax and CGT, but in the estate unless in trust",
+   "what": "life_payout_iht (round 13)"
+  },
+  {
+   "was": "£15,725",
+   "now": "Corporation Tax with marginal relief on seventy-five thousand",
+   "what": "ct_75k_example (round 13)"
+  },
+  {
+   "was": "£34,225",
+   "now": "Corporation Tax with marginal relief on one hundred and fifty thousand",
+   "what": "ct_150k_example (round 13)"
+  },
+  {
+   "was": "After £8k of tax, net profit is £32k",
+   "now": "small profits rate on forty thousand",
+   "what": "pl_example_tax (round 13)"
+  },
+  {
+   "was": "80% of UK small business failures",
+   "now": "unsourced statistic removed",
+   "what": "cash_flow_failure_stat (round 13)"
+  },
+  {
+   "was": "files accounts including a profit and loss with Companies House",
+   "now": "small companies may omit the P&L until the reform",
+   "what": "pl_companies_house_filing (round 13)"
+  },
+  {
+   "was": "files one Self Assessment and nothing else",
+   "now": "MTD for Income Tax quarterly updates",
+   "what": "sole_trader_mtd (round 13)"
+  },
+  {
+   "was": "gives a first view without binding",
+   "now": "HMRC stands by the result if the information is accurate",
+   "what": "cest_binding (round 13)"
+  },
+  {
+   "was": "a 25% gain on the £600",
+   "now": "about a forty per cent gain",
+   "what": "pension_1000_example (round 13)"
+  },
+  {
+   "was": "leave State Pension and benefit entitlements untouched",
+   "now": "ISA counts as capital for means-tested benefits",
+   "what": "isa_benefits_capital (round 13)"
+  },
+  {
+   "was": "no effect on your State Pension or benefits",
+   "now": "ISA counts as capital for means-tested benefits",
+   "what": "isa_benefits_capital_faq (round 13)"
+  },
+  {
+   "was": "Courts work to a 12-week target from the first hearing",
+   "now": "first appointment twelve to sixteen weeks after Form A",
+   "what": "fr_timetable (round 13)"
+  },
+  {
+   "was": "transferring assets such as shares instead of cash can trigger",
+   "now": "no gain/no loss for separating spouses",
+   "what": "separation_cgt (round 13)"
+  },
+  {
+   "was": "about 2 pints of lager",
+   "now": "impossible to say how many drinks; do not drink and drive",
+   "what": "drink_drive_pints (round 13)"
+  },
+  {
+   "was": "nearer 1.5 to 2 units",
+   "now": "impossible to say how many drinks; do not drink and drive",
+   "what": "drink_drive_scotland_pints (round 13)"
+  },
+  {
+   "was": "one of the highest limits in Europe",
+   "now": "the highest in Europe (DfT)",
+   "what": "drink_drive_europe (round 13)"
+  },
+  {
+   "was": "revised in 2016 down from 21 units for men",
+   "now": "the guideline replaced the daily benchmarks",
+   "what": "alcohol_2016_history (round 13)"
+  },
+  {
+   "was": "NHS estimates 80% of alcoholic liver disease",
+   "now": "unsourced statistic removed",
+   "what": "arld_80pc (round 13)"
+  },
+  {
+   "was": "18,200 kcal a year",
+   "now": "NHS calorie figures",
+   "what": "alcohol_calories_year (round 13)"
+  },
+  {
+   "was": "2 to 3 alcohol-free days",
+   "now": "several drink-free days each week",
+   "what": "alcohol_free_days (round 13)"
+  },
+  {
+   "was": "NICE guideline NG7",
+   "now": "current NICE obesity guideline",
+   "what": "nice_ng7_replaced (round 13)"
+  },
+  {
+   "was": "About 80% of UK adults fall somewhere in the 20 to 35 range",
+   "now": "Health Survey for England figures",
+   "what": "bmi_80pc_claim (round 13)"
+  },
+  {
+   "was": "height in centimetres minus 100",
+   "now": "rule of thumb removed",
+   "what": "bmi_cm_minus_100 (round 13)"
+  },
+  {
+   "was": "nhs.uk/live-well/healthy-weight/bmi-calculator",
+   "now": "NHS health assessment tools BMI page",
+   "what": "nhs_bmi_url_301 (round 13)"
+  },
+  {
+   "was": "Devine suggesting 73.5kg",
+   "now": "Devine at the tool's coefficients",
+   "what": "ideal_weight_example (round 13)"
+  },
+  {
+   "was": "Pacific Islander populations higher",
+   "now": "NICE groups only",
+   "what": "ideal_weight_pacific (round 13)"
+  },
+  {
+   "was": "Hamwi (1964) is the least accurate",
+   "now": "unsupported claim removed",
+   "what": "hamwi_accuracy (round 13)"
+  },
+  {
+   "was": "overweight paradox",
+   "now": "metabolically healthy obesity",
+   "what": "overweight_paradox (round 13)"
+  },
+  {
+   "was": "Base intake: 75 \\u00D7 35 ml",
+   "now": "thirty-three ml per kg times activity",
+   "what": "water_example_base (round 13)"
+  },
+  {
+   "was": "Even beer is net hydrating",
+   "now": "alcohol does not count toward fluid",
+   "what": "water_beer_claim (round 13)"
+  },
+  {
+   "was": "NHS Dioralyte",
+   "now": "pharmacist may recommend oral rehydration solution",
+   "what": "water_dioralyte (round 13)"
+  },
+  {
+   "was": "fever above 37.5°C adds about 200 ml",
+   "now": "high temperature is thirty-eight or above",
+   "what": "water_fever (round 13)"
+  },
+  {
+   "was": "every one or two days",
+   "now": "every two to three days (NICE)",
+   "what": "fertility_sex_frequency (round 13)"
+  },
+  {
+   "was": "the most accurate way to confirm ovulation is with ovulation predictor kits",
+   "now": "OPKs predict the LH surge",
+   "what": "opk_nhs_claim (round 13)"
+  },
+  {
+   "was": "6 months if you are over 35",
+   "now": "see a GP after a year, sooner from thirty-six",
+   "what": "fertility_gp_timing (round 13)"
+  },
+  {
+   "was": "fertile window is 5 days before and 1 day after ovulation",
+   "now": "window ends on ovulation day",
+   "what": "fertile_window_def (round 13)"
+  },
+  {
+   "was": "See 3 cycles ahead",
+   "now": "this cycle and the next two",
+   "what": "ovulation_meta_cycles (round 13)"
+  },
+  {
+   "was": "needed 197 out of 300 (66%)",
+   "now": "June results-series boundaries",
+   "what": "alevel_chem_boundary_2025 (round 13)"
+  },
+  {
+   "was": "assessed entirely by exam",
+   "now": "mostly exams, some non-exam assessment",
+   "what": "alevel_assessment (round 13)"
+  },
+  {
+   "was": "46.0",
+   "now": "provisional DfE Attainment average",
+   "what": "a8_national_avg (round 13)",
+   "ctx": "^(?!.*(?:text-foreground|hover:underline)).*(Attainment|national average)"
+  },
+  {
+   "was": "44.1 in the North East to 50.8",
+   "now": "regional range from the DfE release",
+   "what": "a8_regions (round 13)"
+  },
+  {
+   "was": "grade 9 boundary sat at 197 out of 300",
+   "now": "AQA higher-tier Maths boundary out of the paper total",
+   "what": "gcse_maths_boundary (round 13)"
+  },
+  {
+   "was": "£40 to £80 per subject",
+   "now": "centre fees often two hundred or more",
+   "what": "private_candidate_fee (round 13)"
+  },
+  {
+   "was": "Grade 9 goes to the top 5-8% of entrants",
+   "now": "share varies by subject",
+   "what": "grade9_share (round 13)"
+  },
+  {
+   "was": "Since 2017 A-levels have been linear",
+   "now": "linear in stages from the first reformed exams",
+   "what": "alevel_linear (round 13)"
+  },
+  {
+   "was": "Maintenance Grant of up to £3,475",
+   "now": "Northern Ireland grant for the current year",
+   "what": "ni_maintenance_grant (round 13)"
+  },
+  {
+   "was": "bar work brings £10 to £15",
+   "now": "at or above the minimum wage",
+   "what": "student_bar_wage (round 13)"
+  },
+  {
+   "was": "Santander 123 student",
+   "now": "perks change often",
+   "what": "student_overdraft_offers (round 13)"
+  },
+  {
+   "was": "The Hitched 2025 survey put the average",
+   "now": "Hitched and Bridebook current reports",
+   "what": "hitched_2025_average (round 13)"
+  },
+  {
+   "was": "Scotland and the North East come in 20% below",
+   "now": "Bridebook regional figures",
+   "what": "wedding_regions (round 13)"
+  },
+  {
+   "was": "25-40% premium over the national average",
+   "now": "Bridebook regional figures",
+   "what": "wedding_budget_regions (round 13)"
+  },
+  {
+   "was": "treated identically since 2014",
+   "now": "civil partnerships since December two thousand and five",
+   "what": "civil_partnership_date (round 13)"
+  },
+  {
+   "was": "dating scan between 8 and 14 weeks",
+   "now": "eleven to fourteen weeks",
+   "what": "dating_scan_window (round 13)"
+  },
+  {
+   "was": "movements felt between 16 and 22 weeks",
+   "now": "sixteen to twenty-four weeks",
+   "what": "fetal_movements (round 13)"
+  },
+  {
+   "was": "legal limit for abortion in the UK",
+   "now": "Great Britain limit; NI differs",
+   "what": "abortion_limit_uk (round 13)"
   }
  ]
 }

@@ -14,9 +14,9 @@ export const UNKNOWN_GRADE = '?'
 // Combined science (double award) is graded as a pair, 9-9 down to 1-1
 export const COMBINED_GRADES = ['9-9', '9-8', '8-8', '8-7', '7-7', '7-6', '6-6', '6-5', '5-5', '5-4', '4-4', '4-3', '3-3', '3-2', '2-2', '2-1', '1-1', 'U']
 
-// National average Attainment 8, state-funded schools in England, summer 2025
-// (DfE, Key stage 4 performance 2024/25)
-export const NATIONAL_A8 = 46.0
+// National average Attainment 8, state-funded schools in England, summer 2026, provisional
+// (DfE, Key stage 4 performance 2025/26, published October 2026)
+export const NATIONAL_A8 = 46.2
 
 export type SubjectType = 'englang' | 'englit' | 'maths' | 'combined' | 'science' | 'computing' | 'humanity' | 'language' | 'other'
 

@@ -14,28 +14,45 @@ const DRINKS = [
 ]
 
 const WEEKLY_LIMIT = 14
+const MAX_ML = 5000
 
-function calcUnits(ml: number, abv: number) {
-  return (ml * abv) / 1000
+type CustomDrink = { ml: string; abv: string; qty: number }
+
+function clamp(n: number, min: number, max: number) {
+  return Math.min(max, Math.max(min, n))
 }
 
-export default function AlcoholUnitsCalculator() {
-  const [customMl, setCustomMl] = useState('')
-  const [customAbv, setCustomAbv] = useState('')
-  const [quantities, setQuantities] = useState<Record<number, number>>({})
+// Units = ml x ABV% / 1,000. ml x ABV is rounded to whole hundredths first so that
+// binary floating point does not turn 1.65 into 1.6 (330 ml of 5% beer is 1.7 units).
+function calcUnits(ml: number, abv: number) {
+  return Math.round(ml * abv * 100) / 100000
+}
 
-  const customUnits = useMemo(() => {
-    const m = parseFloat(customMl) || 0
-    const a = parseFloat(customAbv) || 0
-    return calcUnits(m, a)
-  }, [customMl, customAbv])
+function fmtUnits(units: number) {
+  return (Math.round(units * 10 + 1e-9) / 10).toFixed(1)
+}
+
+function customUnits(d: CustomDrink) {
+  const ml = clamp(parseFloat(d.ml) || 0, 0, MAX_ML)
+  const abv = clamp(parseFloat(d.abv) || 0, 0, 100)
+  return calcUnits(ml, abv)
+}
+
+const btn = 'h-8 w-8 rounded-lg bg-muted flex items-center justify-center text-lg hover:bg-accent'
+const inputCls = 'w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring'
+
+export default function AlcoholUnitsCalculator() {
+  const [quantities, setQuantities] = useState<Record<number, number>>({})
+  const [custom, setCustom] = useState<CustomDrink[]>([{ ml: '', abv: '', qty: 1 }])
 
   const totalUnits = useMemo(() => {
-    return Object.entries(quantities).reduce((sum, [idx, qty]) => {
+    const preset = Object.entries(quantities).reduce((sum, [idx, qty]) => {
       const drink = DRINKS[parseInt(idx)]
       return sum + calcUnits(drink.ml, drink.abv) * qty
     }, 0)
-  }, [quantities])
+    const own = custom.reduce((sum, d) => sum + customUnits(d) * d.qty, 0)
+    return preset + own
+  }, [quantities, custom])
 
   const updateQty = (idx: number, delta: number) => {
     setQuantities(prev => {
@@ -45,6 +62,14 @@ export default function AlcoholUnitsCalculator() {
       return { ...prev, [idx]: next }
     })
   }
+
+  const updateCustom = (i: number, patch: Partial<CustomDrink>) => {
+    setCustom(prev => prev.map((d, j) => (j === i ? { ...d, ...patch } : d)))
+  }
+
+  const over = totalUnits > WEEKLY_LIMIT
+  const shown = Number(fmtUnits(totalUnits))
+  const pct = Math.round((totalUnits / WEEKLY_LIMIT) * 100)
 
   return (
     <div className="space-y-6">
@@ -59,12 +84,12 @@ export default function AlcoholUnitsCalculator() {
               <div key={i} className="flex items-center justify-between rounded-xl border border-border p-3">
                 <div>
                   <span className="text-sm font-medium">{drink.name}</span>
-                  <span className="text-xs text-muted-foreground ml-2">{units.toFixed(1)} units</span>
+                  <span className="text-xs text-muted-foreground ml-2">{fmtUnits(units)} units</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <button onClick={() => updateQty(i, -1)} className="h-8 w-8 rounded-lg bg-muted flex items-center justify-center text-lg hover:bg-accent">−</button>
+                  <button type="button" onClick={() => updateQty(i, -1)} className={btn} aria-label={`Remove one ${drink.name}`}>−</button>
                   <span className="w-6 text-center font-medium">{qty}</span>
-                  <button onClick={() => updateQty(i, 1)} className="h-8 w-8 rounded-lg bg-muted flex items-center justify-center text-lg hover:bg-accent">+</button>
+                  <button type="button" onClick={() => updateQty(i, 1)} className={btn} aria-label={`Add one ${drink.name}`}>+</button>
                 </div>
               </div>
             )
@@ -72,24 +97,56 @@ export default function AlcoholUnitsCalculator() {
         </div>
       </div>
 
-      {/* Custom drink */}
+      {/* Custom drinks */}
       <div className="rounded-xl border border-border p-4 space-y-3">
-        <h3 className="text-sm font-semibold">Custom Drink</h3>
-        <div className="grid grid-cols-3 gap-3 items-end">
-          <div><label className="block text-xs text-muted-foreground mb-1">Volume (ml)</label><input type="number" min="0" value={customMl} onChange={(e) => setCustomMl(e.target.value)} placeholder="500" className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Volume (ml)" /></div>
-          <div><label className="block text-xs text-muted-foreground mb-1">ABV (%)</label><input type="number" min="0" max="100" step="0.1" value={customAbv} onChange={(e) => setCustomAbv(e.target.value)} placeholder="5" className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="ABV (%)" /></div>
-          <div className="text-center"><span className="text-lg font-bold text-primary">{customUnits.toFixed(1)} units</span></div>
+        <h3 className="text-sm font-semibold">Custom Drinks</h3>
+        <p className="text-xs text-muted-foreground">Enter the volume and strength (ABV) from the label. Each custom drink is added to the total.</p>
+        {custom.map((d, i) => {
+          const units = customUnits(d)
+          return (
+            <div key={i} className="grid grid-cols-2 sm:grid-cols-4 gap-3 items-end">
+              <div><label className="block text-xs text-muted-foreground mb-1">Volume (ml)</label><input type="number" min="0" max={MAX_ML} value={d.ml} onChange={(e) => updateCustom(i, { ml: e.target.value })} placeholder="568" className={inputCls} aria-label={`Custom drink ${i + 1} volume (ml)`} /></div>
+              <div><label className="block text-xs text-muted-foreground mb-1">ABV (%)</label><input type="number" min="0" max="100" step="0.1" value={d.abv} onChange={(e) => updateCustom(i, { abv: e.target.value })} placeholder="5" className={inputCls} aria-label={`Custom drink ${i + 1} ABV (%)`} /></div>
+              <div>
+                <span className="block text-xs text-muted-foreground mb-1">How many</span>
+                <div className="flex items-center gap-2">
+                  <button type="button" onClick={() => updateCustom(i, { qty: Math.max(0, d.qty - 1) })} className={btn} aria-label={`Fewer of custom drink ${i + 1}`}>−</button>
+                  <span className="w-6 text-center font-medium">{d.qty}</span>
+                  <button type="button" onClick={() => updateCustom(i, { qty: d.qty + 1 })} className={btn} aria-label={`More of custom drink ${i + 1}`}>+</button>
+                </div>
+              </div>
+              <div className="text-center">
+                <span className="text-lg font-bold text-primary">{fmtUnits(units * d.qty)} units</span>
+                {d.qty > 1 && <span className="block text-xs text-muted-foreground">{fmtUnits(units)} each</span>}
+              </div>
+            </div>
+          )
+        })}
+        <div className="flex gap-3">
+          <button type="button" onClick={() => setCustom(prev => [...prev, { ml: '', abv: '', qty: 1 }])} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-muted hover:bg-accent">+ Add another custom drink</button>
+          {custom.length > 1 && (
+            <button type="button" onClick={() => setCustom(prev => prev.slice(0, -1))} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-muted hover:bg-accent">Remove last</button>
+          )}
         </div>
       </div>
 
       {/* Total */}
-      {totalUnits > 0 && (
-        <div className={`rounded-2xl p-6 text-center ${totalUnits > WEEKLY_LIMIT ? 'bg-destructive/10' : 'bg-green-100 dark:bg-green-950'}`}>
-          <p className="text-sm text-muted-foreground">Total Units</p>
-          <p className={`text-3xl font-bold mt-1 ${totalUnits > WEEKLY_LIMIT ? 'text-destructive' : 'text-green-700 dark:text-green-400'}`}>{totalUnits.toFixed(1)}</p>
-          <p className="text-sm text-muted-foreground mt-1">NHS guideline: max {WEEKLY_LIMIT} units per week</p>
-        </div>
-      )}
+      <div className={`rounded-2xl p-6 text-center ${over ? 'bg-destructive/10' : shown > 0 ? 'bg-green-100 dark:bg-green-950' : 'bg-muted/50'}`} aria-live="polite">
+        <p className="text-sm text-muted-foreground">Total Units</p>
+        <p className={`text-3xl font-bold mt-1 ${over ? 'text-destructive' : shown > 0 ? 'text-green-700 dark:text-green-400' : ''}`}>{fmtUnits(totalUnits)}</p>
+        <p className="text-sm text-muted-foreground mt-1">
+          UK Chief Medical Officers&rsquo; guideline: no more than {WEEKLY_LIMIT} units a week on a regular basis
+          {shown > 0 && <> ({pct}% of {WEEKLY_LIMIT})</>}
+        </p>
+      </div>
+
+      <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-2">
+        <p>If you regularly drink as much as {WEEKLY_LIMIT} units a week, the NHS advises spreading it over 3 or more days and having several drink-free days each week.</p>
+        {totalUnits > 6 && (
+          <p className="font-medium text-foreground">More than 8 units in a single session for men, or more than 6 units for women, counts as binge drinking (NHS).</p>
+        )}
+        <p>No one can say how many units keep you under the drink-drive limit. If you are driving, do not drink.</p>
+      </div>
     </div>
   )
 }
