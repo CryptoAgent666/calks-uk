@@ -7873,15 +7873,15 @@
       "used_by": [
         "src/components/calculators/UKCitizenshipCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/guidance/prove-your-english-language-abilities-with-a-secure-english-language-test-selt",
+      "source_url": "https://www.trinitycollege.com/qualifications/SELT",
       "status": "current",
       "change_frequency": "",
       "note": "UK Citizenship calculator: ENGLISH_TEST constant — approx cost of B1 English test (IELTS/Trinity) required for naturalisation; provider-priced but a mandatory regulatory requirement",
       "official_value": "160",
-      "official_source": "https://www.migrate.org.uk/ielts-life-skills-b1-test/",
-      "verified_date": "2026-09-13",
-      "verify_method": "phase4 apply (tier2 2026-09-13 verdicts)",
-      "freshness_note": "Applied 2026-09-13: UKCitizenshipCalculator uses £160 (Trinity GESE Grade 5, cheapest approved B1 SELT); prose ranges now £160-£182.",
+      "official_source": "https://www.trinitycollege.com/qualifications/SELT",
+      "verified_date": "2026-10-20",
+      "verify_method": "Trinity SELT price table 2026-10-20 (GESE Grade 5 B1 citizenship £160.00)",
+      "freshness_note": "Applied 2026-09-13: UKCitizenshipCalculator uses £160 (Trinity GESE Grade 5, cheapest approved B1 SELT); prose ranges now £160-£182. Re-checked 2026-10-20 on trinitycollege.com: GESE Grade 5 (B1, British Citizenship) £160.00, ISE I/II £200.00. Source moved off the gov.uk SELT guidance, which lists approved providers and test centres but no fee.",
       "fixed": true,
       "fixed_date": "2026-09-13"
     },
