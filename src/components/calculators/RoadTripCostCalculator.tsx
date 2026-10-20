@@ -20,14 +20,14 @@ function calculate(distanceMiles: number, mpg: number, fuelPriceP: number, passe
 export default function RoadTripCostCalculator() {
   const [distance, setDistance] = useState('300')
   const [mpg, setMpg] = useState('40')
-  const [fuel, setFuel] = useState('172') // UK average petrol, DESNZ w/c 21 Sep 2026 (172.01p)
+  const [fuel, setFuel] = useState('175') // UK average petrol, DESNZ w/c 12 Oct 2026 (175.28p)
   const [passengers, setPassengers] = useState('2')
   const [tolls, setTolls] = useState('0')
   const [parking, setParking] = useState('10')
 
   const d = parseFloat(distance) || 0
   const m = parseFloat(mpg) || 40
-  const f = parseFloat(fuel) || 172
+  const f = parseFloat(fuel) || 175
   const p = parseInt(passengers) || 1
   const t = parseFloat(tolls) || 0
   const pk = parseFloat(parking) || 0

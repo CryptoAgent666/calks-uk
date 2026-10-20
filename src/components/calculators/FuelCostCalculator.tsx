@@ -27,10 +27,10 @@ function calculate(distance: number, distanceUnit: Unit, fuelPrice: number, effi
   return { cost, litresNeeded, costPerMile, distanceMiles, distanceKm, hmrcAllowance, allowanceMinusFuel }
 }
 
-// UK average pump prices, DESNZ weekly road fuel prices, week commencing 21 September 2026
-// (ULSP 172.01p, ULSD 195.53p per litre). Volatile: users should enter what they paid.
-const PETROL_P = 172
-const DIESEL_P = 196
+// UK average pump prices, DESNZ weekly road fuel prices, week commencing 12 October 2026
+// (ULSP 175.28p, ULSD 200.04p per litre). Volatile: users should enter what they paid.
+const PETROL_P = 175
+const DIESEL_P = 200
 
 export default function FuelCostCalculator() {
   const [distance, setDistance] = useState('100')
@@ -68,7 +68,7 @@ export default function FuelCostCalculator() {
               <button key={o.l} onClick={() => setFuelPrice(String(o.v))} className={`flex-1 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors border ${fp === o.v ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border hover:bg-accent'}`}>{o.l} {o.v}p</button>
             ))}
           </div>
-          <p className="text-xs text-muted-foreground mt-1">UK averages, week commencing 21 September 2026 (DESNZ)</p>
+          <p className="text-xs text-muted-foreground mt-1">UK averages, week commencing 12 October 2026 (DESNZ)</p>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Fuel Efficiency</label>

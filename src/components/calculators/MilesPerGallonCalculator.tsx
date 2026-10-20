@@ -1,9 +1,9 @@
 import { useState, useMemo } from 'react'
 
-// UK average pump prices, DESNZ weekly road fuel prices, week commencing 21 September 2026
-// (ULSP 172.01p, ULSD 195.53p per litre). Volatile: users should enter what they paid.
-const PETROL_P = 172
-const DIESEL_P = 196
+// UK average pump prices, DESNZ weekly road fuel prices, week commencing 12 October 2026
+// (ULSP 175.28p, ULSD 200.04p per litre). Volatile: users should enter what they paid.
+const PETROL_P = 175
+const DIESEL_P = 200
 
 function calculate(miles: number, litres: number, pencePerLitre: number) {
   if (miles <= 0 || litres <= 0) return null
@@ -55,7 +55,7 @@ export default function MilesPerGallonCalculator() {
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
         <p className="font-medium text-foreground">Typical MPG by vehicle type:</p>
         <p>Small car: 45-60 MPG | Family car: 35-50 MPG | SUV: 25-40 MPG | Van: 25-35 MPG</p>
-        <p className="mt-2">Petrol and diesel buttons use the UK average pump prices for the week commencing 21 September 2026 (DESNZ weekly road fuel prices: 172.01p and 195.53p a litre). Prices change weekly, so enter what you paid for the most accurate cost per mile.</p>
+        <p className="mt-2">Petrol and diesel buttons use the UK average pump prices for the week commencing 12 October 2026 (DESNZ weekly road fuel prices: 175.28p and 200.04p a litre). Prices change weekly, so enter what you paid for the most accurate cost per mile.</p>
       </div>
     </div>
   )

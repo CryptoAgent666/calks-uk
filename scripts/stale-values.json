@@ -4303,6 +4303,46 @@
    "was": "legal limit for abortion in the UK",
    "now": "Great Britain limit; NI differs",
    "what": "abortion_limit_uk (round 13)"
+  },
+  {
+   "was": "£1.72 a litre",
+   "now": "DESNZ weekly average dated",
+   "what": "pump_price_petrol_ppl (freshness alert 2026-10-20)"
+  },
+  {
+   "was": "£1.72/L",
+   "now": "DESNZ weekly average dated",
+   "what": "pump_price_petrol_ppl (freshness alert 2026-10-20)"
+  },
+  {
+   "was": "£1.72/litre",
+   "now": "DESNZ weekly average dated",
+   "what": "pump_price_petrol_ppl (freshness alert 2026-10-20)"
+  },
+  {
+   "was": "useState('172')",
+   "now": "current pump price default",
+   "what": "pump_price_petrol_ppl (freshness alert 2026-10-20) components"
+  },
+  {
+   "was": "PETROL_P = 172",
+   "now": "current pump price default",
+   "what": "pump_price_petrol_ppl (freshness alert 2026-10-20) components"
+  },
+  {
+   "was": "DIESEL_P = 196",
+   "now": "current pump price default",
+   "what": "pump_price_diesel_ppl (freshness alert 2026-10-20) components"
+  },
+  {
+   "was": "£1.96 a litre",
+   "now": "DESNZ weekly average dated",
+   "what": "pump_price_diesel_ppl (freshness alert 2026-10-20)"
+  },
+  {
+   "was": "week commencing 21 September 2026",
+   "now": "latest DESNZ week",
+   "what": "pump_price_petrol_ppl (freshness alert 2026-10-20) dated prose"
   }
  ]
 }
