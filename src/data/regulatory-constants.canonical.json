@@ -33986,7 +33986,7 @@
     },
     {
       "key": "attainment_8_structure",
-      "value": "English ×2 (if both sat), maths ×2, 3 EBacc, 3 open; max 90",
+      "value": "English ×2 (if both sat), maths ×2, 3 former-EBacc (sciences, computer science, history, geography, languages), 3 open; max 90",
       "unit": "rule",
       "law": "DfE Secondary accountability measures 2025",
       "theme": "education",
@@ -34003,10 +34003,11 @@
       "status": "current",
       "change_frequency": "",
       "note": "English double weighted only if both English language and literature sat; lower English can fill an open slot; combined science averaged across 2 slots. GCSEGradeCalculator summed the top 8 grades (max 72) until 2026-09-28.",
-      "official_value": "English ×2 (if both sat), maths ×2, 3 EBacc, 3 open; max 90",
-      "verified_date": "2026-09-28",
-      "verify_method": "site-improvement-2026-09-28",
-      "confidence": "high"
+      "official_value": "English ×2 (if both sat), maths ×2, 3 former-EBacc (sciences, computer science, history, geography, languages), 3 open; max 90",
+      "verified_date": "2026-10-27",
+      "verify_method": "DfE secondary accountability guidance 2026 (20 Oct 2026)",
+      "confidence": "high",
+      "freshness_note": "2026-10-27: DfE removed the EBacc performance measures from 2025/26 and renamed the bucket to the subjects it holds; how those subjects count in Attainment 8 is unchanged."
     },
     {
       "key": "attainment_8_national_average_2025",
@@ -34053,10 +34054,11 @@
       "change_frequency": "",
       "note": "No KS2 prior attainment (tests cancelled 2020 and 2021); no replacement; due back for 2027 GCSEs. Reformed Attainment 8/Progress 8 (2 science slots, breadth slots) proposed Nov 2025, consultation closed 4 May 2026, first applies to GCSEs sat in 2029.",
       "official_value": "2025 and 2026 GCSEs",
-      "verified_date": "2026-09-28",
-      "verify_method": "site-improvement-2026-09-28",
+      "verified_date": "2026-10-27",
+      "verify_method": "DfE secondary accountability guidance 2026 (20 Oct 2026)",
       "confidence": "high",
-      "changes_next_fy": "Check for the DfE consultation response on the reformed measure"
+      "changes_next_fy": "Check for the DfE consultation response on the reformed measure",
+      "freshness_note": "2026-10-27: guidance confirms no Progress 8 for 2024/25 or 2025/26 and that it can be produced again in 2026/27; P8 reform policy still to be confirmed."
     },
     {
       "key": "apr_effective_annual_rate",

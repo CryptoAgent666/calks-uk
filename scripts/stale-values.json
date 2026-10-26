@@ -4343,6 +4343,16 @@
    "was": "week commencing 21 September 2026",
    "now": "latest DESNZ week",
    "what": "pump_price_petrol_ppl (freshness alert 2026-10-20) dated prose"
+  },
+  {
+   "was": "used as a government performance measure for schools",
+   "now": "EBacc measures removed from 2025/26",
+   "what": "attainment_8_structure (freshness alert 2026-10-27)"
+  },
+  {
+   "was": "Three slots take your best EBacc grades",
+   "now": "former EBacc subjects",
+   "what": "attainment_8_structure (freshness alert 2026-10-27)"
   }
  ]
 }

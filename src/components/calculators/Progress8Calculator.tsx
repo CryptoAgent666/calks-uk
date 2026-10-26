@@ -115,7 +115,7 @@ export default function Progress8Calculator() {
               ))}
             </div>
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <p className="text-sm text-muted-foreground">Attainment 8 from these grades: <strong className="text-foreground">{fmt1(built.total)}</strong> (English {built.englishPoints}, maths {built.mathsPoints}, EBacc {fmt1(built.ebaccPoints)}, open {fmt1(built.openPoints)})</p>
+              <p className="text-sm text-muted-foreground">Attainment 8 from these grades: <strong className="text-foreground">{fmt1(built.total)}</strong> (English {built.englishPoints}, maths {built.mathsPoints}, former EBacc {fmt1(built.ebaccPoints)}, open {fmt1(built.openPoints)})</p>
               <button onClick={addRow} className="px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">+ Add Subject</button>
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function Progress8Calculator() {
                 <tbody>
                   <tr className="border-t border-border/50"><td className="p-3">English (double weighted)</td><td className="p-3 text-right tabular-nums">{built.englishPoints}</td><td className="p-3 text-right tabular-nums">{group.english.toFixed(2)}</td><td className="p-3 text-right tabular-nums font-medium">{signed(built.englishPoints - group.english)}</td></tr>
                   <tr className="border-t border-border/50"><td className="p-3">Maths (double weighted)</td><td className="p-3 text-right tabular-nums">{built.mathsPoints}</td><td className="p-3 text-right tabular-nums">{group.maths.toFixed(2)}</td><td className="p-3 text-right tabular-nums font-medium">{signed(built.mathsPoints - group.maths)}</td></tr>
-                  <tr className="border-t border-border/50"><td className="p-3">EBacc, 3 slots</td><td className="p-3 text-right tabular-nums">{fmt1(built.ebaccPoints)}</td><td className="p-3 text-right tabular-nums">{group.ebacc.toFixed(2)}</td><td className="p-3 text-right tabular-nums font-medium">{signed(built.ebaccPoints - group.ebacc)}</td></tr>
+                  <tr className="border-t border-border/50"><td className="p-3">Former EBacc, 3 slots</td><td className="p-3 text-right tabular-nums">{fmt1(built.ebaccPoints)}</td><td className="p-3 text-right tabular-nums">{group.ebacc.toFixed(2)}</td><td className="p-3 text-right tabular-nums font-medium">{signed(built.ebaccPoints - group.ebacc)}</td></tr>
                   <tr className="border-t border-border/50"><td className="p-3">Open, 3 slots</td><td className="p-3 text-right tabular-nums">{fmt1(built.openPoints)}</td><td className="p-3 text-right tabular-nums">{group.open.toFixed(2)}</td><td className="p-3 text-right tabular-nums font-medium">{signed(built.openPoints - group.open)}</td></tr>
                 </tbody>
               </table>

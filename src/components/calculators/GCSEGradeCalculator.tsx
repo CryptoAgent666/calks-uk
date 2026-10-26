@@ -135,7 +135,7 @@ export default function GCSEGradeCalculator() {
             <tbody>
               <tr className="border-b border-border/50"><td className="p-3">English {a8.hasEnglish ? (a8.bothEnglish ? '(best of the two, double weighted)' : '(single weighted: sit both for double)') : '(not entered)'}</td><td className="p-3 text-right tabular-nums font-medium">{a8.englishPoints}</td></tr>
               <tr className="border-b border-border/50"><td className="p-3">Maths (double weighted)</td><td className="p-3 text-right tabular-nums font-medium">{a8.mathsPoints}</td></tr>
-              <tr className="border-b border-border/50"><td className="p-3">EBacc subjects, best 3 ({a8.ebaccFilled}/3 slots filled)</td><td className="p-3 text-right tabular-nums font-medium">{fmt(a8.ebaccPoints)}</td></tr>
+              <tr className="border-b border-border/50"><td className="p-3">Former EBacc subjects, best 3 ({a8.ebaccFilled}/3 slots filled)</td><td className="p-3 text-right tabular-nums font-medium">{fmt(a8.ebaccPoints)}</td></tr>
               <tr className="border-b border-border/50"><td className="p-3">Open subjects, best 3 ({a8.openFilled}/3 slots filled)</td><td className="p-3 text-right tabular-nums font-medium">{fmt(a8.openPoints)}</td></tr>
               <tr className="bg-muted/30"><td className="p-3 font-semibold">Attainment 8 (average {a8.average.toFixed(2)} a slot)</td><td className="p-3 text-right tabular-nums font-bold">{fmt(a8.total)}</td></tr>
             </tbody>
