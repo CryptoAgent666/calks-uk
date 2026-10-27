@@ -12,10 +12,29 @@
 #   public *;
 #}
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Preserve line numbers so Play can deobfuscate stack traces with mapping.txt.
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# @capgo/capacitor-updater ships these in android/proguard-rules.pro but not as
+# consumer rules, so the app has to carry them (autoSplashscreen uses reflection).
+-keepattributes *Annotation*, Signature
+-keep class ee.forgr.capacitor_updater.** { *; }
+-keep class com.getcapacitor.Bridge {
+    com.getcapacitor.MessageHandler msgHandler;
+}
+-keep class com.getcapacitor.MessageHandler { *; }
+-keep class com.getcapacitor.PluginCall {
+    <init>(com.getcapacitor.MessageHandler, java.lang.String, java.lang.String, java.lang.String, com.getcapacitor.JSObject);
+}
+-keep class * implements com.getcapacitor.PluginHandle {
+    public void invoke(java.lang.String, com.getcapacitor.PluginCall);
+}
+# Capgo reaches androidx.webkit reflectively (document-start stats script).
+-keep class androidx.webkit.WebViewFeature {
+    public static final java.lang.String DOCUMENT_START_SCRIPT;
+    public static boolean isFeatureSupported(java.lang.String);
+}
+-keep class androidx.webkit.WebViewCompat {
+    public static ** addDocumentStartJavaScript(android.webkit.WebView, java.lang.String, java.util.Set);
+}

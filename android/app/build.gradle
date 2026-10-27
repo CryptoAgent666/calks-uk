@@ -14,8 +14,8 @@ android {
         applicationId "uk.calks.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 34
-        versionName "1.6.0"
+        versionCode 35
+        versionName "1.6.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
@@ -35,7 +35,9 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            // R8 on: Google Play memory standard (Feb 2027) requires >=25% DEX optimisation.
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             if (keystoreProperties['storeFile']) {
                 signingConfig signingConfigs.release
