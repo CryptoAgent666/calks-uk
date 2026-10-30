@@ -11792,8 +11792,9 @@
       "official_value": "marriage value (still payable)",
       "confidence": "medium",
       "freshness_note": "Re-verified 2026-10-13: LAFRA 2024 s.37 (new price method) and Sch 4 para 17 ('no marriage or hope value') are both still 'Prospective' on legislation.gov.uk, so marriage value is still payable at 80 years or less. (Earlier notes citing s.8 were wrong: s.8 is about permitted leases of houses.)",
-      "verified_date": "2026-10-13",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-10-30",
+      "verify_method": "tier2-tail",
+      "verify_note": "legislation.gov.uk 30 Oct 2026: LAFRA 2024 s.37 still prospective, so marriage value stays payable at 50%. Unchanged."
     },
     {
       "key": "lease_extension_marriage_value_landlord_share",
@@ -11814,8 +11815,9 @@
       "official_value": "50%",
       "confidence": "medium",
       "freshness_note": "Re-verified 2026-10-13: the 1993 Act Sch 13 50% share is still in force; LAFRA 2024 s.37 / Sch 4 para 17 are uncommenced ('Prospective').",
-      "verified_date": "2026-10-13",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-10-30",
+      "verify_method": "tier2-tail",
+      "verify_note": "legislation.gov.uk 30 Oct 2026: LAFRA 2024 s.37 still prospective, so marriage value stays payable at 50%. Unchanged."
     },
     {
       "key": "lease_extension_marriage_value_threshold",
@@ -32585,11 +32587,12 @@
       "change_frequency": "",
       "note": "UK average ULSP w/c 12 Oct 2026 (172.01p w/c 21 Sep; 161.6p on 31 Aug; rising). Six calculators default to 175p; prose and worked examples dated to that week (40 mpg = 19.9p/mile).",
       "official_value": "175.28",
-      "verified_date": "2026-10-20",
-      "verify_method": "freshness-alert-2026-10-20 (DESNZ CSV)",
+      "verified_date": "2026-10-30",
+      "verify_method": "monitor-alert-2026-10-26 recheck (DESNZ CSV)",
       "confidence": "high",
       "volatile": true,
-      "changes_next_fy": "Market figure: refresh defaults and dated prose each calkcheck cycle (DESNZ CSV weekly)"
+      "changes_next_fy": "Market figure: refresh defaults and dated prose each calkcheck cycle (DESNZ CSV weekly)",
+      "verify_note": "DESNZ CSV 30 Oct 2026: 174.57p w/c 19 Oct, 174.07p w/c 26 Oct. Within about 1p of the dated 175.28p (w/c 12 Oct) and the 175p default, so no site change. Refresh in the next calkcheck cycle."
     },
     {
       "key": "pump_price_diesel_ppl",
@@ -32612,11 +32615,12 @@
       "change_frequency": "",
       "note": "UK average ULSD w/c 12 Oct 2026 (195.53p w/c 21 Sep), first week above 200p. Button default 200p.",
       "official_value": "200.04",
-      "verified_date": "2026-10-20",
-      "verify_method": "freshness-alert-2026-10-20 (DESNZ CSV)",
+      "verified_date": "2026-10-30",
+      "verify_method": "monitor-alert-2026-10-26 recheck (DESNZ CSV)",
       "confidence": "high",
       "volatile": true,
-      "changes_next_fy": "Market figure: refresh each calkcheck cycle"
+      "changes_next_fy": "Market figure: refresh each calkcheck cycle",
+      "verify_note": "DESNZ CSV 30 Oct 2026: 199.33p w/c 19 Oct, 199.22p w/c 26 Oct. Within 1p of the dated 200.04p (w/c 12 Oct) and the 200p default, so no site change."
     },
     {
       "key": "heating_oil_kerosene_ppkwh",
@@ -34004,10 +34008,11 @@
       "change_frequency": "",
       "note": "English double weighted only if both English language and literature sat; lower English can fill an open slot; combined science averaged across 2 slots. GCSEGradeCalculator summed the top 8 grades (max 72) until 2026-09-28.",
       "official_value": "English ×2 (if both sat), maths ×2, 3 former-EBacc (sciences, computer science, history, geography, languages), 3 open; max 90",
-      "verified_date": "2026-10-27",
+      "verified_date": "2026-10-30",
       "verify_method": "DfE secondary accountability guidance 2026 (20 Oct 2026)",
       "confidence": "high",
-      "freshness_note": "2026-10-27: DfE removed the EBacc performance measures from 2025/26 and renamed the bucket to the subjects it holds; how those subjects count in Attainment 8 is unchanged."
+      "freshness_note": "2026-10-27: DfE removed the EBacc performance measures from 2025/26 and renamed the bucket to the subjects it holds; how those subjects count in Attainment 8 is unchanged.",
+      "verify_note": "gov.uk 30 Oct 2026: last update 20 Oct 2026 (2026 guidance), already applied 27 Oct as former-EBacc wording. Structure unchanged."
     },
     {
       "key": "attainment_8_national_average_2025",
@@ -34054,11 +34059,12 @@
       "change_frequency": "",
       "note": "No KS2 prior attainment (tests cancelled 2020 and 2021); no replacement; due back for 2027 GCSEs. Reformed Attainment 8/Progress 8 (2 science slots, breadth slots) proposed Nov 2025, consultation closed 4 May 2026, first applies to GCSEs sat in 2029.",
       "official_value": "2025 and 2026 GCSEs",
-      "verified_date": "2026-10-27",
+      "verified_date": "2026-10-30",
       "verify_method": "DfE secondary accountability guidance 2026 (20 Oct 2026)",
       "confidence": "high",
       "changes_next_fy": "Check for the DfE consultation response on the reformed measure",
-      "freshness_note": "2026-10-27: guidance confirms no Progress 8 for 2024/25 or 2025/26 and that it can be produced again in 2026/27; P8 reform policy still to be confirmed."
+      "freshness_note": "2026-10-27: guidance confirms no Progress 8 for 2024/25 or 2025/26 and that it can be produced again in 2026/27; P8 reform policy still to be confirmed.",
+      "verify_note": "gov.uk 30 Oct 2026: last update 20 Oct 2026; no later change. Unchanged."
     },
     {
       "key": "apr_effective_annual_rate",
@@ -34350,9 +34356,10 @@
       "change_frequency": "",
       "note": "Replaced the Consumer Protection from Unfair Trading Regulations 2008 (revoked 6 Apr 2025). Discount and late-payment pages cited the 2008 Regulations until 2026-09-28.",
       "official_value": "6 April 2025",
-      "verified_date": "2026-09-28",
+      "verified_date": "2026-10-30",
       "verify_method": "calkcheck-2026-09-28-r8",
-      "confidence": "high"
+      "confidence": "high",
+      "verify_note": "legislation.gov.uk 30 Oct 2026: Part 4 Ch 1 versions 24/05/2024 and 06/04/2025; commencement 6 Apr 2025 unchanged. Hash change is the page banner."
     },
     {
       "key": "royal_mail_redirection_12_months_one_adult",
@@ -36131,7 +36138,7 @@
     {
       "key": "paye_flat_rate_expenses_max",
       "status": "current",
-      "verified_date": "2026-10-19",
+      "verified_date": "2026-10-30",
       "confidence": "high",
       "value": 185,
       "unit": "GBP/year",
@@ -36148,7 +36155,8 @@
         "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim32712",
-      "note": "Most trades £60–£140"
+      "note": "Most trades £60–£140",
+      "verify_note": "EIM32712 30 Oct 2026 (updated 21 Oct 2026): ambulance staff on active service still £185, the highest listed. Unchanged."
     },
     {
       "key": "self_assessment_simplified_expenses_wfh_monthly",
