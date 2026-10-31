@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-10-31'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-11-01'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -24,6 +24,27 @@ const schemas = [
     <p class="text-sm text-muted-foreground mb-8">Rate changes, new calculators and site improvements</p>
 
     <div class="space-y-8">
+      <!-- November 2026 — Budget 2026 rates applied by date on the mileage log and capital allowances calculators -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            November 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Two calculators now apply Budget 2026 by date</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Business mileage log.</strong> The <a href="/calculator/business-mileage-record-calculator/" class="text-primary hover:underline">mileage log</a> now splits trips by tax year, starts the 10,000-mile threshold again each 6 April and uses each year's rates, including 35p above 10,000 miles from 6 April 2027. Results for trips in 2026/27 are unchanged.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Capital allowances.</strong> The <a href="/calculator/capital-allowances-calculator/" class="text-primary hover:underline">capital allowances calculator</a> now asks for a purchase date and an accounting year end. It applies the 50% first-year allowance from 1 January 2027 and the 12% main pool rate to periods beginning on or after 1 April 2027 (Corporation Tax) or 6 April 2027 (Income Tax). A period that straddles the date shows as a range, because the hybrid formula has not yet been published.</span>
+          </li>
+        </ul>
+      </article>
+
       <!-- October 2026 — round 13 audit: farm wages and livestock units, pension vs ISA, health guidance, GCSE and A-level figures, student budgets -->
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>

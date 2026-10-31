@@ -466,7 +466,7 @@
       "official_value": "0.25",
       "confidence": "high",
       "freshness_note": "Car/van rate over 10,000 miles is 25p (GBP 0.25) for 2026-27, unchanged. EIM31240 confirms 'After 10,000 | 25 pence' for the 2026-27 onwards period; only the first-10,000 rate increased.",
-      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, BusinessMileageRecord (needs per-tax-year logic, it takes trip dates), FuelCost, TaxRefund consts and examples.",
+      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, FuelCost, TaxRefund consts and examples. BusinessMileageRecord already applies it by trip date, per tax year.",
       "verified_date": "2026-10-31",
       "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
@@ -2248,7 +2248,7 @@
       "note": "Writing Down Allowance main pool 18%/year (depreciation-calculator)",
       "fixed": true,
       "fixed_date": "2026-06-16",
-      "changes_next_fy": "12% from 1 April 2027 (CT) / 6 April 2027 (IT), hybrid rate for straddling periods (Budget 2026): CapitalAllowances year-by-year table keeps 14% until a date input exists; AIA note.",
+      "changes_next_fy": "12% from 1 April 2027 (CT) / 6 April 2027 (IT), hybrid rate for straddling periods (Budget 2026): CapitalAllowances applies 12% by the date each period begins and shows a straddling period as the 12% to 14% range, because the HMRC measure of 29 Oct 2026 gives no hybrid formula; replace the range when Finance Bill 2026-27 does. AIA calculator: note and pool text only.",
       "verified_date": "2026-10-31",
       "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
@@ -9454,7 +9454,7 @@
       "official_value": "25",
       "confidence": "high",
       "freshness_note": "Car/van over-10,000-miles rate is 25 pence per mile for 2026-27, unchanged.",
-      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, BusinessMileageRecord (needs per-tax-year logic, it takes trip dates), FuelCost, TaxRefund consts and examples.",
+      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, FuelCost, TaxRefund consts and examples. BusinessMileageRecord already applies it by trip date, per tax year.",
       "verified_date": "2026-10-31",
       "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
@@ -9519,7 +9519,7 @@
       "official_value": "25",
       "confidence": "high",
       "freshness_note": "Car/van over-10,000-miles rate is 25 pence per mile for 2026-27, unchanged.",
-      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, BusinessMileageRecord (needs per-tax-year logic, it takes trip dates), FuelCost, TaxRefund consts and examples.",
+      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, FuelCost, TaxRefund consts and examples. BusinessMileageRecord already applies it by trip date, per tax year.",
       "verified_date": "2026-10-31",
       "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
@@ -13706,7 +13706,7 @@
       "official_value": "0.25",
       "confidence": "high",
       "freshness_note": "Over-10,000-miles car/van rate is GBP 0.25 per mile for 2026-27, unchanged.",
-      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, BusinessMileageRecord (needs per-tax-year logic, it takes trip dates), FuelCost, TaxRefund consts and examples.",
+      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, FuelCost, TaxRefund consts and examples. BusinessMileageRecord already applies it by trip date, per tax year.",
       "verified_date": "2026-10-31",
       "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
@@ -13729,7 +13729,7 @@
       "official_value": "25",
       "confidence": "high",
       "freshness_note": "Over-10,000-miles car/van rate is 25 pence per mile for 2026-27, unchanged.",
-      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, BusinessMileageRecord (needs per-tax-year logic, it takes trip dates), FuelCost, TaxRefund consts and examples.",
+      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, FuelCost, TaxRefund consts and examples. BusinessMileageRecord already applies it by trip date, per tax year.",
       "verified_date": "2026-10-31",
       "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
@@ -30070,7 +30070,7 @@
       "note": "capital-allowances-calculator: main pool Writing Down Allowance 18%/year; cars under 50g/km CO2",
       "fixed": true,
       "fixed_date": "2026-06-16",
-      "changes_next_fy": "12% from 1 April 2027 (CT) / 6 April 2027 (IT), hybrid rate for straddling periods (Budget 2026): CapitalAllowances year-by-year table keeps 14% until a date input exists; AIA note.",
+      "changes_next_fy": "12% from 1 April 2027 (CT) / 6 April 2027 (IT), hybrid rate for straddling periods (Budget 2026): CapitalAllowances applies 12% by the date each period begins and shows a straddling period as the 12% to 14% range, because the HMRC measure of 29 Oct 2026 gives no hybrid formula; replace the range when Finance Bill 2026-27 does. AIA calculator: note and pool text only.",
       "verified_date": "2026-10-31",
       "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
@@ -30092,7 +30092,7 @@
       "note": "CapitalAllowancesCalculator: Writing Down Allowance main pool rate 18%.",
       "fixed": true,
       "fixed_date": "2026-06-16",
-      "changes_next_fy": "12% from 1 April 2027 (CT) / 6 April 2027 (IT), hybrid rate for straddling periods (Budget 2026): CapitalAllowances year-by-year table keeps 14% until a date input exists; AIA note.",
+      "changes_next_fy": "12% from 1 April 2027 (CT) / 6 April 2027 (IT), hybrid rate for straddling periods (Budget 2026): CapitalAllowances applies 12% by the date each period begins and shows a straddling period as the 12% to 14% range, because the HMRC measure of 29 Oct 2026 gives no hybrid formula; replace the range when Finance Bill 2026-27 does. AIA calculator: note and pool text only.",
       "verified_date": "2026-10-31",
       "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
@@ -30240,7 +30240,7 @@
       "note": "Main pool Writing Down Allowance 18% on spend above AIA limit",
       "fixed": true,
       "fixed_date": "2026-06-16",
-      "changes_next_fy": "12% from 1 April 2027 (CT) / 6 April 2027 (IT), hybrid rate for straddling periods (Budget 2026): CapitalAllowances year-by-year table keeps 14% until a date input exists; AIA note.",
+      "changes_next_fy": "12% from 1 April 2027 (CT) / 6 April 2027 (IT), hybrid rate for straddling periods (Budget 2026): CapitalAllowances applies 12% by the date each period begins and shows a straddling period as the 12% to 14% range, because the HMRC measure of 29 Oct 2026 gives no hybrid formula; replace the range when Finance Bill 2026-27 does. AIA calculator: note and pool text only.",
       "verified_date": "2026-10-31",
       "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
@@ -31375,7 +31375,7 @@
       "freshness_note": "Added by calkcheck round 2 (2026-09-26) after a stale or missing value was found; verified at the source URL.",
       "verified_date": "2026-10-31",
       "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
-      "changes_next_fy": "50% for expenditure on or after 1 January 2027 (Budget 2026): CapitalAllowances, AIA calculators apply 40% until then."
+      "changes_next_fy": "50% for expenditure on or after 1 January 2027 (Budget 2026): CapitalAllowances applies it by purchase date; the AIA calculator has no date input and applies 40% with a note until then."
     },
     {
       "key": "fya_zero_emission_car_end",
@@ -31401,7 +31401,7 @@
       "freshness_note": "Added by calkcheck round 2 (2026-09-26) after a stale or missing value was found; verified at the source URL.",
       "verified_date": "2026-09-26",
       "verify_method": "calkcheck-2026-09-26-r2",
-      "changes_next_fy": "After 31 Mar / 5 Apr 2027 the ZEV car FYA ends unless extended again: move zero-emission cars to the main pool in CapitalAllowancesCalculator and prose."
+      "changes_next_fy": "After 31 Mar / 5 Apr 2027 the ZEV car FYA ends unless extended again: CapitalAllowancesCalculator already moves later purchases to the main pool by date; update the prose then."
     },
     {
       "key": "winter_fuel_payment_household",
