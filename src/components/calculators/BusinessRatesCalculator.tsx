@@ -87,7 +87,7 @@ function calculate(opts: {
   const { nation, use, rv, onlyProperty, special, existing, london } = opts
   const m = multiplierFor(nation, use, rv)
   const gross = rv * m.rate
-  // England 2026/27 only: 1p Transitional Relief Supplement for properties already on
+  // England, 2026/27 and (Budget 2026) two more years from 1 April 2027: 1p Transitional Relief Supplement for properties already on
   // the list that get neither transitional relief nor Supporting Small Business relief
   const ssbApplies = nation === 'england' && opts.ssb && opts.lastBill > 0
   const trs = nation === 'england' && existing && !ssbApplies ? rv * ENG.trs : 0
@@ -260,6 +260,7 @@ export default function BusinessRatesCalculator() {
             {nation === 'scotland' && 'Transitional relief caps increases from the 2026 revaluation (15%, 30% or 50% in 2026/27 depending on size), and councils apply reliefs in their own order, so check your bill. '}
             Small business relief assumes one property; businesses with more than one should check the rules for their nation.
           </p>
+          {nation === 'england' && <p className="text-xs text-muted-foreground">From 1 April 2027 England&rsquo;s multipliers become 44.7p, 49.7p and 52.5p (retail, hospitality and leisure 39.5p and 44.5p). Small Business Rate Relief for qualifying retail, hospitality and leisure properties then runs in full to £18,000 and tapers to £21,000, and pubs, social clubs and live music venues get 35% relief rather than 15%, except music venues with a rateable value of £1 million or more. The figures above stay on 2026/27 rules.</p>}
         </div>
       )}
     </div>

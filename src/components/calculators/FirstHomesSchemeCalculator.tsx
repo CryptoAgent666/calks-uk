@@ -157,7 +157,7 @@ export default function FirstHomesSchemeCalculator() {
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-2">
             <p>First Homes: 30-50% off new-build homes in England for first-time buyers. The price after the discount must be no more than £250,000 (£420,000 in London), household income no more than £80,000 (£90,000 in London), and a mortgage must cover at least half the price. Stamp duty is charged on the discounted price. When you sell, you normally have to sell to another eligible buyer at the same percentage discount; a council can allow an open-market sale after 6 months of unsuccessful marketing, in which case you repay the discount percentage of the sale price.</p>
-            <p>National planning policy stopped requiring 25% of affordable homes to be First Homes in December 2024, so supply now depends on councils. A new Your First Home equity loan scheme was announced on 26 September 2026, with details due at the Budget.</p>
+            <p>National planning policy stopped requiring 25% of affordable homes to be First Homes in December 2024, so supply now depends on councils. Your First Home, a separate equity loan scheme for first-time buyers of new-build homes in England, starts in April 2027: a government equity loan of up to 20%, a reduced deposit and five years interest free.</p>
           </div>
         </div>
       )}

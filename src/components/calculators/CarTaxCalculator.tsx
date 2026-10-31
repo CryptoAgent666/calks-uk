@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // VED rates 2026/27 (from 1 April 2026), per gov.uk/vehicle-tax-rate-tables.
+// Budget 2026 Annex A sets 2027/28 (from 1 April 2027): shown as a dated note, logic stays on 2026/27.
 // The rules depend on when the car was first registered.
 const STANDARD_RATE = 200 // year 2+ for cars registered from 1 April 2017 (petrol/diesel/hybrid/EV — AFV £10 discount removed April 2025)
 const EXPENSIVE_CAR_SUPPLEMENT = 440 // a year for 5 years, from the second time the car is taxed
@@ -193,6 +194,7 @@ export default function CarTaxCalculator() {
           <p>Registered 1 March 2001 to 31 March 2017: Bands A-M, <span className="font-medium text-foreground">£20 to £790</span> (EVs are Band A, £20)</p>
           <p>Registered before 1 March 2001: <span className="font-medium text-foreground">£230</span> up to 1,549cc, <span className="font-medium text-foreground">£375</span> above</p>
           <p className="text-xs">Monthly or six-monthly Direct Debit adds 5%; a single six-month payment adds 10%. Diesel cars that do not meet RDE2 pay the next first-year band up.</p>
+          <p className="text-xs">These are the 2026/27 rates. From 1 April 2027 the standard rate rises to £210 and other rates rise too; the £440 supplement does not change (Budget 2026).</p>
         </div>
       </div>
     </div>

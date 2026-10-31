@@ -465,7 +465,10 @@
       "note": "MileageAllowanceCalculator: AMAP car/van rate above 10,000 business miles (CAR_OVER_10K = 0.25 = 25p/mile)",
       "official_value": "0.25",
       "confidence": "high",
-      "freshness_note": "Car/van rate over 10,000 miles is 25p (GBP 0.25) for 2026-27, unchanged. EIM31240 confirms 'After 10,000 | 25 pence' for the 2026-27 onwards period; only the first-10,000 rate increased."
+      "freshness_note": "Car/van rate over 10,000 miles is 25p (GBP 0.25) for 2026-27, unchanged. EIM31240 confirms 'After 10,000 | 25 pence' for the 2026-27 onwards period; only the first-10,000 rate increased.",
+      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, BusinessMileageRecord (needs per-tax-year logic, it takes trip dates), FuelCost, TaxRefund consts and examples.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "amap_motorcycle_rate",
@@ -996,7 +999,10 @@
       "source_url": "https://www.gov.uk/business-asset-disposal-relief",
       "status": "current",
       "change_frequency": "",
-      "note": "capital-gains-tax: BADR £1m lifetime limit; rate rose 10%->14% (Apr 2025)->18% (Apr 2026)"
+      "note": "capital-gains-tax: BADR £1m lifetime limit; rate rose 10%->14% (Apr 2025)->18% (Apr 2026)",
+      "changes_next_fy": "£500,000 for disposals on or after 6 April 2027; Founders' Relief 10% on up to £10m from the same date (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "basic_rate",
@@ -1937,8 +1943,9 @@
       "status": "current",
       "change_frequency": "",
       "note": "business-rates-calculator: higher multiplier 50.8p (RV £500,000+)",
-      "verified_date": "2026-09-28",
-      "verify_method": "site-improvement-2026-09-28"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "2027/28 England: standard 49.7p, small 44.7p, RHL 44.5p, small RHL 39.5p, high-value 52.5p (Annex A): BusinessRatesCalculator on 1 April 2027."
     },
     {
       "key": "business_rates_large_multiplier",
@@ -1958,8 +1965,9 @@
       "status": "current",
       "change_frequency": "",
       "note": "BusinessRatesCalculator: new higher multiplier 50.8p for RV GBP500,000+ from April 2026.",
-      "verified_date": "2026-09-28",
-      "verify_method": "site-improvement-2026-09-28"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "2027/28 England: standard 49.7p, small 44.7p, RHL 44.5p, small RHL 39.5p, high-value 52.5p (Annex A): BusinessRatesCalculator on 1 April 2027."
     },
     {
       "key": "business_rates_large_multiplier_rv_threshold",
@@ -2018,8 +2026,9 @@
       "status": "current",
       "change_frequency": "",
       "note": "England 2026/27: RHL small multiplier 38.2p for occupied qualifying retail/hospitality/leisure properties with RV below £51,000 (SI 2026/152). BusinessRatesCalculator now models it (it did not before 2026-09-28).",
-      "verified_date": "2026-09-28",
-      "verify_method": "site-improvement-2026-09-28"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "2027/28 England: standard 49.7p, small 44.7p, RHL 44.5p, small RHL 39.5p, high-value 52.5p (Annex A): BusinessRatesCalculator on 1 April 2027."
     },
     {
       "key": "business_rates_rhl_standard_multiplier",
@@ -2039,8 +2048,9 @@
       "status": "current",
       "change_frequency": "",
       "note": "England 2026/27: RHL standard multiplier 43.0p for qualifying RHL properties £51,000-£499,999; £500k+ pays the 50.8p high-value rate. Modelled from 2026-09-28.",
-      "verified_date": "2026-09-28",
-      "verify_method": "site-improvement-2026-09-28"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "2027/28 England: standard 49.7p, small 44.7p, RHL 44.5p, small RHL 39.5p, high-value 52.5p (Annex A): BusinessRatesCalculator on 1 April 2027."
     },
     {
       "key": "business_rates_small_business_multiplier",
@@ -2060,8 +2070,9 @@
       "status": "current",
       "change_frequency": "",
       "note": "business-rates-calculator: small business multiplier 43.2p (RV below £51,000)",
-      "verified_date": "2026-09-28",
-      "verify_method": "site-improvement-2026-09-28"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "2027/28 England: standard 49.7p, small 44.7p, RHL 44.5p, small RHL 39.5p, high-value 52.5p (Annex A): BusinessRatesCalculator on 1 April 2027."
     },
     {
       "key": "business_rates_small_multiplier",
@@ -2081,8 +2092,9 @@
       "status": "current",
       "change_frequency": "",
       "note": "Small business multiplier 43.2p applies to EVERY property with RV below £51,000, whether or not it gets SBRR (SI 2026/152 reg 3(5)). The calculator chose it from an SBRR checkbox until 2026-09-28.",
-      "verified_date": "2026-09-28",
-      "verify_method": "site-improvement-2026-09-28"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "2027/28 England: standard 49.7p, small 44.7p, RHL 44.5p, small RHL 39.5p, high-value 52.5p (Annex A): BusinessRatesCalculator on 1 April 2027."
     },
     {
       "key": "business_rates_standard_multiplier",
@@ -2102,8 +2114,9 @@
       "status": "current",
       "change_frequency": "",
       "note": "BusinessRatesCalculator: standard multiplier 48p for RV GBP51,000-GBP499,999 (was 55.5p in 2025/26).",
-      "verified_date": "2026-09-28",
-      "verify_method": "site-improvement-2026-09-28"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "2027/28 England: standard 49.7p, small 44.7p, RHL 44.5p, small RHL 39.5p, high-value 52.5p (Annex A): BusinessRatesCalculator on 1 April 2027."
     },
     {
       "key": "business_rates_standard_multiplier_rv_floor",
@@ -2234,7 +2247,10 @@
       "change_frequency": "",
       "note": "Writing Down Allowance main pool 18%/year (depreciation-calculator)",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "changes_next_fy": "12% from 1 April 2027 (CT) / 6 April 2027 (IT), hybrid rate for straddling periods (Budget 2026): CapitalAllowances year-by-year table keeps 14% until a date input exists; AIA note.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "capital_allowances_wda_special_rate",
@@ -2655,7 +2671,10 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "BADR lifetime limit GBP1m (capital-gains-tax-calculator)"
+      "note": "BADR lifetime limit GBP1m (capital-gains-tax-calculator)",
+      "changes_next_fy": "£500,000 for disposals on or after 6 April 2027; Founders' Relief 10% on up to £10m from the same date (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "cgt_badr_rate",
@@ -6144,12 +6163,12 @@
       "used_by": [
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
+      "source_url": "https://www.gov.uk/government/publications/high-value-council-tax-surcharge-on-residential-properties/additional-council-tax-charge-on-high-value-properties",
       "status": "current",
       "change_frequency": "",
       "confidence": "high",
-      "verified_date": "2026-08-29",
-      "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
       "note": "Annual surcharge, homes worth £2m to £2.5m.",
       "official_value": "2500",
       "freshness_note": "Gov-confirmed floor (£2,500 at £2m+) and ceiling (£7,500 at £5m+); intermediate bands are the government proposal, consultation closed 14 Jul 2026. In force from April 2028."
@@ -6166,12 +6185,12 @@
       "used_by": [
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
+      "source_url": "https://www.gov.uk/government/publications/high-value-council-tax-surcharge-on-residential-properties/additional-council-tax-charge-on-high-value-properties",
       "status": "current",
       "change_frequency": "",
       "confidence": "high",
-      "verified_date": "2026-08-29",
-      "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
       "note": "Annual surcharge, homes worth £2.5m to £3.5m.",
       "official_value": "3500",
       "freshness_note": "Gov-confirmed floor (£2,500 at £2m+) and ceiling (£7,500 at £5m+); intermediate bands are the government proposal, consultation closed 14 Jul 2026. In force from April 2028."
@@ -6188,12 +6207,12 @@
       "used_by": [
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
+      "source_url": "https://www.gov.uk/government/publications/high-value-council-tax-surcharge-on-residential-properties/additional-council-tax-charge-on-high-value-properties",
       "status": "current",
       "change_frequency": "",
       "confidence": "high",
-      "verified_date": "2026-08-29",
-      "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
       "note": "Annual surcharge, homes worth £3.5m to £5m.",
       "official_value": "5000",
       "freshness_note": "Gov-confirmed floor (£2,500 at £2m+) and ceiling (£7,500 at £5m+); intermediate bands are the government proposal, consultation closed 14 Jul 2026. In force from April 2028."
@@ -6210,12 +6229,12 @@
       "used_by": [
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
+      "source_url": "https://www.gov.uk/government/publications/high-value-council-tax-surcharge-on-residential-properties/additional-council-tax-charge-on-high-value-properties",
       "status": "current",
       "change_frequency": "",
       "confidence": "high",
-      "verified_date": "2026-08-29",
-      "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
       "note": "Annual surcharge, homes worth over £5m.",
       "official_value": "7500",
       "freshness_note": "Gov-confirmed floor (£2,500 at £2m+) and ceiling (£7,500 at £5m+); intermediate bands are the government proposal, consultation closed 14 Jul 2026. In force from April 2028."
@@ -6232,12 +6251,12 @@
       "used_by": [
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
+      "source_url": "https://www.gov.uk/government/publications/high-value-council-tax-surcharge-on-residential-properties/additional-council-tax-charge-on-high-value-properties",
       "status": "current",
       "change_frequency": "",
       "confidence": "high",
-      "verified_date": "2026-08-29",
-      "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
       "note": "Value at which the £3,500 surcharge starts.",
       "official_value": "2500000",
       "freshness_note": "Gov-confirmed floor (£2,500 at £2m+) and ceiling (£7,500 at £5m+); intermediate bands are the government proposal, consultation closed 14 Jul 2026. In force from April 2028."
@@ -6254,12 +6273,12 @@
       "used_by": [
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
+      "source_url": "https://www.gov.uk/government/publications/high-value-council-tax-surcharge-on-residential-properties/additional-council-tax-charge-on-high-value-properties",
       "status": "current",
       "change_frequency": "",
       "confidence": "high",
-      "verified_date": "2026-08-29",
-      "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
       "note": "Value at which the £5,000 surcharge starts.",
       "official_value": "3500000",
       "freshness_note": "Gov-confirmed floor (£2,500 at £2m+) and ceiling (£7,500 at £5m+); intermediate bands are the government proposal, consultation closed 14 Jul 2026. In force from April 2028."
@@ -6276,12 +6295,12 @@
       "used_by": [
         "src/components/calculators/HighCouncilTaxCalculator.tsx"
       ],
-      "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge/high-value-council-tax-surcharge",
+      "source_url": "https://www.gov.uk/government/publications/high-value-council-tax-surcharge-on-residential-properties/additional-council-tax-charge-on-high-value-properties",
       "status": "current",
       "change_frequency": "",
       "confidence": "high",
-      "verified_date": "2026-08-29",
-      "verify_method": "phase4 apply session: verified against primary source, applied to code, reconciled",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
       "note": "Value at which the £7,500 surcharge starts.",
       "official_value": "5000000",
       "freshness_note": "Gov-confirmed floor (£2,500 at £2m+) and ceiling (£7,500 at £5m+); intermediate bands are the government proposal, consultation closed 14 Jul 2026. In force from April 2028."
@@ -8799,9 +8818,9 @@
       "change_frequency": "",
       "note": "Fuel duty 52.95p/litre (the rate since the 5p cut of 23 March 2022, extended; the 1 Sep 2026 staged rise was cancelled). fuel-cost prose used to say \"frozen since 2011\".",
       "official_value": "52.95",
-      "changes_next_fy": "Rates return to Budget 2025 levels from 1 Jan 2027 unless Budget 2026 changes them, reaching 57.95p from 1 Mar 2027 (gov.uk amended rates) - re-check after the Autumn Budget 2026 and update fuel-cost prose + pump-price defaults.",
-      "verified_date": "2026-09-27",
-      "verify_method": "calkcheck-2026-09-27-r4"
+      "changes_next_fy": "52.95p to 30 June 2027, 60.59p from 1 July 2027 (Budget 2026, Annex A): fuel-cost, pay-per-mile, budget-2026 pages.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "fuel_duty_petrol_diesel",
@@ -8823,9 +8842,9 @@
       "change_frequency": "",
       "note": "Fuel duty 52.95p/litre (the rate since the 5p cut of 23 March 2022, extended; the 1 Sep 2026 staged rise was cancelled). fuel-cost prose used to say \"frozen since 2011\".",
       "official_value": "52.95",
-      "changes_next_fy": "Rates return to Budget 2025 levels from 1 Jan 2027 unless Budget 2026 changes them, reaching 57.95p from 1 Mar 2027 (gov.uk amended rates) - re-check after the Autumn Budget 2026 and update fuel-cost prose + pump-price defaults.",
-      "verified_date": "2026-09-27",
-      "verify_method": "calkcheck-2026-09-27-r4"
+      "changes_next_fy": "52.95p to 30 June 2027, 60.59p from 1 July 2027 (Budget 2026, Annex A): fuel-cost, pay-per-mile, budget-2026 pages.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "fuel_duty_plus_vat_share_of_pump_price",
@@ -9297,7 +9316,9 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "high-council-tax-calculator: 'High-Value Property Council Tax Calculator (2028)' — proposed surcharge for Band H+ incl. new bands I and J"
+      "note": "Confirmed: from 1 April 2028 (HMRC Budget 2026 note). Deferral: household income £35,000 or less, capital £16,000 or less, or disability criteria; 100% premium on homes empty 12 months or more.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "higher_rate",
@@ -9432,7 +9453,10 @@
       "note": "HMRC approved mileage 25p/mile after 10,000 miles (mileage-allowance, fuel-cost, sole-trader)",
       "official_value": "25",
       "confidence": "high",
-      "freshness_note": "Car/van over-10,000-miles rate is 25 pence per mile for 2026-27, unchanged."
+      "freshness_note": "Car/van over-10,000-miles rate is 25 pence per mile for 2026-27, unchanged.",
+      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, BusinessMileageRecord (needs per-tax-year logic, it takes trip dates), FuelCost, TaxRefund consts and examples.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "hmrc_mileage_car_first_10k",
@@ -9494,7 +9518,10 @@
       "note": "mileage-allowance-calculator: '55p/25p per mile rates' — over 10,000 business miles (car/van)",
       "official_value": "25",
       "confidence": "high",
-      "freshness_note": "Car/van over-10,000-miles rate is 25 pence per mile for 2026-27, unchanged."
+      "freshness_note": "Car/van over-10,000-miles rate is 25 pence per mile for 2026-27, unchanged.",
+      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, BusinessMileageRecord (needs per-tax-year logic, it takes trip dates), FuelCost, TaxRefund consts and examples.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "hmrc_mileage_threshold_miles",
@@ -12082,9 +12109,9 @@
       "official_value": "450000",
       "confidence": "high",
       "freshness_note": "First-home property price cap is GBP 450,000 across all areas of the UK. Unchanged.",
-      "changes_next_fy": "A First Time Buyer ISA is planned to replace the LISA for new savers (consultation 22 Jun–18 Aug 2026); LISAs stay open until then — check for launch date / rules and update lifetime-isa, first-home-buyer, stamp-duty-first-time-buyer prose.",
-      "verified_date": "2026-09-28",
-      "verify_method": "calkcheck-2026-09-28-r6"
+      "changes_next_fy": "First Time Buyer ISA replaces the LISA for new savers from 6 April 2029: £4,000 a year, 25% bonus on withdrawal, home up to £450,000, bonus cap £20,000, no upper age limit (OOTLAR 2.3).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "lifetime_isa_retirement_access_age",
@@ -12206,9 +12233,9 @@
       "official_value": "450000",
       "confidence": "high",
       "freshness_note": "Duplicate of lifetime_isa_property_price_cap. GBP 450,000. Unchanged.",
-      "changes_next_fy": "A First Time Buyer ISA is planned to replace the LISA for new savers (consultation 22 Jun–18 Aug 2026); LISAs stay open until then — check for launch date / rules and update lifetime-isa, first-home-buyer, stamp-duty-first-time-buyer prose.",
-      "verified_date": "2026-09-28",
-      "verify_method": "calkcheck-2026-09-28-r6"
+      "changes_next_fy": "First Time Buyer ISA replaces the LISA for new savers from 6 April 2029: £4,000 a year, 25% bonus on withdrawal, home up to £450,000, bonus cap £20,000, no upper age limit (OOTLAR 2.3).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "lisa_government_bonus_rate",
@@ -12407,10 +12434,12 @@
       "source_url": "https://www.gov.uk/lifetime-isa/withdrawing-money-from-your-lifetime-isa",
       "status": "current",
       "change_frequency": "",
-      "note": "LISA non-qualifying withdrawal penalty 25% (lifetime-isa-calculator)",
+      "note": "25% for other unauthorised withdrawals; 20% for first-home purchases above £450,000 from 29 Oct 2026 (OOTLAR 2.4).",
       "official_value": "25",
       "confidence": "high",
-      "freshness_note": "Duplicate of lisa_early_withdrawal_penalty_rate. 25% withdrawal charge. Unchanged."
+      "freshness_note": "Duplicate of lisa_early_withdrawal_penalty_rate. 25% withdrawal charge. Unchanged.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "loft_conversion_pd_limit_terraced",
@@ -13676,7 +13705,10 @@
       "note": "BusinessMileageRecordCalculator: HMRC approved mileage rate for cars/vans, over 10,000 business miles (25p). Also stated in prose.",
       "official_value": "0.25",
       "confidence": "high",
-      "freshness_note": "Over-10,000-miles car/van rate is GBP 0.25 per mile for 2026-27, unchanged."
+      "freshness_note": "Over-10,000-miles car/van rate is GBP 0.25 per mile for 2026-27, unchanged.",
+      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, BusinessMileageRecord (needs per-tax-year logic, it takes trip dates), FuelCost, TaxRefund consts and examples.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "mileage_allowance_car_over_10k",
@@ -13696,7 +13728,10 @@
       "note": "mileage-allowance-calculator: 25p/mile cars beyond 10,000 business miles",
       "official_value": "25",
       "confidence": "high",
-      "freshness_note": "Over-10,000-miles car/van rate is 25 pence per mile for 2026-27, unchanged."
+      "freshness_note": "Over-10,000-miles car/van rate is 25 pence per mile for 2026-27, unchanged.",
+      "changes_next_fy": "35p from 6 April 2027 (Budget 2026): MileageAllowance, Mileage, BusinessMileageRecord (needs per-tax-year logic, it takes trip dates), FuelCost, TaxRefund consts and examples.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "mileage_allowance_motorcycle",
@@ -14040,8 +14075,10 @@
       "status": "current",
       "change_frequency": "",
       "note": "making-tax-digital-calculator: MTD ITSA extends to £30,000+ income from April 2027",
-      "verified_date": "2026-10-06",
-      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged)."
+      "verified_date": "2026-10-31",
+      "freshness_note": "Re-verified 2026-10-06 against the live gov.uk page (DataHub alert 5 Oct: page silently republished, updated_at moved but public 'Last updated' did not; value unchanged).",
+      "changes_next_fy": "April 2027 joiners: no penalty points for late first four quarterly updates in 2027/28; rollout deferred for several groups (Budget 2026).",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_living_wage_21_plus",
@@ -14063,7 +14100,10 @@
       "note": "minimum-wage-calculator (canonical): NLW 21+ from 1 April 2026; widely restated. Note agricultural-worker-wage prose has stale £12.21",
       "official_value": "12.71",
       "confidence": "high",
-      "freshness_note": "National Living Wage (21+) from 1 April 2026 is £12.71/hour (+4.1% from £12.21). LPC recommendation accepted in full."
+      "freshness_note": "National Living Wage (21+) from 1 April 2026 is £12.71/hour (+4.1% from £12.21). LPC recommendation accepted in full.",
+      "changes_next_fy": "£13.21 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_living_wage_21plus",
@@ -14089,7 +14129,10 @@
       "note": "MinimumWageCalculator RATES_2025 — National Living Wage for age 21 and over (labelled 2026/27 in prose)",
       "official_value": "12.71",
       "confidence": "high",
-      "freshness_note": "Restatement of the NLW 21+ rate £12.71/hour effective 1 April 2026."
+      "freshness_note": "Restatement of the NLW 21+ rate £12.71/hour effective 1 April 2026.",
+      "changes_next_fy": "£13.21 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_living_wage_21plus_prior",
@@ -14131,7 +14174,10 @@
       "note": "MinimumWageCalculator '2026/27 National Minimum/Living Wage rates' info box — NLW 21+ printed from RATES_2025",
       "official_value": "12.71",
       "confidence": "high",
-      "freshness_note": "Prose restatement of NLW 21+ £12.71/hour effective 1 April 2026."
+      "freshness_note": "Prose restatement of NLW 21+ £12.71/hour effective 1 April 2026.",
+      "changes_next_fy": "£13.21 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_minimum_wage_18_20",
@@ -14151,7 +14197,10 @@
       "note": "NMW age 18-20 from 1 April 2026 GBP10.85/hr (minimum-wage-calculator)",
       "official_value": "10.85",
       "confidence": "high",
-      "freshness_note": "18 to 20 year old rate from 1 April 2026 is £10.85/hour (up from £10.00)."
+      "freshness_note": "18 to 20 year old rate from 1 April 2026 is £10.85/hour (up from £10.00).",
+      "changes_next_fy": "£11.27 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_minimum_wage_18_to_20",
@@ -14171,7 +14220,10 @@
       "note": "minimum-wage-calculator: 18-20 rate from 1 April 2026 (rateTable). howItWorks prose cites stale £10.00",
       "official_value": "10.85",
       "confidence": "high",
-      "freshness_note": "Restatement of the 18-20 rate £10.85/hour effective 1 April 2026."
+      "freshness_note": "Restatement of the 18-20 rate £10.85/hour effective 1 April 2026.",
+      "changes_next_fy": "£11.27 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_minimum_wage_18to20",
@@ -14193,7 +14245,10 @@
       "note": "MinimumWageCalculator RATES_2025 — NMW age 18-20 rate",
       "official_value": "10.85",
       "confidence": "high",
-      "freshness_note": "Restatement of the 18-20 rate £10.85/hour effective 1 April 2026."
+      "freshness_note": "Restatement of the 18-20 rate £10.85/hour effective 1 April 2026.",
+      "changes_next_fy": "£11.27 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_minimum_wage_18to20_prose",
@@ -14214,7 +14269,10 @@
       "note": "MinimumWageCalculator '2026/27 National Minimum/Living Wage rates' info box — age 18-20",
       "official_value": "10.85",
       "confidence": "high",
-      "freshness_note": "Prose restatement of the 18-20 rate £10.85/hour effective 1 April 2026."
+      "freshness_note": "Prose restatement of the 18-20 rate £10.85/hour effective 1 April 2026.",
+      "changes_next_fy": "£11.27 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_minimum_wage_21_plus",
@@ -14236,7 +14294,10 @@
       "note": "NMW age 21+ (MIN_WAGE = 12.71), 2026/27; baseline in AgricultureWorkerWageCalculator",
       "official_value": "12.71",
       "confidence": "high",
-      "freshness_note": "21+ rate is the National Living Wage £12.71/hour effective 1 April 2026."
+      "freshness_note": "21+ rate is the National Living Wage £12.71/hour effective 1 April 2026.",
+      "changes_next_fy": "£13.21 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_minimum_wage_apprentice",
@@ -14258,7 +14319,10 @@
       "note": "MinimumWageCalculator RATES_2025 — Apprentice NMW rate",
       "official_value": "8.00",
       "confidence": "high",
-      "freshness_note": "Apprentice rate from 1 April 2026 is £8.00/hour (+6% from £7.55). Equal to the 16-17 rate."
+      "freshness_note": "Apprentice rate from 1 April 2026 is £8.00/hour (+6% from £7.55). Equal to the 16-17 rate.",
+      "changes_next_fy": "£8.31 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_minimum_wage_apprentice_prose",
@@ -14279,7 +14343,10 @@
       "note": "MinimumWageCalculator '2026/27 National Minimum/Living Wage rates' info box — apprentice",
       "official_value": "8.00",
       "confidence": "high",
-      "freshness_note": "Prose restatement of the apprentice rate £8.00/hour effective 1 April 2026."
+      "freshness_note": "Prose restatement of the apprentice rate £8.00/hour effective 1 April 2026.",
+      "changes_next_fy": "£8.31 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_minimum_wage_under18",
@@ -14301,7 +14368,10 @@
       "note": "MinimumWageCalculator RATES_2025 — NMW under-18 rate (16-17)",
       "official_value": "8.00",
       "confidence": "high",
-      "freshness_note": "16-17 (under 18) rate from 1 April 2026 is £8.00/hour (+6% from £7.55)."
+      "freshness_note": "16-17 (under 18) rate from 1 April 2026 is £8.00/hour (+6% from £7.55).",
+      "changes_next_fy": "£8.31 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_minimum_wage_under18_apprentice",
@@ -14321,7 +14391,10 @@
       "note": "NMW under-18 / apprentice rate GBP8.00/hr from 1 April 2026 (minimum-wage-calculator)",
       "official_value": "8.00",
       "confidence": "high",
-      "freshness_note": "Both the under-18 (16-17) rate and the apprentice rate are £8.00/hour from 1 April 2026."
+      "freshness_note": "Both the under-18 (16-17) rate and the apprentice rate are £8.00/hour from 1 April 2026.",
+      "changes_next_fy": "£8.31 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_minimum_wage_under18_prose",
@@ -14342,7 +14415,10 @@
       "note": "MinimumWageCalculator '2026/27 National Minimum/Living Wage rates' info box — under 18",
       "official_value": "8.00",
       "confidence": "high",
-      "freshness_note": "Prose restatement of the under-18 (16-17) rate £8.00/hour effective 1 April 2026."
+      "freshness_note": "Prose restatement of the under-18 (16-17) rate £8.00/hour effective 1 April 2026.",
+      "changes_next_fy": "£8.31 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "national_minimum_wage_under_18_apprentice",
@@ -14362,7 +14438,10 @@
       "note": "minimum-wage-calculator: under-18 / first-year apprentice rate from 1 April 2026",
       "official_value": "8.00",
       "confidence": "high",
-      "freshness_note": "Under-18 and apprentice rate both £8.00/hour from 1 April 2026."
+      "freshness_note": "Under-18 and apprentice rate both £8.00/hour from 1 April 2026.",
+      "changes_next_fy": "£8.31 from 1 April 2027 (Budget 2026).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "naturalisation_fee",
@@ -16255,8 +16334,9 @@
       "official_value": "6 July after the tax year",
       "confidence": "high",
       "freshness_note": "Confirmed: P11D / P11D(b) deadline is 6 July following the tax year (e.g. 6 July 2026 for 2025/26).",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "Mandatory payrolling: cars, vans, fuel, medical from 6 April 2027; most others from 6 April 2028 (OOTLAR 1.24)."
     },
     {
       "key": "party_wall_notice_period",
@@ -20350,8 +20430,9 @@
       "status": "current",
       "change_frequency": "",
       "note": "BusinessRatesCalculator: RV at/below GBP12,000 gets 100% Small Business Rate Relief.",
-      "verified_date": "2026-09-28",
-      "verify_method": "site-improvement-2026-09-28"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "For retail, hospitality and leisure in England: £18,000 / £21,000 from 1 April 2027 (Budget 2026)."
     },
     {
       "key": "sbrr_taper_upper_threshold",
@@ -20371,8 +20452,9 @@
       "status": "current",
       "change_frequency": "",
       "note": "BusinessRatesCalculator: SBRR tapers from 100% to 0% between RV GBP12,000 and GBP15,000; also the 'small business' RV under GBP15,000 qualifying limit shown in UI prose.",
-      "verified_date": "2026-09-28",
-      "verify_method": "site-improvement-2026-09-28"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "For retail, hospitality and leisure in England: £18,000 / £21,000 from 1 April 2027 (Budget 2026)."
     },
     {
       "key": "scotland_ads_surcharge",
@@ -22760,7 +22842,10 @@
       "source_url": "",
       "status": "current",
       "change_frequency": "",
-      "note": "side-hustle-tax-calculator: 'the £1,000 trading allowance'; metaTitle '(£1,000 Allowance)'"
+      "note": "side-hustle-tax-calculator: 'the £1,000 trading allowance'; metaTitle '(£1,000 Allowance)'",
+      "changes_next_fy": "£3,000 from 6 April 2027, and SA trading income reporting threshold £3,000 (Budget 2026): SideHustleTaxCalculator logic and examples.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "skilled_worker_general_salary_threshold",
@@ -24790,7 +24875,10 @@
       "note": "state-pension-calculator: triple lock = highest of CPI, earnings growth, or 2.5%; 2026/27 uprated by 4.8% earnings growth",
       "official_value": "2.5",
       "confidence": "high",
-      "freshness_note": "Triple lock guarantees the higher of CPI, average earnings growth, or 2.5% floor. Policy retained for 2026-27 (earnings 4.8% won this year). Floor of 2.5% current."
+      "freshness_note": "Triple lock guarantees the higher of CPI, average earnings growth, or 2.5% floor. Policy retained for 2026-27 (earnings 4.8% won this year). Floor of 2.5% current.",
+      "changes_next_fy": "Triple lock to April 2029; adjusted from April 2030 (Budget 2026 Box 5.A).",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "statutory_annual_leave_days",
@@ -26329,7 +26417,10 @@
       "source_url": "https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income",
       "status": "current",
       "change_frequency": "",
-      "note": "TRADING_ALLOWANCE constant - £1,000 tax-free trading allowance for self-employed/side-hustle income; also in button label and prose."
+      "note": "TRADING_ALLOWANCE constant - £1,000 tax-free trading allowance for self-employed/side-hustle income; also in button label and prose.",
+      "changes_next_fy": "£3,000 from 6 April 2027, and SA trading income reporting threshold £3,000 (Budget 2026): SideHustleTaxCalculator logic and examples.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "tribunal_basic_award_max_amount",
@@ -29466,7 +29557,10 @@
       "source_url": "https://www.gov.uk/vehicle-tax-rate-tables",
       "status": "current",
       "change_frequency": "",
-      "note": "car-tax/pay-per-mile: VED standard annual rate £200 from year 2 (2026/27); first-year £10-£5,690 by CO2; EVs pay from Apr 2025; untaxed fine £80"
+      "note": "car-tax/pay-per-mile: VED standard annual rate £200 from year 2 (2026/27); first-year £10-£5,690 by CO2; EVs pay from Apr 2025; untaxed fine £80",
+      "changes_next_fy": "£210 from 1 April 2027, first-year table in Annex A (Budget 2026): CarTaxCalculator.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "ved_standard_rate",
@@ -29484,7 +29578,10 @@
       "source_url": "https://www.gov.uk/vehicle-tax-rate-tables",
       "status": "current",
       "change_frequency": "",
-      "note": "Car Tax calc: STANDARD_RATE = 200, VED standard rate (year 2+) 2026/27, all vehicles incl. EVs from April 2025; also stated in prose"
+      "note": "Car Tax calc: STANDARD_RATE = 200, VED standard rate (year 2+) 2026/27, all vehicles incl. EVs from April 2025; also stated in prose",
+      "changes_next_fy": "£210 from 1 April 2027, first-year table in Annex A (Budget 2026): CarTaxCalculator.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "visa_fee_british_citizenship",
@@ -29542,9 +29639,9 @@
       "official_value": "937",
       "confidence": "high",
       "freshness_note": "Official fee table (8 April 2026): 'Graduate Route - main applicant and dependants' = £937 (in-UK only application). Matches (was £880 in 2025-26, uprated).",
-      "changes_next_fy": "Graduate visa length falls from 2 years to 18 months for applications on or after 1 Jan 2027 (PhD stays 3 years); IHS 18 months = £1,552.50. Calculator already offers the 18-month option.",
-      "verified_date": "2026-09-27",
-      "verify_method": "calkcheck-2026-09-27"
+      "changes_next_fy": "Graduate visa 18 months for applications from 1 Jan 2027, but two years for high-compliance universities with strong outcomes (Budget 2026; start date not given). MAC salary threshold changes spring 2027.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "visa_fee_ilr",
@@ -29972,7 +30069,10 @@
       "change_frequency": "",
       "note": "capital-allowances-calculator: main pool Writing Down Allowance 18%/year; cars under 50g/km CO2",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "changes_next_fy": "12% from 1 April 2027 (CT) / 6 April 2027 (IT), hybrid rate for straddling periods (Budget 2026): CapitalAllowances year-by-year table keeps 14% until a date input exists; AIA note.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "wda_main_rate",
@@ -29991,7 +30091,10 @@
       "change_frequency": "",
       "note": "CapitalAllowancesCalculator: Writing Down Allowance main pool rate 18%.",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "changes_next_fy": "12% from 1 April 2027 (CT) / 6 April 2027 (IT), hybrid rate for straddling periods (Budget 2026): CapitalAllowances year-by-year table keeps 14% until a date input exists; AIA note.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "wda_special_rate",
@@ -30136,7 +30239,10 @@
       "change_frequency": "",
       "note": "Main pool Writing Down Allowance 18% on spend above AIA limit",
       "fixed": true,
-      "fixed_date": "2026-06-16"
+      "fixed_date": "2026-06-16",
+      "changes_next_fy": "12% from 1 April 2027 (CT) / 6 April 2027 (IT), hybrid rate for straddling periods (Budget 2026): CapitalAllowances year-by-year table keeps 14% until a date input exists; AIA note.",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "wtc_30hour_element",
@@ -31267,8 +31373,9 @@
       "official_value": "40",
       "confidence": "high",
       "freshness_note": "Added by calkcheck round 2 (2026-09-26) after a stale or missing value was found; verified at the source URL.",
-      "verified_date": "2026-09-26",
-      "verify_method": "calkcheck-2026-09-26-r2"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "50% for expenditure on or after 1 January 2027 (Budget 2026): CapitalAllowances, AIA calculators apply 40% until then."
     },
     {
       "key": "fya_zero_emission_car_end",
@@ -31422,7 +31529,7 @@
     },
     {
       "key": "savings_basic_rate_from_2027",
-      "value": "22",
+      "value": "24",
       "unit": "percent",
       "law": "Savings basic rate from 6 Apr 2027 (Budget 2025)",
       "theme": "income_tax",
@@ -31436,19 +31543,20 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income/change-to-tax-rates-for-property-savings-and-dividend-income-technical-note",
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar",
       "status": "current",
       "change_frequency": "",
-      "note": "IsaCalculator TAX_BANDS.basic.from2027 (tax saved vs a taxed account from year 2)",
-      "official_value": "22",
+      "note": "Budget 2026 raised these from the 22/42/47 in FA 2026 s.5; Finance Bill 2026-27. UK-wide, from 6 April 2027.",
+      "official_value": "24",
       "confidence": "high",
       "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
-      "verified_date": "2026-09-26",
-      "verify_method": "browser-qa 2026-09-26: primary source read"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "Apply 6 April 2027 (IsaCalculator, SavingsInterestCalculator, Budget2026Calculator already carry the 2027/28 rate)."
     },
     {
       "key": "savings_higher_rate_from_2027",
-      "value": "42",
+      "value": "44",
       "unit": "percent",
       "law": "Savings higher rate from 6 Apr 2027 (Budget 2025)",
       "theme": "income_tax",
@@ -31462,19 +31570,20 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income/change-to-tax-rates-for-property-savings-and-dividend-income-technical-note",
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar",
       "status": "current",
       "change_frequency": "",
-      "note": "IsaCalculator TAX_BANDS.higher.from2027",
-      "official_value": "42",
+      "note": "Budget 2026 raised these from the 22/42/47 in FA 2026 s.5; Finance Bill 2026-27. UK-wide, from 6 April 2027.",
+      "official_value": "44",
       "confidence": "high",
       "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
-      "verified_date": "2026-09-26",
-      "verify_method": "browser-qa 2026-09-26: primary source read"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "Apply 6 April 2027 (IsaCalculator, SavingsInterestCalculator, Budget2026Calculator already carry the 2027/28 rate)."
     },
     {
       "key": "savings_additional_rate_from_2027",
-      "value": "47",
+      "value": "49",
       "unit": "percent",
       "law": "Savings additional rate from 6 Apr 2027 (Budget 2025)",
       "theme": "income_tax",
@@ -31488,19 +31597,20 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income/change-to-tax-rates-for-property-savings-and-dividend-income-technical-note",
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar",
       "status": "current",
       "change_frequency": "",
-      "note": "IsaCalculator TAX_BANDS.additional.from2027",
-      "official_value": "47",
+      "note": "Budget 2026 raised these from the 22/42/47 in FA 2026 s.5; Finance Bill 2026-27. UK-wide, from 6 April 2027.",
+      "official_value": "49",
       "confidence": "high",
       "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source.",
-      "verified_date": "2026-09-26",
-      "verify_method": "browser-qa 2026-09-26: primary source read"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "Apply 6 April 2027 (IsaCalculator, SavingsInterestCalculator, Budget2026Calculator already carry the 2027/28 rate)."
     },
     {
       "key": "cash_isa_limit_under_65_from_2027",
-      "value": "12000",
+      "value": "20000",
       "unit": "GBP",
       "law": "Cash ISA limit for under-65s from 6 Apr 2027",
       "theme": "other",
@@ -31515,15 +31625,16 @@
         "src/components/calculators/Budget2026Calculator.tsx",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/reduction-in-the-cash-individual-savings-account-isa-limit/cash-individual-savings-account-isa-limit-reduction",
-      "status": "current",
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar",
+      "status": "historical",
       "change_frequency": "",
-      "note": "Cash ISA cap within the £20,000 allowance from 6 Apr 2027 for those aged 64 or under at the end of the tax year (SI 2026/1018, made 10 Sep 2026); 65+ keep £20,000 cash. Round 11 added the caveat on regular-savings (prose + FAQ).",
-      "official_value": "12000",
+      "note": "The £12,000 cap (SI 2026/1018) was cancelled at Budget 2026 (OOTLAR 2.5): £20,000 stays for all savers.",
+      "official_value": "20000",
       "confidence": "high",
       "freshness_note": "Added 2026-09-26 (browser-qa batch): verified against the primary source. 2026-10-13: now law. The Individual Savings Account (Amendment) (No. 2) Regulations 2026, SI 2026/1018, made 10 Sep 2026, laid 14 Sep 2026, in force 6 Apr 2027: GBP12,000 cash limit where the individual is 64 or under at the end of the year (reg 6, new para 1ZA). https://www.legislation.gov.uk/uksi/2026/1018/made",
-      "verified_date": "2026-10-19",
-      "verify_method": "budget-2026-calculator build 2026-10-13: primary source read"
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": ""
     },
     {
       "key": "spouse_visa_in_uk_extension_fee",
@@ -34387,7 +34498,7 @@
     },
     {
       "key": "property_income_tax_rates_2027",
-      "value": "22% / 42% / 47%",
+      "value": "24% / 44% / 49%",
       "unit": "percent",
       "law": "Budget 2025 (from 6 April 2027)",
       "theme": "property",
@@ -34401,15 +34512,15 @@
         "src/data/faqs.ts",
         "src/data/budget-2026.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-and-dividend-income",
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar",
       "status": "current",
       "change_frequency": "",
-      "note": "From 6 Apr 2027 property income rates rise by 2 points (England, Wales, NI) with the finance-cost credit at 22%; 2026/27 remains 20/40/45 with a 20% credit.",
-      "official_value": "22% / 42% / 47%",
-      "verified_date": "2026-09-28",
-      "verify_method": "calkcheck-2026-09-28-r8",
+      "note": "Budget 2026 replaced 22/42/47 (FA 2026 s.7). England, Wales, NI. Finance cost credit follows the property basic rate, so 24% (FA 2026 Sch 1 para 40).",
+      "official_value": "24% / 44% / 49%",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
       "confidence": "high",
-      "changes_next_fy": "Apply 6 April 2027"
+      "changes_next_fy": "Apply 6 April 2027: LandlordTaxCalculator and BuyToLetYieldCalculator have no year switch yet and stay on 2026/27 until then."
     },
     {
       "key": "ni_class1_primary_threshold_weekly",
@@ -34657,15 +34768,15 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/amended-fuel-duty-rates-for-2026-to-2027/amended-fuel-duty-rates-2026-to-2027",
-      "status": "current",
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances",
+      "status": "historical",
       "change_frequency": "",
-      "note": "Petrol/diesel duty from 1 January 2027 when the 5p cut ends: 55.95p (gov.uk Amended Fuel Duty rates 2026 to 2027 table, published 22 May 2026). Government says final rates will be confirmed at Budget 2026.",
+      "note": "Rise cancelled at Budget 2026; see fuel_duty_2027_07_01_rate.",
       "official_value": "55.95",
       "confidence": "high",
-      "changes_next_fy": "Re-check on 28 Oct 2026 (Budget 2026): the government said final rates would be confirmed there. If changed, update budget-2026.ts FUEL_DUTY_PENCE_JAN_2027 + prose.",
-      "verified_date": "2026-10-13",
-      "verify_method": "budget-2026-calculator build 2026-10-13: primary source read"
+      "changes_next_fy": "",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "fuel_duty_2027_03_01_rate",
@@ -34683,15 +34794,15 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/amended-fuel-duty-rates-for-2026-to-2027/amended-fuel-duty-rates-2026-to-2027",
-      "status": "current",
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances",
+      "status": "historical",
       "change_frequency": "",
-      "note": "Petrol/diesel duty from 1 March 2027: 57.95p, the pre-23 March 2022 rate restored (gov.uk Amended Fuel Duty rates 2026 to 2027 table, published 22 May 2026).",
+      "note": "Rise cancelled at Budget 2026; see fuel_duty_2027_07_01_rate.",
       "official_value": "57.95",
       "confidence": "high",
-      "changes_next_fy": "Re-check on 28 Oct 2026 (Budget 2026). If changed, update budget-2026.ts FUEL_DUTY_PENCE_MAR_2027 + prose.",
-      "verified_date": "2026-10-13",
-      "verify_method": "budget-2026-calculator build 2026-10-13: primary source read"
+      "changes_next_fy": "",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "budget_2026_date",
@@ -34712,14 +34823,14 @@
         "src/components/calculators/MinimumWage2027Calculator.tsx"
       ],
       "source_url": "https://www.gov.uk/government/publications/chancellor-letter-to-the-treasury-select-committee-tsc-budget-2026-date/chancellor-letter-to-the-treasury-select-committee-tsc",
-      "status": "current",
+      "status": "historical",
       "change_frequency": "",
-      "note": "Budget 2026 on Wednesday 28 October 2026 with the OBR forecast the same day (Chancellor letter to the TSC, published 31 July 2026). budget-2026-calculator dated line + prose.",
+      "note": "Delivered 28 Oct 2026; hub page revised 31 Oct 2026.",
       "official_value": "2026-10-28",
       "confidence": "high",
-      "changes_next_fy": "On 28 Oct 2026 bump PAGE_UPDATED in budget-2026.ts and revise the schedule.",
-      "verified_date": "2026-10-13",
-      "verify_method": "budget-2026-calculator build 2026-10-13: primary source read"
+      "changes_next_fy": "",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "income_tax_pa_brl_frozen_until",
@@ -35626,14 +35737,14 @@
         "src/data/calculators.ts"
       ],
       "source_url": "https://www.gov.uk/government/consultations/low-pay-commission-consultation-2026/lpc-consultation-letter-2026",
-      "status": "uncertain",
+      "status": "historical",
       "change_frequency": "one-off",
-      "note": "LPC consultation letter 1 Apr 2026: central estimate for NLW at two-thirds of median earnings in April 2027 (+3.7%). INDICATIVE ONLY; LPC recommends by end Oct 2026, government confirms (Budget 28 Oct 2026); replace with the confirmed April 2027 rate when announced",
+      "note": "Superseded by the confirmed £13.21 (Budget 2026); no longer shown on the site.",
       "official_value": "13.18",
-      "verified_date": "2026-10-13",
-      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
       "confidence": "medium",
-      "changes_next_fy": "Confirmed April 2027 rates expected 28 Oct 2026; rates apply 1 Apr 2027"
+      "changes_next_fy": ""
     },
     {
       "key": "lpc_nlw_april_2027_low_estimate",
@@ -35653,14 +35764,14 @@
         "src/data/calculators.ts"
       ],
       "source_url": "https://www.gov.uk/government/consultations/low-pay-commission-consultation-2026/lpc-consultation-letter-2026",
-      "status": "uncertain",
+      "status": "historical",
       "change_frequency": "one-off",
-      "note": "LPC consultation letter 1 Apr 2026: low end of the indicative April 2027 NLW range (+2.4%). INDICATIVE ONLY; LPC recommends by end Oct 2026, government confirms (Budget 28 Oct 2026); replace with the confirmed April 2027 rate when announced",
+      "note": "Superseded by the confirmed £13.21 (Budget 2026); no longer shown on the site.",
       "official_value": "13.02",
-      "verified_date": "2026-10-13",
-      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
       "confidence": "medium",
-      "changes_next_fy": "Confirmed April 2027 rates expected 28 Oct 2026; rates apply 1 Apr 2027"
+      "changes_next_fy": ""
     },
     {
       "key": "lpc_nlw_april_2027_high_estimate",
@@ -35680,14 +35791,14 @@
         "src/data/calculators.ts"
       ],
       "source_url": "https://www.gov.uk/government/consultations/low-pay-commission-consultation-2026/lpc-consultation-letter-2026",
-      "status": "uncertain",
+      "status": "historical",
       "change_frequency": "one-off",
-      "note": "LPC consultation letter 1 Apr 2026: high end of the indicative April 2027 NLW range (+5.0%; letter also prints 4.9%). INDICATIVE ONLY; LPC recommends by end Oct 2026, government confirms (Budget 28 Oct 2026); replace with the confirmed April 2027 rate when announced",
+      "note": "Superseded by the confirmed £13.21 (Budget 2026); no longer shown on the site.",
       "official_value": "13.34",
-      "verified_date": "2026-10-13",
-      "verify_method": "web-verified (gov.uk content API) while building ks2-sats-scaled-score-calculator and minimum-wage-2027-calculator",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
       "confidence": "medium",
-      "changes_next_fy": "Confirmed April 2027 rates expected 28 Oct 2026; rates apply 1 Apr 2027"
+      "changes_next_fy": ""
     },
     {
       "key": "accommodation_offset_daily",
@@ -35841,7 +35952,7 @@
     {
       "key": "help_to_save_scheme_end",
       "status": "current",
-      "verified_date": "2026-10-19",
+      "verified_date": "2026-10-31",
       "confidence": "high",
       "value": "permanent",
       "unit": "text",
@@ -35858,7 +35969,9 @@
         "src/data/faqs.ts"
       ],
       "source_url": "https://www.gov.uk/government/news/more-than-300-million-paid-out-through-help-to-save-with-thousands-more-savers-set-to-benefit",
-      "note": "Site said \"until April 2027\" until round 10"
+      "note": "Site said \"until April 2027\" until round 10",
+      "changes_next_fy": "Reformed multi-provider scheme in spring 2028 (Budget 2026).",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "cms_shared_care_reduction_175plus_nights",
@@ -36562,11 +36675,13 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.gov.uk/government/publications/fiscal-events-2026-factsheets/isa-reform-2027-anti-circumvention-rules-factsheet",
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar",
       "confidence": "high",
-      "changes_next_fy": "Takes effect 6 April 2027.",
-      "status": "current",
-      "verified_date": "2026-10-19"
+      "changes_next_fy": "Re-check when the amending ISA regulations appear.",
+      "status": "uncertain",
+      "verified_date": "2026-10-31",
+      "note": "SI 2026/1018 includes this charge; Budget 2026 documents do not say what happens to it after cancelling the cap. Site says it is unconfirmed.",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31"
     },
     {
       "key": "plan5_forecast_full_repayment_share",
@@ -36730,15 +36845,15 @@
       "used_by": [
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://www.gov.uk/government/news/breathing-space-on-your-energy-bill",
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar",
       "status": "current",
       "change_frequency": "",
-      "note": "No VAT on household electricity in Great Britain 1 Oct 2026 - 31 Mar 2027 (gov.uk 26 Aug 2026; Ofgem cap figures already exclude it); Northern Ireland stays 5%; gas 5%. NB the gov.uk rates-by-goods page still shows 5% (not updated, 19 Oct 2026).",
+      "note": "No VAT on household electricity in Great Britain 1 Oct 2026 - 31 Mar 2027 (gov.uk 26 Aug 2026; Ofgem cap figures already exclude it); Northern Ireland stays 5%; gas 5%. NB the gov.uk rates-by-goods page still shows 5% (not updated, 19 Oct 2026). Extended to 30 June 2027 at Budget 2026 (OOTLAR 2.20).",
       "official_value": "0",
       "confidence": "high",
-      "verified_date": "2026-10-19",
-      "verify_method": "calkcheck-2026-10-19-r12",
-      "changes_next_fy": "Reverts to 5% on 1 Apr 2027 unless extended: update vat-calculator rate table and energy pages."
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "changes_next_fy": "0% extended to 30 June 2027 (OOTLAR 2.20); 5% from 1 July 2027 unless extended: vat-calculator table and energy pages. Budget says relief expected to apply in NI from April 2027 via the Executive."
     },
     {
       "key": "vat_private_school_fees",
@@ -37313,15 +37428,304 @@
       "confidence": "medium",
       "verified_date": "2026-10-20",
       "verify_method": "calkcheck-2026-10-20-r13"
+    },
+    {
+      "key": "fuel_duty_2027_07_01_rate",
+      "value": "60.59",
+      "unit": "pence/litre",
+      "law": "Budget 2026 Annex A",
+      "theme": "transport",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/budget-2026.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts",
+        "src/components/calculators/PayPerMileCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Petrol and diesel from 1 July 2027.",
+      "official_value": "60.59",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "confidence": "high",
+      "changes_next_fy": "Finance Bill 2026-27; apply 1 July 2027."
+    },
+    {
+      "key": "nlw_21plus_from_apr_2027",
+      "value": "13.21",
+      "unit": "GBP/hour",
+      "law": "Budget 2026",
+      "theme": "pay",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/minimum-wage.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+      "status": "current",
+      "change_frequency": "",
+      "note": "LPC recommendation accepted, +3.9%.",
+      "official_value": "13.21",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "confidence": "high",
+      "changes_next_fy": "Apply 1 April 2027 across pay calculators."
+    },
+    {
+      "key": "nmw_18_20_from_apr_2027",
+      "value": "11.27",
+      "unit": "GBP/hour",
+      "law": "Budget 2026",
+      "theme": "pay",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/minimum-wage.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "11.27",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "confidence": "high",
+      "changes_next_fy": "Apply 1 April 2027."
+    },
+    {
+      "key": "nmw_16_17_apprentice_from_apr_2027",
+      "value": "8.31",
+      "unit": "GBP/hour",
+      "law": "Budget 2026",
+      "theme": "pay",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/minimum-wage.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "8.31",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "confidence": "high",
+      "changes_next_fy": "Apply 1 April 2027."
+    },
+    {
+      "key": "nmw_accommodation_offset_from_apr_2027",
+      "value": "11.53",
+      "unit": "GBP/day",
+      "law": "Budget 2026",
+      "theme": "pay",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/minimum-wage.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "11.53",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "confidence": "high",
+      "changes_next_fy": "Apply 1 April 2027."
+    },
+    {
+      "key": "state_pension_full_new_2027_28_annual",
+      "value": "13036.40",
+      "unit": "GBP/year",
+      "law": "HM Treasury Pension Tax Allowance explainer",
+      "theme": "pension",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/StatePensionCalculator.tsx",
+        "src/data/budget-2026.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/pension-tax-allowance-explainer/pension-tax-allowance-explainer",
+      "status": "current",
+      "change_frequency": "",
+      "note": "£250.70 a week, +3.9%. Annual value stated in the HMT explainer of 28 Oct 2026.",
+      "official_value": "13036.40",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "confidence": "high",
+      "changes_next_fy": "Apply April 2027."
+    },
+    {
+      "key": "pension_tax_allowance_full_threshold_2027_28",
+      "value": "13037",
+      "unit": "GBP",
+      "law": "Budget 2026 Annex A",
+      "theme": "pension",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/StatePensionCalculator.tsx",
+        "src/data/budget-2026.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/pension-tax-allowance-explainer/pension-tax-allowance-explainer",
+      "status": "current",
+      "change_frequency": "",
+      "note": "6 April 2027 to 5 April 2030. Worth up to £94 (not 20% x £467 = £93.40). £93.28 removed at exactly £13,036.40. Withdrawn £1 per £3; includes people reaching SPA in the year. Automatic.",
+      "official_value": "13037",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "confidence": "high",
+      "changes_next_fy": "Uprated with the full new State Pension."
+    },
+    {
+      "key": "pension_tax_allowance_removed_threshold_2027_28",
+      "value": "13319",
+      "unit": "GBP",
+      "law": "Budget 2026 Annex A",
+      "theme": "pension",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/pension-tax-allowance-explainer/pension-tax-allowance-explainer",
+      "status": "current",
+      "change_frequency": "",
+      "note": "HMT explainer and Annex A: £13,037 + 3 x £94.",
+      "official_value": "13319",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "lisa_over_cap_first_home_charge",
+      "value": "20",
+      "unit": "percent",
+      "law": "Budget 2026 OOTLAR 2.4",
+      "theme": "savings",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/components/calculators/LifetimeIsaCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar",
+      "status": "current",
+      "change_frequency": "",
+      "note": "From 29 October 2026.",
+      "official_value": "20",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "household_energy_payment_2027",
+      "value": "100",
+      "unit": "GBP",
+      "law": "Budget 2026",
+      "theme": "energy",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts",
+        "src/components/calculators/CouncilTaxCalculator.tsx",
+        "src/components/calculators/EnergyBillCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Bands A to D, England, from January 2027, through councils.",
+      "official_value": "100",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "confidence": "high",
+      "changes_next_fy": "Remove from prose after the 2027 payments end."
+    },
+    {
+      "key": "bus_fare_cap_england_2027",
+      "value": "2",
+      "unit": "GBP",
+      "law": "Budget 2026",
+      "theme": "transport",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/components/calculators/CommuteCostCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Single fare, England outside London, one year from 1 January 2027.",
+      "official_value": "2",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "confidence": "high",
+      "changes_next_fy": "Review 1 January 2028."
+    },
+    {
+      "key": "hvcts_deferral_income_limit",
+      "value": "35000",
+      "unit": "GBP",
+      "law": "HVCTS Summary of Responses, para 4.7",
+      "theme": "property",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/consultations/high-value-council-tax-surcharge",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Or capital £16,000 or less, or disability criteria.",
+      "official_value": "35000",
+      "verified_date": "2026-10-31",
+      "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
+      "confidence": "high",
+      "changes_next_fy": ""
     }
   ],
   "status_summary": {
-    "current": 1651,
+    "current": 1658,
     "retired": 24,
-    "historical": 17,
+    "historical": 24,
     "superseded_by_component": 4,
     "superseded": 13,
-    "uncertain": 10
+    "uncertain": 8
   },
   "theme_counts": {
     "minimum_wage": 18,

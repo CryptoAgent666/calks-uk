@@ -45,7 +45,7 @@ function annualTax(income: number, region: Region): number {
 
 const REBATE_CHECKLIST = [
   { label: 'Uniform / work clothing flat-rate allowance', detail: '£60 to £185 a year depending on trade (most trades £60–£140); claim 4 back years', href: null },
-  { label: 'Business mileage paid below 55p/mile', detail: 'Claim relief on the shortfall vs HMRC approved rates', href: '/calculator/mileage-allowance-calculator/' },
+  { label: 'Business mileage paid below the approved rate', detail: 'First 10,000 miles: 55p for 2026/27, 45p in earlier years. Above that: 25p, rising to 35p from 6 April 2027. Claim relief on the shortfall', href: '/calculator/mileage-allowance-calculator/' },
   { label: 'Working-from-home relief', detail: '£6/week for 2022/23 to 2025/26 if required to work from home (ended April 2026)', href: '/calculator/work-from-home-tax-relief-calculator/' },
   { label: 'Marriage Allowance not claimed', detail: 'Up to £252/year, backdatable 4 years', href: '/calculator/marriage-allowance-calculator/' },
   { label: 'Professional fees & subscriptions', detail: 'HMRC-approved bodies (e.g. NMC, UNISON sections)', href: null },

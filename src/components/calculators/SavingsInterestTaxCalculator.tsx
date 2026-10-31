@@ -8,7 +8,7 @@ const PSA_ADDITIONAL = 0
 // Starting rate for savings: up to £5,000 at 0%, reduced £1 for £1 by
 // non-savings taxable income (gov.uk/apply-tax-free-interest-on-savings)
 const STARTING_RATE_BAND = 5_000
-// Savings income rates 2026/27 (rise to 22/42/47% from April 2027, Budget 2025)
+// Savings income rates 2026/27 (rise to 24/44/49% from 6 April 2027, Budget 2026)
 const BASIC_RATE = 0.20
 const HIGHER_RATE = 0.40
 const ADDITIONAL_RATE = 0.45

@@ -20,7 +20,8 @@ function calculate(distance: number, distanceUnit: Unit, fuelPrice: number, effi
   const costPerMile = distanceMiles > 0 ? cost / distanceMiles : 0
 
   // HMRC approved mileage allowance for a car: 55p a mile for the first 10,000 business miles
-  // in the tax year (from 6 April 2026), 25p after that. Assumes this is the first business trip of the year.
+  // in the tax year (from 6 April 2026, permanent since Budget 2026), 25p after that (35p from 6 April 2027).
+  // Assumes this is the first business trip of the year.
   const hmrcAllowance = Math.min(distanceMiles, 10_000) * 0.55 + Math.max(0, distanceMiles - 10_000) * 0.25
   const allowanceMinusFuel = hmrcAllowance - cost
 

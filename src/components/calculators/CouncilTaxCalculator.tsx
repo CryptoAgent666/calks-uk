@@ -83,6 +83,7 @@ export default function CouncilTaxCalculator() {
           <p>Band D rate for {region}: <span className="font-medium text-foreground">{formatCurrency(result.bandD)}</span></p>
           <p>Band {band} ratio: <span className="font-medium text-foreground">{(BAND_RATIOS[band] * 100).toFixed(0)}%</span> of Band D</p>
           <p>Property value (1991): <span className="font-medium text-foreground">{BAND_VALUES[band]}</span></p>
+          {['A', 'B', 'C', 'D'].includes(band) && <p className="text-xs">Not deducted here: the £100 Household Energy Payment for households in Bands A to D in England from January 2027 (Budget 2026).</p>}
         </div>
       </div>
     </div>

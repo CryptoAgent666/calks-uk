@@ -2,8 +2,9 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // HMRC Approved Mileage Allowance Payments (AMAP) 2026/27
-const CAR_FIRST_10K = 0.55 // 55p/mile — raised from 45p, announced 21 May 2026, backdated to 6 Apr 2026 (first change since 2011)
-const CAR_OVER_10K = 0.25 // 25p/mile (unchanged since 2001)
+const CAR_FIRST_10K = 0.55 // 55p/mile — raised from 45p, announced 21 May 2026, backdated to 6 Apr 2026 (first change since 2011); made permanent at Budget 2026
+const CAR_OVER_10K = 0.25 // 25p/mile for all of 2026/27 (unchanged since 2001)
+const CAR_OVER_10K_2027 = 0.35 // from 6 April 2027 (Budget 2026, OOTLAR 2.7). Only used for the dated note; 2026/27 results stay at 25p
 const MOTORCYCLE = 0.24 // 24p/mile
 const BICYCLE = 0.20 // 20p/mile
 const PASSENGER = 0.05 // 5p/mile per passenger
@@ -27,8 +28,11 @@ function calculate(miles: number, vehicle: Vehicle, passengers: number) {
 
   const passengerPayment = vehicle === 'car' ? miles * PASSENGER * passengers : 0
   const total = mileagePayment + passengerPayment
+  const total2027 = vehicle === 'car' && miles > 10_000
+    ? 10_000 * CAR_FIRST_10K + (miles - 10_000) * CAR_OVER_10K_2027 + passengerPayment
+    : total
 
-  return { miles, mileagePayment, passengerPayment, total, monthly: total / 12 }
+  return { miles, mileagePayment, passengerPayment, total, total2027, monthly: total / 12 }
 }
 
 export default function MileageAllowanceCalculator() {
@@ -86,6 +90,13 @@ export default function MileageAllowanceCalculator() {
             </div>
           )}
         </div>
+      )}
+
+      {vehicle === 'car' && (
+        <p className="text-xs text-muted-foreground">
+          Rates shown are for 2026/27. The 55p rate is now permanent, and Budget 2026 raises the rate above 10,000 miles from 25p to 35p from 6 April 2027.
+          {m > 10_000 && ` The same ${m.toLocaleString()} miles in 2027/28 would come to ${formatCurrency(result.total2027)}.`}
+        </p>
       )}
     </div>
   )

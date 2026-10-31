@@ -3,18 +3,19 @@ import { formatCurrency, ukIncomeTax } from '@/utils'
 import ShareRow, { useUrlParam } from '@/components/ShareRow'
 import {
   NMW_RATES,
+  NMW_RATES_2027,
   NMW_TAX_YEAR,
   NMW_EFFECTIVE_FROM,
   NMW_2027_EFFECTIVE_FROM,
-  LPC_APRIL_2027,
+  ACCOMMODATION_OFFSET_2027,
   BUDGET_2026,
-  nlwRisePct,
+  nmwRisePct,
   type NmwBand,
 } from '@/data/minimum-wage'
 
 // Employee Class 1 NI for 2026/27, the same figures as NationalInsuranceCalculator.tsx.
-// Income tax and NI thresholds are frozen to April 2031 (Budget 2025), so 2027/28 uses
-// the same values unless the Budget on 28 October 2026 changes them.
+// Income tax and NI thresholds are frozen to April 2031 and Budget 2026 did not change
+// them, so 2027/28 uses the same values.
 const NI_PRIMARY_THRESHOLD = 12_570
 const NI_UPPER_EARNINGS_LIMIT = 50_270
 const NI_MAIN_RATE = 0.08
@@ -26,16 +27,6 @@ const SECONDARY_THRESHOLD = 5_000
 const EMPLOYER_NI_RATE = 0.15
 const UPPER_SECONDARY_THRESHOLD = 50_270
 
-type Scenario = 'central' | 'low' | 'high' | 'custom'
-
-const SCENARIOS: { v: Scenario; l: string }[] = [
-  { v: 'central', l: `LPC central estimate £${LPC_APRIL_2027.central.toFixed(2)} (+${nlwRisePct(LPC_APRIL_2027.central).toFixed(1)}%)` },
-  { v: 'low', l: `LPC low £${LPC_APRIL_2027.low.toFixed(2)} (+${nlwRisePct(LPC_APRIL_2027.low).toFixed(1)}%)` },
-  { v: 'high', l: `LPC high £${LPC_APRIL_2027.high.toFixed(2)} (+${nlwRisePct(LPC_APRIL_2027.high).toFixed(1)}%)` },
-  { v: 'custom', l: 'Custom hourly rate' },
-]
-
-const round2 = (v: number) => Math.round(v * 100) / 100
 const parseMoney = (s: string) => parseFloat(s.replace(/[£,\s]/g, '')) || 0
 
 function employeeNi(gross: number) {
@@ -52,7 +43,7 @@ function employerNi(gross: number, band: NmwBand) {
   return Math.max(0, gross - threshold) * EMPLOYER_NI_RATE
 }
 
-function pack(rate: number, hours: number, weeks: number, band: NmwBand) {
+export function pack(rate: number, hours: number, weeks: number, band: NmwBand) {
   const weekly = rate * hours
   const annual = weekly * weeks
   const tax = ukIncomeTax(annual)
@@ -68,8 +59,6 @@ export default function MinimumWage2027Calculator() {
   const [hours, setHours] = useUrlParam('hours', '37.5')
   const [weeks, setWeeks] = useUrlParam('weeks', '52')
   const [rateNow, setRateNow] = useUrlParam('rate', '')
-  const [scenarioParam, setScenario] = useUrlParam('scenario', 'central')
-  const scenario: Scenario = (SCENARIOS.some((s) => s.v === scenarioParam) ? scenarioParam : 'central') as Scenario
   const [rate27, setRate27] = useUrlParam('rate27', '')
   const [employerParam, setEmployer] = useUrlParam('employer', '0')
   const employer = employerParam === '1'
@@ -80,23 +69,22 @@ export default function MinimumWage2027Calculator() {
   const currentRate = parseMoney(rateNow) || bandRate
 
   const result = useMemo(() => {
-    const nlwScenario = scenario === 'low' ? LPC_APRIL_2027.low : scenario === 'high' ? LPC_APRIL_2027.high : LPC_APRIL_2027.central
-    const factor = nlwScenario / NMW_RATES['21plus'].rate
-    // The LPC only projects the 21+ rate; younger bands get the same percentage as a stated assumption
-    const projectedFloor = band === '21plus' ? nlwScenario : round2(bandRate * factor)
+    const floor2027 = NMW_RATES_2027[band]
     const custom = parseMoney(rate27)
-    const newRate = scenario === 'custom' ? (custom || currentRate) : Math.max(currentRate, projectedFloor)
+    // A pay rate above the new minimum is unaffected unless the user enters a rise of their own.
+    const newRate = custom || Math.max(currentRate, floor2027)
     const now = pack(currentRate, h, w, band)
     const next = pack(newRate, h, w, band)
     return {
-      projectedFloor,
+      floor2027,
       newRate,
-      aboveFloor: scenario !== 'custom' && currentRate > projectedFloor,
+      aboveFloor: !custom && currentRate > floor2027,
+      belowFloor: custom > 0 && custom < floor2027,
       now,
       next,
       risePct: currentRate > 0 ? ((newRate / currentRate) - 1) * 100 : 0,
     }
-  }, [scenario, band, bandRate, rate27, currentRate, h, w])
+  }, [band, rate27, currentRate, h, w])
 
   const inputClass = 'w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring'
   const diff = (a: number, b: number) => {
@@ -123,10 +111,10 @@ export default function MinimumWage2027Calculator() {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-xl border border-amber-300 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/40 p-4 text-sm">
-        <p className="font-semibold text-amber-900 dark:text-amber-200">Status: projection until the Budget on {BUDGET_2026.date}</p>
-        <p className="mt-1 text-amber-900/90 dark:text-amber-100/90">
-          The rates from {NMW_2027_EFFECTIVE_FROM} are not yet set. The Low Pay Commission's indicative range for the National Living Wage, published {LPC_APRIL_2027.published}, is £{LPC_APRIL_2027.low.toFixed(2)} to £{LPC_APRIL_2027.high.toFixed(2)} with a central estimate of £{LPC_APRIL_2027.central.toFixed(2)}. It recommends by {LPC_APRIL_2027.recommendationDue} and the government confirms the rates, expected at the Budget. No estimate exists for the 18 to 20, under 18 and apprentice rates, so this page applies the same percentage to them as a working assumption.
+      <div className="rounded-xl border-l-4 border-primary bg-primary/5 px-4 py-3 text-sm" role="status">
+        <p className="font-semibold">Status: rates confirmed at the Budget on {BUDGET_2026.date}</p>
+        <p className="mt-1 text-muted-foreground">
+          The government accepted the Low Pay Commission's recommendations in full. From {NMW_2027_EFFECTIVE_FROM} every rate rises by {nmwRisePct('21plus').toFixed(1)}%: £{NMW_RATES_2027['21plus'].toFixed(2)} for workers aged 21 and over, £{NMW_RATES_2027['18to20'].toFixed(2)} for 18 to 20 year olds and £{NMW_RATES_2027['under18'].toFixed(2)} for 16 to 17 year olds and eligible apprentices, with an accommodation offset of £{ACCOMMODATION_OFFSET_2027.daily.toFixed(2)} a day. The current rates stay the legal minimum until 31 March 2027. <a href={BUDGET_2026.sourceUrl} target="_blank" rel="noopener" className="text-primary underline">Source: Budget 2026</a>.
         </p>
       </div>
 
@@ -153,35 +141,18 @@ export default function MinimumWage2027Calculator() {
           </div>
         </div>
         <div>
-          <label htmlFor="mw27-scenario" className="block text-sm font-medium mb-2">Rate from {NMW_2027_EFFECTIVE_FROM}</label>
-          <select id="mw27-scenario" value={scenario} onChange={(e) => setScenario(e.target.value)} className={inputClass} aria-label="April 2027 rate scenario">
-            {SCENARIOS.map((s) => <option key={s.v} value={s.v}>{s.l}</option>)}
-          </select>
+          <label htmlFor="mw27-rate27" className="block text-sm font-medium mb-2">Your hourly rate from {NMW_2027_EFFECTIVE_FROM} <span className="text-muted-foreground font-normal">(blank = the new minimum)</span></label>
+          <div className="relative">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
+            <input id="mw27-rate27" type="text" inputMode="decimal" placeholder={result.floor2027.toFixed(2)} value={rate27} onChange={(e) => setRate27(e.target.value)} className={`${inputClass} pl-8`} aria-label="Your hourly rate from April 2027" />
+          </div>
         </div>
-        {scenario === 'custom' ? (
-          <div>
-            <label htmlFor="mw27-rate27" className="block text-sm font-medium mb-2">Your projected hourly rate</label>
-            <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
-              <input id="mw27-rate27" type="text" inputMode="decimal" placeholder={result.projectedFloor.toFixed(2)} value={rate27} onChange={(e) => setRate27(e.target.value)} className={`${inputClass} pl-8`} aria-label="Projected hourly rate from April 2027" />
-            </div>
-          </div>
-        ) : (
-          <div className="flex items-end">
-            <label className="flex items-center gap-2 text-sm font-medium pb-3 cursor-pointer">
-              <input type="checkbox" checked={employer} onChange={(e) => setEmployer(e.target.checked ? '1' : '0')} className="h-4 w-4 rounded border-input" aria-label="Show the employer view" />
-              Show employer cost (employer NI)
-            </label>
-          </div>
-        )}
-        {scenario === 'custom' && (
-          <div className="flex items-end">
-            <label className="flex items-center gap-2 text-sm font-medium pb-3 cursor-pointer">
-              <input type="checkbox" checked={employer} onChange={(e) => setEmployer(e.target.checked ? '1' : '0')} className="h-4 w-4 rounded border-input" aria-label="Show the employer view" />
-              Show employer cost (employer NI)
-            </label>
-          </div>
-        )}
+        <div className="flex items-end">
+          <label className="flex items-center gap-2 text-sm font-medium pb-3 cursor-pointer">
+            <input type="checkbox" checked={employer} onChange={(e) => setEmployer(e.target.checked ? '1' : '0')} className="h-4 w-4 rounded border-input" aria-label="Show the employer view" />
+            Show employer cost (employer NI)
+          </label>
+        </div>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 animate-fade-in-up">
@@ -193,7 +164,13 @@ export default function MinimumWage2027Calculator() {
 
       {result.aboveFloor && (
         <div className="rounded-xl bg-muted/50 p-4 text-sm text-muted-foreground">
-          Your current £{currentRate.toFixed(2)} is already above the projected minimum of £{result.projectedFloor.toFixed(2)} for this band, so the statutory rise would not change your pay. Choose the custom rate to model a pay rise of your own.
+          Your current £{currentRate.toFixed(2)} is already above the new minimum of £{result.floor2027.toFixed(2)} for this band, so the statutory rise does not change your pay. Enter your own rate from {NMW_2027_EFFECTIVE_FROM} to model a pay rise.
+        </div>
+      )}
+
+      {result.belowFloor && (
+        <div className="rounded-xl border border-amber-300 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/40 p-4 text-sm text-amber-900 dark:text-amber-100">
+          £{result.newRate.toFixed(2)} is below the £{result.floor2027.toFixed(2)} minimum that applies to this band from {NMW_2027_EFFECTIVE_FROM}.
         </div>
       )}
 
@@ -220,10 +197,10 @@ export default function MinimumWage2027Calculator() {
         </table>
       </div>
 
-      <ShareRow params={{ band, hours, weeks, rate: rateNow, scenario, rate27, employer: employer ? '1' : '0' }} />
+      <ShareRow params={{ band, hours, weeks, rate: rateNow, rate27, employer: employer ? '1' : '0' }} />
 
       <p className="text-xs text-muted-foreground">
-        Tax and National Insurance use the {NMW_TAX_YEAR} rules for England, Wales and Northern Ireland: a £{NI_PRIMARY_THRESHOLD.toLocaleString('en-GB')} Personal Allowance, 20% basic rate, and employee NI at 8% between £{NI_PRIMARY_THRESHOLD.toLocaleString('en-GB')} and £{NI_UPPER_EARNINGS_LIMIT.toLocaleString('en-GB')}. Those thresholds are frozen to April 2031, so the 2027/28 column uses the same figures. Pension contributions, student loan repayments and Scottish income tax rates are not included. Current minimum rates apply from {NMW_EFFECTIVE_FROM}.
+        Tax and National Insurance use the {NMW_TAX_YEAR} rules for England, Wales and Northern Ireland: a £{NI_PRIMARY_THRESHOLD.toLocaleString('en-GB')} Personal Allowance, 20% basic rate, and employee NI at 8% between £{NI_PRIMARY_THRESHOLD.toLocaleString('en-GB')} and £{NI_UPPER_EARNINGS_LIMIT.toLocaleString('en-GB')}. Those thresholds are frozen to April 2031 and Budget 2026 did not change them, so the 2027/28 column uses the same figures. Pension contributions, student loan repayments and Scottish income tax rates are not included. Current minimum rates apply from {NMW_EFFECTIVE_FROM}.
       </p>
     </div>
   )

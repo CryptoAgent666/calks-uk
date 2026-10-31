@@ -70,6 +70,7 @@ export default function CommuteCostCalculator() {
           <div className={`rounded-xl p-4 text-center ${mode === 'bus' ? 'bg-primary/10 border-2 border-primary' : 'border border-border'}`}><p className="text-xs text-muted-foreground">Bus</p><p className="text-lg font-bold">{formatCurrency(result.busTotal)}/yr</p></div>
           <div className={`rounded-xl p-4 text-center ${mode === 'cycle' ? 'bg-primary/10 border-2 border-primary' : 'border border-border'}`}><p className="text-xs text-muted-foreground">Cycle/Walk</p><p className="text-lg font-bold">{formatCurrency(result.cycleTotal)}/yr</p></div>
         </div>
+        {mode === 'bus' && <p className="text-xs text-muted-foreground">Budget 2026 caps single bus fares at £2 in England outside London for one year from 1 January 2027. Enter what you pay for your own pass or tickets.</p>}
       </div>
     </div>
   )

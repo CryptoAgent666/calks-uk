@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // Ofgem price cap 1 Oct–31 Dec 2026, GB average, Direct Debit. Electricity carries no VAT
-// from 1 Oct 2026 to 31 Mar 2027; the gas figures include 5% VAT.
+// from 1 Oct 2026 to 1 Jul 2027 (extended at Budget 2026); the gas figures include 5% VAT.
 const DEFAULT_ELEC_STANDING = 54.83 // p/day
 const DEFAULT_GAS_STANDING = 29.68  // p/day
 const DEFAULT_ELEC_RATE = 26.32     // p/kWh
@@ -135,7 +135,7 @@ export default function StandingChargeSavingsCalculator() {
             <tr className="border-b border-border/50"><td className="py-2 text-muted-foreground">Worth it below</td><td className="text-right tabular-nums text-muted-foreground">{kwhText(result.e.breakEven)}</td>{result.g && <td className="text-right tabular-nums text-muted-foreground">{kwhText(result.g.breakEven)}</td>}</tr>
           </tbody>
         </table>
-        <p className="text-xs text-muted-foreground">Default rates are the Ofgem price cap for 1 October to 31 December 2026, GB average by Direct Debit. The 54.83p electricity standing charge carries no VAT from 1 October 2026 to 31 March 2027; the 29.68p gas figure includes 5% VAT. Your own region and tariff can differ, so enter the rates from your bill.</p>
+        <p className="text-xs text-muted-foreground">Default rates are the Ofgem price cap for 1 October to 31 December 2026, GB average by Direct Debit. The 54.83p electricity standing charge carries no VAT from 1 October 2026 to 1 July 2027; the 29.68p gas figure includes 5% VAT. Your own region and tariff can differ, so enter the rates from your bill. The government has asked Ofgem to abolish gas standing charges, aiming for the end of 2027 or as soon as possible after, with the cost moved into gas unit rates; that is a plan, so today&apos;s charge still applies.</p>
       </div>
     </div>
   )

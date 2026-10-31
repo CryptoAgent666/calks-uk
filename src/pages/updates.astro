@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-10-20'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-10-31'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -25,6 +25,37 @@ const schemas = [
 
     <div class="space-y-8">
       <!-- October 2026 — round 13 audit: farm wages and livestock units, pension vs ISA, health guidance, GCSE and A-level figures, student budgets -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            October 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Budget 2026 applied across the site</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">What the Budget changed.</strong> The <a href="/calculator/budget-2026-calculator/" class="text-primary hover:underline">Budget 2026 calculator</a> now reports what was announced on 28 October 2026, with the tax on your own pay, rent, interest and fuel for 2026/27 and 2027/28. Most measures still need Finance Bill 2026-27, and figures for the current tax year have not changed.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Savings, rent and ISAs.</strong> Tax on savings interest across the UK, and on rental income in England, Wales and Northern Ireland, is 24%, 44% and 49% from 6 April 2027, higher than the 22%, 42% and 47% planned before. The <a href="/calculator/ns-i-savings-calculator/" class="text-primary hover:underline">savings interest</a> and <a href="/calculator/isa-calculator/" class="text-primary hover:underline">ISA</a> calculators use the new rates from 2027/28. The planned £12,000 cash ISA cap is cancelled, so £20,000 stays for everyone, and the <a href="/calculator/lifetime-isa-calculator/" class="text-primary hover:underline">Lifetime ISA</a> charge on a first home above £450,000 is now 20%.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Pay and pensions.</strong> The <a href="/calculator/minimum-wage-2027-calculator/" class="text-primary hover:underline">April 2027 minimum wage</a> page now uses the confirmed rates of £13.21, £11.27 and £8.31 instead of an estimate. The <a href="/calculator/state-pension-calculator/" class="text-primary hover:underline">State Pension</a> page adds the April 2027 rise to £250.70 a week, the Pension Tax Allowance and the adjusted Triple Lock from April 2030.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Motoring and energy.</strong> Fuel duty stays at 52.95p until 1 July 2027 and then goes to 60.59p, as the January and March rises are cancelled. The <a href="/calculator/mileage-allowance-calculator/" class="text-primary hover:underline">mileage allowance</a> rate above 10,000 miles goes from 25p to 35p on 6 April 2027, and 55p is permanent. VAT on domestic electricity in Great Britain stays at 0% until 1 July 2027. <a href="/calculator/council-tax-calculator/" class="text-primary hover:underline">Council tax</a> and <a href="/calculator/energy-bill-calculator/" class="text-primary hover:underline">energy bill</a> pages cover the £100 Household Energy Payment from January 2027.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Business and self-employment.</strong> Dated notes added for the <a href="/calculator/side-hustle-tax-calculator/" class="text-primary hover:underline">trading allowance</a> rising to £3,000 on 6 April 2027, <a href="/calculator/capital-allowances-calculator/" class="text-primary hover:underline">capital allowances</a> (50% first-year allowance from 1 January 2027, 12% main pool from April 2027), the Business Asset Disposal Relief limit falling to £500,000 and <a href="/calculator/business-rates-calculator/" class="text-primary hover:underline">business rates</a> for 2027/28. The <a href="/calculator/high-council-tax-calculator/" class="text-primary hover:underline">High Value Council Tax Surcharge</a> bands are no longer proposals, and the page gives the deferral criteria.</span>
+          </li>
+        </ul>
+      </article>
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
         <div class="mb-2">

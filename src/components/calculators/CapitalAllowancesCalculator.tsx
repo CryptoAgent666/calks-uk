@@ -103,6 +103,10 @@ export default function CapitalAllowancesCalculator() {
           )}
         </div>
       )}
+
+      <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
+        <p>This calculator takes no purchase date, so it shows the current 40% first-year allowance and 14% main pool rate, and the year-by-year table keeps 14% throughout. Announced at Budget 2026: the main rate first-year allowance rises to 50% for expenditure incurred on or after 1 January 2027, and the main pool rate falls to 12% for chargeable periods beginning on or after 1 April 2027 (Corporation Tax) or 6 April 2027 (Income Tax), with a hybrid rate for a period that straddles the date. Main pool relief in later years will therefore be lower than the table shows. The 6% special rate and the £1M AIA are unchanged.</p>
+      </div>
     </div>
   )
 }

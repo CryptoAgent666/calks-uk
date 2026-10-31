@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // Appropriate percentages for 2026/27, from HMRC 480 Appendix 2. Pure EVs are 4%
-// (3% in 2025/26, 5% in 2027/28). Cars at 1-50 g/km are banded by ZERO-EMISSION
+// (3% in 2025/26; Budget 2026 Annex A: 5% in 2027/28, 7% in 2028/29, 9% in 2029/30, 10% in 2030/31). Cars at 1-50 g/km are banded by ZERO-EMISSION
 // MILEAGE, not by CO2. Above 54 g/km the table rises 1pp per 5 g/km but pauses at
 // 21% across 70-79 g/km, then resumes from 22% at 80 g/km and caps at 37%.
 const EV_RANGE_BANDS = [
@@ -114,6 +114,7 @@ export default function CompanyCarTaxCalculator() {
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Your Tax Rate</p><p className="text-lg font-bold">{result.taxRate}%</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Employer Class 1A NI (15%)</p><p className="text-lg font-bold">{formatCurrency(result.employerNi)}</p></div>
           </div>
+          <p className="text-xs text-muted-foreground">BiK percentages are for 2026/27. A zero-emission car moves to 5% in 2027/28, 7% in 2028/29, 9% in 2029/30 and 10% in 2030/31.</p>
         </div>
       )}
     </div>

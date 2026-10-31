@@ -63,6 +63,8 @@ export default function MakingTaxDigitalCalculator() {
             <p>• Submit {result.quarterlyReturns} quarterly updates + {result.endOfYearReturn} end-of-year declaration</p>
             <p>• Replaces annual self-assessment tax return</p>
             <p>• Start dates: April 2026 (over £50K), April 2027 (over £30K), April 2028 (over £20K)</p>
+            <p>• April 2027 joiners get no penalty points for late submission of their first four quarterly updates in 2027/28 (announced at Budget 2026), but the updates must still be sent before the tax return can be filed</p>
+            <p>• Rollout is deferred until further notice for people eligible for qualifying care relief, non-UK resident foreign entertainers and sportspeople, and expected non-resident customers</p>
           </div>
         )}
       </div>

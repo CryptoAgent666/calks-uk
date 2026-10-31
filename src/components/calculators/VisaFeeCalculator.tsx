@@ -58,6 +58,8 @@ const VISA_TYPES: Visa[] = [
     { id: '5', label: 'Up to 5 years', fee: 766, ihsYears: 5 },
   ], ihsAdult: IHS_STANDARD, ihsChild: IHS_REDUCED, priority: true, superPriority: true },
   // Graduate: 2 years (3 for PhD) if applying by 31 Dec 2026, 18 months from 1 Jan 2027.
+  // Budget 2026: 2 years for graduates of high-compliance universities with strong labour market
+  // outcomes (no start date given), so the note below flags it; fees and durations are unchanged here.
   { id: 'graduate', name: 'Graduate Visa', durations: [
     { id: '2', label: '2 years (apply by 31 Dec 2026)', fee: 937, ihsYears: 2 },
     { id: '3', label: '3 years (PhD graduates)', fee: 937, ihsYears: 3 },
@@ -150,6 +152,7 @@ export default function VisaFeeCalculator() {
             </tbody>
           </table>
           {visa === 'health_care' && <p className="text-xs text-muted-foreground">Health and Care Worker visa holders and their dependants are exempt from the Immigration Health Surcharge.</p>}
+          {visa === 'graduate' && <p className="text-xs text-muted-foreground">Budget 2026 says the Graduate visa will last two years for people who graduate from high-compliance universities with strong labour market outcomes, without giving a start date. Otherwise the 18 months for applications from 1 January 2027 stands.</p>}
           {visa === 'citizenship' && <p className="text-xs text-muted-foreground">Adults pay the naturalisation fee plus the ceremony fee. Children register as British citizens for {formatCurrency(CHILD_REGISTRATION_FEE)} each. Super priority is not available for citizenship.</p>}
         </div>
       )}

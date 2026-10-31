@@ -1,5 +1,20 @@
 # CHANGELOG — Calks.uk
 
+## 2026-10-31 (round 14) — Autumn Budget 2026 applied across the site
+
+Fourteenth `/calkcheck` pass (report: `AUDIT-2026-10-31.md`). The site predated the Budget of 28 October 2026: 75 pages and
+31 calculator components changed. 2026/27 results are unchanged.
+
+**Budget:** savings and property income 24/44/49% from 6 April 2027 (was 22/42/47); £12,000 cash ISA cap cancelled; fuel
+duty 52.95p until 1 July 2027 then 60.59p (January and March rises cancelled); electricity VAT 0% to 30 June 2027; NLW
+£13.21, £11.27, £8.31 confirmed; State Pension £250.70 from April 2027, Pension Tax Allowance (up to £94), adjusted Triple
+Lock from April 2030; AMAP 35p above 10,000 miles from 6 April 2027, 55p permanent; Trading Allowance £3,000; FYA 50%, WDA
+12%; BADR limit £500,000, Founders' Relief; LISA 20% charge above the cap, First Time Buyer ISA from April 2029; HVCTS bands
+and deferral criteria; Household Energy Payment £100; business rates 2027/28; VED 2027/28; MTD easement.
+
+**Also fixed:** mandatory payrolling dates (the "Section 336" text was wrong), tax refund mileage for earlier years,
+pay-per-mile comparison now at the rate in force when eVED starts, State Pension display of £241.30.
+
 ## 2026-10-20 (round 13) — Health guidance, pension vs ISA, farm wages and livestock units, exams, student budgets
 
 Thirteenth `/calkcheck` pass (report: `AUDIT-2026-10-20.md`): 20 never-hand-checked pages (tax, business, legal,

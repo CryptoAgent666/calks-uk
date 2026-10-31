@@ -80,6 +80,10 @@ export default function VisaPointsCalculator() {
         <p className={`text-4xl font-bold mt-1 ${eligible ? 'text-green-700 dark:text-green-400' : 'text-destructive'}`}>{totalPoints}</p>
         <p className="text-sm mt-1">{eligible ? 'You meet the 70-point threshold!' : `You need ${REQUIRED_TOTAL - totalPoints} more points (minimum ${REQUIRED_TOTAL})`}</p>
       </div>
+
+      <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
+        <p>These are the current salary figures. From spring 2027 the government is implementing Migration Advisory Committee recommendations: occupation thresholds move from the median to the 25th percentile of wages, the general threshold is uprated on 2026 wage data, and the PhD discount is removed. The Budget 2026 documents do not give the new figures.</p>
+      </div>
     </div>
   )
 }

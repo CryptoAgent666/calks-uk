@@ -6,7 +6,8 @@ import { formatCurrency } from '@/utils'
 // from 2029-30, charged ON TOP of normal VED. Mileage is declared at VED renewal and
 // checked against MOT odometer readings. Vans, buses and HGVs are out of scope at launch.
 const EVED_PENCE: Record<'bev' | 'phev', number> = { bev: 3, phev: 1.5 }
-const FUEL_DUTY_PENCE = 52.95 // petrol/diesel duty per litre, 2026/27
+const FUEL_DUTY_PENCE = 52.95 // petrol/diesel duty per litre until 1 July 2027 (Budget 2026)
+const FUEL_DUTY_PENCE_JUL_2027 = 60.59 // from 1 July 2027 (Budget 2026, Annex A), so already in place when eVED starts
 const VAT = 0.2
 const LITRES_PER_GALLON = 4.54609
 
@@ -16,7 +17,8 @@ function calculate(annualMiles: number, vehicle: 'bev' | 'phev', ved: number, mp
 
   // A petrol car covering the same miles: fuel duty plus the VAT charged on that duty, plus VED
   const litres = mpg > 0 ? (annualMiles / mpg) * LITRES_PER_GALLON : 0
-  const petrolDuty = litres * (FUEL_DUTY_PENCE / 100) * (1 + VAT)
+  // eVED starts in April 2028, after the 1 July 2027 rise, so the comparison uses the later rate
+  const petrolDuty = litres * (FUEL_DUTY_PENCE_JUL_2027 / 100) * (1 + VAT)
   const petrolTotal = petrolDuty + ved
 
   return { eved, evTotal, petrolDuty, petrolTotal, difference: evTotal - petrolTotal, monthlyEved: eved / 12 }
@@ -25,7 +27,7 @@ function calculate(annualMiles: number, vehicle: 'bev' | 'phev', ved: number, mp
 export default function PayPerMileCalculator() {
   const [miles, setMiles] = useState('8000')
   const [vehicle, setVehicle] = useState<'bev' | 'phev'>('bev')
-  const [ved, setVed] = useState('200') // standard VED rate 2026/27 (£200 from 1 April 2026)
+  const [ved, setVed] = useState('210') // standard VED rate from 1 April 2027 (Budget 2026; £200 in 2026/27)
   const [mpg, setMpg] = useState('40')
 
   const m = parseFloat(miles.replace(/,/g, '')) || 0
@@ -51,11 +53,11 @@ export default function PayPerMileCalculator() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-xl bg-muted/50 p-5 text-center"><p className="text-sm font-medium">Your {vehicle === 'bev' ? 'EV' : 'plug-in hybrid'}</p><p className="text-2xl font-bold mt-1">{formatCurrency(result.evTotal)}/yr</p><p className="text-xs text-muted-foreground">eVED + VED</p></div>
-            <div className="rounded-xl bg-muted/50 p-5 text-center"><p className="text-sm font-medium">{g} mpg petrol car</p><p className="text-2xl font-bold mt-1">{formatCurrency(result.petrolTotal)}/yr</p><p className="text-xs text-muted-foreground">fuel duty (+ VAT on it) + VED</p></div>
+            <div className="rounded-xl bg-muted/50 p-5 text-center"><p className="text-sm font-medium">{g} mpg petrol car</p><p className="text-2xl font-bold mt-1">{formatCurrency(result.petrolTotal)}/yr</p><p className="text-xs text-muted-foreground">fuel duty at {FUEL_DUTY_PENCE_JUL_2027}p (+ VAT on it) + VED</p></div>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
             <p className="font-medium text-foreground">How eVED works</p>
-            <p>From April 2028 battery electric cars pay 3p a mile and plug-in hybrids 1.5p, rising with CPI from 2029-30, on top of normal VED. You declare your expected mileage when you renew your vehicle tax, and it is checked against MOT odometer readings; there is no GPS tracking. Petrol and diesel cars keep paying fuel duty instead ({FUEL_DUTY_PENCE}p a litre in 2026/27), and vans are outside the scheme at launch. {vehicle === 'phev' ? 'A plug-in hybrid also pays fuel duty on the petrol it burns, which this comparison leaves out.' : ''}</p>
+            <p>From April 2028 battery electric cars pay 3p a mile and plug-in hybrids 1.5p, rising with CPI from 2029-30, on top of normal VED. You declare your expected mileage when you renew your vehicle tax, with a mileage estimation tool promised at launch, and it is checked against MOT odometer readings; there is no compulsory GPS tracking, and an opt-in eVED Connect is planned for cars with in-built connectivity. Petrol and diesel cars keep paying fuel duty instead ({FUEL_DUTY_PENCE}p a litre until 1 July 2027, then {FUEL_DUTY_PENCE_JUL_2027}p), and vans are outside the scheme at launch. The comparison above uses {FUEL_DUTY_PENCE_JUL_2027}p, because eVED starts after that rise: the {g} mpg petrol car pays {formatCurrency(result.petrolDuty)} a year in duty and the VAT on it. VED starts at the £210 standard rate due from 1 April 2027 (£200 in 2026/27), so enter the rate you expect. {vehicle === 'phev' ? 'A plug-in hybrid also pays fuel duty on the petrol it burns, which this comparison leaves out.' : ''}</p>
           </div>
         </div>
       )}

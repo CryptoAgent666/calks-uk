@@ -70,7 +70,7 @@ export default function LifetimeIsaCalculator() {
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Investment Growth</p><p className="text-lg font-bold">{formatCurrency(result.totalGrowth)}</p></div>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>LISA: 25% government bonus on up to £4,000/year. Must be 18-39 to open. Use for first home (up to £450,000) or retirement (age 60+). Early withdrawal for other reasons incurs a 25% penalty.</p>
+            <p>LISA: 25% government bonus on up to £4,000/year. Must be 18-39 to open. Use for first home (up to £450,000) or retirement (age 60+). A first home above £450,000 carries a 20% charge from 29 October 2026, which takes back the bonus and leaves your own contributions. Other early withdrawals incur a 25% charge. From April 2029 a First Time Buyer ISA replaces the LISA for new savers; existing holders carry on under the current rules.</p>
           </div>
         </div>
       )}

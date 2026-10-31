@@ -4353,6 +4353,61 @@
    "was": "Three slots take your best EBacc grades",
    "now": "former EBacc subjects",
    "what": "attainment_8_structure (freshness alert 2026-10-27)"
+  },
+  {
+   "was": "only £12,000 can go into cash ISAs",
+   "now": "cash ISA limit stays",
+   "what": "cash_isa_limit (Budget 2026 (calkcheck round fourteen))"
+  },
+  {
+   "was": "CASH_ISA_LIMIT_UNDER_65",
+   "now": "cash ISA limit stays",
+   "what": "cash_isa_limit (Budget 2026 (calkcheck round fourteen))"
+  },
+  {
+   "was": "taxed at 22% from April 2027",
+   "now": "savings rate raised again",
+   "what": "savings rates (Budget 2026 (calkcheck round fourteen))"
+  },
+  {
+   "was": "22/42/47",
+   "now": "savings and property rates raised again",
+   "what": "savings and property rates (Budget 2026 (calkcheck round fourteen))"
+  },
+  {
+   "was": "extended to 31 December 2026",
+   "now": "fuel duty cut runs to July",
+   "what": "fuel_duty_per_litre (Budget 2026 (calkcheck round fourteen))"
+  },
+  {
+   "was": "will be revised the same day",
+   "now": "Budget delivered",
+   "what": "budget_2026_date (Budget 2026 (calkcheck round fourteen))"
+  },
+  {
+   "was": "Watch on 28 October",
+   "now": "Budget delivered",
+   "what": "budget_2026_date (Budget 2026 (calkcheck round fourteen))"
+  },
+  {
+   "was": "central estimate of £13.18",
+   "now": "confirmed rate",
+   "what": "nlw_21plus_from_apr_2027 (Budget 2026 (calkcheck round fourteen))"
+  },
+  {
+   "was": "NLW Projection",
+   "now": "confirmed rate",
+   "what": "nlw_21plus_from_apr_2027 (Budget 2026 (calkcheck round fourteen))"
+  },
+  {
+   "was": "There is no plan to scrap",
+   "now": "gas standing charge plan",
+   "what": "standing charges (Budget 2026 (calkcheck round fourteen))"
+  },
+  {
+   "was": "Section 336",
+   "now": "mandatory payrolling dates",
+   "what": "p11d_filing_deadline (Budget 2026 (calkcheck round fourteen))"
   }
  ]
 }

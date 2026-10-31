@@ -4,8 +4,10 @@ import { formatCurrency } from '@/utils'
 // High Value Council Tax Surcharge (HVCTS) — announced Budget 2025, from April
 // 2028. An annual charge ON THE OWNER of a residential property in England with
 // a current market value of £2m+, ON TOP of normal Council Tax. Four bands
-// (£2,500 / £3,500 / £5,000 / £7,500), CPI-uprated from 2029/30. The May-Jul 2026
-// consultation covered liability, deferral, exemptions and appeals, not the bands.
+// (£2,500 / £3,500 / £5,000 / £7,500), CPI-uprated from 2029/30, set out in the
+// HMRC note of 28 Oct 2026; legislation in Finance Bill 2026-27. Budget 2026 also
+// confirmed deferral, discounts and exemptions, and a 100% premium on homes empty
+// and unoccupied for 12 months or more (not modelled here).
 // Values at 2026 levels, then VOA revaluation every 5 years (first 2033).
 const SURCHARGE_BANDS = [
   { from: 2_000_000, to: 2_500_000, label: '£2m – £2.5m', charge: 2_500 },
@@ -41,7 +43,7 @@ export default function HighCouncilTaxCalculator() {
         <div><label className="block text-sm font-medium mb-2">Your Current Council Tax (£/yr)</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={baseTax} onChange={(e) => setBaseTax(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Current Council Tax" /></div></div>
       </div>
 
-      <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-3 text-sm text-orange-800 dark:text-orange-300">Proposed <strong>High Value Council Tax Surcharge</strong>: an annual charge on the owner of an England home worth £2m+, on top of normal Council Tax, from <strong>April 2028</strong>. Charges run from £2,500 (£2m+) to £7,500 (£5m+) and rise with CPI from 2029/30.</div>
+      <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-3 text-sm text-orange-800 dark:text-orange-300"><strong>High Value Council Tax Surcharge</strong>: an annual charge on the owner of an England home worth £2m+, on top of normal Council Tax, from <strong>April 2028</strong>. Charges run from £2,500 (£2m+) to £7,500 (£5m+) and rise with CPI from 2029/30.</div>
 
       {v > 0 && (
         <div className="space-y-4 animate-fade-in-up">
@@ -51,7 +53,7 @@ export default function HighCouncilTaxCalculator() {
             <p className="text-sm text-muted-foreground mt-1">{formatCurrency(result.monthly)}/month</p>
           </div>
           {result.inScope ? (
-            <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-3 text-center text-sm text-orange-800 dark:text-orange-300">Includes {formatCurrency(result.surcharge)}/year high-value surcharge (proposed, from April 2028)</div>
+            <div className="rounded-xl bg-orange-100 dark:bg-orange-950 p-3 text-center text-sm text-orange-800 dark:text-orange-300">Includes {formatCurrency(result.surcharge)}/year high-value surcharge (from April 2028)</div>
           ) : (
             <div className="rounded-xl bg-green-100 dark:bg-green-950 p-3 text-center text-sm text-green-800 dark:text-green-300">Below the £2m threshold — no high-value surcharge would apply.</div>
           )}
@@ -64,7 +66,7 @@ export default function HighCouncilTaxCalculator() {
             </table>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>The surcharge is separate from your Council Tax band (which is based on 1991 values). It is charged on the property owner. Properties will be valued at 2026 levels, then revalued every five years from 2033. The government has not yet published its response to the 2026 consultation on how the charge will be run.</p>
+            <p>The surcharge is separate from your Council Tax band (which is based on 1991 values). It is charged on the property owner. Properties will be valued at 2026 levels, then revalued every five years from 2033. Budget 2026 confirmed a deferral scheme, which delays payment until ownership changes if you meet the eligibility criteria, plus discounts and exemptions for certain properties. A 100% premium will apply to homes left empty and unoccupied for 12 months or more; this calculator does not include deferral, discounts or the premium.</p>
           </div>
         </div>
       )}

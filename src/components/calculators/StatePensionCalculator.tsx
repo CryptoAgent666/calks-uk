@@ -3,6 +3,10 @@ import { formatCurrency } from '@/utils'
 
 // 2026/27 (triple lock uprating)
 const FULL_NEW_STATE_PENSION_WEEKLY = 241.30
+// April 2027: +3.9% (Budget 2026). HM Treasury's explainer gives £13,036.40 a year for 2027/28.
+const FULL_NEW_STATE_PENSION_WEEKLY_2027 = 250.70
+const PENSION_TAX_ALLOWANCE_THRESHOLD_2027 = 13_037
+const PENSION_TAX_ALLOWANCE_END_2027 = 13_319
 const QUALIFYING_YEARS_FULL = 35
 const QUALIFYING_YEARS_MIN = 10
 
@@ -64,9 +68,11 @@ export default function StatePensionCalculator() {
         </div>
 
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-1">
-          <p>Full new State Pension: <span className="font-medium text-foreground">£{FULL_NEW_STATE_PENSION_WEEKLY}/week</span> (35 qualifying years needed)</p>
+          <p>Full new State Pension: <span className="font-medium text-foreground">£{FULL_NEW_STATE_PENSION_WEEKLY.toFixed(2)}/week</span> (35 qualifying years needed)</p>
           <p>Minimum: <span className="font-medium text-foreground">10 qualifying years</span> to get any State Pension</p>
           <p>You can buy voluntary NI contributions to fill gaps in your record.</p>
+          <p>From April 2027: <span className="font-medium text-foreground">£{FULL_NEW_STATE_PENSION_WEEKLY_2027.toFixed(2)}/week</span> for the full new State Pension (+3.9%). The figures above use the 2026/27 rate.</p>
+          <p>Pension Tax Allowance, 6 April 2027 to 5 April 2030: above State Pension age, total income up to {formatCurrency(PENSION_TAX_ALLOWANCE_THRESHOLD_2027)} in 2027/28 in effect pays no income tax, tapering away by {formatCurrency(PENSION_TAX_ALLOWANCE_END_2027)}.</p>
         </div>
       </div>
     </div>

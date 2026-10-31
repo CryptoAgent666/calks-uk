@@ -91,6 +91,10 @@ export default function SideHustleTaxCalculator() {
           )}
         </div>
       )}
+
+      <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
+        <p>This calculator uses the 2026/27 Trading Allowance of £1,000. At Budget 2026 the government announced that the allowance rises to £3,000 from 6 April 2027, and that the Self Assessment trading income reporting threshold rises to £3,000 with it. The £1,000 property allowance is not changing.</p>
+      </div>
     </div>
   )
 }

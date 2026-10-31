@@ -3,12 +3,12 @@ import { formatCurrency } from '@/utils'
 
 const ISA_ALLOWANCE = 20_000
 
-// Tax the same interest would pay outside an ISA: savings rates for 2026/27, rising 2 points from
-// 6 April 2027 (HMRC technical note, Budget 2025); the Personal Savings Allowance is unchanged.
+// Tax the same interest would pay outside an ISA: savings rates for 2026/27, then 24/44/49% from
+// 6 April 2027 (Budget 2026, OOTLAR 1.1); the Personal Savings Allowance is unchanged.
 const TAX_BANDS: Record<string, { label: string; now: number; from2027: number; psa: number }> = {
-  basic: { label: 'Basic rate (20%)', now: 0.20, from2027: 0.22, psa: 1_000 },
-  higher: { label: 'Higher rate (40%)', now: 0.40, from2027: 0.42, psa: 500 },
-  additional: { label: 'Additional rate (45%)', now: 0.45, from2027: 0.47, psa: 0 },
+  basic: { label: 'Basic rate (20%)', now: 0.20, from2027: 0.24, psa: 1_000 },
+  higher: { label: 'Higher rate (40%)', now: 0.40, from2027: 0.44, psa: 500 },
+  additional: { label: 'Additional rate (45%)', now: 0.45, from2027: 0.49, psa: 0 },
 }
 
 function calculate(monthlyDeposit: number, annualRate: number, years: number, currentBalance: number, band: string) {
@@ -60,7 +60,7 @@ export default function IsaCalculator() {
           <label className="block text-sm font-medium mb-2">Monthly Contribution</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
             <input type="text" inputMode="numeric" value={monthly} onChange={(e) => setMonthly(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Monthly Contribution" /></div>
-          <p className="text-xs text-muted-foreground mt-1">Max £{(ISA_ALLOWANCE / 12).toFixed(0)}/month (£{ISA_ALLOWANCE.toLocaleString()}/year). From 6 April 2027, under-65s can put at most £12,000 a year into cash ISAs.</p>
+          <p className="text-xs text-muted-foreground mt-1">Max £{(ISA_ALLOWANCE / 12).toFixed(0)}/month (£{ISA_ALLOWANCE.toLocaleString()}/year).</p>
         </div>
         <div>
           <label className="block text-sm font-medium mb-2">Annual Interest Rate (%)</label>
@@ -95,7 +95,7 @@ export default function IsaCalculator() {
             <div className="rounded-xl bg-green-100 dark:bg-green-950 p-4 text-center"><p className="text-xs text-muted-foreground">Tax-Free Interest</p><p className="text-lg font-bold text-green-700 dark:text-green-400">{formatCurrency(result.interestEarned)}</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Tax Saved (vs taxed account)</p><p className="text-lg font-bold">{formatCurrency(result.taxSaved)}</p></div>
           </div>
-          <p className="text-xs text-muted-foreground">Tax saved assumes this is your only savings interest: each year's interest above your Personal Savings Allowance (£{TAX_BANDS[band].psa.toLocaleString()}) would be taxed at your savings rate, which rises by 2 points from 6 April 2027.</p>
+          <p className="text-xs text-muted-foreground">Tax saved assumes this is your only savings interest: each year's interest above your Personal Savings Allowance (£{TAX_BANDS[band].psa.toLocaleString()}) would be taxed at your savings rate, which rises by 4 points from 6 April 2027 (to 24%, 44% or 49%).</p>
         </div>
       )}
     </div>

@@ -116,7 +116,7 @@ export default function BuyToLetYieldCalculator() {
           </table>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-2">
             <p>Figures are before tax and leave out capital growth. Stamp Duty uses the England and Northern Ireland rates; Scotland (LBTT) and Wales (LTT) differ.</p>
-            <p>For 2026/27, rental profit is taxed at 20%, 40% or 45% with a 20% credit for mortgage interest. From 6 April 2027 landlords outside Scotland will pay separate property rates of 22%, 42% and 47%, with the credit given at 22% (Budget 2025).</p>
+            <p>For 2026/27, rental profit is taxed at 20%, 40% or 45% with a 20% credit for mortgage interest. From 6 April 2027 landlords outside Scotland will pay separate property rates of 24%, 44% and 49%, with the credit given at 24% (Budget 2026).</p>
           </div>
         </div>
       )}

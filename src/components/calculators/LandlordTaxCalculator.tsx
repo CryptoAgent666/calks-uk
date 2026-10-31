@@ -3,7 +3,7 @@ import { formatCurrency, formatPercent, ukIncomeTax, ukPersonalAllowance } from 
 
 type Region = 'ruk' | 'scotland'
 
-/** Section 24 credit rate for 2026/27 (basic rate). Rises to 22% from 6 April 2027 in England, Wales and NI. */
+/** Section 24 credit rate for 2026/27 (basic rate). From 6 April 2027 it follows the property basic rate (FA 2026 Sch 1 para 40), 24% under Budget 2026. */
 const FINANCE_COST_CREDIT_RATE = 0.20
 
 // Scottish Income Tax 2026/27 on non-savings income (which includes rental
@@ -114,7 +114,7 @@ export default function LandlordTaxCalculator() {
             </tbody>
           </table>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-            <p>Under Section 24, mortgage interest is not deducted from rental profit. Instead you get a 20% tax credit, limited to the lower of the interest, your rental profit and your income above the Personal Allowance. Interest that misses out is carried forward. From 6 April 2027 property income in England, Wales and NI is taxed at 22%, 42% and 47%, and the credit rises to 22%. The figures above use 2026/27 rates.</p>
+            <p>Under Section 24, mortgage interest is not deducted from rental profit. Instead you get a 20% tax credit, limited to the lower of the interest, your rental profit and your income above the Personal Allowance. Interest that misses out is carried forward. From 6 April 2027 property income in England, Wales and NI is taxed at 24%, 44% and 49% (Budget 2026), and the credit, which follows the property basic rate, rises to 24%. The figures above use 2026/27 rates.</p>
           </div>
         </div>
       )}

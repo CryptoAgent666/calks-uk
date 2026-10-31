@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // Ofgem price cap 1 Oct–31 Dec 2026, Direct Debit, GB average — pence per kWh + daily standing charge.
-// Electricity carries no VAT 1 Oct 2026–31 Mar 2027; gas includes 5% VAT. Reset every quarter.
+// Electricity carries no VAT 1 Oct 2026–1 Jul 2027 (extended at Budget 2026); gas includes 5% VAT. Reset every quarter.
 const ELEC_UNIT = 26.32 // p/kWh
 const ELEC_STANDING = 54.83 // p/day
 const GAS_UNIT = 7.97 // p/kWh
@@ -83,7 +83,8 @@ export default function EnergyBillCalculator() {
           <p className="font-medium text-foreground">Ofgem price cap rates, 1 October to 31 December 2026 (Direct Debit, GB average):</p>
           <p>Electricity: {ELEC_UNIT}p/kWh + {ELEC_STANDING}p/day standing charge</p>
           {!noGas && <p>Gas: {GAS_UNIT}p/kWh + {GAS_STANDING}p/day standing charge</p>}
-          <p className="text-xs">No VAT on electricity from 1 October 2026 to 31 March 2027; gas rates include 5% VAT.</p>
+          <p className="text-xs">No VAT on electricity in Great Britain from 1 October 2026 to 1 July 2027; gas rates include 5% VAT.</p>
+          <p className="text-xs">Not deducted here: the £100 Household Energy Payment for households in council tax bands A to D in England from January 2027 (Budget 2026).</p>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import { formatCurrency } from '@/utils'
 function calculate(annualMiles: number, fuelPriceP: number, mpg: number) {
   // HMRC allowance
   const hmrcFirst10k = Math.min(annualMiles, 10_000) * 0.55 // 55p from 6 Apr 2026 (was 45p)
-  const hmrcOver10k = Math.max(0, annualMiles - 10_000) * 0.25
+  const hmrcOver10k = Math.max(0, annualMiles - 10_000) * 0.25 // 25p for all of 2026/27; 35p from 6 Apr 2027 (Budget 2026)
   const hmrcTotal = hmrcFirst10k + hmrcOver10k
 
   // Actual fuel cost
@@ -56,6 +56,7 @@ export default function MileageCalculator() {
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">HMRC per Mile</p><p className="text-lg font-bold">{(result.hmrcPerMile * 100).toFixed(1)}p</p></div>
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Your Cost per Mile</p><p className="text-lg font-bold">{(result.costPerMile * 100).toFixed(1)}p</p></div>
           </div>
+          <p className="text-xs text-muted-foreground">Uses the 2026/27 HMRC car and van rates: 55p a mile for the first 10,000 business miles and 25p after that. The 55p rate is now permanent, and the rate above 10,000 miles rises to 35p from 6 April 2027 (Budget 2026).</p>
         </div>
       )}
     </div>

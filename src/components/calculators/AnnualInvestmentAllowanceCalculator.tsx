@@ -98,6 +98,7 @@ export default function AnnualInvestmentAllowanceCalculator() {
           {result.leftInPool > 0 && <p className="text-sm text-muted-foreground">{formatCurrency(result.leftInPool)} goes into the {assetType === 'main' ? 'main pool (14%' : 'special rate pool (6%'} a year on the reducing balance) for later years.</p>}
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
             <p>AIA gives 100% relief on the first £{AIA_LIMIT.toLocaleString()} of qualifying plant and machinery each year, for companies, sole traders and partnerships. Above that, new main-rate assets get full expensing (companies) or a 40% first-year allowance (sole traders and partnerships, from 1 January 2026), and new special-rate assets bought by a company get 50%. Cars are excluded. The saving assumes your profit is at least as large as the allowances. If it is not, the excess becomes a loss to carry forward or back.</p>
+            <p className="mt-2">This calculator takes no purchase date, so it uses the current 40% and 14% rates. Announced at Budget 2026: the 40% first-year allowance rises to 50% for expenditure incurred on or after 1 January 2027, so £200,000 above the AIA limit would get £100,000 of first-year relief rather than £80,000. The main pool rate falls to 12% for chargeable periods beginning on or after 1 April 2027 (Corporation Tax) or 6 April 2027 (Income Tax), with a hybrid rate for a period that straddles the date. The AIA limit and the 6% special rate are unchanged.</p>
           </div>
         </div>
       )}

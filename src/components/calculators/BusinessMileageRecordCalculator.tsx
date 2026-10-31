@@ -17,7 +17,7 @@ export default function BusinessMileageRecordCalculator() {
 
   // HMRC claim
   const first10k = Math.min(totalMiles, 10_000) * 0.55 // 55p from 6 Apr 2026 (was 45p)
-  const over10k = Math.max(0, totalMiles - 10_000) * 0.25
+  const over10k = Math.max(0, totalMiles - 10_000) * 0.25 // 25p for all of 2026/27; 35p from 6 Apr 2027 (Budget 2026)
   const totalClaim = first10k + over10k
 
   return (
@@ -43,7 +43,7 @@ export default function BusinessMileageRecordCalculator() {
         <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Trips Logged</p><p className="text-xl font-bold">{trips.length}</p></div>
       </div>
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p>Keep a log of all business trips for tax purposes. HMRC rates: 55p/mile first 10,000 miles, 25p thereafter. Don't include commuting (home to regular workplace).</p>
+        <p>Keep a log of all business trips for tax purposes. HMRC rates for 2026/27: 55p/mile first 10,000 miles, 25p thereafter (35p from 6 April 2027). Don't include commuting (home to regular workplace).</p>
       </div>
     </div>
   )
