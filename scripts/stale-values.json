@@ -4408,6 +4408,92 @@
    "was": "Section 336",
    "now": "mandatory payrolling dates",
    "what": "p11d_filing_deadline (Budget 2026 (calkcheck round fourteen))"
+  },
+  {
+   "was": "any grant or subsidised income",
+   "now": "no restriction on subsidised costs",
+   "what": "R&D subsidised costs (calkcheck round fifteen)"
+  },
+  {
+   "was": "tablespoon is 17.7",
+   "now": "metric tablespoon",
+   "what": "UK tablespoon (calkcheck round fifteen)"
+  },
+  {
+   "was": "all-out sprint",
+   "now": "safety-first maximum heart rate wording",
+   "what": "max heart rate test (calkcheck round fifteen)"
+  },
+  {
+   "was": "most people claim without",
+   "now": "most claimants are represented",
+   "what": "OIC representation (calkcheck round fifteen)"
+  },
+  {
+   "was": "arguably within",
+   "now": "office being full does not qualify",
+   "what": "WFH relief full office (calkcheck round fifteen)"
+  },
+  {
+   "was": "over 50% of its floor",
+   "now": "no Building Regulations minimum room height",
+   "what": "loft headroom (calkcheck round fifteen)"
+  },
+  {
+   "was": "2,000 kcal deficit",
+   "now": "removed unsafe deficit example",
+   "what": "weight loss deficit (calkcheck round fifteen)"
+  },
+  {
+   "was": "910,000",
+   "now": "latest DWP take-up estimate",
+   "what": "pension credit unclaimed (calkcheck round fifteen)"
+  },
+  {
+   "was": "50-70% less",
+   "now": "Energy Saving Trust running-cost wording",
+   "what": "heat pump running cost (calkcheck round fifteen)"
+  },
+  {
+   "was": "Nausea affects about 60%",
+   "now": "product-specific nausea figures",
+   "what": "GLP-1 nausea (calkcheck round fifteen)"
+  },
+  {
+   "was": "per 22 litres",
+   "now": "stocking numbers removed",
+   "what": "pond stocking (calkcheck round fifteen)"
+  },
+  {
+   "was": "A at 90%",
+   "now": "boundaries set each series",
+   "what": "A-level grade boundaries (calkcheck round fifteen)"
+  },
+  {
+   "was": "roughly 60 pages",
+   "now": "claim form length",
+   "what": "pension credit form (calkcheck round fifteen)"
+  },
+  {
+   "was": "Purplebricks, Strike",
+   "now": "agent-specific fees",
+   "what": "online estate agent fees (calkcheck round fifteen)"
+  },
+  {
+   "was": "NHS app gives",
+   "now": "unconfirmed claim removed",
+   "what": "NHS app heart rate (calkcheck round fifteen)"
+  },
+  {
+   "was": "0.15% a year, capped",
+   "now": "monthly fee below the threshold",
+   "what": "Vanguard pension fee (calkcheck round fifteen)",
+   "ctx": "^(?!.*£4 a month)"
+  },
+  {
+   "was": "5m by 4m",
+   "now": "liner size from the widget",
+   "what": "pond liner (calkcheck round fifteen)"
   }
  ]
 }

@@ -9,11 +9,13 @@ const CATEGORIES: Record<'volume' | 'weight' | 'temperature', { name: string; un
     units: [
       { id: 'ml', name: 'Millilitres (ml)', factor: 1 },
       { id: 'l', name: 'Litres (L)', factor: 1000 },
-      { id: 'tsp', name: 'Teaspoons (tsp)', factor: 5 },
-      { id: 'tbsp', name: 'Tablespoons (tbsp)', factor: 15 },
-      { id: 'floz', name: 'Fluid Ounces (fl oz)', factor: 28.4131 },
-      { id: 'cup_uk', name: 'Cups (UK)', factor: 284.131 },
-      { id: 'cup_us', name: 'Cups (US)', factor: 236.588 },
+      { id: 'tsp', name: 'Teaspoons (tsp, 5 ml)', factor: 5 },
+      { id: 'tbsp', name: 'Tablespoons (tbsp, 15 ml)', factor: 15 },
+      { id: 'tbsp_us', name: 'Tablespoons (US, 14.79 ml)', factor: 14.7868 },
+      { id: 'floz', name: 'Fluid Ounces (UK fl oz)', factor: 28.4131 },
+      { id: 'floz_us', name: 'Fluid Ounces (US fl oz)', factor: 29.5735 },
+      { id: 'cup_uk', name: 'Cups (old UK, 284 ml)', factor: 284.131 },
+      { id: 'cup_us', name: 'Cups (US, 237 ml)', factor: 236.588 },
       { id: 'pint', name: 'Pints (UK)', factor: 568.261 },
       { id: 'gill', name: 'Gills', factor: 142.065 },
     ],
@@ -34,7 +36,7 @@ const CATEGORIES: Record<'volume' | 'weight' | 'temperature', { name: string; un
 }
 
 const GAS_MARKS = [
-  { gas: '1/4', c: 110, f: 225 }, { gas: '1/2', c: 130, f: 250 },
+  { gas: '1/4', c: 110, f: 225 }, { gas: '1/2', c: 120, f: 250 },
   { gas: '1', c: 140, f: 275 }, { gas: '2', c: 150, f: 300 },
   { gas: '3', c: 160, f: 325 }, { gas: '4', c: 180, f: 350 },
   { gas: '5', c: 190, f: 375 }, { gas: '6', c: 200, f: 400 },

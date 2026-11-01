@@ -24,11 +24,21 @@ function basePremium(age: number) {
   return BASE_PER_100K[BASE_PER_100K.length - 1][1]
 }
 
+// The published quotes are all for a 25-year term, so this adjustment for other terms is
+// our own assumption, not a quoted figure: 0.85 up to 15 years, rising to 1.0 at 20 years,
+// level to 25 years, then rising to 1.2 at 40 years.
+function termAdjustment(termYears: number) {
+  if (termYears <= 15) return 0.85
+  if (termYears < 20) return 0.85 + ((termYears - 15) / 5) * 0.15
+  if (termYears <= 25) return 1
+  return 1 + ((Math.min(termYears, 40) - 25) / 15) * 0.2
+}
+
 function calculate(coverAmount: number, age: number, termYears: number, isSmoker: boolean) {
   const base = basePremium(age)
   // Smokers paid 40-78% more on the same quotes (ages 25-50)
   const smokerFactor = isSmoker ? 1.6 : 1
-  const termFactor = termYears > 25 ? 1.2 : termYears > 15 ? 1.0 : 0.85
+  const termFactor = termAdjustment(termYears)
 
   const monthlyPremium = (coverAmount / 100_000) * base * smokerFactor * termFactor
   const annualPremium = monthlyPremium * 12
@@ -70,7 +80,7 @@ export default function CriticalIllnessCalculator() {
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
             <p>Critical illness cover pays a lump sum if diagnosed with a specified condition (cancer, heart attack, stroke etc.). Premiums increase significantly with age and for smokers. Compare quotes from multiple providers.</p>
-            <p className="mt-1">Estimates are based on published broker quotes for level cover (iam insured, September 2026). {a > 50 ? 'Rates above age 50 are extrapolated and ages over 55 use the age-55 rate, so treat this figure as rough.' : 'Your own quote depends on your health, occupation and the insurer.'}</p>
+            <p className="mt-1">Estimates are based on published broker quotes for 25-year level cover (iam insured, September 2026). {a > 50 ? 'Rates above age 50 are extrapolated and ages over 55 use the age-55 rate, so treat this figure as rough.' : a < MIN_AGE ? 'The youngest published quote is for age 25, so younger ages use that rate. Treat this figure as rough.' : 'Your own quote depends on your health, occupation and the insurer.'} The adjustment for terms other than 20 to 25 years (0.85 times up to 15 years, rising to 1.2 times at 40 years) is our own assumption, not a quoted figure.</p>
           </div>
         </div>
       )}

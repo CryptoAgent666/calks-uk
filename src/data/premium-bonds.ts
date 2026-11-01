@@ -4,28 +4,28 @@
  * PRIZE_RATE, ODDS, PRIZES and AS_OF here and nowhere else.
  */
 
-// Prize fund rate 4.35% and odds 21,000 to 1 from the September 2026 draw
-// (NS&I PR260818, 18 Aug 2026 — up from 3.80% / 22,000 in July 2026).
+// Prize fund rate 4.35% and odds 21,000 to 1 since the September 2026 draw
+// (NS&I PR260818, 18 Aug 2026 — up from 3.80% / 22,000 in July 2026), unchanged for October 2026.
 export const PRIZE_RATE = 0.0435
 export const ODDS = 21_000
 export const MIN_HOLDING = 25
 export const MAX_HOLDING = 50_000
-export const AS_OF = 'September 2026 draw'
+export const AS_OF = 'October 2026 draw'
 
-// Number of prizes of each value in the September 2026 draw
-// (nsandi.com, "How we share out Premium Bonds prizes").
+// Number of prizes of each value in the October 2026 draw, 6,546,849 prizes worth £498,378,775
+// (nsandi.com, "How we share out Premium Bonds prizes"; that page's November column is only an estimate).
 export const PRIZES = [
   { amount: 1_000_000, count: 2, label: '£1,000,000' },
-  { amount: 100_000, count: 95, label: '£100,000' },
-  { amount: 50_000, count: 192, label: '£50,000' },
-  { amount: 25_000, count: 381, label: '£25,000' },
-  { amount: 10_000, count: 954, label: '£10,000' },
-  { amount: 5_000, count: 1_909, label: '£5,000' },
-  { amount: 1_000, count: 19_882, label: '£1,000' },
-  { amount: 500, count: 59_646, label: '£500' },
-  { amount: 100, count: 2_365_010, label: '£100' },
-  { amount: 50, count: 2_365_010, label: '£50' },
-  { amount: 25, count: 1_716_787, label: '£25' },
+  { amount: 100_000, count: 96, label: '£100,000' },
+  { amount: 50_000, count: 191, label: '£50,000' },
+  { amount: 25_000, count: 382, label: '£25,000' },
+  { amount: 10_000, count: 957, label: '£10,000' },
+  { amount: 5_000, count: 1_914, label: '£5,000' },
+  { amount: 1_000, count: 19_934, label: '£1,000' },
+  { amount: 500, count: 59_802, label: '£500' },
+  { amount: 100, count: 2_371_145, label: '£100' },
+  { amount: 50, count: 2_371_145, label: '£50' },
+  { amount: 25, count: 1_721_281, label: '£25' },
 ]
 export const TOTAL_PRIZES = PRIZES.reduce((sum, p) => sum + p.count, 0)
 // Every eligible bond has a 1 in ODDS chance each month, so the number of

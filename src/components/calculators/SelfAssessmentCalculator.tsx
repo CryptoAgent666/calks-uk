@@ -6,11 +6,34 @@ const BASIC_LIMIT = 50_270
 const HIGHER_LIMIT = 125_140
 const PA_TAPER = 100_000
 
-// Class 2 NI was abolished from 6 April 2024. Self-employed people with profits
-// at or above the Small Profits Threshold (£7,105) automatically receive NI credit
-// without having to pay anything.
+// Scottish income tax 2026/27: band widths on TAXABLE income, so the total-income
+// thresholds move down when the Personal Allowance tapers. Same values as
+// ScottishIncomeTaxCalculator.tsx.
+const SCOTTISH_BANDS = [
+  { rate: 0.19, width: 3_967 },
+  { rate: 0.20, width: 12_989 },
+  { rate: 0.21, width: 14_136 },
+  { rate: 0.42, width: 31_338 },
+  { rate: 0.45, width: 62_710 },
+  { rate: 0.48, width: Infinity },
+]
 
-// Class 4 NI (2026/27 — main rate 6% from April 2024 onwards)
+function scottishIncomeTax(taxable: number) {
+  let remaining = taxable
+  let tax = 0
+  for (const band of SCOTTISH_BANDS) {
+    const inBand = Math.min(remaining, band.width)
+    tax += inBand * band.rate
+    remaining -= inBand
+  }
+  return tax
+}
+
+// Class 2 NI: since 6 April 2024 nothing is payable. Profits at or above the Small
+// Profits Threshold (£7,105) are treated as having paid it; below that it is
+// voluntary at £3.65 a week.
+
+// Class 4 NI (2026/27 — main rate 6% from April 2024 onwards, UK-wide)
 const CLASS4_LOWER = 12_570
 const CLASS4_UPPER = 50_270
 const CLASS4_MAIN_RATE = 0.06 // 6%
@@ -22,14 +45,15 @@ const CLASS4_ADDITIONAL_RATE = 0.02 // 2%
 // Class 4 NI), due 31 January and 31 July following the tax year.
 const POA_THRESHOLD = 1_000
 
-function calculate(profit: number) {
+function calculate(profit: number, scottish: boolean) {
   let pa = PA
   if (profit > PA_TAPER) pa = Math.max(0, PA - Math.floor((profit - PA_TAPER) / 2))
 
   // Income Tax
   let incomeTax = 0
   if (profit > pa) {
-    if (profit <= BASIC_LIMIT) incomeTax = (profit - pa) * 0.20
+    if (scottish) incomeTax = scottishIncomeTax(profit - pa)
+    else if (profit <= BASIC_LIMIT) incomeTax = (profit - pa) * 0.20
     else if (profit <= HIGHER_LIMIT) incomeTax = 37_700 * 0.20 + (profit - pa - 37_700) * 0.40
     else incomeTax = 37_700 * 0.20 + (HIGHER_LIMIT - 37_700) * 0.40 + (profit - HIGHER_LIMIT) * 0.45
   }
@@ -55,8 +79,9 @@ function calculate(profit: number) {
 
 export default function SelfAssessmentCalculator() {
   const [profit, setProfit] = useState('')
+  const [scotland, setScotland] = useState(false)
   const val = parseFloat(profit.replace(/,/g, '')) || 0
-  const result = useMemo(() => calculate(val), [val])
+  const result = useMemo(() => calculate(val, scotland), [val, scotland])
 
   return (
     <div className="space-y-6">
@@ -72,6 +97,8 @@ export default function SelfAssessmentCalculator() {
           ))}
         </div>
       </div>
+
+      <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={scotland} onChange={(e) => setScotland(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">I pay Scottish Income Tax (Class 4 NI is the same across the UK)</span></label>
 
       {val > 0 && (
         <div className="space-y-4 animate-fade-in-up">
@@ -111,6 +138,8 @@ export default function SelfAssessmentCalculator() {
           ) : (
             <p className="text-sm text-muted-foreground">No payments on account: they only apply once the Self Assessment bill is over £1,000. The whole {formatCurrency(result.totalTax)} is due by 31 January 2028.</p>
           )}
+
+          <p className="text-xs text-muted-foreground">This assumes your self-employed profit is your only income. A salary, pension, rent or dividends use up your Personal Allowance and tax bands first, so your real bill would be higher.</p>
         </div>
       )}
     </div>

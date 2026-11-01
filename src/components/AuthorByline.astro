@@ -26,6 +26,15 @@ const VERIFICATION_BY_SLUG: Record<string, string> = {
   'congestion-charge-calculator': 'Checked against Transport for London (TfL) 2026 charges',
   // the legal figures come from HSE and the 1969 Act; the premium rates are the site's own indicative assumptions
   'employers-liability-calculator': 'Checked against HSE guidance and the 1969 Act; premium rates are indicative',
+  // the prize rate, odds and limits are NS&I's own, and neither HMRC nor the FCA sets them
+  'premium-bonds-calculator': 'Checked against NS&I prize fund rate and prize tables, 2026',
+  // premiums are estimated from one broker's published quotes
+  'critical-illness-calculator': 'Premium estimates based on published broker quotes, 2026',
+  // health pages: the sources actually read for them, not a GOV.UK rate table
+  'weight-loss-calculator': 'Checked against NHS, NICE and MHRA guidance, 2026',
+  'heart-rate-zone-calculator': 'Checked against NHS and BHF guidance, 2026; zones are estimates',
+  // the RHS publishes no liner, pump or stocking rule to verify these figures against
+  'pond-volume-calculator': 'Methodology reviewed for 2026',
 }
 
 // Money/regulatory categories carry a dated verification badge; utility

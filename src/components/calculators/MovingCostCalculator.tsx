@@ -158,7 +158,7 @@ export default function MovingCostCalculator() {
               <tr className="font-semibold"><td className="py-2.5">Total</td><td className="text-right tabular-nums text-destructive pr-2">{formatCurrency(result.total)}</td></tr>
             </tbody>
           </table>
-          <p className="text-xs text-muted-foreground">Stamp Duty uses the England and Northern Ireland rates; Scotland (LBTT) and Wales (LTT) differ. The surcharges do not apply below £40,000. The Land Registry fee is the HM Land Registry portal fee for buying a whole registered title. Redirection is the Royal Mail price for one person from April 2026.</p>
+          <p className="text-xs text-muted-foreground">Stamp Duty uses the England and Northern Ireland rates; Scotland (LBTT) and Wales (LTT) differ. The surcharges do not apply below £40,000. The Land Registry fee is the HM Land Registry portal fee for buying a whole registered title. Redirection is the Royal Mail price for one person from April 2026.{selling && !ftb && ' Selling adds the agent\'s fee only: enter your sale-side solicitor and any EPC under Other costs.'}</p>
         </div>
       )}
     </div>

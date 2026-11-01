@@ -11,6 +11,12 @@ const GROSS_EQUIVALENT = {
   higher: (PRIZE_RATE * 100) / 0.60,
   additional: (PRIZE_RATE * 100) / 0.55,
 }
+// Savings income tax rises to 24%, 44% and 49% from 6 April 2027 (Budget 2026, OOTLAR 1.1)
+const GROSS_EQUIVALENT_2027 = {
+  basic: (PRIZE_RATE * 100) / 0.76,
+  higher: (PRIZE_RATE * 100) / 0.56,
+  additional: (PRIZE_RATE * 100) / 0.51,
+}
 
 function calculate(holding: number) {
   const o = premiumBondOdds(holding)
@@ -31,6 +37,7 @@ export default function PremiumBondsCalculator() {
 
   const h = parseFloat(holding.replace(/,/g,'')) || 0
   const clamped = Math.min(Math.max(h, 0), MAX_HOLDING)
+  const belowMin = clamped > 0 && clamped < MIN_HOLDING
   const result = useMemo(() => calculate(clamped), [clamped])
 
   return (
@@ -47,7 +54,11 @@ export default function PremiumBondsCalculator() {
         <p className="text-xs text-muted-foreground mt-1">Min £{MIN_HOLDING}, Max £{MAX_HOLDING.toLocaleString()}</p>
       </div>
 
-      {clamped > 0 && (
+      {belowMin && (
+        <p className="rounded-xl border border-border p-4 text-sm text-muted-foreground">The minimum Premium Bonds purchase is £{MIN_HOLDING}. Enter £{MIN_HOLDING} or more to see your odds.</p>
+      )}
+
+      {clamped >= MIN_HOLDING && (
         <div className="space-y-4 animate-fade-in-up">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Expected Annual Return</p><p className="text-xl font-bold text-primary">{formatCurrency(result.expectedAnnual)}</p></div>
@@ -64,6 +75,7 @@ export default function PremiumBondsCalculator() {
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
             <p>Prize fund rate: {(PRIZE_RATE * 100)}% (tax-free). Odds of winning per £1 bond per month: 1 in {ODDS.toLocaleString()}. The most common prizes are £50 and £100 (about {prizeShare(50).toFixed(0)}% of prizes each), then £25 (about {prizeShare(25).toFixed(0)}%).</p>
             <p className="mt-1">Prizes are tax-free and do not use your Personal Savings Allowance. If your savings interest already uses up that allowance, {(PRIZE_RATE * 100)}% tax-free matches {GROSS_EQUIVALENT.basic.toFixed(2)}% in a taxable account for a basic-rate taxpayer, {GROSS_EQUIVALENT.higher.toFixed(2)}% for a higher-rate taxpayer and {GROSS_EQUIVALENT.additional.toFixed(2)}% for an additional-rate taxpayer. Interest that still fits inside the allowance is tax-free anyway, so compare headline rates.</p>
+            <p className="mt-1">From 6 April 2027 savings income tax rises to 24%, 44% and 49%, so at the same prize fund rate those equivalents become {GROSS_EQUIVALENT_2027.basic.toFixed(2)}%, {GROSS_EQUIVALENT_2027.higher.toFixed(2)}% and {GROSS_EQUIVALENT_2027.additional.toFixed(2)}%.</p>
           </div>
         </div>
       )}

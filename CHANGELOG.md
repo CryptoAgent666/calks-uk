@@ -1,5 +1,18 @@
 # CHANGELOG — Calks.uk
 
+## 2026-11-01 (round 15) — Twenty more calculators checked by hand
+
+Fifteenth `/calkcheck` pass (report: `AUDIT-2026-11-01.md`): 110 defects on 20 pages, 22 HIGH, 14 calculators with wrong results.
+
+**Tax and business:** Scottish option on Self Assessment and side hustle; side hustle "You Keep" after expenses; R&D subsidy rule,
+notification ending 1 April 2027, ERIS cap excess; late payment reference dates; dividend taper. **Benefits and pensions:** Pension Credit
+two carers, couple age rule, Savings Credit, FYE 2025 take-up; pension sharing 0% and order percentage; Premium Bonds October allocation.
+**Legal and home:** whiplash tariff scope; full office excluded from WFH relief; loft planning rules and headroom; underfloor heating costs;
+heat pump claim. **Health and tools:** weight-loss BMI warning and GLP-1 answer; heart-rate safety wording; 15 ml tablespoon; standard
+deviation parsing; pond liner and stocking.
+
+Ledger now 1,743 entries; 17 new guards; `RATES_VERIFIED` 1 November 2026.
+
 ## 2026-10-31 (round 14) — Autumn Budget 2026 applied across the site
 
 Fourteenth `/calkcheck` pass (report: `AUDIT-2026-10-31.md`). The site predated the Budget of 28 October 2026: 75 pages and

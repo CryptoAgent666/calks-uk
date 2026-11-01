@@ -59,6 +59,19 @@ const SOURCE_BY_SLUG: Record<string, string> = {
   'congestion-charge-calculator': 'Transport for London (TfL)',
   // legal minimums from HSE and the 1969 Act; premium rates are the site's own indicative assumptions
   'employers-liability-calculator': "HSE guidance and the Employers' Liability (Compulsory Insurance) Act 1969, with indicative premium rates,",
+  // NS&I sets the prize rate, odds and limits; the tax comparison is GOV.UK's
+  'premium-bonds-calculator': 'NS&I and GOV.UK',
+  // premiums are estimated from one broker's published quotes
+  'critical-illness-calculator': 'published broker quotes (iam insured)',
+  'weight-loss-calculator': 'NHS, NICE and MHRA guidance',
+  'heart-rate-zone-calculator': 'NHS and BHF guidance',
+  // the RHS publishes no liner, pump or stocking rule behind these figures
+  'pond-volume-calculator': '',
+}
+
+// A health page that has nothing to do with diet should not send readers to a dietitian.
+const ADVICE_BY_SLUG: Record<string, string> = {
+  'heart-rate-zone-calculator': 'It is not medical advice: talk to your GP or specialist before acting on the numbers.',
 }
 
 const GRADE_SLUGS = new Set(['gcse-grade-calculator', 'a-level-grade-calculator', 'gpa-calculator', 'exam-score-calculator', 'weighted-grade-calculator', 'progress-8-calculator', 'ks2-sats-scaled-score-calculator', 'degree-classification-calculator'])
@@ -86,6 +99,7 @@ const period =
   !GRADE_SLUGS.has(slug) && (TAX_YEAR_CATEGORIES.has(category) || TAX_YEAR_SLUGS.has(slug)) ? 'the 2026/27 tax year' : '2026'
 const advice =
   (GRADE_SLUGS.has(slug) ? 'It is not an official result: check grade boundaries with your exam board or university.' : undefined) ??
+  ADVICE_BY_SLUG[slug] ??
   ADVICE_BY_CATEGORY[category] ??
   'It is not financial or tax advice: check anything you rely on against the official source or a qualified adviser.'
 ---

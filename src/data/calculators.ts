@@ -121,7 +121,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'self-assessment-tax-calculator',
     title: 'Self-Assessment Tax Calculator',
-    description: 'Calculate your Self Assessment tax bill for 2026/27. Income tax + Class 4 NI (6%/2%). Class 2 abolished. Payments on Account if bill exceeds £1,000.',
+    description: 'Calculate your Self Assessment tax bill for 2026/27. Income tax, with Scottish bands if they apply, + Class 4 NI (6%/2%). No compulsory Class 2. Payments on Account if bill exceeds £1,000.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['self assessment', 'self employed tax', 'tax return', 'freelancer tax'],
@@ -1718,7 +1718,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'sole-trader-vs-ltd-calculator', title: 'Sole Trader vs Limited Company Calculator', description: 'Compare take-home pay as a sole trader vs limited company director. See full tax breakdown for both.', category: 'business', icon: 'Briefcase', keywords: ['sole trader vs ltd', 'incorporate', 'limited company', 'self employed'], priority: 1 , metaTitle: 'Sole Trader vs Limited Company Calculator UK 2026/27' },
   // BENEFITS
   { slug: 'carer-allowance-calculator', title: "Carer's Allowance Calculator", description: "Check if you qualify for Carer's Allowance at £86.45 a week in 2026/27, with the 35-hour caring test and the £204 weekly net earnings limit.", category: 'benefits', icon: 'Shield', keywords: ['carer allowance', 'caring', 'disability benefit', 'carer'], priority: 2, metaTitle: "Carer's Allowance Calculator 2026/27" },
-  { slug: 'pension-credit-calculator', title: 'Pension Credit Calculator', description: 'Estimate Pension Credit Guarantee Credit entitlement based on income, pension and savings.', category: 'benefits', icon: 'Shield', keywords: ['pension credit', 'guarantee credit', 'retirement benefit', 'over 66'], priority: 2, metaTitle: 'Pension Credit Calculator UK 2026/27 — £238.00 Top-up' },
+  { slug: 'pension-credit-calculator', title: 'Pension Credit Calculator', description: 'Estimate Pension Credit, both Guarantee Credit and Savings Credit, based on income, pension and savings.', category: 'benefits', icon: 'Shield', keywords: ['pension credit', 'guarantee credit', 'retirement benefit', 'over 66'], priority: 2, metaTitle: 'Pension Credit Calculator UK 2026/27 — £238.00 Top-up' },
   { slug: 'housing-benefit-calculator', title: 'Housing Benefit Calculator', description: 'Estimate weekly Housing Benefit from your rent, local LHA rate and income, with the 65% taper and 2026/27 allowances for working-age and pension-age claimants.', category: 'benefits', icon: 'Shield', keywords: ['housing benefit', 'LHA', 'rent help', 'housing element'], priority: 2, metaTitle: 'Housing Benefit Calculator UK 2026 — LHA Rates' },
   // BUSINESS
   { slug: 'vat-threshold-calculator', title: 'VAT Threshold Monitor', description: 'Track your rolling 12-month turnover against the £90,000 VAT registration threshold. See headroom remaining.', category: 'business', icon: 'Briefcase', keywords: ['VAT threshold', 'VAT registration', '£90000', 'turnover monitor'], priority: 2 , metaTitle: 'VAT Threshold Calculator UK (£90,000)' },

@@ -39,7 +39,8 @@ export default function PensionConsolidationCalculator() {
 
   const nf = parseFloat(newFee) || 0
   const y = parseInt(years) || 20
-  const g = parseFloat(growth) || 5
+  const parsedGrowth = parseFloat(growth)
+  const g = Number.isNaN(parsedGrowth) ? 5 : parsedGrowth // 0% is a valid assumption, only a blank box falls back
 
   const addPot = () => setPots([...pots, { value: 0, fee: 1.0, exit: 0 }])
   const removePot = (i: number) => setPots(pots.filter((_, idx) => idx !== i))

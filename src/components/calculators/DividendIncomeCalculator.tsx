@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { formatCurrency, ukDividendTax } from '@/utils'
+import { formatCurrency, ukDividendTax, ukIncomeTax, ukPersonalAllowance } from '@/utils'
 
 function calculate(investmentAmount: number, dividendYield: number, growthRate: number, years: number, reinvest: boolean, otherIncome = 0) {
   let balance = investmentAmount
@@ -24,8 +24,11 @@ function calculate(investmentAmount: number, dividendYield: number, growthRate: 
   // (England, Wales and NI bands; Scotland uses the same UK dividend rates).
   const dividendTax = ukDividendTax(annualDividend, otherIncome)
   const effectiveRate = annualDividend > 0 ? (dividendTax / annualDividend) * 100 : 0
+  // Dividends count towards the £100,000 Personal Allowance taper, so they can also raise
+  // the income tax on the other income (England, Wales and NI rates here).
+  const taperTax = ukIncomeTax(otherIncome, ukPersonalAllowance(otherIncome + annualDividend)) - ukIncomeTax(otherIncome, ukPersonalAllowance(otherIncome))
 
-  return { balance, totalDividends, annualDividend, monthlyDividend, dividendTax, effectiveRate, schedule: schedule.filter((_, i) => (i + 1) % 5 === 0 || i === 0 || i === years - 1) }
+  return { balance, totalDividends, annualDividend, monthlyDividend, dividendTax, effectiveRate, taperTax, schedule: schedule.filter((_, i) => (i + 1) % 5 === 0 || i === 0 || i === years - 1) }
 }
 
 export default function DividendIncomeCalculator() {
@@ -60,7 +63,7 @@ export default function DividendIncomeCalculator() {
             <div className="rounded-2xl bg-primary/10 p-5 text-center"><p className="text-sm text-muted-foreground">Annual Dividend Income</p><p className="text-2xl font-bold text-primary mt-1">{formatCurrency(result.annualDividend)}</p><p className="text-xs text-muted-foreground">{formatCurrency(result.monthlyDividend)}/month</p></div>
             <div className="rounded-2xl bg-green-100 dark:bg-green-950 p-5 text-center"><p className="text-sm text-muted-foreground">Portfolio in {y} Years</p><p className="text-2xl font-bold text-green-700 dark:text-green-400 mt-1">{formatCurrency(result.balance)}</p><p className="text-xs text-muted-foreground">Total dividends: {formatCurrency(result.totalDividends)}</p></div>
           </div>
-          <div className="rounded-xl bg-muted/50 p-3 text-center text-sm">Estimated dividend tax on year-one dividends outside an ISA, with {formatCurrency(o)} of other income: {formatCurrency(result.dividendTax)}/year ({result.effectiveRate.toFixed(2)}% of the dividends) &middot; First £500 at 0%, then 10.75% / 35.75% / 39.35% by band (2026/27)</div>
+          <div className="rounded-xl bg-muted/50 p-3 text-center text-sm">Estimated dividend tax on year-one dividends outside an ISA, with {formatCurrency(o)} of other income: {formatCurrency(result.dividendTax)}/year ({result.effectiveRate.toFixed(2)}% of the dividends) &middot; First £500 at 0%, then 10.75% / 35.75% / 39.35% by band (2026/27){result.taperTax > 0 && <> &middot; The dividends also reduce your Personal Allowance, adding {formatCurrency(result.taperTax)} of income tax on your other income at England, Wales and NI rates, so {formatCurrency(result.dividendTax + result.taperTax)} extra tax in all</>}</div>
 
           {result.schedule.length > 0 && (
             <table className="w-full text-sm">
@@ -70,6 +73,7 @@ export default function DividendIncomeCalculator() {
               ))}</tbody>
             </table>
           )}
+          <p className="text-xs text-muted-foreground">The projection uses dividends before tax, which fits an ISA or pension. Outside a wrapper any tax due has to be paid from somewhere, so a reinvested portfolio would grow more slowly than shown.</p>
         </div>
       )}
     </div>

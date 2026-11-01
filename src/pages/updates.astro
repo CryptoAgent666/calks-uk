@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-10-31'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-11-01'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -25,6 +25,33 @@ const schemas = [
 
     <div class="space-y-8">
       <!-- October 2026 — round 13 audit: farm wages and livestock units, pension vs ISA, health guidance, GCSE and A-level figures, student budgets -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            November 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Twenty more calculators checked by hand</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Tax.</strong> <a href="/calculator/self-assessment-tax-calculator/" class="text-primary hover:underline">Self Assessment</a> and <a href="/calculator/side-hustle-tax-calculator/" class="text-primary hover:underline">side hustle</a> now have a Scottish option, and side hustle "You Keep" subtracts your expenses. <a href="/calculator/rd-tax-credit-calculator/" class="text-primary hover:underline">R&amp;D relief</a> no longer takes grants off your costs, and <a href="/calculator/late-payment-interest-calculator/" class="text-primary hover:underline">late payment interest</a> uses the base rate on the correct reference date.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Compensation and benefits.</strong> The <a href="/calculator/personal-injury-calculator/" class="text-primary hover:underline">personal injury</a> whiplash tariff now covers soft-tissue back and shoulder injuries, and only people in a motor vehicle other than a motorcycle. <a href="/calculator/pension-credit-calculator/" class="text-primary hover:underline">Pension Credit</a> adds Savings Credit, both partners as carers and the couple age rule.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Home.</strong> <a href="/calculator/loft-conversion-calculator/" class="text-primary hover:underline">Loft conversion</a> planning advice follows the permitted development rules, and <a href="/calculator/underfloor-heating-calculator/" class="text-primary hover:underline">underfloor heating</a> now shows electric systems costing more to run than gas radiators.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Health and cooking.</strong> <a href="/calculator/weight-loss-calculator/" class="text-primary hover:underline">Weight loss</a> warns when a target is underweight for your height and its medicines answer follows NHS and NICE guidance. <a href="/calculator/heart-rate-zone-calculator/" class="text-primary hover:underline">Heart rate zones</a> adds heart condition and beta blocker cautions. <a href="/calculator/cooking-converter/" class="text-primary hover:underline">Cooking</a> corrects the UK tablespoon to 15 ml.</span>
+          </li>
+        </ul>
+      </article>
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
         <div class="mb-2">

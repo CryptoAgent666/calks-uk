@@ -16217,7 +16217,8 @@
         "src/components/calculators/SmartMeterCalculator.tsx",
         "src/components/calculators/SolarPanelCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/UnderfloorHeatingCalculator.tsx"
       ],
       "source_url": "https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap-unit-rates-and-standing-charges",
       "status": "current",
@@ -16279,7 +16280,8 @@
         "src/components/calculators/GasCostCalculator.tsx",
         "src/components/calculators/HeatPumpCalculator.tsx",
         "src/data/calculator-content.ts",
-        "src/data/faqs.ts"
+        "src/data/faqs.ts",
+        "src/components/calculators/UnderfloorHeatingCalculator.tsx"
       ],
       "source_url": "https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap-unit-rates-and-standing-charges",
       "status": "current",
@@ -33589,9 +33591,9 @@
         "src/data/faqs.ts"
       ],
       "source_url": "https://www.nsandi.com/products/premium-bonds",
-      "status": "current",
+      "status": "superseded",
       "change_frequency": "",
-      "note": "Sept 2026 draw: 6,529,868 prizes; 2,365,010 each of £50 and £100, 1,716,787 of £25; fund £497,086,175 at 4.35%, odds 21,000 to 1.",
+      "note": "Sept 2026 draw: 6,529,868 prizes; 2,365,010 each of £50 and £100, 1,716,787 of £25; fund £497,086,175 at 4.35%, odds 21,000 to 1. Superseded by premium_bonds_prize_allocation_oct_2026 on 2026-11-01.",
       "official_value": "£50 and £100 most common",
       "verified_date": "2026-09-28",
       "verify_method": "calkcheck-2026-09-28-r7",
@@ -37717,14 +37719,293 @@
       "verify_method": "Budget 2026 primary documents, calkcheck 2026-10-31",
       "confidence": "high",
       "changes_next_fy": ""
+    },
+    {
+      "key": "pension_credit_unclaimed_families_fye2025",
+      "value": "900000",
+      "unit": "families",
+      "law": "DWP income-related benefits take-up, FYE 2025",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/statistics/income-related-benefits-estimates-of-take-up-financial-year-ending-2025/income-related-benefits-estimates-of-take-up-financial-year-ending-2025",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Up to 900,000 entitled pensioner families did not claim; take-up 62%.",
+      "official_value": "900000",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r15",
+      "confidence": "high",
+      "changes_next_fy": "Next DWP take-up estimate, around October 2027."
+    },
+    {
+      "key": "pension_credit_unclaimed_average_fye2025",
+      "value": "2500",
+      "unit": "GBP/year",
+      "law": "DWP income-related benefits take-up, FYE 2025",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/statistics/income-related-benefits-estimates-of-take-up-financial-year-ending-2025/income-related-benefits-estimates-of-take-up-financial-year-ending-2025",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Around £2,500 a year per family not claiming (was £2,600 in FYE 2024).",
+      "official_value": "2500",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r15",
+      "confidence": "high",
+      "changes_next_fy": "Next DWP take-up estimate, around October 2027."
+    },
+    {
+      "key": "late_payment_reference_rates",
+      "value": "3.75 (31 Dec 2025, 30 Jun 2026); 4.25 (30 Jun 2025); 4.75 (31 Dec 2024); 5.25 (30 Jun 2024)",
+      "unit": "percent",
+      "law": "Late Payment of Commercial Debts (Rate of Interest) (No. 3) Order 2002 art.4",
+      "theme": "business",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LatePenaltyCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2002/1675/made",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Rate = base rate on the 30 June or 31 December before interest starts, plus 8%. It is fixed for that debt.",
+      "official_value": "3.75 (31 Dec 2025, 30 Jun 2026); 4.25 (30 Jun 2025); 4.75 (31 Dec 2024); 5.25 (30 Jun 2024)",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r15",
+      "confidence": "high",
+      "changes_next_fy": "After 31 Dec 2026 add a REFERENCE_PERIODS row with that day's Bank Rate; next MPC decision 5 Nov 2026."
+    },
+    {
+      "key": "rd_claim_notification_removed_from",
+      "value": "2027-04-01",
+      "unit": "date",
+      "law": "Budget 2026 OOTLAR 1.47; HMRC claim notification guidance",
+      "theme": "business",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/RDTaxCreditCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/tell-hmrc-that-youre-planning-to-claim-research-and-development-rd-tax-relief",
+      "status": "current",
+      "change_frequency": "",
+      "note": "No claim notification form for claims made on or after 1 April 2027.",
+      "official_value": "2027-04-01",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r15",
+      "confidence": "high",
+      "changes_next_fy": "Remove the mandatory-notification text for later claims from April 2027."
+    },
+    {
+      "key": "rd_subsidised_costs_restriction",
+      "value": "none under merged scheme or ERIS",
+      "unit": "rule",
+      "law": "HMRC R&D costs guidance",
+      "theme": "business",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/check-what-research-and-development-rd-costs-you-can-claim",
+      "status": "current",
+      "change_frequency": "",
+      "note": "\"There is no restriction on claiming for subsidised costs under the merged scheme or enhanced R&D intensive support.\"",
+      "official_value": "none under merged scheme or ERIS",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r15",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "mtd_late_payment_penalty_2027_28",
+      "value": "4",
+      "unit": "percent",
+      "law": "HMRC MTD for Income Tax penalties",
+      "theme": "tax",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/penalties-for-making-tax-digital-for-income-tax",
+      "status": "current",
+      "change_frequency": "",
+      "note": "3% in 2026/27, 4% for 2027/28.",
+      "official_value": "4",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r15",
+      "confidence": "high",
+      "changes_next_fy": "Applies from 2027/28."
+    },
+    {
+      "key": "premium_bonds_prize_allocation_oct_2026",
+      "value": "498378775",
+      "unit": "GBP",
+      "law": "NS&I monthly prize allocation, October 2026",
+      "theme": "investment",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/data/premium-bonds.ts",
+        "src/components/calculators/PremiumBondsCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.nsandi.com/get-to-know-us/monthly-prize-allocation",
+      "status": "current",
+      "change_frequency": "",
+      "note": "6,546,849 prizes; rate 4.35%, odds 21,000 to 1.",
+      "official_value": "498378775",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r15",
+      "confidence": "high",
+      "changes_next_fy": "Dated table; refresh when the rate or odds change."
+    },
+    {
+      "key": "oic_represented_share_q3_2026",
+      "value": "87",
+      "unit": "percent",
+      "law": "Official Injury Claim data, July to September 2026",
+      "theme": "legal",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.officialinjuryclaim.org.uk/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "87.0% of claims represented, 13.0% unrepresented.",
+      "official_value": "87",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r15",
+      "confidence": "high",
+      "changes_next_fy": "Quarterly data; indicative."
+    },
+    {
+      "key": "whiplash_tariff_scope",
+      "value": "soft-tissue neck, back or shoulder; users of a motor vehicle other than a motorcycle; England and Wales",
+      "unit": "rule",
+      "law": "Civil Liability Act 2018 s.1",
+      "theme": "legal",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/PersonalInjuryCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ukpga/2018/29/section/1",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Cyclists, motorcyclists and pedestrians stay on the Judicial College Guidelines.",
+      "official_value": "soft-tissue neck, back or shoulder; users of a motor vehicle other than a motorcycle; England and Wales",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r15",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "home_purchase_average_days",
+      "value": "120",
+      "unit": "days",
+      "law": "MHCLG home buying and selling reform consultation",
+      "theme": "mortgage",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/consultations/home-buying-and-selling-reform",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Average transaction 120 days, about 17 weeks.",
+      "official_value": "120",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r15",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "loft_conversion_cost_ranges_checkatrade",
+      "value": "Velux £22.5k-£30k; dormer £40k-£60k; hip-to-gable £50k-£70k; mansard £50k-£80k; 30 m² loft",
+      "unit": "GBP",
+      "law": "Checkatrade price guide",
+      "theme": "building",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/LoftConversionCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.checkatrade.com/blog/cost-guides/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Market guide, indicative; dated in the code.",
+      "official_value": "Velux £22.5k-£30k; dormer £40k-£60k; hip-to-gable £50k-£70k; mansard £50k-£80k; 30 m² loft",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r15",
+      "confidence": "high",
+      "changes_next_fy": "Refresh with each annual review."
+    },
+    {
+      "key": "underfloor_heating_install_rates_checkatrade",
+      "value": "electric £60-£85 renovation, £50-£75 new build; wet £95-£110 renovation, £85-£100 new build, per m²",
+      "unit": "GBP",
+      "law": "Checkatrade price guide",
+      "theme": "energy",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/UnderfloorHeatingCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.checkatrade.com/blog/cost-guides/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Market guide, indicative; dated in the code.",
+      "official_value": "electric £60-£85 renovation, £50-£75 new build; wet £95-£110 renovation, £85-£100 new build, per m²",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r15",
+      "confidence": "high",
+      "changes_next_fy": "Refresh with each annual review."
     }
   ],
   "status_summary": {
-    "current": 1658,
+    "current": 1669,
     "retired": 24,
     "historical": 24,
     "superseded_by_component": 4,
-    "superseded": 13,
+    "superseded": 14,
     "uncertain": 8
   },
   "theme_counts": {
