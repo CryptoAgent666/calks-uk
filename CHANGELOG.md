@@ -13,6 +13,18 @@ deviation parsing; pond liner and stocking.
 
 Ledger now 1,743 entries; 17 new guards; `RATES_VERIFIED` 1 November 2026.
 
+## 2026-11-01 — Budget 2026 rates applied by date on two calculators
+
+**Business mileage log:** trips split by tax year (6 April), 10,000-mile threshold per tax year; 45p/25p before 6 April 2026,
+55p/25p for 2026/27, 55p/35p from 6 April 2027. Trips with no date stay out of the claim, with a message.
+
+**Capital allowances:** purchase date and accounting year end inputs. Main rate FYA by date (none before 1 January 2026, 40%,
+then 50% on or after 1 January 2027). Main pool WDA by the date each period begins (18%, 14%, then 12% from 1 April 2027 for
+CT and 6 April 2027 for IT). A period straddling April 2026 uses the Finance Act 2026 s.28 hybrid. A period straddling April
+2027 shows the range 12% to 14%, because the HMRC measure of 29 October 2026 gives no formula: replace it when Finance Bill
+2026-27 does. Zero-emission cars bought after the FYA end date go to the main pool. Also fixes the method label printing
+"14.000000000000002%". The AIA calculator's pool text now gives the 12% date.
+
 ## 2026-10-31 (round 14) — Autumn Budget 2026 applied across the site
 
 Fourteenth `/calkcheck` pass (report: `AUDIT-2026-10-31.md`). The site predated the Budget of 28 October 2026: 75 pages and

@@ -4494,6 +4494,16 @@
    "was": "5m by 4m",
    "now": "liner size from the widget",
    "what": "pond liner (calkcheck round fifteen)"
+  },
+  {
+   "was": "table keeps 14%",
+   "now": "purchase date and year end",
+   "what": "capital_allowances_wda_main_pool (tool applies rates by date, 1 Nov 2026)"
+  },
+  {
+   "was": "25p thereafter (35p from 6 April 2027)",
+   "now": "rates by trip date",
+   "what": "mileage_allowance_car_over_10000 (log applies rates by tax year, 1 Nov 2026)"
   }
  ]
 }
