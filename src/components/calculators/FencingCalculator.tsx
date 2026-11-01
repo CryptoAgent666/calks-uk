@@ -1,9 +1,10 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-function calculate(totalLength: number, panelWidth: number, pricePanel: number, pricePost: number) {
-  const pw = panelWidth / 1000 // mm to m
-  const panels = Math.ceil(totalLength / pw)
+function calculate(totalLength: number, panelWidth: number, postWidth: number, pricePanel: number, pricePost: number) {
+  // A straight run starts and ends with a post, so n panels take n x panel + (n + 1) x post
+  const runMm = Math.round(totalLength * 1000)
+  const panels = Math.max(1, Math.ceil((runMm - postWidth) / (panelWidth + postWidth)))
   const posts = panels + 1
   const costPanels = panels * pricePanel
   const costPosts = posts * pricePost
@@ -15,19 +16,23 @@ function calculate(totalLength: number, panelWidth: number, pricePanel: number, 
 export default function FencingCalculator() {
   const [length, setLength] = useState('15')
   const [panelW, setPanelW] = useState('1830')
-  const [priceP, setPriceP] = useState('30')
-  const [pricePost, setPricePost] = useState('12')
+  const [postW, setPostW] = useState('100')
+  // Checkatrade average prices, February 2025
+  const [priceP, setPriceP] = useState('45')
+  const [pricePost, setPricePost] = useState('25.5')
 
   const l = parseFloat(length) || 0
-  const result = useMemo(() => calculate(l, parseFloat(panelW)||1830, parseFloat(priceP)||0, parseFloat(pricePost)||0), [l, panelW, priceP, pricePost])
+  const postWidth = parseFloat(postW) // 0 is allowed; only a blank box falls back to 100 mm
+  const result = useMemo(() => calculate(l, parseFloat(panelW)||1830, Number.isNaN(postWidth) ? 100 : postWidth, parseFloat(priceP)||0, parseFloat(pricePost)||0), [l, panelW, postWidth, priceP, pricePost])
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
         <div><label className="block text-sm font-medium mb-2">Total Length (m)</label><input type="number" min="0" step="0.1" value={length} onChange={(e) => setLength(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Total Length (m)" /></div>
         <div><label className="block text-sm font-medium mb-2">Panel Width (mm)</label><input type="number" min="500" max="3000" value={panelW} onChange={(e) => setPanelW(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Panel Width (mm)" /></div>
-        <div><label className="block text-sm font-medium mb-2">Price/Panel (£)</label><input type="number" min="0" value={priceP} onChange={(e) => setPriceP(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Price/Panel (£)" /></div>
-        <div><label className="block text-sm font-medium mb-2">Price/Post (£)</label><input type="number" min="0" value={pricePost} onChange={(e) => setPricePost(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Price/Post (£)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Post Width (mm)</label><input type="number" min="0" max="300" value={postW} onChange={(e) => setPostW(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Post Width (mm)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Price/Panel (£)</label><input type="number" min="0" step="0.01" value={priceP} onChange={(e) => setPriceP(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Price/Panel (£)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Price/Post (£)</label><input type="number" min="0" step="0.01" value={pricePost} onChange={(e) => setPricePost(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Price/Post (£)" /></div>
       </div>
 
       {l > 0 && (
@@ -41,6 +46,7 @@ export default function FencingCalculator() {
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
             <p>Panels: {result.panels} x {formatCurrency(parseFloat(priceP)||0)} = {formatCurrency(result.costPanels)}</p>
             <p>Posts: {result.posts} x {formatCurrency(parseFloat(pricePost)||0)} = {formatCurrency(result.costPosts)}</p>
+            <p className="text-xs mt-2">For a straight run with no gates. Material cost covers panels and posts only: postcrete, gravel boards and post caps are extra.</p>
           </div>
         </div>
       )}

@@ -11,6 +11,7 @@ const { lastUpdated = 'April 2026', category, slug = '' } = Astro.props
 // Grade and exam tools sit in the education category but have no student-finance
 // figures behind them, so they get their own line and no dated rates badge.
 const VERIFICATION_BY_SLUG: Record<string, string> = {
+  'plaster-calculator': 'Checked against British Gypsum data and Checkatrade prices, 2026',
   'gcse-grade-calculator': 'Checked against Ofqual 9 to 1 grading, 2026',
   'a-level-grade-calculator': 'Checked against Ofqual and UCAS 2026 guidance',
   'gpa-calculator': 'Checked against the Higher Education Academy GPA scale and Office for Students data; classification is indicative',
@@ -42,6 +43,9 @@ const VERIFICATION_BY_SLUG: Record<string, string> = {
   // cost guides and manufacturer data, not building regulations, sit behind most of these figures
   'radiator-btu-calculator': 'Correction factors from published radiator data, 2026; sizing is a rule of thumb',
   'kitchen-cost-calculator': "Prices from Checkatrade's March 2026 guide; electrical rules from Approved Document P",
+  'bathroom-cost-calculator': "Prices from Checkatrade's March 2026 guide; electrical rules from GOV.UK building regulations guidance",
+  'fencing-calculator': "Planning rules from the Planning Portal; prices from Checkatrade's February 2025 guide",
+  'decking-calculator': 'Planning rules from the Planning Portal; prices and screw counts are estimates',
   'concrete-calculator': 'Depths checked against Approved Document A; prices from Checkatrade, August 2026',
   // scheme and tax rules, not lender or FCA figures
   'first-homes-scheme-calculator': 'Checked against GOV.UK First Homes guidance and planning practice guidance, 2026',

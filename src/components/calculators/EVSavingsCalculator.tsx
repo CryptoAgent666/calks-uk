@@ -35,7 +35,7 @@ export default function EVSavingsCalculator() {
   const [publicElec, setPublicElec] = useState('70')
   const [homePct, setHomePct] = useState('80')
 
-  const result = useMemo(() => calculate(parseFloat(miles)||0, parseFloat(mpg)||40, parseFloat(petrolP)||175, parseFloat(evEff)||3.5, parseFloat(homeElec)||26.32, parseFloat(publicElec)||70, parseFloat(homePct)||80), [miles, mpg, petrolP, evEff, homeElec, publicElec, homePct])
+  const result = useMemo(() => calculate(parseFloat(miles)||0, parseFloat(mpg)||40, parseFloat(petrolP)||175, parseFloat(evEff)||3.5, parseFloat(homeElec)||26.32, parseFloat(publicElec)||70, Number.isNaN(parseFloat(homePct)) ? 80 : parseFloat(homePct)), [miles, mpg, petrolP, evEff, homeElec, publicElec, homePct])
 
   return (
     <div className="space-y-6">

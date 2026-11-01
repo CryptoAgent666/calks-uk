@@ -15,13 +15,14 @@ const WOMEN_SIZES = [
   { uk: 22, eu: 50, us: 18, bust: '118', waist: '100', hip: '124' },
 ]
 
+// ASOS own-brand men's guide: tops and swimwear ranges, smart jacket sizes. Each upper limit belongs to the next size up.
 const MEN_SIZES = [
-  { uk: 'XS', eu: 44, us: 34, chest: '86-91', waist: '71-76' },
-  { uk: 'S', eu: 46, us: 36, chest: '91-96', waist: '76-81' },
-  { uk: 'M', eu: 48, us: 38, chest: '96-101', waist: '81-86' },
-  { uk: 'L', eu: 50, us: 40, chest: '101-106', waist: '86-91' },
-  { uk: 'XL', eu: 52, us: 42, chest: '106-111', waist: '91-96' },
-  { uk: 'XXL', eu: 54, us: 44, chest: '111-116', waist: '96-101' },
+  { uk: 'XS', eu: 46, us: 36, chest: '86 to under 91', waist: '71 to under 76' },
+  { uk: 'S', eu: 48, us: 38, chest: '91 to under 96', waist: '76 to under 81' },
+  { uk: 'M', eu: 50, us: 40, chest: '96 to under 101', waist: '81 to under 86' },
+  { uk: 'L', eu: 52, us: 42, chest: '101 to under 106', waist: '86 to under 91' },
+  { uk: 'XL', eu: 54, us: 44, chest: '106 to under 111', waist: '91 to under 96' },
+  { uk: 'XXL', eu: 56, us: 46, chest: '111 to 116', waist: '96 to 101' },
 ]
 
 export default function ClothingSizeConverter() {
@@ -44,7 +45,7 @@ export default function ClothingSizeConverter() {
           </table>
         ) : (
           <table className="w-full text-sm">
-            <thead><tr className="border-b border-border"><th className="py-2 text-left font-medium text-muted-foreground">UK</th><th className="py-2 text-center font-medium text-muted-foreground">EU</th><th className="py-2 text-center font-medium text-muted-foreground">US</th><th className="py-2 text-center font-medium text-muted-foreground">Chest (cm)</th><th className="py-2 text-center font-medium text-muted-foreground">Waist (cm)</th></tr></thead>
+            <thead><tr className="border-b border-border"><th className="py-2 text-left font-medium text-muted-foreground">Size</th><th className="py-2 text-center font-medium text-muted-foreground">EU jacket</th><th className="py-2 text-center font-medium text-muted-foreground">UK/US jacket</th><th className="py-2 text-center font-medium text-muted-foreground">Chest (cm)</th><th className="py-2 text-center font-medium text-muted-foreground">Waist (cm)</th></tr></thead>
             <tbody>{MEN_SIZES.map(s => (
               <tr key={s.uk} className="border-b border-border/50 hover:bg-accent/50"><td className="py-2.5 font-bold">{s.uk}</td><td className="py-2.5 text-center">{s.eu}</td><td className="py-2.5 text-center">{s.us}</td><td className="py-2.5 text-center text-muted-foreground">{s.chest}</td><td className="py-2.5 text-center text-muted-foreground">{s.waist}</td></tr>
             ))}</tbody>
@@ -53,6 +54,7 @@ export default function ClothingSizeConverter() {
       </div>
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
         <p>Sizes are approximate and vary between brands. Always check the retailer's specific size guide. Measurements in centimetres.</p>
+        <p className="mt-2">{gender === 'women' ? "Compare with ASOS own-brand: its UK 12 is 94/73/98.5 cm against 92/74/98 here, its UK 22 is 122/104/129.5 cm against 118/100/124, and it lists a UK 4 as a US 1." : 'Men\'s sizes follow the ASOS own-brand guide. Other brands can differ.'}</p>
       </div>
     </div>
   )

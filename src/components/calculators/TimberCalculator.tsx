@@ -1,13 +1,16 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
+const CUBIC_METRES_PER_BOARD_FOOT = 0.0283168 / 12 // one twelfth of a cubic foot
+
 function calculate(lengthM: number, widthMm: number, heightMm: number, quantity: number, pricePerM: number) {
   const volumePerPiece = (lengthM * (widthMm / 1000) * (heightMm / 1000))
   const totalVolume = volumePerPiece * quantity
   const totalLength = lengthM * quantity
   const totalCost = totalLength * pricePerM
+  const boardFeet = totalVolume / CUBIC_METRES_PER_BOARD_FOOT
 
-  return { volumePerPiece, totalVolume, totalLength, totalCost }
+  return { volumePerPiece, totalVolume, totalLength, totalCost, boardFeet }
 }
 
 export default function TimberCalculator() {
@@ -36,10 +39,11 @@ export default function TimberCalculator() {
       <div className="flex flex-wrap gap-2">{[{l:'25x50mm',w:50,h:25},{l:'47x100mm',w:100,h:47},{l:'47x150mm',w:150,h:47},{l:'100x100mm',w:100,h:100}].map(s => <button key={s.l} onClick={() => {setWidth(s.w.toString());setHeight(s.h.toString())}} className="px-3 py-1.5 rounded-lg bg-muted text-sm font-medium hover:bg-accent">{s.l}</button>)}</div>
 
       {q > 0 && l > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 animate-fade-in-up">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 animate-fade-in-up">
           <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Total Length</p><p className="text-xl font-bold text-primary">{result.totalLength.toFixed(1)}m</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Total Volume</p><p className="text-lg font-bold">{result.totalVolume.toFixed(3)} m³</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Per Piece</p><p className="text-lg font-bold">{result.volumePerPiece.toFixed(4)} m³</p></div>
+          <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Board Feet</p><p className="text-lg font-bold">{result.boardFeet.toFixed(1)}</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Est. Cost</p><p className="text-lg font-bold">{formatCurrency(result.totalCost)}</p></div>
         </div>
       )}

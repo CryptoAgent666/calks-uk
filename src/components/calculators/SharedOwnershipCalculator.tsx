@@ -32,7 +32,7 @@ export default function SharedOwnershipCalculator() {
   const p = parseFloat(price.replace(/,/g,'')) || 0
   const s = parseFloat(share) || 0
   const d = parseFloat(deposit.replace(/,/g,'')) || 0
-  const result = useMemo(() => calculate(p, s, d, parseFloat(rate)||0, parseInt(term)||25, parseFloat(rent)||2.75), [p, s, d, rate, term, rent])
+  const result = useMemo(() => calculate(p, s, d, parseFloat(rate)||0, parseInt(term)||25, Number.isNaN(parseFloat(rent)) ? 2.75 : parseFloat(rent)), [p, s, d, rate, term, rent])
 
   return (
     <div className="space-y-6">

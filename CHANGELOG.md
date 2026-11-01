@@ -1,5 +1,16 @@
 # CHANGELOG — Calks.uk
 
+## 2026-11-01 (round 17) — Twenty more pages: building, business rates and tools
+
+Seventeenth `/calkcheck` pass (report: `AUDIT-2026-11-01-c.md`): 148 defects on 20 pages, 18 HIGH, 18 calculators with wrong results.
+
+**Money:** Scottish option on sole trader; client entertaining rule; business rates SSB with a £0 bill, order with pub relief, Scottish island relief. **Building:** roof area no
+longer doubled, plain tiles; party wall notice periods; Bond-it on painted surfaces; paving Class F; decking and fencing sums, £7 title fee. **Garden and tools:** greenhouse planning limits,
+creosote warning, RHS mix; time zones follow daylight saving by date; split bill whole pence, tip input, service charge rules; step figures. **Maths:** exact trig values and domain errors, formatter
+fix on trig, logs, square roots and fractions, parser warnings on mean, median and mode. **Elsewhere:** 0% honoured on pension lump sum, EV home charging, Shared Ownership rent.
+
+Ledger now 1,768 entries; 23 new guards.
+
 ## 2026-11-01 (round 16) — Another twenty calculators checked by hand
 
 Sixteenth `/calkcheck` pass (report: `AUDIT-2026-11-01-b.md`): 132 defects on 20 pages, 20 HIGH, 13 calculators with wrong results.

@@ -1,22 +1,24 @@
 import { useState, useMemo } from 'react'
 
+// Same allowances as the page text: 3, 4 and 2.5 sq ft for tomato, cucumber and pepper/aubergine, 0.9 sq ft for a seed tray
 const PLANTS: Record<string, { sqmPerPlant: number; name: string }> = {
-  tomato: { sqmPerPlant: 0.25, name: 'Tomato Plants' },
-  cucumber: { sqmPerPlant: 0.5, name: 'Cucumber Plants' },
-  pepper: { sqmPerPlant: 0.2, name: 'Pepper Plants' },
-  aubergine: { sqmPerPlant: 0.3, name: 'Aubergine Plants' },
+  tomato: { sqmPerPlant: 0.28, name: 'Tomato Plants' },
+  cucumber: { sqmPerPlant: 0.37, name: 'Cucumber Plants' },
+  pepper: { sqmPerPlant: 0.23, name: 'Pepper Plants' },
+  aubergine: { sqmPerPlant: 0.23, name: 'Aubergine Plants' },
   lettuce: { sqmPerPlant: 0.06, name: 'Lettuce' },
   herbs: { sqmPerPlant: 0.04, name: 'Herb Pots' },
-  seedTrays: { sqmPerPlant: 0.1, name: 'Seed Trays' },
+  seedTrays: { sqmPerPlant: 0.084, name: 'Seed Trays' },
 }
 
 function calculate(length: number, width: number) {
   const totalArea = length * width
   const usableArea = totalArea * 0.70 // ~30% lost to paths/access
-  const volume = totalArea * 2.2 // avg greenhouse height
+  const volume = totalArea * 1.8 // midpoint of the RHS minimum 1.5m eaves and 2.1m ridge
 
   const plantCounts = Object.entries(PLANTS).map(([key, info]) => ({
-    key, name: info.name, count: Math.floor(usableArea / info.sqmPerPlant),
+    // The small allowance stops float error turning an exact 21 into 20
+    key, name: info.name, count: Math.floor(usableArea / info.sqmPerPlant + 1e-9),
   }))
 
   return { totalArea, usableArea, volume, plantCounts }
@@ -57,6 +59,7 @@ export default function GreenhouseSizeCalculator() {
                 <div key={p.key} className="rounded-xl border border-border p-3 text-center"><p className="text-xs text-muted-foreground">{p.name}</p><p className="text-lg font-bold">{p.count}</p></div>
               ))}
             </div>
+            <p className="text-xs text-muted-foreground mt-3">Each count assumes all the usable area goes to that one crop. Usable area is 70% of the floor. Volume assumes an average height of 1.8m, midway between the RHS minimum of 1.5m at the eaves and 2.1m at the ridge.</p>
           </div>
         </div>
       )}

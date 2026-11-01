@@ -1,5 +1,14 @@
 import { useState, useMemo } from 'react'
 
+// Ten significant figures with trailing zeros dropped from the decimals only,
+// leaving the zeros of 1000000000 and the exponent of 1e+10 alone
+function fmt(v: number) {
+  if (!Number.isFinite(v)) return '—'
+  const s = v.toPrecision(10)
+  if (s.includes('e')) return s.replace(/\.?0+e/, 'e')
+  return s.includes('.') ? s.replace(/\.?0+$/, '') : s
+}
+
 export default function SqrtCalculator() {
   const [number, setNumber] = useState('')
   const [power, setPower] = useState('')
@@ -18,7 +27,6 @@ export default function SqrtCalculator() {
   const lnResult = lg > 0 ? Math.log(lg) : NaN
   const log2Result = lg > 0 ? Math.log2(lg) : NaN
 
-  const fmt = (v: number) => isNaN(v) || !isFinite(v) ? '—' : v.toPrecision(10).replace(/\.?0+$/, '')
 
   return (
     <div className="space-y-8">

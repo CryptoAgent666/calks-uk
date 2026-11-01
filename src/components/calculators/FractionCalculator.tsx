@@ -65,7 +65,7 @@ export default function FractionCalculator() {
         {result && (
           <div className="text-center">
             <p className="text-2xl font-bold text-primary">{result.numerator}/{result.denominator}</p>
-            <p className="text-sm text-muted-foreground">{result.mixed} = {result.decimal.toFixed(6).replace(/\.?0+$/, '')}</p>
+            <p className="text-sm text-muted-foreground">{result.mixed} = {Number(result.decimal.toFixed(6)).toString()}</p>
           </div>
         )}
       </div>

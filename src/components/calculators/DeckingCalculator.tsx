@@ -6,8 +6,10 @@ function calculate(length: number, width: number, boardWidth: number, boardLengt
   const boardArea = (boardWidth / 1000) * boardLength // board width in mm, length in m
   const boardsRaw = boardArea > 0 ? area / boardArea : 0
   const boardsNeeded = Math.ceil(boardsRaw * (1 + wastePct / 100))
-  const screwsNeeded = Math.ceil(boardsNeeded * 8) // ~8 screws per board
+  // Boards run along the deck length, so joists are spaced along it and cut to the deck width
   const joists = Math.ceil(length / 0.4) + 1 // 400mm centres
+  const rows = Math.ceil(Math.round(width * 1000) / boardWidth)
+  const screwsNeeded = rows * joists * 2 // assumption: 2 screws at every board and joist crossing
   const cost = boardsNeeded * pricePerBoard
 
   return { area, boardsNeeded, screwsNeeded, joists, cost }
@@ -23,7 +25,8 @@ export default function DeckingCalculator() {
 
   const l = parseFloat(length) || 0
   const w = parseFloat(width) || 0
-  const result = useMemo(() => calculate(l, w, parseFloat(bw)||145, parseFloat(bl)||3.6, parseFloat(waste)||10, parseFloat(price)||0), [l, w, bw, bl, waste, price])
+  const wastePct = parseFloat(waste) // 0% is a legitimate entry; only a blank box falls back to 10%
+  const result = useMemo(() => calculate(l, w, parseFloat(bw)||145, parseFloat(bl)||3.6, Number.isNaN(wastePct) ? 10 : wastePct, parseFloat(price)||0), [l, w, bw, bl, wastePct, price])
 
   return (
     <div className="space-y-6">
@@ -37,12 +40,15 @@ export default function DeckingCalculator() {
       </div>
 
       {l > 0 && w > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 animate-fade-in-up">
+        <div className="space-y-3 animate-fade-in-up">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
           <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Boards</p><p className="text-xl font-bold text-primary">{result.boardsNeeded}</p></div>
-          <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Joists</p><p className="text-lg font-bold">{result.joists}</p></div>
+          <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Joists ({w} m long)</p><p className="text-lg font-bold">{result.joists}</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Screws</p><p className="text-lg font-bold">{result.screwsNeeded}</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Area</p><p className="text-lg font-bold">{result.area.toFixed(1)} m²</p></div>
           <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Board Cost</p><p className="text-lg font-bold">{formatCurrency(result.cost)}</p></div>
+        </div>
+        <p className="text-xs text-muted-foreground">Assumes boards run along the deck length, with joists across them at 400 mm centres. Screws assume 2 at every point where a board crosses a joist, which is our assumption rather than a manufacturer figure. The cost covers boards only: joists, bearers, fixings and footings are extra.</p>
         </div>
       )}
     </div>

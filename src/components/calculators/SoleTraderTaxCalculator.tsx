@@ -5,7 +5,30 @@ const PA = 12_570
 const BASIC_LIMIT = 50_270
 const HIGHER_LIMIT = 125_140
 
-function calculate(revenue: number, expenses: number) {
+// Scottish income tax 2026/27: band widths on TAXABLE income, so the total-income
+// thresholds move down when the Personal Allowance tapers. Same values as
+// ScottishIncomeTaxCalculator.tsx and SelfAssessmentCalculator.tsx.
+const SCOTTISH_BANDS = [
+  { rate: 0.19, width: 3_967 },
+  { rate: 0.20, width: 12_989 },
+  { rate: 0.21, width: 14_136 },
+  { rate: 0.42, width: 31_338 },
+  { rate: 0.45, width: 62_710 },
+  { rate: 0.48, width: Infinity },
+]
+
+function scottishIncomeTax(taxable: number) {
+  let remaining = taxable
+  let tax = 0
+  for (const band of SCOTTISH_BANDS) {
+    const inBand = Math.min(remaining, band.width)
+    tax += inBand * band.rate
+    remaining -= inBand
+  }
+  return tax
+}
+
+function calculate(revenue: number, expenses: number, scottish: boolean) {
   const profit = Math.max(0, revenue - expenses)
   let pa = PA
   if (profit > 100_000) pa = Math.max(0, PA - Math.floor((profit - 100_000) / 2))
@@ -13,7 +36,8 @@ function calculate(revenue: number, expenses: number) {
   // Income Tax
   let incomeTax = 0
   if (profit > pa) {
-    if (profit <= BASIC_LIMIT) incomeTax = (profit - pa) * 0.20
+    if (scottish) incomeTax = scottishIncomeTax(profit - pa)
+    else if (profit <= BASIC_LIMIT) incomeTax = (profit - pa) * 0.20
     else if (profit <= HIGHER_LIMIT) incomeTax = 37_700 * 0.20 + (profit - pa - 37_700) * 0.40
     else incomeTax = 37_700 * 0.20 + (HIGHER_LIMIT - 37_700) * 0.40 + (profit - HIGHER_LIMIT) * 0.45
   }
@@ -37,10 +61,11 @@ function calculate(revenue: number, expenses: number) {
 export default function SoleTraderTaxCalculator() {
   const [revenue, setRevenue] = useState('60000')
   const [expenses, setExpenses] = useState('5000')
+  const [scotland, setScotland] = useState(false)
 
   const r = parseFloat(revenue.replace(/,/g, '')) || 0
   const e = parseFloat(expenses.replace(/,/g, '')) || 0
-  const result = useMemo(() => calculate(r, e), [r, e])
+  const result = useMemo(() => calculate(r, e, scotland), [r, e, scotland])
 
   return (
     <div className="space-y-6">
@@ -56,6 +81,8 @@ export default function SoleTraderTaxCalculator() {
             <input type="text" inputMode="numeric" value={expenses} onChange={(ev) => setExpenses(ev.target.value)} placeholder="10,000" className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Allowable Expenses" /></div>
         </div>
       </div>
+
+      <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={scotland} onChange={(ev) => setScotland(ev.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">I pay Scottish Income Tax (Class 4 NI is the same across the UK)</span></label>
 
       {r > 0 && (
         <div className="space-y-4 animate-fade-in-up">

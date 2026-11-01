@@ -19,13 +19,13 @@ const USES: Record<Nation, { v: Use; l: string }[]> = {
     { v: 'eng-other', l: 'Office, workshop, warehouse, bank, surgery, professional or other use' },
   ],
   wales: [
-    { v: 'wal-shop', l: 'Shop, kiosk or pharmacy' },
+    { v: 'wal-shop', l: 'Small or medium-sized retail shop' },
     { v: 'wal-po', l: 'Post office' },
     { v: 'wal-food', l: 'Pub, restaurant, café, bar or live music venue' },
     { v: 'wal-other', l: 'Other (office, salon, hotel, gym, workshop, holiday let…)' },
   ],
   scotland: [
-    { v: 'sco-licensed', l: 'Hotel, hostel, pub, restaurant, café, nightclub or music venue' },
+    { v: 'sco-licensed', l: 'Licensed hospitality (pub, restaurant, nightclub, licensed hotel or café) or music venue' },
     { v: 'sco-rhl', l: 'Shop, salon, gym, self-catering or other retail, hospitality or leisure' },
     { v: 'sco-other', l: 'Office, workshop, warehouse or other use' },
   ],
@@ -35,11 +35,12 @@ const USES: Record<Nation, { v: Use; l: string }[]> = {
 // qualifying properties below £500,000; the small rates apply to every property
 // below £51,000, whether or not it gets Small Business Rate Relief.
 const ENG = { small: 0.432, standard: 0.48, high: 0.508, rhlSmall: 0.382, rhlStandard: 0.43, trs: 0.01 }
-// Wales: retail multiplier for shops, kiosks, pharmacies and post offices below
-// £51,000; higher multiplier above £100,000
+// Wales: retail multiplier for small and medium-sized retail shops and post offices
+// below £51,000; higher multiplier above £100,000
 const WAL = { retail: 0.35, standard: 0.502, higher: 0.515 }
 // Scotland: basic property rate to £51,000, intermediate to £100,000, higher above
 const SCO = { basic: 0.481, intermediate: 0.535, higher: 0.548 }
+const SCO_ISLAND_RELIEF_MAX = 110_000
 
 // England transitional relief caps on increases in 2026/27, by rateable value
 // (London small band £28,000), used for the Supporting Small Business relief cap
@@ -82,19 +83,11 @@ function smallBusinessRelief(nation: Nation, use: Use, rv: number): { pct: numbe
 
 function calculate(opts: {
   nation: Nation; use: Use; rv: number; onlyProperty: boolean; special: Special
-  existing: boolean; ssb: boolean; lastBill: number; london: boolean
+  existing: boolean; ssb: boolean; lastBill: number; london: boolean; island: boolean
 }) {
-  const { nation, use, rv, onlyProperty, special, existing, london } = opts
+  const { nation, use, rv, onlyProperty, special, existing, london, island } = opts
   const m = multiplierFor(nation, use, rv)
   const gross = rv * m.rate
-  // England, 2026/27 and (Budget 2026) two more years from 1 April 2027: 1p Transitional Relief Supplement for properties already on
-  // the list that get neither transitional relief nor Supporting Small Business relief
-  const ssbApplies = nation === 'england' && opts.ssb && opts.lastBill > 0
-  const trs = nation === 'england' && existing && !ssbApplies ? rv * ENG.trs : 0
-  const chargeable = gross + trs
-
-  const lines: { label: string; amount: number }[] = []
-  let bill = chargeable
 
   // Mandatory reliefs do not stack: take the most valuable one that applies
   const options: { pct: number; label: string }[] = []
@@ -106,40 +99,59 @@ function calculate(opts: {
   if (nation === 'england' && special === 'rural-shop' && rv <= 8_500) options.push({ pct: 1, label: 'Rural rate relief' })
   if (nation === 'england' && special === 'rural-pub' && rv <= 12_500) options.push({ pct: 1, label: 'Rural rate relief' })
   const best = options.sort((a, b) => b.pct - a.pct)[0]
+  const reliefPct = best ? best.pct : 0
+
+  // England: Supporting Small Business relief caps the rise at the greater of £800 or
+  // the transitional cap, measured against the 2025/26 bill after reliefs. A £0 bill is
+  // legitimate (someone losing 100% relief pays £800) and blank counts as £0. Charities
+  // and community amateur sports clubs cannot have it (MHCLG 2026 SSB guidance, para 14).
+  const ssbEligible = nation === 'england' && opts.ssb && special !== 'charity'
+  const ssbCap = ssbEligible ? opts.lastBill + Math.max(800, opts.lastBill * ENG_TR_CAP(rv, london)) : 0
+  // England, 2026/27 and (Budget 2026) two more years from 1 April 2027: 1p Transitional Relief Supplement for properties already on
+  // the list, not added to a bill that is held at the Supporting Small Business cap
+  const withinSsb = ssbEligible && gross * (1 - reliefPct) > ssbCap
+  const trs = nation === 'england' && existing && !withinSsb ? rv * ENG.trs : 0
+  const chargeable = gross + trs
+
+  const lines: { label: string; amount: number }[] = []
+  let bill = chargeable
+
   if (best) {
     const amount = bill * best.pct
     lines.push({ label: best.label.includes('%') ? best.label : `${best.label} (${+(best.pct * 100).toFixed(1)}%)`, amount })
     bill -= amount
   }
 
-  // Sector reliefs applied to what remains
-  let sector: { pct: number; label: string } | null = null
-  if (nation === 'england' && use === 'eng-pub' && rv < 500_000) sector = { pct: 0.15, label: 'Pubs and live music venues relief (15%)' }
-  if (nation === 'wales' && use === 'wal-food') sector = { pct: 0.15, label: 'Food and drink hospitality relief (15%)' }
-  if (nation === 'scotland' && rv <= 100_000 && use === 'sco-licensed') sector = { pct: 0.4, label: 'Licensed premises and music venue relief (40%)' }
-  if (nation === 'scotland' && rv <= 100_000 && use === 'sco-rhl') sector = { pct: 0.15, label: 'Retail, hospitality and leisure relief (15%)' }
-  if (sector && bill > 0) {
-    const amount = bill * sector.pct
-    lines.push({ label: sector.label, amount })
-    bill -= amount
+  // The Supporting Small Business cap comes before pub relief (MHCLG pubs guidance, para 23)
+  const ssbCapped = ssbEligible && bill > ssbCap
+  if (ssbCapped) {
+    lines.push({ label: 'Supporting Small Business relief', amount: bill - ssbCap })
+    bill = ssbCap
   }
 
-  // England: Supporting Small Business relief caps the rise at the greater of £800 or
-  // the transitional cap, measured against the 2025/26 bill after reliefs
-  let ssbCap = 0
-  if (ssbApplies) {
-    ssbCap = opts.lastBill + Math.max(800, opts.lastBill * ENG_TR_CAP(rv, london))
-    if (bill > ssbCap) {
-      lines.push({ label: 'Supporting Small Business relief', amount: bill - ssbCap })
-      bill = ssbCap
-    }
+  // Sector reliefs applied to what remains
+  let sector: { pct: number; label: string; max?: number } | null = null
+  if (nation === 'england' && use === 'eng-pub') sector = { pct: 0.15, label: 'Pubs and live music venues relief (15%)' }
+  if (nation === 'wales' && use === 'wal-food') sector = { pct: 0.15, label: 'Food and drink hospitality relief (15%)' }
+  if (nation === 'scotland' && island) {
+    // Islands, Cape Wrath, Knoydart and Scoraig: hospitality only, 100% up to £110,000 a year, no rateable value limit given
+    if (use === 'sco-licensed') sector = { pct: 1, label: 'Island and remote rural hospitality relief (100%, up to £110,000)', max: SCO_ISLAND_RELIEF_MAX }
+  } else {
+    if (nation === 'scotland' && rv <= 100_000 && use === 'sco-licensed') sector = { pct: 0.4, label: 'Licensed premises and music venue relief (40%)' }
+    if (nation === 'scotland' && rv <= 100_000 && use === 'sco-rhl') sector = { pct: 0.15, label: 'Retail, hospitality and leisure relief (15%)' }
+  }
+  if (sector && bill > 0) {
+    const amount = Math.min(bill * sector.pct, sector.max ?? Infinity)
+    lines.push({ label: sector.label, amount })
+    bill -= amount
   }
 
   const net = Math.max(0, bill)
   return {
     rv, multiplier: m.rate, multiplierLabel: m.label, gross, trs, chargeable, lines, net,
     tenInstalments: net / 10, twelveInstalments: net / 12,
-    effectiveRate: rv > 0 ? net / rv : 0, ssbApplies, ssbCap,
+    effectiveRate: rv > 0 ? net / rv : 0, ssbEligible, ssbCapped, ssbCap,
+    ssbBlockedByCharity: nation === 'england' && opts.ssb && special === 'charity',
     ruralTooHigh: nation === 'england' && ((special === 'rural-shop' && rv > 8_500) || (special === 'rural-pub' && rv > 12_500)),
   }
 }
@@ -159,6 +171,7 @@ export default function BusinessRatesCalculator() {
   const [ssb, setSsb] = useState(false)
   const [lastBill, setLastBill] = useState('')
   const [london, setLondon] = useState(false)
+  const [island, setIsland] = useState(false)
 
   const changeNation = (n: Nation) => {
     setNation(n)
@@ -169,9 +182,9 @@ export default function BusinessRatesCalculator() {
   const num = (s: string) => parseFloat(s.replace(/,/g, '')) || 0
   // Rateable value is broadly the open-market annual rent at the valuation date
   const v = unknownRv ? num(rent) : num(rv)
-  const r = useMemo(() => calculate({ nation, use, rv: v, onlyProperty, special, existing, ssb, lastBill: num(lastBill), london }),
-    [nation, use, v, onlyProperty, special, existing, ssb, lastBill, london])
-  const valuationDate = nation === 'scotland' ? '1 April 2025' : '1 April 2024'
+  const r = useMemo(() => calculate({ nation, use, rv: v, onlyProperty, special, existing, ssb, lastBill: num(lastBill), london, island }),
+    [nation, use, v, onlyProperty, special, existing, ssb, lastBill, london, island])
+  const valuationDate = nation === 'scotland' ? 'the 2026 roll’s valuation date' : '1 April 2024'
 
   return (
     <div className="space-y-6">
@@ -211,21 +224,25 @@ export default function BusinessRatesCalculator() {
           <select id="br-special" value={special} onChange={(e) => setSpecial(e.target.value as Special)} className={inputCls}>
             <option value="none">No other relief</option>
             <option value="charity">Charity or community amateur sports club (80%)</option>
-            {nation === 'england' && <option value="rural-shop">Only shop or post office in a village under 3,000 people</option>}
+            {nation === 'england' && <option value="rural-shop">Only general store, food shop or post office in a village under 3,000 people</option>}
             {nation === 'england' && <option value="rural-pub">Only pub or petrol station in a village under 3,000 people</option>}
           </select>
         </div>
       </div>
 
+      {nation === 'scotland' && (
+        <label className="flex items-start gap-3 cursor-pointer"><input type="checkbox" checked={island} onChange={(e) => setIsland(e.target.checked)} className="h-5 w-5 mt-0.5 rounded border-border" /><span className="text-sm">The property is on a Scottish island or in Cape Wrath, Knoydart or Scoraig <span className="text-muted-foreground">(hospitality premises get 100% relief, up to £110,000 a year)</span></span></label>
+      )}
+
       {nation === 'england' && (
         <div className="rounded-xl border border-border p-4 space-y-3">
           <label className="flex items-start gap-3 cursor-pointer"><input type="checkbox" checked={existing} onChange={(e) => setExisting(e.target.checked)} className="h-5 w-5 mt-0.5 rounded border-border" /><span className="text-sm">The property was already on the rating list before 1 April 2026 <span className="text-muted-foreground">(adds the 1p transitional supplement for 2026/27 unless your bill is capped)</span></span></label>
-          <label className="flex items-start gap-3 cursor-pointer"><input type="checkbox" checked={ssb} onChange={(e) => setSsb(e.target.checked)} className="h-5 w-5 mt-0.5 rounded border-border" /><span className="text-sm">I lost small business, rural or 40% retail, hospitality and leisure relief on 1 April 2026 <span className="text-muted-foreground">(Supporting Small Business relief)</span></span></label>
+          <label className="flex items-start gap-3 cursor-pointer"><input type="checkbox" checked={ssb} onChange={(e) => setSsb(e.target.checked)} className="h-5 w-5 mt-0.5 rounded border-border" /><span className="text-sm">I lost small business, rural, 2023 Supporting Small Business or 40% retail, hospitality and leisure relief on 1 April 2026 <span className="text-muted-foreground">(Supporting Small Business relief)</span></span></label>
           {ssb && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-8">
               <div>
-                <label htmlFor="br-last" className="block text-xs font-medium mb-1">My 2025/26 bill after reliefs</label>
-                <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input id="br-last" type="text" inputMode="numeric" value={lastBill} onChange={(e) => setLastBill(e.target.value)} placeholder="2,500" className={moneyCls} aria-label="2025/26 bill after reliefs" /></div>
+                <label htmlFor="br-last" className="block text-xs font-medium mb-1">My 2025/26 bill after reliefs (blank counts as £0)</label>
+                <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input id="br-last" type="text" inputMode="numeric" value={lastBill} onChange={(e) => setLastBill(e.target.value)} placeholder="0" className={moneyCls} aria-label="2025/26 bill after reliefs" /></div>
               </div>
               <label className="flex items-center gap-2 cursor-pointer self-end pb-3"><input type="checkbox" checked={london} onChange={(e) => setLondon(e.target.checked)} className="h-4 w-4 rounded border-border" /><span className="text-xs">Property is in London</span></label>
             </div>
@@ -252,7 +269,11 @@ export default function BusinessRatesCalculator() {
             </tbody>
           </table>
           {r.ruralTooHigh && <p className="text-xs text-muted-foreground">Rural rate relief needs a rateable value up to £8,500 for a shop or post office, or £12,500 for a pub or petrol station, so it does not apply here.</p>}
-          {r.ssbApplies && <p className="text-xs text-muted-foreground">Supporting Small Business relief limits your 2026/27 bill to {formatCurrency(r.ssbCap)}: last year&rsquo;s bill plus the larger of £800 or the transitional cap.</p>}
+          {r.ssbCapped && <p className="text-xs text-muted-foreground">Supporting Small Business relief limits your 2026/27 bill to {formatCurrency(r.ssbCap)} before any pub relief: last year&rsquo;s bill plus the larger of £800 or the transitional cap, with no 1p supplement.</p>}
+          {r.ssbEligible && !r.ssbCapped && <p className="text-xs text-muted-foreground">Your bill is already below the Supporting Small Business limit of {formatCurrency(r.ssbCap)}, so the limit makes no difference.</p>}
+          {r.ssbEligible && lastBill.trim() === '' && <p className="text-xs text-muted-foreground">No 2025/26 bill entered, so it is treated as £0 and the limit is £800. Enter what you paid last year if you paid anything.</p>}
+          {r.ssbBlockedByCharity && <p className="text-xs text-muted-foreground">Properties eligible for charity or community amateur sports club relief cannot get Supporting Small Business relief.</p>}
+          {nation === 'scotland' && island && use !== 'sco-licensed' && <p className="text-xs text-muted-foreground">The 100% island and remote rural relief is for hospitality properties, so it is not applied here. If yours is hospitality without a licence, such as self-catering, ask your council.</p>}
           <p className="text-xs text-muted-foreground">
             {unknownRv && <>Rateable value is roughly the open-market yearly rent on {valuationDate}, so an estimate from today&rsquo;s rent can be out either way. </>}
             {nation === 'england' && 'If your rateable value rose at the 2026 revaluation, transitional relief can cap the increase (5%, 15% or 30% in 2026/27 depending on size); your council applies it automatically. '}

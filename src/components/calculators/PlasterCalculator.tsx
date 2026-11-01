@@ -1,17 +1,20 @@
 import { useState, useMemo } from 'react'
 
-type PlasterType = 'skim' | 'undercoat' | 'onecoat'
-const COVERAGE: Record<PlasterType, { kgPerSqm: number; name: string; thickness: string }> = {
-  skim: { kgPerSqm: 2.5, name: 'Multi-Finish (skim)', thickness: '2-3mm' },
-  undercoat: { kgPerSqm: 8, name: 'Bonding / Browning', thickness: '8-11mm' },
-  onecoat: { kgPerSqm: 10, name: 'One Coat', thickness: '13mm' },
+type PlasterType = 'skim' | 'bonding' | 'hardwall' | 'onecoat'
+// Coverage per 25kg bag at the wall thickness in British Gypsum's Thistle selector guide
+const COVERAGE: Record<PlasterType, { sqmPerBag: number; name: string; thickness: string }> = {
+  skim: { sqmPerBag: 10, name: 'MultiFinish (skim)', thickness: '2mm' },
+  bonding: { sqmPerBag: 2.75, name: 'BondingCoat', thickness: '11mm' },
+  hardwall: { sqmPerBag: 3, name: 'HardWall', thickness: '11mm' },
+  onecoat: { sqmPerBag: 2.25, name: 'Universal OneCoat', thickness: '13mm' },
 }
 
 function calculate(wallHeight: number, wallWidth: number, walls: number, doorsWindows: number, plasterType: PlasterType) {
   const totalArea = wallHeight * wallWidth * walls - doorsWindows
   const info = COVERAGE[plasterType]
-  const kgNeeded = totalArea * info.kgPerSqm
-  const bags25kg = Math.ceil(kgNeeded / 25)
+  const bagsExact = totalArea / info.sqmPerBag
+  const kgNeeded = bagsExact * 25
+  const bags25kg = Math.ceil(bagsExact)
 
   return { totalArea, kgNeeded, bags25kg, info }
 }
@@ -27,11 +30,11 @@ export default function PlasterCalculator() {
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
         {(Object.entries(COVERAGE) as [PlasterType, typeof COVERAGE[PlasterType]][]).map(([k, v]) => (
           <button key={k} onClick={() => setType(k)} className={`px-4 py-3 rounded-xl text-sm text-left border transition-colors ${type === k ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border hover:bg-accent'}`}>
             <div className="font-medium">{v.name}</div>
-            <div className={`text-xs ${type === k ? 'text-primary-foreground/70' : 'text-muted-foreground'}`}>{v.thickness} &middot; {v.kgPerSqm}kg/m²</div>
+            <div className={`text-xs ${type === k ? 'text-primary-foreground/70' : 'text-muted-foreground'}`}>{v.thickness} &middot; {v.sqmPerBag} m²/bag</div>
           </button>
         ))}
       </div>

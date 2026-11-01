@@ -24561,11 +24561,11 @@
       "source_url": "https://www.gov.uk/expenses-benefits-social-functions-parties/whats-exempt",
       "status": "current",
       "change_frequency": "",
-      "note": "Annual staff social events deductible up to GBP150/head (split-bill-calculator)",
+      "note": "£150 a head is the employee tax and NI exemption, not a business deduction cap (gov.uk/expenses-benefits-social-functions-parties/whats-exempt; BIM45034).",
       "official_value": "150",
       "confidence": "high",
       "freshness_note": "Annual social functions exemption: no charge if cost per head does not exceed GBP150 (per EIM21690); long-standing figure.",
-      "verified_date": "2026-06-28",
+      "verified_date": "2026-11-01",
       "verify_method": "tier2-tail"
     },
     {
@@ -38329,10 +38329,263 @@
       "verify_method": "calkcheck 2026-11-01 r16",
       "confidence": "high",
       "changes_next_fy": "Refresh with each annual review."
+    },
+    {
+      "key": "ashe_median_full_time_weekly_2026",
+      "value": "811.20",
+      "unit": "GBP/week",
+      "law": "ONS ASHE April 2026, provisional",
+      "theme": "pay",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/latest",
+      "status": "current",
+      "change_frequency": "",
+      "note": "£20.81 an hour excluding overtime.",
+      "official_value": "811.20",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r17",
+      "confidence": "high",
+      "changes_next_fy": "Next ASHE, autumn 2027."
+    },
+    {
+      "key": "ons_median_household_disposable_income_fye2025",
+      "value": "39200",
+      "unit": "GBP",
+      "law": "ONS household disposable income, FYE 2025",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/householddisposableincomeandinequality/latest",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "39200",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r17",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "ons_average_house_price_aug_2026",
+      "value": "273000",
+      "unit": "GBP",
+      "law": "ONS private rent and house prices",
+      "theme": "mortgage",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/privaterentandhousepricesuk/latest",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Rent £1,406 UK, £2,338 London, September 2026.",
+      "official_value": "273000",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r17",
+      "confidence": "high",
+      "changes_next_fy": "Monthly; dated in prose."
+    },
+    {
+      "key": "bst_dates_2027",
+      "value": "28 March to 31 October",
+      "unit": "dates",
+      "law": "Summer Time Act",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/when-do-the-clocks-change",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "28 March to 31 October",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r17",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "land_registry_title_register_fee",
+      "value": "7",
+      "unit": "GBP",
+      "law": "HM Land Registry",
+      "theme": "legal",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/get-information-about-property-and-land",
+      "status": "current",
+      "change_frequency": "",
+      "note": "£7 register or plan, £11 filed deed.",
+      "official_value": "7",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r17",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "outbuilding_pd_limits",
+      "value": "2.5 m eaves; 4 m dual-pitched or 3 m other; 2.5 m within 2 m of a boundary; half the land",
+      "unit": "rule",
+      "law": "GPDO Class E",
+      "theme": "legal",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.planningportal.co.uk/permission/common-projects/outbuildings/planning-permission",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Greenhouses exempt from Building Regulations, Class 3, SI 2010/2214 Sch 2.",
+      "official_value": "2.5 m eaves; 4 m dual-pitched or 3 m other; 2.5 m within 2 m of a boundary; half the land",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r17",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "hard_surface_pd_rule",
+      "value": "5 m² permeable rule between principal elevation and highway; no 50% limit",
+      "unit": "rule",
+      "law": "GPDO Class F",
+      "theme": "legal",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/1/crossheading/class-f-hard-surfaces-incidental-to-the-enjoyment-of-a-dwellinghouse/made",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "5 m² permeable rule between principal elevation and highway; no 50% limit",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r17",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "scottish_island_hospitality_relief",
+      "value": "100%, maximum £110,000",
+      "unit": "rule",
+      "law": "Scottish non-domestic rates relief",
+      "theme": "business",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/BusinessRatesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.mygov.scot/non-domestic-rates-relief/reliefs-available",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "100%, maximum £110,000",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r17",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "thistle_plaster_coverage",
+      "value": "Multi-Finish 10; BondingCoat 2.75; HardWall 3; OneCoat 2.25 m² per bag",
+      "unit": "m2/bag",
+      "law": "British Gypsum Thistle selector guide (2019)",
+      "theme": "building",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/PlasterCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://cdn.shopify.com/s/files/1/0222/7290/1216/files/Thistle_Essential_Selector_Guide.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Bond-it required on painted or tiled surfaces.",
+      "official_value": "Multi-Finish 10; BondingCoat 2.75; HardWall 3; OneCoat 2.25 m² per bag",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r17",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "rhs_raised_bed_mix",
+      "value": "7:3:2 topsoil, organic matter, sharp sand",
+      "unit": "ratio",
+      "law": "RHS raised beds guidance",
+      "theme": "gardening",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/RaisedBedCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.rhs.org.uk/garden-features/raised-beds",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Most plants 45 cm or more; creosoted railway sleepers no longer permitted in the garden.",
+      "official_value": "7:3:2 topsoil, organic matter, sharp sand",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r17",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "tips_act_scope",
+      "value": "England, Scotland and Wales; no requirement for a tronc",
+      "unit": "rule",
+      "law": "Employment (Allocation of Tips) Act 2023",
+      "theme": "pay",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ukpga/2023/13",
+      "status": "current",
+      "change_frequency": "",
+      "note": "In force 1 October 2024.",
+      "official_value": "England, Scotland and Wales; no requirement for a tronc",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r17",
+      "confidence": "high",
+      "changes_next_fy": ""
     }
   ],
   "status_summary": {
-    "current": 1683,
+    "current": 1694,
     "retired": 24,
     "historical": 24,
     "superseded_by_component": 4,

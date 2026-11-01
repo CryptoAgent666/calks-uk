@@ -1,27 +1,29 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-type BrickSize = 'standard' | 'engineering' | 'modular'
+type BrickSize = 'standard' | 'engineering73' | 'modular'
 const SIZES: Record<BrickSize, { w: number; h: number; name: string }> = {
-  standard: { w: 215, h: 65, name: 'Standard (215x102x65mm)' },
-  engineering: { w: 215, h: 65, name: 'Engineering (215x102x65mm)' },
+  standard: { w: 215, h: 65, name: 'Standard or engineering 65mm (215x102.5x65mm)' },
+  engineering73: { w: 215, h: 73, name: 'Engineering 73mm (215x102.5x73mm)' },
   modular: { w: 190, h: 90, name: 'Modular (190x90x90mm)' },
 }
 
-function calculate(wallLength: number, wallHeight: number, openings: number, brickSize: BrickSize, mortar: number, wastePct: number, pricePerBrick: number) {
+type WallThickness = 'half' | 'full'
+const SKINS: Record<WallThickness, number> = { half: 1, full: 2 }
+
+function calculate(wallLength: number, wallHeight: number, openings: number, brickSize: BrickSize, thickness: WallThickness, mortar: number, wastePct: number, pricePerBrick: number) {
   const brick = SIZES[brickSize]
   const wallArea = wallLength * wallHeight - openings
-  // Standard: ~60 bricks per m² for half-brick wall
+  // Standard: ~60 bricks per m² for half-brick wall, ~120 for full-brick
   const brickW = (brick.w + mortar) / 1000
   const brickH = (brick.h + mortar) / 1000
-  const bricksPerM2 = 1 / (brickW * brickH)
+  const bricksPerM2 = SKINS[thickness] / (brickW * brickH)
   const bricksRaw = wallArea * bricksPerM2
   const bricksNeeded = Math.ceil(bricksRaw * (1 + wastePct / 100))
   const cost = bricksNeeded * pricePerBrick
-  // Mortar: ~0.03m³ per m² for half-brick
-  const mortarM3 = wallArea * 0.03
-  const sandKg = Math.ceil(mortarM3 * 1500)
-  const cementBags = Math.ceil(mortarM3 * 300 / 25) // ~300kg cement per m³, 25kg bags
+  // Mortar: ~1kg per brick at 4:1 sand to cement, so 800g sand and 200g cement a brick
+  const sandKg = Math.ceil(bricksNeeded * 0.8)
+  const cementBags = Math.ceil(bricksNeeded / 125) // 200g x 125 bricks = one 25kg bag
 
   return { wallArea, bricksPerM2: Math.round(bricksPerM2), bricksNeeded, cost, sandKg, cementBags }
 }
@@ -31,11 +33,11 @@ export default function BricksCalculator() {
   const [height, setHeight] = useState('2.4')
   const [openings, setOpenings] = useState('3.6')
   const [size, setSize] = useState<BrickSize>('standard')
-  const [mortar, setMortar] = useState('10')
+  const [thickness, setThickness] = useState<WallThickness>('half')
   const [waste, setWaste] = useState('5')
   const [price, setPrice] = useState('0.50')
 
-  const result = useMemo(() => calculate(parseFloat(length)||0, parseFloat(height)||0, parseFloat(openings)||0, size, parseFloat(mortar)||10, parseFloat(waste)||5, parseFloat(price)||0), [length, height, openings, size, mortar, waste, price])
+  const result = useMemo(() => calculate(parseFloat(length)||0, parseFloat(height)||0, parseFloat(openings)||0, size, thickness, 10, parseFloat(waste)||0, parseFloat(price)||0), [length, height, openings, size, thickness, waste, price])
 
   return (
     <div className="space-y-6">
@@ -44,6 +46,7 @@ export default function BricksCalculator() {
         <div><label className="block text-sm font-medium mb-2">Wall Height (m)</label><input type="number" min="0" step="0.1" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Wall Height (m)" /></div>
         <div><label className="block text-sm font-medium mb-2">Openings Area (m²)</label><input type="number" min="0" step="0.1" value={openings} onChange={(e) => setOpenings(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Openings Area (m²)" /></div>
         <div><label className="block text-sm font-medium mb-2">Brick Type</label><select value={size} onChange={(e) => setSize(e.target.value as BrickSize)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Brick Type">{Object.entries(SIZES).map(([k,v]) => <option key={k} value={k}>{v.name}</option>)}</select></div>
+        <div><label className="block text-sm font-medium mb-2">Wall Thickness</label><select value={thickness} onChange={(e) => setThickness(e.target.value as WallThickness)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Wall Thickness"><option value="half">Half-brick (single skin)</option><option value="full">Full-brick (double skin)</option></select></div>
         <div><label className="block text-sm font-medium mb-2">Wastage (%)</label><input type="number" min="0" max="20" value={waste} onChange={(e) => setWaste(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Wastage (%)" /></div>
         <div><label className="block text-sm font-medium mb-2">Price/Brick (£)</label><input type="number" min="0" step="0.01" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Price/Brick (£)" /></div>
       </div>

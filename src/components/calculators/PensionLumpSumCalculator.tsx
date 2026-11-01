@@ -36,7 +36,7 @@ export default function PensionLumpSumCalculator() {
   const [other, setOther] = useState('0')
 
   const p = parseFloat(pot.replace(/,/g,'')) || 0
-  const pc = parseFloat(pct) || 25
+  const pc = Number.isNaN(parseFloat(pct)) ? 25 : parseFloat(pct)
   const o = parseFloat(other.replace(/,/g,'')) || 0
   const result = useMemo(() => calculate(p, pc, o), [p, pc, o])
 
