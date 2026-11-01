@@ -5,6 +5,7 @@ const UNITS = [
   { id: 'l', name: 'Litres (L)', toMl: 1000 },
   { id: 'cl', name: 'Centilitres (cl)', toMl: 10 },
   { id: 'floz', name: 'Fluid Ounces (UK)', toMl: 28.4131 },
+  { id: 'floz_us', name: 'Fluid Ounces (US)', toMl: 29.5735 },
   { id: 'cup_us', name: 'Cups (US)', toMl: 236.588 },
   { id: 'pint_uk', name: 'Pints (UK)', toMl: 568.261 },
   { id: 'pint_us', name: 'Pints (US)', toMl: 473.176 },
@@ -15,6 +16,12 @@ const UNITS = [
   { id: 'm3', name: 'Cubic Metres (m³)', toMl: 1000000 },
   { id: 'cm3', name: 'Cubic Centimetres (cm³)', toMl: 1 },
 ]
+
+function formatVolume(value: number): string {
+  if (value < 0.000001) return value.toExponential(2)
+  if (value < 0.01) return value.toLocaleString('en-GB', { maximumSignificantDigits: 3 })
+  return value < 100 ? value.toFixed(3) : value.toLocaleString('en-GB', { maximumFractionDigits: 2 })
+}
 
 function convert(value: number, fromId: string) {
   const from = UNITS.find(u => u.id === fromId)
@@ -41,7 +48,7 @@ export default function VolumeConverter() {
           {results.filter(r => r.id !== from).map(r => (
             <div key={r.id} className="rounded-xl border border-border p-3 text-center">
               <p className="text-xs text-muted-foreground">{r.name}</p>
-              <p className="text-sm font-bold">{r.value < 0.01 ? r.value.toExponential(2) : r.value < 100 ? r.value.toFixed(3) : r.value.toLocaleString('en-GB', { maximumFractionDigits: 2 })}</p>
+              <p className="text-sm font-bold">{formatVolume(r.value)}</p>
             </div>
           ))}
         </div>

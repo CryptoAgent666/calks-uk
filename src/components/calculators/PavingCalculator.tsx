@@ -6,7 +6,7 @@ function calculate(areaLength: number, areaWidth: number, slabLength: number, sl
   // A blank or zero slab dimension gives no result rather than a 1cm "slab" made of the joint
   const slabArea = slabLength > 0 && slabWidth > 0 ? ((slabLength + jointGap) * (slabWidth + jointGap)) / 10000 : 0 // cm to m
   const slabsRaw = slabArea > 0 ? area / slabArea : 0
-  const slabsNeeded = Math.ceil(slabsRaw * (1 + wastePct / 100))
+  const slabsNeeded = Math.ceil(slabsRaw * (1 + wastePct / 100) - 1e-9)
   const cost = slabsNeeded * pricePerSlab
   // Sand for jointing: ~5kg per m²
   const sandKg = Math.ceil(area * 5)

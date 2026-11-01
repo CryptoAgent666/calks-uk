@@ -687,10 +687,10 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'flooring-calculator',
     title: 'Flooring Calculator',
-    description: 'Calculate how much laminate, vinyl or carpet you need including wastage. Get pack and cost estimates.',
+    description: 'Calculate how much laminate, engineered wood or vinyl plank you need including wastage. Get pack and cost estimates.',
     category: 'building',
     icon: 'Hammer',
-    keywords: ['flooring', 'laminate', 'vinyl', 'carpet', 'floor area'],
+    keywords: ['flooring', 'laminate', 'vinyl plank', 'engineered wood', 'floor area'],
     metaTitle: 'Flooring Calculator UK — m² + Wastage',
     priority: 2,
   },
@@ -921,7 +921,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'square-root-calculator',
     title: 'Square Root, Powers & Logarithm Calculator',
-    description: 'Calculate square roots, cube roots, custom powers, and logarithms (log10, ln, log2).',
+    description: 'Calculate square roots, cube roots, nth roots, custom powers, and logarithms (log10, ln, log2).',
     category: 'math',
     icon: 'Calculator',
     keywords: ['square root', 'cube root', 'powers', 'logarithm', 'exponent'],
@@ -1772,7 +1772,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'agricultural-worker-wage-calculator', title: 'Agricultural Worker Minimum Wage Calculator', description: 'Calculate 2026/27 farm worker pay in England (minimum wage), Wales (grades A-E), Scotland and Northern Ireland, with overtime and holiday entitlement.', category: 'farming', icon: 'Wheat', keywords: ['agricultural wages', 'AWO', 'farm worker pay', 'agricultural minimum wage'], priority: 2 , metaTitle: 'Agricultural Worker Wage Calculator UK 2026' },
   // MATH
   { slug: 'mean-median-mode-calculator', title: 'Mean, Median & Mode Calculator', description: 'Calculate mean, median, mode, range, sum, min and max from a set of numbers. Shows sorted data.', category: 'math', icon: 'Calculator', keywords: ['mean', 'median', 'mode', 'average', 'statistics'], priority: 1 , metaTitle: 'Mean Median Mode Calculator — Free Online' },
-  { slug: 'prime-number-calculator', title: 'Prime Number Checker', description: 'Check if a number is prime, find prime factorisation, and list primes up to N.', category: 'math', icon: 'Calculator', keywords: ['prime number', 'prime checker', 'factorisation', 'prime factor'], priority: 2 , metaTitle: 'Prime Number Calculator — Check & List' },
+  { slug: 'prime-number-calculator', title: 'Prime Number Checker', description: 'Check if a number is prime, find prime factorisation, and list primes up to 1,000.', category: 'math', icon: 'Calculator', keywords: ['prime number', 'prime checker', 'factorisation', 'prime factor'], priority: 2 , metaTitle: 'Prime Number Calculator — Check & List' },
   // HEALTH
   { slug: 'waist-hip-ratio-calculator', title: 'Waist-to-Hip Ratio Calculator', description: 'Calculate your waist-to-hip ratio against the WHO cut-offs, and add your height for the NICE waist-to-height class.', category: 'health', icon: 'Heart', keywords: ['waist hip ratio', 'WHR', 'body shape', 'cardiovascular risk'], priority: 2 , metaTitle: 'Waist-Hip Ratio Calculator UK — WHO Cut-offs' },
   // GARDENING

@@ -1,5 +1,15 @@
 # CHANGELOG — Calks.uk
 
+## 2026-11-01 (round 18) — The last seventeen calculators checked by hand
+
+Eighteenth `/calkcheck` pass (report: `AUDIT-2026-11-01-d.md`): 148 defects on 17 pages, 28 HIGH, 15 calculators with wrong results. Every calculator has now had a hand check.
+
+**Ages and dates:** lottery 18, marriage by nation, National Living Wage from 21, Winter Fuel by birth date, royal messages, lunar new year signs, leap day. **Home and garden:** lead warning, paint tins,
+wallpaper cut allowance, permeable drive sub-base, RHS lawn timing and depths, listed bulk bag prices, fence paint coverage. **Maths and tools:** prime limit, 64-bit binary, invalid Roman numerals rejected, tiny exponents,
+nth roots, decimals and negatives in words, random ranges, glass counts and draught measures.
+
+Ledger now 1,779 entries; 17 new guards.
+
 ## 2026-11-01 (round 17) — Twenty more pages: building, business rates and tools
 
 Seventeenth `/calkcheck` pass (report: `AUDIT-2026-11-01-c.md`): 148 defects on 20 pages, 18 HIGH, 18 calculators with wrong results.

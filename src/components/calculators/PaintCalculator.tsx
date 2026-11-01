@@ -39,11 +39,14 @@ export default function PaintCalculator() {
       </div>
 
       {result.litresNeeded > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 animate-fade-in-up">
-          <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Paint Needed</p><p className="text-xl font-bold text-primary">{result.litresNeeded.toFixed(1)}L</p></div>
-          <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">2.5L Tins</p><p className="text-lg font-bold">{result.tins25}</p></div>
-          <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">5L Tins</p><p className="text-lg font-bold">{result.tins5}</p></div>
-          <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Wall Area</p><p className="text-lg font-bold">{result.netArea.toFixed(1)} m²</p></div>
+        <div className="space-y-3 animate-fade-in-up">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Paint Needed</p><p className="text-xl font-bold text-primary">{result.litresNeeded.toFixed(1)}L</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">2.5L Tins</p><p className="text-lg font-bold">{result.tins25}</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">5L Tins</p><p className="text-lg font-bold">{result.tins5}</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Wall Area</p><p className="text-lg font-bold">{result.netArea.toFixed(1)} m²</p></div>
+          </div>
+          <p className="text-xs text-muted-foreground">Buy either {result.tins25} × 2.5 L or {result.tins5} × 5 L; each option covers the wall on its own. Walls of different lengths: enter the average width.</p>
         </div>
       )}
     </div>

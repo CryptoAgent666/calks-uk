@@ -20,7 +20,7 @@ function calculate(length: number, span: number, pitch: number, tileType: TileTy
   const roofArea = (length * span) / Math.cos(pitchRad)
   const { perSqm, battenPerSqm } = TILES[tileType]
   const tilesRaw = roofArea * perSqm
-  const tilesNeeded = Math.ceil(tilesRaw * (1 + wastePct / 100))
+  const tilesNeeded = Math.ceil(tilesRaw * (1 + wastePct / 100) - 1e-9)
   const ridgeTiles = Math.ceil(length / RIDGE_TILE_M)
   const battenMetres = Math.ceil(roofArea * battenPerSqm)
   const feltSqm = Math.ceil(roofArea * 1.1) // 10% overlap

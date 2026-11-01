@@ -19,7 +19,7 @@ function calculate(wallLength: number, wallHeight: number, openings: number, bri
   const brickH = (brick.h + mortar) / 1000
   const bricksPerM2 = SKINS[thickness] / (brickW * brickH)
   const bricksRaw = wallArea * bricksPerM2
-  const bricksNeeded = Math.ceil(bricksRaw * (1 + wastePct / 100))
+  const bricksNeeded = Math.ceil(bricksRaw * (1 + wastePct / 100) - 1e-9)
   const cost = bricksNeeded * pricePerBrick
   // Mortar: ~1kg per brick at 4:1 sand to cement, so 800g sand and 200g cement a brick
   const sandKg = Math.ceil(bricksNeeded * 0.8)

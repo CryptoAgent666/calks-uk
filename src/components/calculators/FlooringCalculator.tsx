@@ -42,11 +42,13 @@ export default function FlooringCalculator() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Area Needed</p><p className="text-xl font-bold text-primary">{result.withWaste.toFixed(1)} m²</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Room Area</p><p className="text-lg font-bold">{result.area.toFixed(1)} m²</p></div>
-            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Packs ({ps > 0 ? ps : '-'} m²)</p><p className="text-lg font-bold">{result.packsNeeded}</p></div>
-            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Est. Cost</p><p className="text-lg font-bold">{formatCurrency(result.cost)}</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Packs ({ps > 0 ? ps : '-'} m²)</p><p className="text-lg font-bold">{ps > 0 ? result.packsNeeded : '-'}</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Est. Cost</p><p className="text-lg font-bold">{ps > 0 ? formatCurrency(result.cost) : '-'}</p></div>
           </div>
-          {result.packsNeeded > 0 && (
+          {result.packsNeeded > 0 ? (
             <p className="text-xs text-muted-foreground">Cost is for the whole packs you buy: {result.packsNeeded} × {ps} m² = {result.areaBought.toFixed(1)} m² at {formatCurrency(p)}/m². Underlay, fitting and trims are extra.</p>
+          ) : (
+            <p className="text-xs text-muted-foreground">Enter what one pack covers, from the box, to see the packs and cost.</p>
           )}
         </div>
       )}

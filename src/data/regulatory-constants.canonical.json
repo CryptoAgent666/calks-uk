@@ -38582,10 +38582,260 @@
       "verify_method": "calkcheck 2026-11-01 r17",
       "confidence": "high",
       "changes_next_fy": ""
+    },
+    {
+      "key": "lottery_minimum_age",
+      "value": "18",
+      "unit": "years",
+      "law": "National Lottery Regulations 2020",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2020/1475",
+      "status": "current",
+      "change_frequency": "",
+      "note": "From 1 October 2021.",
+      "official_value": "18",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r18",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "provisional_licence_apply_age",
+      "value": "15 years 9 months",
+      "unit": "age",
+      "law": "DVLA",
+      "theme": "auto",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/apply-first-provisional-driving-licence",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Most start learning at 17.",
+      "official_value": "15 years 9 months",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r18",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "marriage_minimum_age_by_nation",
+      "value": "16 Scotland; 16 with consent NI; 18 England and Wales",
+      "unit": "years",
+      "law": "Marriage law by nation",
+      "theme": "legal",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/marriages-civil-partnerships/check-you-can-get-married",
+      "status": "current",
+      "change_frequency": "",
+      "note": "https://www.mygov.scot/marriage-civil-partnership-scotland and nidirect for the others.",
+      "official_value": "16 Scotland; 16 with consent NI; 18 England and Wales",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r18",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "winter_fuel_birth_date_2026_27",
+      "value": "born on or before 27 June 1960",
+      "unit": "rule",
+      "law": "Winter Fuel Payment 2026 to 2027",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/winter-fuel-payment",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Recovery over £35,000 income.",
+      "official_value": "born on or before 27 June 1960",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r18",
+      "confidence": "high",
+      "changes_next_fy": "Date rolls each winter."
+    },
+    {
+      "key": "royal_messages_rules",
+      "value": "birthdays 100, 105, then yearly; weddings 60, 65, 70, then yearly",
+      "unit": "rule",
+      "law": "Royal Household",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.royal.uk/anniversary-messages",
+      "status": "current",
+      "change_frequency": "",
+      "note": "DWP notifies for birthdays; wedding anniversaries need an application.",
+      "official_value": "birthdays 100, 105, then yearly; weddings 60, 65, 70, then yearly",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r18",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "pint_glass_marking",
+      "value": "UKCA and M (GB); CE and M (NI); crown voluntary",
+      "unit": "rule",
+      "law": "Measuring instruments",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/applying-a-crown-symbol-to-pint-glasses",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "UKCA and M (GB); CE and M (NI); crown voluntary",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r18",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "hse_lead_paint_warning",
+      "value": "do not dry-sand old paint, especially pre-1980s",
+      "unit": "rule",
+      "law": "HSE lead FAQs",
+      "theme": "building",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.hse.gov.uk/lead/faqs.htm",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "do not dry-sand old paint, especially pre-1980s",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r18",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "permeable_paving_guidance",
+      "value": "Type 1 stops water passing unless it drains to a soakaway or rain garden; open-graded otherwise",
+      "unit": "rule",
+      "law": "Guidance on permeable surfacing of front gardens",
+      "theme": "legal",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://assets.publishing.service.gov.uk/media/5a797a8eed915d07d35b5d8e/pavingfrontgardens.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "Type 1 stops water passing unless it drains to a soakaway or rain garden; open-graded otherwise",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r18",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "rhs_new_lawn_light_use",
+      "value": "about eight months",
+      "unit": "period",
+      "law": "RHS lawns from seed",
+      "theme": "gardening",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.rhs.org.uk/lawns/lawns-from-seed",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Sow autumn (Sept-Nov) or mid-spring (March-April).",
+      "official_value": "about eight months",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r18",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "rhs_mulch_depth",
+      "value": "at least 5 cm, ideally 7.5 cm",
+      "unit": "cm",
+      "law": "RHS mulch guidance",
+      "theme": "gardening",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/MulchCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.rhs.org.uk/soil-composts-mulches/mulch",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "at least 5 cm, ideally 7.5 cm",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r18",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "bulk_bag_listings_nov_2026",
+      "value": "topsoil 600 L from about £110; bark 500 L £110-£124",
+      "unit": "GBP",
+      "law": "Merchant listings, 1 November 2026",
+      "theme": "gardening",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/TopsoilCalculator.tsx",
+        "src/components/calculators/MulchCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.travisperkins.co.uk/search?text=topsoil",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Market figures, indicative; delivery extra.",
+      "official_value": "topsoil 600 L from about £110; bark 500 L £110-£124",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r18",
+      "confidence": "high",
+      "changes_next_fy": "Refresh yearly."
     }
   ],
   "status_summary": {
-    "current": 1694,
+    "current": 1705,
     "retired": 24,
     "historical": 24,
     "superseded_by_component": 4,

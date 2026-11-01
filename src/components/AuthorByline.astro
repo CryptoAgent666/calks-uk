@@ -12,6 +12,9 @@ const { lastUpdated = 'April 2026', category, slug = '' } = Astro.props
 // figures behind them, so they get their own line and no dated rates badge.
 const VERIFICATION_BY_SLUG: Record<string, string> = {
   'plaster-calculator': 'Checked against British Gypsum data and Checkatrade prices, 2026',
+  'paint-calculator': 'Checked against Dulux product data, HSE guidance and Checkatrade prices, 2026',
+  'gravel-calculator': 'Planning rules from the Planning Portal and GOV.UK guidance; prices from merchants, November 2026',
+  'wallpaper-calculator': 'Roll sizes from published guides; labour from Checkatrade, October 2026',
   'gcse-grade-calculator': 'Checked against Ofqual 9 to 1 grading, 2026',
   'a-level-grade-calculator': 'Checked against Ofqual and UCAS 2026 guidance',
   'gpa-calculator': 'Checked against the Higher Education Academy GPA scale and Office for Students data; classification is indicative',
@@ -40,6 +43,12 @@ const VERIFICATION_BY_SLUG: Record<string, string> = {
   'sleep-calculator': 'Checked against NHS guidance, 2026; 90-minute cycles are a rule of thumb',
   // the RHS publishes no liner, pump or stocking rule to verify these figures against
   'pond-volume-calculator': 'Methodology reviewed for 2026',
+  // advice from the RHS, but the prices and pack sizes come from retailer listings
+  'lawn-seed-calculator': 'Checked against RHS and Johnsons guidance; prices from B&Q listings, 1 November 2026',
+  'topsoil-calculator': 'Depths checked against the RHS; prices from retailer listings, 1 November 2026',
+  'mulch-calculator': 'Depth and timing checked against the RHS; prices from retailer listings, 1 November 2026',
+  // the RHS has no part in fence paint coverage: product data only
+  'fence-paint-calculator': 'Coverage from Ronseal and retailer product data; prices from listings, 1 November 2026',
   // cost guides and manufacturer data, not building regulations, sit behind most of these figures
   'radiator-btu-calculator': 'Correction factors from published radiator data, 2026; sizing is a rule of thumb',
   'kitchen-cost-calculator': "Prices from Checkatrade's March 2026 guide; electrical rules from Approved Document P",

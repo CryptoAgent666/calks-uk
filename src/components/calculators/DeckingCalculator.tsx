@@ -5,7 +5,7 @@ function calculate(length: number, width: number, boardWidth: number, boardLengt
   const area = length * width
   const boardArea = (boardWidth / 1000) * boardLength // board width in mm, length in m
   const boardsRaw = boardArea > 0 ? area / boardArea : 0
-  const boardsNeeded = Math.ceil(boardsRaw * (1 + wastePct / 100))
+  const boardsNeeded = Math.ceil(boardsRaw * (1 + wastePct / 100) - 1e-9)
   // Boards run along the deck length, so joists are spaced along it and cut to the deck width
   const joists = Math.ceil(length / 0.4) + 1 // 400mm centres
   const rows = Math.ceil(Math.round(width * 1000) / boardWidth)
