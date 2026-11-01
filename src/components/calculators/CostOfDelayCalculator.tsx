@@ -55,6 +55,12 @@ export default function CostOfDelayCalculator() {
         <div><label className="block text-sm font-medium mb-2">Total Horizon (years)</label><input type="number" min="5" max="50" value={total} onChange={(e) => setTotal(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Total Horizon (years)" /></div>
       </div>
 
+      {m > 0 && t <= d && (
+        <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
+          <p>The delay has to be shorter than the total horizon: waiting {d} years out of {t} leaves no time to invest. Shorten the delay or extend the horizon.</p>
+        </div>
+      )}
+
       {m > 0 && t > d && (
         <div className="space-y-4 animate-fade-in-up">
           <div className="rounded-2xl bg-destructive/10 p-6 text-center">

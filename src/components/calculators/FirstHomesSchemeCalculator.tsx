@@ -45,6 +45,7 @@ function calculate(
   marketValue: number,
   discount: number,
   london: boolean,
+  isResale: boolean,
   deposit: number,
   salary: number,
   partnerSalary: number,
@@ -61,7 +62,8 @@ function calculate(
   const incomeCap = london ? INCOME_CAP_LONDON : INCOME_CAP
 
   const reasons: string[] = []
-  if (discountedPrice > priceCap) reasons.push(`The price after the discount, ${formatCurrency(discountedPrice)}, is over the ${formatCurrency(priceCap)} cap${london ? ' for London' : ' (£420,000 in London)'}.`)
+  // The national price cap applies only to the first sale of a First Home (gov.uk/guidance/first-homes)
+  if (!isResale && discountedPrice > priceCap) reasons.push(`The price after the discount, ${formatCurrency(discountedPrice)}, is over the ${formatCurrency(priceCap)} cap${london ? ' for London' : ' (£420,000 in London)'}.`)
   if (householdIncome > incomeCap) reasons.push(`Household income of ${formatCurrency(householdIncome)} is over the ${formatCurrency(incomeCap)} limit${london ? ' for London' : ' (£90,000 in London)'}.`)
   if (mortgage < discountedPrice * MIN_MORTGAGE_SHARE) reasons.push(`The mortgage must cover at least half the price, ${formatCurrency(discountedPrice * MIN_MORTGAGE_SHARE)}, so the deposit can be no more than ${formatCurrency(discountedPrice * (1 - MIN_MORTGAGE_SHARE))}.`)
   const eligible = reasons.length === 0
@@ -88,6 +90,7 @@ export default function FirstHomesSchemeCalculator() {
   const [value, setValue] = useState('300000')
   const [discount, setDiscount] = useState('30')
   const [london, setLondon] = useState(false)
+  const [saleType, setSaleType] = useState('new-build')
   const [deposit, setDeposit] = useState('21000')
   const [salary, setSalary] = useState('30000')
   const [partner, setPartner] = useState('25000')
@@ -105,11 +108,13 @@ export default function FirstHomesSchemeCalculator() {
   const tm = Math.min(Math.max(parseInt(term) || 0, 0), 40)
   const g = parseFloat(growth) || 0
   const ry = Math.min(Math.max(parseInt(resaleYears) || 0, 0), 40)
-  const result = useMemo(() => calculate(v, d, london, dp, s, ps, rt, tm, g, ry), [v, d, london, dp, s, ps, rt, tm, g, ry])
+  const isResale = saleType === 'resale'
+  const result = useMemo(() => calculate(v, d, london, isResale, dp, s, ps, rt, tm, g, ry), [v, d, london, isResale, dp, s, ps, rt, tm, g, ry])
 
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div><label className="block text-sm font-medium mb-2">Type of sale</label><select value={saleType} onChange={(e) => setSaleType(e.target.value)} className={inputClass} aria-label="Type of sale"><option value="new-build">New-build (first sale)</option><option value="resale">Resale of an existing First Home</option></select></div>
         <div><label className="block text-sm font-medium mb-2">Market value</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={value} onChange={(e) => setValue(e.target.value)} className={moneyInputClass} aria-label="Market value" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Discount (%)</label><select value={discount} onChange={(e) => setDiscount(e.target.value)} className={inputClass} aria-label="Discount (%)"><option value="30">30% (minimum)</option><option value="40">40%</option><option value="50">50% (maximum)</option></select></div>
         <div><label className="block text-sm font-medium mb-2">Deposit</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={deposit} onChange={(e) => setDeposit(e.target.value)} className={moneyInputClass} aria-label="Deposit" /></div></div>
@@ -120,12 +125,12 @@ export default function FirstHomesSchemeCalculator() {
         <div><label className="block text-sm font-medium mb-2">House price growth (% a year)</label><input type="number" min="-10" max="15" step="0.5" value={growth} onChange={(e) => setGrowth(e.target.value)} className={inputClass} aria-label="House price growth (% a year)" /></div>
         <div><label className="block text-sm font-medium mb-2">Sell after (years)</label><input type="number" min="1" max="40" value={resaleYears} onChange={(e) => setResaleYears(e.target.value)} className={inputClass} aria-label="Sell after (years)" /></div>
       </div>
-      <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={london} onChange={(e) => setLondon(e.target.checked)} className="h-5 w-5 rounded border-border" aria-label="Home is in London" /><span className="text-sm">Home is in London (£420,000 price cap and £90,000 income limit)</span></label>
+      <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={london} onChange={(e) => setLondon(e.target.checked)} className="h-5 w-5 rounded border-border" aria-label="Home is in London" /><span className="text-sm">Home is in London (£420,000 price cap on a first sale and £90,000 income limit)</span></label>
 
       {v > 0 && (
         <div className="space-y-4 animate-fade-in-up">
           {result.eligible ? (
-            <div className="rounded-xl bg-green-100 dark:bg-green-950 p-3 text-sm text-green-800 dark:text-green-300">Meets the national First Homes price, income and mortgage criteria. Councils can set lower price caps and local criteria.</div>
+            <div className="rounded-xl bg-green-100 dark:bg-green-950 p-3 text-sm text-green-800 dark:text-green-300">{isResale ? 'Meets the national First Homes income and mortgage criteria. The price cap applies only to the first sale, and the seller must pass on the percentage discount they got. Local criteria can apply for the first 3 months on the market.' : 'Meets the national First Homes price, income and mortgage criteria. Councils can set lower price caps and local criteria.'}</div>
           ) : (
             <div className="rounded-xl bg-destructive/10 p-4 text-sm">
               <p className="font-semibold text-destructive">Not eligible for First Homes</p>
@@ -156,7 +161,7 @@ export default function FirstHomesSchemeCalculator() {
             </table>
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-2">
-            <p>First Homes: 30-50% off new-build homes in England for first-time buyers. The price after the discount must be no more than £250,000 (£420,000 in London), household income no more than £80,000 (£90,000 in London), and a mortgage must cover at least half the price. Stamp duty is charged on the discounted price. When you sell, you normally have to sell to another eligible buyer at the same percentage discount; a council can allow an open-market sale after 6 months of unsuccessful marketing, in which case you repay the discount percentage of the sale price.</p>
+            <p>First Homes: 30-50% off homes in England for first-time buyers. On the first sale of a new-build, the price after the discount must be no more than £250,000 (£420,000 in London); the cap does not apply to later resales. Household income must be no more than £80,000 (£90,000 in London), and a mortgage must cover at least half the price. Stamp duty is charged on the discounted price. When you sell, you normally have to sell to another eligible buyer at the same percentage discount; a council can allow an open-market sale after 6 months of unsuccessful marketing, in which case you repay the discount percentage of the sale price.</p>
             <p>National planning policy stopped requiring 25% of affordable homes to be First Homes in December 2024, so supply now depends on councils. Your First Home, a separate equity loan scheme for first-time buyers of new-build homes in England, starts in April 2027: a government equity loan of up to 20%, a reduced deposit and five years interest free.</p>
           </div>
         </div>

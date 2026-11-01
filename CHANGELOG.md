@@ -1,5 +1,17 @@
 # CHANGELOG — Calks.uk
 
+## 2026-11-01 (round 16) — Another twenty calculators checked by hand
+
+Sixteenth `/calkcheck` pass (report: `AUDIT-2026-11-01-b.md`): 132 defects on 20 pages, 20 HIGH, 13 calculators with wrong results.
+
+**Health:** macros for adults only with a calorie floor and protein per kilo; protein safety position and cautions; sleep labels, 7 to 9 hours; one set of
+WHO waist-to-hip cut-offs. **Building:** extension permitted development limits and £548 fee; staircase 2R+G in the verdict and handrail range; radiator
+walls input and delta ratings; concrete bag counts and PAV1. **Work and pensions:** Employment Allowance; pension basis selector and £10,000 trigger; night
+shift premium and contract hours; First Homes cap on first sales only. **Other:** GPA from module marks; shoe size formulas and range warning; Premium Bonds
+and Lotto odds; Right to Buy lender rates removed.
+
+Ledger now 1,757 entries; 26 new guards.
+
 ## 2026-11-01 (round 15) — Twenty more calculators checked by hand
 
 Fifteenth `/calkcheck` pass (report: `AUDIT-2026-11-01.md`): 110 defects on 20 pages, 22 HIGH, 14 calculators with wrong results.

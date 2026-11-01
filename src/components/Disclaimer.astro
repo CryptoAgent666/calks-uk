@@ -45,7 +45,7 @@ const SOURCE_BY_SLUG: Record<string, string> = {
   // grade and exam tools: no student-finance figures behind them
   'gcse-grade-calculator': 'Ofqual',
   'a-level-grade-calculator': 'Ofqual and UCAS',
-  'gpa-calculator': 'UK degree classification conventions and UK ENIC',
+  'gpa-calculator': 'UK degree classification conventions and the Higher Education Academy GPA scale',
   'exam-score-calculator': '',
   'weighted-grade-calculator': '',
   'progress-8-calculator': 'DfE and Standards and Testing Agency publications',
@@ -63,15 +63,32 @@ const SOURCE_BY_SLUG: Record<string, string> = {
   'premium-bonds-calculator': 'NS&I and GOV.UK',
   // premiums are estimated from one broker's published quotes
   'critical-illness-calculator': 'published broker quotes (iam insured)',
+  // the tax figures are GOV.UK's; the FCA sets none of them
+  'cost-of-delay-calculator': 'GOV.UK and HMRC',
   'weight-loss-calculator': 'NHS, NICE and MHRA guidance',
   'heart-rate-zone-calculator': 'NHS and BHF guidance',
+  'protein-intake-calculator': 'UK dietary reference values (British Nutrition Foundation, GOV.UK)',
+  'macro-calculator': 'GOV.UK dietary recommendations, NHS and NICE guidance',
+  'waist-hip-ratio-calculator': 'WHO, NICE and NHS guidance',
+  'sleep-calculator': 'NHS and National Sleep Foundation guidance',
   // the RHS publishes no liner, pump or stocking rule behind these figures
   'pond-volume-calculator': '',
+  'radiator-btu-calculator': 'published radiator data from Zehnder and QS Supplies',
+  'kitchen-cost-calculator': "Checkatrade's published cost guide and Approved Document P",
+  'concrete-calculator': 'Approved Document A, Checkatrade and supplier data',
+  // scheme and tax rules, not lender or FCA figures
+  'first-homes-scheme-calculator': 'GOV.UK',
+  'buy-to-let-yield-calculator': 'GOV.UK and HMRC',
+  // planning rules from the Planning Portal, prices from published cost guides, no manufacturer data
+  'extension-cost-calculator': 'the Planning Portal and published cost guides (Checkatrade, BestBuilders)',
+  'staircase-calculator': 'Approved Document K and published cost guides (Checkatrade)',
 }
 
 // A health page that has nothing to do with diet should not send readers to a dietitian.
 const ADVICE_BY_SLUG: Record<string, string> = {
   'heart-rate-zone-calculator': 'It is not medical advice: talk to your GP or specialist before acting on the numbers.',
+  'waist-hip-ratio-calculator': 'It is not medical advice: talk to your GP before acting on the numbers.',
+  'sleep-calculator': 'It is not medical advice: talk to your GP if sleep problems affect your daily life.',
 }
 
 const GRADE_SLUGS = new Set(['gcse-grade-calculator', 'a-level-grade-calculator', 'gpa-calculator', 'exam-score-calculator', 'weighted-grade-calculator', 'progress-8-calculator', 'ks2-sats-scaled-score-calculator', 'degree-classification-calculator'])

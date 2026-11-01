@@ -6,15 +6,18 @@ function calculate(floorHeight: number, riserHeight: number, goingDepth: number)
   const totalGoing = (treads * goingDepth) / 1000 // in metres
   const actualRiser = (floorHeight * 1000) / risers
   const pitch = Math.atan(actualRiser / goingDepth) * (180 / Math.PI)
-  const stringerLength = Math.sqrt(Math.pow(floorHeight, 2) + Math.pow(totalGoing, 2))
+  // Along the pitch line, one rise and one going per tread: the same slope as the pitch shown
+  const stringerLength = (treads * Math.sqrt(Math.pow(actualRiser, 2) + Math.pow(goingDepth, 2))) / 1000
 
-  // Building regs: riser 150-220mm, going 220-300mm, pitch max 42°
+  // Approved Document K Table 1.1, private stair: riser 150-220mm, going 220-300mm, pitch max 42°.
+  // Para 1.3 only allows a rise and going that meet the table's notes, so 2R+G 550-700mm counts too.
   const riserOk = actualRiser >= 150 && actualRiser <= 220
   const goingOk = goingDepth >= 220 && goingDepth <= 300
   const pitchOk = pitch <= 42
-  const twiceRiserPlusGoing = 2 * actualRiser + goingDepth // should be 550-700mm
+  const twiceRiserPlusGoing = 2 * actualRiser + goingDepth
+  const twiceRiserPlusGoingOk = twiceRiserPlusGoing >= 550 && twiceRiserPlusGoing <= 700
 
-  return { risers, treads, totalGoing, actualRiser, pitch, stringerLength, riserOk, goingOk, pitchOk, twiceRiserPlusGoing, compliant: riserOk && goingOk && pitchOk }
+  return { risers, treads, totalGoing, actualRiser, pitch, stringerLength, riserOk, goingOk, pitchOk, twiceRiserPlusGoing, twiceRiserPlusGoingOk, compliant: riserOk && goingOk && pitchOk && twiceRiserPlusGoingOk }
 }
 
 export default function StaircaseCalculator() {
@@ -50,12 +53,13 @@ export default function StaircaseCalculator() {
 
           <div className="grid grid-cols-2 gap-3">
             <div className="rounded-xl border border-border p-3 text-center"><p className="text-xs text-muted-foreground">Actual Riser</p><p className={`text-lg font-bold ${result.riserOk ? '' : 'text-destructive'}`}>{result.actualRiser.toFixed(1)}mm</p></div>
-            <div className="rounded-xl border border-border p-3 text-center"><p className="text-xs text-muted-foreground">Stringer Length</p><p className="text-lg font-bold">{result.stringerLength.toFixed(2)}m</p></div>
+            <div className="rounded-xl border border-border p-3 text-center"><p className="text-xs text-muted-foreground">Stringer Length (pitch line)</p><p className="text-lg font-bold">{result.stringerLength.toFixed(2)}m</p></div>
           </div>
 
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
             <p className="font-medium text-foreground">Building Regs (Part K, England):</p>
-            <p>Riser: 150-220mm | Going: 220-300mm | Max pitch: 42° | 2R+G: 550-700mm (yours: {result.twiceRiserPlusGoing.toFixed(0)}mm)</p>
+            <p>Riser: 150-220mm | Going: 220-300mm | Max pitch: 42° | 2R+G: 550-700mm (yours: <span className={result.twiceRiserPlusGoingOk ? '' : 'font-semibold text-destructive'}>{result.twiceRiserPlusGoing.toFixed(0)}mm</span>)</p>
+            <p className="mt-2">2R+G counts towards the verdict because Table 1.1 of Approved Document K ties every rise and going to it. Headroom (2 m, with a reduced figure for loft conversions) and stair width are not checked here.</p>
           </div>
         </div>
       )}

@@ -13,7 +13,7 @@ const { lastUpdated = 'April 2026', category, slug = '' } = Astro.props
 const VERIFICATION_BY_SLUG: Record<string, string> = {
   'gcse-grade-calculator': 'Checked against Ofqual 9 to 1 grading, 2026',
   'a-level-grade-calculator': 'Checked against Ofqual and UCAS 2026 guidance',
-  'gpa-calculator': 'Checked against UK degree classifications and UK ENIC guidance',
+  'gpa-calculator': 'Checked against the Higher Education Academy GPA scale and Office for Students data; classification is indicative',
   'exam-score-calculator': 'Methodology reviewed for 2026',
   'weighted-grade-calculator': 'Methodology reviewed for 2026',
   'progress-8-calculator': 'Checked against DfE and Standards and Testing Agency publications, 2026',
@@ -33,8 +33,24 @@ const VERIFICATION_BY_SLUG: Record<string, string> = {
   // health pages: the sources actually read for them, not a GOV.UK rate table
   'weight-loss-calculator': 'Checked against NHS, NICE and MHRA guidance, 2026',
   'heart-rate-zone-calculator': 'Checked against NHS and BHF guidance, 2026; zones are estimates',
+  'protein-intake-calculator': 'Checked against UK dietary reference values (British Nutrition Foundation, GOV.UK), 2026',
+  'macro-calculator': 'Checked against GOV.UK dietary recommendations, NHS and NICE guidance, 2026',
+  'waist-hip-ratio-calculator': 'Checked against WHO, NICE and NHS guidance, 2026',
+  'sleep-calculator': 'Checked against NHS guidance, 2026; 90-minute cycles are a rule of thumb',
   // the RHS publishes no liner, pump or stocking rule to verify these figures against
   'pond-volume-calculator': 'Methodology reviewed for 2026',
+  // cost guides and manufacturer data, not building regulations, sit behind most of these figures
+  'radiator-btu-calculator': 'Correction factors from published radiator data, 2026; sizing is a rule of thumb',
+  'kitchen-cost-calculator': "Prices from Checkatrade's March 2026 guide; electrical rules from Approved Document P",
+  'concrete-calculator': 'Depths checked against Approved Document A; prices from Checkatrade, August 2026',
+  // scheme and tax rules, not lender or FCA figures
+  'first-homes-scheme-calculator': 'Checked against GOV.UK First Homes guidance and planning practice guidance, 2026',
+  'buy-to-let-yield-calculator': 'Checked against GOV.UK and HMRC landlord and Stamp Duty guidance, 2026',
+  // planning rules from the Planning Portal, prices from published cost guides
+  'extension-cost-calculator': 'Checked against the Planning Portal and published cost guides, 2026',
+  'staircase-calculator': 'Checked against Approved Document K and published cost guides, 2026',
+  // the tax figures are GOV.UK's; the FCA sets none of them and growth rates are the reader's own
+  'cost-of-delay-calculator': 'ISA, CGT and HMRC interest figures checked against GOV.UK; growth rates are assumptions',
 }
 
 // Money/regulatory categories carry a dated verification badge; utility

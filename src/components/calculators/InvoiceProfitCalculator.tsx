@@ -13,7 +13,8 @@ function calculate(revenue: number, materials: number, labour: number, overhead:
   const totalCosts = materials + labour + overhead
   const profit = revenue - totalCosts
   const margin = revenue > 0 ? (profit / revenue) * 100 : 0
-  const markup = totalCosts > 0 ? (profit / totalCosts) * 100 : 0
+  // Markup has no meaning without a cost to mark up
+  const markup = totalCosts > 0 ? (profit / totalCosts) * 100 : null
 
   const vat = revenue * vatRate / 100
   const invoiceTotal = revenue + vat
@@ -50,7 +51,7 @@ export default function InvoiceProfitCalculator() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className={`rounded-xl p-4 text-center ${result.profit > 0 ? 'bg-green-100 dark:bg-green-950' : 'bg-destructive/10'}`}><p className="text-xs text-muted-foreground">Profit</p><p className={`text-xl font-bold ${result.profit > 0 ? 'text-green-700 dark:text-green-400' : 'text-destructive'}`}>{formatCurrency(result.profit)}</p></div>
             <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Margin</p><p className="text-xl font-bold">{formatPercent(result.margin)}</p></div>
-            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Markup</p><p className="text-xl font-bold">{formatPercent(result.markup)}</p></div>
+            <div className="rounded-xl bg-muted/50 p-4 text-center"><p className="text-xs text-muted-foreground">Markup</p><p className="text-xl font-bold">{result.markup === null ? 'n/a' : formatPercent(result.markup)}</p></div>
             <div className="rounded-xl bg-primary/10 p-4 text-center"><p className="text-xs text-muted-foreground">Invoice Total</p><p className="text-xl font-bold text-primary">{formatCurrency(result.invoiceTotal)}</p><p className="text-xs text-muted-foreground mt-1">{vat === 'none' ? 'No VAT charged' : `incl. ${formatCurrency(result.vat)} VAT at ${vat}%`}</p></div>
           </div>
         </div>

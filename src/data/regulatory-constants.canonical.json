@@ -37998,10 +37998,341 @@
       "verify_method": "calkcheck 2026-11-01 r15",
       "confidence": "high",
       "changes_next_fy": "Refresh with each annual review."
+    },
+    {
+      "key": "planning_fee_householder_enlarge_england",
+      "value": "548",
+      "unit": "GBP",
+      "law": "Planning fees England, 1 April 2026",
+      "theme": "legal",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ExtensionCostCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://ecab.planningportal.co.uk/uploads/english_application_fees.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "£272 for outbuildings and means of enclosure.",
+      "official_value": "548",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": "MHCLG indexes planning fees each April."
+    },
+    {
+      "key": "pd_rear_extension_depth_limits",
+      "value": "4 m detached, 3 m other; 8 m and 6 m with prior approval",
+      "unit": "rule",
+      "law": "GPDO 2015 Sch 2 Pt 1 Class A",
+      "theme": "legal",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.planningportal.co.uk/permission/common-projects/extensions/planning-permission",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Height 4 m; eaves 3 m within 2 m of a boundary; more than one storey 3 m rear, 7 m to boundary.",
+      "official_value": "4 m detached, 3 m other; 8 m and 6 m with prior approval",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "stair_handrail_height_range",
+      "value": "900 to 1,000 mm",
+      "unit": "mm",
+      "law": "Approved Document K para 1.34",
+      "theme": "legal",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://assets.publishing.service.gov.uk/media/60d5bdcde90e07716f516cfd/Approved_Document_K.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "2R+G 550 to 700 is part of the Table 1.1 conditions; loft headroom 1.9 m centre, 1.8 m side.",
+      "official_value": "900 to 1,000 mm",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "foundation_min_depth_ad_a",
+      "value": "0.45 m frost minimum; clay 0.75 / 0.9 / 1.0 m by shrinkage",
+      "unit": "m",
+      "law": "Approved Document A para 2E4",
+      "theme": "legal",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/structure-approved-document-a",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "0.45 m frost minimum; clay 0.75 / 0.9 / 1.0 m by shrinkage",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "employment_allowance_annual_max",
+      "value": "10500",
+      "unit": "GBP",
+      "law": "Employment Allowance",
+      "theme": "tax",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/EmployeeCostBreakdownCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/claim-employment-allowance",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "10500",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "auto_enrolment_earnings_trigger",
+      "value": "10000",
+      "unit": "GBP",
+      "law": "Workplace pensions",
+      "theme": "pension",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/EmployerPensionCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/workplace-pensions",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Age 22 to State Pension age; employer money for opt-ins above £520 a month.",
+      "official_value": "10000",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "nhs_pension_employer_rate",
+      "value": "23.7",
+      "unit": "percent",
+      "law": "NHS Pension Scheme employer contributions",
+      "theme": "pension",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.nhsemployers.org/articles/nhs-pension-scheme-employer-contributions",
+      "status": "current",
+      "change_frequency": "",
+      "note": "From 1 April 2024.",
+      "official_value": "23.7",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": "Next change 1 April 2027."
+    },
+    {
+      "key": "police_unsocial_hours_allowance",
+      "value": "10",
+      "unit": "percent",
+      "law": "Police Regulations 2003 Annex U",
+      "theme": "pay",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/circular-0032024-annex-f-and-u-police-regulations-2003/annex-u-amendment-allowances-19-february-2024-accessible",
+      "status": "current",
+      "change_frequency": "",
+      "note": "10% of hourly pay, 8pm to 6am.",
+      "official_value": "10",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "first_homes_price_cap_scope",
+      "value": "first sale only",
+      "unit": "rule",
+      "law": "First Homes guidance",
+      "theme": "mortgage",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/FirstHomesSchemeCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/first-homes",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "first sale only",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "lotto_any_prize_odds_allwyn",
+      "value": "1 in 4.9",
+      "unit": "odds",
+      "law": "Allwyn format change, June 2026",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ProbabilityCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.allwyn.co.uk/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Operator release; official odds page not reachable.",
+      "official_value": "1 in 4.9",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": "Check against national-lottery.co.uk when reachable."
+    },
+    {
+      "key": "protein_rni_g_per_kg",
+      "value": "0.75",
+      "unit": "g/kg",
+      "law": "UK RNI, government dietary recommendations",
+      "theme": "health",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ProteinIntakeCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.nutrition.org.uk/nutritional-information/protein/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "DH advice to avoid more than 2 x RNI (1.5 g/kg). Pregnancy +6 g; breastfeeding +11 g to 6 months, then +8 g.",
+      "official_value": "0.75",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "nhs_adult_sleep_hours",
+      "value": "7 to 9",
+      "unit": "hours",
+      "law": "NHS insomnia guidance",
+      "theme": "health",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/SleepCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.nhs.uk/conditions/insomnia/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Children 9 to 13; toddlers and babies 12 to 17.",
+      "official_value": "7 to 9",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "who_waist_hip_cut_offs",
+      "value": "at or above 0.90 men, 0.85 women",
+      "unit": "ratio",
+      "law": "WHO waist circumference report 2008",
+      "theme": "health",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/WaistHipRatioCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.who.int/publications/i/item/9789241501491",
+      "status": "current",
+      "change_frequency": "",
+      "note": "NICE NG246 uses waist-to-height: 0.4 to 0.49, 0.5 to 0.59, 0.6 or more.",
+      "official_value": "at or above 0.90 men, 0.85 women",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "checkatrade_build_cost_guides_2026",
+      "value": "extensions £1,800-£3,000/m² ex VAT (June); kitchens £5,250 / £10,550 / £28,400 (March); ready-mix £100-£160/m³ plus delivery (August)",
+      "unit": "GBP",
+      "law": "Checkatrade price guides",
+      "theme": "building",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ExtensionCostCalculator.tsx",
+        "src/components/calculators/KitchenCostCalculator.tsx",
+        "src/components/calculators/ConcreteCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.checkatrade.com/blog/cost-guides/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Market guides, indicative; dated in the code.",
+      "official_value": "extensions £1,800-£3,000/m² ex VAT (June); kitchens £5,250 / £10,550 / £28,400 (March); ready-mix £100-£160/m³ plus delivery (August)",
+      "verified_date": "2026-11-01",
+      "verify_method": "calkcheck 2026-11-01 r16",
+      "confidence": "high",
+      "changes_next_fy": "Refresh with each annual review."
     }
   ],
   "status_summary": {
-    "current": 1669,
+    "current": 1683,
     "retired": 24,
     "historical": 24,
     "superseded_by_component": 4,

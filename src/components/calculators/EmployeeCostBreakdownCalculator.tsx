@@ -5,20 +5,29 @@ import { formatCurrency } from '@/utils'
 const QE_LOWER = 6_240
 const QE_UPPER = 50_270
 
+// Employment Allowance 2026/27, set against the whole business's employer NI bill
+const EMPLOYMENT_ALLOWANCE = 10_500
+
+// A 5-day week is paid 260 days a year; statutory holiday is at least 28 of them (5.6 weeks)
+const PAID_DAYS = 260
+const STATUTORY_HOLIDAY_DAYS = 28
+
 // The Apprenticeship Levy (0.5% of an employer's whole pay bill above £3m, less a
 // £15,000 allowance) depends on the total pay bill, not one salary, so it is
 // left out here.
-function calculate(salary: number, pensionPct: number, trainingBudget: number, equipmentBudget: number, recruitmentCost: number, benefits = 0) {
+function calculate(salary: number, pensionPct: number, trainingBudget: number, equipmentBudget: number, recruitmentCost: number, benefits = 0, claimAllowance = false) {
   const employerNI = Math.max(0, (salary - 5_000) * 0.15)
+  const employmentAllowance = claimAllowance ? Math.min(employerNI, EMPLOYMENT_ALLOWANCE) : 0
   const qualifyingEarnings = Math.max(0, Math.min(salary, QE_UPPER) - QE_LOWER)
   const pension = qualifyingEarnings * (pensionPct / 100)
-  const totalCost = salary + employerNI + pension + benefits + trainingBudget + equipmentBudget + (recruitmentCost / 3) // amortise over 3 years
+  const totalCost = salary + employerNI - employmentAllowance + pension + benefits + trainingBudget + equipmentBudget + (recruitmentCost / 3) // amortise over 3 years
   const overhead = totalCost - salary
   const overheadPct = salary > 0 ? (overhead / salary) * 100 : 0
   const costPerHour = totalCost / (37.5 * 52)
-  const costPerDay = totalCost / 260
+  const costPerDay = totalCost / PAID_DAYS
+  const costPerDayWorked = totalCost / (PAID_DAYS - STATUTORY_HOLIDAY_DAYS)
 
-  return { salary, employerNI, qualifyingEarnings, pension, benefits, trainingBudget, equipmentBudget, recruitmentAmortised: recruitmentCost / 3, totalCost, overhead, overheadPct, costPerHour, costPerDay }
+  return { salary, employerNI, employmentAllowance, qualifyingEarnings, pension, benefits, trainingBudget, equipmentBudget, recruitmentAmortised: recruitmentCost / 3, totalCost, overhead, overheadPct, costPerHour, costPerDay, costPerDayWorked }
 }
 
 export default function EmployeeCostBreakdownCalculator() {
@@ -28,9 +37,10 @@ export default function EmployeeCostBreakdownCalculator() {
   const [equipment, setEquipment] = useState('1000')
   const [recruitment, setRecruitment] = useState('3000')
   const [benefits, setBenefits] = useState('0')
+  const [claimAllowance, setClaimAllowance] = useState(false)
 
   const s = parseFloat(salary.replace(/,/g,'')) || 0
-  const result = useMemo(() => calculate(s, Math.max(0, parseFloat(pension) || 0), parseFloat(training)||0, parseFloat(equipment)||0, parseFloat(recruitment)||0, parseFloat(benefits)||0), [s, pension, training, equipment, recruitment, benefits])
+  const result = useMemo(() => calculate(s, Math.max(0, parseFloat(pension) || 0), parseFloat(training)||0, parseFloat(equipment)||0, parseFloat(recruitment)||0, parseFloat(benefits)||0, claimAllowance), [s, pension, training, equipment, recruitment, benefits, claimAllowance])
 
   return (
     <div className="space-y-6">
@@ -39,21 +49,23 @@ export default function EmployeeCostBreakdownCalculator() {
         <div><label className="block text-sm font-medium mb-2">Employer Pension (%)</label><input type="number" min="0" max="20" step="0.5" value={pension} onChange={(e) => setPension(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Employer Pension (% of qualifying earnings)" /><p className="text-xs text-muted-foreground mt-1">Of qualifying earnings (£6,240 to £50,270); minimum 3%</p></div>
         <div><label className="block text-sm font-medium mb-2">Benefits (£/yr)</label><input type="number" min="0" value={benefits} onChange={(e) => setBenefits(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Benefits (£/yr)" /><p className="text-xs text-muted-foreground mt-1">Private medical, insurance and similar</p></div>
         <div><label className="block text-sm font-medium mb-2">Training (£/yr)</label><input type="number" min="0" value={training} onChange={(e) => setTraining(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Training (£/yr)" /></div>
-        <div><label className="block text-sm font-medium mb-2">Equipment (£/yr)</label><input type="number" min="0" value={equipment} onChange={(e) => setEquipment(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Equipment (£/yr)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Equipment (£/yr)</label><input type="number" min="0" value={equipment} onChange={(e) => setEquipment(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Equipment (£/yr)" /><p className="text-xs text-muted-foreground mt-1">Yearly cost; spread a one-off laptop or phone over the years it lasts</p></div>
         <div><label className="block text-sm font-medium mb-2">Recruitment Cost</label><input type="number" min="0" value={recruitment} onChange={(e) => setRecruitment(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Recruitment Cost" /><p className="text-xs text-muted-foreground mt-1">Amortised over 3 years</p></div>
       </div>
+      <label className="flex items-start gap-3 text-sm"><input type="checkbox" checked={claimAllowance} onChange={(e) => setClaimAllowance(e.target.checked)} className="mt-0.5 h-4 w-4 rounded border-input" /><span>Claim the Employment Allowance (up to £10,500 off employer NI)</span></label>
 
       {s > 0 && (
         <div className="space-y-4 animate-fade-in-up">
           <div className="rounded-2xl bg-primary/10 p-6 text-center">
             <p className="text-sm text-muted-foreground">True Annual Cost of Employment</p>
             <p className="text-3xl font-bold text-primary mt-1">{formatCurrency(result.totalCost)}</p>
-            <p className="text-sm text-muted-foreground mt-1">{formatCurrency(result.costPerDay)}/day &middot; {formatCurrency(result.costPerHour)}/hour &middot; {result.overheadPct.toFixed(0)}% overhead</p>
+            <p className="text-sm text-muted-foreground mt-1">{formatCurrency(result.costPerDay)}/paid day &middot; {formatCurrency(result.costPerDayWorked)}/day worked &middot; {formatCurrency(result.costPerHour)}/paid hour &middot; {result.overheadPct.toFixed(0)}% overhead</p>
           </div>
           <table className="w-full text-sm">
             <tbody>
               <tr className="border-b border-border/50"><td className="py-2">Salary</td><td className="text-right tabular-nums">{formatCurrency(result.salary)}</td></tr>
               <tr className="border-b border-border/50"><td className="py-2">Employer NI (15%)</td><td className="text-right tabular-nums">{formatCurrency(result.employerNI)}</td></tr>
+              {result.employmentAllowance > 0 && <tr className="border-b border-border/50"><td className="py-2">Employment Allowance</td><td className="text-right tabular-nums text-green-600">{formatCurrency(-result.employmentAllowance)}</td></tr>}
               <tr className="border-b border-border/50"><td className="py-2">Employer pension ({pension || 0}% of {formatCurrency(result.qualifyingEarnings)} qualifying earnings)</td><td className="text-right tabular-nums">{formatCurrency(result.pension)}</td></tr>
               {result.benefits > 0 && <tr className="border-b border-border/50"><td className="py-2">Benefits</td><td className="text-right tabular-nums">{formatCurrency(result.benefits)}</td></tr>}
               <tr className="border-b border-border/50"><td className="py-2">Training</td><td className="text-right tabular-nums">{formatCurrency(result.trainingBudget)}</td></tr>
@@ -62,6 +74,10 @@ export default function EmployeeCostBreakdownCalculator() {
               <tr className="font-semibold"><td className="py-2">Total</td><td className="text-right tabular-nums">{formatCurrency(result.totalCost)}</td></tr>
             </tbody>
           </table>
+          <div className="rounded-xl border border-border p-4 text-xs text-muted-foreground space-y-1">
+            <p>The Employment Allowance applies once to the whole business, so tick it only if your other staff have not used it up. You cannot claim if more than half your work is in the public sector (charities excepted), if your company&rsquo;s sole director is its only employee liable for employer NI, or for household staff other than care or support workers.</p>
+            <p>Employer NI is 0% on pay up to £50,270 for employees under 21 and apprentices under 25; this calculator does not apply that rate. A day worked assumes a 5-day week less 28 days of statutory holiday, and a paid hour a 37.5-hour week.</p>
+          </div>
         </div>
       )}
     </div>

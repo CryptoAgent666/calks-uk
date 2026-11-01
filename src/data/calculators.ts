@@ -781,7 +781,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'sleep-calculator',
     title: 'Sleep Calculator — Bedtime & Wake Time',
-    description: 'Find the best bedtime or wake-up time based on 90-minute sleep cycles. Wake feeling refreshed.',
+    description: 'Find a bedtime or wake-up time that gives adults the 7 to 9 hours the NHS suggests, using 90-minute sleep cycles as a rule of thumb.',
     category: 'health',
     icon: 'Heart',
     keywords: ['sleep calculator', 'sleep cycles', 'bedtime', 'wake up time'],
@@ -1018,7 +1018,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'radiator-btu-calculator',
     title: 'Radiator BTU Calculator',
-    description: 'Calculate the BTU and wattage needed for your radiators based on room size, glazing and insulation.',
+    description: 'Calculate the BTU and wattage needed for your radiators based on room size, glazing and external walls.',
     category: 'building',
     icon: 'Hammer',
     keywords: ['radiator', 'BTU', 'heating', 'radiator size', 'central heating'],
@@ -1137,7 +1137,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'shoe-size-converter',
     title: 'Shoe Size Converter (UK/EU/US)',
-    description: 'Convert shoe sizes between UK, EU, US (men and women) and centimetres.',
+    description: 'Convert adult shoe sizes between UK, EU, US (men and women) and foot length in centimetres.',
     category: 'tools',
     icon: 'Wrench',
     keywords: ['shoe size', 'shoe converter', 'UK to EU', 'shoe size chart'],
@@ -1760,7 +1760,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // TOOLS
   { slug: 'cost-of-living-calculator', title: 'Cost of Living Calculator', description: 'Track monthly expenses against take-home pay. See surplus or shortfall with editable UK average costs.', category: 'tools', icon: 'Wrench', keywords: ['cost of living', 'budget', 'monthly expenses', 'living costs', 'affordability'], priority: 1 , metaTitle: 'UK Cost of Living Calculator 2026' },
   { slug: 'smart-meter-calculator', title: 'Smart Meter / Appliance Cost Calculator', description: 'Work out what each appliance costs to run per day at your electricity unit rate, the breakdown a smart meter display shows, and where the savings are.', category: 'energy', icon: 'Zap', keywords: ['smart meter', 'appliance cost', 'electricity usage', 'device cost'], priority: 2 , metaTitle: 'Smart Meter Savings Calculator UK 2026' },
-  { slug: 'gpa-calculator', title: 'GPA Calculator (UK)', description: 'Convert UK module marks and credits into a weighted GPA on the 4.0 scale and see the matching degree classification, from a First to a Third.', category: 'education', icon: 'GraduationCap', keywords: ['GPA', 'grade point average', 'degree class', 'university grades'], priority: 2 , metaTitle: 'UK GPA Calculator (Honours + 4.0 Scale)' },
+  { slug: 'gpa-calculator', title: 'GPA Calculator (UK)', description: 'Enter UK module marks and credits for a credit-weighted average, an indicative degree class and a GPA on the Higher Education Academy 0 to 4.25 scale.', category: 'education', icon: 'GraduationCap', keywords: ['GPA', 'grade point average', 'degree class', 'university grades'], priority: 2 , metaTitle: 'UK GPA Calculator (Degree Class + 4.25 Scale)' },
   { slug: 'solicitor-fee-calculator', title: 'Solicitor Fee Estimate Calculator', description: 'Estimate solicitor fees with VAT and disbursements for conveyancing, divorce, wills, probate and employment tribunals, including the £628 and £526 court fees.', category: 'legal', icon: 'Scale', keywords: ['solicitor fees', 'legal fees', 'conveyancing cost', 'divorce cost', 'will cost'], priority: 1 , metaTitle: 'UK Solicitor Fee Calculator 2026' },
   { slug: 'divorce-settlement-calculator', title: 'Divorce Financial Settlement Calculator', description: 'Estimate how assets might be split in a divorce — property, pensions, savings and debts.', category: 'legal', icon: 'Scale', keywords: ['divorce settlement', 'financial split', 'matrimonial assets', 'divorce calculator'], priority: 2 , metaTitle: 'UK Divorce Settlement Calculator 2026' },
   { slug: 'uk-citizenship-calculator', title: 'UK Citizenship Eligibility Calculator', description: 'Check citizenship eligibility after ILR. See timeline, absence limits and total application costs.', category: 'immigration', icon: 'Globe', keywords: ['citizenship', 'naturalisation', 'British citizenship', 'citizenship cost'], priority: 2 , metaTitle: 'UK Citizenship Eligibility Calculator 2026' },
@@ -1774,7 +1774,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'mean-median-mode-calculator', title: 'Mean, Median & Mode Calculator', description: 'Calculate mean, median, mode, range, sum, min and max from a set of numbers. Shows sorted data.', category: 'math', icon: 'Calculator', keywords: ['mean', 'median', 'mode', 'average', 'statistics'], priority: 1 , metaTitle: 'Mean Median Mode Calculator — Free Online' },
   { slug: 'prime-number-calculator', title: 'Prime Number Checker', description: 'Check if a number is prime, find prime factorisation, and list primes up to N.', category: 'math', icon: 'Calculator', keywords: ['prime number', 'prime checker', 'factorisation', 'prime factor'], priority: 2 , metaTitle: 'Prime Number Calculator — Check & List' },
   // HEALTH
-  { slug: 'waist-hip-ratio-calculator', title: 'Waist-to-Hip Ratio Calculator', description: 'Calculate your waist-to-hip ratio and cardiovascular disease risk using WHO guidelines.', category: 'health', icon: 'Heart', keywords: ['waist hip ratio', 'WHR', 'body shape', 'cardiovascular risk'], priority: 2 , metaTitle: 'Waist-Hip Ratio Calculator UK — NHS' },
+  { slug: 'waist-hip-ratio-calculator', title: 'Waist-to-Hip Ratio Calculator', description: 'Calculate your waist-to-hip ratio against the WHO cut-offs, and add your height for the NICE waist-to-height class.', category: 'health', icon: 'Heart', keywords: ['waist hip ratio', 'WHR', 'body shape', 'cardiovascular risk'], priority: 2 , metaTitle: 'Waist-Hip Ratio Calculator UK — WHO Cut-offs' },
   // GARDENING
   { slug: 'raised-bed-calculator', title: 'Raised Bed Soil Calculator', description: 'Calculate soil, bags and sleepers needed for raised garden beds with common size presets.', category: 'gardening', icon: 'Flower2', keywords: ['raised bed', 'garden bed', 'soil calculator', 'sleepers'], priority: 1 , metaTitle: 'Raised Bed Soil Calculator UK' },
   { slug: 'fence-paint-calculator', title: 'Fence Paint Calculator', description: 'Calculate fence paint or stain needed based on panels, height and number of coats.', category: 'gardening', icon: 'Flower2', keywords: ['fence paint', 'fence stain', 'garden fence', 'fence treatment'], priority: 2, metaTitle: 'Fence Paint Calculator UK — Litres for Garden Fencing' },
@@ -1828,7 +1828,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // EDUCATION
   { slug: 'student-allowance-calculator', title: 'Bursary & Scholarship Impact Calculator', description: 'Calculate total student support from maintenance loan plus NHS, teacher training, DSA and other bursaries.', category: 'education', icon: 'GraduationCap', keywords: ['bursary', 'scholarship', 'student allowance', 'NHS bursary', 'DSA'], priority: 2 , metaTitle: 'Student Allowance Calculator UK 2026' },
   // PAY
-  { slug: 'night-shift-calculator', title: 'Night Shift Allowance Calculator', description: 'Calculate night shift premium at 15-100% rates. See annual extra earnings from night work.', category: 'pay', icon: 'Banknote', keywords: ['night shift', 'night premium', 'unsocial hours', 'shift pay'], priority: 2 , metaTitle: 'Night Shift Allowance Calculator UK 2026' },
+  { slug: 'night-shift-calculator', title: 'Night Shift Allowance Calculator', description: 'Calculate your night shift premium at any percentage rate and contract hours. See annual extra earnings from night work.', category: 'pay', icon: 'Banknote', keywords: ['night shift', 'night premium', 'unsocial hours', 'shift pay'], priority: 2 , metaTitle: 'Night Shift Allowance Calculator UK 2026' },
   { slug: 'benefits-in-kind-calculator', title: 'Benefits in Kind (P11D) Calculator', description: 'Calculate tax on company benefits — car, medical insurance, gym, phone and more. See monthly tax impact.', category: 'pay', icon: 'Banknote', keywords: ['benefits in kind', 'P11D', 'BiK tax', 'company benefits', 'perks tax'], priority: 2 , metaTitle: 'Benefits in Kind Tax Calculator 2026/27' },
   // INVESTMENT
   { slug: 'regular-savings-calculator', title: 'Regular Savings Calculator', description: 'Calculate returns on a regular saver account with monthly deposits, and see the interest as a share of what you pay in vs the headline AER.', category: 'investment', icon: 'TrendingUp', keywords: ['regular saver', 'monthly savings', 'savings account', 'AER'], priority: 2 , metaTitle: 'Regular Savings Calculator UK 2026' },
@@ -1864,7 +1864,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'service-charge-calculator', title: 'Service Charge Calculator', description: 'Estimate your leasehold service charge from building costs. Includes insurance, maintenance and reserve fund.', category: 'mortgage', icon: 'Home', keywords: ['service charge', 'leasehold costs', 'management fee', 'building insurance'], priority: 2 , metaTitle: 'Service Charge Calculator UK 2026' },
   // PENSION
   { slug: 'pension-consolidation-calculator', title: 'Pension Consolidation Calculator', description: 'Compare keeping multiple pension pots vs consolidating into one. See fee savings over time.', category: 'pension', icon: 'PiggyBank', keywords: ['pension consolidation', 'combine pensions', 'pension fees', 'pension transfer'], priority: 2 , metaTitle: 'Pension Consolidation Calculator UK 2026' },
-  { slug: 'employer-pension-contribution-calculator', title: 'Employer Pension Contribution Calculator', description: 'Auto-enrolment pension contributions on qualifying earnings of £6,240 to £50,270: 3% employer, 5% employee with 20% basic-rate relief, 8% in total.', category: 'pension', icon: 'PiggyBank', keywords: ['employer pension', 'auto enrolment', 'qualifying earnings', 'pension contribution'], priority: 2 , metaTitle: 'Employer Pension Contribution Calculator UK 2026/27' },
+  { slug: 'employer-pension-contribution-calculator', title: 'Employer Pension Contribution Calculator', description: 'Auto-enrolment pension contributions on qualifying earnings of £6,240 to £50,270 or on all pay: 8% in total, at least 3% from the employer, with 20% basic-rate relief on your share.', category: 'pension', icon: 'PiggyBank', keywords: ['employer pension', 'auto enrolment', 'qualifying earnings', 'pension contribution'], priority: 2 , metaTitle: 'Employer Pension Contribution Calculator UK 2026/27' },
   // MORTGAGE
   { slug: 'right-to-buy-calculator', title: 'Right to Buy Calculator', description: 'Calculate your Right to Buy discount on a council home in England, with the regional cash caps and the repayment if you sell within 5 years.', category: 'mortgage', icon: 'Home', keywords: ['right to buy', 'council house', 'RTB', 'housing discount'], priority: 2 , metaTitle: 'Right to Buy Calculator UK 2026 — Discount' },
   { slug: 'staircasing-calculator', title: 'Shared Ownership Staircasing Calculator', description: 'Calculate the cost of buying a bigger share of your shared ownership home and new rent.', category: 'mortgage', icon: 'Home', keywords: ['staircasing', 'shared ownership', 'buy more share', 'increase share'], priority: 2 , metaTitle: 'Shared Ownership Staircasing Calculator' },

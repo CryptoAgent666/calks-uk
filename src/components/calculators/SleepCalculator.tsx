@@ -2,6 +2,10 @@ import { useState, useMemo } from 'react'
 
 const SLEEP_CYCLE = 90 // minutes
 const FALL_ASLEEP = 15 // minutes average
+const IN_RANGE = 'Within 7 to 9 hours'
+
+// NHS: adults need 7 to 9 hours. Five cycles (7.5 h) and six (9 h) fall inside that; fewer are short.
+const qualityFor = (cycles: number) => (cycles >= 5 ? IN_RANGE : 'Short')
 
 function calculateBedtimes(wakeTime: string) {
   if (!wakeTime) return []
@@ -20,7 +24,7 @@ function calculateBedtimes(wakeTime: string) {
       time: `${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}`,
       cycles,
       sleepHours,
-      quality: cycles >= 5 ? 'Ideal' : cycles >= 4 ? 'Good' : 'Minimum',
+      quality: qualityFor(cycles),
     })
   }
   return bedtimes
@@ -42,7 +46,7 @@ function calculateWakeTimes(bedTime: string) {
       time: `${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}`,
       cycles,
       sleepHours: sleepDuration / 60,
-      quality: cycles >= 5 ? 'Ideal' : cycles >= 4 ? 'Good' : 'Minimum',
+      quality: qualityFor(cycles),
     })
   }
   return wakeTimes
@@ -79,14 +83,14 @@ export default function SleepCalculator() {
         <h3 className="text-sm font-semibold">{mode === 'wake' ? 'Go to bed at:' : 'Set your alarm for:'}</h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {(mode === 'wake' ? bedtimes : wakeTimes).map((t) => (
-            <div key={t.cycles} className={`rounded-xl p-4 text-center ${t.quality === 'Ideal' ? 'bg-green-100 dark:bg-green-950 border-2 border-green-300 dark:border-green-800' : 'border border-border'}`}>
+            <div key={t.cycles} className={`rounded-xl p-4 text-center ${t.quality === IN_RANGE ? 'bg-green-100 dark:bg-green-950 border-2 border-green-300 dark:border-green-800' : 'border border-border'}`}>
               <p className="text-2xl font-bold">{t.time}</p>
               <p className="text-xs text-muted-foreground mt-1">{t.sleepHours}h &middot; {t.cycles} cycles</p>
-              <p className={`text-xs font-medium mt-1 ${t.quality === 'Ideal' ? 'text-green-700 dark:text-green-400' : t.quality === 'Good' ? 'text-primary' : 'text-muted-foreground'}`}>{t.quality}</p>
+              <p className={`text-xs font-medium mt-1 ${t.quality === IN_RANGE ? 'text-green-700 dark:text-green-400' : 'text-muted-foreground'}`}>{t.quality}</p>
             </div>
           ))}
         </div>
-        <p className="text-xs text-muted-foreground text-center">Based on 90-minute sleep cycles. Includes {FALL_ASLEEP} minutes to fall asleep.</p>
+        <p className="text-xs text-muted-foreground text-center">The NHS says adults need 7 to 9 hours. The 90-minute cycle is a rule of thumb, not NHS guidance, and real cycles vary. Includes {FALL_ASLEEP} minutes to fall asleep.</p>
       </div>
     </div>
   )

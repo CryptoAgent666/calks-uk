@@ -1,7 +1,15 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-function calculate(openingBalance: number, months: { income: number; expenses: number }[]) {
+const MIN_MONTHS = 1
+const MAX_MONTHS = 24
+
+function clampMonths(value: string) {
+  const parsed = parseInt(value)
+  return Number.isNaN(parsed) ? 12 : Math.min(MAX_MONTHS, Math.max(MIN_MONTHS, parsed))
+}
+
+function calculate(openingBalance: number, months: { income: number; expenses: number }[], oneOffPayment = 0) {
   let balance = openingBalance
   const schedule: { month: number; income: number; expenses: number; net: number; balance: number }[] = []
   let lowestBalance = openingBalance
@@ -17,8 +25,9 @@ function calculate(openingBalance: number, months: { income: number; expenses: n
   const totalIncome = months.reduce((s, m) => s + m.income, 0)
   const totalExpenses = months.reduce((s, m) => s + m.expenses, 0)
 
-  const avgNet = months.length > 0 ? (totalIncome - totalExpenses) / months.length : 0
-  // Burn rate: average monthly outflows minus inflows, when outflows are larger
+  const avgNet = months.length > 0 ? (totalIncome - totalExpenses + oneOffPayment) / months.length : 0
+  // Burn rate: average monthly outflows minus inflows, when outflows are larger.
+  // A one-off payment is left out, since it does not recur each month.
   const burnRate = avgNet < 0 ? -avgNet : 0
   // Runway: months the opening balance lasts at that burn
   const runwayMonths = burnRate > 0 ? Math.max(openingBalance, 0) / burnRate : null
@@ -31,14 +40,18 @@ export default function CashFlowCalculator() {
   const [monthlyIncome, setMonthlyIncome] = useState('8000')
   const [monthlyExpenses, setMonthlyExpenses] = useState('7000')
   const [numMonths, setNumMonths] = useState('12')
+  const [oneOff, setOneOff] = useState('0')
+  const [oneOffMonth, setOneOffMonth] = useState('3')
 
   const o = parseFloat(opening.replace(/,/g,'')) || 0
   const mi = parseFloat(monthlyIncome.replace(/,/g,'')) || 0
   const me = parseFloat(monthlyExpenses.replace(/,/g,'')) || 0
-  const nm = parseInt(numMonths) || 12
+  const nm = clampMonths(numMonths)
+  const op = Math.max(0, parseFloat(oneOff.replace(/,/g,'')) || 0)
+  const om = Math.min(nm, Math.max(1, parseInt(oneOffMonth) || 1))
 
-  const months = Array(nm).fill(null).map(() => ({ income: mi, expenses: me }))
-  const result = useMemo(() => calculate(o, months), [o, mi, me, nm])
+  const months = Array(nm).fill(null).map((_, i) => ({ income: mi, expenses: i + 1 === om ? me + op : me }))
+  const result = useMemo(() => calculate(o, months, op), [o, mi, me, nm, op, om])
 
   return (
     <div className="space-y-6">
@@ -46,7 +59,11 @@ export default function CashFlowCalculator() {
         <div><label className="block text-sm font-medium mb-2">Opening Balance</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={opening} onChange={(e) => setOpening(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Opening Balance" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Monthly Income</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={monthlyIncome} onChange={(e) => setMonthlyIncome(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Monthly Income" /></div></div>
         <div><label className="block text-sm font-medium mb-2">Monthly Expenses</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={monthlyExpenses} onChange={(e) => setMonthlyExpenses(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Monthly Expenses" /></div></div>
-        <div><label className="block text-sm font-medium mb-2">Months</label><input type="number" min="1" max="24" value={numMonths} onChange={(e) => setNumMonths(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Months" /></div>
+        <div><label className="block text-sm font-medium mb-2">Months</label><input type="number" min="1" max="24" value={numMonths} onChange={(e) => setNumMonths(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Months" /><p className="text-xs text-muted-foreground mt-1">{MIN_MONTHS} to {MAX_MONTHS}; showing {nm}</p></div>
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div><label className="block text-sm font-medium mb-2">One-off Payment (optional)</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={oneOff} onChange={(e) => setOneOff(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="One-off Payment (optional)" /></div></div>
+        <div><label className="block text-sm font-medium mb-2">Paid in Month</label><input type="number" min="1" max={nm} value={oneOffMonth} onChange={(e) => setOneOffMonth(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Paid in Month" />{op > 0 && <p className="text-xs text-muted-foreground mt-1">Added to month {om}&rsquo;s outflows</p>}</div>
       </div>
 
       <div className="space-y-4 animate-fade-in-up">
@@ -58,7 +75,9 @@ export default function CashFlowCalculator() {
         </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
           {result.burnRate > 0 && result.runwayMonths !== null ? (
-            <p>Burn rate <span className="font-medium text-foreground">{formatCurrency(result.burnRate)}</span> a month. Runway: <span className="font-medium text-foreground">{result.runwayMonths.toFixed(1)} months</span> before the opening balance is used up.</p>
+            <p>Burn rate <span className="font-medium text-foreground">{formatCurrency(result.burnRate)}</span> a month. Runway: <span className="font-medium text-foreground">{result.runwayMonths.toFixed(1)} months</span> before the opening balance is used up{op > 0 ? ', leaving out the one-off payment, which brings that date forward' : ''}.</p>
+          ) : op > 0 ? (
+            <p>No regular cash burn: monthly income covers monthly expenses. The one-off payment of <span className="font-medium text-foreground">{formatCurrency(op)}</span> falls in month {om}; check the lowest balance above.</p>
           ) : (
             <p>No cash burn: inflows cover outflows, so the balance does not fall over the period.</p>
           )}

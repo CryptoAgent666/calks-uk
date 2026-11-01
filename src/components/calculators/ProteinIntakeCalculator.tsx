@@ -10,6 +10,10 @@ const RATES: Record<Goal, { min: number; max: number; name: string }> = {
 }
 
 const MEAL_OPTIONS = [3, 4, 5]
+const MIN_WEIGHT_KG = 30
+const MAX_WEIGHT_KG = 200
+// Department of Health advice: avoid more than twice the 0.75 g/kg RNI (British Nutrition Foundation)
+const HIGH_PROTEIN_PER_KG = 1.5
 
 function calculate(weightKg: number, goal: Goal, meals = 4) {
   const rate = RATES[goal]
@@ -40,6 +44,7 @@ export default function ProteinIntakeCalculator() {
   const w = parseFloat(weight) || 0
   const m = parseInt(meals) || 4
   const result = useMemo(() => calculate(w, goal, m), [w, goal, m])
+  const validWeight = w >= MIN_WEIGHT_KG && w <= MAX_WEIGHT_KG
 
   return (
     <div className="space-y-6">
@@ -49,7 +54,11 @@ export default function ProteinIntakeCalculator() {
         <div><label className="block text-sm font-medium mb-2">Meals per Day</label><select value={meals} onChange={(e) => setMeals(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Meals per Day">{MEAL_OPTIONS.map((n) => <option key={n} value={n}>{n} meals</option>)}</select></div>
       </div>
 
-      {w > 0 && (
+      {!validWeight && (
+        <p className="text-sm text-destructive" role="alert">Enter a weight from {MIN_WEIGHT_KG} to {MAX_WEIGHT_KG} kg. This calculator is for adults.</p>
+      )}
+
+      {validWeight && (
         <div className="space-y-4 animate-fade-in-up">
           <div className="rounded-2xl bg-primary/10 p-6 text-center">
             <p className="text-sm text-muted-foreground">Daily Protein Target</p>
@@ -59,8 +68,11 @@ export default function ProteinIntakeCalculator() {
           <div className="rounded-xl bg-muted/50 p-4 text-center">
             <p className="text-xs text-muted-foreground">Per Meal ({result.meals} meals)</p>
             <p className="text-xl font-bold">{Math.round(result.perMealMin)} – {Math.round(result.perMealMax)}g</p>
-            <p className="text-xs text-muted-foreground mt-1">Spread evenly; 20 to 40g per meal suits most adults</p>
+            <p className="text-xs text-muted-foreground mt-1">Your daily range divided evenly across your meals</p>
           </div>
+          {result.rate.max > HIGH_PROTEIN_PER_KG && (
+            <p className="text-sm text-destructive" role="alert">The top of this range is above {HIGH_PROTEIN_PER_KG} g/kg, twice the UK reference intake. The Department of Health advised adults to avoid going above that level, although no upper limit has been set.</p>
+          )}
           <div>
             <h3 className="text-sm font-semibold mb-2">Protein Sources</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -75,6 +87,7 @@ export default function ProteinIntakeCalculator() {
           </div>
         </div>
       )}
+      <p className="text-xs text-muted-foreground">For adults aged 18 and over; children and teenagers have their own reference intakes. If you have kidney disease, or are pregnant or breastfeeding, talk to your GP or midwife before raising your protein.</p>
     </div>
   )
 }
