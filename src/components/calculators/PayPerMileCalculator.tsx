@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 // Electric Vehicle Excise Duty (eVED), confirmed in the July 2026 consultation response:
-// from April 2028, 3p a mile for battery EVs and 1.5p for plug-in hybrids, uprated by CPI
+// from April 2028, 3p a mile for battery EVs (and hydrogen fuel cell cars, Budget 2026 OOTLAR 1.76) and 1.5p for plug-in hybrids, uprated by CPI
 // from 2029-30, charged ON TOP of normal VED. Mileage is declared at VED renewal and
 // checked against MOT odometer readings. Vans, buses and HGVs are out of scope at launch.
 const EVED_PENCE: Record<'bev' | 'phev', number> = { bev: 3, phev: 1.5 }
@@ -39,7 +39,7 @@ export default function PayPerMileCalculator() {
     <div className="space-y-6">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div><label className="block text-sm font-medium mb-2">Annual Miles</label><input type="text" inputMode="numeric" value={miles} onChange={(e) => setMiles(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Annual Miles" /></div>
-        <div><label className="block text-sm font-medium mb-2">Vehicle</label><select value={vehicle} onChange={(e) => setVehicle(e.target.value as 'bev' | 'phev')} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Vehicle"><option value="bev">Battery electric (3p/mile)</option><option value="phev">Plug-in hybrid (1.5p/mile)</option></select></div>
+        <div><label className="block text-sm font-medium mb-2">Vehicle</label><select value={vehicle} onChange={(e) => setVehicle(e.target.value as 'bev' | 'phev')} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Vehicle"><option value="bev">Battery electric or hydrogen (3p/mile)</option><option value="phev">Plug-in hybrid (1.5p/mile)</option></select></div>
         <div><label className="block text-sm font-medium mb-2">VED (£/yr)</label><input type="number" min="0" max="2000" value={ved} onChange={(e) => setVed(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="VED per year" /></div>
         <div><label className="block text-sm font-medium mb-2">Petrol car MPG (to compare)</label><input type="number" min="10" max="70" value={mpg} onChange={(e) => setMpg(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Petrol car MPG for comparison" /></div>
       </div>
@@ -57,7 +57,7 @@ export default function PayPerMileCalculator() {
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
             <p className="font-medium text-foreground">How eVED works</p>
-            <p>From April 2028 battery electric cars pay 3p a mile and plug-in hybrids 1.5p, rising with CPI from 2029-30, on top of normal VED. You declare your expected mileage when you renew your vehicle tax, with a mileage estimation tool promised at launch, and it is checked against MOT odometer readings; there is no compulsory GPS tracking, and an opt-in eVED Connect is planned for cars with in-built connectivity. Petrol and diesel cars keep paying fuel duty instead ({FUEL_DUTY_PENCE}p a litre until 1 July 2027, then {FUEL_DUTY_PENCE_JUL_2027}p), and vans are outside the scheme at launch. The comparison above uses {FUEL_DUTY_PENCE_JUL_2027}p, because eVED starts after that rise: the {g} mpg petrol car pays {formatCurrency(result.petrolDuty)} a year in duty and the VAT on it. VED starts at the £210 standard rate due from 1 April 2027 (£200 in 2026/27), so enter the rate you expect. {vehicle === 'phev' ? 'A plug-in hybrid also pays fuel duty on the petrol it burns, which this comparison leaves out.' : ''}</p>
+            <p>From April 2028 battery electric and hydrogen fuel cell cars pay 3p a mile and plug-in hybrids 1.5p, rising with CPI from 2029-30, on top of normal VED. You declare your expected mileage when you renew your vehicle tax, with a mileage estimation tool promised at launch, and it is checked against MOT odometer readings; there is no compulsory GPS tracking, and an opt-in eVED Connect is planned for cars with in-built connectivity. Petrol and diesel cars keep paying fuel duty instead ({FUEL_DUTY_PENCE}p a litre until 1 July 2027, then {FUEL_DUTY_PENCE_JUL_2027}p), and vans are outside the scheme at launch. The comparison above uses {FUEL_DUTY_PENCE_JUL_2027}p, because eVED starts after that rise: the {g} mpg petrol car pays {formatCurrency(result.petrolDuty)} a year in duty and the VAT on it. VED starts at the £210 standard rate due from 1 April 2027 (£200 in 2026/27), so enter the rate you expect. {vehicle === 'phev' ? 'A plug-in hybrid also pays fuel duty on the petrol it burns, which this comparison leaves out.' : ''}</p>
           </div>
         </div>
       )}

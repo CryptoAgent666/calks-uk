@@ -33435,7 +33435,7 @@
     },
     {
       "key": "annuity_best_buy_level_single_65_per_100k",
-      "value": "8125",
+      "value": 8211,
       "unit": "GBP/year per £100k",
       "law": "market (HL best-buy table 17 Sep 2026)",
       "theme": "pensions",
@@ -33443,15 +33443,16 @@
         "prose"
       ],
       "used_by": [
-        "src/data/calculator-content.ts"
+        "src/data/calculator-content.ts",
+        "src/components/calculators/AnnuityCalculator.tsx"
       ],
       "source_url": "https://www.hl.co.uk/retirement/annuities/best-buy-rates",
       "status": "current",
       "change_frequency": "",
-      "note": "Best level single-life annuity at 65 about £8,125 a year per £100,000 (Sept 2026); pages say \"around 7.5% to 8%\". Market figure, re-check each cycle.",
-      "official_value": "8125",
-      "verified_date": "2026-09-28",
-      "verify_method": "calkcheck-2026-09-28-r7",
+      "note": "Hargreaves Lansdown best-buy table dated 29 October 2026.",
+      "official_value": 8211,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
       "confidence": "medium"
     },
     {
@@ -36248,7 +36249,7 @@
       "used_by": [
         "src/data/calculator-content.ts"
       ],
-      "source_url": "https://www.gov.uk/government/news/personal-injury-discount-rate-set-at-plus-0-5-percent"
+      "source_url": "https://www.gov.uk/guidance/personal-injury-discount-rate"
     },
     {
       "key": "paye_flat_rate_expenses_max",
@@ -38832,10 +38833,579 @@
       "verify_method": "calkcheck 2026-11-01 r18",
       "confidence": "high",
       "changes_next_fy": "Refresh yearly."
+    },
+    {
+      "key": "class4_annual_maximum_main_rate_cap",
+      "value": 2262,
+      "unit": "GBP",
+      "law": "SSCR 2001 reg 100",
+      "theme": "tax",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/utils/class4.ts",
+        "src/components/calculators/SideHustleTaxCalculator.tsx",
+        "src/components/calculators/AnnualTaxSummaryCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/hmrc-internal-manuals/national-insurance-manual/nim24175",
+      "status": "current",
+      "change_frequency": "",
+      "note": "£37,700 x 6%, less Class 1 at the main rate; no Class 2 element from 6 April 2024 (NIM24178). Salary crossover about £40,845.",
+      "official_value": 2262,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": "Moves if limits or rates change."
+    },
+    {
+      "key": "annuity_hl_table_per_100k_29_oct_2026",
+      "value": "single level 7078/7476/8211/9002/10212 at 55/60/65/70/75; joint 50% level 6696/7144/7658/8361/9146; RPI 5yr 4486/4922/5618/6417/7648; 3% 5yr 4956/5350/6094/6915/8095",
+      "unit": "GBP",
+      "law": "Hargreaves Lansdown best-buy, 29 October 2026",
+      "theme": "pension",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/AnnuityCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.hl.co.uk/retirement/annuities/best-buy-rates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Best of market, not typical quotes.",
+      "official_value": "single level 7078/7476/8211/9002/10212 at 55/60/65/70/75; joint 50% level 6696/7144/7658/8361/9146; RPI 5yr 4486/4922/5618/6417/7648; 3% 5yr 4956/5350/6094/6915/8095",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": "Market; refresh each cycle."
+    },
+    {
+      "key": "pension_basic_amount_no_earnings",
+      "value": 3600,
+      "unit": "GBP",
+      "law": "Finance Act 2004 s.190",
+      "theme": "pension",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/SIPPCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ukpga/2004/12/section/190",
+      "status": "current",
+      "change_frequency": "",
+      "note": "£2,880 net with relief at source.",
+      "official_value": 3600,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "scottish_pension_relief_reclaim",
+      "value": "1/22/25/28% on income in the 21/42/45/48% bands",
+      "unit": "rule",
+      "law": "Tax on your private pension",
+      "theme": "pension",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/SIPPCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/tax-on-your-private-pension",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "1/22/25/28% on income in the 21/42/45/48% bands",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "pension_iht_payment_notice",
+      "value": "minimum £1,000, paid within 35 days; withholding 50% for 15 months",
+      "unit": "rule",
+      "law": "Finance Act 2026 s.68",
+      "theme": "iht",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/InheritanceTaxPensionCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/ukpga/2026/11/section/68",
+      "status": "current",
+      "change_frequency": "",
+      "note": "In force from 6 April 2027.",
+      "official_value": "minimum £1,000, paid within 35 days; withholding 50% for 15 months",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "pension_iht_hmrc_estimates",
+      "value": "213,000 estates with pension wealth; 38,500 pay more; 10,500 newly liable",
+      "unit": "count",
+      "law": "HMRC tax information note",
+      "theme": "iht",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/inheritance-tax-unused-pension-funds-and-death-benefits/inheritance-tax-unused-pension-funds-and-death-benefits",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "213,000 estates with pension wealth; 38,500 pay more; 10,500 newly liable",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "hb_applicable_amount_pension_pre_2021_single",
+      "value": 256,
+      "unit": "GBP/week",
+      "law": "Rates 2026/27",
+      "theme": "benefits",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/HousingBenefitCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://assets.publishing.service.gov.uk/media/69931706ceeaa48d377f6bd5/Benefit-and-pension-rates-2026-2027.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "SPA reached before 1 April 2021.",
+      "official_value": 256,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "hb_applicable_amount_pension_pre_2021_couple",
+      "value": 383.35,
+      "unit": "GBP/week",
+      "law": "Rates 2026/27",
+      "theme": "benefits",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/HousingBenefitCalculator.tsx"
+      ],
+      "source_url": "https://assets.publishing.service.gov.uk/media/69931706ceeaa48d377f6bd5/Benefit-and-pension-rates-2026-2027.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": 383.35,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "hb_applicable_amount_under_25",
+      "value": 75.65,
+      "unit": "GBP/week",
+      "law": "Rates 2026/27",
+      "theme": "benefits",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/HousingBenefitCalculator.tsx"
+      ],
+      "source_url": "https://assets.publishing.service.gov.uk/media/69931706ceeaa48d377f6bd5/Benefit-and-pension-rates-2026-2027.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": 75.65,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "hb_child_allowance",
+      "value": 87.88,
+      "unit": "GBP/week",
+      "law": "Rates 2026/27",
+      "theme": "benefits",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/HousingBenefitCalculator.tsx"
+      ],
+      "source_url": "https://assets.publishing.service.gov.uk/media/69931706ceeaa48d377f6bd5/Benefit-and-pension-rates-2026-2027.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": 87.88,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "hb_non_dependant_deductions",
+      "value": "£20.40, £46.85, £64.35, £105.20, £119.85, £131.45; income bands £192, £279, £365, £485, £605",
+      "unit": "GBP/week",
+      "law": "Rates 2026/27",
+      "theme": "benefits",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/HousingBenefitCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://assets.publishing.service.gov.uk/media/69931706ceeaa48d377f6bd5/Benefit-and-pension-rates-2026-2027.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "£20.40, £46.85, £64.35, £105.20, £119.85, £131.45; income bands £192, £279, £365, £485, £605",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "pension_credit_carer_amount",
+      "value": 48.15,
+      "unit": "GBP/week",
+      "law": "Rates 2026/27",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://assets.publishing.service.gov.uk/media/69931706ceeaa48d377f6bd5/Benefit-and-pension-rates-2026-2027.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": 48.15,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "uc_conditionality_thresholds",
+      "value": "AET £991.38 (18 h), £1,597.22 (couple); CET £1,927.68 (35 h), couple sum £3,855.37",
+      "unit": "GBP/month",
+      "law": "UC Regs 2013 regs 90 and 99",
+      "theme": "benefits",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/WorkingTaxCreditHoursCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.legislation.gov.uk/uksi/2013/376/regulation/99",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Derived from the age-based NMW.",
+      "official_value": "AET £991.38 (18 h), £1,597.22 (couple); CET £1,927.68 (35 h), couple sum £3,855.37",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": "Moves with NMW each April."
+    },
+    {
+      "key": "scotland_carer_support_extras",
+      "value": "Supplement £11.70; additional person £10.40",
+      "unit": "GBP",
+      "law": "Carer Support Payment",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.mygov.scot/carer-support-payment",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "Supplement £11.70; additional person £10.40",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "scotland_pawhp_amounts",
+      "value": "£211.15 / £316.70; shared £105.55 / £158.35",
+      "unit": "GBP",
+      "law": "Pension Age Winter Heating Payment",
+      "theme": "benefits",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/WinterFuelPaymentCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.mygov.scot/pension-age-winter-heating-payment/how-much-you-might-be-paid",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "£211.15 / £316.70; shared £105.55 / £158.35",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": "Winter rollover."
+    },
+    {
+      "key": "winter_fuel_care_home_amounts",
+      "value": "£100 / £150; nil on PC, UC or income-related ESA if in the home from 29 June 2026 or earlier",
+      "unit": "rule",
+      "law": "Winter Fuel Payment",
+      "theme": "benefits",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/WinterFuelPaymentCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/winter-fuel-payment",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "£100 / £150; nil on PC, UC or income-related ESA if in the home from 29 June 2026 or earlier",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": "Winter rollover."
+    },
+    {
+      "key": "carer_allowance_taper_plan",
+      "value": "100% taper planned 2030-31, England and Wales",
+      "unit": "plan",
+      "law": "Budget 2026",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Not in force.",
+      "official_value": "100% taper planned 2030-31, England and Wales",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "self_employed_adopters_pay_plan",
+      "value": "parental pay for eligible self-employed adopters from April 2029, GB",
+      "unit": "plan",
+      "law": "Budget 2026",
+      "theme": "pay",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Not in force.",
+      "official_value": "parental pay for eligible self-employed adopters from April 2029, GB",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "legal_aid_gross_income_limit",
+      "value": 2657,
+      "unit": "GBP/month",
+      "law": "Civil legal aid means testing",
+      "theme": "legal",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/civil-legal-aid-means-testing",
+      "status": "current",
+      "change_frequency": "",
+      "note": "No contribution on Legal Help.",
+      "official_value": 2657,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "hydrogen_eved_rate",
+      "value": 3,
+      "unit": "pence/mile",
+      "law": "Budget 2026 OOTLAR 1.76",
+      "theme": "auto",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Same as battery cars; from April 2028.",
+      "official_value": 3,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "fuel_duty_receipts_2025_26",
+      "value": "£24bn",
+      "unit": "GBP",
+      "law": "OBR",
+      "theme": "auto",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://obr.uk/forecasts-in-depth/tax-by-tax-spend-by-spend/fuel-duties/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Read via r.jina.ai. £26.2bn is a 2027-28 forecast.",
+      "official_value": "£24bn",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": "Refresh yearly."
+    },
+    {
+      "key": "ons_cpi_d7bt_points",
+      "value": "1988 49.6; 2000 72.7; 2024 133.9",
+      "unit": "index",
+      "law": "ONS mm23 D7BT",
+      "theme": "other",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/d7bt/mm23",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "1988 49.6; 2000 72.7; 2024 133.9",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "cgt_chattels_limit",
+      "value": 6000,
+      "unit": "GBP",
+      "law": "Capital Gains Tax: personal possessions",
+      "theme": "tax",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/capital-gains-tax-personal-possessions",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": 6000,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "ev_sacrifice_nlw_check",
+      "value": 12.71,
+      "unit": "GBP/hour",
+      "law": "NMW rates",
+      "theme": "pay",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/EVSalarySacrificeCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/national-minimum-wage-rates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "£13.21 from April 2027 in prose.",
+      "official_value": 12.71,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": "Update April 2027, with the widget start date."
+    },
+    {
+      "key": "zev_bik_schedule_ev_salary_sacrifice",
+      "value": "4/5/7/9/10% from 2026/27 to 2030/31",
+      "unit": "percent",
+      "law": "Budget 2026 Annex A",
+      "theme": "car",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/EVSalarySacrificeCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Widget walks the schedule from December 2026.",
+      "official_value": "4/5/7/9/10% from 2026/27 to 2030/31",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r19",
+      "confidence": "high",
+      "changes_next_fy": "Roll the start date each year."
     }
   ],
   "status_summary": {
-    "current": 1705,
+    "current": 1730,
     "retired": 24,
     "historical": 24,
     "superseded_by_component": 4,

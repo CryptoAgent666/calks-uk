@@ -26,6 +26,7 @@ function calculate(monthlyPay: number) {
 
 export default function AdoptionPayCalculator() {
   const [pay, setPay] = useState('2,600')
+  const [excluded, setExcluded] = useState(false)
 
   const p = parseFloat(pay.replace(/,/g, '')) || 0
   const result = useMemo(() => calculate(p), [p])
@@ -40,14 +41,21 @@ export default function AdoptionPayCalculator() {
         </div>
         <p className="text-xs text-muted-foreground mt-1">Average pay in the 8 weeks before the matching week</p>
       </div>
+      <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={excluded} onChange={(e) => setExcluded(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">I am adopting a stepchild or family member, adopting privately, or becoming a special guardian or kinship carer</span></label>
 
-      {result && result.belowLEL && (
+      {excluded && (
+        <div className="rounded-xl bg-destructive/10 p-4 text-sm text-destructive">
+          These arrangements do not qualify for Statutory Adoption Leave or Pay, whatever your earnings. You may get support from your local council instead.
+        </div>
+      )}
+
+      {!excluded && result && result.belowLEL && (
         <div className="rounded-xl bg-destructive/10 p-4 text-sm text-destructive">
           Average weekly earnings of {formatCurrency(result.awe)} are below the £{LOWER_EARNINGS_LIMIT} Lower Earnings Limit, so Statutory Adoption Pay is not due. You may be able to get help through Universal Credit instead.
         </div>
       )}
 
-      {result && !result.belowLEL && (
+      {!excluded && result && !result.belowLEL && (
         <div className="space-y-4 animate-fade-in-up">
           <div className="rounded-2xl bg-primary/10 p-6 text-center">
             <p className="text-sm text-muted-foreground">Total Statutory Adoption Pay (39 weeks)</p>
@@ -87,7 +95,7 @@ export default function AdoptionPayCalculator() {
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
             <p>
               To qualify: 26 weeks with your employer by the matching week (UK adoptions) and average earnings at or above the
-              Lower Earnings Limit. Only one parent takes adoption leave — the other may qualify for{' '}
+              Lower Earnings Limit. Stepchild, family-member and private adoptions, special guardians and kinship carers do not qualify. Only one parent takes adoption leave — the other may qualify for{' '}
               <a href="/calculator/paternity-pay-calculator/" className="text-primary underline">paternity pay</a> or{' '}
               <a href="/calculator/shared-parental-pay-calculator/" className="text-primary underline">shared parental pay</a>.
               Fostering-to-adopt and overseas adoptions have their own timing rules.

@@ -33,6 +33,7 @@ const SOURCE_BY_CATEGORY: Record<string, string> = {
 // them: student loan rates are set by the SLC, not by lenders and the FCA, and
 // the devolved property taxes are nothing to do with HMRC.
 const SOURCE_BY_SLUG: Record<string, string> = {
+  'annuity-calculator': "Hargreaves Lansdown's best-buy table of 29 October 2026, HMRC and GOV.UK",
   'plaster-calculator': 'British Gypsum product data and Checkatrade price guides',
   'paint-calculator': 'Dulux product data, HSE guidance and Checkatrade price guides',
   'gravel-calculator': 'the Planning Portal, GOV.UK front garden guidance and merchant data',
@@ -67,6 +68,8 @@ const SOURCE_BY_SLUG: Record<string, string> = {
   'premium-bonds-calculator': 'NS&I and GOV.UK',
   // premiums are estimated from one broker's published quotes
   'critical-illness-calculator': 'published broker quotes (iam insured)',
+  // property taxes and registration fees; the remaining costs are the site's rough estimates
+  'home-buying-total-cost-calculator': 'GOV.UK, Revenue Scotland, the Welsh Government and HM Land Registry',
   // the tax figures are GOV.UK's; the FCA sets none of them
   'cost-of-delay-calculator': 'GOV.UK and HMRC',
   'weight-loss-calculator': 'NHS, NICE and MHRA guidance',

@@ -11,6 +11,7 @@ const { lastUpdated = 'April 2026', category, slug = '' } = Astro.props
 // Grade and exam tools sit in the education category but have no student-finance
 // figures behind them, so they get their own line and no dated rates badge.
 const VERIFICATION_BY_SLUG: Record<string, string> = {
+  'annuity-calculator': 'Annuity rates from Hargreaves Lansdown, 29 October 2026; tax rules checked against GOV.UK',
   'plaster-calculator': 'Checked against British Gypsum data and Checkatrade prices, 2026',
   'paint-calculator': 'Checked against Dulux product data, HSE guidance and Checkatrade prices, 2026',
   'gravel-calculator': 'Planning rules from the Planning Portal and GOV.UK guidance; prices from merchants, November 2026',
@@ -62,6 +63,10 @@ const VERIFICATION_BY_SLUG: Record<string, string> = {
   // planning rules from the Planning Portal, prices from published cost guides
   'extension-cost-calculator': 'Checked against the Planning Portal and published cost guides, 2026',
   'staircase-calculator': 'Checked against Approved Document K and published cost guides, 2026',
+  // student loan terms are set by the SLC and GOV.UK, not lenders or the FCA
+  'student-loan-plan4-calculator': 'Checked against GOV.UK and Student Loans Company guidance, 2026',
+  // property taxes and registration fees; the remaining costs are the site's rough estimates
+  'home-buying-total-cost-calculator': 'Taxes checked against GOV.UK, Revenue Scotland and the Welsh Government, 2026; other costs are estimates',
   // the tax figures are GOV.UK's; the FCA sets none of them and growth rates are the reader's own
   'cost-of-delay-calculator': 'ISA, CGT and HMRC interest figures checked against GOV.UK; growth rates are assumptions',
 }

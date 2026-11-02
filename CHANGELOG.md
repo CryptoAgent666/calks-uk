@@ -1,5 +1,13 @@
 # CHANGELOG — Calks.uk
 
+## 2026-11-03 (round 19) — Second pass begins: pensions, benefits and side income
+
+Nineteenth `/calkcheck` pass (report: `AUDIT-2026-11-03.md`): 126 defects on 20 pages last checked for stale data only, 12 HIGH, 17 calculators with wrong results.
+
+**Pensions:** dated annuity rates by age and type, spouse treatment and RNRB on Inheritance Tax, SIPP limits and relief by income, Scottish relief and lump sums. **Benefits:** Housing Benefit new-claim bar and new inputs, Universal Credit thresholds for couples and by age, Carer's Allowance tests, Winter Fuel timezone bug, Scotland and care homes. **Work and tax:** Class 4 annual maximum (also on Annual Tax Summary), zero-hours holiday pay and NI by period, BiK schedule on EV salary sacrifice. **Other:** Plan 4 interest, home buying for Scotland, Wales and additional properties, solicitor disbursements by the Land Registry scale.
+
+Ledger now 1,804 entries; 25 new guards.
+
 ## 2026-11-01 (round 18) — The last seventeen calculators checked by hand
 
 Eighteenth `/calkcheck` pass (report: `AUDIT-2026-11-01-d.md`): 148 defects on 17 pages, 28 HIGH, 15 calculators with wrong results. Every calculator has now had a hand check.

@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, formatPercent } from '@/utils'
+import { class4WithAnnualMaximum } from '@/utils/class4'
 
 const TRADING_ALLOWANCE = 1_000
 
@@ -49,19 +50,27 @@ function calculate(income: number, employmentIncome: number, expenses: number, u
 
   const extraTax = totalTax - empTax
 
-  // Class 4 NI on side hustle profit (if over threshold)
-  let class4 = 0
-  if (taxableProfit > 12_570) {
-    if (taxableProfit <= 50_270) class4 = (taxableProfit - 12_570) * 0.06
-    else class4 = (50_270 - 12_570) * 0.06 + (taxableProfit - 50_270) * 0.02
-  }
+  // Class 4 NI on side hustle profit, limited by the annual maximum for Class 1 paid on the salary
+  const { class4, uncapped: class4Uncapped, capped: class4Capped } = class4WithAnnualMaximum(taxableProfit, employmentIncome)
 
   const totalOwed = extraTax + class4
   // Money actually spent comes out whichever option sets the taxable profit; the allowance itself is not a cost
   const keepFromSideHustle = income - expenses - totalOwed
 
   // The reporting test looks at gross income, before any expenses
-  return { income, taxableProfit, extraTax, class4, totalOwed, keepFromSideHustle, taxFree, withinAllowance, needsSelfAssessment: !withinAllowance, effectiveRate: income > 0 ? (totalOwed / income) * 100 : 0 }
+  return { income, taxableProfit, extraTax, class4, class4Uncapped, class4Capped, totalOwed, keepFromSideHustle, taxFree, withinAllowance, needsSelfAssessment: !withinAllowance, effectiveRate: income > 0 ? (totalOwed / income) * 100 : 0 }
+}
+
+// Which option leaves less to pay on these figures, and by how much
+function compareOptions(income: number, employmentIncome: number, expenses: number, scottish: boolean) {
+  const allowance = calculate(income, employmentIncome, expenses, true, scottish)
+  const actual = calculate(income, employmentIncome, expenses, false, scottish)
+  return {
+    allowanceProfit: allowance.taxableProfit,
+    actualProfit: actual.taxableProfit,
+    saving: Math.abs(allowance.totalOwed - actual.totalOwed),
+    better: expenses > TRADING_ALLOWANCE ? 'actual' : expenses < TRADING_ALLOWANCE ? 'allowance' : 'same',
+  }
 }
 
 export default function SideHustleTaxCalculator() {
@@ -75,6 +84,7 @@ export default function SideHustleTaxCalculator() {
   const e = parseFloat(empIncome.replace(/,/g, '')) || 0
   const ex = parseFloat(expenses.replace(/,/g, '')) || 0
   const result = useMemo(() => calculate(i, e, ex, useAllowance, scotland), [i, e, ex, useAllowance, scotland])
+  const options = useMemo(() => compareOptions(i, e, ex, scotland), [i, e, ex, scotland])
 
   return (
     <div className="space-y-6">
@@ -88,6 +98,16 @@ export default function SideHustleTaxCalculator() {
         <button onClick={() => setUseAllowance(true)} className={`px-4 py-2.5 rounded-xl text-sm font-medium border transition-colors ${useAllowance ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border hover:bg-accent'}`}>£1,000 Trading Allowance</button>
         <button onClick={() => setUseAllowance(false)} className={`px-4 py-2.5 rounded-xl text-sm font-medium border transition-colors ${!useAllowance ? 'bg-primary text-primary-foreground border-primary' : 'bg-muted border-border hover:bg-accent'}`}>Claim Actual Expenses</button>
       </div>
+
+      {i > TRADING_ALLOWANCE && (
+        <p className="text-sm text-muted-foreground">
+          {options.better === 'same'
+            ? 'Both options leave the same taxable profit on these figures.'
+            : options.better === 'actual'
+              ? `Better on these figures: actual expenses, with ${formatCurrency(options.actualProfit)} taxable instead of ${formatCurrency(options.allowanceProfit)}, saving ${formatCurrency(options.saving)} of tax and NI.`
+              : `Better on these figures: the trading allowance, with ${formatCurrency(options.allowanceProfit)} taxable instead of ${formatCurrency(options.actualProfit)}, saving ${formatCurrency(options.saving)} of tax and NI.`}
+        </p>
+      )}
 
       <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={scotland} onChange={(e) => setScotland(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">I pay Scottish Income Tax (Class 4 NI is the same across the UK)</span></label>
 
@@ -115,6 +135,7 @@ export default function SideHustleTaxCalculator() {
                   <tr className="font-semibold"><td className="py-2 text-primary">You Keep</td><td className="text-right tabular-nums text-primary">{formatCurrency(result.keepFromSideHustle)}</td></tr>
                 </tbody>
               </table>
+              {result.class4Capped && <p className="text-xs text-muted-foreground">Class 4 is shown after the annual maximum, because you also pay Class 1 NI on your salary (assumed to be one job for the whole year). Without it the figure would be {formatCurrency(result.class4Uncapped)}. HMRC's manual says any Class 4 paid above the maximum is due back as a refund.</p>}
               {result.needsSelfAssessment && <p className="text-xs text-orange-600">Your gross income is over £1,000, so you'll need to file a self-assessment tax return, even if expenses wipe out the profit.</p>}
             </>
           )}
@@ -123,6 +144,7 @@ export default function SideHustleTaxCalculator() {
 
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
         <p>This calculator uses the 2026/27 Trading Allowance of £1,000. At Budget 2026 the government announced that the allowance rises to £3,000 from 6 April 2027, and that the Self Assessment trading income reporting threshold rises to £3,000 with it. The £1,000 property allowance is not changing.</p>
+        <p className="mt-2">You cannot use the allowance in a year you have any trade income from your employer, your spouse's or civil partner's employer, or a company or partnership that you or someone connected to you owns, controls or is a partner in. Claim actual expenses instead.</p>
       </div>
     </div>
   )

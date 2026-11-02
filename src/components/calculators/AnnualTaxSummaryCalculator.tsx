@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, formatPercent, ukPersonalAllowance, UK_BASIC_BAND, UK_ADDITIONAL_THRESHOLD } from '@/utils'
+import { class4WithAnnualMaximum } from '@/utils/class4'
 
 function calculate(salary: number, dividends: number, selfEmployment: number, rentalIncome: number, capitalGains: number, pensionContrib: number, giftAid: number) {
   const totalIncome = salary + dividends + selfEmployment + rentalIncome
@@ -36,8 +37,8 @@ function calculate(salary: number, dividends: number, selfEmployment: number, re
   let employeeNI = 0
   if (salary > 12_570) { if (salary <= 50_270) employeeNI = (salary - 12_570) * 0.08; else employeeNI = (50_270 - 12_570) * 0.08 + (salary - 50_270) * 0.02 }
 
-  let class4NI = 0
-  if (selfEmployment > 12_570) { if (selfEmployment <= 50_270) class4NI = (selfEmployment - 12_570) * 0.06; else class4NI = (50_270 - 12_570) * 0.06 + (selfEmployment - 50_270) * 0.02 }
+  // Class 4 on self-employed profit, limited by the annual maximum for Class 1 paid on the salary
+  const { class4: class4NI, capped: class4Capped } = class4WithAnnualMaximum(selfEmployment, salary)
   // Class 2 NI abolished from 6 April 2024 — removed
 
   // CGT (18%/24% for all assets since 30 Oct 2024): gains above the £3,000 exempt
@@ -51,7 +52,7 @@ function calculate(salary: number, dividends: number, selfEmployment: number, re
   const totalGross = totalIncome + capitalGains
   const takeHome = totalGross - totalTax
 
-  return { totalIncome, pa, incomeTax, dividendTax, employeeNI, class4NI, cgt, totalTax, takeHome, effectiveRate: totalGross > 0 ? (totalTax / totalGross) * 100 : 0 }
+  return { totalIncome, pa, incomeTax, dividendTax, employeeNI, class4NI, class4Capped, cgt, totalTax, takeHome, effectiveRate: totalGross > 0 ? (totalTax / totalGross) * 100 : 0 }
 }
 
 // Defined at module level: a component declared inside render is remounted on every
@@ -100,6 +101,7 @@ export default function AnnualTaxSummaryCalculator() {
             <tr className="font-semibold"><td className="py-2 text-destructive">Total Tax</td><td className="text-right tabular-nums text-destructive">{formatCurrency(result.totalTax)}</td></tr>
           </tbody>
         </table>
+        {result.class4Capped && <p className="text-xs text-muted-foreground">Class 4 is shown after the annual maximum, because you also pay Class 1 NI on your salary (assumed to be one job for the whole year). HMRC's manual says any Class 4 paid above the maximum is due back as a refund.</p>}
       </div>
     </div>
   )

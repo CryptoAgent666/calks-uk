@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-11-01'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-11-03'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -25,6 +25,34 @@ const schemas = [
 
     <div class="space-y-8">
       <!-- November 2026 — Budget 2026 rates applied by date on the mileage log and capital allowances calculators -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            November 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Pensions, benefits and side income: logic rechecked</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Pensions.</strong> <a href="/calculator/annuity-calculator/" class="text-primary hover:underline">Annuity</a> figures now follow dated market rates by age and type. <a href="/calculator/inheritance-tax-pension-calculator/" class="text-primary hover:underline">Inheritance Tax on pensions</a> treats a pension left to a spouse correctly under today's rules and from April 2027. <a href="/calculator/sipp-calculator/" class="text-primary hover:underline">SIPP</a> relief now stops at the income taxed at each rate.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Benefits.</strong> <a href="/calculator/housing-benefit-calculator/" class="text-primary hover:underline">Housing Benefit</a> says who can make a new claim, and adds savings, children, non-dependants and tenancy type. <a href="/calculator/working-hours-benefits-calculator/" class="text-primary hover:underline">Working hours</a> uses the Universal Credit thresholds for couples and by age. <a href="/calculator/winter-fuel-payment-calculator/" class="text-primary hover:underline">Winter Fuel</a> adds Scotland and care homes.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Work and tax.</strong> <a href="/calculator/side-hustle-tax-calculator/" class="text-primary hover:underline">Side hustle</a> applies the annual maximum on Class 4 National Insurance if you also pay it on a salary. <a href="/calculator/zero-hours-calculator/" class="text-primary hover:underline">Zero hours</a> puts holiday pay in taxable pay and works out National Insurance by pay period. <a href="/calculator/student-loan-plan4-calculator/" class="text-primary hover:underline">Plan 4</a> now includes interest.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Buying a home.</strong> <a href="/calculator/home-buying-total-cost-calculator/" class="text-primary hover:underline">Home buying costs</a> now cover Scotland, Wales and additional properties.</span>
+          </li>
+        </ul>
+      </article>
+
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
         <div class="mb-2">
