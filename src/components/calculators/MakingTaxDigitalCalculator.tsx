@@ -1,70 +1,89 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
-function calculate(turnover: number, isSelfEmployed: boolean, hasProperty: boolean, numProperties: number) {
-  const mtdThreshold = 50_000 // April 2026 for income over £50K
-  const mtdThreshold2 = 30_000 // April 2027 for income over £30K
-  const mtdThreshold3 = 20_000 // April 2028 for income over £20K
+// Each phase is decided by one tax year's return: gross self-employment turnover plus gross
+// property income (your share of joint lets), before expenses. A later year's income does not
+// bring an earlier phase back, so 2025/26 is tested against £30,000, never £50,000.
+const PHASES = [
+  { year: '2024/25', threshold: 50_000, startYear: 2026 },
+  { year: '2025/26', threshold: 30_000, startYear: 2027 },
+  { year: '2026/27', threshold: 20_000, startYear: 2028 },
+]
 
-  const selfEmpIncome = isSelfEmployed ? turnover : 0
-  const propertyIncome = hasProperty ? numProperties * 8_000 : 0 // assume avg £8K/property
-  const totalQualifying = selfEmpIncome + propertyIncome
+type YearIncome = { selfEmployment: number; rent: number }
 
-  const needsMTD2026 = totalQualifying > mtdThreshold
-  const needsMTD2027 = totalQualifying > mtdThreshold2
-  const needsMTD2028 = totalQualifying > mtdThreshold3
-
-  // Software costs
-  const annualSoftwareCost = needsMTD2028 ? 150 : 0 // typical HMRC-compatible software
-  const quarterlyReturns = 4 // must submit quarterly
-  const endOfYearReturn = 1
-
-  return { totalQualifying, needsMTD2026, needsMTD2027, needsMTD2028, annualSoftwareCost, quarterlyReturns, endOfYearReturn, mtdThreshold, mtdThreshold2, mtdThreshold3 }
+function calculate(years: YearIncome[]) {
+  const rows = PHASES.map((phase, i) => {
+    const total = years[i].selfEmployment + years[i].rent
+    return { ...phase, total, over: total > phase.threshold, selfEmployment: years[i].selfEmployment, rent: years[i].rent }
+  })
+  const phase = rows.find((r) => r.over) ?? null
+  // Updates go in for each business, so a trade and a property business mean 8 a year
+  const businesses = phase ? (phase.selfEmployment > 0 ? 1 : 0) + (phase.rent > 0 ? 1 : 0) : 0
+  return { rows, phase, businesses, updatesPerYear: businesses * 4 }
 }
 
-export default function MakingTaxDigitalCalculator() {
-  const [turnover, setTurnover] = useState('55000')
-  const [selfEmp, setSelfEmp] = useState(true)
-  const [property, setProperty] = useState(false)
-  const [numProp, setNumProp] = useState('1')
+const money = (value: string) => Math.max(0, parseFloat(value.replace(/,/g, '')) || 0)
 
-  const t = parseFloat(turnover.replace(/,/g,'')) || 0
-  const np = parseInt(numProp) || 0
-  const result = useMemo(() => calculate(t, selfEmp, property, np), [t, selfEmp, property, np])
+export default function MakingTaxDigitalCalculator() {
+  const [income, setIncome] = useState(PHASES.map(() => ({ selfEmployment: '55000', rent: '0' })))
+  const [sameEveryYear, setSameEveryYear] = useState(false)
+
+  const updateIncome = (i: number, field: 'selfEmployment' | 'rent', value: string) => setIncome(income.map((row, idx) => idx === i ? { ...row, [field]: value } : row))
+
+  const years = PHASES.map((_, i) => {
+    const row = income[sameEveryYear ? 0 : i]
+    return { selfEmployment: money(row.selfEmployment), rent: money(row.rent) }
+  })
+  const key = years.map((y) => `${y.selfEmployment}|${y.rent}`).join(',')
+  const result = useMemo(() => calculate(years), [key])
+  const { phase } = result
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div><label className="block text-sm font-medium mb-2">Annual Turnover / Gross Income</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={turnover} onChange={(e) => setTurnover(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Turnover / Gross Income" /></div></div>
-      </div>
-      <div className="space-y-2">
-        <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={selfEmp} onChange={(e) => setSelfEmp(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Self-employed / sole trader</span></label>
-        <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={property} onChange={(e) => setProperty(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Rental property income</span></label>
-        {property && <div className="ml-8"><label className="block text-sm font-medium mb-2">Number of Properties</label><input type="number" min="1" max="50" value={numProp} onChange={(e) => setNumProp(e.target.value)} className="w-32 rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Number of Properties" /></div>}
+      <div className="space-y-4">
+        {PHASES.slice(0, sameEveryYear ? 1 : 3).map((p, i) => (
+          <div key={p.year}>
+            <p className="text-sm font-semibold mb-2">{sameEveryYear ? 'All three tax years' : `Tax year ${p.year}`}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div><label className="block text-sm font-medium mb-2">Self-employment turnover, before expenses</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={income[i].selfEmployment} onChange={(e) => updateIncome(i, 'selfEmployment', e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label={`Self-employment turnover ${sameEveryYear ? 'all years' : p.year}`} /></div></div>
+              <div><label className="block text-sm font-medium mb-2">Gross rent, your share, before expenses</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={income[i].rent} onChange={(e) => updateIncome(i, 'rent', e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label={`Gross rent ${sameEveryYear ? 'all years' : p.year}`} /></div></div>
+            </div>
+          </div>
+        ))}
+        <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={sameEveryYear} onChange={(e) => setSameEveryYear(e.target.checked)} className="h-5 w-5 rounded border-border" /><span className="text-sm">Shortcut: use the same figures for all three tax years</span></label>
+        {sameEveryYear && <p className="text-sm text-muted-foreground">This assumes your income has not changed. Each phase depends on one tax year's return, so enter the years separately if it has.</p>}
+        <p className="text-sm text-muted-foreground">Count sole trader and property income only. Your share of a partnership's profit, employment pay, pensions and dividends do not count. For 2026/27, which has not ended yet, use your best estimate.</p>
       </div>
 
       <div className="space-y-4 animate-fade-in-up">
-        <div className={`rounded-2xl p-6 text-center ${result.needsMTD2026 ? 'bg-orange-100 dark:bg-orange-950' : result.needsMTD2027 || result.needsMTD2028 ? 'bg-yellow-100 dark:bg-yellow-950' : 'bg-green-100 dark:bg-green-950'}`}>
-          {result.needsMTD2026 ? (
-            <><p className="text-lg font-bold text-orange-700 dark:text-orange-400">MTD for Income Tax applies from April 2026</p><p className="text-sm text-muted-foreground mt-1">Income {formatCurrency(result.totalQualifying)} exceeds £{result.mtdThreshold.toLocaleString()} threshold</p></>
-          ) : result.needsMTD2027 ? (
-            <><p className="text-lg font-bold text-yellow-700 dark:text-yellow-400">MTD applies from April 2027</p><p className="text-sm text-muted-foreground mt-1">Income {formatCurrency(result.totalQualifying)} exceeds £{result.mtdThreshold2.toLocaleString()} threshold</p></>
-          ) : result.needsMTD2028 ? (
-            <><p className="text-lg font-bold text-yellow-700 dark:text-yellow-400">MTD applies from April 2028</p><p className="text-sm text-muted-foreground mt-1">Income {formatCurrency(result.totalQualifying)} exceeds £{result.mtdThreshold3.toLocaleString()} threshold</p></>
+        <div className={`rounded-2xl p-6 text-center ${phase ? (phase.startYear === 2026 ? 'bg-orange-100 dark:bg-orange-950' : 'bg-yellow-100 dark:bg-yellow-950') : 'bg-green-100 dark:bg-green-950'}`}>
+          {phase ? (
+            <><p className={`text-lg font-bold ${phase.startYear === 2026 ? 'text-orange-700 dark:text-orange-400' : 'text-yellow-700 dark:text-yellow-400'}`}>MTD for Income Tax applies from 6 April {phase.startYear}</p><p className="text-sm text-muted-foreground mt-1">{phase.year} qualifying income of {formatCurrency(phase.total)} is over the £{phase.threshold.toLocaleString()} threshold for that year</p></>
           ) : (
-            <><p className="text-lg font-bold text-green-700 dark:text-green-400">Not yet required for MTD</p><p className="text-sm text-muted-foreground mt-1">Income {formatCurrency(result.totalQualifying)} below £{result.mtdThreshold3.toLocaleString()}</p></>
+            <><p className="text-lg font-bold text-green-700 dark:text-green-400">Not required on these figures</p><p className="text-sm text-muted-foreground mt-1">None of the three tax years is over its threshold, and no start date has been set for qualifying income of £20,000 or less</p></>
           )}
         </div>
 
-        {result.needsMTD2028 && (
+        <table className="w-full text-sm">
+          <thead><tr className="border-b border-border"><th className="text-left py-2 font-medium text-muted-foreground">Tax year's return</th><th className="text-right py-2 font-medium text-muted-foreground">Qualifying income</th><th className="text-right py-2 font-medium text-muted-foreground">Must be over</th><th className="text-right py-2 font-medium text-muted-foreground">Start date if so</th></tr></thead>
+          <tbody>{result.rows.map((r) => (
+            <tr key={r.year} className="border-b border-border/50"><td className="py-1.5">{r.year}</td><td className={`text-right tabular-nums ${r.over ? 'font-medium' : ''}`}>{formatCurrency(r.total)}</td><td className="text-right tabular-nums">£{r.threshold.toLocaleString()}</td><td className="text-right">6 April {r.startYear}</td></tr>
+          ))}</tbody>
+        </table>
+        <p className="text-sm text-muted-foreground">Only that tax year's return decides each phase. HMRC checks the return and writes to you, but it is still your responsibility to check if no letter comes. You also need to be registered for Self Assessment and to have submitted a return.</p>
+
+        {phase && (
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground space-y-2">
             <p className="font-medium text-foreground">What MTD means for you:</p>
-            <p>• Keep digital records using HMRC-compatible software (~{formatCurrency(result.annualSoftwareCost)}/year)</p>
-            <p>• Submit {result.quarterlyReturns} quarterly updates + {result.endOfYearReturn} end-of-year declaration</p>
-            <p>• Replaces annual self-assessment tax return</p>
-            <p>• Start dates: April 2026 (over £50K), April 2027 (over £30K), April 2028 (over £20K)</p>
-            <p>• April 2027 joiners get no penalty points for late submission of their first four quarterly updates in 2027/28 (announced at Budget 2026), but the updates must still be sent before the tax return can be filed</p>
-            <p>• Rollout is deferred until further notice for people eligible for qualifying care relief, non-UK resident foreign entertainers and sportspeople, and expected non-resident customers</p>
+            <p>• Keep digital records of your self-employment and property income and expenses in compatible software: the amount, date and category of each. HMRC's software finder lists recognised products, and some free products are available with limits</p>
+            <p>• Send {result.updatesPerYear} quarterly updates a year: 4 for each business, and these figures show {result.businesses === 1 ? '1 business' : '2 businesses'}. A second trade, or a foreign property business, adds 4 more. Each update gives totals by category for the tax year so far</p>
+            <p>• First quarterly update due by 7 August {phase.startYear}, and your first tax return through software due by 31 January {phase.startYear + 2}</p>
+            <p>• You still submit one tax return a year and pay by 31 January. The return for the tax year before you start is filed the usual way</p>
+            {phase.startYear === 2026 && <p>• HMRC will not apply penalty points for late quarterly updates in 2026/27, but the updates must still be sent before you can submit your tax return, and points still apply to a late return</p>}
+            {phase.startYear === 2027 && <p>• April 2027 joiners get no penalty points for late submission of their first four quarterly updates in 2027/28 (announced at Budget 2026), but the updates must still be sent before the tax return can be filed</p>}
+            {phase.startYear === 2028 && <p>• A late quarterly update earns a penalty point and 4 points bring a £200 penalty. The Budget 2026 easement covers April 2027 joiners only</p>}
+            <p>• You may be exempt, for example if you are digitally excluded, which you have to apply for. Rollout is deferred until further notice for people eligible for qualifying care relief, non-UK resident foreign entertainers and sportspeople, and expected non-resident customers</p>
           </div>
         )}
       </div>

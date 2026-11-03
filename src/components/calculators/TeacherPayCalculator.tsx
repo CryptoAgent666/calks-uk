@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency, ukIncomeTax } from '@/utils'
 
-// Teacher pay scales 2026/27 (England, outside London): STRB 36th report Appendix F, 3.5% award from
-// 1 September 2026, accepted in full on 1 July 2026. STPCD 2026 is due mid-October 2026, backdated.
+// Teacher pay scales 2026/27 (England, outside London): STPCD 2026 (published 16 October 2026), matching
+// STRB 36th report Appendix F, 3.5% award from 1 September 2026.
 const MAIN_SCALE = [34_069, 36_042, 38_400, 40_941, 43_529, 46_940]
 const UPPER_SCALE = [49_134, 50_956, 52_835]
 // London pay ranges from 1 September 2026 (same source). M1/M6 and U1/U3 are the statutory range
@@ -17,10 +17,16 @@ const LONDON_UPPER: Record<string, number[]> = {
   outer: [54_047, 56_047, 58_120],
   fringe: [50_625, 52_442, 54_328],
 }
-const LEADERSHIP: Record<string, { min: number; max: number }> = {
-  'Head (Group 1)': { min: 60_619, max: 80_652 },
-  'Head (Group 4)': { min: 73_827, max: 100_536 },
-  'Head (Group 8)': { min: 104_059, max: 148_829 },
+// Headteacher group ranges from 1 September 2026, STPCD 2026 Table 2: [min, max] by pay area.
+const LEADERSHIP: Record<string, Record<string, [number, number]>> = {
+  'Head (Group 1)': { none: [60_619, 80_652], inner: [70_754, 90_686], outer: [64_871, 84_865], fringe: [62_102, 82_118] },
+  'Head (Group 2)': { none: [63_688, 86_796], inner: [73_824, 96_831], outer: [67_940, 91_010], fringe: [65_166, 88_273] },
+  'Head (Group 3)': { none: [68_691, 93_414], inner: [78_820, 103_450], outer: [72_940, 97_624], fringe: [70_169, 94_885] },
+  'Head (Group 4)': { none: [73_827, 100_536], inner: [83_960, 110_562], outer: [78_074, 104_742], fringe: [75_310, 101_999] },
+  'Head (Group 5)': { none: [81_457, 110_881], inner: [91_594, 120_916], outer: [85_715, 115_095], fringe: [82_939, 112_353] },
+  'Head (Group 6)': { none: [87_664, 122_305], inner: [97_799, 132_339], outer: [91_921, 126_515], fringe: [89_153, 123_776] },
+  'Head (Group 7)': { none: [94_349, 134_834], inner: [104_485, 144_864], outer: [98_602, 139_041], fringe: [95_836, 136_298] },
+  'Head (Group 8)': { none: [104_059, 148_829], inner: [114_189, 158_863], outer: [108_311, 153_042], fringe: [105_536, 150_301] },
 }
 
 type Scale = 'main' | 'upper' | 'leadership'
@@ -33,9 +39,9 @@ function calculate(scale: Scale, point: number, leadershipGroup: string, isLondo
   if (scale === 'main') salary = main[Math.min(point, main.length - 1)] || main[0]
   else if (scale === 'upper') salary = upper[Math.min(point, upper.length - 1)] || upper[0]
   else {
-    // Leadership is shown at England (excluding London) rates.
     const group = LEADERSHIP[leadershipGroup] || LEADERSHIP['Head (Group 1)']
-    salary = group.min + (group.max - group.min) * (point / 100)
+    const [min, max] = group[isLondon] ?? group.none
+    salary = min + (max - min) * (point / 100)
   }
 
   // Teachers' Pension Scheme — tiered member contribution rate by salary band
@@ -80,14 +86,14 @@ export default function TeacherPayCalculator() {
           <><div><label className="block text-sm font-medium mb-2">Leadership Group</label><select value={leadership} onChange={(e) => setLeadership(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Leadership Group">{Object.keys(LEADERSHIP).map(k => <option key={k} value={k}>{k}</option>)}</select></div>
           <div><label className="block text-sm font-medium mb-2">Point in Range (%)</label><input type="range" min="0" max="100" value={point} onChange={(e) => setPoint(parseInt(e.target.value))} className="w-full mt-3"  aria-label="Point in Range (%)" /></div></>
         )}
-        <div><label className="block text-sm font-medium mb-2">London</label><select value={london} disabled={scale === 'leadership'} onChange={(e) => setLondon(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="London"><option value="none">Rest of England</option><option value="inner">Inner London</option><option value="outer">Outer London</option><option value="fringe">London Fringe</option></select></div>
+        <div><label className="block text-sm font-medium mb-2">London</label><select value={london} onChange={(e) => setLondon(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="London"><option value="none">Rest of England</option><option value="inner">Inner London</option><option value="outer">Outer London</option><option value="fringe">London Fringe</option></select></div>
       </div>
 
       <div className="space-y-4 animate-fade-in-up">
         <div className="rounded-2xl bg-primary/10 p-6 text-center">
           <p className="text-sm text-muted-foreground">Annual Salary</p>
           <p className="text-3xl font-bold text-primary mt-1">{formatCurrency(result.salary)}</p>
-          <p className="text-sm text-muted-foreground mt-1">Take home: {formatCurrency(result.monthly)}/month</p>
+          <p className="text-sm text-muted-foreground mt-1">Take home before any student loan: {formatCurrency(result.monthly)}/month</p>
         </div>
         <table className="w-full text-sm">
           <tbody>
@@ -95,7 +101,7 @@ export default function TeacherPayCalculator() {
             <tr className="border-b border-border/50"><td className="py-2 text-destructive">Income Tax</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.tax)}</td></tr>
             <tr className="border-b border-border/50"><td className="py-2 text-destructive">National Insurance</td><td className="text-right tabular-nums text-destructive">-{formatCurrency(result.ni)}</td></tr>
             <tr className="border-b border-border/50"><td className="py-2">Teachers' Pension ({(result.pensionRate * 100).toFixed(1)}%)</td><td className="text-right tabular-nums">-{formatCurrency(result.pension)}</td></tr>
-            <tr className="font-semibold"><td className="py-2 text-primary">Take-Home</td><td className="text-right tabular-nums text-primary">{formatCurrency(result.takeHome)}</td></tr>
+            <tr className="font-semibold"><td className="py-2 text-primary">Take-Home (before student loan)</td><td className="text-right tabular-nums text-primary">{formatCurrency(result.takeHome)}</td></tr>
           </tbody>
         </table>
       </div>

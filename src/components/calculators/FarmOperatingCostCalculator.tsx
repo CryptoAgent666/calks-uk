@@ -2,15 +2,17 @@ import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
 function calculate(hectares: number, rent: number, seed: number, fertiliser: number, spray: number, fuel: number, labour: number, machinery: number, insurance: number, other: number, yieldPerHa: number, pricePerTonne: number) {
-  const totalCosts = (rent + seed + fertiliser + spray + fuel + labour + machinery + insurance + other) * hectares
+  const fullCostPerHa = rent + seed + fertiliser + spray + fuel + labour + machinery + insurance + other
+  const variableCostPerHa = seed + fertiliser + spray
+  const totalCosts = fullCostPerHa * hectares
   const totalYield = hectares * yieldPerHa
   const totalRevenue = totalYield * pricePerTonne
   const profit = totalRevenue - totalCosts
-  const costPerHa = hectares > 0 ? totalCosts / hectares : 0
-  const costPerTonne = totalYield > 0 ? totalCosts / totalYield : 0
-  const breakEvenPrice = totalYield > 0 ? totalCosts / totalYield : 0
+  // With no crop there is no cost per tonne to show, so these stay null rather than a misleading £0
+  const fullCostPerTonne = totalYield > 0 ? totalCosts / totalYield : null
+  const variableCostPerTonne = totalYield > 0 ? (variableCostPerHa * hectares) / totalYield : null
 
-  return { totalCosts, totalYield, totalRevenue, profit, costPerHa, costPerTonne, breakEvenPrice }
+  return { totalCosts, totalYield, totalRevenue, profit, fullCostPerHa, variableCostPerHa, fullCostPerTonne, variableCostPerTonne }
 }
 
 export default function FarmOperatingCostCalculator() {
@@ -53,9 +55,11 @@ export default function FarmOperatingCostCalculator() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Total Costs</p><p className="text-lg font-bold">{formatCurrency(result.totalCosts)}</p></div>
             <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Revenue</p><p className="text-lg font-bold">{formatCurrency(result.totalRevenue)}</p></div>
-            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Cost/Tonne</p><p className="text-lg font-bold">{formatCurrency(result.costPerTonne)}</p></div>
-            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Break-Even</p><p className="text-lg font-bold">{formatCurrency(result.breakEvenPrice)}/t</p></div>
+            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Full Cost/Tonne (Break-Even Price)</p><p className="text-lg font-bold">{result.fullCostPerTonne === null ? 'n/a' : `${formatCurrency(result.fullCostPerTonne)}/t`}</p></div>
+            <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Seed, Fertiliser and Sprays/Tonne</p><p className="text-lg font-bold">{result.variableCostPerTonne === null ? 'n/a' : `${formatCurrency(result.variableCostPerTonne)}/t`}</p></div>
           </div>
+          {result.fullCostPerTonne === null && <div className="rounded-xl bg-destructive/10 p-4 text-sm text-destructive">Enter a yield above zero to see costs per tonne and a break-even price.</div>}
+          <p className="text-xs text-muted-foreground">The figures filled in are illustrative. They exclude unpaid labour and overheads unless you add them under Labour and Other. For context, Defra's Farm Business Survey put the average winter wheat production cost at about £295 a tonne against a selling price of about £189 for the 2024 harvest, on its own enterprise costing.</p>
         </div>
       )}
     </div>

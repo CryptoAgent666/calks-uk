@@ -29,6 +29,12 @@ const VERIFICATION_BY_SLUG: Record<string, string> = {
   // London road-user charges are set by TfL, not DVLA
   'ulez-calculator': 'Checked against Transport for London (TfL) 2026 charges',
   'congestion-charge-calculator': 'Checked against Transport for London (TfL) 2026 charges',
+  // tolls are the operators', city charges TfL's and the councils', fuel prices DESNZ's
+  'road-trip-cost-calculator': 'Tolls and city charges checked against the operators and TfL, November 2026; pump prices from DESNZ',
+  // index values come straight from the ONS series
+  'inflation-calculator': 'Index values from ONS series D7BT and CHAW, release of 21 October 2026',
+  // the cap is Ofgem's, the savings evidence DESNZ's, and the tariff examples one supplier's
+  'smart-meter-calculator': 'Checked against Ofgem, DESNZ, Citizens Advice and Octopus Energy tariffs, November 2026',
   // the legal figures come from HSE and the 1969 Act; the premium rates are the site's own indicative assumptions
   'employers-liability-calculator': 'Checked against HSE guidance and the 1969 Act; premium rates are indicative',
   // the prize rate, odds and limits are NS&I's own, and neither HMRC nor the FCA sets them
@@ -69,6 +75,10 @@ const VERIFICATION_BY_SLUG: Record<string, string> = {
   'home-buying-total-cost-calculator': 'Taxes checked against GOV.UK, Revenue Scotland and the Welsh Government, 2026; other costs are estimates',
   // the tax figures are GOV.UK's; the FCA sets none of them and growth rates are the reader's own
   'cost-of-delay-calculator': 'ISA, CGT and HMRC interest figures checked against GOV.UK; growth rates are assumptions',
+  // MEES and grant rules are GOV.UK's; upgrade costs and savings are Energy Saving Trust typical figures, not Ofgem's
+  'epc-calculator': 'Rules checked against GOV.UK; upgrade costs and savings from the Energy Saving Trust, November 2026',
+  // England is MHCLG's; Wales and Scotland publish their own levels and bands
+  'council-tax-calculator': 'Checked against GOV.UK, MHCLG, Welsh Government and Scottish Government figures for 2026/27',
 }
 
 // Money/regulatory categories carry a dated verification badge; utility

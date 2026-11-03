@@ -10,21 +10,27 @@ const GLAZING_SCORES: Record<GlazingType, number> = { single: 30, double: 70, tr
 const HEATING_SCORES: Record<HeatingType, number> = { gas_new: 80, gas_old: 55, oil: 45, electric: 35, heat_pump: 95 }
 
 // Upgrades that apply to the answers given, with the points each adds under this calculator's own
-// weighting (walls 30%, heating 35%, glazing 20%, loft 10%, solar 5%). Thermostat and LED lighting
-// sit outside the weighting, so their points are indicative only.
-function upgradesFor(walls: WallType, glazing: GlazingType, hasLoftInsulation: boolean, hasSolar: boolean) {
-  const list: { name: string; points: number; cost: number; saving: number }[] = []
-  if (!hasLoftInsulation) list.push({ name: 'Loft insulation (270mm)', points: (90 - 40) * 0.1, cost: 400, saving: 355 })
-  if (walls === 'cavity_uninsulated') list.push({ name: 'Cavity wall insulation', points: (WALL_SCORES.cavity_insulated - WALL_SCORES.cavity_uninsulated) * 0.3, cost: 700, saving: 310 })
-  if (glazing === 'single') list.push({ name: 'Double glazing', points: (GLAZING_SCORES.double - GLAZING_SCORES.single) * 0.2, cost: 5000, saving: 120 })
-  list.push({ name: 'Smart thermostat', points: 3, cost: 200, saving: 75 })
-  list.push({ name: 'LED lighting', points: 2, cost: 100, saving: 40 })
-  if (!hasSolar) list.push({ name: 'Solar panels (4kWp)', points: (95 - 50) * 0.05, cost: 6000, saving: 500 })
+// weighting (walls 30%, heating 35%, glazing 20%, loft 10%, solar 5%). Heating controls and LED lighting
+// sit outside the weighting, so their points are indicative only. Costs and savings are Energy Saving
+// Trust GB figures read November 2026; where EST's tables did not give a saving, the note says what it does give.
+function upgradesFor(walls: WallType, glazing: GlazingType, heating: HeatingType, hasLoftInsulation: boolean, hasSolar: boolean) {
+  const list: { name: string; points: number; cost: number | null; saving: string }[] = []
+  if (!hasLoftInsulation) list.push({ name: 'Loft insulation (270mm, from none)', points: (90 - 40) * 0.1, cost: 750, saving: 'Saving varies by home' })
+  if (walls === 'cavity_uninsulated') list.push({ name: 'Cavity wall insulation', points: (WALL_SCORES.cavity_insulated - WALL_SCORES.cavity_uninsulated) * 0.3, cost: 2_200, saving: 'Pays back in about 5 years or less' })
+  if (walls === 'solid_uninsulated') list.push({ name: 'Solid wall insulation (internal; external about £15,000)', points: (WALL_SCORES.solid_insulated - WALL_SCORES.solid_uninsulated) * 0.3, cost: 12_000, saving: 'Saving varies by home' })
+  if (glazing === 'single') list.push({ name: 'Double glazing', points: (GLAZING_SCORES.double - GLAZING_SCORES.single) * 0.2, cost: 4_800, saving: `Saves ~${formatCurrency(85)}/yr` })
+  if (heating === 'gas_old') list.push({ name: 'New A-rated gas boiler', points: (HEATING_SCORES.gas_new - HEATING_SCORES.gas_old) * 0.35, cost: 3_500, saving: `Saves up to ~${formatCurrency(420)}/yr from G-rated, with full controls` })
+  if (heating !== 'heat_pump') list.push({ name: 'Air source heat pump', points: (HEATING_SCORES.heat_pump - HEATING_SCORES[heating]) * 0.35, cost: 12_000, saving: 'Before any grant; saving varies by the heating replaced' })
+  list.push({ name: 'Heating controls (programmer, thermostat, TRVs)', points: 3, cost: 600, saving: `Saves ~${formatCurrency(100)}/yr` })
+  list.push({ name: 'LED lighting', points: 2, cost: null, saving: `Saves ~${formatCurrency(45)}/yr replacing halogen spotlights` })
+  if (!hasSolar) list.push({ name: 'Solar panels (4.5kWp)', points: (95 - 50) * 0.05, cost: 7_600, saving: 'Pays back in about 9 to 12 years with export payments' })
   return list
 }
 
 function calculate(walls: WallType, glazing: GlazingType, heating: HeatingType, hasLoftInsulation: boolean, hasSolar: boolean) {
-  let score = (WALL_SCORES[walls] * 0.3 + GLAZING_SCORES[glazing] * 0.2 + HEATING_SCORES[heating] * 0.35 + (hasLoftInsulation ? 90 : 40) * 0.1 + (hasSolar ? 95 : 50) * 0.05)
+  const rawScore = (WALL_SCORES[walls] * 0.3 + GLAZING_SCORES[glazing] * 0.2 + HEATING_SCORES[heating] * 0.35 + (hasLoftInsulation ? 90 : 40) * 0.1 + (hasSolar ? 95 : 50) * 0.05)
+  // The band comes from the score shown, so the two can never disagree. toFixed clears floating-point dust.
+  const score = Math.round(Number(rawScore.toFixed(4)))
 
   let band: string
   if (score >= 92) band = 'A'
@@ -37,7 +43,7 @@ function calculate(walls: WallType, glazing: GlazingType, heating: HeatingType, 
 
   const bandColors: Record<string, string> = { A: 'bg-green-600', B: 'bg-green-500', C: 'bg-lime-500', D: 'bg-yellow-500', E: 'bg-orange-500', F: 'bg-orange-600', G: 'bg-red-600' }
 
-  return { score: Math.round(score), band, color: bandColors[band] || 'bg-gray-500', upgrades: upgradesFor(walls, glazing, hasLoftInsulation, hasSolar) }
+  return { score, band, color: bandColors[band] || 'bg-gray-500', upgrades: upgradesFor(walls, glazing, heating, hasLoftInsulation, hasSolar) }
 }
 
 export default function EPCCalculator() {
@@ -73,16 +79,17 @@ export default function EPCCalculator() {
         <h3 className="text-sm font-semibold mb-3">Potential Upgrades</h3>
         <div className="space-y-2">
           {result.upgrades.map(u => (
-            <div key={u.name} className="flex items-center justify-between rounded-xl border border-border p-3">
-              <div><p className="text-sm font-medium">{u.name}</p><p className="text-xs text-muted-foreground">+{Number.isInteger(u.points) ? u.points : u.points.toFixed(1)} EPC points &middot; Saves ~{formatCurrency(u.saving)}/yr</p></div>
-              <p className="text-sm font-bold">{formatCurrency(u.cost)}</p>
+            <div key={u.name} className="flex items-center justify-between gap-3 rounded-xl border border-border p-3">
+              <div><p className="text-sm font-medium">{u.name}</p><p className="text-xs text-muted-foreground">+{Number(u.points.toFixed(2))} EPC points &middot; {u.saving}</p></div>
+              <p className="text-sm font-bold whitespace-nowrap">{u.cost === null ? 'Varies' : formatCurrency(u.cost)}</p>
             </div>
           ))}
         </div>
+        <p className="text-xs text-muted-foreground mt-2">Typical Great Britain costs and savings from the Energy Saving Trust, read November 2026; your quotes will differ.</p>
       </div>
 
       <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
-        <p>Simplified estimate — actual EPC depends on property size, age, floor area and surveyor assessment. Minimum EPC for rental properties: Band E today (the government plans the equivalent of Band C from 1 October 2030 for all tenancies; regulations not yet laid).</p>
+        <p>Simplified estimate — actual EPC depends on property size, age, floor area and surveyor assessment. Minimum EPC for rental properties in England and Wales: Band E today, unless a valid exemption is registered (the government plans the equivalent of Band C from 1 October 2030 for all tenancies; it first needs new powers from Parliament, and regulations have not been laid).</p>
       </div>
     </div>
   )

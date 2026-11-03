@@ -86,7 +86,7 @@ export default function MileageAllowanceCalculator() {
                   <p>Remaining {(m - 10_000).toLocaleString()} miles x 25p = {formatCurrency((m - 10_000) * CAR_OVER_10K)}</p>
                 </>
               )}
-              {result.passengerPayment > 0 && <p>Passenger allowance: {m.toLocaleString()} miles x {p} passengers x 5p = {formatCurrency(result.passengerPayment)}</p>}
+              {result.passengerPayment > 0 && <p>Passenger allowance: {m.toLocaleString()} miles x {p} passengers x 5p = {formatCurrency(result.passengerPayment)} (only if your employer pays it; no tax relief otherwise)</p>}
             </div>
           )}
         </div>

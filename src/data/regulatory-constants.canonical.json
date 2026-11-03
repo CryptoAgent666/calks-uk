@@ -39402,10 +39402,497 @@
       "verify_method": "calkcheck 2026-11-03 r19",
       "confidence": "high",
       "changes_next_fy": "Roll the start date each year."
+    },
+    {
+      "key": "moneyfacts_averages_2_nov_2026",
+      "value": "two-year 5.97%, five-year 6.00%; two-year by LTV 60% 5.44, 75% 5.84, 85% 6.06, 95% 6.37",
+      "unit": "percent",
+      "law": "Moneyfacts Compare, updated 2 November 2026",
+      "theme": "mortgage",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/MortgageInterestRateCalculator.tsx",
+        "src/components/calculators/RemortgageCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://moneyfactscompare.co.uk/mortgages/fixed-rate-mortgages/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Other pages still carry labelled start-of-October figures.",
+      "official_value": "two-year 5.97%, five-year 6.00%; two-year by LTV 60% 5.44, 75% 5.84, 85% 6.06, 95% 6.37",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": "Roll after the 5 November 2026 Bank decision."
+    },
+    {
+      "key": "skilled_worker_salary_options_2026",
+      "value": "A £41,700; B £37,500 and 90%; C £33,400 and 80%; D £33,400 and 100%; E £33,400 and 70%; F-J pre-4 April 2024 from £31,300; K £25,000",
+      "unit": "rule",
+      "law": "Immigration Rules Appendix Skilled Worker, 29 October 2026",
+      "theme": "immigration",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/VisaPointsCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-skilled-worker",
+      "status": "current",
+      "change_frequency": "",
+      "note": "TSL certificate before 31 December 2026.",
+      "official_value": "A £41,700; B £37,500 and 90%; C £33,400 and 80%; D £33,400 and 100%; E £33,400 and 70%; F-J pre-4 April 2024 from £31,300; K £25,000",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": "Check at each statement of changes."
+    },
+    {
+      "key": "skilled_occupation_going_rates_sample",
+      "value": "14 SOC codes in VisaPointsCalculator, incl. 2134 £54,700/£49,200/£43,700/£38,300",
+      "unit": "GBP",
+      "law": "Appendix Skilled Occupations, 29 October 2026",
+      "theme": "immigration",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/VisaPointsCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-skilled-occupations",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "14 SOC codes in VisaPointsCalculator, incl. 2134 £54,700/£49,200/£43,700/£38,300",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": "Check at each statement of changes."
+    },
+    {
+      "key": "continuous_residence_28_day_rule",
+      "value": "count back from up to 28 days after application, CR routes only",
+      "unit": "rule",
+      "law": "Appendix Continuous Residence CR 1.1(b)",
+      "theme": "immigration",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/ILRCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-continuous-residence",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "count back from up to 28 days after application, CR routes only",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "settlement_priority_decision_time",
+      "value": "£500, usually 30 working days for settlement, citizenship and family visas from outside the UK",
+      "unit": "rule",
+      "law": "Faster decision guide",
+      "theme": "immigration",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/faster-decision-visa-settlement",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "£500, usually 30 working days for settlement, citizenship and family visas from outside the UK",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "mtd_phase_tax_years",
+      "value": "2024/25 over £50,000 from 6 April 2026; 2025/26 over £30,000 from 6 April 2027; 2026/27 over £20,000 from 6 April 2028",
+      "unit": "rule",
+      "law": "MTD for Income Tax",
+      "theme": "tax",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/MakingTaxDigitalCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/find-out-if-and-when-you-need-to-use-making-tax-digital-for-income-tax",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "2024/25 over £50,000 from 6 April 2026; 2025/26 over £30,000 from 6 April 2027; 2026/27 over £20,000 from 6 April 2028",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "advisory_fuel_rates_sept_2026",
+      "value": "petrol 14/17/27p; diesel 15/16/22p (1600cc or less, 1601-2000cc, over 2000cc)",
+      "unit": "pence/mile",
+      "law": "Advisory fuel rates from 1 September 2026",
+      "theme": "auto",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/advisory-fuel-rates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "petrol 14/17/27p; diesel 15/16/22p (1600cc or less, 1601-2000cc, over 2000cc)",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": "Quarterly."
+    },
+    {
+      "key": "long_life_asset_limit",
+      "value": 100000,
+      "unit": "GBP",
+      "law": "Capital allowances",
+      "theme": "tax",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/CapitalAllowancesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/work-out-capital-allowances",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Spend at or below this per period goes in the main pool.",
+      "official_value": 100000,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "small_pools_allowance",
+      "value": 1000,
+      "unit": "GBP",
+      "law": "Capital allowances",
+      "theme": "tax",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/CapitalAllowancesCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/work-out-capital-allowances",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": 1000,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "records_keep_period_self_employed",
+      "value": "5 years after the 31 January deadline; employees 22 months",
+      "unit": "rule",
+      "law": "HMRC records",
+      "theme": "tax",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/self-employed-records",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Employees: https://www.gov.uk/keeping-your-pay-tax-records",
+      "official_value": "5 years after the 31 January deadline; employees 22 months",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "ons_cpi_rpi_annual_index",
+      "value": "annual D7BT from 1988, CHAW from 1987; September 2026 CPI 144.1, RPI 422.1",
+      "unit": "index",
+      "law": "ONS MM23, release of 21 October 2026",
+      "theme": "other",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/data/uk-inflation-index.ts",
+        "src/components/calculators/InflationCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/d7bt/mm23",
+      "status": "current",
+      "change_frequency": "",
+      "note": "RPI: series CHAW. Compared with the ONS CSV on 3 November 2026.",
+      "official_value": "annual D7BT from 1988, CHAW from 1987; September 2026 CPI 144.1, RPI 422.1",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": "Roll LATEST_INDEX_MONTH at each ONS release; next 18 November 2026."
+    },
+    {
+      "key": "council_tax_premiums_england",
+      "value": "empty from one year, up to 4x at 10 years; second homes up to 2x",
+      "unit": "rule",
+      "law": "Council Tax guide",
+      "theme": "property",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/council-tax",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "empty from one year, up to 4x at 10 years; second homes up to 2x",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "scotland_council_tax_band_ratios",
+      "value": "E 473/360, F 585/360, G 705/360, H 882/360 of Band D",
+      "unit": "ratio",
+      "law": "Scottish Government Council Tax by Band 2026-27",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/CouncilTaxCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.scot/publications/council-tax-datasets/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "E 473/360, F 585/360, G 705/360, H 882/360 of Band D",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "wales_band_d_average_2026_27",
+      "value": 2283,
+      "unit": "GBP",
+      "law": "Council Tax levels April 2026 to March 2027",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/CouncilTaxCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.wales/council-tax-levels-april-2026-march-2027-html",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": 2283,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "est_costs_read_nov_2026",
+      "value": "loft £750; cavity £2,200; solid wall £12,000/£15,000; windows £4,800; solar £7,600; heat pump £12,000; boiler £3,500",
+      "unit": "GBP",
+      "law": "Energy Saving Trust advice, read through r.jina.ai",
+      "theme": "energy",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/EPCCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://energysavingtrust.org.uk/advice/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Direct fetches return 403.",
+      "official_value": "loft £750; cavity £2,200; solid wall £12,000/£15,000; windows £4,800; solar £7,600; heat pump £12,000; boiler £3,500",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": "Refresh yearly."
+    },
+    {
+      "key": "bus_off_gas_addition",
+      "value": 1500,
+      "unit": "GBP",
+      "law": "Boiler Upgrade Scheme",
+      "theme": "energy",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/apply-boiler-upgrade-scheme",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Off-gas oil or LPG homes, England and Wales, until March 2027.",
+      "official_value": 1500,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": "Ends March 2027."
+    },
+    {
+      "key": "mees_cost_cap_current",
+      "value": 3500,
+      "unit": "GBP",
+      "law": "Domestic private rented minimum standard",
+      "theme": "energy",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/guidance/domestic-private-rented-property-minimum-energy-efficiency-standard-landlord-guidance",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": 3500,
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "smart_meter_savings_desnz",
+      "value": "electricity 3.0%, gas 2.2%",
+      "unit": "percent",
+      "law": "DESNZ cost benefit analysis 2019",
+      "theme": "energy",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://assets.publishing.service.gov.uk/media/5d7f54c4e5274a27c2c6d53a/smart-meter-roll-out-cost-benefit-analysis-2019.pdf",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "electricity 3.0%, gas 2.2%",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "smart_meter_rollout_june_2026",
+      "value": "75% of homes have a smart electricity meter, 71% in smart mode",
+      "unit": "percent",
+      "law": "DESNZ quarterly update June 2026",
+      "theme": "energy",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/statistics/smart-meters-in-great-britain-quarterly-update-june-2026/smart-meters-in-great-britain-quarterly-update-june-2026-statistical-bulletin",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "75% of homes have a smart electricity meter, 71% in smart mode",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "defra_cereal_cost_2024_harvest",
+      "value": "about £295/t cost against £189/t selling price",
+      "unit": "GBP",
+      "law": "Farm Accounts in England chapter 3",
+      "theme": "farming",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/statistics/farm-accounts-in-england/chapter-3-cropping-farms--2",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "about £295/t cost against £189/t selling price",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": ""
+    },
+    {
+      "key": "ons_rents_sept_2026",
+      "value": "UK £1,406; England £1,466; Wales £848; Scotland £1,011; London £2,338",
+      "unit": "GBP",
+      "law": "ONS private rent, October 2026 bulletin",
+      "theme": "property",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/CostOfLivingCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/privaterentandhousepricesuk/october2026",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "UK £1,406; England £1,466; Wales £848; Scotland £1,011; London £2,338",
+      "verified_date": "2026-11-03",
+      "verify_method": "calkcheck 2026-11-03 r20",
+      "confidence": "high",
+      "changes_next_fy": "Monthly."
     }
   ],
   "status_summary": {
-    "current": 1730,
+    "current": 1751,
     "retired": 24,
     "historical": 24,
     "superseded_by_component": 4,

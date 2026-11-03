@@ -1,5 +1,13 @@
 # CHANGELOG — Calks.uk
 
+## 2026-11-03 (round 20) — Visas, Making Tax Digital and inflation rebuilt
+
+Twentieth `/calkcheck` pass (report: `AUDIT-2026-11-03-b.md`): 130 defects on 20 pages, 17 HIGH.
+
+**Immigration:** visa points checks going rates and mandatory items; ILR route start, 180-day scope, 28-day rule. **Tax:** MTD start date by tax year with gross rent, readiness requires software and sign-up, mileage 55p as a ceiling, capital allowances new or used and tax rate. **Prices and property:** inflation on ONS CPI and RPI data, remortgage ERC against months left, Council Tax Band D input and premiums, EPC costs from EST, smart meter standing charge. **Other:** full cost per tonne on farm costs, London leadership pay.
+
+Ledger now 1,825 entries; 21 new guards.
+
 ## 2026-11-03 (round 19) — Second pass begins: pensions, benefits and side income
 
 Nineteenth `/calkcheck` pass (report: `AUDIT-2026-11-03.md`): 126 defects on 20 pages last checked for stale data only, 12 HIGH, 17 calculators with wrong results.

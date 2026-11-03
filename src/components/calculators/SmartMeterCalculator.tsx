@@ -17,25 +17,37 @@ const APPLIANCES = [
   { name: 'Heating (if electric)', watts: 2000, hours: 0, always: false },
 ]
 
-function calculate(appliances: { watts: number; hours: number }[], elecRate: number) {
+function clampHours(hours: number) {
+  return Math.min(24, Math.max(0, hours))
+}
+
+function calculate(appliances: { watts: number; hours: number }[], elecRate: number, standingCharge: number) {
   let dailyKwh = 0
   appliances.forEach(a => { dailyKwh += (a.watts * a.hours) / 1000 })
-  const dailyCost = dailyKwh * (elecRate / 100)
-  return { dailyKwh, dailyCost, weeklyCost: dailyCost * 7, monthlyCost: dailyCost * 30.44, annualCost: dailyCost * 365 }
+  const usageCost = dailyKwh * (elecRate / 100)
+  const standingCost = standingCharge / 100
+  const dailyCost = usageCost + standingCost
+  return { dailyKwh, usageCost, standingCost, dailyCost, weeklyCost: dailyCost * 7, monthlyCost: dailyCost * 30.44, annualCost: dailyCost * 365 }
 }
 
 export default function SmartMeterCalculator() {
   const [items, setItems] = useState(APPLIANCES.map(a => ({ ...a })))
   const [rate, setRate] = useState('26.32')
+  const [standing, setStanding] = useState('54.83')
 
   const r = parseFloat(rate) || 0
-  const result = useMemo(() => calculate(items, r), [items, r])
+  const sc = parseFloat(standing) || 0
+  const result = useMemo(() => calculate(items, r, sc), [items, r, sc])
 
-  const updateHours = (i: number, hours: number) => setItems(prev => prev.map((item, idx) => idx === i ? { ...item, hours } : item))
+  const updateHours = (i: number, hours: number) => setItems(prev => prev.map((item, idx) => idx === i ? { ...item, hours: clampHours(hours) } : item))
 
   return (
     <div className="space-y-6">
-      <div><label className="block text-sm font-medium mb-2">Electricity Rate (p/kWh)</label><input type="number" min="0" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-48 rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Electricity Rate (p/kWh)" /></div>
+      <div className="flex flex-wrap gap-4">
+        <div><label className="block text-sm font-medium mb-2">Electricity Rate (p/kWh)</label><input type="number" min="0" step="0.1" value={rate} onChange={(e) => setRate(e.target.value)} className="w-48 rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Electricity Rate (p/kWh)" /></div>
+        <div><label className="block text-sm font-medium mb-2">Standing Charge (p/day)</label><input type="number" min="0" step="0.1" value={standing} onChange={(e) => setStanding(e.target.value)} className="w-48 rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Standing Charge (p/day)" /></div>
+      </div>
+      <p className="text-xs text-muted-foreground">Rates start at the Ofgem cap average for Direct Debit, October to December 2026. Appliance rows show usage only.</p>
 
       <div className="space-y-2">
         {items.map((item, i) => (
@@ -52,7 +64,8 @@ export default function SmartMeterCalculator() {
       <div className="rounded-2xl bg-primary/10 p-6 text-center animate-fade-in-up">
         <p className="text-sm text-muted-foreground">Estimated Daily Electricity Cost</p>
         <p className="text-3xl font-bold text-primary mt-1">{formatCurrency(result.dailyCost)}</p>
-        <p className="text-sm text-muted-foreground mt-1">{result.dailyKwh.toFixed(1)} kWh/day &middot; {formatCurrency(result.monthlyCost)}/month &middot; {formatCurrency(result.annualCost)}/year</p>
+        <p className="text-sm text-muted-foreground mt-1">{result.dailyKwh.toFixed(1)} kWh/day &middot; {formatCurrency(result.usageCost)} usage + {formatCurrency(result.standingCost)} standing charge</p>
+        <p className="text-sm text-muted-foreground mt-1">{formatCurrency(result.monthlyCost)}/month &middot; {formatCurrency(result.annualCost)}/year, standing charge included</p>
       </div>
     </div>
   )

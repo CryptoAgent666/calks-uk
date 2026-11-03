@@ -10,9 +10,9 @@ function calculate(distanceMiles: number, mpg: number, fuelPriceP: number, passe
   const costPerMile = distanceMiles > 0 ? fuelCost / distanceMiles : 0
 
   // Driving time estimate (average 50mph including stops)
-  const drivingHours = distanceMiles / 50
-  const hours = Math.floor(drivingHours)
-  const mins = Math.round((drivingHours - hours) * 60)
+  const drivingMinutes = Math.round((distanceMiles / 50) * 60)
+  const hours = Math.floor(drivingMinutes / 60)
+  const mins = drivingMinutes % 60
 
   return { fuelCost, totalCost, costPerPerson, costPerMile, litres, hours, mins }
 }
