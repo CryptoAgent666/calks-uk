@@ -35,7 +35,7 @@ function calculate(annualMiles: number, fuelPriceP: number, mpg: number, employe
 
 export default function MileageCalculator() {
   const [miles, setMiles] = useState('8000')
-  const [fuel, setFuel] = useState('175') // UK average petrol, DESNZ w/c 12 Oct 2026 (175.28p)
+  const [fuel, setFuel] = useState('173') // UK average petrol, DESNZ w/c 2 Nov 2026 (172.78p)
   const [mpg, setMpg] = useState('40')
   const [employer, setEmployer] = useState('0')
   const [other, setOther] = useState('10')

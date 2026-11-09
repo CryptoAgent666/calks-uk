@@ -7,7 +7,8 @@ type Household = 'working' | 'not_working' | 'benefits'
 // Funded hours a week in term time (38 weeks) by household route and the child's age.
 // Working-parent route: each parent expects to earn at least £2,643.68 over the next 3 months (16 hours
 // a week at the £12.71 National Living Wage, about £10,575 a year) and has adjusted net income under
-// £100,000; 30 hours from 9 months old. Universal 15 hours for every 3 and 4-year-old. Benefits route:
+// £100,000; 30 hours from 9 months old. Lower floors: £2,256.80 aged 18-20, £1,664 under 18 or apprentice
+// (gov.uk/free-childcare-if-working/check-youre-eligible, 5 Nov 2026). Universal 15 hours for every 3 and 4-year-old. Benefits route:
 // 15 hours at age 2. gov.uk/check-eligible-free-childcare-if-youre-working, gov.uk/get-childcare.
 const TERM_WEEKS = 38
 const TFC_TOP_UP = 0.20
@@ -23,7 +24,7 @@ const HOUSEHOLD_OPTIONS: { value: Household; label: string }[] = [
   { value: 'not_working', label: 'Not working, or either parent over £100,000' },
   { value: 'benefits', label: 'Receiving qualifying benefits' },
 ]
-const EARNINGS_TEST = 'each expecting to earn at least £2,643.68 over the next 3 months (16 hours a week at the National Living Wage, about £10,575 a year) and under £100,000 adjusted net income'
+const EARNINGS_TEST = 'each expecting to earn at least £2,643.68 over the next 3 months (16 hours a week at the National Living Wage, about £10,575 a year; £2,256.80 at 18 to 20, £1,664 under 18 or as an apprentice) and under £100,000 adjusted net income'
 
 function eligibilityNote(household: Household, age: ChildAge): string {
   if (age === 'school') return 'No free childcare entitlement at school age. Tax-Free Childcare (or the Universal Credit childcare element) can still help with wraparound care.'

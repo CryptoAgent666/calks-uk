@@ -5,34 +5,35 @@
  */
 
 // Prize fund rate 4.35% and odds 21,000 to 1 since the September 2026 draw
-// (NS&I PR260818, 18 Aug 2026 — up from 3.80% / 22,000 in July 2026), unchanged for October 2026.
+// (NS&I PR260818, 18 Aug 2026 — up from 3.80% / 22,000 in July 2026), unchanged for November 2026
+// (nsandi.com Premium Bonds and interest-rates pages, checked 9 Nov 2026, after the 5 Nov Bank Rate rise).
 export const PRIZE_RATE = 0.0435
 export const ODDS = 21_000
 export const MIN_HOLDING = 25
 export const MAX_HOLDING = 50_000
-export const AS_OF = 'October 2026 draw'
+export const AS_OF = 'November 2026 draw'
 
-// Number of prizes of each value in the October 2026 draw, 6,546,849 prizes worth £498,378,775
-// (nsandi.com, "How we share out Premium Bonds prizes"; that page's November column is only an estimate).
+// Number of prizes of each value in the November 2026 draw, 6,575,175 prizes worth £500,535,100
+// (nsandi.com, "How we share out Premium Bonds prizes"; that page's December column is only an estimate).
 export const PRIZES = [
   { amount: 1_000_000, count: 2, label: '£1,000,000' },
   { amount: 100_000, count: 96, label: '£100,000' },
-  { amount: 50_000, count: 191, label: '£50,000' },
-  { amount: 25_000, count: 382, label: '£25,000' },
-  { amount: 10_000, count: 957, label: '£10,000' },
-  { amount: 5_000, count: 1_914, label: '£5,000' },
-  { amount: 1_000, count: 19_934, label: '£1,000' },
-  { amount: 500, count: 59_802, label: '£500' },
-  { amount: 100, count: 2_371_145, label: '£100' },
-  { amount: 50, count: 2_371_145, label: '£50' },
-  { amount: 25, count: 1_721_281, label: '£25' },
+  { amount: 50_000, count: 192, label: '£50,000' },
+  { amount: 25_000, count: 385, label: '£25,000' },
+  { amount: 10_000, count: 962, label: '£10,000' },
+  { amount: 5_000, count: 1_922, label: '£5,000' },
+  { amount: 1_000, count: 20_020, label: '£1,000' },
+  { amount: 500, count: 60_060, label: '£500' },
+  { amount: 100, count: 2_381_417, label: '£100' },
+  { amount: 50, count: 2_381_417, label: '£50' },
+  { amount: 25, count: 1_728_702, label: '£25' },
 ]
 export const TOTAL_PRIZES = PRIZES.reduce((sum, p) => sum + p.count, 0)
 // Every eligible bond has a 1 in ODDS chance each month, so the number of
-// eligible bonds is the number of prizes times the odds (about 137 billion)
+// eligible bonds is the number of prizes times the odds (about 138 billion)
 export const ELIGIBLE_BONDS = TOTAL_PRIZES * ODDS
 export const JACKPOTS = PRIZES.find((p) => p.amount === 1_000_000)!.count
-// Odds of one £1 bond winning £1 million in a single draw (about 1 in 68.6 billion)
+// Odds of one £1 bond winning £1 million in a single draw (about 1 in 69.0 billion)
 export const JACKPOT_ODDS_PER_BOND = ELIGIBLE_BONDS / JACKPOTS
 
 // Share of all prizes, in %, for a given prize value
@@ -111,7 +112,7 @@ export function premiumBondOddsTableHtml() {
 /** Holdings that get their own anchored section on the page: the amounts people search for. */
 export const SECTION_HOLDINGS = [1_000, 5_000, 10_000, 20_000, 25_000, 50_000]
 
-// "1 in N" to three significant figures: 1 in 4,570, 1 in 114,000, 1 in 1.37 million, 1 in 68.6 billion
+// "1 in N" to three significant figures: 1 in 4,570, 1 in 114,000, 1 in 1.37 million, 1 in 69 billion
 const oneInSig = (n: number) => {
   if (n >= 1e9) return `1 in ${+(n / 1e9).toPrecision(3)} billion`
   if (n >= 1e6) return `1 in ${+(n / 1e6).toPrecision(3)} million`

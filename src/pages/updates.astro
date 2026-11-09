@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-11-03'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-11-09'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -25,6 +25,30 @@ const schemas = [
 
     <div class="space-y-8">
       <!-- November 2026 — Budget 2026 rates applied by date on the mileage log and capital allowances calculators -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            November 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Bank Rate rises to 4%</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Bank Rate.</strong> The Bank of England raised Bank Rate from 3.75% to 4% on 5 November 2026. HMRC late payment interest rises to 8% and repayment interest to 3% from 24 November, shown on the <a href="/calculator/self-assessment-tax-calculator/" class="text-primary hover:underline">Self Assessment</a> page. Trackers on the <a href="/calculator/mortgage-interest-rate-calculator/" class="text-primary hover:underline">mortgage rate</a> page now price at the new rate. Statutory interest on <a href="/calculator/late-payment-interest-calculator/" class="text-primary hover:underline">late invoices</a> stays at 11.75% for interest starting by 31 December; it will be 12% from January if Bank Rate holds.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Fuel and Premium Bonds.</strong> Pump prices on the <a href="/calculator/fuel-cost-calculator/" class="text-primary hover:underline">fuel cost</a> and related pages now use the DESNZ week of 2 November (172.78p petrol, 198.58p diesel). <a href="/calculator/premium-bonds-calculator/" class="text-primary hover:underline">Premium Bonds</a> uses the November draw, and NS&amp;I fixed bond rates are updated.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Car tax.</strong> The Budget papers were corrected on 5 November: the expensive car supplement rises from £440 to £460 on 1 April 2027, rather than staying the same. <a href="/calculator/car-tax-calculator/" class="text-primary hover:underline">Car tax</a> is updated.</span>
+          </li>
+        </ul>
+      </article>
+
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
         <div class="mb-2">

@@ -1576,7 +1576,7 @@
     },
     {
       "key": "boe_base_rate",
-      "value": 3.75,
+      "value": 4.0,
       "unit": "%",
       "law": "Bank of England base rate",
       "theme": "other",
@@ -1589,19 +1589,20 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate",
+      "source_url": "https://www.bankofengland.co.uk/boeapps/database/Bank-Rate.asp",
       "status": "current",
       "change_frequency": "",
-      "note": "3.75%, held 17 Sep 2026 (next decision 5 Nov 2026)",
+      "note": "Raised from 3.75% on 5 November 2026. Late payment of commercial debts uses the rate on 30 June or 31 December before interest starts (3.75% for interest starting by 31 Dec 2026).",
       "fixed": true,
       "fixed_date": "2026-06-16",
       "volatile": true,
       "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)",
-      "official_value": 3.75,
-      "verified_date": "2026-10-19",
-      "verify_method": "calkcheck-2026-09-26",
+      "official_value": 4.0,
+      "verified_date": "2026-11-09",
+      "verify_method": "monitor alert 2026-11-09",
       "confidence": "high",
-      "freshness_note": "Bank Rate 3.75% since 18 Dec 2025 (BoE database, re-checked 26 Sep 2026). Code already held 3.75; ledger still said 4.25 and six prose spots (late payment x2, annuity x2, inflation x2) said 4.75%/4.5%, fixed 2026-09-26."
+      "freshness_note": "Bank Rate 3.75% since 18 Dec 2025 (BoE database, re-checked 26 Sep 2026). Code already held 3.75; ledger still said 4.25 and six prose spots (late payment x2, annuity x2, inflation x2) said 4.75%/4.5%, fixed 2026-09-26.",
+      "changes_next_fy": "Next MPC decision 17 December 2026."
     },
     {
       "key": "boiler_upgrade_scheme_grant",
@@ -7895,11 +7896,11 @@
       "source_url": "https://www.trinitycollege.com/qualifications/SELT",
       "status": "current",
       "change_frequency": "",
-      "note": "UK Citizenship calculator: ENGLISH_TEST constant — approx cost of B1 English test (IELTS/Trinity) required for naturalisation; provider-priced but a mandatory regulatory requirement",
+      "note": "Trinity GESE Grade 5 (B1) £160; GESE Grade 7 (B2) £170 for settlement from 26 March 2027; ISE £200.",
       "official_value": "160",
       "official_source": "https://www.trinitycollege.com/qualifications/SELT",
-      "verified_date": "2026-10-20",
-      "verify_method": "Trinity SELT price table 2026-10-20 (GESE Grade 5 B1 citizenship £160.00)",
+      "verified_date": "2026-11-09",
+      "verify_method": "monitor alert 2026-11-09",
       "freshness_note": "Applied 2026-09-13: UKCitizenshipCalculator uses £160 (Trinity GESE Grade 5, cheapest approved B1 SELT); prose ranges now £160-£182. Re-checked 2026-10-20 on trinitycollege.com: GESE Grade 5 (B1, British Citizenship) £160.00, ISE I/II £200.00. Source moved off the gov.uk SELT guidance, which lists approved providers and test centres but no fee.",
       "fixed": true,
       "fixed_date": "2026-09-13"
@@ -28896,8 +28897,9 @@
       "official_value": "440",
       "confidence": "high",
       "freshness_note": "Expensive/premium car supplement is 440/year for 5 years (from the second time the vehicle is taxed), list price over 40,000; current on live gov.uk table for 2026-27.",
-      "verified_date": "2026-06-28",
-      "verify_method": "tier2-tail"
+      "verified_date": "2026-11-09",
+      "verify_method": "monitor alert 2026-11-09",
+      "changes_next_fy": "460 from 1 April 2027 (Annex A corrected 5 November 2026)."
     },
     {
       "key": "ved_expensive_car_supplement_threshold",
@@ -32677,7 +32679,7 @@
     },
     {
       "key": "pump_price_petrol_ppl",
-      "value": "175.28",
+      "value": 172.78,
       "unit": "pence/litre",
       "law": "DESNZ weekly road fuel prices (market)",
       "theme": "transport",
@@ -32698,10 +32700,10 @@
       "source_url": "https://www.gov.uk/government/statistics/weekly-road-fuel-prices",
       "status": "current",
       "change_frequency": "",
-      "note": "UK average ULSP w/c 12 Oct 2026 (172.01p w/c 21 Sep; 161.6p on 31 Aug; rising). Six calculators default to 175p; prose and worked examples dated to that week (40 mpg = 19.9p/mile).",
-      "official_value": "175.28",
-      "verified_date": "2026-10-30",
-      "verify_method": "monitor-alert-2026-10-26 recheck (DESNZ CSV)",
+      "note": "DESNZ week commencing 2 November 2026; defaults round to 173p.",
+      "official_value": 172.78,
+      "verified_date": "2026-11-09",
+      "verify_method": "monitor alert 2026-11-09",
       "confidence": "high",
       "volatile": true,
       "changes_next_fy": "Market figure: refresh defaults and dated prose each calkcheck cycle (DESNZ CSV weekly)",
@@ -32709,7 +32711,7 @@
     },
     {
       "key": "pump_price_diesel_ppl",
-      "value": "200.04",
+      "value": 198.58,
       "unit": "pence/litre",
       "law": "DESNZ weekly road fuel prices (market)",
       "theme": "transport",
@@ -32726,10 +32728,10 @@
       "source_url": "https://www.gov.uk/government/statistics/weekly-road-fuel-prices",
       "status": "current",
       "change_frequency": "",
-      "note": "UK average ULSD w/c 12 Oct 2026 (195.53p w/c 21 Sep), first week above 200p. Button default 200p.",
-      "official_value": "200.04",
-      "verified_date": "2026-10-30",
-      "verify_method": "monitor-alert-2026-10-26 recheck (DESNZ CSV)",
+      "note": "DESNZ week commencing 2 November 2026; defaults round to 199p.",
+      "official_value": 198.58,
+      "verified_date": "2026-11-09",
+      "verify_method": "monitor alert 2026-11-09",
       "confidence": "high",
       "volatile": true,
       "changes_next_fy": "Market figure: refresh each calkcheck cycle",
@@ -36176,7 +36178,7 @@
     {
       "key": "hmrc_late_payment_interest_rate",
       "status": "current",
-      "verified_date": "2026-10-19",
+      "verified_date": "2026-11-09",
       "confidence": "high",
       "value": 7.75,
       "unit": "percent",
@@ -36190,8 +36192,10 @@
         "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.gov.uk/government/publications/rates-and-allowances-hmrc-interest-rates-for-late-and-early-payments/rates-and-allowances-hmrc-interest-rates",
-      "note": "7.75% from 9 Jan 2026 (base 3.75%); repayment 2.75%",
-      "change_frequency": "with Bank Rate"
+      "note": "7.75% until 23 November 2026; 8.00% from 24 November 2026 (base 4% + 4%).",
+      "change_frequency": "with Bank Rate",
+      "changes_next_fy": "8.00 from 24 November 2026; repayment interest 3.00.",
+      "verify_method": "monitor alert 2026-11-09"
     },
     {
       "key": "rd_claim_notification_deadline_months",
@@ -37873,9 +37877,9 @@
         "src/data/calculator-content.ts"
       ],
       "source_url": "https://www.nsandi.com/get-to-know-us/monthly-prize-allocation",
-      "status": "current",
+      "status": "superseded",
       "change_frequency": "",
-      "note": "6,546,849 prizes; rate 4.35%, odds 21,000 to 1.",
+      "note": "Replaced by the November 2026 draw.",
       "official_value": "498378775",
       "verified_date": "2026-11-01",
       "verify_method": "calkcheck 2026-11-01 r15",
@@ -39889,14 +39893,106 @@
       "verify_method": "calkcheck 2026-11-03 r20",
       "confidence": "high",
       "changes_next_fy": "Monthly."
+    },
+    {
+      "key": "hmrc_repayment_interest_rate",
+      "value": 2.75,
+      "unit": "percent",
+      "law": "HMRC interest rates",
+      "theme": "tax",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/rates-and-allowances-hmrc-interest-rates-for-late-and-early-payments/rates-and-allowances-hmrc-interest-rates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Base minus 1%, minimum 0.5%.",
+      "official_value": 2.75,
+      "confidence": "high",
+      "changes_next_fy": "3.00 from 24 November 2026.",
+      "verified_date": "2026-11-09",
+      "verify_method": "monitor alert 2026-11-09"
+    },
+    {
+      "key": "premium_bonds_prize_allocation_nov_2026",
+      "value": 500535100,
+      "unit": "GBP",
+      "law": "NS&I monthly prize allocation, November 2026 draw",
+      "theme": "savings",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/data/premium-bonds.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.nsandi.com/get-to-know-us/monthly-prize-allocation",
+      "status": "current",
+      "change_frequency": "",
+      "note": "6,575,175 prizes; prize fund rate 4.35%, odds 21,000 to 1 unchanged.",
+      "official_value": 500535100,
+      "confidence": "high",
+      "changes_next_fy": "Monthly.",
+      "verified_date": "2026-11-09",
+      "verify_method": "monitor alert 2026-11-09"
+    },
+    {
+      "key": "nsandi_fixed_bond_rates_oct_2026",
+      "value": "British Savings Bonds 4.99/5.07/5.10/5.17% AER (from 6 Oct 2026); Green Savings Bonds 4.73% (from 20 Oct 2026)",
+      "unit": "percent",
+      "law": "NS&I interest rates",
+      "theme": "savings",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.nsandi.com/interest-rates",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Variable rates unchanged since 18 Aug 2026.",
+      "official_value": "British Savings Bonds 4.99/5.07/5.10/5.17% AER (from 6 Oct 2026); Green Savings Bonds 4.73% (from 20 Oct 2026)",
+      "confidence": "high",
+      "changes_next_fy": "Check after each Bank Rate change.",
+      "verified_date": "2026-11-09",
+      "verify_method": "monitor alert 2026-11-09"
+    },
+    {
+      "key": "free_childcare_min_earnings_lower_ages",
+      "value": "18-20: £2,256.80 a quarter (£173.60 a week); under 18 and apprentices: £1,664 (£128)",
+      "unit": "GBP",
+      "law": "Childcare eligibility",
+      "theme": "benefits",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts",
+        "src/components/calculators/ChildcareEntitlementCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/free-childcare-if-working/check-youre-eligible",
+      "status": "current",
+      "change_frequency": "",
+      "note": "16 hours at the age-based NMW.",
+      "official_value": "18-20: £2,256.80 a quarter (£173.60 a week); under 18 and apprentices: £1,664 (£128)",
+      "confidence": "high",
+      "changes_next_fy": "Moves with NMW in April.",
+      "verified_date": "2026-11-09",
+      "verify_method": "monitor alert 2026-11-09"
     }
   ],
   "status_summary": {
-    "current": 1751,
+    "current": 1754,
     "retired": 24,
     "historical": 24,
     "superseded_by_component": 4,
-    "superseded": 14,
+    "superseded": 15,
     "uncertain": 8
   },
   "theme_counts": {

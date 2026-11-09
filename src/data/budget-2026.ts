@@ -273,7 +273,7 @@ export const APRIL_2027_SCHEDULE: ScheduleItem[] = [
     from: '£200 a year',
     to: '£210 a year',
     detail:
-      'VED rates for cars, vans and motorcycles rise with RPI, and the first-year rates for new cars rise too; the £440 expensive car supplement stays the same.',
+      'VED rates for cars, vans and motorcycles rise with RPI, and the first-year rates for new cars rise too; the expensive car supplement rises from £440 to £460 a year, with its £40,000 and £50,000 list-price thresholds unchanged (Annex A corrected on 5 November 2026).',
     ...ANNEX_A,
   },
   {

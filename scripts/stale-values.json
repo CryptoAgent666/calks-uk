@@ -91,7 +91,8 @@
   {
    "was": "4124",
    "now": "3935",
-   "what": "wtc_disability_element"
+   "what": "wtc_disability_element",
+   "ctx": "tax credit|disab|WTC|working tax"
   },
   {
    "was": "26.11",
@@ -5064,6 +5065,176 @@
    "was": "GasBuddy",
    "now": "no unverified app",
    "what": "fuel app claim (calkcheck round twenty)"
+  },
+  {
+   "was": "3.75% since December 2025",
+   "now": "four per cent since November",
+   "what": "Bank Rate (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "base plus 0.5% prices at 4.25%",
+   "now": "tracker at the new rate",
+   "what": "tracker example (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "which is 7.75% with Bank Rate at",
+   "now": "dated HMRC rates",
+   "what": "HMRC interest (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "next decision 5 November",
+   "now": "next decision in December",
+   "what": "MPC date (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "175.28p",
+   "now": "week of second November",
+   "what": "pump price petrol (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "200.04p",
+   "now": "week of second November",
+   "what": "pump price diesel (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "£1.75 a litre",
+   "now": "dated DESNZ price",
+   "what": "pump price petrol (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "£1.75/litre",
+   "now": "dated DESNZ price",
+   "what": "pump price petrol (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "£1.75/L",
+   "now": "dated DESNZ price",
+   "what": "pump price petrol (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "£2.00 a litre",
+   "now": "dated DESNZ price",
+   "what": "pump price diesel (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "week commencing 12 October 2026",
+   "now": "week commencing second November",
+   "what": "DESNZ week (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "w/c 12 Oct 2026",
+   "now": "week commencing second November",
+   "what": "DESNZ week (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "PETROL_P = 175",
+   "now": "dated DESNZ default",
+   "what": "petrol default (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "DIESEL_P = 200",
+   "now": "dated DESNZ default",
+   "what": "diesel default (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "82.16p",
+   "now": "recomputed tax share",
+   "what": "fuel tax share (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "93.12p",
+   "now": "recomputed remainder",
+   "what": "fuel tax share (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "October 2026 draw",
+   "now": "November draw",
+   "what": "Premium Bonds allocation (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "£498.4 million",
+   "now": "November prize fund",
+   "what": "Premium Bonds fund (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "382 of £25,000",
+   "now": "November counts",
+   "what": "Premium Bonds counts (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "137.5 billion bonds",
+   "now": "November bond count",
+   "what": "Premium Bonds count (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "1 in 68.7 billion",
+   "now": "November odds per bond",
+   "what": "Premium Bonds jackpot odds (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "95 prizes of £100,000",
+   "now": "November counts",
+   "what": "Premium Bonds counts (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "4.81% to 4.85%",
+   "now": "October fixed rates",
+   "what": "British Savings Bonds (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "Green Savings Bonds at 4.45%",
+   "now": "October fixed rate",
+   "what": "Green Savings Bonds (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "English test runs £150",
+   "now": "Trinity prices",
+   "what": "English test fee (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "English test at £150",
+   "now": "Trinity prices",
+   "what": "English test fee (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "English test about £170",
+   "now": "Trinity prices",
+   "what": "English test fee (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "about £570 in total",
+   "now": "three tests summed",
+   "what": "spouse visa tests (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "supplement stays the same",
+   "now": "rises in April twenty twenty-seven",
+   "what": "expensive car supplement (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "£440 supplement does not change",
+   "now": "rises in April twenty twenty-seven",
+   "what": "expensive car supplement (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "£440 expensive car supplement and its",
+   "now": "rises in April twenty twenty-seven",
+   "what": "expensive car supplement (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "earns over £203 a week",
+   "now": "age-based floors",
+   "what": "childcare earnings floor (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "£13,010",
+   "now": "recomputed route total",
+   "what": "spouse visa total (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "£4,094",
+   "now": "recomputed visa total",
+   "what": "skilled worker total (monitor alert 9 November 2026)"
   }
  ]
 }

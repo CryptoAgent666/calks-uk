@@ -29,13 +29,13 @@ function calculate(annualMiles: number, petrolMpg: number, petrolPriceP: number,
 export default function EVSavingsCalculator() {
   const [miles, setMiles] = useState('10000')
   const [mpg, setMpg] = useState('40')
-  const [petrolP, setPetrolP] = useState('175') // UK average petrol, DESNZ w/c 12 Oct 2026 (175.28p)
+  const [petrolP, setPetrolP] = useState('173') // UK average petrol, DESNZ w/c 2 Nov 2026 (172.78p)
   const [evEff, setEvEff] = useState('3.5')
   const [homeElec, setHomeElec] = useState('26.32')
   const [publicElec, setPublicElec] = useState('70')
   const [homePct, setHomePct] = useState('80')
 
-  const result = useMemo(() => calculate(parseFloat(miles)||0, parseFloat(mpg)||40, parseFloat(petrolP)||175, parseFloat(evEff)||3.5, parseFloat(homeElec)||26.32, parseFloat(publicElec)||70, Number.isNaN(parseFloat(homePct)) ? 80 : parseFloat(homePct)), [miles, mpg, petrolP, evEff, homeElec, publicElec, homePct])
+  const result = useMemo(() => calculate(parseFloat(miles)||0, parseFloat(mpg)||40, parseFloat(petrolP)||173, parseFloat(evEff)||3.5, parseFloat(homeElec)||26.32, parseFloat(publicElec)||70, Number.isNaN(parseFloat(homePct)) ? 80 : parseFloat(homePct)), [miles, mpg, petrolP, evEff, homeElec, publicElec, homePct])
 
   return (
     <div className="space-y-6">
