@@ -2991,7 +2991,10 @@
       "note": "Child Benefit calc: ADDITIONAL_CHILD_WEEKLY = 17.90 each additional child (2026/27); also in prose",
       "official_value": "17.90",
       "confidence": "high",
-      "freshness_note": "Child Benefit additional child = GBP17.90/week from 6 April 2026 (gov.uk; HMRC press release). Uprated from 17.25."
+      "freshness_note": "Child Benefit additional child = GBP17.90/week from 6 April 2026 (gov.uk; HMRC press release). Uprated from 17.25.",
+      "changes_next_fy": "18.55 from 6 April 2027 (provisional, HMRC 10 November 2026)",
+      "verified_date": "2026-11-17",
+      "verify_method": "monitor alert 2026-11-17"
     },
     {
       "key": "child_benefit_additional_weekly",
@@ -3013,7 +3016,10 @@
       "note": "child-benefit-calculator: each additional child £17.90/week (£930.80/year)",
       "official_value": "17.90",
       "confidence": "high",
-      "freshness_note": "Same figure as child_benefit_additional_child_weekly: GBP17.90/week for 2026-27."
+      "freshness_note": "Same figure as child_benefit_additional_child_weekly: GBP17.90/week for 2026-27.",
+      "changes_next_fy": "18.55 from 6 April 2027 (provisional, HMRC 10 November 2026)",
+      "verified_date": "2026-11-17",
+      "verify_method": "monitor alert 2026-11-17"
     },
     {
       "key": "child_benefit_education_age_limit",
@@ -3055,7 +3061,10 @@
       "note": "child-benefit-calculator: eldest/only child £27.05/week (£1,406.60/year) 2026/27",
       "official_value": "27.05",
       "confidence": "high",
-      "freshness_note": "Child Benefit eldest/only child = GBP27.05/week from 6 April 2026 (gov.uk; HMRC press release). Uprated from 26.05."
+      "freshness_note": "Child Benefit eldest/only child = GBP27.05/week from 6 April 2026 (gov.uk; HMRC press release). Uprated from 26.05.",
+      "changes_next_fy": "28.00 from 6 April 2027 (provisional, HMRC 10 November 2026)",
+      "verified_date": "2026-11-17",
+      "verify_method": "monitor alert 2026-11-17"
     },
     {
       "key": "child_benefit_first_child_weekly",
@@ -3076,7 +3085,10 @@
       "note": "Child Benefit calc: FIRST_CHILD_WEEKLY = 27.05 (2026/27); also in prose",
       "official_value": "27.05",
       "confidence": "high",
-      "freshness_note": "Same figure as child_benefit_eldest_weekly: GBP27.05/week for 2026-27."
+      "freshness_note": "Same figure as child_benefit_eldest_weekly: GBP27.05/week for 2026-27.",
+      "changes_next_fy": "28.00 from 6 April 2027 (provisional, HMRC 10 November 2026)",
+      "verified_date": "2026-11-17",
+      "verify_method": "monitor alert 2026-11-17"
     },
     {
       "key": "child_benefit_hicbc_lower_threshold",
@@ -19419,8 +19431,8 @@
       "official_value": "1 in 21,000",
       "confidence": "high",
       "freshness_note": "Shortened from 22,000 to 1 for the September 2026 draw. The ledger row said 22,000 while its own note quoted 1/21000 — the row contradicted itself.",
-      "verified_date": "2026-08-31",
-      "verify_method": "NS&I product page + press release PR260818"
+      "verified_date": "2026-11-17",
+      "verify_method": "monitor alert 2026-11-17"
     },
     {
       "key": "premium_bonds_prize_fund_rate",
@@ -19448,8 +19460,8 @@
       "resolve_note": "variable/market value - applied current figure; refresh manually (not annual monitor)",
       "official_value": "4.35",
       "confidence": "high",
-      "verified_date": "2026-09-28",
-      "verify_method": "site-improvement-2026-09-28",
+      "verified_date": "2026-11-17",
+      "verify_method": "monitor alert 2026-11-17",
       "freshness_note": "Corrected 2026-08-29..31: NS&I raised the prize fund rate to 4.35% and shortened the odds to 21,000 to 1 for the SEPTEMBER 2026 draw (PR260818, 18 Aug 2026), up from 3.80% / 22,000 in July. Found by diffing duplicate ledger rows against each other and then against the live component — the technique calk-uz-2c described. Before the fix four surfaces disagreed: code 3.80%, ledger 4.0, a duplicate ledger row 4.15, and prose 4.00%."
     },
     {
@@ -39985,10 +39997,30 @@
       "changes_next_fy": "Moves with NMW in April.",
       "verified_date": "2026-11-09",
       "verify_method": "monitor alert 2026-11-09"
+    },
+    {
+      "key": "guardians_allowance_weekly",
+      "value": 22.95,
+      "unit": "GBP/week",
+      "law": "Guardian's Allowance rates",
+      "theme": "benefits",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [],
+      "source_url": "https://www.gov.uk/government/publications/rates-and-allowances-tax-credits-child-benefit-and-guardians-allowance/tax-credits-child-benefit-and-guardians-allowance",
+      "status": "current",
+      "change_frequency": "annual",
+      "note": "2026/27 rate. Not quoted on the site at the time of writing.",
+      "official_value": 22.95,
+      "confidence": "high",
+      "changes_next_fy": "23.75 from 6 April 2027 (provisional, HMRC 10 November 2026)",
+      "verified_date": "2026-11-17",
+      "verify_method": "monitor alert 2026-11-17"
     }
   ],
   "status_summary": {
-    "current": 1754,
+    "current": 1755,
     "retired": 24,
     "historical": 24,
     "superseded_by_component": 4,
