@@ -5235,6 +5235,181 @@
    "was": "£4,094",
    "now": "recomputed visa total",
    "what": "skilled worker total (monitor alert 9 November 2026)"
+  },
+  {
+   "was": "£2,448 a month",
+   "now": "pence-exact monthly threshold",
+   "what": "Plan 2 monthly (calkcheck round twenty-one)"
+  },
+  {
+   "was": "Fall below £88,000 and stay there for 12 months",
+   "now": "forward-looking test",
+   "what": "VAT deregistration (calkcheck round twenty-one)"
+  },
+  {
+   "was": "registration is immediate",
+   "now": "end of the thirty days",
+   "what": "VAT forward test (calkcheck round twenty-one)"
+  },
+  {
+   "was": "VAT number within about 10 days",
+   "now": "HMRC reply times",
+   "what": "VAT number timing (calkcheck round twenty-one)"
+  },
+  {
+   "was": "generally 10-15% cheaper",
+   "now": "example-based figure",
+   "what": "contractor comparison (calkcheck round twenty-one)"
+  },
+  {
+   "was": "start of October 2026 (Moneyfacts",
+   "now": "start of November figures",
+   "what": "Moneyfacts date (calkcheck round twenty-one)"
+  },
+  {
+   "was": "6.15% at 90%",
+   "now": "November LTV table",
+   "what": "Moneyfacts LTV (calkcheck round twenty-one)"
+  },
+  {
+   "was": "5 cuts across 2024",
+   "now": "six cuts",
+   "what": "Bank Rate cuts (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£162,503",
+   "now": "recomputed borrowing",
+   "what": "affordability sum (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£1,728.08",
+   "now": "recomputed payment",
+   "what": "rent vs buy payment (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£806.44",
+   "now": "recomputed payment",
+   "what": "shared ownership payment (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£1,315.79",
+   "now": "recomputed payment",
+   "what": "shared ownership payment (calkcheck round twenty-one)"
+  },
+  {
+   "was": "worth about £34",
+   "now": "recomputed gap",
+   "what": "first time buyer gap (calkcheck round twenty-one)"
+  },
+  {
+   "was": "about a quarter of a point more",
+   "now": "about a fifth",
+   "what": "LTV gap (calkcheck round twenty-one)"
+  },
+  {
+   "was": "at £566 in Q2 2026",
+   "now": "Q three figure",
+   "what": "ABI motor average (calkcheck round twenty-one)"
+  },
+  {
+   "was": "reverts to 22-30%",
+   "now": "one range",
+   "what": "card revert range (calkcheck round twenty-one)"
+  },
+  {
+   "was": "paid only the minimum for 18",
+   "now": "CONC trigger",
+   "what": "persistent debt (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£125,300",
+   "now": "widget-matched figure",
+   "what": "wealth example (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£218,600",
+   "now": "widget-matched figure",
+   "what": "wealth example (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£530,800",
+   "now": "widget-matched figure",
+   "what": "wealth example (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£393,000",
+   "now": "widget-matched figure",
+   "what": "wealth example (calkcheck round twenty-one)"
+  },
+  {
+   "was": "Reclaim in ~30 days",
+   "now": "no fixed refund time",
+   "what": "pension refund timing (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£370k to £500k",
+   "now": "after-tax ranges",
+   "what": "retirement pot range (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£600k to £820k",
+   "now": "after-tax ranges",
+   "what": "retirement pot range (calkcheck round twenty-one)"
+  },
+  {
+   "was": "reducing the charge by 8% a year",
+   "now": "taper rates",
+   "what": "IHT taper wording (calkcheck round twenty-one)"
+  },
+  {
+   "was": "estates at or below £5,000 pay nothing",
+   "now": "copies still charged",
+   "what": "probate small estate (calkcheck round twenty-one)"
+  },
+  {
+   "was": "Most applications are refused first time",
+   "now": "softened",
+   "what": "CHC appeals (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£8,690",
+   "now": "recomputed loan",
+   "what": "maintenance loan example (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£18,225",
+   "now": "recomputed total",
+   "what": "student total (calkcheck round twenty-one)"
+  },
+  {
+   "was": "package worth up to £14,000",
+   "now": "bursary and maximum loan",
+   "what": "care leavers (calkcheck round twenty-one)"
+  },
+  {
+   "was": "Japan, South Korea or Turkey",
+   "now": "tariff partner list",
+   "what": "car import origin (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£6,500 to £14,500",
+   "now": "recomputed range",
+   "what": "car import range (calkcheck round twenty-one)"
+  },
+  {
+   "was": "Six to 12 months",
+   "now": "usually within six months",
+   "what": "citizenship decision time (calkcheck round twenty-one)"
+  },
+  {
+   "was": "tests £210",
+   "now": "tests listed separately",
+   "what": "citizenship tests (calkcheck round twenty-one)"
+  },
+  {
+   "was": "£9,199",
+   "now": "recomputed timeline",
+   "what": "citizenship total (calkcheck round twenty-one)"
   }
  ]
 }

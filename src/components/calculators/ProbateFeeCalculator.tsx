@@ -4,37 +4,40 @@ import { formatCurrency } from '@/utils'
 // Probate fees, England & Wales (HMCTS), from 6 July 2026 (S.I. 2026/642).
 // Application fee £526 for estates over £5,000 (same for personal and solicitor
 // applications). Copies of the grant: £2 each when ordered with the application,
-// £16 each if ordered later. Source: gov.uk/applying-for-probate/fees.
+// £16 each if ordered later, whatever the size of the estate: only the application
+// fee is waived at £5,000 or less. Source: gov.uk/applying-for-probate/fees.
 const APPLICATION_FEE = 526
 const FEE_THRESHOLD = 5_000
 const COPY_FEE_WITH_APPLICATION = 2
 const COPY_FEE_LATER = 16
 
-function calculate(estateValue: number, copies: number) {
-  // No fee if the net estate is £5,000 or less
+function calculate(estateValue: number, copies: number, solicitorFeePct = 2) {
+  // No application fee if the net estate is £5,000 or less
   const needsProbate = estateValue > FEE_THRESHOLD
   const applicationFee = needsProbate ? APPLICATION_FEE : 0
   const copiesCount = Math.max(0, Math.floor(copies))
-  const extraCopies = needsProbate ? copiesCount * COPY_FEE_WITH_APPLICATION : 0
-  const extraCopiesIfLater = needsProbate ? copiesCount * COPY_FEE_LATER : 0
+  const extraCopies = copiesCount * COPY_FEE_WITH_APPLICATION
+  const extraCopiesIfLater = copiesCount * COPY_FEE_LATER
 
-  // Solicitor fees (approximate)
-  const solicitorFeePct = 1.5 // typical 1-2% of estate
-  const solicitorFee = estateValue * (solicitorFeePct / 100)
+  // Solicitor fees: an estimate, as a percentage of the estate (quotes vary widely)
+  const pct = Math.max(0, solicitorFeePct)
+  const solicitorFee = estateValue * (pct / 100)
 
-  return { estateValue, needsProbate, applicationFee, copies: copiesCount, extraCopies, extraCopiesIfLater, solicitorFee, totalDIY: applicationFee + extraCopies, totalWithSolicitor: applicationFee + extraCopies + solicitorFee }
+  return { estateValue, needsProbate, applicationFee, copies: copiesCount, extraCopies, extraCopiesIfLater, solicitorFeePct: pct, solicitorFee, totalDIY: applicationFee + extraCopies, totalWithSolicitor: applicationFee + extraCopies + solicitorFee }
 }
 
 export default function ProbateFeeCalculator() {
   const [estate, setEstate] = useState('')
   const [copies, setCopies] = useState('3')
+  const [solicitorPct, setSolicitorPct] = useState('2')
   const val = parseFloat(estate.replace(/,/g, '')) || 0
   const n = parseInt(copies) || 0
-  const result = useMemo(() => calculate(val, n), [val, n])
+  const sp = parseFloat(solicitorPct) || 0
+  const result = useMemo(() => calculate(val, n, sp), [val, n, sp])
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
         <div className="sm:col-span-2">
           <label className="block text-sm font-medium mb-2">Total Estate Value (net)</label>
           <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span>
@@ -44,6 +47,10 @@ export default function ProbateFeeCalculator() {
           <label className="block text-sm font-medium mb-2">Extra Copies of the Grant</label>
           <input type="number" min="0" max="20" value={copies} onChange={(e) => setCopies(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Extra Copies of the Grant" />
         </div>
+        <div>
+          <label className="block text-sm font-medium mb-2">Solicitor Fee (% of estate)</label>
+          <input type="number" min="0" max="10" step="0.5" value={solicitorPct} onChange={(e) => setSolicitorPct(e.target.value)} className="w-full rounded-xl border border-input bg-background px-4 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Solicitor Fee (% of estate)" />
+        </div>
       </div>
 
       {val > 0 && (
@@ -51,7 +58,10 @@ export default function ProbateFeeCalculator() {
           {!result.needsProbate ? (
             <div className="rounded-xl bg-green-100 dark:bg-green-950 p-4 text-center">
               <p className="text-lg font-bold text-green-700 dark:text-green-400">No probate application fee</p>
-              <p className="text-sm text-muted-foreground mt-1">There is no fee for estates of £5,000 or less, and small estates often don't need a grant at all.</p>
+              <p className="text-sm text-muted-foreground mt-1">There is no application fee for estates of £5,000 or less, and small estates often don't need a grant at all.</p>
+              {result.copies > 0 && (
+                <p className="text-sm text-muted-foreground mt-1">If you do apply, extra copies still cost {result.copies} × £{COPY_FEE_WITH_APPLICATION} = {formatCurrency(result.extraCopies)} ordered with the application, or {formatCurrency(result.extraCopiesIfLater)} at £{COPY_FEE_LATER} each later.</p>
+              )}
             </div>
           ) : (
             <>
@@ -64,7 +74,7 @@ export default function ProbateFeeCalculator() {
                 <div className="rounded-xl border border-border p-5 text-center">
                   <p className="text-sm font-medium">With Solicitor (est.)</p>
                   <p className="text-2xl font-bold mt-1">{formatCurrency(result.totalWithSolicitor)}</p>
-                  <p className="text-xs text-muted-foreground mt-1">Includes ~{1.5}% solicitor fee</p>
+                  <p className="text-xs text-muted-foreground mt-1">Includes ~{result.solicitorFeePct}% solicitor fee</p>
                 </div>
               </div>
 
@@ -72,7 +82,7 @@ export default function ProbateFeeCalculator() {
                 <tbody>
                   <tr className="border-b border-border/50"><td className="py-2.5">Probate application fee</td><td className="text-right tabular-nums font-medium">{formatCurrency(result.applicationFee)}</td></tr>
                   <tr className="border-b border-border/50"><td className="py-2.5">Extra copies with the application ({result.copies} × £{COPY_FEE_WITH_APPLICATION})</td><td className="text-right tabular-nums">{formatCurrency(result.extraCopies)}</td></tr>
-                  <tr className="border-b border-border/50"><td className="py-2.5 text-muted-foreground">Solicitor fee (est. 1.5%)</td><td className="text-right tabular-nums text-muted-foreground">{formatCurrency(result.solicitorFee)}</td></tr>
+                  <tr className="border-b border-border/50"><td className="py-2.5 text-muted-foreground">Solicitor fee (est. {result.solicitorFeePct}%)</td><td className="text-right tabular-nums text-muted-foreground">{formatCurrency(result.solicitorFee)}</td></tr>
                 </tbody>
               </table>
               {result.copies > 0 && (
@@ -80,7 +90,7 @@ export default function ProbateFeeCalculator() {
               )}
             </>
           )}
-          <p className="text-xs text-muted-foreground">Fees for England and Wales from 6 July 2026. Scotland (confirmation) and Northern Ireland have separate rules and fees.</p>
+          <p className="text-xs text-muted-foreground">Fees for England and Wales from 6 July 2026. Solicitor fees vary widely, so replace the percentage with the one in your quote. Scotland (confirmation) and Northern Ireland have separate rules and fees.</p>
         </div>
       )}
     </div>

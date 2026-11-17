@@ -37,7 +37,7 @@ function calculateMortgage(principal: number, annualRate: number, termYears: num
 
 export default function MortgageRepaymentCalculator() {
   const [amount, setAmount] = useUrlParam('amount', '250000')
-  const [rate, setRate] = useUrlParam('rate', '4.5')
+  const [rate, setRate] = useUrlParam('rate', '5.97') // Moneyfacts average 2-year fix, start of November 2026
   const [term, setTerm] = useUrlParam('term', '25')
   const [type, setType] = useState<MortgageType>('repayment')
 
@@ -102,6 +102,7 @@ export default function MortgageRepaymentCalculator() {
             onChange={(e) => setRate(e.target.value)}
             className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring"
            aria-label="Interest Rate (%)" />
+          <p className="text-xs text-muted-foreground mt-1">5.97% = average 2-year fix, Moneyfacts, start of Nov 2026</p>
         </div>
         <div>
           <label htmlFor="mortgage-term" className="block text-sm font-medium mb-2">Term (years)</label>

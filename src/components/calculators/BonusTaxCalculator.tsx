@@ -5,6 +5,21 @@ const PA = 12_570
 const BASIC = 50_270
 const HIGHER = 125_140
 
+// Scottish income tax 2026/27 (gov.uk/scottish-income-tax), same bands as ScottishIncomeTaxCalculator:
+// widths of TAXABLE income after the Personal Allowance, so starter to £3,967, basic to £16,956,
+// intermediate to £31,092, higher to £62,430, advanced to £125,140, top above. With the full
+// allowance these match £16,537 / £29,526 / £43,662 / £75,000 of gross pay; above £100,000 every
+// threshold moves down as the allowance tapers.
+type TaxRegion = 'ruk' | 'scotland'
+const SCOTTISH_BANDS = [
+  { rate: 0.19, width: 3_967 },
+  { rate: 0.20, width: 12_989 },
+  { rate: 0.21, width: 14_136 },
+  { rate: 0.42, width: 31_338 },
+  { rate: 0.45, width: 62_710 },
+  { rate: 0.48, width: Infinity },
+]
+
 // Employee Class 1 NI thresholds 2026/27 per earnings period (gov.uk rates and thresholds for employers)
 type PayFrequency = 'monthly' | 'weekly'
 const NI_PERIODS: Record<PayFrequency, { periods: number; pt: number; uel: number }> = {
@@ -15,11 +30,11 @@ const NI_PERIODS: Record<PayFrequency, { periods: number; pt: number; uel: numbe
 // Income tax: annual (cumulative PAYE) basis, so the figure is where PAYE ends up by 5 April.
 // Employee NI: worked out per pay period for employees (non-cumulative), so a bonus paid in one
 // period loses more NI than an annual calculation suggests. Directors use an annual earnings period.
-function calculate(salary: number, bonus: number, frequency: PayFrequency = 'monthly', isDirector = false) {
+function calculate(salary: number, bonus: number, frequency: PayFrequency = 'monthly', isDirector = false, region: TaxRegion = 'ruk') {
   const { periods, pt, uel } = NI_PERIODS[frequency]
   const periodPay = salary / periods
 
-  const taxOnBonus = calcTax(salary + bonus) - calcTax(salary)
+  const taxOnBonus = calcTax(salary + bonus, region) - calcTax(salary, region)
   const niOnBonus = isDirector
     ? calcNI(salary + bonus, PA, BASIC) - calcNI(salary, PA, BASIC)
     : calcNI(periodPay + bonus, pt, uel) - calcNI(periodPay, pt, uel)
@@ -28,7 +43,7 @@ function calculate(salary: number, bonus: number, frequency: PayFrequency = 'mon
   const netBonus = bonus - totalDeductions
 
   // Normal pay period vs the period the bonus is paid in
-  const normalTax = calcTax(salary) / periods
+  const normalTax = calcTax(salary, region) / periods
   const normalNI = isDirector ? calcNI(salary, PA, BASIC) / periods : calcNI(periodPay, pt, uel)
   const normalNet = periodPay - normalTax - normalNI
   const bonusPeriodGross = periodPay + bonus
@@ -41,9 +56,19 @@ function calculate(salary: number, bonus: number, frequency: PayFrequency = 'mon
   }
 }
 
-function calcTax(income: number) {
+function calcTax(income: number, region: TaxRegion = 'ruk') {
   let pa = PA
   if (income > 100_000) pa = Math.max(0, PA - Math.floor((income - 100_000) / 2))
+  if (region === 'scotland') {
+    let remaining = Math.max(0, income - pa)
+    let scottishTax = 0
+    for (const band of SCOTTISH_BANDS) {
+      const slice = Math.min(remaining, band.width)
+      scottishTax += slice * band.rate
+      remaining -= slice
+    }
+    return scottishTax
+  }
   let tax = 0
   if (income > pa) {
     if (income <= BASIC) tax = (income - pa) * 0.20
@@ -65,10 +90,11 @@ export default function BonusTaxCalculator() {
   const [bonus, setBonus] = useState('5000')
   const [frequency, setFrequency] = useState<PayFrequency>('monthly')
   const [isDirector, setIsDirector] = useState(false)
+  const [region, setRegion] = useState<TaxRegion>('ruk')
 
   const s = parseFloat(salary.replace(/,/g, '')) || 0
   const b = parseFloat(bonus.replace(/,/g, '')) || 0
-  const result = useMemo(() => calculate(s, b, frequency, isDirector), [s, b, frequency, isDirector])
+  const result = useMemo(() => calculate(s, b, frequency, isDirector, region), [s, b, frequency, isDirector, region])
   const periodLabel = frequency === 'monthly' ? 'month' : 'week'
 
   return (
@@ -91,7 +117,14 @@ export default function BonusTaxCalculator() {
             <option value="weekly">Weekly</option>
           </select>
         </div>
-        <div className="flex items-end">
+        <div>
+          <label className="block text-sm font-medium mb-2">Income Tax Rates</label>
+          <select value={region} onChange={(e) => setRegion(e.target.value as TaxRegion)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Income Tax Rates">
+            <option value="ruk">England, Wales or Northern Ireland</option>
+            <option value="scotland">Scotland</option>
+          </select>
+        </div>
+        <div className="flex items-end sm:col-span-2">
           <label className="flex items-center gap-3 cursor-pointer pb-3"><input type="checkbox" checked={isDirector} onChange={(e) => setIsDirector(e.target.checked)} className="h-5 w-5 rounded border-border" aria-label="Company director" /><span className="text-sm">Company director (NI on an annual earnings period)</span></label>
         </div>
       </div>

@@ -1,5 +1,13 @@
 # CHANGELOG — Calks.uk
 
+## 2026-11-17 (round 21) — Estates, care, student loans and Moneyfacts
+
+Twenty-first `/calkcheck` pass (report: `AUDIT-2026-11-17.md`): 62 defects on 20 pages from round 3, 4 HIGH.
+
+**Estates and care:** transferred nil-rate and residence bands on Inheritance Tax; NHS nursing contribution, 12-week property disregard, Wales and Scotland on care costs; pension pot inputs and after-tax ranges. **Pay and tax:** Scottish rates on bonus tax and NI 2029; VAT deregistration test. **Money:** Moneyfacts start-of-November averages across the site, wealth growth example matching its calculator, ABI Q3 £562. **Other:** income-driven 2026/27 maintenance loans, car import origins from the UK tariff, citizenship test requirements, water unmetered method.
+
+Ledger now 1,844 entries; 35 new guards.
+
 ## 2026-11-09 — Bank Rate 4%, fuel, Premium Bonds, car tax correction
 
 Monitor alert of 9 November, checked by hand. Bank Rate rose from 3.75% to 4% on 5 November: HMRC late payment interest 8% and repayment 3% from 24 November, trackers, annuity and inflation wording; statutory late payment interest stays 11.75% for interest starting by 31 December and will be 12% from January if Bank Rate holds. Pump prices moved to the DESNZ week of 2 November (172.78p / 198.58p) with derived sums recomputed. Premium Bonds November draw; NS&I fixed bond rates. The Budget annex was corrected on 5 November: the expensive car supplement rises from £440 to £460 in April 2027. English test fees by Trinity level; childcare earnings floors for under-21s and apprentices; Right to Buy reform status.

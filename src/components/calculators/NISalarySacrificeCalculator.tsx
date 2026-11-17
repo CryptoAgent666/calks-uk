@@ -10,12 +10,25 @@ const NI_FREE_LIMIT = 2_000
 const EMPLOYER_NI_RATE = 0.15
 const SECONDARY_THRESHOLD = 5_000
 
-function calculate(salary: number, sacrificeAmount: number) {
+// Scottish income tax 2026/27 (gov.uk/scottish-income-tax), same bands as ScottishIncomeTaxCalculator:
+// widths of TAXABLE income after the Personal Allowance, so starter to £3,967, basic to £16,956,
+// intermediate to £31,092, higher to £62,430, advanced to £125,140, top above. NI is UK-wide.
+type TaxRegion = 'ruk' | 'scotland'
+const SCOTTISH_BANDS = [
+  { rate: 0.19, width: 3_967 },
+  { rate: 0.20, width: 12_989 },
+  { rate: 0.21, width: 14_136 },
+  { rate: 0.42, width: 31_338 },
+  { rate: 0.45, width: 62_710 },
+  { rate: 0.48, width: Infinity },
+]
+
+function calculate(salary: number, sacrificeAmount: number, region: TaxRegion = 'ruk') {
   const niFreeFrom2029 = Math.min(sacrificeAmount, NI_FREE_LIMIT)
   const excess = sacrificeAmount - niFreeFrom2029
 
   // Current: the whole sacrifice saves income tax, employee NI and employer NI
-  const taxSaving = calcTax(salary) - calcTax(salary - sacrificeAmount)
+  const taxSaving = calcTax(salary, region) - calcTax(salary - sacrificeAmount, region)
   const niSaving = calcNI(salary) - calcNI(salary - sacrificeAmount)
   const currentSaving = taxSaving + niSaving
 
@@ -38,9 +51,19 @@ function calculate(salary: number, sacrificeAmount: number) {
   }
 }
 
-function calcTax(income: number) {
+function calcTax(income: number, region: TaxRegion = 'ruk') {
   let pa = 12_570
   if (income > 100_000) pa = Math.max(0, 12_570 - Math.floor((income - 100_000) / 2))
+  if (region === 'scotland') {
+    let remaining = Math.max(0, income - pa)
+    let scottishTax = 0
+    for (const band of SCOTTISH_BANDS) {
+      const slice = Math.min(remaining, band.width)
+      scottishTax += slice * band.rate
+      remaining -= slice
+    }
+    return scottishTax
+  }
   let t = 0
   if (income > pa) {
     if (income <= 50_270) t = (income - pa) * 0.20
@@ -63,16 +86,18 @@ function calcEmployerNI(pay: number) {
 export default function NISalarySacrificeCalculator() {
   const [salary, setSalary] = useState('50000')
   const [sacrifice, setSacrifice] = useState('5000')
+  const [region, setRegion] = useState<TaxRegion>('ruk')
 
   const s = parseFloat(salary.replace(/,/g,'')) || 0
   const sc = parseFloat(sacrifice.replace(/,/g,'')) || 0
-  const result = useMemo(() => calculate(s, Math.min(sc, s)), [s, sc])
+  const result = useMemo(() => calculate(s, Math.min(sc, s), region), [s, sc, region])
 
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div><label className="block text-sm font-medium mb-2">Annual Salary</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={salary} onChange={(e) => setSalary(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Salary" /></div></div>
-        <div><label className="block text-sm font-medium mb-2">Annual Sacrifice to Pension</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={sacrifice} onChange={(e) => setSacrifice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Sacrifice to Pension" /></div></div>
+        <div><label className="block text-sm font-medium mb-2">Annual Sacrifice to Pension</label><div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">£</span><input type="text" inputMode="numeric" value={sacrifice} onChange={(e) => setSacrifice(e.target.value)} className="w-full rounded-xl border border-input bg-background px-8 py-3 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-ring"  aria-label="Annual Sacrifice to Pension" /></div><p className="text-xs text-muted-foreground mt-1">Include any bonus you exchange for pension contributions: it counts towards the same £2,000 limit.</p></div>
+        <div className="sm:col-span-2"><label className="block text-sm font-medium mb-2">Income Tax Rates</label><select value={region} onChange={(e) => setRegion(e.target.value as TaxRegion)} className="w-full rounded-xl border border-input bg-background px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-ring" aria-label="Income Tax Rates"><option value="ruk">England, Wales or Northern Ireland</option><option value="scotland">Scotland</option></select></div>
       </div>
 
       {s > 0 && sc > 0 && (
@@ -107,7 +132,7 @@ export default function NISalarySacrificeCalculator() {
           </div>
           <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
             <p className="font-medium text-foreground">The law from 6 April 2029:</p>
-            <p>The National Insurance Contributions (Employer Pensions Contributions) Act 2026 keeps the first £2,000 a year of pension salary sacrifice free of NI. Anything above £2,000 is treated as pay for both employee NI and employer NI (15%). Income tax relief does not change. Figures use 2026/27 tax and NI rates and thresholds as an assumption for 2029/30, and the £2,000 limit can be changed by regulations.</p>
+            <p>The National Insurance Contributions (Employer Pensions Contributions) Act 2026 keeps the first £2,000 a year of salary or bonus sacrificed for pension contributions free of NI. Anything above £2,000 is treated as pay for both employee NI and employer NI (15%). Income tax relief does not change. Figures use 2026/27 tax and NI rates and thresholds as an assumption for 2029/30, and the £2,000 limit can be changed by regulations.</p>
           </div>
         </div>
       )}

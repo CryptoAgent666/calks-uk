@@ -11,9 +11,11 @@ export type CoverType = 'comprehensive' | 'tpft' | 'tpo'
 export type AgeGroup = '17-20' | '21-29' | '30-39' | '40-49' | '50-59' | '60-69' | '70+'
 
 // Market anchors the model is calibrated to
-// ABI Motor Insurance Premium Tracker: average comprehensive price paid, Q2 2026 (£560 in Q1 2026)
-export const ABI_AVERAGE_PAID = 566
-export const ABI_AVERAGE_PAID_PERIOD = 'Q2 2026'
+// ABI Motor Insurance Premium Tracker: average comprehensive price paid, Q3 2026 (£566 in Q2 2026).
+// Published 9-10 November 2026 and read via trade press (Insurance Times 10 Nov 2026, Insurance Age
+// 9 Nov 2026) because abi.org.uk blocks automated fetching (HTTP 403).
+export const ABI_AVERAGE_PAID = 562
+export const ABI_AVERAGE_PAID_PERIOD = 'Q3 2026'
 // Confused.com Car Insurance Price Index: average quote for a new policy, Q3 2026
 export const CONFUSED_AVERAGE_QUOTE = 713
 
@@ -21,7 +23,7 @@ export const CONFUSED_AVERAGE_QUOTE = 713
 // doing 6,000-10,000 miles, including 12% Insurance Premium Tax.
 // Calibrated so that each age band, at a typical no-claims record for that age,
 // lands near Confused.com's Q3 2026 average quote by age scaled to price paid
-// (x0.79 = ABI Q2 2026 average paid £566 / Confused Q3 2026 average quote £713),
+// (x0.79 = ABI Q3 2026 average paid £562 / Confused Q3 2026 average quote £713),
 // and the default profile (30-39, 5 years NCB) matches the ABI average.
 export const BASE_PREMIUM: Record<AgeGroup, number> = {
   '17-20': 1500, '21-29': 1450, '30-39': 1400, '40-49': 1350, '50-59': 1075, '60-69': 900, '70+': 950,

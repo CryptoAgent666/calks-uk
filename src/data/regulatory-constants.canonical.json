@@ -32243,7 +32243,7 @@
     },
     {
       "key": "mortgage_avg_two_year_fix_moneyfacts",
-      "value": "5.93",
+      "value": 5.97,
       "unit": "%",
       "law": "Moneyfacts UK Mortgage Trends (market)",
       "theme": "mortgage",
@@ -32258,13 +32258,13 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://moneyfactsgroup.co.uk/media-centre/group/mortgage-deals-lasting-just-13-days-as-market-faces-sustained-volatility/",
+      "source_url": "https://www.moneyfactsgroup.co.uk/media-centre/group/low-deposit-mortgages-rise-as-buyers-borrow-more/",
       "status": "current",
       "change_frequency": "",
-      "note": "Average 2-year fix at the start of October 2026 (Moneyfacts release 19 Oct 2026; 5-year 5.95%, SVR 7.13%, 2-year tracker 4.54%; 95% LTV 6.37/6.30, 90% 6.15/6.04, 60% 5.42/5.60). Affordability default and RentVsBuy/SharedOwnership defaults; commitments factor £15,624 per £100/month over 25 years. Was 5.73% (15 Sep 2026). Market rate: re-check each cycle.",
-      "official_value": "5.93",
-      "verified_date": "2026-10-19",
-      "verify_method": "calkcheck-2026-10-19-r12",
+      "note": "Start of November 2026.",
+      "official_value": 5.97,
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21",
       "confidence": "medium",
       "volatile": true,
       "changes_next_fy": "Market figure - refresh each calkcheck cycle"
@@ -36743,7 +36743,7 @@
     },
     {
       "key": "mortgage_avg_five_year_fix_moneyfacts",
-      "value": "5.95",
+      "value": 6.0,
       "unit": "%",
       "law": "Moneyfacts UK Mortgage Trends (market)",
       "theme": "mortgage",
@@ -36754,14 +36754,14 @@
         "src/data/calculator-content.ts",
         "src/data/faqs.ts"
       ],
-      "source_url": "https://moneyfactsgroup.co.uk/media-centre/group/mortgage-deals-lasting-just-13-days-as-market-faces-sustained-volatility/",
+      "source_url": "https://www.moneyfactsgroup.co.uk/media-centre/group/low-deposit-mortgages-rise-as-buyers-borrow-more/",
       "status": "current",
       "change_frequency": "",
-      "note": "Average 5-year fix at the start of October 2026 (was 5.78% on 15 Sep 2026). Market rate.",
-      "official_value": "5.95",
+      "note": "Start of November 2026.",
+      "official_value": 6.0,
       "confidence": "high",
-      "verified_date": "2026-10-19",
-      "verify_method": "calkcheck-2026-10-19-r12"
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
     },
     {
       "key": "mortgage_avg_by_ltv_moneyfacts_oct_2026",
@@ -40017,10 +40017,334 @@
       "changes_next_fy": "23.75 from 6 April 2027 (provisional, HMRC 10 November 2026)",
       "verified_date": "2026-11-17",
       "verify_method": "monitor alert 2026-11-17"
+    },
+    {
+      "key": "moneyfacts_start_nov_2026",
+      "value": "two-year 5.97%, five-year 6.00%, SVR 7.13%; by LTV two/five-year: 60% 5.44/5.64, 90% 6.19/6.09, 95% 6.37/6.33",
+      "unit": "percent",
+      "law": "Moneyfacts UK Mortgage Trends, start of November 2026",
+      "theme": "mortgage",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/MortgageAffordabilityCalculator.tsx",
+        "src/components/calculators/MortgageRepaymentCalculator.tsx",
+        "src/components/calculators/RentVsBuyCalculator.tsx",
+        "src/components/calculators/SharedOwnershipMortgageAffordabilityCalculator.tsx",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.moneyfactsgroup.co.uk/media-centre/group/low-deposit-mortgages-rise-as-buyers-borrow-more/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Group release of 11 November 2026.",
+      "official_value": "two-year 5.97%, five-year 6.00%, SVR 7.13%; by LTV two/five-year: 60% 5.44/5.64, 90% 6.19/6.09, 95% 6.37/6.33",
+      "confidence": "high",
+      "changes_next_fy": "Monthly; roll at the next calkcheck.",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
+    },
+    {
+      "key": "moneyfacts_card_purchase_apr_avg",
+      "value": 35.8,
+      "unit": "percent",
+      "law": "Moneyfacts card average, February 2026",
+      "theme": "loans",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.moneyfactsgroup.co.uk/media-centre/consumer/cost-to-borrow-on-credit-cards-hits-20-year-high/",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Latest Moneyfacts card average found.",
+      "official_value": 35.8,
+      "confidence": "high",
+      "changes_next_fy": "Refresh when Moneyfacts publishes.",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
+    },
+    {
+      "key": "abi_motor_premium_q3_2026",
+      "value": 562,
+      "unit": "GBP",
+      "law": "ABI motor premium tracker Q3 2026",
+      "theme": "insurance",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/car-insurance-model.ts",
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.insurancetimes.co.uk/news/motor-insurance-payouts-remain-at-record-32bn/1460222.article",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Read via trade press; abi.org.uk returns 403. Q2 £566.",
+      "official_value": 562,
+      "confidence": "high",
+      "changes_next_fy": "Quarterly.",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
+    },
+    {
+      "key": "conc_persistent_debt_trigger",
+      "value": "paid more in interest, fees and charges than principal over 18 months; balances under £200 excluded",
+      "unit": "rule",
+      "law": "FCA CONC 6.7.27",
+      "theme": "loans",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.handbook.fca.org.uk/handbook/CONC/6/7.html",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "paid more in interest, fees and charges than principal over 18 months; balances under £200 excluded",
+      "confidence": "high",
+      "changes_next_fy": "",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
+    },
+    {
+      "key": "scottish_band_widths_taxable_2026_27",
+      "value": "3,967 / 12,989 / 14,136 / 31,338 / 62,710 / open at 19/20/21/42/45/48%",
+      "unit": "GBP",
+      "law": "Scottish income tax 2026/27",
+      "theme": "tax",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/BonusTaxCalculator.tsx",
+        "src/components/calculators/NISalarySacrificeCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/scottish-income-tax",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Widths of taxable income; copied from ScottishIncomeTaxCalculator.",
+      "official_value": "3,967 / 12,989 / 14,136 / 31,338 / 62,710 / open at 19/20/21/42/45/48%",
+      "confidence": "high",
+      "changes_next_fy": "Roll with the Scottish Budget.",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
+    },
+    {
+      "key": "nhs_funded_nursing_care_2026_27",
+      "value": "£267.68 standard, £368.24 higher, a week",
+      "unit": "GBP/week",
+      "law": "NHS-funded nursing care (England) from 1 April 2026",
+      "theme": "benefits",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/CareCostCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/news/better-community-care-thanks-to-nursing-funding-boost",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Paid directly to the home.",
+      "official_value": "£267.68 standard, £368.24 higher, a week",
+      "confidence": "high",
+      "changes_next_fy": "Annual.",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
+    },
+    {
+      "key": "wales_care_charging_2026",
+      "value": "care home capital limit £50,000; care at home cap £100 a week; MIA £46.35",
+      "unit": "rule",
+      "law": "Welsh Government charging for social care",
+      "theme": "benefits",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/CareCostCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.wales/charging-social-care",
+      "status": "current",
+      "change_frequency": "",
+      "note": "MIA page undated.",
+      "official_value": "care home capital limit £50,000; care at home cap £100 a week; MIA £46.35",
+      "confidence": "high",
+      "changes_next_fy": "",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
+    },
+    {
+      "key": "scotland_free_personal_nursing_care_2026",
+      "value": "£260.30 personal care, £117.10 nursing care, a week",
+      "unit": "GBP/week",
+      "law": "Free personal and nursing care, Scotland, from April 2026",
+      "theme": "benefits",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/CareCostCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.mygov.scot/personal-nursing-care/costs",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "£260.30 personal care, £117.10 nursing care, a week",
+      "confidence": "high",
+      "changes_next_fy": "Annual.",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
+    },
+    {
+      "key": "iht_transferable_bands_rule",
+      "value": "unused NRB and RNRB transfer as percentages; RNRB taper applies to the combined band",
+      "unit": "rule",
+      "law": "IHTA 1984 s.8A and s.8D",
+      "theme": "iht",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/InheritanceTaxCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/inheritance-tax",
+      "status": "current",
+      "change_frequency": "",
+      "note": "",
+      "official_value": "unused NRB and RNRB transfer as percentages; RNRB taper applies to the combined band",
+      "confidence": "high",
+      "changes_next_fy": "",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
+    },
+    {
+      "key": "car_import_preferential_origin_partners",
+      "value": "0% with proof of origin: EU, Japan (1 Feb 2026), India from 15 Jul 2026 (not electric), Canada, Australia, New Zealand, Singapore, Israel, South Korea, Turkey, Mexico, South Africa, Morocco, Serbia, Switzerland, Norway; otherwise 10%",
+      "unit": "rule",
+      "law": "UK Trade Tariff, 8703",
+      "theme": "auto",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/CarImportDutyCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.trade-tariff.service.gov.uk/api/v2/commodities/8703239000",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Classic collectors items heading 9705: 0% duty, VAT on 25% of value.",
+      "official_value": "0% with proof of origin: EU, Japan (1 Feb 2026), India from 15 Jul 2026 (not electric), Canada, Australia, New Zealand, Singapore, Israel, South Korea, Turkey, Mexico, South Africa, Morocco, Serbia, Switzerland, Norway; otherwise 10%",
+      "confidence": "high",
+      "changes_next_fy": "",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
+    },
+    {
+      "key": "gb_conversion_iva_fee",
+      "value": 100,
+      "unit": "GBP",
+      "law": "Vehicle approval",
+      "theme": "auto",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/CarImportDutyCalculator.tsx"
+      ],
+      "source_url": "https://www.gov.uk/importing-vehicles-into-the-uk",
+      "status": "current",
+      "change_frequency": "",
+      "note": "EU-registered left-hand drive cars with a Certificate of Conformity.",
+      "official_value": 100,
+      "confidence": "high",
+      "changes_next_fy": "",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
+    },
+    {
+      "key": "water_bill_split_2026_27",
+      "value": "£309 water, £330 sewerage (England and Wales average £639)",
+      "unit": "GBP",
+      "law": "Water UK / Discover Water 2026-27",
+      "theme": "energy",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/WaterBillCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.discoverwater.co.uk/annual-bill",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Read via r.jina.ai.",
+      "official_value": "£309 water, £330 sewerage (England and Wales average £639)",
+      "confidence": "high",
+      "changes_next_fy": "Annual, April.",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
+    },
+    {
+      "key": "watersure_reform_2026",
+      "value": "disability-benefit route, income under £25,745; one-person cap",
+      "unit": "rule",
+      "law": "WaterSure reform announced 6 March 2026",
+      "theme": "energy",
+      "surfaces": [
+        "prose"
+      ],
+      "used_by": [
+        "src/data/calculator-content.ts",
+        "src/data/faqs.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/news/reduced-bills-for-around-300000-households-in-watersure-reform",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Introduced voluntarily by companies; check status.",
+      "official_value": "disability-benefit route, income under £25,745; one-person cap",
+      "confidence": "high",
+      "changes_next_fy": "",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
+    },
+    {
+      "key": "maintenance_loan_taper_2026_27",
+      "value": "£1 per £6.54 at home, £6.47 away, £6.36 London; max deductions £5,105, £5,782, £7,096",
+      "unit": "rule",
+      "law": "SFE 2026/27 how you are assessed and paid",
+      "theme": "education",
+      "surfaces": [
+        "computed"
+      ],
+      "used_by": [
+        "src/components/calculators/StudentAllowanceCalculator.tsx",
+        "src/data/calculator-content.ts"
+      ],
+      "source_url": "https://www.gov.uk/government/publications/student-finance-how-youre-assessed-and-paid",
+      "status": "current",
+      "change_frequency": "",
+      "note": "Maxima £9,118 / £10,830 / £14,135.",
+      "official_value": "£1 per £6.54 at home, £6.47 away, £6.36 London; max deductions £5,105, £5,782, £7,096",
+      "confidence": "high",
+      "changes_next_fy": "Annual.",
+      "verified_date": "2026-11-17",
+      "verify_method": "calkcheck 2026-11-17 r21"
     }
   ],
   "status_summary": {
-    "current": 1755,
+    "current": 1769,
     "retired": 24,
     "historical": 24,
     "superseded_by_component": 4,

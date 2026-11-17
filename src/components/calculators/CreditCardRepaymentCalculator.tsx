@@ -35,7 +35,8 @@ function simulate(balance: number, monthlyRate: number, payment: number | null) 
 }
 
 function calculate(balance: number, apr: number, monthlyPayment: number) {
-  if (balance <= 0 || apr <= 0 || monthlyPayment <= 0) return null
+  // 0% is a valid APR (balance transfer or 0% purchase deals); a blank or negative APR is not
+  if (balance <= 0 || !(apr >= 0) || monthlyPayment <= 0) return null
   const monthlyRate = monthlyRateFromApr(apr)
   const firstInterest = balance * monthlyRate
 
@@ -56,7 +57,7 @@ export default function CreditCardRepaymentCalculator() {
   const [payment, setPayment] = useState('100')
 
   const b = parseFloat(balance.replace(/,/g, '')) || 0
-  const a = parseFloat(apr) || 0
+  const a = apr.trim() === '' ? NaN : parseFloat(apr)
   const p = parseFloat(payment.replace(/,/g, '')) || 0
   const result = useMemo(() => calculate(b, a, p), [b, a, p])
 

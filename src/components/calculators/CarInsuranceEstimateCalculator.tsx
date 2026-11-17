@@ -10,7 +10,7 @@ export default function CarInsuranceEstimateCalculator() {
   const [miles, setMiles] = useState('8000')
 
   const n = parseInt(ncb) || 0
-  const g = parseInt(group) || 15
+  const g = Math.min(50, Math.max(1, parseInt(group) || 15)) // insurance groups run 1-50
   const m = parseInt(miles) || 8000
   const result = useMemo(() => estimatePremium(age, cover, n, g, m), [age, cover, n, g, m])
 
@@ -33,7 +33,7 @@ export default function CarInsuranceEstimateCalculator() {
         <div className="grid grid-cols-3 gap-3">
           <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Before NCB</p><p className="text-lg font-bold">{formatCurrency(result.grossPremium)}</p></div>
           <div className="rounded-xl bg-green-100 dark:bg-green-950 p-3 text-center"><p className="text-xs text-muted-foreground">NCB Discount ({result.ncbPct}%)</p><p className="text-lg font-bold text-green-700 dark:text-green-400">-{formatCurrency(result.discount)}</p></div>
-          <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Group</p><p className="text-lg font-bold">{group} of 50</p></div>
+          <div className="rounded-xl bg-muted/50 p-3 text-center"><p className="text-xs text-muted-foreground">Group</p><p className="text-lg font-bold">{g} of 50</p></div>
         </div>
         <div className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
           <p>Indicative estimate only, calibrated to the ABI average price paid (£{ABI_AVERAGE_PAID}, {ABI_AVERAGE_PAID_PERIOD}) and Confused.com average quotes by age (Q3 2026), including 12% Insurance Premium Tax. Actual premiums depend on your postcode, occupation, claims history, car modifications and many other factors. Always compare quotes from multiple providers.</p>

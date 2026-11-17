@@ -64,8 +64,10 @@ function calculate(withdrawal: number, taxFreeIncluded: boolean, otherIncome: nu
   const taxFree = taxFreeIncluded ? withdrawal * 0.25 : 0
   const taxablePart = withdrawal - taxFree
 
-  const emergency = month1Tax(taxablePart, region)
-  const actual = annualTax(otherIncome + taxablePart, region) - annualTax(otherIncome, region)
+  // Round both to pence first, so the withheld tax, the amount received and the
+  // refund shown on screen always add up to the withdrawal.
+  const emergency = Math.round(month1Tax(taxablePart, region) * 100) / 100
+  const actual = Math.round((annualTax(otherIncome + taxablePart, region) - annualTax(otherIncome, region)) * 100) / 100
   const overpaid = Math.max(0, emergency - actual)
   const underpaid = Math.max(0, actual - emergency)
 
@@ -151,7 +153,7 @@ export default function PensionEmergencyTaxCalculator() {
                 {result.form === 'P55' && 'P55 — you took part of the pot and are not taking regular payments. '}
                 {result.form === 'P53Z' && 'P53Z — you emptied the pot and have other taxable income. '}
                 {result.form === 'P50Z' && 'P50Z — you emptied the pot and have no other taxable income this year. '}
-                File online via your Personal Tax Account; HMRC refunds in around 30 days. If you do nothing,
+                Claim online through your Personal Tax Account or by post; HMRC works out the repayment and pays it into your bank account. If you do nothing,
                 HMRC reconciles automatically after the tax year ends (P800 letter) — you get the money either way, just later.
               </p>
               <p className="mt-1">Taking a second withdrawal in the same tax year usually moves you onto a cumulative code, which self-corrects the overpayment through that payment instead.</p>

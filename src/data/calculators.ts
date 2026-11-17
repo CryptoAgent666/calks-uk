@@ -143,7 +143,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'inheritance-tax-calculator',
     title: 'Inheritance Tax Calculator',
-    description: 'Calculate UK Inheritance Tax for 2026/27. £325k nil-rate band + £175k residence nil-rate band, 40% above. Includes RNRB taper for estates over £2m.',
+    description: 'Calculate UK Inheritance Tax for 2026/27. £325k nil-rate band + £175k residence nil-rate band, 40% above. Includes bands transferred from a late spouse and the RNRB taper for estates over £2m.',
     category: 'tax',
     icon: 'Receipt',
     keywords: ['inheritance tax', 'IHT', 'estate tax', 'death tax', 'nil rate band'],
@@ -297,7 +297,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   {
     slug: 'bonus-tax-calculator',
     title: 'Bonus Tax Calculator',
-    description: 'Calculate how much of your bonus you will take home after income tax and National Insurance deductions.',
+    description: 'Calculate how much of your bonus you will take home after income tax and National Insurance deductions, with Scottish income tax rates as an option.',
     category: 'pay',
     icon: 'Banknote',
     keywords: ['bonus tax', 'bonus calculator', 'bonus after tax'],
@@ -1784,7 +1784,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   { slug: 'birthday-calculator', title: 'Birthday Calculator', description: 'Find your day of birth, star sign, Chinese zodiac, days alive and upcoming milestone birthdays.', category: 'tools', icon: 'Wrench', keywords: ['birthday', 'star sign', 'zodiac', 'born on', 'days alive'], priority: 2 , metaTitle: 'Birthday Calculator — Next Birthday Countdown' },
   // INSURANCE
   { slug: 'employers-liability-calculator', title: "Employers' Liability Insurance Calculator", description: "Estimate employers' liability insurance premiums by industry and annual wages. Legal requirement for UK businesses.", category: 'insurance', icon: 'ShieldCheck', keywords: ['employers liability', 'EL insurance', 'business insurance', 'employee insurance'], priority: 2 , metaTitle: 'Employers\' Liability Insurance Calculator UK 2026' },
-  { slug: 'car-insurance-estimate-calculator', title: 'Car Insurance Estimate Calculator', description: 'Car insurance calculator for a UK estimate by age, cover level, no-claims years, insurance group 1-50 and mileage, with the estimated cost for every group.', category: 'insurance', icon: 'ShieldCheck', keywords: ['car insurance', 'motor insurance', 'NCB', 'insurance group', 'insurance quote'], priority: 1 , metaTitle: 'Car Insurance Calculator UK: Cost by Age & Insurance Group' },
+  { slug: 'car-insurance-estimate-calculator', title: 'Car Insurance Estimate Calculator', description: 'Car insurance calculator for a UK estimate by age, cover level, no-claims years, insurance group 1-50 and mileage, with a table of estimated costs for 13 groups from 1 to 50.', category: 'insurance', icon: 'ShieldCheck', keywords: ['car insurance', 'motor insurance', 'NCB', 'insurance group', 'insurance quote'], priority: 1 , metaTitle: 'Car Insurance Calculator UK: Cost by Age & Insurance Group' },
   { slug: 'home-insurance-calculator', title: 'Home Insurance Estimate Calculator', description: 'Estimate UK home insurance premiums for buildings, contents or combined cover by property type, rebuild cost and contents value, based on ABI averages.', category: 'insurance', icon: 'ShieldCheck', keywords: ['home insurance', 'buildings insurance', 'contents insurance', 'house insurance'], priority: 2 , metaTitle: 'Home Insurance Calculator UK 2026' },
   { slug: 'critical-illness-calculator', title: 'Critical Illness Cover Calculator', description: 'Estimate critical illness insurance premiums by age, cover amount, term and smoker status.', category: 'insurance', icon: 'ShieldCheck', keywords: ['critical illness', 'CI cover', 'serious illness', 'cancer cover'], priority: 2 , metaTitle: 'Critical Illness Cover Calculator UK 2026' },
   // AUTO
@@ -1802,7 +1802,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // LOANS
   { slug: 'student-loan-early-repay-calculator', title: 'Should I Repay Student Loan Early?', description: 'Compare the total you pay with and without a lump sum, and repaying vs investing it. See if early repayment saves money or wastes it.', category: 'loans', icon: 'CreditCard', keywords: ['early repayment', 'student loan overpay', 'write off', 'plan 2 repay'], priority: 1 , metaTitle: 'Student Loan Early Repayment Calculator UK' },
   // PENSION
-  { slug: 'pension-pot-calculator', title: 'How Much Pension Do I Need?', description: 'Calculate the pension pot needed for your target retirement income using drawdown, 4% rule or annuity.', category: 'pension', icon: 'PiggyBank', keywords: ['pension pot needed', 'retirement savings', 'how much pension', '4% rule'], priority: 1, metaTitle: 'Pension Pot Calculator UK 2026 — How Much Will I Have at 65?' },
+  { slug: 'pension-pot-calculator', title: 'How Much Pension Do I Need?', description: 'Calculate the pension pot needed for your target retirement income using drawdown, 4% rule or annuity, then project your pot and the monthly saving needed with tax relief.', category: 'pension', icon: 'PiggyBank', keywords: ['pension pot needed', 'retirement savings', 'how much pension', '4% rule'], priority: 1, metaTitle: 'Pension Pot Calculator UK 2026 — How Much Will I Have at 65?' },
   { slug: 'teachers-pension-calculator', title: "Teachers' Pension Calculator", description: "Project your Teachers' Pension Scheme (TPS) career average (1/57th) pension, 2026/27 contribution tiers and the maximum tax-free lump sum you can take.", category: 'pension', icon: 'PiggyBank', keywords: ['teachers pension', 'TPS', 'career average', 'teaching pension'], priority: 2, metaTitle: "Teachers' Pension Calculator 2026" },
   // INVESTMENT
   { slug: 'junior-isa-calculator', title: 'Junior ISA Calculator', description: 'Calculate how much a Junior ISA will be worth when your child turns 18. Tax-free growth with £9,000/year limit.', category: 'investment', icon: 'TrendingUp', keywords: ['junior ISA', 'JISA', 'child savings', 'under 18'], priority: 2, metaTitle: 'Junior ISA Calculator UK 2026/27 — £9,000 Annual Allowance' },
@@ -1848,7 +1848,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // PENSION
   { slug: 'sipp-calculator', title: 'SIPP Calculator — Self-Invested Pension', description: 'Project a SIPP pot with 20% tax relief added, higher-rate relief at UK or Scottish rates, employer contributions and growth, plus the tax-free lump sum at retirement.', category: 'pension', icon: 'PiggyBank', keywords: ['SIPP', 'self invested pension', 'personal pension', 'pension pot'], priority: 2, metaTitle: 'SIPP Calculator UK 2026/27 — Self-Invested Pension Pot' },
   // BENEFITS
-  { slug: 'tax-credits-calculator', title: 'Tax Credits Calculator (Legacy)', description: 'Legacy calculator for Working Tax Credit and Child Tax Credit, which ended in April 2025. Check an old award on the final 2024/25 rules.', category: 'benefits', icon: 'Shield', keywords: ['tax credits', 'working tax credit', 'child tax credit', 'WTC', 'CTC'], priority: 2, metaTitle: 'Tax Credits Calculator UK 2026/27 — Migrated to UC' },
+  { slug: 'tax-credits-calculator', title: 'Tax Credits Calculator (Legacy)', description: 'Legacy calculator for Working Tax Credit and Child Tax Credit, which ended in April 2025. Check an old award on the final 2024/25 rules.', category: 'benefits', icon: 'Shield', keywords: ['tax credits', 'working tax credit', 'child tax credit', 'WTC', 'CTC'], priority: 2, metaTitle: 'Tax Credits Calculator — Final 2024/25 Rules (Scheme Closed)' },
   // INVESTMENT
   { slug: 'stocks-shares-isa-calculator', title: 'Stocks & Shares ISA Calculator', description: 'Project Stocks & Shares ISA growth with capital appreciation and dividends, and see the indicative tax saved vs a general account.', category: 'investment', icon: 'TrendingUp', keywords: ['stocks and shares ISA', 'S&S ISA', 'equity ISA', 'investment ISA'], priority: 1 , metaTitle: 'Stocks & Shares ISA Calculator UK 2026/27' },
   // ENERGY
@@ -1922,7 +1922,7 @@ export const CALCULATORS: CalculatorMeta[] = [
   // EDUCATION
   { slug: 'student-budget-planner-calculator', title: 'Student Budget Planner', description: 'Plan your weekly student budget with income from loan, job and parents against term-time expenses.', category: 'education', icon: 'GraduationCap', keywords: ['student budget', 'university budget', 'term budget', 'weekly budget'], priority: 2 , metaTitle: 'Student Budget Planner UK 2026' },
   // BENEFITS
-  { slug: 'care-cost-calculator', title: 'Care Home Cost Calculator', description: 'Estimate care costs and means-testing. See if you\'re self-funded, means-tested or council-funded.', category: 'benefits', icon: 'Shield', keywords: ['care home', 'care costs', 'means test', 'residential care', 'elderly care'], priority: 2 , metaTitle: 'Care Home Cost Calculator — UK 2026/27 Benefits Calculator' },
+  { slug: 'care-cost-calculator', title: 'Care Home Cost Calculator', description: 'Estimate care costs and means-testing in England, Wales or Scotland. See if you\'re self-funded, means-tested or council-funded.', category: 'benefits', icon: 'Shield', keywords: ['care home', 'care costs', 'means test', 'residential care', 'elderly care'], priority: 2 , metaTitle: 'Care Home Cost Calculator — UK 2026/27 Benefits Calculator' },
   // PAY
   { slug: 'minimum-wage-calculator', title: 'UK Minimum Wage Calculator', description: "Are you being paid the legal minimum? Check your hourly, weekly and annual pay against UK National Living Wage (£12.71/hr) and NMW rates by age for 2026.", category: 'pay', icon: 'Banknote', keywords: ['minimum wage', 'NMW', 'NLW', 'living wage', 'hourly rate'], priority: 1, metaTitle: "Minimum Wage Calculator 2026/27" },
   { slug: 'minimum-wage-2027-calculator', title: 'Minimum Wage April 2027 Calculator (NLW £13.21)', description: 'Pay from 1 April 2027 at the confirmed rates: NLW £13.21, £11.27 at 18 to 20, £8.31 at 16 to 17 and for apprentices, with take-home and employer cost.', category: 'pay', icon: 'Banknote', keywords: ['minimum wage 2027', 'national living wage april 2027', 'NLW 2027', 'minimum wage increase', 'low pay commission'], priority: 2, isTrending: true, metaTitle: 'Minimum Wage April 2027 Calculator: NLW £13.21 Confirmed' },

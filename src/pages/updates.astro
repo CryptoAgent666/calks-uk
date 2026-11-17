@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import { getWebPageSchema, getBreadcrumbSchema } from '@/utils/seo'
 
 const schemas = [
-  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-11-09'),
+  getWebPageSchema('Updates', 'Rate changes, new calculators and improvements to Calks.uk. Stay up to date with our latest updates.', '/updates/', '2026-11-17'),
   getBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Updates', url: '/updates/' },
@@ -25,6 +25,30 @@ const schemas = [
 
     <div class="space-y-8">
       <!-- November 2026 — Budget 2026 rates applied by date on the mileage log and capital allowances calculators -->
+      <article class="relative pl-8 border-l-2 border-primary/20">
+        <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
+        <div class="mb-2">
+          <span class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+            November 2026
+          </span>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">Inheritance tax, care costs and student loans rechecked</h2>
+        <ul class="text-sm text-muted-foreground space-y-2">
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Estates and care.</strong> <a href="/calculator/inheritance-tax-calculator/" class="text-primary hover:underline">Inheritance Tax</a> now takes the nil-rate and residence bands passed on by a late spouse or civil partner. <a href="/calculator/care-cost-calculator/" class="text-primary hover:underline">Care costs</a> adds the NHS nursing contribution, the 12-week property disregard, and Wales and Scotland.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Students and citizenship.</strong> <a href="/calculator/student-allowance-calculator/" class="text-primary hover:underline">Student allowance</a> works out the 2026/27 maintenance loan from household income. <a href="/calculator/uk-citizenship-calculator/" class="text-primary hover:underline">Citizenship</a> needs both tests before it says you may be eligible.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-500 shrink-0"></span>
+            <span><strong class="text-foreground">Pay, mortgages and imports.</strong> <a href="/calculator/bonus-tax-calculator/" class="text-primary hover:underline">Bonus tax</a> adds Scottish rates. Mortgage pages use Moneyfacts averages for the start of November. <a href="/calculator/car-import-duty-calculator/" class="text-primary hover:underline">Car import duty</a> checks origin against the UK tariff and handles classics.</span>
+          </li>
+        </ul>
+      </article>
+
       <article class="relative pl-8 border-l-2 border-primary/20">
         <div class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-primary"></div>
         <div class="mb-2">

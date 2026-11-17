@@ -1,6 +1,13 @@
 import { useState, useMemo } from 'react'
 import { formatCurrency } from '@/utils'
 
+const MILESTONES = [
+  ...Array.from({ length: 10 }, (_, i) => (i + 1) * 100_000),
+  ...Array.from({ length: 9 }, (_, i) => (i + 2) * 1_000_000),
+]
+
+// Growth compounds monthly at the annual rate / 12; savings are paid in monthly (annual / 12) at month end.
+// Figures are nominal: no fees, tax or inflation are deducted.
 function calculate(currentWealth: number, annualSavings: number, growthRate: number, years: number) {
   const monthlyGrowth = growthRate / 100 / 12
   const monthlySavings = annualSavings / 12
@@ -17,17 +24,17 @@ function calculate(currentWealth: number, annualSavings: number, growthRate: num
     milestones.push({ year: y, balance, invested, growth: balance - invested })
   }
 
-  // Find when each million is reached
+  // Milestones: every £100K up to £1M, then every £1M up to £10M, counting only those above the
+  // starting wealth, each marked in the first year-end the balance reaches it
   const millionYears: { amount: number; year: number }[] = []
-  let target = currentWealth < 100_000 ? 100_000 : 1_000_000
-  for (const m of milestones) {
-    while (m.balance >= target && target <= 10_000_000) {
-      millionYears.push({ amount: target, year: m.year })
-      target = target < 1_000_000 ? target + 100_000 : target + 1_000_000
-    }
+  for (const target of MILESTONES) {
+    if (target <= currentWealth) continue
+    const hit = milestones.find((m) => m.balance >= target)
+    if (!hit) break
+    millionYears.push({ amount: target, year: hit.year })
   }
 
-  return { finalBalance: balance, totalInvested: invested, totalGrowth: balance - invested, milestones: milestones.filter((_, i) => (i + 1) % 5 === 0 || i === 0 || i === years - 1), millionYears: millionYears.slice(0, 6) }
+  return { finalBalance: balance, totalInvested: invested, totalGrowth: balance - invested, milestones: milestones.filter((_, i) => (i + 1) % 5 === 0 || i === 0 || i === years - 1), millionYears }
 }
 
 export default function WealthGrowthCalculator() {
@@ -75,6 +82,7 @@ export default function WealthGrowthCalculator() {
               ))}</tbody>
             </table>
           </div>
+          <p className="text-xs text-muted-foreground">Growth compounds monthly at the annual rate ÷ 12, so {g}% a year works out at {((Math.pow(1 + g / 1200, 12) - 1) * 100).toFixed(2)}% effective, and savings go in monthly. Figures are before fees, tax and inflation: for a result in today's money, enter your expected return less inflation and fees.</p>
         </div>
       )}
     </div>

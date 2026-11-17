@@ -86,7 +86,7 @@ export default function VATThresholdCalculator() {
       <div className="space-y-4 animate-fade-in-up">
         <div className={`rounded-2xl p-6 text-center ${result.mustRegister || result.forwardLook ? 'bg-destructive/10' : result.pctOfThreshold > 80 ? 'bg-orange-100 dark:bg-orange-950' : 'bg-green-100 dark:bg-green-950'}`}>
           {result.mustRegister ? (
-            <><p className="text-lg font-bold text-destructive">You must register for VAT</p><p className="text-sm text-muted-foreground mt-1">Your rolling 12-month turnover ({formatCurrency(result.rolling12)}) is over the £{VAT_THRESHOLD.toLocaleString()} threshold. Register within 30 days of the end of the month you went over; VAT applies from the first day of the second month after it.</p></>
+            <><p className="text-lg font-bold text-destructive">You must register for VAT</p><p className="text-sm text-muted-foreground mt-1">Your rolling 12-month turnover ({formatCurrency(result.rolling12)}) is over the £{VAT_THRESHOLD.toLocaleString()} threshold. Register within 30 days of the end of the month you went over; VAT applies from the first day of the second month after it. If you went over only temporarily, you can apply to HMRC for a registration exception instead.</p></>
           ) : result.forwardLook ? (
             <><p className="text-lg font-bold text-destructive">Register now: forward-look test</p><p className="text-sm text-muted-foreground mt-1">You expect more than £{VAT_THRESHOLD.toLocaleString()} of taxable sales in the next 30 days alone. Register by the end of that 30-day period; VAT applies from the date you realised.</p></>
           ) : (

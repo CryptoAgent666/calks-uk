@@ -102,6 +102,14 @@ const SOURCE_BY_SLUG: Record<string, string> = {
   // planning rules from the Planning Portal, prices from published cost guides, no manufacturer data
   'extension-cost-calculator': 'the Planning Portal and published cost guides (Checkatrade, BestBuilders)',
   'staircase-calculator': 'Approved Document K and published cost guides (Checkatrade)',
+  // a closed scheme kept as a reference, and water bills that are nothing to do with Ofgem
+  'tax-credits-calculator': "HMRC's final 2024/25 tax credit rates on GOV.UK",
+  'water-bill-calculator': 'Water UK, Discover Water, the Consumer Council for Water and GOV.UK',
+}
+
+// A closed scheme is not reviewed "for the 2026/27 tax year".
+const PERIOD_BY_SLUG: Record<string, string> = {
+  'tax-credits-calculator': '2026 (tax credits closed on 5 April 2025)',
 }
 
 // A health page that has nothing to do with diet should not send readers to a dietitian.
@@ -132,8 +140,8 @@ const ADVICE_BY_CATEGORY: Record<string, string> = {
 }
 
 const source = SOURCE_BY_SLUG[slug] ?? SOURCE_BY_CATEGORY[category]
-const period =
-  !GRADE_SLUGS.has(slug) && (TAX_YEAR_CATEGORIES.has(category) || TAX_YEAR_SLUGS.has(slug)) ? 'the 2026/27 tax year' : '2026'
+const period = PERIOD_BY_SLUG[slug] ??
+  (!GRADE_SLUGS.has(slug) && (TAX_YEAR_CATEGORIES.has(category) || TAX_YEAR_SLUGS.has(slug)) ? 'the 2026/27 tax year' : '2026')
 const advice =
   (GRADE_SLUGS.has(slug) ? 'It is not an official result: check grade boundaries with your exam board or university.' : undefined) ??
   ADVICE_BY_SLUG[slug] ??
